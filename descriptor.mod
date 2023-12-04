@@ -3,6 +3,6 @@ tags={
 	"Events"
 	"Galaxy Generation"
 }
-name="Cat's Galaxy"
-picture="thumbnail.jpg"
+name="Galaxy of the Cat"
+picture="thumbnail.png"
 supported_version="3.10.1"
