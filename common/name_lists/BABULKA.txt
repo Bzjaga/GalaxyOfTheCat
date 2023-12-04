@@ -1,0 +1,229 @@
+﻿
+BABULKA = {
+	ship_names = {
+		generic = {
+			BABULKA_SHIP_Viper BABULKA_SHIP_Venerable BABULKA_SHIP_Pozhiloy BABULKA_SHIP_Prestarely BABULKA_SHIP_Pensioner BABULKA_SHIP_TelefonnyMoshennik BABULKA_SHIP_Solenye BABULKA_SHIP_Berezhlivy BABULKA_SHIP_Nastyrniy BABULKA_SHIP_Baragoz BABULKA_SHIP_Pensiya BABULKA_SHIP_Chepchik BABULKA_SHIP_StalinaNaVasNet BABULKA_SHIP_IshChtoUdumal BABULKA_SHIP_Pryazha BABULKA_SHIP_Sviter BABULKA_SHIP_Avoska BABULKA_SHIP_Kostyl BABULKA_SHIP_VsehPerezhyvyot BABULKA_SHIP_Morstchina BABULKA_SHIP_Skleroz BABULKA_SHIP_Milok BABULKA_SHIP_VyazanayaShapka BABULKA_SHIP_Varezhka BABULKA_SHIP_Supchik BABULKA_SHIP_Varenye BABULKA_SHIP_Pirozhok BABULKA_SHIP_Pomostchnik BABULKA_SHIP_Venik BABULKA_SHIP_Indexatsiya BABULKA_SHIP_IzbiratelnayaNostalgiya BABULKA_SHIP_Sedina BABULKA_SHIP_SvyatoyStalin BABULKA_SHIP_SpeseniyeVKommunizme BABULKA_SHIP_SantaBarbara BABULKA_SHIP_ChornyRieltor BABULKA_SHIP_Valenok BABULKA_SHIP_Sidelka BABULKA_SHIP_SocialnayaKarta BABULKA_SHIP_Sobes BABULKA_SHIP_Spletnya BABULKA_SHIP_Lavochka BABULKA_SHIP_Svarlivy BABULKA_SHIP_Petulant BABULKA_SHIP_Diligence BABULKA_SHIP_Pertinacity BABULKA_SHIP_Prudence BABULKA_SHIP_NeuvazhenieKStarshim BABULKA_SHIP_Stydoba BABULKA_SHIP_StarostNeRadost
+		}
+		corvette = {
+			BABULKA_SHIP_Barsik BABULKA_SHIP_Murzik
+		}
+		destroyer = {
+
+		}
+		cruiser = {
+
+		}
+		battleship = {
+
+		}
+		titan = {
+
+		}
+		colossus = {
+
+		}
+		juggernaut = {
+
+		}
+		science = {
+			BABULKA_SHIP_StarinnyRetsept BABULKA_SHIP_Slezhka BABULKA_SHIP_Terapevt
+		}
+		colonizer = {
+			BABULKA_SHIP_NovayaTeplitsa BABULKA_SHIP_SytyVnuk BABULKA_SHIP_VtorayaMolodost
+		}
+		constructor = {
+			BABULKA_SHIP_Ogorod BABULKA_SHIP_Parnik BABULKA_SHIP_Teplitsa BABULKA_SHIP_Rassada
+		}
+		transport = {
+			BABULKA_SHIP_Hodunki BABULKA_SHIP_Telezhka
+		}
+		military_station_small = {
+			BABULKA_SHIP_Artrit BABULKA_SHIP_Artroz BABULKA_SHIP_Revmatizm BABULKA_SHIP_Nehodyachaya
+		}
+		ion_cannon = {
+			BABULKA_SHIP_Artrit BABULKA_SHIP_Artroz BABULKA_SHIP_Revmatizm BABULKA_SHIP_Nehodyachaya
+		}
+	}
+	ship_class_names = {
+		generic = {
+
+		}
+	}
+	fleet_names = {
+		random_names = {
+			BABULKA_FLEET_Kostyl BABULKA_FLEET_BezOcheredi BABULKA_FLEET_UstupiMesto BABULKA_FLEET_BlokadaSobesa BABULKA_FLEET_Zavestchaniye BABULKA_FLEET_PropolkaPomidorov BABULKA_FLEET_ZasushymIZamarinuyem BABULKA_FLEET_ChasPik BABULKA_FLEET_BogProstit BABULKA_FLEET_PlevokVSpinu BABULKA_FLEET_Ochki BABULKA_FLEET_NashedshysyaStalin BABULKA_FLEET_OdenShapku BABULKA_FLEET_Raskolnikov BABULKA_FLEET_NarkomanyIProstitutki
+		}
+		sequential_name = BABULKA_STRIKEFORCE
+	}
+	army_names = {
+
+		generic = {
+			random_names = {
+				BABULKA_ARMY_Subbotnik BABULKA_ARMY_Sornyaki BABULKA_ARMY_HudoyVnuk BABULKA_ARMY_TelefonnyeMoshenniki
+			}
+			sequential_name = BABULKA_COLONIALGENDARMERIE
+		}
+
+		machine_defense = {
+			sequential_name = BABULKA_COLONIALGENDARMERIE
+		}
+
+		machine_assault_1 = {
+			sequential_name = BABULKA_ASSAULTLEGION
+		}
+
+		machine_assault_2 = {
+			sequential_name = BABULKA_ASSAULTLEGION
+		}
+
+		machine_assault_3 = {
+			sequential_name = BABULKA_ASSAULTLEGION
+		}
+
+		assault_army = {
+			sequential_name = BABULKA_ASSAULTLEGION
+		}
+
+		slave_army = {
+			sequential_name = BABULKA_JANISSARYCORPS
+		}
+
+		clone_army = {
+			sequential_name = BABULKA_VATGROWNSOLDIERY
+		}
+
+		undead_army = {
+			random_names = {
+				BABULKA_ARMY_LegionStalina BABULKA_ARMY_BabaYaga
+			}
+			sequential_name = BABULKA_DREADCORPS
+		}
+
+		robotic_army = {
+			sequential_name = BABULKA_UNMANNEDBATTLEGROUP
+		}
+
+		robotic_defense_army = {
+			sequential_name = BABULKA_UNMANNEDGENDARMERIE
+		}
+
+		psionic_army = {
+			random_names = {
+				BABULKA_ARMY_PotomstvennyeVedmy BABULKA_ARMY_Koldunya
+			}
+			sequential_name = BABULKA_PSYWARRIORS
+		}
+
+		xenomorph_army = {
+			sequential_name = BABULKA_MORPHLINGMARAUDERS
+		}
+
+		gene_warrior_army = {
+			sequential_name = BABULKA_EUGENICVANGUARD
+		}
+
+		occupation_army = {
+			sequential_name = BABULKA_OCCUPATIONLEGION
+		}
+
+		robotic_occupation_army = {
+			sequential_name = BABULKA_UNMANNEDGARRISON
+		}
+	}
+	planet_names = {
+		generic = {
+			names = {
+				BABULKA_PLANET_ChornayaGryaz BABULKA_PLANET_Obiralovka BABULKA_PLANET_VerhnyayaPyshma BABULKA_PLANET_NizhnyayaPyshma BABULKA_PLANET_Lihoslavl BABULKA_PLANET_Voskresensk BABULKA_PLANET_PogoreloyeGorodistche BABULKA_PLANET_Bogolyubovo BABULKA_PLANET_SpasDemyansk BABULKA_PLANET_Potma BABULKA_PLANET_Krivopolyanye BABULKA_PLANET_Sarai BABULKA_PLANET_Dacha BABULKA_PLANET_Chern BABULKA_PLANET_Novoierusalimsk BABULKA_PLANET_Bogoyavlenye BABULKA_PLANET_BolshoyeKozino BABULKA_PLANET_MaloyeKozino BABULKA_PLANET_StaryeChervi BABULKA_PLANET_BolshyeMurly BABULKA_PLANET_Gnilyovo BABULKA_PLANET_BelayaHolunitsa BABULKA_PLANET_ChornayaHolunitsa BABULKA_PLANET_Sysert BABULKA_PLANET_Seltso BABULKA_PLANET_Zhizdra BABULKA_PLANET_Vypolzovo BABULKA_PLANET_Staritsa BABULKA_PLANET_NovayaMologa BABULKA_PLANET_Nasadkino BABULKA_PLANET_Zhuchki BABULKA_PLANET_Torgashino BABULKA_PLANET_BolshoyePloskoye BABULKA_PLANET_MaloyePloskoye BABULKA_PLANET_Babye BABULKA_PLANET_BolshayaKosha BABULKA_PLANET_MalayaKosha BABULKA_PLANET_Marmyli BABULKA_PLANET_Kuchki
+			}
+		}
+		pc_desert = {
+			names = {
+
+			}
+		}
+		pc_tropical = {
+			names = {
+
+			}
+		}
+		pc_arid = {
+			names = {
+
+			}
+		}
+		pc_continental = {
+			names = {
+
+			}
+		}
+		pc_ocean = {
+			names = {
+
+			}
+		}
+		pc_tundra = {
+			names = {
+
+			}
+		}
+		pc_arctic = {
+			names = {
+
+			}
+		}
+		pc_savannah = {
+			names = {
+
+			}
+		}
+		pc_alpine = {
+			names = {
+
+			}
+		}
+	}
+
+	character_names = {
+		default = {
+			full_names = {
+
+			}
+			full_names_female = {
+
+			}
+			full_names_male = {
+
+			}
+			first_names = {
+				
+			}
+			first_names_female = {
+				BABULKA_CHR_Agafya BABULKA_CHR_Klavdiya BABULKA_CHR_Avdotya BABULKA_CHR_Agnessa BABULKA_CHR_Agrippina BABULKA_CHR_Fedora BABULKA_CHR_Fedotya BABULKA_CHR_Lyudmila BABULKA_CHR_Lidiya BABULKA_CHR_Galina BABULKA_CHR_Zinaida BABULKA_CHR_Stalina BABULKA_CHR_Zoya BABULKA_CHR_Taisiya BABULKA_CHR_Matryona BABULKA_CHR_Axinya BABULKA_CHR_Anisya BABULKA_CHR_Kapitalina BABULKA_CHR_Evdokiya BABULKA_CHR_Agrafena BABULKA_CHR_Marfa BABULKA_CHR_Fyokla BABULKA_CHR_Efimiya BABULKA_CHR_Glafira BABULKA_CHR_Lyubava BABULKA_CHR_Akulina BABULKA_CHR_Arina BABULKA_CHR_Vera BABULKA_CHR_Liliya BABULKA_CHR_Praskovya BABULKA_CHR_Serafima BABULKA_CHR_Faina BABULKA_CHR_Valentina BABULKA_CHR_Aleftina BABULKA_CHR_Iraida BABULKA_CHR_Agapiya BABULKA_CHR_Rufina BABULKA_CHR_Olesya BABULKA_CHR_Rimma BABULKA_CHR_Fevronya BABULKA_CHR_Tamara BABULKA_CHR_Matilda
+			}
+			first_names_male = {
+
+			}
+			second_names = {
+				
+			}
+			second_names_female = {
+				BABULKA_CHR_Nikitishna BABULKA_CHR_Kuzmichna BABULKA_CHR_Ivanovna BABULKA_CHR_Evlampievna BABULKA_CHR_Timofeevna BABULKA_CHR_Semyonovna BABULKA_CHR_Terentiyevna BABULKA_CHR_Evseevna BABULKA_CHR_Filippovna BABULKA_CHR_Vasilyevna BABULKA_CHR_Gavrilovna BABULKA_CHR_Lazarevna BABULKA_CHR_Efimovna BABULKA_CHR_Afanasyevna BABULKA_CHR_Ermolaevna BABULKA_CHR_Erofeevna BABULKA_CHR_Zosimovna BABULKA_CHR_Onufrievna BABULKA_CHR_Prohorovna BABULKA_CHR_Fominichna BABULKA_CHR_Makarovna BABULKA_CHR_Klavdievna BABULKA_CHR_Apolinarievna BABULKA_CHR_Agafonovna BABULKA_CHR_Akakievna BABULKA_CHR_Gerasimovna BABULKA_CHR_Petrovna BABULKA_CHR_Sidorovna BABULKA_CHR_Mavrikievna BABULKA_CHR_Matveevna BABULKA_CHR_Fyodorovna BABULKA_CHR_Nikiforovna BABULKA_CHR_Alexeevna BABULKA_CHR_Anisimovna BABULKA_CHR_Potapovna BABULKA_CHR_Polikarpovna BABULKA_CHR_Patrikeevna BABULKA_CHR_Haritonovna BABULKA_CHR_Nikanorovna BABULKA_CHR_Martynovna BABULKA_CHR_Kazimirovna BABULKA_CHR_Fedotovna
+			}
+			second_names_male = {
+
+			}
+			regnal_first_names = {
+
+			}
+			regnal_first_names_female = {
+				BABULKA_CHR_Agafya BABULKA_CHR_Klavdiya BABULKA_CHR_Avdotya BABULKA_CHR_Agnessa BABULKA_CHR_Agrippina BABULKA_CHR_Fedora BABULKA_CHR_Fedotya BABULKA_CHR_Lyudmila BABULKA_CHR_Lidiya BABULKA_CHR_Galina BABULKA_CHR_Zinaida BABULKA_CHR_Stalina BABULKA_CHR_Zoya BABULKA_CHR_Taisiya BABULKA_CHR_Matryona BABULKA_CHR_Axinya BABULKA_CHR_Anisya BABULKA_CHR_Kapitalina BABULKA_CHR_Evdokiya BABULKA_CHR_Agrafena BABULKA_CHR_Marfa BABULKA_CHR_Fyokla BABULKA_CHR_Efimiya BABULKA_CHR_Glafira BABULKA_CHR_Lyubava BABULKA_CHR_Akulina BABULKA_CHR_Arina BABULKA_CHR_Vera BABULKA_CHR_Liliya BABULKA_CHR_Praskovya BABULKA_CHR_Serafima BABULKA_CHR_Faina BABULKA_CHR_Valentina BABULKA_CHR_Aleftina BABULKA_CHR_Iraida BABULKA_CHR_Agapiya BABULKA_CHR_Rufina BABULKA_CHR_Olesya BABULKA_CHR_Rimma BABULKA_CHR_Fevronya BABULKA_CHR_Tamara BABULKA_CHR_Matilda
+			}
+			regnal_first_names_male = {
+
+			}
+			regnal_second_names = {
+				BABULKA_CHR_Nikitishna BABULKA_CHR_Kuzmichna BABULKA_CHR_Ivanovna BABULKA_CHR_Evlampievna BABULKA_CHR_Timofeevna BABULKA_CHR_Semyonovna BABULKA_CHR_Terentiyevna BABULKA_CHR_Evseevna BABULKA_CHR_Filippovna BABULKA_CHR_Vasilyevna BABULKA_CHR_Gavrilovna BABULKA_CHR_Lazarevna BABULKA_CHR_Efimovna BABULKA_CHR_Afanasyevna BABULKA_CHR_Ermolaevna BABULKA_CHR_Erofeevna BABULKA_CHR_Zosimovna BABULKA_CHR_Onufrievna BABULKA_CHR_Prohorovna BABULKA_CHR_Fominichna BABULKA_CHR_Makarovna BABULKA_CHR_Klavdievna BABULKA_CHR_Apolinarievna BABULKA_CHR_Agafonovna BABULKA_CHR_Akakievna BABULKA_CHR_Gerasimovna BABULKA_CHR_Petrovna BABULKA_CHR_Sidorovna BABULKA_CHR_Mavrikievna BABULKA_CHR_Matveevna BABULKA_CHR_Fyodorovna BABULKA_CHR_Nikiforovna BABULKA_CHR_Alexeevna BABULKA_CHR_Anisimovna BABULKA_CHR_Potapovna BABULKA_CHR_Polikarpovna BABULKA_CHR_Patrikeevna BABULKA_CHR_Haritonovna BABULKA_CHR_Nikanorovna BABULKA_CHR_Martynovna BABULKA_CHR_Kazimirovna BABULKA_CHR_Fedotovna
+			}
+		}
+	}
+}
