@@ -3893,8 +3893,17 @@ fear_of_the_dark_binary_planets = {
 		}
 		save_global_event_target_as = fotd_seperatist_planet@prev
 		set_planet_flag = fotd_seperatist_planet@prev
-		create_fear_of_the_dark_country = yes
-		setup_fear_of_the_dark_pre_ftl = yes
+		if = {
+			limit = {
+				has_planet_flag = korea
+			}
+			create_fear_of_the_dark_country_korea = yes
+			setup_fear_of_the_dark_pre_ftl_korea = yes
+		}
+		else = {
+			create_fear_of_the_dark_country = yes
+			setup_fear_of_the_dark_pre_ftl = yes
+		}
 		if = {
 			limit = {
 				has_planet_flag = planet_mars

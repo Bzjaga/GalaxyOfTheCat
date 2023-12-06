@@ -1438,7 +1438,7 @@ fear_of_the_dark_init_korea = {
 		generate_home_system_resources = yes
 	}
 
-	flags = { empire_home_system fotd_system korea}
+	flags = { empire_home_system fotd_system korea }
 
 	usage = origin
 
@@ -1496,11 +1496,11 @@ fear_of_the_dark_init_korea = {
 		}
 
 		moon = {
-			class = "pc_desert"
+			class = "pc_alpine"
 			size = 16
 			orbit_distance = 12
 			orbit_angle = 120
-			flags = { haven_flag }
+			flags = { haven_flag korea }
 			has_ring = no
 		}
 		moon = {

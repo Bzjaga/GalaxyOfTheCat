@@ -1,0 +1,123 @@
+create_fear_of_the_dark_country_korea = {
+	create_country = {
+		name = {
+			key = "КНДР"
+		}
+		adjective="Северокорейск"
+		authority = auth_imperial
+		civics = {
+			civic = civic_corvee_system
+			civic = civic_distinguished_admiralty
+		}
+		species = event_target:fotd_country.species
+		ethos = {
+			ethic = ethic_fanatic_xenophobe
+			ethic = ethic_militarist
+		}
+
+		flag = random
+		origin = "origin_fear_of_the_dark" # Should only be visible if they become spacefaring
+		type = primitive
+		effect = {
+			set_country_flag = early_space_age
+			set_country_flag = fotd_seperatist_country@event_target:fotd_country
+			set_country_flag = fotd_seperatist_country
+			save_event_target_as = fotd_seperatist_country
+			establish_communications_no_message = event_target:fotd_country
+			set_faction_hostility = {
+				target = event_target:fotd_country
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+
+			# Leader
+			create_leader = {
+				class = official
+				species = event_target:fotd_country.species
+				name = "Ким Ё Чжон"
+				gender=female
+				skill = 1
+				traits = {
+					trait = trait_ruler_industrialist
+				}
+			}
+			set_male_ruler_title = "Претворитель Чучхе"
+			set_female_ruler_title = "Претворительница Чучхе"
+			set_leader = last_created_leader
+			set_male_heir_title = "Первоочередной председатель"
+			set_female_heir_title = "Первоочередная председатель"
+		}
+	}
+	event_target:fotd_country = {
+		add_intel = {
+			amount = 100
+			who = event_target:fotd_country
+		}
+	}
+}
+
+setup_fear_of_the_dark_pre_ftl_korea = {
+	set_owner = event_target:fotd_seperatist_country
+	set_capital = yes
+	set_name = {
+		key="Пхеньян"
+		literal=yes
+	}
+	event_target:fotd_country.home_planet = {
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_city
+		}
+	}
+	while = {
+		count = 1
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_industrial
+		}
+	}
+	while = {
+		count = 1
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_farming
+		}
+	}
+	remove_building = building_colony_shelter
+	add_building = building_primitive_capital
+	add_building = building_research_lab_1
+	while = {
+		count = 10
+		create_pop = {
+			species = event_target:fotd_country.species
+		}
+	}
+	event_target:fotd_seperatist_country = {
+		start_situation = {
+			type = situation_fotd_terraforming
+			target = prev
+		}
+		set_country_flag = early_space_age
+		set_pre_ftl_age = early_space_age
+		change_country_flag = {
+			icon={
+				category="human"
+				file="flag_human_12.dds"
+			}
+			background={
+				category="backgrounds"
+				file="flag_BG_31.dds"
+			}
+			colors={
+				"red"
+				"dark_blue"
+				"black"
+				"null"
+			}
+		}
+		set_country_flag = tech_frozen
+		add_awareness = 100
+	}
+}
+
