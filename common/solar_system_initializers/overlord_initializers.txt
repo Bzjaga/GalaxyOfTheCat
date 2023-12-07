@@ -567,7 +567,15 @@ shroudwalker_enclave_init_01 = {
 				last_created_species = {
 					save_event_target_as = shroudwalker_enclave_species
 				}
-				create_shroudwalker_enclave_country = yes
+				if = { # Create Teachers of the Dialectics
+					limit = {
+						any_system = { has_star_flag = mraxist }
+					}
+					create_shroudwalker_enclave_country = yes
+				}
+				else = {
+					create_shroudwalker_enclave_country = yes
+				}
 				solar_system = {
 					save_global_event_target_as = shroudwalker_enclave_system
 				}
