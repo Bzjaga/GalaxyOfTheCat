@@ -554,9 +554,9 @@ shroudwalker_enclave_init_01 = {
 				}
 				create_species = {
 					homeworld = this
-					name = random
+					name = "Диалектик"
 					class = SHROUDWALKER
-					namelist = NECROID1
+					namelist = HUMAN1
 					portrait = random
 					traits = {
 						ideal_planet_class = pc_habitat
@@ -571,7 +571,7 @@ shroudwalker_enclave_init_01 = {
 					limit = {
 						any_system = { has_star_flag = mraxist }
 					}
-					create_shroudwalker_enclave_country = yes
+					create_shroudwalker_enclave_country_dialectics = yes
 				}
 				else = {
 					create_shroudwalker_enclave_country = yes
@@ -581,8 +581,18 @@ shroudwalker_enclave_init_01 = {
 				}
 			}
 			else = {
-				event_target:shroudwalker_enclave_country = {
-					create_shroudwalker_enclave_starbase = yes
+				if = { # Create starbase for Teachers of the Dialectics
+					limit = {
+						any_system = { has_star_flag = mraxist }
+					}
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase_dialectics_01 = yes
+					}
+				}
+				else = {
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase = yes
+					}
 				}
 			}
 			add_deposit = d_zro_deposit_5
@@ -681,9 +691,9 @@ shroudwalker_enclave_init_02 = {
 				}
 				create_species = {
 					homeworld = this
-					name = random
+					name = "Диалектик"
 					class = SHROUDWALKER
-					namelist = LITHOID1
+					namelist = HUMAN1
 					portrait = random
 					traits = {
 						ideal_planet_class = pc_habitat
@@ -694,15 +704,33 @@ shroudwalker_enclave_init_02 = {
 				last_created_species = {
 					save_event_target_as = shroudwalker_enclave_species
 				}
-				create_shroudwalker_enclave_country = yes
+				if = { # Create Teachers of the Dialectics
+					limit = {
+						any_system = { has_star_flag = mraxist }
+					}
+					create_shroudwalker_enclave_country_dialectics = yes
+				}
+				else = {
+					create_shroudwalker_enclave_country = yes
+				}
 				solar_system = {
 					save_global_event_target_as = shroudwalker_enclave_system
 					set_star_flag = shroudwalker_enclave_system
 				}
 			}
 			else = {
-				event_target:shroudwalker_enclave_country = {
-					create_shroudwalker_enclave_starbase = yes
+				if = { # Create starbase for Teachers of the Dialectics
+					limit = {
+						any_system = { has_star_flag = mraxist }
+					}
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase_dialectics_02 = yes
+					}
+				}
+				else = {
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase = yes
+					}
 				}
 			}
 			add_deposit = d_zro_deposit_5
@@ -827,9 +855,9 @@ shroudwalker_enclave_init_03 = {
 				}
 				create_species = {
 					homeworld = this
-					name = random
+					name = "Диалектик"
 					class = SHROUDWALKER
-					namelist = LITHOID1
+					namelist = HUMAN1
 					portrait = random
 					traits = {
 						ideal_planet_class = pc_habitat
@@ -840,15 +868,33 @@ shroudwalker_enclave_init_03 = {
 				last_created_species = {
 					save_event_target_as = shroudwalker_enclave_species
 				}
-				create_shroudwalker_enclave_country = yes
+				if = { # Create Teachers of the Dialectics
+					limit = {
+						any_system = { has_star_flag = mraxist }
+					}
+					create_shroudwalker_enclave_country_dialectics = yes
+				}
+				else = {
+					create_shroudwalker_enclave_country = yes
+				}
 				solar_system = {
 					save_global_event_target_as = shroudwalker_enclave_system
 					set_star_flag = shroudwalker_enclave_system
 				}
 			}
 			else = {
-				event_target:shroudwalker_enclave_country = {
-					create_shroudwalker_enclave_starbase = yes
+				if = { # Create starbase for Teachers of the Dialectics
+					limit = {
+						any_system = { has_star_flag = mraxist }
+					}
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase_dialectics_03 = yes
+					}
+				}
+				else = {
+					event_target:shroudwalker_enclave_country = {
+						create_shroudwalker_enclave_starbase = yes
+					}
 				}
 			}
 			add_deposit = d_zro_deposit_5

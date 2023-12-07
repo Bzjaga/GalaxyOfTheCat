@@ -121,3 +121,140 @@ setup_fear_of_the_dark_pre_ftl_korea = {
 	}
 }
 
+create_shroudwalker_enclave_country_dialectics = {
+	create_country = {
+		name = {
+			key="Красный Университет"
+			literal=yes
+		}
+		type = enclave
+		authority = "auth_oligarchic"
+		civics = {
+			civic = civic_shroudwalker_enclave
+		}
+		origin = "origin_default"
+		species = event_target:shroudwalker_enclave_species
+		flag = {
+			icon={
+				category="human"
+				file="flag_human_5.dds"
+			}
+			background={
+				category="backgrounds"
+				file="00_solid.dds"
+			}
+			colors={
+				"red"
+				"red"
+				"black"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_spiritualist
+			ethic = ethic_egalitarian
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			save_global_event_target_as = shroudwalker_enclave_country
+			set_country_flag = shroudwalker_enclave_country
+			set_graphical_culture = mammalian_01
+			#Create capital starbase
+			create_fleet = {
+				name = "Красный Университет"
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "Красный Университет"
+						design = "NAME_Shroudwalker_Enclave_Station"
+						graphical_culture = prev
+					}
+					set_location = {
+						target = event_target:shroudwalker_enclave_planet
+						distance = 20
+					}
+					save_event_target_as = CustomCapital
+				}
+			}
+			set_custom_capital_location = event_target:shroudwalker_enclave_planet
+			#Create ruler
+			create_leader = {
+				name = "Попов Михаил Васильевич"
+				class = scientist
+				species = event_target:shroudwalker_enclave_species
+				skill = 5
+				traits = {
+					trait = leader_trait_expertise_psionics
+				}
+			}
+			set_male_ruler_title = "Идущий Сквозь Диалектику"
+			set_female_ruler_title = "Идущая Сквозь Диалектику"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in overlord initializer; enclave country scope
+create_shroudwalker_enclave_starbase_dialectics_01 = {
+	create_fleet = {
+		name = "МЭЛС"
+		settings = { spawn_debris = no }
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "МЭЛС"
+				design = "NAME_Shroudwalker_Enclave_Station"
+				graphical_culture = prev
+			}
+			set_location = {
+				target = event_target:shroudwalker_enclave_planet
+				distance = 20
+			}
+			save_global_event_target_as = shroudwalker_starbase
+		}
+	}
+}
+
+#For use in overlord initializer; enclave country scope
+create_shroudwalker_enclave_starbase_dialectics_02 = {
+	create_fleet = {
+		name = "Фонд Рабочей Академии"
+		settings = { spawn_debris = no }
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Фонд Рабочей Академии"
+				design = "NAME_Shroudwalker_Enclave_Station"
+				graphical_culture = prev
+			}
+			set_location = {
+				target = event_target:shroudwalker_enclave_planet
+				distance = 20
+			}
+			save_global_event_target_as = shroudwalker_starbase
+		}
+	}
+}
+
+#For use in overlord initializer; enclave country scope
+create_shroudwalker_enclave_starbase_dialectics_03 = {
+	create_fleet = {
+		name = "Красный кодекс"
+		settings = { spawn_debris = no }
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Красный кодекс"
+				design = "NAME_Shroudwalker_Enclave_Station"
+				graphical_culture = prev
+			}
+			set_location = {
+				target = event_target:shroudwalker_enclave_planet
+				distance = 20
+			}
+			save_global_event_target_as = shroudwalker_starbase
+		}
+	}
+} # create_shroudwalker_enclave_species_dialectics
+
