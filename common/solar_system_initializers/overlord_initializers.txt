@@ -552,45 +552,29 @@ shroudwalker_enclave_init_01 = {
 						exists = event_target:shroudwalker_enclave_country
 					}
 				}
-				create_species = {
-					homeworld = this
-					name = "Диалектик"
-					class = SHROUDWALKER
-					namelist = HUMAN1
-					portrait = random
-					traits = {
-						ideal_planet_class = pc_habitat
-						trait = trait_psionic
-						trait = random_traits
-					}
+				solar_system = {
+					save_global_event_target_as = shroudwalker_enclave_system
 				}
-				last_created_species = {
-					save_event_target_as = shroudwalker_enclave_species
-				}
-				if = { # Create Teachers of the Dialectics
+				choose_shroudwalker_enclave_country = yes
+				if = {
 					limit = {
-						any_system = { has_star_flag = mraxist }
+						has_planet_flag = enclave_dialectics
 					}
 					create_shroudwalker_enclave_country_dialectics = yes
 				}
 				else = {
-					create_shroudwalker_enclave_country = yes
-				}
-				solar_system = {
-					save_global_event_target_as = shroudwalker_enclave_system
+					create_shroudwalker_enclave_country_default = yes
 				}
 			}
 			else = {
-				if = { # Create starbase for Teachers of the Dialectics
-					limit = {
-						any_system = { has_star_flag = mraxist }
-					}
-					event_target:shroudwalker_enclave_country = {
+				event_target:shroudwalker_enclave_country = {
+					if = { # Create starbase for the Teachers of Dialectics
+						limit = {
+							has_country_flag = enclave_dialectics
+						}
 						create_shroudwalker_enclave_starbase_dialectics_01 = yes
 					}
-				}
-				else = {
-					event_target:shroudwalker_enclave_country = {
+					else = {
 						create_shroudwalker_enclave_starbase = yes
 					}
 				}
@@ -689,46 +673,29 @@ shroudwalker_enclave_init_02 = {
 						exists = event_target:shroudwalker_enclave_country
 					}
 				}
-				create_species = {
-					homeworld = this
-					name = "Диалектик"
-					class = SHROUDWALKER
-					namelist = HUMAN1
-					portrait = random
-					traits = {
-						ideal_planet_class = pc_habitat
-						trait = trait_psionic
-						trait = random_traits
-					}
+				solar_system = {
+					save_global_event_target_as = shroudwalker_enclave_system
 				}
-				last_created_species = {
-					save_event_target_as = shroudwalker_enclave_species
-				}
-				if = { # Create Teachers of the Dialectics
+				choose_shroudwalker_enclave_country = yes
+				if = {
 					limit = {
-						any_system = { has_star_flag = mraxist }
+						has_planet_flag = enclave_dialectics
 					}
 					create_shroudwalker_enclave_country_dialectics = yes
 				}
 				else = {
-					create_shroudwalker_enclave_country = yes
-				}
-				solar_system = {
-					save_global_event_target_as = shroudwalker_enclave_system
-					set_star_flag = shroudwalker_enclave_system
+					create_shroudwalker_enclave_country_default = yes
 				}
 			}
 			else = {
-				if = { # Create starbase for Teachers of the Dialectics
-					limit = {
-						any_system = { has_star_flag = mraxist }
-					}
-					event_target:shroudwalker_enclave_country = {
+				event_target:shroudwalker_enclave_country = {
+					if = { # Create starbase for the Teachers of Dialectics
+						limit = {
+							has_country_flag = enclave_dialectics
+						}
 						create_shroudwalker_enclave_starbase_dialectics_02 = yes
 					}
-				}
-				else = {
-					event_target:shroudwalker_enclave_country = {
+					else = {
 						create_shroudwalker_enclave_starbase = yes
 					}
 				}
@@ -853,46 +820,29 @@ shroudwalker_enclave_init_03 = {
 						exists = event_target:shroudwalker_enclave_country
 					}
 				}
-				create_species = {
-					homeworld = this
-					name = "Диалектик"
-					class = SHROUDWALKER
-					namelist = HUMAN1
-					portrait = random
-					traits = {
-						ideal_planet_class = pc_habitat
-						trait = trait_psionic
-						trait = random_traits
-					}
+				solar_system = {
+					save_global_event_target_as = shroudwalker_enclave_system
 				}
-				last_created_species = {
-					save_event_target_as = shroudwalker_enclave_species
-				}
-				if = { # Create Teachers of the Dialectics
+				choose_shroudwalker_enclave_country = yes
+				if = {
 					limit = {
-						any_system = { has_star_flag = mraxist }
+						has_planet_flag = enclave_dialectics
 					}
 					create_shroudwalker_enclave_country_dialectics = yes
 				}
 				else = {
-					create_shroudwalker_enclave_country = yes
-				}
-				solar_system = {
-					save_global_event_target_as = shroudwalker_enclave_system
-					set_star_flag = shroudwalker_enclave_system
+					create_shroudwalker_enclave_country_default = yes
 				}
 			}
 			else = {
-				if = { # Create starbase for Teachers of the Dialectics
-					limit = {
-						any_system = { has_star_flag = mraxist }
-					}
-					event_target:shroudwalker_enclave_country = {
+				event_target:shroudwalker_enclave_country = {
+					if = { # Create starbase for the Teachers of Dialectics
+						limit = {
+							has_country_flag = enclave_dialectics
+						}
 						create_shroudwalker_enclave_starbase_dialectics_03 = yes
 					}
-				}
-				else = {
-					event_target:shroudwalker_enclave_country = {
+					else = {
 						create_shroudwalker_enclave_starbase = yes
 					}
 				}
@@ -1386,6 +1336,9 @@ orbital_ring_init_01 = {
 
 # Imperial Fiefdom Origin
 overlord_system_init = { # Aix - Empire Capital
+	init_effect = {
+		save_event_target_as = origin_imperial_homeland_system
+	}
 	class = "sc_pulsar"
 
 	usage = misc_system_init
@@ -1449,420 +1402,33 @@ overlord_system_init = { # Aix - Empire Capital
 
 	planet = { # Colonizeable Planet
 		init_effect = {
-			# Choosing Overlord To Generate
-			if = { # Overlord Post-Soviet
+			if = {
 				limit = {
-					AND = {
-						any_system = { has_star_flag = zaharova }
-						any_system = { has_star_flag = lukashenko }
-					}
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = mao
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = deyatel
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				set_planet_flag = overlord_post_soviet
-			}
-			else_if = { # Overlord Soviet
-				limit = {
-					AND = {
-						any_system = { has_star_flag = mao }
-						any_system = { has_star_flag = deyatel }
-					}
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = zaharova
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = lukashenko
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = mao
-							}
-						}
-					}
-					give_technology = { tech = tech_genome_mapping }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = pamyatnik
-							}
-						}
-					}
-					set_origin = origin_imperial_vassal
+					any_system = { has_star_flag = is_chosen_overlord_soviet }
 				}
 				set_planet_flag = overlord_soviet
 			}
-			else_if = { # Overlord Post-Soviet
+			else_if = {
 				limit = {
-					any_system = { has_star_flag = zaharova }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = mao
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = deyatel
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
+					any_system = { has_star_flag = is_chosen_overlord_post_soviet }
 				}
 				set_planet_flag = overlord_post_soviet
-			}
-			else_if = { # Overlord Soviet
-				limit = {
-					any_system = { has_star_flag = mao }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = zaharova
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = lukashenko
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = mao
-							}
-						}
-					}
-					give_technology = { tech = tech_genome_mapping }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = pamyatnik
-							}
-						}
-					}
-					set_origin = origin_imperial_vassal
-				}
-				set_planet_flag = overlord_soviet
-			}
-			else_if = { # Overlord Post-Soviet
-				limit = {
-					any_system = { has_star_flag = lukashenko }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = mao
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = deyatel
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				set_planet_flag = overlord_post_soviet
-			}
-			else_if = { # Overlord Soviet
-				limit = {
-					any_system = { has_star_flag = deyatel }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = zaharova
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = lukashenko
-							}
-						}
-					}
-					capital_scope = {
-						while = {
-							count = 4
-							create_pop = {
-								species = owner_main_species
-								ethos = random
-							}
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_farming
-						}
-						add_district_and_planet_size_if_needed_effect = {
-							district = district_generator
-						}
-					}
-					set_origin = origin_default
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = mao
-							}
-						}
-					}
-					give_technology = { tech = tech_genome_mapping }
-				}
-				every_playable_country = {
-					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = pamyatnik
-							}
-						}
-					}
-					set_origin = origin_imperial_vassal
-				}
-				set_planet_flag = overlord_soviet
 			}
 			else = {
-				set_planet_flag = overlord_soviet
-				every_playable_country = {
+				event_target:origin_imperial_homeland_system = {
+					choose_imperial_overlord_country = yes
+				}
+				if = {
 					limit = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = pamyatnik
-							}
-						}
+						event_target:origin_imperial_homeland_system = { has_star_flag = is_chosen_overlord_soviet }
 					}
-					set_origin = origin_imperial_vassal
+					set_planet_flag = overlord_soviet
+				}
+				else_if = {
+					limit = {
+						event_target:origin_imperial_homeland_system = { has_star_flag = is_chosen_overlord_post_soviet }
+					}
+					set_planet_flag = overlord_post_soviet
 				}
 			}
 		}
@@ -3088,7 +2654,7 @@ overlord_system_4_init = { # First vassal
 				}
 				if = {
 					limit = {
-						NOT { any_system = { has_star_flag = international } }
+						NOT = { any_system = { has_star_flag = international } }
 					}
 					set_name = {
 						key="Койоакан"
@@ -3266,7 +2832,7 @@ overlord_system_4_init = { # First vassal
 				}
 				else_if = {
 					limit = {
-						NOT { any_system = { has_star_flag = mraxist } }
+						NOT = { any_system = { has_star_flag = mraxist } }
 					}
 					set_name = {
 						key="Нейро-Фоминск"
@@ -3446,7 +3012,7 @@ overlord_system_4_init = { # First vassal
 				}
 				else_if = {
 					limit = {
-						NOT { any_system = { has_star_flag = pamyatnik } }
+						NOT = { any_system = { has_star_flag = pamyatnik } }
 					}
 					set_name = {
 						key="Мемориал"
@@ -4061,7 +3627,7 @@ overlord_system_4_init = { # First vassal
 			}
 			if = {
 				limit = {
-					NOT { any_system = { has_star_flag = international } }
+					NOT = { any_system = { has_star_flag = international } }
 				}
 				set_name = {
 					key="Койоакан"
@@ -4071,7 +3637,7 @@ overlord_system_4_init = { # First vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = mraxist } }
+					NOT = { any_system = { has_star_flag = mraxist } }
 				}
 				set_name = {
 					key="Нейро-Фоминск"
@@ -4081,7 +3647,7 @@ overlord_system_4_init = { # First vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = pamyatnik } }
+					NOT = { any_system = { has_star_flag = pamyatnik } }
 				}
 				set_name = {
 					key="Мемориал"
@@ -4191,7 +3757,7 @@ overlord_system_5_init = { # Second vassal
 				}
 				if = {
 					limit = {
-						NOT { any_system = { has_star_flag = mraxist } }
+						NOT = { any_system = { has_star_flag = mraxist } }
 					}
 					set_name = {
 						key="Нейро-Фоминск"
@@ -4381,7 +3947,7 @@ overlord_system_5_init = { # Second vassal
 				}
 				else_if = {
 					limit = {
-						NOT { any_system = { has_star_flag = pamyatnik } }
+						NOT = { any_system = { has_star_flag = pamyatnik } }
 					}
 					set_name = {
 						key="Мемориал"
@@ -4552,7 +4118,7 @@ overlord_system_5_init = { # Second vassal
 				}
 				else_if = { # RKKA
 					limit = {
-						NOT { any_system = { has_star_flag = rkka } }
+						NOT = { any_system = { has_star_flag = rkka } }
 					}
 					set_name = {
 						key="Тоцкое"
@@ -5187,7 +4753,7 @@ overlord_system_5_init = { # Second vassal
 			}
 			if = {
 				limit = {
-					NOT { any_system = { has_star_flag = mraxist } }
+					NOT = { any_system = { has_star_flag = mraxist } }
 				}
 				set_name = {
 					key="Нейро-Фоминск"
@@ -5197,7 +4763,7 @@ overlord_system_5_init = { # Second vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = pamyatnik } }
+					NOT = { any_system = { has_star_flag = pamyatnik } }
 				}
 				set_name = {
 					key="Мемориал"
@@ -5207,7 +4773,7 @@ overlord_system_5_init = { # Second vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = rkka } }
+					NOT = { any_system = { has_star_flag = rkka } }
 				}
 				set_name = {
 					key="Ставка Генштаба"
@@ -5317,7 +4883,7 @@ overlord_system_6_init = { # Third vassal
 				}
 				if = {
 					limit = {
-						NOT { any_system = { has_star_flag = pamyatnik } }
+						NOT = { any_system = { has_star_flag = pamyatnik } }
 					}
 					set_name = {
 						key="Мемориал"
@@ -5499,7 +5065,7 @@ overlord_system_6_init = { # Third vassal
 				}
 				else_if = { # RKKA
 					limit = {
-						NOT { any_system = { has_star_flag = rkka } }
+						NOT = { any_system = { has_star_flag = rkka } }
 					}
 					set_name = {
 						key="Тоцкое"
@@ -5698,7 +5264,7 @@ overlord_system_6_init = { # Third vassal
 				}
 				else_if = { # Tannu Tuva
 					limit = {
-						NOT { any_system = { has_star_flag = tuva } }
+						NOT = { any_system = { has_star_flag = tuva } }
 					}
 					set_name = {
 						key="Кызыл"
@@ -6401,7 +5967,7 @@ overlord_system_6_init = { # Third vassal
 			}
 			if = {
 				limit = {
-					NOT { any_system = { has_star_flag = pamyatnik } }
+					NOT = { any_system = { has_star_flag = pamyatnik } }
 				}
 				set_name = {
 					key="Мемориал"
@@ -6411,7 +5977,7 @@ overlord_system_6_init = { # Third vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = rkka } }
+					NOT = { any_system = { has_star_flag = rkka } }
 				}
 				set_name = {
 					key="Ставка Генштаба"
@@ -6421,7 +5987,7 @@ overlord_system_6_init = { # Third vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = tuva } }
+					NOT = { any_system = { has_star_flag = tuva } }
 				}
 				set_name = {
 					key="Кызыл"
@@ -6536,7 +6102,7 @@ overlord_system_7_init = { # Fourth vassal
 				}
 				if = { # RKKA
 					limit = {
-						NOT { any_system = { has_star_flag = rkka } }
+						NOT = { any_system = { has_star_flag = rkka } }
 					}
 					set_name = {
 						key="Тоцкое"
@@ -6735,7 +6301,7 @@ overlord_system_7_init = { # Fourth vassal
 				}
 				else_if = { # Tannu Tuva
 					limit = {
-						NOT { any_system = { has_star_flag = tuva } }
+						NOT = { any_system = { has_star_flag = tuva } }
 					}
 					set_name = {
 						key="Кызыл"
@@ -6947,7 +6513,7 @@ overlord_system_7_init = { # Fourth vassal
 				}
 				else_if = { # Stakhanov
 					limit = {
-						NOT { any_system = { has_star_flag = stakhanov } }
+						NOT = { any_system = { has_star_flag = stakhanov } }
 					}
 					set_name = {
 						key="Донбасс"
@@ -7146,7 +6712,7 @@ overlord_system_7_init = { # Fourth vassal
 				}
 				else_if = {
 					limit = {
-						NOT { any_system = { has_star_flag = kgb } }
+						NOT = { any_system = { has_star_flag = kgb } }
 					}
 					set_name = {
 						key="Лубянка"
@@ -7807,7 +7373,7 @@ overlord_system_7_init = { # Fourth vassal
 			}
 			if = {
 				limit = {
-					NOT { any_system = { has_star_flag = rkka } }
+					NOT = { any_system = { has_star_flag = rkka } }
 				}
 				set_name = {
 					key="Ставка Генштаба"
@@ -7817,7 +7383,7 @@ overlord_system_7_init = { # Fourth vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = tuva } }
+					NOT = { any_system = { has_star_flag = tuva } }
 				}
 				set_name = {
 					key="Кызыл"
@@ -7827,7 +7393,7 @@ overlord_system_7_init = { # Fourth vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = stakhanov } }
+					NOT = { any_system = { has_star_flag = stakhanov } }
 				}
 				set_name = {
 					key="Донбасс"
@@ -7837,7 +7403,7 @@ overlord_system_7_init = { # Fourth vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = kgb } }
+					NOT = { any_system = { has_star_flag = kgb } }
 				}
 				set_name = {
 					key="Лубянка"
@@ -7847,7 +7413,7 @@ overlord_system_7_init = { # Fourth vassal
 			}
 			else_if = {
 				limit = {
-					NOT { any_system = { has_star_flag = dumatel } }
+					NOT = { any_system = { has_star_flag = dumatel } }
 				}
 				set_name = {
 					key="Родина"

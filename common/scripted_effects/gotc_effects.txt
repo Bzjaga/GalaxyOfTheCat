@@ -1,3 +1,465 @@
+#Choosing Shroudwalker Enclave To Generate
+choose_shroudwalker_enclave_country = {
+	if = {
+		limit = {
+			NOT = { any_country = { has_origin = origin_imperial_vassal } }
+		}
+		if = {
+			limit = {
+				any_system = { has_star_flag = mraxist }
+			}
+			set_planet_flag = enclave_dialectics
+		}
+		else = {
+			set_planet_flag = enclave_shroudwalker_default
+		}
+	}
+	else = {
+		event_target:shroudwalker_enclave_system = {
+			choose_imperial_overlord_country = yes
+		}
+		if = {
+			limit = {
+				any_system = { has_star_flag = is_chosen_overlord_soviet }
+			}
+			if = {
+				limit = {
+					AND = {
+						galaxy_size = tiny
+						NOT = { any_system = { has_star_flag = international } }
+					}
+				}
+				set_planet_flag = enclave_shroudwalker_default
+			}
+			else = {
+				set_planet_flag = enclave_dialectics
+			}
+		}
+		else = {
+			set_planet_flag = enclave_shroudwalker_default
+		}
+	}
+}
+
+#Choosing Overlord To Generate
+choose_imperial_overlord_country = {
+	if = { # Overlord Post-Soviet
+		limit = {
+			AND = {
+				any_system = { has_star_flag = zaharova }
+				any_system = { has_star_flag = lukashenko }
+			}
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = mao
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = deyatel
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		set_star_flag = is_chosen_overlord_post_soviet
+	}
+	else_if = { # Overlord Soviet
+		limit = {
+			AND = {
+				any_system = { has_star_flag = mao }
+				any_system = { has_star_flag = deyatel }
+			}
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = zaharova
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = lukashenko
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = mao
+					}
+				}
+			}
+			give_technology = { tech = tech_genome_mapping }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = pamyatnik
+					}
+				}
+			}
+			set_origin = origin_imperial_vassal
+		}
+		set_star_flag = is_chosen_overlord_soviet
+	}
+	else_if = { # Overlord Post-Soviet
+		limit = {
+			any_system = { has_star_flag = zaharova }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = mao
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = deyatel
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		set_star_flag = is_chosen_overlord_post_soviet
+	}
+	else_if = { # Overlord Soviet
+		limit = {
+			any_system = { has_star_flag = mao }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = zaharova
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = lukashenko
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = mao
+					}
+				}
+			}
+			give_technology = { tech = tech_genome_mapping }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = pamyatnik
+					}
+				}
+			}
+			set_origin = origin_imperial_vassal
+		}
+		set_star_flag = is_chosen_overlord_soviet
+	}
+	else_if = { # Overlord Post-Soviet
+		limit = {
+			any_system = { has_star_flag = lukashenko }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = mao
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = deyatel
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		set_star_flag = is_chosen_overlord_post_soviet
+	}
+	else_if = { # Overlord Soviet
+		limit = {
+			any_system = { has_star_flag = deyatel }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = zaharova
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = lukashenko
+					}
+				}
+			}
+			capital_scope = {
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+						ethos = random
+					}
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			set_origin = origin_default
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = mao
+					}
+				}
+			}
+			give_technology = { tech = tech_genome_mapping }
+		}
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = pamyatnik
+					}
+				}
+			}
+			set_origin = origin_imperial_vassal
+		}
+		set_star_flag = is_chosen_overlord_soviet
+	}
+	else = {
+		set_star_flag = is_chosen_overlord_soviet
+		every_playable_country = {
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = pamyatnik
+					}
+				}
+			}
+			set_origin = origin_imperial_vassal
+		}
+	}
+}
+
 create_fear_of_the_dark_country_korea = {
 	create_country = {
 		name = {
@@ -35,8 +497,8 @@ create_fear_of_the_dark_country_korea = {
 			create_leader = {
 				class = official
 				species = event_target:fotd_country.species
-				name = "Ким Ё Чжон"
-				gender=female
+				name = "Ким Кимыч"
+				gender=male
 				skill = 1
 				traits = {
 					trait = trait_ruler_industrialist
@@ -121,7 +583,107 @@ setup_fear_of_the_dark_pre_ftl_korea = {
 	}
 }
 
+create_shroudwalker_enclave_country_default = {
+	create_species = {
+		homeworld = this
+		name = random
+		class = SHROUDWALKER
+		namelist = NECROID1
+		portrait = random
+		traits = {
+			ideal_planet_class = pc_habitat
+			trait = trait_psionic
+			trait = random_traits
+		}
+	}
+	last_created_species = {
+		save_event_target_as = shroudwalker_enclave_species
+	}
+	create_country = {
+		name = random
+		type = enclave
+		authority = "auth_oligarchic"
+		civics = {
+			civic = civic_shroudwalker_enclave
+		}
+		origin = "origin_default"
+		species = event_target:shroudwalker_enclave_species
+		flag = {
+			icon = {
+				category = "special"
+				file = "shroudwalkers.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "sinus.dds"
+			}
+			colors = {
+				"black"
+				"purple"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_spiritualist
+			ethic = ethic_egalitarian
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			save_global_event_target_as = shroudwalker_enclave_country
+			set_country_flag = enclave_shroudwalker_default
+			set_country_flag = shroudwalker_enclave_country
+			set_graphical_culture = mammalian_01
+			#Create capital starbase
+			create_fleet = {
+				name = "NAME_Shroud_Teachers"
+				settings = { spawn_debris = no }
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = random
+						design = "NAME_Shroudwalker_Enclave_Station"
+						graphical_culture = prev
+					}
+					set_location = {
+						target = event_target:shroudwalker_enclave_planet
+						distance = 20
+					}
+					save_event_target_as = CustomCapital
+				}
+			}
+			set_custom_capital_location = event_target:shroudwalker_enclave_planet
+			#Create ruler
+			create_leader = {
+				name = random
+				class = random_ruler
+				species = event_target:shroudwalker_enclave_species
+				skill = 5
+				traits = {
+					trait = leader_trait_expertise_psionics
+				}
+			}
+			set_leader = last_created_leader
+		}
+	}
+}
+
 create_shroudwalker_enclave_country_dialectics = {
+	create_species = {
+		homeworld = this
+		name = "Диалектик"
+		class = SHROUDWALKER
+		namelist = HUMAN1
+		portrait = random
+		traits = {
+			ideal_planet_class = pc_habitat
+			trait = trait_psionic
+			trait = random_traits
+		}
+	}
+	last_created_species = {
+		save_event_target_as = shroudwalker_enclave_species
+	}
 	create_country = {
 		name = {
 			key="Красный Университет"
@@ -157,6 +719,7 @@ create_shroudwalker_enclave_country_dialectics = {
 		ignore_initial_colony_error = yes
 		effect = {
 			save_global_event_target_as = shroudwalker_enclave_country
+			set_country_flag = enclave_dialectics
 			set_country_flag = shroudwalker_enclave_country
 			set_graphical_culture = mammalian_01
 			#Create capital starbase
@@ -256,5 +819,10 @@ create_shroudwalker_enclave_starbase_dialectics_03 = {
 			save_global_event_target_as = shroudwalker_starbase
 		}
 	}
-} # create_shroudwalker_enclave_species_dialectics
+}
+
+#For use in overlord initializer; planet scope
+create_overlord_soviet = {
+	
+}
 
