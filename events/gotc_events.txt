@@ -1,0 +1,760 @@
+################################
+#
+# Galaxy of the Cat Events
+#
+###############################
+namespace = gotc
+
+#########################
+# TEACHERS OF THE SHROUD
+#########################
+
+# Start / Setup event
+country_event = {
+	id = gotc.5601
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_imperial_vassal
+        capital_scope = { solar_system = { has_star_flag = mraxist } }
+		exists = event_target:shroudwalker_enclave_country #set up in initializers
+	}
+
+	immediate = {
+		# Have met aliens (the Shroudwalkers)
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
+
+		# Get to know the Shroudwalkers from the start
+		establish_communications_no_message = event_target:shroudwalker_enclave_country
+
+		# Set up all necessary country flags
+		set_country_flag = shroudwalker_enclave_diplomacy_engaged
+		set_country_flag = shroudwalker_enclave_bought_shroud_beacon
+
+		every_system = {
+			limit = {
+				has_star_flag = shroudwalker_enclave_system
+			}
+			root = { set_visited = prev }
+		}
+		if = {
+			limit = {
+				capital_star.solar_system = {
+					any_system_planet = {
+						uninhabitable_regular_planet = yes
+					}
+				}
+			}
+			capital_star.solar_system = {
+				while = {
+					count = 2
+					random_system_planet = {
+						limit = {
+							uninhabitable_regular_planet = yes
+							NOT = { has_modifier = terraforming_candidate }
+						}
+						weights = {
+							base = 1
+							modifier = {
+								add = trigger:planet_size
+							}
+						}
+						change_pc = pc_shrouded
+						clear_planet_modifiers = yes
+						clear_deposits = yes
+					}
+				}
+			}
+		}
+
+		# Let them start researching Psionic Theory from the get-go
+		add_research_option = tech_psionic_theory
+    }
+}
+
+##################
+# IMPERIAL VASSAL
+##################
+
+# AI Setup
+country_event = {
+	id = gotc.5710
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_imperial_vassal
+		is_ai = yes
+	}
+
+	immediate = {
+		overlord = { save_event_target_as = overlord_empire }
+
+		
+		if = { # Negative opinion for better rivaly
+			limit = {
+				root = { has_country_flag = origin_imperial_vassal_rival_country }
+			}
+			add_opinion_modifier = {
+				modifier = opinion_swept_my_world
+				who = event_target:overlord_empire
+			}
+		}
+		else = {
+			# Opinion Modifiers
+			add_opinion_modifier = {
+				modifier = opinion_imperial_overlord_ai_opinion
+				who = event_target:overlord_empire
+			}
+			event_target:overlord_empire = {
+				every_subject = {
+					limit = {
+						is_ai = no
+					}
+					root = {
+						add_opinion_modifier = {
+							modifier = opinion_imperial_vassal_ai_opinion
+							who = prev
+						}
+					}
+				}
+			}
+		}
+
+		random_agreement = { # Agreement Terms with Overlord
+			limit = {
+				owner = { is_same_value = root.overlord }
+				target = { is_same_value = root }
+			}
+			set_agreement_terms = { # Generic values everyone gets
+				subject_holdings_limit = subject_holdings_limit_1
+				joins_subject_wars = joins_subject_wars_all
+			}
+			if = { # Rival Country specific
+				limit = {
+					root = { has_country_flag = origin_imperial_vassal_rival_country }
+				}
+				set_agreement_terms = {
+					subject_diplomacy = subject_can_do_diplomacy
+				}
+			}
+			else = { # Rest
+				set_agreement_terms = {
+					subject_diplomacy = subject_can_not_do_diplomacy
+				}
+				set_agreement_terms = {
+					subject_expand = subject_can_expand_with_tithe
+				}
+			}
+			if = {
+				limit = {
+					root.capital_scope = {
+						solar_system = {
+							has_star_flag = tuva
+						}
+					}
+				}
+				set_agreement_terms = { # only Tuva can be integrated and must defend overlord
+					subject_integration = subject_can_be_integrated
+					joins_overlord_wars = joins_overlord_wars_defensive
+					subject_sensors = subject_gets_sensors
+					subject_expand = subject_cannot_expand
+				}
+			}
+			else = {
+				set_agreement_terms = {
+					subject_integration = subject_can_not_be_integrated
+					joins_overlord_wars = joins_overlord_wars_none
+				}
+			}
+		}
+
+		if = { # Rival Country bonuses
+			limit = {
+				has_country_flag = origin_imperial_vassal_rival_country
+			}
+			
+			# Tech for better rivaling
+			#give_physics_tech_tier_1_effect = yes
+			give_engineering_tech_tier_1_effect = yes
+			give_society_tech_tier_1_effect = yes
+
+			create_fleet = {
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = random
+						random_existing_design = science
+					}
+					set_location = root.capital_star
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = root
+					create_ship = {
+						name = random
+						random_existing_design = constructor
+					}
+					set_location = root.capital_star
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = root
+					while = {
+						count = 3
+						create_ship = {
+							name = random
+							design = NAME_Dagger
+						}
+					}
+					set_location = root.capital_star
+				}
+			}
+			add_resource = {
+				energy = 2000
+				food = 1000
+				minerals = 1000
+				influence = 300
+			}
+		}
+
+		# ai should get his own specialization at start like players do!
+		if = { # except for Tuva
+			limit = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = tuva
+					}
+				}
+			}
+			overlord = {add_resource = {influence = 1}} # subjugate Tuva!
+		}
+		else_if = { # and rival country
+			limit = {
+				has_country_flag = origin_imperial_vassal_rival_country
+			}
+			add_resource = {influence = 100} # help him?
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_militarist
+				}
+			}
+			origin_imperial_fiefdom_bulwark_specialization_effect = yes
+		}
+		else_if = {
+			limit = {
+				has_ethic = ethic_fanatic_materialist
+			}
+			origin_imperial_fiefdom_scholarium_specialization_effect = yes
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_fanatic_egalitarian
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
+				}
+			}
+			origin_imperial_fiefdom_prospectorium_specialization_effect = yes
+		}
+		else_if = {
+			limit = {
+				has_ethic = ethic_materialist
+			}
+			origin_imperial_fiefdom_scholarium_specialization_effect = yes
+		}
+		# Holding Building
+		capital_scope = {
+			add_holding = {
+				holding = holding_garrison
+				owner = event_target:overlord_empire
+			}
+		}
+		store_country_backup_data = {room = yes}
+	}
+}
+
+## Overlord Dissolution Events
+# Pre-Event
+country_event = { # Overlord
+	id = gotc.5715
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_imperial_vassal_overlord
+		years_passed >= 35
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+			}
+			country_event = {
+				id = gotc.5720
+				days = 6544 # Koba's death
+			}
+		}
+		else = {
+			country_event = {
+				id = gotc.5720
+				days = 1825
+				random = 9125
+			}
+		}
+	}
+}
+
+# Previous Leader dies, succession crisis
+country_event = { # Overlord version
+	id = gotc.5720
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_imperial_vassal_overlord
+	}
+
+	immediate = {
+		heir = {
+			save_event_target_as = overlord_heir
+		}
+		ruler = {
+			save_event_target_as = overlord_ruler
+			kill_leader = { show_notification = no }
+		}
+		country_event = {
+			id = gotc.5729
+			days = 360
+			random = 1440
+		}
+		every_subject = {
+			country_event = {
+				id = origin.5725
+			}
+		}
+	}
+}
+# Preparing a Dissolution of the Empire
+country_event = {
+	id = gotc.5729
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_imperial_vassal_overlord
+	}
+
+	immediate = {
+		while = { # add fleet up to naval cap
+			limit = { used_naval_capacity_percent < 0.95 }
+			create_fleet_from_naval_cap = 0.1
+		}
+		if = {
+			limit = {
+				event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+			}
+			every_owned_planet = {
+				limit = { is_capital = yes }
+				clear_global_event_target = origin_imperial_homeland
+				remove_planet_flag = overlord_soviet
+				set_planet_flag = previous_imperial_capital
+			}
+			every_owned_planet = {
+				limit = { has_planet_flag = post_imperial_capital }
+				set_capital = yes
+				save_global_event_target_as = origin_imperial_homeland
+				set_planet_flag = overlord_soviet
+			}
+		}
+		country_event = {
+			id = gotc.5730
+			days = 1
+		}
+	}
+}
+
+# Dissolution of the Empire
+country_event = { # Overlord Version
+	id = gotc.5730
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_imperial_vassal_overlord
+	}
+
+	immediate = {
+		save_event_target_as = previous_overlord
+		set_country_flag = origin_imperial_vassal_ex_overlord
+		set_origin = origin_default
+		every_megastructure = {
+			limit = {
+				is_megastructure_type = gateway_derelict
+			}
+			solar_system = {
+				spawn_megastructure = {
+					type = "gateway_ruined"
+					coords_from = prev
+				}
+			}
+			remove_megastructure = this
+		}
+		if = {
+			limit = {
+				event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+			}
+			set_empire_name = "Кукурузный Функционализм"
+			clear_ethos = yes
+			country_add_ethic = ethic_authoritarian
+			country_add_ethic = ethic_fanatic_materialist
+			change_government = {
+				authority = auth_oligarchic
+				remove_invalid_civics = yes
+				civics = {
+					civic = civic_functional_architecture
+					civic = civic_corvee_system
+					civic = civic_crafters
+				}
+			}
+			change_country_flag = {
+				icon={
+					category="plantoid"
+					file="plantoid_03.dds"
+				}
+				background={
+					category="backgrounds"
+					file="flag_BG_36.dds"
+				}
+				colors={
+					"desert_yellow"
+					"red"
+					"black"
+					"null"
+				}
+			}
+			every_controlled_planet = {
+				limit = { has_planet_flag = post_imperial_capital }
+				set_name = "Целиноград"
+			}
+			ordered_system_within_border = {
+				limit = { is_capital_system = yes }
+				set_name = "Целиноград"
+			}
+			change_dominant_species = { species = event_target:post_imperial_species }
+			create_leader = {
+				# He's going to introduce you to the mother of Kuzma
+				species = event_target:post_imperial_species
+				class = official
+				name = "Кукуруз"
+				gender=male
+				skill = 2
+				set_age = 59
+				traits = {
+					trait = trait_ruler_architectural_sense
+					trait = leader_trait_settler_3
+					trait = leader_trait_stubborn
+				}
+			}
+			set_male_ruler_title = "Десталинизатор"
+			set_female_ruler_title = "Десталинизаторша"
+			set_leader = last_created_leader
+		}
+		else_if = {
+			limit = {
+				event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+			}
+			change_government = {
+				authority = auth_dictatorial
+				remove_invalid_civics = yes
+				civics = {
+					civic = civic_byzantine_bureaucracy
+					civic = civic_police_state
+					civic = civic_memorialist
+				}
+			}
+		}
+		remove_modifier = imperial_vassal_ai_modifier
+		every_subject = { # Release and notify current subjects
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				set_subject_of = { who = none }
+				if = {
+					limit = {
+						AND = {
+							event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+							capital_scope = {
+								solar_system = {
+									has_star_flag = mao
+								}
+							}
+						}
+					}
+					add_opinion_modifier = {
+						modifier = opinion_cracked_my_world
+						who = root
+					}
+				}
+			}
+			country_event = { id = origin.5735 }
+		}
+		while = { # iterate through all splintering worlds
+			limit = { any_owned_planet = { is_capital = no } }
+			random_system_within_border = { # we want a country per colonized system
+				limit = { is_capital_system = no }
+				random_system_planet = {
+					limit = {
+						AND = {
+							is_colony = yes
+							is_controlled_by = root
+						}
+					}
+					if = {
+						limit = {
+							AND = {
+								event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+								has_planet_flag = previous_imperial_capital
+							}
+						}
+						create_country = {
+							name = {
+								key="Выродившееся, но рабочее государство"
+								literal=yes
+							}
+							type = default
+							adjective="Преданно-революционн."
+							authority = auth_dictatorial
+							species = event_target:origin_imperial_species
+							flag = {
+								icon={
+									category="human"
+									file="flag_human_8.dds"
+								}
+								background={
+									category="backgrounds"
+									file="pattern_01.dds"
+								}
+								colors={
+									"burgundy"
+									"black"
+									"null"
+									"null"
+								}
+							}
+							civics = {
+								civic = civic_cutthroat_politics
+								civic = civic_reanimated_armies
+								civic = civic_police_state
+							}
+							ethos = {
+								ethic = ethic_fanatic_authoritarian
+								ethic = ethic_materialist
+							}
+							origin = origin_default
+							day_zero_contact = no
+							effect = {
+								set_country_flag = origin_imperial_vassal_ex_overlord
+								set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+								set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+								save_event_target_as = current_splinter
+
+								every_playable_country = { # Establish Contact with previous vassals
+									limit = {
+										has_communications = root
+										NOT = { has_communications = event_target:current_splinter }
+									}
+									establish_communications_no_message = event_target:current_splinter
+								}
+								every_playable_country = {
+									limit = {
+										NOT = { has_communications = root }
+										has_active_first_contact_with = root
+									}
+									establish_contact = {
+										who = event_target:current_splinter
+										location = event_target:current_splinter.capital_star
+									}
+								}
+
+								root = { # Give them one of the previous Overlord's fleets
+									random_owned_fleet = {
+										set_owner = event_target:current_splinter
+									}
+								}
+
+								# Give them tech from previous Overlord
+								copy_techs_from = {
+									target = event_target:previous_overlord
+								}
+
+								# Give them some starting resources
+								add_basic_resources_effect = { VALUE = 3000 }
+								add_manufactured_resources_effect = { VALUE = 1500 }
+								add_advanced_resources_effect = { VALUE = 1000 }
+								add_resource = {
+									unity = 7000
+									mult = root.trigger:num_tradition_categories
+								}
+
+								declare_war = { # Start a war with the previous Overlord
+									target = root
+									name = {
+										key = "NAME_Imperial_War"
+									}
+									attacker_war_goal = wg_subjugation
+								}
+							}
+						}
+						set_owner = event_target:current_splinter
+						last_created_country = {
+							create_leader = {
+								# Beware of Beria
+								species = event_target:origin_imperial_species
+								class = official
+								name = "Лаврушка"
+								gender=male
+								skill = 3
+								set_age = 54
+								traits = {
+									trait = leader_trait_shadow_broker_3
+									trait = leader_trait_adaptable
+								}
+							}
+							set_male_ruler_title = "Эффективный Менеджер"
+							set_female_ruler_title = "Эффективный Менеджер"
+							set_leader = last_created_leader
+							
+							# Give them a fleet of their own
+							create_fleet_from_naval_cap = 1
+						}
+					}
+					else = {
+						create_country = {
+							name = random
+							type = default
+							authority = random
+							civics = random
+							species = event_target:origin_imperial_species
+							ethos = random
+							origin = origin_default
+							day_zero_contact = no
+							effect = {
+								set_country_flag = origin_imperial_vassal_ex_overlord
+								set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+								set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+								save_event_target_as = current_splinter
+
+								every_playable_country = { # Establish Contact with previous vassals
+									limit = {
+										has_communications = root
+										NOT = { has_communications = event_target:current_splinter }
+									}
+									establish_communications_no_message = event_target:current_splinter
+								}
+								every_playable_country = {
+									limit = {
+										NOT = { has_communications = root }
+										has_active_first_contact_with = root
+									}
+									establish_contact = {
+										who = event_target:current_splinter
+										location = event_target:current_splinter.capital_star
+									}
+								}
+
+								# Give them a fleet of their own
+								create_fleet = {
+									effect = {
+										set_owner = event_target:current_splinter
+										while = {
+											count = 10
+											create_ship = {
+												name = random
+												design = NAME_Ravager
+											}
+										}
+										set_location = event_target:current_splinter.capital_star
+									}
+								}
+
+								# Give them some starting resources
+								add_basic_resources_effect = { VALUE = 3000 }
+								add_manufactured_resources_effect = { VALUE = 1500 }
+								add_advanced_resources_effect = { VALUE = 1000 }
+								add_resource = {
+									unity = 7000
+									mult = root.trigger:num_tradition_categories
+								}
+
+								event_target:previous_overlord = {
+									declare_war = { # Start a war with the previous Overlord
+										target = event_target:current_splinter
+										name = {
+											key = "NAME_Imperial_War"
+										}
+										attacker_war_goal = wg_subjugation
+									}
+								}
+
+								root = { # Give them one of the previous Overlord's fleets
+									random_owned_fleet = {
+										limit = {
+											any_owned_ship = {
+												is_ship_class = shipclass_military
+											}
+										}
+										clear_orders = yes
+										set_owner = event_target:current_splinter
+									}
+								}
+
+								# Give them tech from previous Overlord
+								copy_techs_from = {
+									target = event_target:previous_overlord
+								}
+							}
+						}
+						set_owner = event_target:current_splinter
+					}
+				}
+				every_system_planet = {
+					limit = {
+						AND = {
+							is_colony = yes
+							is_controlled_by = root
+						}
+					}
+					set_owner = event_target:current_splinter
+				}
+				if = {
+					limit = { exists = event_target:current_splinter }
+					starbase = { set_owner = event_target:current_splinter }
+					#if = {
+					#	limit = {
+					#		event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+					#	}
+					#	add_claims = { who = root num_of_claims = 1 show_notification = no}
+					#}
+				}
+			}
+		}
+		create_fleet_from_naval_cap = 0.7
+	}
+}
