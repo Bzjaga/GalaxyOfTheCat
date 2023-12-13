@@ -3651,7 +3651,7 @@ imperial_origin_start_effect = {
 			}
 		}
 		else = {
-			country_event = { id = origin.5710 }
+			country_event = { id = gotc.5710 }
 		}
 	}
 }
