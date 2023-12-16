@@ -797,7 +797,6 @@
 	}
 }
 
-
 # korea
 "Чеболистан" = {
 	name = "Чеболистан"
@@ -875,6 +874,162 @@
 		}
 		trait="leader_trait_corrupt"
 		trait="trait_ruler_deep_connections_2"
+		leader_class = official
+	}
+}
+
+# kadyrov
+"Ичкерская Республика Чечения" = {
+	name = "Ичкерская Республика Чечения"
+	adjective = "Ичкерск"
+	spawn_enabled = always
+
+	ship_prefix = "ICH"
+
+	species = {
+		class = "MAM"
+		portrait = "mam10"
+		name = "Чеченец"
+		plural = "Чеченцы"
+		adjective = "Чеченск"
+		name_list = "TAJICAUCASIAN"
+		gender = male
+		trait = "trait_unruly"
+		trait = "trait_quarrelsome"
+		trait = "trait_very_strong"
+		trait = "trait_noxious"
+		trait = "trait_enduring"
+	}
+
+	room = "scrappy_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_warrior_culture" "civic_barbaric_despoilers" }
+	government = gov_bandit_kingdom
+	origin = "origin_imperial_vassal"
+
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_militarist"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "Грозный"
+	planet_class = "pc_alpine"
+	system_name = "Грозный"
+
+	initializer = "custom_starting_init_kadyrov"
+	graphical_culture = "lithoid_01"
+	city_graphical_culture = "toxoid_01"
+
+	empire_flag={
+		icon={
+			category="human"
+			file="flag_human_6.dds"
+		}
+		background={
+			category="backgrounds"
+			file="diagonal_stripe.dds"
+		}
+		colors={
+			"green"
+			"pink_purple"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Рамзан Кадыров"
+		gender = male
+		portrait = "mam10"
+		texture = 6
+		attachment=0
+		clothes=2
+		ruler_title={
+			key="Дон"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Донна"
+			literal=yes
+		}
+		trait="trait_ruler_warlike"
+		leader_class = commander
+	}
+}
+
+# solovyov
+"Вечер с Соловьёвым" = {
+	name = "Вечер с Соловьёвым"
+	adjective = "Вечерне-Соловьёвск"
+	spawn_enabled = always
+
+	ship_prefix = "SLV"
+
+	species = {
+		class = "AVI"
+		portrait = "avi1"
+		name = "Соловьёв"
+		plural = "Соловьёвы"
+		adjective = "Соловьёвск"
+		name_list = "HUMAN2"
+		trait = "trait_traditional"
+		trait = "trait_charismatic"
+		trait = "trait_conformists"
+		trait = "trait_unruly"
+		trait = "trait_slow_learners"
+	}
+
+	room = "personality_peaceful_traders_room"
+
+	authority = "auth_corporate"
+	civics = { "civic_media_conglomerate" "civic_permanent_employment" }
+	government = gov_megacorporation
+	origin = "origin_shoulders_of_giants"
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_fanatic_xenophobe"
+
+	planet_name = "Останкино"
+	planet_class = "pc_continental"
+	system_name = "Останкино"
+
+	initializer = "custom_starting_init_solovyov"
+	graphical_culture = "avian_01"
+	city_graphical_culture = "avian_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_9.dds"
+		}
+		background={
+			category="backgrounds"
+			file="new_dawn.dds"
+		}
+		colors={
+			"bright_yellow"
+			"red"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Владимир Рудольфович"
+		gender = male
+		portrait = "avi1"
+		texture = 2
+		attachment=0
+		clothes=2
+		ruler_title={
+			key="Пропагандон"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Пропагандониха"
+			literal=yes
+		}
+		trait="trait_ruler_eye_for_talent"
 		leader_class = official
 	}
 }

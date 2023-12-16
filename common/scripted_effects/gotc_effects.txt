@@ -2128,8 +2128,8 @@ create_imperial_vassal_tuva = {
 			key="Тувинск"
 			literal=yes
 		}
-		class = "MAM"
-		portrait = "mam10"
+		class = "AVI"
+		portrait = "avi9"
 		name_list="HUM2"
 		traits = {
 			trait = "trait_nomadic"

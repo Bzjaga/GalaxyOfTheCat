@@ -11814,6 +11814,7 @@ requires_actor_not_selective_kinship: "$TRIGGER_FAIL$§RWe are [Root.GetSpeciesC
  name_list_FUN2:0 "Fungoid 2"
  name_list_BABULKA:0 "Babulkian"
  name_list_JEW:0 "Jewish"
+ name_list_TAJICAUCASIAN: "Tajicaucasian"
  name_list_HUM3:0 "Humanoid 3"
  name_list_HUM4:0 "Humanoid 4"
  name_list_HUM2:0 "Humanoid 2"
