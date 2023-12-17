@@ -39,13 +39,13 @@ planet_event = {
 
 	immediate = {
 
-		owner = {
-			add_modifier = {
-				modifier = damage_vs_superior_empires_mult = 0.15
-				days = -1
-				multiplier = 0.15
-			}
-		}
+		#owner = {
+		#	add_modifier = {
+		#		modifier = damage_vs_superior_empires_mult
+		#		days = -1
+		#		multiplier = 0.15
+		#	}
+		#}
 
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_farming_uncapped
@@ -60,7 +60,7 @@ planet_event = {
 			add_planet_devastation = 50
 			add_modifier = {
 				modifier = payback_debris_field
-				days = 3600
+				days = 2880 # 8 years
 			}
 		}
 		else = {
@@ -71,7 +71,7 @@ planet_event = {
 			}
 			add_modifier = {
 				modifier = payback_unified_purpose
-				days = 5760 # 16 years
+				days = 7200
 			}
 		}
 		while = {
