@@ -2637,8 +2637,9 @@ generate_start_pops = {
 			limit = {
 				solar_system = { has_star_flag = solovyov }
 			}
-			#assembling_species = event_target:vatnic_species
-			#forced_assembling_species = yes
+			root.owner = {
+				country_event = { id = gotc.1 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
+			}
 		}
 		else = {
 			while = {

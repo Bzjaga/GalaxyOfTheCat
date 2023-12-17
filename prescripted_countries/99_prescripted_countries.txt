@@ -897,7 +897,7 @@
 		trait = "trait_unruly"
 		trait = "trait_quarrelsome"
 		trait = "trait_very_strong"
-		trait = "trait_noxious"
+		trait = "trait_resilient"
 		trait = "trait_enduring"
 	}
 
@@ -906,7 +906,7 @@
 	authority = "auth_dictatorial"
 	civics = { "civic_warrior_culture" "civic_barbaric_despoilers" }
 	government = gov_bandit_kingdom
-	origin = "origin_imperial_vassal"
+	origin = "origin_default"
 
 	ethic = "ethic_xenophobe"
 	ethic = "ethic_militarist"
@@ -958,8 +958,8 @@
 }
 
 # solovyov
-"Вечер с Соловьёвым" = {
-	name = "Вечер с Соловьёвым"
+"Соловьёв LIVE" = {
+	name = "Соловьёв LIVE"
 	adjective = "Вечерне-Соловьёвск"
 	spawn_enabled = always
 
@@ -976,7 +976,7 @@
 		trait = "trait_charismatic"
 		trait = "trait_conformists"
 		trait = "trait_unruly"
-		trait = "trait_slow_learners"
+		trait = "trait_decadent"
 	}
 
 	room = "personality_peaceful_traders_room"

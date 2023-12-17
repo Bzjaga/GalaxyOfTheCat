@@ -5,6 +5,177 @@
 ###############################
 namespace = gotc
 
+# solovyov
+country_event = {
+	id = gotc.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+        capital_scope = { solar_system = { has_star_flag = solovyov } }
+	}
+
+	immediate = {
+		event_target:vatnic_species_zombie = {
+			set_slavery_type = {
+				type = slavery_military
+				country = root.owner
+				cooldown = yes
+			}
+		}
+	}
+}
+
+# kadyrov
+planet_event = {
+	id = gotc.4000
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		solar_system = { has_star_flag = kadyrov }
+	}
+
+	immediate = {
+
+		owner = {
+			add_modifier = {
+				modifier = damage_vs_superior_empires_mult = 0.15
+				days = -1
+				multiplier = 0.15
+			}
+		}
+
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_farming_uncapped
+		}
+
+		# We want a clean slate building-wise, but to keep the districts.
+		remove_all_buildings = yes
+		if = {
+			limit = {
+				owner = { is_subject = yes }
+			}
+			add_planet_devastation = 50
+			add_modifier = {
+				modifier = payback_debris_field
+				days = 3600
+			}
+		}
+		else = {
+			add_planet_devastation = 33
+			add_modifier = {
+				modifier = payback_debris_field
+				days = 2880 # 8 years
+			}
+			add_modifier = {
+				modifier = payback_unified_purpose
+				days = 5760 # 16 years
+			}
+		}
+		while = {
+			count = 6
+			add_deposit = d_ship_debris_payback_blocker
+		}
+		# 3 jobs
+		add_building = building_capital
+		add_building = building_clinic
+		add_building = building_research_lab_1
+		ruin_building = building_research_lab_1
+		add_building = building_mineral_purification_plant
+		ruin_building = building_mineral_purification_plant
+		add_building = building_energy_grid
+		ruin_building = building_energy_grid
+
+		# ambient objects, for decoration
+		set_planet_flag = has_orbital_debris
+		create_ambient_object = {
+			type = "ancient_battlefield_object"
+			use_3d_location = yes
+			entity_offset_height = 10
+			location = this
+		}
+		create_ambient_object = {
+			type = "ancient_battlefield_02_object"
+			use_3d_location = yes
+			entity_offset_height = 0
+			location = this
+		}
+		while = {
+			count = 5
+			create_ambient_object = {
+				type = "small_debris_object"
+				use_3d_location = yes
+				entity_offset_height = { min = 10 max = -10 }
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 200
+					angle = random
+				}
+			}
+		}
+		while = {
+			count = 5
+			create_ambient_object = {
+				type = "abandoned_ship_2_object"
+				use_3d_location = no
+				entity_offset_height = { min = 20 max = -20 }
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 150
+					angle = random
+				}
+			}
+		}
+		if = {
+			limit = {
+				num_pops > 18
+			}
+			while = {
+				limit = { num_pops > 18 }
+				random_owned_pop = {
+					limit = {
+						is_same_species = root.owner.species
+					}
+					kill_pop = yes
+				}
+			}
+		}
+		solar_system = {
+			system_event = {
+				id = gotc.4001
+				days = 23040
+			}
+		}
+	}
+}
+
+system_event = {
+	id = gotc.4001
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_system_ambient_object = {
+			limit = {
+				is_ambient_object_type = payback_site_ship_object
+			}
+			destroy_ambient_object = this
+		}
+		random_system_planet = {
+			limit = { has_planet_flag = has_orbital_debris }
+			remove_planet_flag = has_orbital_debris
+		}
+	}
+}
+
 #########################
 # TEACHERS OF THE SHROUD
 #########################
@@ -175,7 +346,16 @@ country_event = {
 
 		if = { # Rival Country bonuses
 			limit = {
-				has_country_flag = origin_imperial_vassal_rival_country
+				AND = {
+					has_country_flag = origin_imperial_vassal_rival_country
+					NOT = {
+						capital_scope = {
+							solar_system = {
+								has_star_flag = kadyrov
+							}
+						}
+					}
+				}
 			}
 			
 			# Tech for better rivaling
@@ -235,12 +415,12 @@ country_event = {
 			}
 			overlord = {add_resource = {influence = 1}} # subjugate Tuva!
 		}
-		else_if = { # and rival country
-			limit = {
-				has_country_flag = origin_imperial_vassal_rival_country
-			}
-			add_resource = {influence = 100} # help him?
-		}
+		#else_if = { # and rival country
+		#	limit = {
+		#		has_country_flag = origin_imperial_vassal_rival_country
+		#	}
+		#	add_resource = {influence = 100} # help him?
+		#}
 		else_if = {
 			limit = {
 				OR = {
@@ -249,6 +429,32 @@ country_event = {
 				}
 			}
 			origin_imperial_fiefdom_bulwark_specialization_effect = yes
+			if = { # kadyrov bonuses
+				limit = {
+					AND = {
+						has_country_flag = origin_imperial_vassal_rival_country
+						capital_scope = {
+							solar_system = {
+								has_star_flag = kadyrov
+							}
+						}
+					}
+				}
+				random_agreement = {
+					limit = {
+						owner = { is_same_value = root.overlord }
+						target = { is_same_value = root }
+					}
+					set_agreement_terms = {
+						joins_overlord_wars = joins_overlord_wars_all
+						subject_holdings_limit = subject_holdings_limit_4
+						resource_subsidies_advanced = -0.6
+						resource_subsidies_research = -0.45
+						resource_subsidies_basic = -0.3
+						resource_subsidies_strategic = -0.15
+					}
+				}
+			}
 		}
 		else_if = {
 			limit = {
@@ -510,6 +716,22 @@ country_event = { # Overlord Version
 					add_opinion_modifier = {
 						modifier = opinion_cracked_my_world
 						who = root
+					}
+				}
+				else_if = {
+					limit = {
+						AND = {
+							event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+							capital_scope = {
+								solar_system = {
+									has_star_flag = kadyrov
+								}
+							}
+						}
+					}
+					add_modifier = {
+						modifier = payback_unified_purpose
+						days = 7200
 					}
 				}
 			}

@@ -2135,7 +2135,15 @@ overlord_system_4_init = { # First vassal
 				limit = {
 					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
 				}
-				create_imperial_vassal_wagner = yes
+				if = {
+					limit = {
+						NOT = { any_system = { has_star_flag = kadyrov } }
+					}
+					create_imperial_vassal_kadyrov = yes
+				}
+				else = {
+					create_imperial_vassal_wagner = yes
+				}
 			}
 			last_created_country = {
 				save_global_event_target_as = origin_imperial_homeland_country_2
@@ -2313,7 +2321,15 @@ overlord_system_5_init = { # Second vassal
 				limit = {
 					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
 				}
-				create_imperial_vassal_roskosmos = yes
+				if = {
+					limit = {
+						NOT = { any_system = { has_star_flag = wagner } }
+					}
+					create_imperial_vassal_solovyov = yes
+				}
+				else = {
+					create_imperial_vassal_roskosmos = yes
+				}
 			}
 			last_created_country = {
 				save_global_event_target_as = origin_imperial_homeland_country_3
