@@ -2137,7 +2137,10 @@ overlord_system_4_init = { # First vassal
 				}
 				if = {
 					limit = {
-						NOT = { any_system = { has_star_flag = kadyrov } }
+						NOR = {
+							any_system = { has_star_flag = kadyrov }
+							any_system = { has_star_flag = solovyov }
+						}
 					}
 					create_imperial_vassal_kadyrov = yes
 				}

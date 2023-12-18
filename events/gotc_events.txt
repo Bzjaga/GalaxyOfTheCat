@@ -165,7 +165,12 @@ system_event = {
 	immediate = {
 		every_system_ambient_object = {
 			limit = {
-				is_ambient_object_type = payback_site_ship_object
+				OR = {
+					is_ambient_object_type = ancient_battlefield_object
+					is_ambient_object_type = ancient_battlefield_02_object
+					is_ambient_object_type = small_debris_object
+					is_ambient_object_type = abandoned_ship_2_object
+				}
 			}
 			destroy_ambient_object = this
 		}
@@ -428,15 +433,11 @@ country_event = {
 					has_ethic = ethic_militarist
 				}
 			}
-			origin_imperial_fiefdom_bulwark_specialization_effect = yes
 			if = { # kadyrov bonuses
 				limit = {
-					AND = {
-						has_country_flag = origin_imperial_vassal_rival_country
-						capital_scope = {
-							solar_system = {
-								has_star_flag = kadyrov
-							}
+					capital_scope = {
+						solar_system = {
+							has_star_flag = kadyrov
 						}
 					}
 				}
@@ -445,15 +446,19 @@ country_event = {
 						owner = { is_same_value = root.overlord }
 						target = { is_same_value = root }
 					}
-					set_agreement_terms = {
-						joins_overlord_wars = joins_overlord_wars_all
-						subject_holdings_limit = subject_holdings_limit_4
-						resource_subsidies_advanced = -0.6
-						resource_subsidies_research = -0.45
-						resource_subsidies_basic = -0.3
-						resource_subsidies_strategic = -0.15
-					}
+					set_agreement_preset = { preset = preset_bulwark_kadyrov }
+					#set_agreement_terms = {
+					#	joins_overlord_wars = joins_overlord_wars_all
+					#	subject_holdings_limit = subject_holdings_limit_4
+					#	resource_subsidies_advanced = -0.6
+					#	resource_subsidies_research = -0.45
+					#	resource_subsidies_basic = -0.3
+					#	resource_subsidies_strategic = -0.15
+					#}
 				}
+			}
+			else = {
+				origin_imperial_fiefdom_bulwark_specialization_effect = yes
 			}
 		}
 		else_if = {
@@ -729,9 +734,11 @@ country_event = { # Overlord Version
 							}
 						}
 					}
-					add_modifier = {
-						modifier = payback_unified_purpose
-						days = 7200
+					capital_scope = {
+						add_modifier = {
+							modifier = payback_unified_purpose
+							days = 7200
+						}
 					}
 				}
 			}
