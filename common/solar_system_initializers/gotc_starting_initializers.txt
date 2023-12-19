@@ -2029,7 +2029,7 @@ custom_starting_init_solovyov = {
 					key="Ватн"
 					literal=yes
 				}
-				class = "PLANT"
+				class = "TOX"
 				portrait = "tox9"
 				name_list="HUMAN1"
 				gender=not_set
@@ -2039,7 +2039,7 @@ custom_starting_init_solovyov = {
 					trait = "trait_quarrelsome"
 					trait = "trait_resilient"
 					trait = "trait_fleeting"
-					trait = "trait_plantoid_budding"
+					trait = "trait_strong"
 				}
 				homeworld = this
 			}

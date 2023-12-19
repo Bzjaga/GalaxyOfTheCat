@@ -24,6 +24,72 @@ country_event = {
 				cooldown = yes
 			}
 		}
+		owner_main_species = {
+			set_species_flag = solovyov_species
+		}
+	}
+}
+
+planet_event = { #Instead of necroids.250
+	id = gotc.250
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		fromfrom = { 
+			is_organic_species = yes
+			NOT = { has_trait = trait_zombie }
+		}
+		owner = { has_valid_civic = civic_permanent_employment }
+		has_building = building_posthumous_employment_center
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				fromfrom.species = { has_species_flag = solovyov_species }
+			}
+			event_target:vatnic_species = {
+				save_event_target_as = new_zombie_pop_species
+			}
+			random_owned_species = {
+				limit = {
+					NOR = {
+						has_species_flag = solovyov_species
+						is_organic_species = no
+						has_trait = trait_zombie
+					}
+				}
+				save_event_target_as = new_zombie_pop_species
+			}
+			create_pop = {
+				species = event_target:new_zombie_pop_species
+			}
+			last_created_pop = {
+				make_pop_zombie = yes
+				clear_pop_category = yes #To make sure that the zombie pop does not spawn as a non worker strata
+			}
+		}
+		else = {
+			fromfrom = {
+				make_pop_zombie = yes
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				fromfrom.species = { has_species_flag = solovyov_species }
+			}
+			fromfrom = {
+				kill_pop = yes
+			}
+		}
+		else = {
+			fromfrom = {
+				clear_pop_category = yes #To make sure that the zombie pop does not spawn as a non worker strata
+			}
+		}
 	}
 }
 
@@ -38,14 +104,6 @@ planet_event = {
 	}
 
 	immediate = {
-
-		#owner = {
-		#	add_modifier = {
-		#		modifier = damage_vs_superior_empires_mult
-		#		days = -1
-		#		multiplier = 0.15
-		#	}
-		#}
 
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_farming_uncapped
@@ -72,6 +130,7 @@ planet_event = {
 			add_modifier = {
 				modifier = payback_unified_purpose
 				days = 7200
+				clear_on_owner_change = yes
 			}
 		}
 		while = {
@@ -738,6 +797,7 @@ country_event = { # Overlord Version
 						add_modifier = {
 							modifier = payback_unified_purpose
 							days = 7200
+							clear_on_owner_change = yes
 						}
 					}
 				}

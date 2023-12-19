@@ -1151,7 +1151,8 @@ create_imperial_vassal_international = {
 			trait = "trait_intelligent"
 			trait = "trait_charismatic"
 			trait = "trait_deviants"
-			trait = "trait_fleeting"
+			trait = "trait_unruly"
+			trait = "trait_communal"
 		}
 		homeworld = this
 	}
@@ -1226,8 +1227,9 @@ create_imperial_vassal_international = {
 				skill = 5
 				set_age = 20
 				traits = {
-					trait = trait_ruler_warlike
 					trait = trait_ruler_charismatic
+					trait = leader_trait_victory_or_death
+					trait = leader_trait_chainbreaker
 				}
 			}
 			set_male_ruler_title = "Наркомвоенторг"
@@ -1413,15 +1415,15 @@ create_imperial_vassal_mraxist = {
 
 			# Leader
 			create_leader = {
-				class = commander
+				class = scientist
 				species = last_created_species
-				name = "Андрей Рудой"
+				name = "Рауф Фаткуллин"
 				gender=male
 				skill = 1
 				traits = {
-					trait = leader_trait_armchair_commander
-					trait = trait_ruler_champion_of_the_people
-					trait = trait_ruler_charismatic
+					trait = leader_trait_embezzler
+					trait = leader_trait_expertise_psionics
+					trait = leader_trait_eager
 				}
 			}
 			set_male_ruler_title = "Сборщик донатов"
@@ -1443,10 +1445,15 @@ create_imperial_vassal_mraxist = {
 					}
 				}
 				create_leader = {
-					name = random
+					class = commander
 					species = event_target:origin_imperial_homeland_country_mraxist.species
-					class = scientist
-					skill = 1
+					name = "Андрей Рудой"
+					gender=male
+					skill = 2
+					traits = {
+						trait = leader_trait_armchair_commander
+						trait = leader_trait_entrepreneur_2
+					}
 				}
 				create_leader = {
 					name = random
@@ -1608,8 +1615,9 @@ create_imperial_vassal_pamyatnik = {
 				gender=male
 				skill = 1
 				traits = {
-					trait = leader_trait_reformer
-					trait = trait_ruler_charismatic
+					trait = trait_ruler_expansionist
+					trait = leader_trait_narrow_minded
+					trait = leader_trait_spark_of_genius
 				}
 			}
 			set_male_ruler_title = "Верховный Запоминатель"
@@ -2399,14 +2407,15 @@ create_imperial_vassal_kgb = {
 
 			# Leader
 			create_leader = {
-				class = commander
+				class = official
 				species = last_created_species
 				name = "Юрий Андропов"
 				gender=male
 				skill = 1
 				traits = {
-					trait = leader_trait_reformer
-					trait = leader_trait_interrogator
+					trait = leader_trait_spycraft
+					trait = leader_trait_reclusive
+					trait = leader_trait_shadow_broker
 				}
 			}
 			set_male_ruler_title = "Генерал-комиссар"
@@ -2960,8 +2969,8 @@ create_imperial_vassal_kadyrov = {
 			trait = "trait_unruly"
 			trait = "trait_quarrelsome"
 			trait = "trait_very_strong"
-			trait = "trait_noxious"
-			trait = "trait_enduring"
+			trait = "trait_resilient"
+			trait = "trait_communal"
 		}
 		homeworld = this
 	}
@@ -3036,7 +3045,9 @@ create_imperial_vassal_kadyrov = {
 				gender=male
 				skill = 1
 				traits = {
-					trait = trait_ruler_warlike
+					trait = leader_trait_embezzler
+					trait = trait_ruler_recruiter
+					trait = leader_trait_intimidator
 				}
 			}
 			set_male_ruler_title = "Дон"
@@ -3075,8 +3086,8 @@ create_imperial_vassal_kadyrov = {
 			}
 
 			# Resources
-			add_basic_resources_effect = { VALUE = 200 }
-			add_manufactured_resources_effect = { VALUE = 200 }
+			add_basic_resources_effect = { VALUE = 1 }
+			add_manufactured_resources_effect = { VALUE = 1 }
 			add_advanced_resources_effect = { VALUE = 1 }
 
 			# Policies
@@ -3376,7 +3387,7 @@ create_imperial_vassal_solovyov = {
 			key="Ватн"
 			literal=yes
 		}
-		class = "PLANT"
+		class = "TOX"
 		portrait = "tox9"
 		name_list="HUMAN1"
 		traits = {
@@ -3385,7 +3396,7 @@ create_imperial_vassal_solovyov = {
 			trait = "trait_quarrelsome"
 			trait = "trait_resilient"
 			trait = "trait_fleeting"
-			trait = "trait_plantoid_budding"
+			trait = "trait_strong"
 		}
 		homeworld = this
 	}
