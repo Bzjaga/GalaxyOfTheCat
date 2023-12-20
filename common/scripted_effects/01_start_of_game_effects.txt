@@ -2633,30 +2633,40 @@ generate_start_pops = {
 				has_civic = civic_permanent_employment
 			}
 		}
-		while = {
-			count = 4
-			random_owned_pop = {
-				limit = {
-					OR = {
-						has_job = clerk
-						has_job = technician
-						has_job = miner
-						has_job = farmer
-					}
-					is_robotic_species = no
-				}
-				modify_species = {
-					species = this
-					add_trait = trait_zombie
-					add_traits_at_start_of_list = yes
-				}
-				if = {
+		if = {
+			limit = {
+				solar_system = { has_star_flag = solovyov }
+			}
+			root.owner = {
+				country_event = { id = gotc.1 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
+			}
+		}
+		else = {
+			while = {
+				count = 4
+				random_owned_pop = {
 					limit = {
-						has_trait = trait_syncretic_proles
+						OR = {
+							has_job = clerk
+							has_job = technician
+							has_job = miner
+							has_job = farmer
+						}
+						is_robotic_species = no
 					}
 					modify_species = {
 						species = this
-						remove_trait = trait_syncretic_proles
+						add_trait = trait_zombie
+						add_traits_at_start_of_list = yes
+					}
+					if = {
+						limit = {
+							has_trait = trait_syncretic_proles
+						}
+						modify_species = {
+							species = this
+							remove_trait = trait_syncretic_proles
+						}
 					}
 				}
 			}
