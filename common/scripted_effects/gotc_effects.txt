@@ -644,7 +644,7 @@ create_overlord_soviet = {
 		homeworld = this
 	}
 	while = {
-		count = 34
+		count = 30
 		create_pop = {
 			species = last_created_species
 		}
@@ -885,6 +885,19 @@ create_overlord_soviet = {
 		#}
 		#set_heir = last_created_leader
 	#}
+	while = {
+		count = 30
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+	# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately
+	while = {
+		count = 10
+		create_pop = {
+			species = event_target:origin_imperial_species_robot
+		}
+	}
 	solar_system = {
 		set_name = {
 			key="ГУЛАГ"
@@ -1113,6 +1126,19 @@ create_overlord_post_soviet = {
 				option = population_controls_not_allowed
 				cooldown = yes
 			}
+		}
+	}
+	while = {
+		count = 45
+		create_pop = {
+			species = owner_main_species
+		}
+	}
+	# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately
+	while = {
+		count = 25
+		create_pop = {
+			species = event_target:origin_imperial_species_robot
 		}
 	}
 	solar_system = {

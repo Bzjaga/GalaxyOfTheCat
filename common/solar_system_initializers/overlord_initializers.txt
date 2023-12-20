@@ -1442,20 +1442,6 @@ overlord_system_init = { # Aix - Empire Capital
 			set_capital = yes
 
 			while = {
-				count = 34
-				create_pop = {
-					species = owner_main_species
-				}
-			}
-			# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately
-			while = {
-				count = 2
-				create_pop = {
-					species = event_target:origin_imperial_species_robot
-				}
-			}
-
-			while = {
 				count = 6
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_city
