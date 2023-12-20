@@ -885,13 +885,12 @@ create_overlord_soviet = {
 		#}
 		#set_heir = last_created_leader
 	#}
-	while = {
+	while = { # Half of the country was imprisoned, and the other half guarded them
 		count = 30
 		create_pop = {
 			species = owner_main_species
 		}
 	}
-	# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately
 	while = {
 		count = 10
 		create_pop = {
@@ -1134,8 +1133,7 @@ create_overlord_post_soviet = {
 			species = owner_main_species
 		}
 	}
-	# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately
-	while = {
+	while = { # Nota Bene: In 2210 Dugin is free at his will to destroy these unspiritual creatures
 		count = 25
 		create_pop = {
 			species = event_target:origin_imperial_species_robot
