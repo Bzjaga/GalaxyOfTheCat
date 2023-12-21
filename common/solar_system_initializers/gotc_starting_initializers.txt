@@ -15,7 +15,7 @@
 @homeworld_max_size = 21
 
 # test overlord_post_soviet
-test_overlord_post_soviet = {
+overlord_post_soviet_test = {
 	class = "rl_starting_stars"
 	asteroid_belt = {
 		type = rocky_asteroid_belt
@@ -24,7 +24,7 @@ test_overlord_post_soviet = {
 
 	usage = custom_empire
 
-	flags = { empire_home_system test_overlord_post_soviet}
+	flags = { empire_home_system overlord_post_soviet_test}
 
 	init_effect = {
 		every_neighbor_system = {
@@ -152,7 +152,7 @@ test_overlord_post_soviet = {
 }
 
 # test overlord_soviet
-test_overlord_soviet = {
+overlord_soviet_test = {
 	class = "rl_starting_stars"
 	asteroid_belt = {
 		type = rocky_asteroid_belt
@@ -161,7 +161,7 @@ test_overlord_soviet = {
 
 	usage = custom_empire
 
-	flags = { empire_home_system test_overlord_soviet}
+	flags = { empire_home_system overlord_soviet_test}
 
 	init_effect = {
 		every_neighbor_system = {
@@ -2055,13 +2055,13 @@ custom_starting_init_solovyov = {
 				}
 			}
 			while = {
-				count = 2
+				count = 16
 				create_pop = {
 					species = event_target:vatnic_species
 				}
 			}
 			while = {
-				count = 18
+				count = 4
 				create_pop = {
 					species = event_target:vatnic_species_zombie
 				}
