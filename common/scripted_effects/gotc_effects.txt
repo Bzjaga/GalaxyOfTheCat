@@ -51,13 +51,13 @@ choose_shroudwalker_enclave_country = {
 choose_imperial_overlord_country = {
 	if = { # Overlord Post-Soviet
 		limit = {
-			any_system = { has_star_flag = test_overlord_post_soviet }
+			any_system = { has_star_flag = overlord_post_soviet_test }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_system = { has_star_flag = test_overlord_soviet }
+			any_system = { has_star_flag = overlord_soviet_test }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
@@ -3437,13 +3437,13 @@ create_imperial_vassal_solovyov = {
 		}
 	}
 	while = {
-		count = 2
+		count = 14
 		create_pop = {
 			species = event_target:vatnic_species
 		}
 	}
 	while = {
-		count = 18
+		count = 4
 		create_pop = {
 			species = event_target:vatnic_species_zombie
 		}
@@ -3626,7 +3626,7 @@ create_imperial_vassal_solovyov = {
 		}
 	}
 	while = {
-		count = 8
+		count = 7
 		create_pop = {
 			species = event_target:origin_imperial_homeland_country_solovyov.species
 		}
