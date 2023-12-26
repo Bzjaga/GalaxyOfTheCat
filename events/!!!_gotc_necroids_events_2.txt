@@ -6,7 +6,7 @@
 namespace = necroids
 
 # Unlike the original event, this one checks wether the zombified specie is solovyov.
-# Solovyovs are made immune to th zombificaton via this event
+# Solovyovs are made immune to the zombificaton via this event
 planet_event = {
 	id = necroids.250
 	is_triggered_only = yes

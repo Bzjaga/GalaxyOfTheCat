@@ -1,0 +1,23 @@
+### Other Governments
+
+# Feudal Empire
+gov_feudal_empire = {
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+
+	use_regnal_names = no
+	dynastic_last_names = no
+
+	should_force_rename = yes
+
+	possible = {
+		has_authority = auth_imperial
+		has_valid_civic = civic_feudal_realm
+	}
+
+	weight = {
+		base = 700
+	}
+}

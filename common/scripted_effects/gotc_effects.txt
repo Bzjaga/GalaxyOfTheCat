@@ -967,6 +967,7 @@ create_overlord_post_soviet = {
 		}
 		civics = {
 			civic = civic_byzantine_bureaucracy
+			civic = civic_police_state
 			civic = civic_feudal_realm
 		}
 		ethos = {

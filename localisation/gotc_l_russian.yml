@@ -8,3 +8,5 @@
  #Preset AI
  preset_bulwark_kadyrov_desc: "Дыра в бюджете сюзерена, сконцентрированная на военных достижениях."
  preset_bulwark_kadyrov_flavor_desc: "Для сохранения мира, спокойствия и стабильности на Кавказе, сюзерен обязан предоставлять данному подданному значительное количество своих ресурсов."
+ #Preset text icons
+ text_icon_preset_bulwark_kadyrov: "£bulwark£"

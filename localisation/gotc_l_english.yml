@@ -8,3 +8,5 @@
  #Preset AI
  preset_bulwark_kadyrov_desc:0 "A hole in the suzerain's budget centered on military gains."
  preset_bulwark_kadyrov_flavor_desc:0 "In order to preserve peace and stability in the Caucasus, the suzerain is obliged to provide the subject with a significant amount of his resources."
+ #Preset text icons
+ text_icon_preset_bulwark_kadyrov:0 "£bulwark£"
