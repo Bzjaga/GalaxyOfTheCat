@@ -3,3 +3,8 @@
  name_list_BABULKA:0 "Babulkian"
  name_list_JEW:0 "Jewish"
  name_list_TAJICAUCASIAN:0 "Tajicaucasian"
+ #Preset names
+ preset_bulwark_kadyrov:0 "Results of 2nd Chechen war"
+ #Preset AI
+ preset_bulwark_kadyrov_desc:0 "A hole in the suzerain's budget centered on military gains."
+ preset_bulwark_kadyrov_flavor_desc:0 "In order to preserve peace and stability in the Caucasus, the suzerain is obliged to provide the subject with a significant amount of his resources."

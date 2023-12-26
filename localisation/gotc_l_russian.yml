@@ -3,3 +3,8 @@
  name_list_BABULKA: "Бабулькообразные"
  name_list_JEW: "Еврейские"
  name_list_TAJICAUCASIAN: "Таджикавказские"
+ #Preset names
+ preset_bulwark_kadyrov: "Итоги 2й Чеченской войны"
+ #Preset AI
+ preset_bulwark_kadyrov_desc: "Дыра в бюджете сюзерена, сконцентрированная на военных достижениях."
+ preset_bulwark_kadyrov_flavor_desc: "Для сохранения мира, спокойствия и стабильности на Кавказе, сюзерен обязан предоставлять данному подданному значительное количество своих ресурсов."

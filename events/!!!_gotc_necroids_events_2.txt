@@ -1,0 +1,71 @@
+################################
+#
+# Necroids Events
+#
+###############################
+namespace = necroids
+
+# Unlike the original event, this one checks wether the zombified specie is solovyov.
+# Solovyovs are made immune to th zombificaton via this event
+planet_event = {
+	id = necroids.250
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		fromfrom = { 
+			is_organic_species = yes
+			NOT = { has_trait = trait_zombie }
+		}
+		owner = { has_valid_civic = civic_permanent_employment }
+		has_building = building_posthumous_employment_center
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				fromfrom.species = { has_species_flag = solovyov_species }
+			}
+			event_target:vatnic_species = {
+				save_event_target_as = new_zombie_pop_species
+			}
+			random_owned_species = {
+				limit = {
+					NOR = {
+						has_species_flag = solovyov_species
+						is_organic_species = no
+						has_trait = trait_zombie
+					}
+				}
+				save_event_target_as = new_zombie_pop_species
+			}
+			create_pop = {
+				species = event_target:new_zombie_pop_species
+			}
+			last_created_pop = {
+				make_pop_zombie = yes
+				clear_pop_category = yes #To make sure that the zombie pop does not spawn as a non worker strata
+			}
+		}
+		else = {
+			fromfrom = {
+				make_pop_zombie = yes
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				fromfrom.species = { has_species_flag = solovyov_species }
+			}
+			fromfrom = {
+				kill_pop = yes
+			}
+		}
+		else = {
+			fromfrom = {
+				clear_pop_category = yes #To make sure that the zombie pop does not spawn as a non worker strata
+			}
+		}
+	}
+}
