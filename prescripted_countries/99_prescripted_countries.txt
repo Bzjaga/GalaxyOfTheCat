@@ -1,7 +1,7 @@
 # zaharova
-"Управление по делам заМКАДья" = {
-	name = "Управление по делам заМКАДья"
-	adjective = "МИД ПСРИ"
+"Министерство заМКАДских Дел" = {
+	name = "Министерство заМКАДских Дел"
+	adjective = "МИДск"
 	spawn_enabled = always
 
 	ship_prefix = "DFP"
@@ -159,9 +159,9 @@
 }
 
 # lukashenko
-"Шкловская Аграрная Республика" = {
-	name = "Шкловская Аграрная Республика"
-	adjective = "Шкловск"
+"Минская Династия" = {
+	name = "Минская Династия"
+	adjective = "Минск"
 	spawn_enabled = always
 
 	ship_prefix = "BLR"
@@ -812,8 +812,8 @@
 }
 
 # korea
-"Чеболистан" = {
-	name = "Чеболистан"
+"Чеболия" = {
+	name = "Чеболия"
 	adjective = "Южнокорейск"
 	spawn_enabled = always
 
