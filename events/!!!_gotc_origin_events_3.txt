@@ -260,7 +260,7 @@ country_event = { # Overlord
 
 	trigger = {
 		has_origin = origin_imperial_vassal_overlord
-		years_passed >= 35
+		years_passed >= 45 #>= 35
 	}
 
 	immediate = {
@@ -270,14 +270,14 @@ country_event = { # Overlord
 			}
 			country_event = {
 				id = gotc.5720
-				days = 6544 # Koba's death
+				days = 10 #6544 # Koba's death
 			}
 		}
 		else = {
 			country_event = {
 				id = gotc.5720
-				days = 1825
-				random = 9125
+				days = 10 #1825
+				#random = 9125
 			}
 		}
 	}

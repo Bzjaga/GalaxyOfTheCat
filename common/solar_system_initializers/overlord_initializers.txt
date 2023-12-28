@@ -2229,6 +2229,7 @@ overlord_system_4_init = { # First vassal
 				owner = event_target:origin_imperial_homeland_country_2
 			}
 		}
+		find_or_create_a_way_out_for_vassal = yes
 	}
 }
 
@@ -2383,6 +2384,7 @@ overlord_system_5_init = { # Second vassal
 				owner = event_target:origin_imperial_homeland_country_3
 			}
 		}
+		find_or_create_a_way_out_for_vassal = yes
 	}
 }
 
@@ -2545,6 +2547,7 @@ overlord_system_6_init = { # Third vassal
 				owner = event_target:origin_imperial_homeland_country_4
 			}
 		}
+		find_or_create_a_way_out_for_vassal = yes
 	}
 }
 
@@ -2710,6 +2713,7 @@ overlord_system_7_init = { # Fourth vassal
 				owner = event_target:origin_imperial_homeland_country_5
 			}
 		}
+		find_or_create_a_way_out_for_vassal = yes
 	}
 }
 
@@ -2871,6 +2875,73 @@ overlord_system_8_init = { # Overlord Colonies
 			graphical_culture = event_target:origin_imperial_homeland_country
 			owner = event_target:origin_imperial_homeland_country
 			orbit_angle = 360		# range of the randomization
+		}
+	}
+}
+
+overlord_system_9_init = { # Vassal way out
+	class = "rl_standard_stars"
+
+	flags = { overlord_empire_flag overlord_system_9_flag }
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 95
+	}
+
+	usage = misc_system_init
+	usage_odds = 0
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 30
+
+	planet = {
+		count = 2
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+	}
+
+	change_orbit = 25
+
+	planet = {
+		count = { min = 1 max = 4 }
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+	}
+
+	planet = {
+		count = { min = 2 max = 5 }
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	init_effect = {
+		random_neighbor_system_euclidean = {
+			limit = {
+				has_owner = no
+				has_special_star_flag_trigger = no
+			}
+			add_hyperlane = {
+				from = this
+				to = prev
+			}
 		}
 	}
 }
