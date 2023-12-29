@@ -292,6 +292,7 @@ create_fear_of_the_dark_country_korea = {
 				name = "Ким Кимыч"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_industrialist
 				}
@@ -747,6 +748,7 @@ create_overlord_soviet = {
 				gender=male
 				skill = 5
 				set_age = 21
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_industrialist_2
 					trait = leader_trait_galvanizer
@@ -1010,6 +1012,7 @@ create_overlord_post_soviet = {
 				gender=male
 				skill = 5
 				set_age = 40
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_charismatic
 					trait = trait_ruler_expansionist_3
@@ -1019,6 +1022,8 @@ create_overlord_post_soviet = {
 			set_male_ruler_title = "Нелюбимый всеми"
 			set_female_ruler_title = "Нелюбимая всеми"
 			set_leader = last_created_leader
+			set_male_heir_title = "Плохой боярин"
+			set_female_heir_title = "Плохая боярыня"
 
 			# Fleets
 			create_fleet = {
@@ -1353,6 +1358,7 @@ create_imperial_vassal_international = {
 				gender=male
 				skill = 5
 				set_age = 20
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_charismatic
 					trait = leader_trait_victory_or_death
@@ -1547,6 +1553,7 @@ create_imperial_vassal_mraxist = {
 				name = "Рауф Фаткуллин"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = leader_trait_embezzler
 					trait = leader_trait_expertise_psionics
@@ -1577,6 +1584,7 @@ create_imperial_vassal_mraxist = {
 					name = "Андрей Рудой"
 					gender=male
 					skill = 2
+					randomize_traits = no
 					traits = {
 						trait = leader_trait_armchair_commander
 						trait = leader_trait_entrepreneur_2
@@ -1741,6 +1749,7 @@ create_imperial_vassal_pamyatnik = {
 				name = "Ильич"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_expansionist
 					trait = leader_trait_narrow_minded
@@ -1927,6 +1936,7 @@ create_imperial_vassal_rkka = {
 				gender=male
 				skill = 1
 				set_age = 3
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_from_the_ranks
 					trait = trait_ruler_military_pioneer
@@ -2125,6 +2135,7 @@ create_imperial_vassal_tuva = {
 				name = "Солчак Тока"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_from_the_ranks
 					trait = leader_trait_reformer
@@ -2340,6 +2351,7 @@ create_imperial_vassal_stakhanov = {
 				name = "Алексей Стаханов"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_space_miner
 					trait = trait_ruler_industrialist
@@ -2539,6 +2551,7 @@ create_imperial_vassal_kgb = {
 				name = "Юрий Андропов"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = leader_trait_spycraft
 					trait = leader_trait_reclusive
@@ -2771,6 +2784,7 @@ create_imperial_vassal_dumatel = {
 				name = "Леонид Ильич Брежнев"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_champion_of_the_people
 					trait = leader_trait_resilient
@@ -2970,6 +2984,7 @@ create_imperial_vassal_wagner = {
 				name = "Евгений Пригожин"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_warlike # leader_trait_legendary_foe_hammer ?
 					trait = trait_ruler_recruiter
@@ -3171,6 +3186,7 @@ create_imperial_vassal_kadyrov = {
 				name = "Рамзан Кадыров"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = leader_trait_embezzler
 					trait = trait_ruler_recruiter
@@ -3370,6 +3386,7 @@ create_imperial_vassal_roskosmos = {
 				name = "Дмитрий Рогозин"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_deep_connections
 					trait = trait_ruler_space_miner
@@ -3646,8 +3663,9 @@ create_imperial_vassal_solovyov = {
 				name = "Владимир Рудольфович"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
-					trait = trait_ruler_eye_for_talent
+					trait = leader_trait_ambassador_whisper_networks
 				}
 			}
 			set_male_ruler_title = "Пропагандон"
@@ -3871,6 +3889,7 @@ create_imperial_vassal_rpc = {
 				name = "Кирилл Гундяев"
 				gender=male
 				skill = 1
+				randomize_traits = no
 				traits = {
 					trait = trait_ruler_architectural_sense
 					trait = trait_ruler_fertility_preacher
@@ -4065,113 +4084,116 @@ create_imperial_vassal_mizulina = {
 
 		effect = {
 			set_graphical_culture = toxoid_01
+			set_country_flag = origin_imperial_vassal_league_country
 			save_event_target_as = origin_imperial_homeland_country_mizulina
-		}
-	}
 
-	event_target:origin_imperial_homeland_country_mizulina = {
-		set_country_flag = origin_imperial_vassal_league_country
-		# Subjugation
-		set_subject_of = {
-			who = event_target:origin_imperial_homeland_country
-		}
+			# Tech
+			#give_physics_tech_tier_1_effect = yes
+			#give_engineering_tech_tier_1_effect = yes
+			#give_society_tech_tier_1_effect = yes
 
-		# Communication
-		every_playable_country = {
-			limit = {
-				has_origin = origin_imperial_vassal
+			# Subjugation
+			set_subject_of = {
+				who = event_target:origin_imperial_homeland_country
 			}
-			establish_communications_no_message = event_target:origin_imperial_homeland_country_mizulina
-		}
 
-		# Leader
-		create_leader = {
-			class = official
-			species = last_created_species
-			name = "Екатерина Мизулина"
-			gender=female
-			skill = 1
-			traits = {
-				trait = trait_ruler_fertility_preacher
-				trait = trait_ruler_fortifier
-			}
-		}
-		set_male_ruler_title = "Инициатор"
-		set_female_ruler_title = "Инициаторка"
-		set_leader = last_created_leader
-
-		# Fleets
-		create_fleet = {
-			effect = {
-				set_owner = event_target:origin_imperial_homeland_country_mizulina
-				create_ship = {
-					name = random
-					random_existing_design = science
+			# Communication
+			every_playable_country = {
+				limit = {
+					has_origin = origin_imperial_vassal
 				}
-				set_location = event_target:origin_imperial_homeland_country_mizulina.capital_star
-				save_event_target_as = new_science_ship_target
+				establish_communications_no_message = event_target:origin_imperial_homeland_country_mizulina
 			}
-		}
-		create_leader = {
-			name = random
-			species = event_target:origin_imperial_homeland_country_mizulina.species
-			class = scientist
-			skill = 1
-		}
-		create_leader = {
-			name = random
-			species = event_target:origin_imperial_homeland_country_mizulina.species
-			class = scientist
-			skill = 1
-		}
-		event_target:new_science_ship_target = {
-			assign_leader = last_created_leader
-		}
 
-		create_fleet = {
-			effect = {
-				set_owner = event_target:origin_imperial_homeland_country_mizulina
-				while = {
-					count = 5
+			# Leader
+			create_leader = {
+				class = official
+				species = last_created_species
+				name = "Екатерина Мизулина"
+				gender=female
+				skill = 1
+				randomize_traits = no
+				traits = {
+					trait = trait_ruler_fertility_preacher
+				}
+			}
+			set_male_ruler_title = "Инициатор"
+			set_female_ruler_title = "Инициаторка"
+			set_leader = last_created_leader
+
+			# Fleets
+			create_fleet = {
+				effect = {
+					set_owner = event_target:origin_imperial_homeland_country_mizulina
 					create_ship = {
 						name = random
-						design = NAME_Dagger
+						random_existing_design = science
 					}
+					set_location = event_target:origin_imperial_homeland_country_mizulina.capital_star
+					save_event_target_as = new_science_ship_target
 				}
-				set_location = event_target:origin_imperial_homeland_country_mizulina.capital_star
 			}
-		}
+			create_leader = {
+				name = random
+				species = event_target:origin_imperial_homeland_country_mizulina.species
+				class = scientist
+				skill = 1
+			}
+			create_leader = {
+				name = random
+				species = event_target:origin_imperial_homeland_country_mizulina.species
+				class = scientist
+				skill = 1
+			}
+			event_target:new_science_ship_target = {
+				assign_leader = last_created_leader
+			}
 
-		# Resources
-		add_basic_resources_effect = { VALUE = 1000 }
-		add_manufactured_resources_effect = { VALUE = 500 }
-		add_advanced_resources_effect = { VALUE = 25 }
+			create_fleet = {
+				effect = {
+					set_owner = event_target:origin_imperial_homeland_country_mizulina
+					while = {
+						count = 5
+						create_ship = {
+							name = random
+							design = NAME_Dagger
+						}
+					}
+					set_location = event_target:origin_imperial_homeland_country_mizulina.capital_star
+				}
+			}
 
-		# Policies
-		set_policy = {
-			policy = war_philosophy
-			option = liberation_wars
-			cooldown = yes
-		}
-		set_policy = {
-			policy = orbital_bombardment
-			option = orbital_bombardment_selective
-			cooldown = yes
-		}
-		set_policy = {
-			policy = resettlement
-			option = resettlement_allowed
-			cooldown = yes
-		}
-		set_policy = {
-			policy = border_policy
-			option = border_policy_open
-			cooldown = yes
-		}
-		set_policy = {
-			policy = population_controls
-			option = population_controls_not_allowed
-			cooldown = yes
+			# Resources
+			add_basic_resources_effect = { VALUE = 1000 }
+			add_manufactured_resources_effect = { VALUE = 500 }
+			add_advanced_resources_effect = { VALUE = 25 }
+
+			# Policies
+			set_policy = {
+				policy = war_philosophy
+				option = liberation_wars
+				cooldown = yes
+			}
+			set_policy = {
+				policy = orbital_bombardment
+				option = orbital_bombardment_selective
+				cooldown = yes
+			}
+			set_policy = {
+				policy = resettlement
+				option = resettlement_allowed
+				cooldown = yes
+			}
+			set_policy = {
+				policy = border_policy
+				option = border_policy_open
+				cooldown = yes
+			}
+			set_policy = {
+				policy = population_controls
+				option = population_controls_not_allowed
+				cooldown = yes
+			}
 		}
 	}
 	while = {
@@ -4216,6 +4238,48 @@ create_imperial_splinter = {
 				NOT = { any_country = { has_country_flag = strelkov } }
 			}
 			create_imperial_splinter_strelkov = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = rusich } }
+			}
+			create_imperial_splinter_rusich = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = navalny } }
+			}
+			create_imperial_splinter_navalny = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = ponomaryov } }
+			}
+			create_imperial_splinter_ponomaryov = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = kasparov } }
+			}
+			create_imperial_splinter_kasparov = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = kurginyan } }
+			}
+			create_imperial_splinter_kurginyan = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = prilepin } }
+			}
+			create_imperial_splinter_prilepin = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { any_country = { has_country_flag = rdc } }
+			}
+			create_imperial_splinter_rdc = yes
 		}
 		else = {
 			create_imperial_splinter_random = yes
@@ -4339,6 +4403,7 @@ create_imperial_splinter_beria = {
 				gender=male
 				skill = 3
 				set_age = 54
+				randomize_traits = no
 				traits = {
 					trait = leader_trait_shadow_broker_3
 					trait = leader_trait_adaptable
@@ -4423,17 +4488,663 @@ create_imperial_splinter_strelkov = {
 			}
 			create_leader = {
 				species = event_target:origin_imperial_species
-				class = commander
+				class = official
 				name = "Стрелков-Рунов-Гиркин"
 				gender=male
 				skill = 1
-				set_age = 30
+				set_age = 53
+				randomize_traits = no
 				traits = {
-					trait = trait_ruler_warlike
+					trait = leader_trait_spycraft
+					trait = leader_trait_retired_fleet_officer_2
+					trait = leader_trait_adventurous_spirit_3
 				}
 			}
 			set_male_ruler_title = "Триединый"
 			set_female_ruler_title = "Триединая"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_rusich = {
+	create_country = {
+		ship_prefix="EHOT"
+		name = {
+			key="Русич"
+			literal=yes
+		}
+		type = default
+		adjective="Русичн"
+		authority = auth_oligarchic
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="domination"
+				file="domination_11.dds"
+			}
+			background={
+				category="backgrounds"
+				file="flag_BG_21.dds"
+			}
+			colors={
+				"black"
+				"bright_yellow"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_fanatic_purifiers
+			civic = civic_environmentalist
+			civic = civic_heroic_tales
+		}
+		ethos = {
+			ethic = ethic_fanatic_xenophobe
+			ethic = ethic_spiritualist
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = rusich
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = commander
+				name = "Мильчаков"
+				gender=male
+				skill = 1
+				set_age = 32
+				randomize_traits = no
+				traits = {
+					trait = leader_trait_butcher
+					trait = leader_trait_destructive
+					trait = leader_trait_dreaded
+				}
+			}
+			set_male_ruler_title = "Живодёр"
+			set_female_ruler_title = "Живодёрка"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_navalny = {
+	create_country = {
+		ship_prefix="FBK"
+		name = {
+			key="Соединённые Штабы ФБК"
+			literal=yes
+		}
+		type = default
+		adjective="Антикорупционн"
+		authority = auth_dictatorial
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="corporate"
+				file="corporate_12.dds"
+			}
+			background={
+				category="backgrounds"
+				file="flag_BG_1.dds"
+			}
+			colors={
+				"off_white"
+				"intense_red"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_diplomatic_corps
+			civic = civic_crusader_spirit
+			civic = civic_technocracy
+		}
+		ethos = {
+			ethic = ethic_authoritarian
+			ethic = ethic_xenophobe
+			ethic = ethic_materialist
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = navalny
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = official
+				name = "Навальный"
+				gender=male
+				skill = 3
+				set_age = 47
+				randomize_traits = no
+				traits = {
+					trait = leader_trait_ruler_mind_wipe_02
+					trait = leader_trait_intolerant_2
+					trait = trait_ruler_charismatic_2
+				}
+			}
+			set_male_ruler_title = "Непутин"
+			set_female_ruler_title = "Непутин"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_ponomaryov = {
+	create_country = {
+		ship_prefix="LSR"
+		name = {
+			key="Легiон Свобода Росii"
+			literal=yes
+		}
+		type = default
+		adjective="Свободоросск"
+		authority = auth_oligarchic
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="domination"
+				file="domination_7.dds"
+			}
+			background={
+				category="backgrounds"
+				file="flag_BG_8.dds"
+			}
+			colors={
+				"swamp_green"
+				"black"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_crusader_spirit
+			civic = civic_shadow_council
+			civic = civic_nationalistic_zeal
+		}
+		ethos = {
+			ethic = ethic_egalitarian
+			ethic = ethic_xenophobe
+			ethic = ethic_militarist
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = ponomaryov
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = official
+				name = "Илья Пономарёв"
+				gender=male
+				skill = 1
+				set_age = 48
+				randomize_traits = no
+				traits = {
+					trait = leader_trait_politician
+					trait = leader_trait_embezzler_2
+					trait = leader_trait_shadow_broker_2
+				}
+			}
+			set_male_ruler_title = "Утро Дагестана"
+			set_female_ruler_title = "Утро Дагестана"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_kasparov = {
+	create_country = {
+		ship_prefix="FFR"
+		name = {
+			key="Фри Раша Форум"
+			literal=yes
+		}
+		type = default
+		adjective="Фрирашн"
+		authority = auth_democratic
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="pointy"
+				file="flag_pointy_5.dds"
+			}
+			background={
+				category="backgrounds"
+				file="horizontal_stripe.dds"
+			}
+			colors={
+				"white"
+				"intense_blue"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_free_haven
+			civic = civic_cutthroat_politics
+			civic = civic_pleasure_seekers
+		}
+		ethos = {
+			ethic = ethic_egalitarian
+			ethic = ethic_fanatic_xenophile
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = kasparov
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = scientist
+				name = "Гарри Кимыч"
+				gender=male
+				skill = 3
+				set_age = 60
+				randomize_traits = no
+				traits = {
+					trait = leader_trait_spark_of_genius_2
+					trait = leader_trait_narrow_minded_2
+					trait = leader_trait_gifted_2
+				}
+			}
+			set_male_ruler_title = "Хороший русский"
+			set_female_ruler_title = "Хорошая русская"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_kurginyan = {
+	create_country = {
+		ship_prefix="SV"
+		name = {
+			key="Суть Времени"
+			literal=yes
+		}
+		type = default
+		adjective="Суть-временн"
+		authority = auth_dictatorial
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="human"
+				file="flag_human_12.dds"
+			}
+			background={
+				category="backgrounds"
+				file="00_solid.dds"
+			}
+			colors={
+				"red"
+				"white"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_philosopher_king
+			civic = civic_exalted_priesthood
+			civic = civic_memory_vault
+		}
+		ethos = {
+			ethic = ethic_authoritarian
+			ethic = ethic_militarist
+			ethic = ethic_spiritualist
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = kurginyan
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			# Policies
+			set_policy = {
+				policy = slavery
+				option = slavery_not_allowed
+				cooldown = yes
+			}
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = scientist
+				name = "Кургинян"
+				gender=male
+				skill = 5
+				set_age = 74
+				randomize_traits = no
+				traits = {
+					trait = trait_ruler_champion_of_the_people_2
+					trait = leader_trait_venerated_2
+					trait = leader_trait_opinionated_2
+					trait = leader_trait_knowledge_for_the_masses
+				}
+			}
+			set_male_ruler_title = "Мыслитель Сути Времени"
+			set_female_ruler_title = "Мыслительница Сути Времени"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_prilepin = {
+	create_country = {
+		ship_prefix="ZP"
+		name = {
+			key="Патриоты ВзаПравду"
+			literal=yes
+		}
+		type = default
+		adjective="Взаправдинск"
+		authority = auth_oligarchic
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="pointy"
+				file="flag_pointy_2.dds"
+			}
+			background={
+				category="backgrounds"
+				file="diagonal_stripe.dds"
+			}
+			colors={
+				"shadow_purple"
+				"teal"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_sovereign_guardianship
+			civic = civic_citizen_service
+			civic = civic_memory_vault
+		}
+		ethos = {
+			ethic = ethic_egalitarian
+			ethic = ethic_militarist
+			ethic = ethic_spiritualist
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = prilepin
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = commander
+				name = "Захар Прилепин"
+				gender=male
+				skill = 3
+				set_age = 48
+				randomize_traits = no
+				traits = {
+					trait = trait_ruler_from_the_ranks_3
+					trait = leader_trait_victory_or_death_2
+					trait = leader_trait_academia_recruiter
+					trait = leader_trait_maven_of_war
+				}
+			}
+			set_male_ruler_title = "Пишущий подполковник"
+			set_female_ruler_title = "Пишущая подполковник"
+			set_leader = last_created_leader
+		}
+	}
+}
+
+#For use in gotc.5730 event; planet scope
+create_imperial_splinter_rdc = {
+	create_country = {
+		ship_prefix="РДК"
+		name = {
+			key="Русский Добровольческий Корпус"
+			literal=yes
+		}
+		type = default
+		adjective="Белогвардейск"
+		authority = auth_dictatorial
+		species = event_target:origin_imperial_species
+		flag = {
+			icon={
+				category="zoological"
+				file="flag_zoological_22.dds"
+			}
+			background={
+				category="backgrounds"
+				file="flag_BG_41.dds"
+			}
+			colors={
+				"off_white"
+				"black"
+				"black"
+				"null"
+			}
+		}
+		civics = {
+			civic = civic_selective_kinship
+			civic = civic_nationalistic_zeal
+			civic = civic_barbaric_despoilers
+		}
+		ethos = {
+			ethic = ethic_fanatic_xenophobe
+			ethic = ethic_militarist
+		}
+		origin = origin_default
+		day_zero_contact = no
+		effect = {
+			set_country_flag = imperial_splinter
+			set_country_flag = rdc
+			set_country_flag = origin_imperial_vassal_ex_overlord
+			set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
+			#set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
+			save_event_target_as = current_splinter
+
+			root = { # Give them one of the previous Overlord's fleets
+				random_owned_fleet = {
+					limit = {
+						any_owned_ship = {
+							is_ship_class = shipclass_military
+						}
+					}
+					clear_orders = yes
+					set_owner = event_target:current_splinter
+					set_location = event_target:current_splinter.capital_star
+				}
+			}
+
+			# Give them some starting resources
+			add_basic_resources_effect = { VALUE = 3000 }
+			add_manufactured_resources_effect = { VALUE = 1500 }
+			add_advanced_resources_effect = { VALUE = 1000 }
+			add_resource = { influence = 300 }
+			add_resource = {
+				unity = 7000
+				mult = root.trigger:num_tradition_categories
+			}
+			create_leader = {
+				species = event_target:origin_imperial_species
+				class = commander
+				name = "Денис Никитин"
+				gender=male
+				skill = 1
+				set_age = 39
+				randomize_traits = no
+				traits = {
+					trait = leader_trait_corsair_3
+					trait = leader_trait_fallible_2
+					trait = leader_trait_entrepreneur_2
+				}
+			}
+			set_male_ruler_title = "Белый Король"
+			set_female_ruler_title = "Белая Королева"
 			set_leader = last_created_leader
 		}
 	}
