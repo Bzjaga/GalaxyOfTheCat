@@ -294,6 +294,9 @@ country_event = {
 			limit = { used_naval_capacity_percent < 0.95 }
 			create_fleet_from_naval_cap = 0.1
 		}
+		every_system_within_border = {
+			set_star_flag = ex_overlord_system
+		}
 		if = {
 			limit = {
 				event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
@@ -464,7 +467,7 @@ country_event = { # Overlord Version
 			}
 			country_event = { id = origin.5735 }
 		}
-		capital_scope = { solar_system = { set_star_flag = ex_overlord_system } }
+		#capital_scope = { solar_system = { set_star_flag = ex_overlord_system } }
 		every_owned_planet = {
 			limit = { solar_system = { is_capital_system = no } }
 			if = {
@@ -499,7 +502,7 @@ country_event = { # Overlord Version
 							is_capital_system = no
 						}
 						starbase = { set_owner = prevprevprev }
-						set_star_flag = ex_overlord_system
+						#set_star_flag = ex_overlord_system
 						#add_claims = { who = root num_of_claims = 1 show_notification = no}
 					}
 				}
@@ -549,7 +552,7 @@ country_event = {
 				NOT = { is_owned_by = prev }
 			}
 			add_claims = { who = prev num_of_claims = 1 show_notification = yes }
-			set_star_flag = shall_be_claimed_by_@prev
+			#set_star_flag = shall_be_claimed_by_@prev
 		}
 	}
 }
