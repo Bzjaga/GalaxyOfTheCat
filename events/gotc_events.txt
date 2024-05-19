@@ -268,8 +268,8 @@ country_event = { # Overlord version
 		}
 		country_event = {
 			id = gotc.5729
-			days = 360
-			random = 1440
+			days = 10 #360
+			#random = 1440
 		}
 		every_subject = {
 			country_event = {
@@ -293,6 +293,9 @@ country_event = {
 		while = { # add fleet up to naval cap
 			limit = { used_naval_capacity_percent < 0.95 }
 			create_fleet_from_naval_cap = 0.1
+		}
+		every_system_within_border = {
+			set_star_flag = ex_overlord_system
 		}
 		if = {
 			limit = {
@@ -464,246 +467,92 @@ country_event = { # Overlord Version
 			}
 			country_event = { id = origin.5735 }
 		}
-		while = { # iterate through all splintering worlds
-			limit = { any_owned_planet = { is_capital = no } }
-			random_system_within_border = { # we want a country per colonized system
-				limit = { is_capital_system = no }
-				random_system_planet = {
+		#capital_scope = { solar_system = { set_star_flag = ex_overlord_system } }
+		every_owned_planet = {
+			limit = { solar_system = { is_capital_system = no } }
+			if = {
+				limit = {
+					solar_system = { is_owned_by = root }
+				}
+				create_imperial_splinter = yes
+			}
+		}
+		while = {
+			limit = {
+				any_system_within_border = {
+					NAND = {
+						is_capital_system = yes
+						any_country_neighbor_to_system = { has_country_flag = imperial_splinter }
+					}
+				}
+			}
+			every_playable_country = {
+				limit = { has_country_flag = imperial_splinter }
+				random_system_within_border = {
 					limit = {
-						AND = {
-							is_colony = yes
-							is_controlled_by = root
+						#any_country_neighbor_to_system = { is_same_empire = root }
+						any_neighbor_system = {
+							is_owned_by = root
+							is_capital_system = no
 						}
 					}
-					if = {
+					random_neighbor_system = {
 						limit = {
-							AND = {
-								event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
-								has_planet_flag = previous_imperial_capital
-							}
+							is_owned_by = root
+							is_capital_system = no
 						}
-						create_country = {
-							name = {
-								key="Выродившееся, но рабочее государство"
-								literal=yes
-							}
-							type = default
-							adjective="Преданно-революционн."
-							authority = auth_dictatorial
-							species = event_target:origin_imperial_species
-							flag = {
-								icon={
-									category="human"
-									file="flag_human_8.dds"
-								}
-								background={
-									category="backgrounds"
-									file="pattern_01.dds"
-								}
-								colors={
-									"burgundy"
-									"black"
-									"null"
-									"null"
-								}
-							}
-							civics = {
-								civic = civic_cutthroat_politics
-								civic = civic_reanimated_armies
-								civic = civic_police_state
-							}
-							ethos = {
-								ethic = ethic_fanatic_authoritarian
-								ethic = ethic_materialist
-							}
-							origin = origin_default
-							day_zero_contact = no
-							effect = {
-								set_country_flag = origin_imperial_vassal_ex_overlord
-								set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
-								set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
-								save_event_target_as = current_splinter
-
-								every_playable_country = { # Establish Contact with previous vassals
-									limit = {
-										has_communications = root
-										NOT = { has_communications = event_target:current_splinter }
-									}
-									establish_communications_no_message = event_target:current_splinter
-								}
-								every_playable_country = {
-									limit = {
-										NOT = { has_communications = root }
-										has_active_first_contact_with = root
-									}
-									establish_contact = {
-										who = event_target:current_splinter
-										location = event_target:current_splinter.capital_star
-									}
-								}
-
-								root = { # Give them one of the previous Overlord's fleets
-									random_owned_fleet = {
-										set_owner = event_target:current_splinter
-									}
-								}
-
-								# Give them tech from previous Overlord
-								copy_techs_from = {
-									target = event_target:previous_overlord
-								}
-
-								# Give them some starting resources
-								add_basic_resources_effect = { VALUE = 3000 }
-								add_manufactured_resources_effect = { VALUE = 1500 }
-								add_advanced_resources_effect = { VALUE = 1000 }
-								add_resource = {
-									unity = 7000
-									mult = root.trigger:num_tradition_categories
-								}
-
-								declare_war = { # Start a war with the previous Overlord
-									target = root
-									name = {
-										key = "NAME_Imperial_War"
-									}
-									attacker_war_goal = wg_subjugation
-								}
-							}
-						}
-						set_owner = event_target:current_splinter
-						last_created_country = {
-							create_leader = {
-								# Beware of Beria
-								species = event_target:origin_imperial_species
-								class = official
-								name = "Лаврушка"
-								gender=male
-								skill = 3
-								set_age = 54
-								traits = {
-									trait = leader_trait_shadow_broker_3
-									trait = leader_trait_adaptable
-								}
-							}
-							set_male_ruler_title = "Эффективный Менеджер"
-							set_female_ruler_title = "Эффективный Менеджер"
-							set_leader = last_created_leader
-							
-							# Give them a fleet of their own
-							create_fleet_from_naval_cap = 1
-						}
+						starbase = { set_owner = prevprevprev }
+						#set_star_flag = ex_overlord_system
+						#add_claims = { who = root num_of_claims = 1 show_notification = no}
 					}
-					else = {
-						create_country = {
-							name = random
-							type = default
-							authority = random
-							civics = random
-							species = event_target:origin_imperial_species
-							ethos = random
-							origin = origin_default
-							day_zero_contact = no
-							effect = {
-								set_country_flag = origin_imperial_vassal_ex_overlord
-								set_country_flag = origin_imperial_vassal_ex_overlord@event_target:previous_overlord # also unique in case of MP (while the overlord survives...)
-								set_timed_country_flag = { flag = day_0 days = 7 } # suppresses the contact events, but not notifications
-								save_event_target_as = current_splinter
-
-								every_playable_country = { # Establish Contact with previous vassals
-									limit = {
-										has_communications = root
-										NOT = { has_communications = event_target:current_splinter }
-									}
-									establish_communications_no_message = event_target:current_splinter
-								}
-								every_playable_country = {
-									limit = {
-										NOT = { has_communications = root }
-										has_active_first_contact_with = root
-									}
-									establish_contact = {
-										who = event_target:current_splinter
-										location = event_target:current_splinter.capital_star
-									}
-								}
-
-								# Give them a fleet of their own
-								create_fleet = {
-									effect = {
-										set_owner = event_target:current_splinter
-										while = {
-											count = 10
-											create_ship = {
-												name = random
-												design = NAME_Ravager
-											}
-										}
-										set_location = event_target:current_splinter.capital_star
-									}
-								}
-
-								# Give them some starting resources
-								add_basic_resources_effect = { VALUE = 3000 }
-								add_manufactured_resources_effect = { VALUE = 1500 }
-								add_advanced_resources_effect = { VALUE = 1000 }
-								add_resource = {
-									unity = 7000
-									mult = root.trigger:num_tradition_categories
-								}
-
-								event_target:previous_overlord = {
-									declare_war = { # Start a war with the previous Overlord
-										target = event_target:current_splinter
-										name = {
-											key = "NAME_Imperial_War"
-										}
-										attacker_war_goal = wg_subjugation
-									}
-								}
-
-								root = { # Give them one of the previous Overlord's fleets
-									random_owned_fleet = {
-										limit = {
-											any_owned_ship = {
-												is_ship_class = shipclass_military
-											}
-										}
-										clear_orders = yes
-										set_owner = event_target:current_splinter
-									}
-								}
-
-								# Give them tech from previous Overlord
-								copy_techs_from = {
-									target = event_target:previous_overlord
-								}
-							}
-						}
-						set_owner = event_target:current_splinter
-					}
-				}
-				every_system_planet = {
-					limit = {
-						AND = {
-							is_colony = yes
-							is_controlled_by = root
-						}
-					}
-					set_owner = event_target:current_splinter
-				}
-				if = {
-					limit = { exists = event_target:current_splinter }
-					starbase = { set_owner = event_target:current_splinter }
-					#if = {
-					#	limit = {
-					#		event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
-					#	}
-					#	add_claims = { who = root num_of_claims = 1 show_notification = no}
-					#}
 				}
 			}
 		}
+		every_playable_country = {
+			limit = { has_country_flag = origin_imperial_vassal_ex_overlord }
+			# Survey every system of the former overlord
+			every_system = {
+				limit = { 
+					has_star_flag = ex_overlord_system
+					NOT = { is_owned_by = prev }
+				}
+				set_surveyed = { surveyed = yes surveyor = prev }
+			}
+			country_event = { id = gotc.5731 days = 1 }
+		}
+
 		create_fleet_from_naval_cap = 0.7
+
+		every_playable_country = {
+			limit = { has_country_flag = imperial_splinter }
+			# Start a war with the previous Overlord
+			declare_war = {
+				target = root
+				name = {
+					key = "NAME_Imperial_War"
+				}
+				attacker_war_goal = wg_subjugation
+			}
+		}
+	}
+}
+
+# Start Imperial Civil War
+country_event = {
+	id = gotc.5731
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		# Add claims on every system of the former overlord
+		every_system = {
+			limit = { 
+				has_star_flag = ex_overlord_system
+				NOT = { is_owned_by = prev }
+			}
+			add_claims = { who = prev num_of_claims = 1 show_notification = yes }
+			#set_star_flag = shall_be_claimed_by_@prev
+		}
 	}
 }

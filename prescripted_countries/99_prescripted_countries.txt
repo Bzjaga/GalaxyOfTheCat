@@ -1053,7 +1053,7 @@
 # milov
 "Легион Эльфов" = {
 	name = "Легион Эльфов"
-	adjective = "Свободоросск"
+	adjective = "Эльфийск"
 	spawn_enabled = always
 
 	ship_prefix = "ФБК"
