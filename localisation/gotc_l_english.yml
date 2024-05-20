@@ -2,6 +2,7 @@
  #### NAMELIST EMPIRE NAMES
  name_list_BABULKA:0 "Babulkian"
  name_list_JEW:0 "Jewish"
+ name_list_RUS:0 "Old Rus"
  name_list_TAJICAUCASIAN:0 "Tajicaucasian"
  #Preset names
  preset_bulwark_kadyrov:0 "Results of 2nd Chechen war"

@@ -92,7 +92,7 @@
  BABULKA_ARMY_PotomstvennyeVedmy:0 "Отряд потомственных ведьм"
  BABULKA_ARMY_HudoyVnuk:0 "Отряд берсерков «Худой внук»"
  BABULKA_ARMY_TelefonnyeMoshenniki:0 "Возмездие телефонным мошенникам"
- BABULKA_ARMY_Koldunya:0 "Легион колдуний»"
+ BABULKA_ARMY_Koldunya:0 "Легион колдуний"
  BABULKA_ARMY_BabaYaga:0 "Легион «Баба Яга»"
 #planet_names
  BABULKA_PLANET_ChornayaGryaz:0 "Чёрная Грязь"
@@ -134,7 +134,7 @@
  BABULKA_PLANET_MalayaKosha:0 "Малая Коша"
  BABULKA_PLANET_Marmyli:0 "Мармыли"
  BABULKA_PLANET_Kuchki:0 "Кучки"
-#character_names
+#character_first_names_female
  BABULKA_CHR_Agafya:0 "Агафья"
  BABULKA_CHR_Klavdiya:0 "Клавдия"
  BABULKA_CHR_Avdotya:0 "Авдотья"
@@ -177,6 +177,7 @@
  BABULKA_CHR_Fevronya:0 "Февронья"
  BABULKA_CHR_Tamara:0 "Тамара"
  BABULKA_CHR_Matilda:0 "Матильда"
+#character_second_names_female
  BABULKA_CHR_Nikitishna:0 "Никитишна"
  BABULKA_CHR_Kuzmichna:0 "Кузмична"
  BABULKA_CHR_Ivanovna:0 "Ивановна"
