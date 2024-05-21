@@ -1,4 +1,5 @@
 # Materialist
+# Yashcher
 fallen_empire_1 = {
 	graphical_culture = "fallen_empire_02"
 	initializer = "gotc_fallen_1"
@@ -13,29 +14,44 @@ fallen_empire_1 = {
 
 	create_country_effect = {
 		create_species = {
-			name = random
-			class = random_non_machine
-			portrait = random
-			traits = random
-			extra_trait_points = 3
+			name = {
+				key="Ящер"
+				literal=yes
+			}
+			plural = {
+				key="Ящеры"
+				literal=yes
+			}
+			adjective = {
+				key="Ящерск"
+				literal=yes
+			}
+			class = "REP"
+			portrait = "cyb4"
+			name_list="JEW"
+			extra_trait_points = 4
+			traits = {
+				trait = "trait_presapient_natural_intellectuals"
+				trait = "trait_intelligent"
+				trait = "trait_thrifty"
+				trait = "trait_conservational"
+			}
 			allow_negative_traits = no
 		}
 		last_created_species = {
 			modify_species = {
 				species = this
 				add_trait = trait_cybernetic
-			}
-		}
-		if = {
-			limit = {
-				has_machine_age_dlc = yes
-			}
-			last_created_species = {
-				set_random_cybernetic_portrait_effect = yes
+				add_trait = trait_inorganic_breath
 			}
 		}
 		create_country = {
-			name = "Империя Ящеров"
+			ship_prefix="LIZ"
+			name = {
+				key="Заговор Рептилоидов"
+				literal=yes
+			}
+			adjective="Рептилоидн"
 			type = fallen_empire
 			ignore_initial_colony_error = yes
 			authority = auth_imperial
@@ -47,7 +63,22 @@ fallen_empire_1 = {
 			ethos = {
 				ethic = ethic_fanatic_materialist
 			}
-			flag = random
+			flag = {
+				icon = {
+					category="domination"
+					file="domination_16.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_8.dds"
+				}
+				colors = {
+					"swamp_green"
+					"shadow_blue"
+					"black"
+					"null"
+				}
+			}
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_1
@@ -66,9 +97,19 @@ fallen_empire_1 = {
 				add_global_ship_design = "NAME_Librarian"
 				add_global_ship_design = "NAME_Seeker"
 				add_global_ship_design = "NAME_FE_Starbase"
-				ruler = {
-					add_skill = 9
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = scientist
+					name = "Марк Цукерберг"
+					gender=male
+					skill = 10
+					randomize_traits = yes
 				}
+				set_male_ruler_title = "Глава Заговора"
+				set_female_ruler_title = "Глава Заговора"
+				set_leader = last_created_leader
 			}
 		}
 	}
@@ -105,9 +146,10 @@ fallen_empire_2 = {
 			portrait = "cyb6"
 			name_list="RUS"
 			gender=male
-			extra_trait_points = 3
+			extra_trait_points = 4
 			traits = {
 				trait = "trait_perfected_genes"
+				trait = "trait_presapient_conservative"
 				trait = "trait_very_strong"
 				trait = "trait_resilient"
 			}
@@ -121,7 +163,12 @@ fallen_empire_2 = {
 			}
 		}
 		create_country = {
-			name = "Русь"
+			ship_prefix="РУСЬ"
+			name = {
+				key="Русь"
+				literal=yes
+			}
+			adjective="Русск"
 			type = fallen_empire
 			name_list="RUS"
 			ignore_initial_colony_error = yes
@@ -171,12 +218,11 @@ fallen_empire_2 = {
 
 				# Leader
 				create_leader = {
-					species = last_created_species
+					species = owner_main_species
 					class = commander
 					name = "Словен Всеслав"
 					gender=male
 					skill = 10
-					set_age = 40
 					randomize_traits = yes
 				}
 				set_male_ruler_title = "Вождь Русов"
@@ -294,9 +340,17 @@ fallen_empire_4 = {
 				add_global_ship_design = "NAME_Servitor"
 				add_global_ship_design = "NAME_Destiny"
 				add_global_ship_design = "NAME_FE_Starbase"
-				ruler = {
-					add_skill = 9
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = commander
+					name = "Цинь Шихуанди"
+					gender=male
+					skill = 10
+					randomize_traits = yes
 				}
+				set_leader = last_created_leader
 			}
 		}
 	}
