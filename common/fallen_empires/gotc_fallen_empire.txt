@@ -290,6 +290,7 @@ fallen_empire_3 = {
 	}
 }
 # Xenophobe
+# Qin
 fallen_empire_4 = {
 	graphical_culture = "fallen_empire_04"
 	initializer = "gotc_fallen_4"
