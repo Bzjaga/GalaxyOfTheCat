@@ -174,7 +174,7 @@ gotc_fallen_1 = {
 }
 
 gotc_fallen_1_2 = {
-	name = "Центр Чипизации"
+	name = "Ануннак"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -202,7 +202,7 @@ gotc_fallen_1_2 = {
 	}
 
 	planet = {
-		name = "Центр Чипизации"
+		name = "Ануннак"
 		orbit_distance = 20
 		class = pc_gaia
 		orbit_angle = { min = 90 max = 270 }
@@ -533,6 +533,7 @@ gotc_fallen_2 = {
 
 # Home System III
 gotc_fallen_3 = {
+	name = "Карелот"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -559,7 +560,7 @@ gotc_fallen_3 = {
 	}
 
 	planet = {
-		name = "NAME_Sky_Father"
+		name = "Карелот"
 		class = "pc_gas_giant"
 		orbit_distance = 60
 		orbit_angle = 200
@@ -569,7 +570,7 @@ gotc_fallen_3 = {
 		change_orbit = @base_moon_distance
 
 		moon = {
-			name = "NAME_Cradle"
+			name = "Радуга"
 			class = "pc_gaia"
 			size = 20
 			orbit_distance = 5
@@ -649,7 +650,7 @@ gotc_fallen_3 = {
 		}
 
 		moon = {
-			name = "NAME_Sister"
+			name = "Подруга"
 			class = "pc_broken"
 			size = 13
 			orbit_distance = 5
@@ -659,7 +660,7 @@ gotc_fallen_3 = {
 		}
 
 		moon = {
-			name = "NAME_Brother"
+			name = "Друг"
 			class = "pc_gaia"
 			size = 10
 			orbit_distance = 8
@@ -701,7 +702,7 @@ gotc_fallen_3 = {
 		}
 
 		moon = {
-			name = "NAME_Mother"
+			name = "Дружба"
 			class = "pc_gaia"
 			size = 12
 			orbit_distance = 5
@@ -1067,9 +1068,8 @@ gotc_fallen_col_1_1 = {
 		modifiers = none
 
 		init_effect = {
-			if = {
-				limit = { root = { is_fallen_empire_materialist = yes } }
-				create_fe_fringe_colony = yes
+			if = { # Reptiloid
+				limit = { root = { has_country_flag = reptiloid } }
 				set_name = {
 					key="Тубан"
 					literal=yes
@@ -1081,9 +1081,8 @@ gotc_fallen_col_1_1 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_spiritualist = yes } }
-				create_fe_spiritualist_fringe_colony = yes
+			else_if = { # Rus
+				limit = { root = { has_country_flag = rus } }
 				set_name = {
 					key="ТаРуса"
 					literal=yes
@@ -1095,9 +1094,8 @@ gotc_fallen_col_1_1 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophobe = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Qin
+				limit = { root = { has_country_flag = qin } }
 				set_name = {
 					key="Ханьдань"
 					literal=yes
@@ -1109,9 +1107,21 @@ gotc_fallen_col_1_1 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophile = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Carebear
+				limit = { root = { has_country_flag = carebear } }
+				set_name = {
+					key="Соня"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Соня"
+						literal=yes
+					}
+				}
+			}
+			else_if = { # Astro-Hungary
+				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Будапешт"
 					literal=yes
@@ -1123,9 +1133,12 @@ gotc_fallen_col_1_1 = {
 					}
 				}
 			}
-			else = {
+			
+			if = {
+				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
+			else = { create_fe_spiritualist_fringe_colony = yes }
 		}
 
 		change_orbit = @base_moon_distance
@@ -1204,9 +1217,8 @@ gotc_fallen_col_1_2 = {
 		modifiers = none
 
 		init_effect = {
-			if = {
-				limit = { root = { is_fallen_empire_materialist = yes } }
-				create_fe_fringe_colony = yes
+			if = { # Reptiloid
+				limit = { root = { has_country_flag = reptiloid } }
 				set_name = {
 					key="Тиранославль"
 					literal=yes
@@ -1218,9 +1230,8 @@ gotc_fallen_col_1_2 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_spiritualist = yes } }
-				create_fe_spiritualist_fringe_colony = yes
+			else_if = { # Rus
+				limit = { root = { has_country_flag = rus } }
 				set_name = {
 					key="Байкальск"
 					literal=yes
@@ -1232,9 +1243,8 @@ gotc_fallen_col_1_2 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophobe = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Qin
+				limit = { root = { has_country_flag = qin } }
 				set_name = {
 					key="Чанъань"
 					literal=yes
@@ -1246,9 +1256,21 @@ gotc_fallen_col_1_2 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophile = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Carebear
+				limit = { root = { has_country_flag = carebear } }
+				set_name = {
+					key="Весельчак"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Весельчак"
+						literal=yes
+					}
+				}
+			}
+			else_if = { # Astro-Hungary
+				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Прага"
 					literal=yes
@@ -1260,9 +1282,12 @@ gotc_fallen_col_1_2 = {
 					}
 				}
 			}
-			else = {
+			
+			if = {
+				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
+			else = { create_fe_spiritualist_fringe_colony = yes }
 		}
 
 		change_orbit = @base_moon_distance
@@ -1397,9 +1422,8 @@ gotc_fallen_col_2_1 = {
 		modifiers = none
 
 		init_effect = {
-			if = {
-				limit = { root = { is_fallen_empire_materialist = yes } }
-				create_fe_fringe_colony = yes
+			if = { # Reptiloid
+				limit = { root = { has_country_flag = reptiloid } }
 				set_name = {
 					key="Птерославль"
 					literal=yes
@@ -1411,23 +1435,21 @@ gotc_fallen_col_2_1 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_spiritualist = yes } }
-				create_fe_spiritualist_fringe_colony = yes
+			else_if = { # Rus
+				limit = { root = { has_country_flag = rus } }
 				set_name = {
-					key="ЭтРурия"
+					key="ЭтРусия"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="ЭтРурия"
+						key="ЭтРусия"
 						literal=yes
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophobe = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Qin
+				limit = { root = { has_country_flag = qin } }
 				set_name = {
 					key="Далян"
 					literal=yes
@@ -1439,9 +1461,21 @@ gotc_fallen_col_2_1 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophile = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Carebear
+				limit = { root = { has_country_flag = carebear } }
+				set_name = {
+					key="Выручайка"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Выручайка"
+						literal=yes
+					}
+				}
+			}
+			else_if = { # Astro-Hungary
+				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Лемберг"
 					literal=yes
@@ -1453,9 +1487,12 @@ gotc_fallen_col_2_1 = {
 					}
 				}
 			}
-			else = {
+			
+			if = {
+				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
+			else = { create_fe_spiritualist_fringe_colony = yes }
 		}
 
 		change_orbit = @base_moon_distance
@@ -1534,23 +1571,21 @@ gotc_fallen_col_2_2 = {
 		modifiers = none
 
 		init_effect = {
-			if = {
-				limit = { root = { is_fallen_empire_materialist = yes } }
-				create_fe_fringe_colony = yes
+			if = { # Reptiloid
+				limit = { root = { has_country_flag = reptiloid } }
 				set_name = {
-					key="Брахиотурн"
+					key="Дети Завра"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Брахиотурн"
+						key="Дети Завра"
 						literal=yes
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_spiritualist = yes } }
-				create_fe_spiritualist_fringe_colony = yes
+			else_if = { # Rus
+				limit = { root = { has_country_flag = rus } }
 				set_name = {
 					key="Рим-Руса"
 					literal=yes
@@ -1562,23 +1597,34 @@ gotc_fallen_col_2_2 = {
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophobe = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Qin
+				limit = { root = { has_country_flag = qin } }
 				set_name = {
-					key="Нанкин"
+					key="Цзянье"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Нанкин"
+						key="Цзянье"
 						literal=yes
 					}
 				}
 			}
-			else_if = {
-				limit = { root = { is_fallen_empire_xenophile = yes } }
-				create_fe_fringe_colony = yes
+			else_if = { # Carebear
+				limit = { root = { has_country_flag = carebear } }
+				set_name = {
+					key="Счастливчик"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Счастливчик"
+						literal=yes
+					}
+				}
+			}
+			else_if = { # Astro-Hungary
+				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Триест"
 					literal=yes
@@ -1590,9 +1636,12 @@ gotc_fallen_col_2_2 = {
 					}
 				}
 			}
-			else = {
+			
+			if = {
+				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
+			else = { create_fe_spiritualist_fringe_colony = yes }
 		}
 
 		change_orbit = @base_moon_distance
@@ -1705,7 +1754,7 @@ gotc_fallen_orbitals_1 = {
 	init_effect = {
 		if = {
 			limit = { root = { is_fallen_empire_materialist = yes } }
-			set_name = "Зомбирующие Вышки"
+			set_name = "Урибин"
 		}
 		else_if = {
 			limit = { root = { is_fallen_empire_spiritualist = yes } }
@@ -1801,7 +1850,7 @@ gotc_fallen_orbitals_2 = {
 	init_effect = {
 		if = {
 			limit = { root = { is_fallen_empire_materialist = yes } }
-			set_name = "Дети Завра"
+			set_name = "Брахиотурн"
 		}
 		else_if = {
 			limit = { root = { is_fallen_empire_spiritualist = yes } }

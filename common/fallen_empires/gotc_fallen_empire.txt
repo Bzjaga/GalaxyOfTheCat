@@ -1,5 +1,5 @@
 # Materialist
-# Yashcher
+# Reptiloid
 fallen_empire_1 = {
 	graphical_culture = "fallen_empire_02"
 	initializer = "gotc_fallen_1"
@@ -82,6 +82,7 @@ fallen_empire_1 = {
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_1
+				set_country_flag = reptiloid
 				add_resource = {
 					minerals = 10000
 					energy = 10000
@@ -200,6 +201,7 @@ fallen_empire_2 = {
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_2
+				set_country_flag = rus
 				add_resource = {
 					minerals = 10000
 					energy = 10000
@@ -233,6 +235,7 @@ fallen_empire_2 = {
 	}
 }
 # Xenophile
+# Carebear / Astro-Hungary
 fallen_empire_3 = {
 	graphical_culture = "fallen_empire_03"
 	initializer = "gotc_fallen_3"
@@ -242,48 +245,149 @@ fallen_empire_3 = {
 	}
 
 	create_country_effect = {
-		create_species = {
-			name = random
-			class = random_non_machine
-			portrait = random
-			traits = random
-			extra_trait_points = 5
-			allow_negative_traits = no
-		}
-		create_country = {
-			name = random
-			type = fallen_empire
-			ignore_initial_colony_error = yes
-			authority = auth_imperial
-			civics = {
-				civic = civic_lethargic_leadership
-				civic = civic_empire_in_decline
-			}
-			species = last_created_species
-			ethos = {
-				ethic = ethic_fanatic_xenophile
-			}
-			flag = random
-			origin = "origin_fallen_empire"
-			effect = {
-				set_country_flag = fallen_empire_3
-				add_resource = {
-					minerals = 10000
-					energy = 10000
-					food = 1000
-					influence = 500
+		if = { # Carebear
+			limit = { NOT = { any_system = { has_star_flag = astrohungary } } }
+			create_species = {
+				name = {
+					key="Медвед"
+					literal=yes
 				}
-				# must initialize global designs here
-				add_global_ship_design = "NAME_Adjuster"
-				add_global_ship_design = "NAME_Keeper"
-				add_global_ship_design = "NAME_Custodian"
-				add_global_ship_design = "NAME_Overseer"
-				add_global_ship_design = "NAME_Watcher"
-				add_global_ship_design = "NAME_Seeder"
-				add_global_ship_design = "NAME_Builder"
-				add_global_ship_design = "NAME_FE_Starbase"
-				ruler = {
-					add_skill = 9
+				plural = {
+					key="Медведы"
+					literal=yes
+				}
+				adjective = {
+					key="Медведск"
+					literal=yes
+				}
+				class = "MAM"
+				portrait = "mam13"
+				name_list="TOX4"
+				extra_trait_points = 5
+				traits = {
+					trait = "trait_presapient_natural_intellectuals"
+					trait = "trait_intelligent"
+					trait = "trait_very_strong"
+					trait = "trait_unruly"
+					trait = "trait_deviants"
+				}
+				allow_negative_traits = no
+			}
+			create_country = {
+				ship_prefix="CARE"
+				name = {
+					key="Заботливые мишки"
+					literal=yes
+				}
+				adjective="Заботлив"
+				type = fallen_empire
+				name_list="TOX4"
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_xenophile
+				}
+				flag = {
+					icon = {
+						category="ornate"
+						file="flag_ornate_6.dds"
+					}
+					background = {
+						category="backgrounds"
+						file="double_triangles.dds"
+					}
+					colors = {
+						"dark_purple"
+						"yellow"
+						"null"
+						"null"
+					}
+				}
+				origin = "origin_fallen_empire"
+				effect = {
+					set_country_flag = fallen_empire_3
+					set_country_flag = carebear
+					add_resource = {
+						minerals = 10000
+						energy = 10000
+						food = 1000
+						influence = 500
+					}
+					# must initialize global designs here
+					add_global_ship_design = "NAME_Adjuster"
+					add_global_ship_design = "NAME_Keeper"
+					add_global_ship_design = "NAME_Custodian"
+					add_global_ship_design = "NAME_Overseer"
+					add_global_ship_design = "NAME_Watcher"
+					add_global_ship_design = "NAME_Seeder"
+					add_global_ship_design = "NAME_Builder"
+					add_global_ship_design = "NAME_FE_Starbase"
+
+					# Leader
+					create_leader = {
+						species = owner_main_species
+						class = official
+						name = "Николас"
+						gender=male
+						skill = 10
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Помогатор"
+					set_female_ruler_title = "Помогаторша"
+					set_leader = last_created_leader
+				}
+			}
+		}
+		else = { # Astro-Hungary
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				traits = random
+				extra_trait_points = 5
+				allow_negative_traits = no
+			}
+			create_country = {
+				name = random
+				type = fallen_empire
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_xenophile
+				}
+				flag = random
+				origin = "origin_fallen_empire"
+				effect = {
+					set_country_flag = fallen_empire_3
+					set_country_flag = astrohungary
+					add_resource = {
+						minerals = 10000
+						energy = 10000
+						food = 1000
+						influence = 500
+					}
+					# must initialize global designs here
+					add_global_ship_design = "NAME_Adjuster"
+					add_global_ship_design = "NAME_Keeper"
+					add_global_ship_design = "NAME_Custodian"
+					add_global_ship_design = "NAME_Overseer"
+					add_global_ship_design = "NAME_Watcher"
+					add_global_ship_design = "NAME_Seeder"
+					add_global_ship_design = "NAME_Builder"
+					add_global_ship_design = "NAME_FE_Starbase"
+					ruler = {
+						add_skill = 9
+					}
 				}
 			}
 		}
@@ -415,6 +519,7 @@ fallen_empire_4 = {
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_4
+				set_country_flag = qin
 				add_resource = {
 					minerals = 10000
 					energy = 10000
@@ -447,6 +552,7 @@ fallen_empire_4 = {
 }
 
 # Machine
+# Gates
 fallen_machine_empire = {
 	graphical_culture = "fallen_machine_empire_01"
 	initializer = "gotc_fallen_machine"
@@ -489,6 +595,7 @@ fallen_machine_empire = {
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_machine
+				set_country_flag = gates
 				add_resource = {
 					minerals = 10000
 					energy = 10000
