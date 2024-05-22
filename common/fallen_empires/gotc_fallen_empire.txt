@@ -299,29 +299,118 @@ fallen_empire_4 = {
 	}
 
 	create_country_effect = {
-		create_species = {
-			name = random
-			class = random_non_machine
-			portrait = random
-			traits = random
-			extra_trait_points = 5
-			allow_negative_traits = no
-			effect = { save_global_event_target_as = fallen_4_species }
+		if = {
+			limit = {
+				any_system = { has_star_flag = mao }
+			}
+			random_playable_country = {
+				limit = {
+					capital_scope = {
+						solar_system = {
+							has_star_flag = mao
+						}
+					}
+				}
+				owner_main_species = {
+					save_event_target_as = mao_species
+				}
+			}
+			event_target:mao_species = {
+				create_species = {
+					is_mod = yes
+					name = {
+						key="Китаец"
+						literal=yes
+					}
+					plural = {
+						key="Китайцы"
+						literal=yes
+					}
+					adjective = {
+						key="Китайск"
+						literal=yes
+					}
+					class = this
+					portrait = this
+					extra_trait_points = 1
+					traits = {
+						trait = "trait_thrifty"
+						#trait = "trait_sedentary"
+						trait = "trait_rapid_breeders"
+						#trait = "trait_nonadaptive"
+						trait = "trait_conservational"
+					}
+					can_be_modified = this
+					homeworld = this
+					namelist = this
+					effect = { save_global_event_target_as = fallen_4_species }
+				}
+			}
+		}
+		else = {
+			create_species = {
+				name = {
+					key="Китаец"
+					literal=yes
+				}
+				plural = {
+					key="Китайцы"
+					literal=yes
+				}
+				adjective = {
+					key="Китайск"
+					literal=yes
+				}
+				class = "REP"
+				portrait = "rep1"
+				name_list="ART1"
+				extra_trait_points = 1
+				traits = {
+					trait = "trait_thrifty"
+					#trait = "trait_sedentary"
+					trait = "trait_rapid_breeders"
+					#trait = "trait_nonadaptive"
+					trait = "trait_conservational"
+				}
+				allow_negative_traits = no
+				effect = { save_global_event_target_as = fallen_4_species }
+			}
 		}
 		create_country = {
-			name = "Циньская Династия"
+			ship_prefix="QIN"
+			name = {
+				key="Циньская Династия"
+				literal=yes
+			}
+			adjective="Циньск"
 			type = fallen_empire
+			name_list="ART1"
 			ignore_initial_colony_error = yes
 			authority = auth_imperial
 			civics = {
 				civic = civic_lethargic_leadership
 				civic = civic_empire_in_decline
 			}
-			species = last_created_species
+			species = event_target:fallen_4_species
 			ethos = {
 				ethic = ethic_fanatic_xenophobe
 			}
-			flag = random
+			flag = {
+				icon = {
+					category="ornate"
+					file="flag_ornate_16.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_40.dds"
+				}
+				colors = {
+					"dark_blue"
+					"bright_yellow"
+					"black"
+					"null"
+				}
+			}
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_4

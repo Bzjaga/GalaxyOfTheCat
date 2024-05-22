@@ -766,6 +766,7 @@ gotc_fallen_3 = {
 
 # Home System IV
 gotc_fallen_4 = {
+	name = "Сяньян"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -808,7 +809,7 @@ gotc_fallen_4 = {
 	}
 
 	planet = {
-		name = "NAME_The_Core"
+		name = "Сяньян"
 		orbit_distance = 20
 		class = pc_gaia
 		orbit_angle = { min = 90 max = 270 }
@@ -854,7 +855,37 @@ gotc_fallen_4 = {
 					species = owner_main_species
 				}
 			}
-			root = { create_fe_servant_species = yes }
+			root = {
+				create_species = {
+					name = {
+						key="Террокот"
+						literal=yes
+					}
+					plural = {
+						key="Террокоты"
+						literal=yes
+					}
+					adjective = {
+						key="Террокотск"
+						literal=yes
+					}
+					class = "LITHOID"
+					portrait = "lith_human"
+					name_list="MAM2"
+					gender=male
+					extra_trait_points = 5
+					traits = {
+						trait = "trait_lithoid"
+						trait = "trait_presapient_earthbound"
+						#trait = "trait_slow_learners"
+						trait = "trait_venerable"
+						trait = "trait_nerve_stapled"
+						#trait = "trait_sedentary"
+						trait = "trait_charismatic"
+					}
+					allow_negative_traits = no
+				}
+			}
 			last_created_species = { save_event_target_as = fe_servants }
 			while = {
 				count = 62
@@ -876,7 +907,7 @@ gotc_fallen_4 = {
 		}
 
 		moon = {
-			name = "NAME_Boundary"
+			name = "Вэйхэ"
 			class = "pc_gaia"
 			size = 12
 			orbit_distance = 14
@@ -2599,6 +2630,7 @@ gotc_fallen_shrouded = {
 # Shielded Planet 1
 gotc_fallen_shielded_1 = {
 	class = "rl_standard_stars"
+	name = "Ханьдань"
 	flags = { fallen_shielded_1 }
 
 	planet = {
@@ -2684,6 +2716,7 @@ gotc_fallen_shielded_1 = {
 # Shielded Planet 2
 gotc_fallen_shielded_2 = {
 	class = "rl_standard_stars"
+	name = "Чанъань"
 	flags = { fallen_shielded_2 }
 
 	planet = {
@@ -2769,7 +2802,7 @@ gotc_fallen_shielded_2 = {
 # Shielded Planet 3
 gotc_fallen_shielded_3 = {
 	class = "rl_standard_stars"
-
+	name = "Далян"
 	flags = { fallen_shielded_3 }
 
 	planet = {
