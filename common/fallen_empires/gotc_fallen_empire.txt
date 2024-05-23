@@ -623,19 +623,39 @@ fallen_machine_empire = {
 
 	create_country_effect = {
 		create_species = {
-			name = random
+			name = {
+				key="Чипизатор"
+				literal=yes
+			}
+			plural = {
+				key="Чипизаторы"
+				literal=yes
+			}
+			adjective = {
+				key="Чипизаторск"
+				literal=yes
+			}
 			class = MACHINE
 			namelist = MACHINE3
-			portrait = random
+			portrait = sd_pla_robot
 			traits = {
 				trait = trait_machine_unit
-				trait = random_traits
+				trait = trait_robot_efficient_processors
+				trait = trait_robot_immortality
+				trait = trait_robot_recycled
+				trait = trait_robot_propaganda_machines
+				trait = trait_robot_high_bandwidth
 			}
 			extra_trait_points = 3
 			allow_negative_traits = no
 		}
 		create_country = {
-			name = random
+			ship_prefix="MS"
+			name = {
+				key="Корпорация Майкрософт"
+				literal=yes
+			}
+			adjective="Мелкомягк"
 			type = fallen_empire
 			ignore_initial_colony_error = yes
 			authority = auth_machine_intelligence
@@ -647,7 +667,22 @@ fallen_machine_empire = {
 			ethos = {
 				ethic = ethic_gestalt_consciousness
 			}
-			flag = random
+			flag = {
+				icon = {
+					category="lithoid"
+					file="lithoid_04.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_50.dds"
+				}
+				colors = {
+					"frog_green"
+					"yellow"
+					"black"
+					"null"
+				}
+			}
 			origin = "origin_fallen_empire"
 			effect = {
 				set_country_flag = fallen_empire_machine
@@ -674,9 +709,19 @@ fallen_machine_empire = {
 				add_global_ship_design = "NAME_Tau"
 				add_global_ship_design = "NAME_Sigma"
 				add_global_ship_design = "NAME_FE_Starbase"
-				ruler = {
-					add_skill = 9
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = scientist
+					name = "Билл Гейтс III"
+					gender=male
+					skill = 10
+					randomize_traits = yes
 				}
+				set_male_ruler_title = "Благотворитель"
+				set_female_ruler_title = "Благотворительница"
+				set_leader = last_created_leader
 			}
 		}
 	}

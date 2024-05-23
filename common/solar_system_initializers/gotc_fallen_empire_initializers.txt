@@ -568,7 +568,6 @@ gotc_fallen_3 = {
 		change_orbit = @base_moon_distance
 
 		moon = {
-			name = "Радуга"
 			class = "pc_gaia"
 			size = 20
 			orbit_distance = 5
@@ -718,17 +717,30 @@ gotc_fallen_3 = {
 		}
 
 		moon = {
-			name = "Подруга"
 			class = "pc_broken"
 			size = 13
 			orbit_distance = 5
 			orbit_angle = 50
 
-			init_effect = { prevent_anomaly = yes }
+			init_effect = {
+				if = { # Astro-Hungary
+					limit = { root = { has_country_flag = astrohungary } }
+					set_name = {
+						key="Вышеград"
+						literal=yes
+					}
+				}
+				else = { # Carebear
+					set_name = {
+						key="Подруга"
+						literal=yes
+					}
+				}
+				prevent_anomaly = yes
+			}
 		}
 
 		moon = {
-			name = "Друг"
 			class = "pc_gaia"
 			size = 10
 			orbit_distance = 8
@@ -754,6 +766,19 @@ gotc_fallen_3 = {
 					count = 10
 					add_district = district_city
 				}
+				if = { # Astro-Hungary
+					limit = { root = { has_country_flag = astrohungary } }
+					set_name = {
+						key="Буда"
+						literal=yes
+					}
+				}
+				else = { # Carebear
+					set_name = {
+						key="Друг"
+						literal=yes
+					}
+				}
 				while = {
 					count = 18
 					create_pop = {
@@ -770,7 +795,6 @@ gotc_fallen_3 = {
 		}
 
 		moon = {
-			name = "Дружба"
 			class = "pc_gaia"
 			size = 12
 			orbit_distance = 5
@@ -798,6 +822,19 @@ gotc_fallen_3 = {
 				while = {
 					count = 12
 					add_district = district_city
+				}
+				if = { # Astro-Hungary
+					limit = { root = { has_country_flag = astrohungary } }
+					set_name = {
+						key="Пешт"
+						literal=yes
+					}
+				}
+				else = { # Carebear
+					set_name = {
+						key="Дружба"
+						literal=yes
+					}
 				}
 				while = {
 					count = 27
@@ -1192,12 +1229,12 @@ gotc_fallen_col_1_1 = {
 			else_if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
-					key="Будапешт"
+					key="Прага"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Будапешт"
+						key="Прага"
 						literal=yes
 					}
 				}
@@ -1341,12 +1378,12 @@ gotc_fallen_col_1_2 = {
 			else_if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
-					key="Прага"
+					key="Лемберг"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Прага"
+						key="Лемберг"
 						literal=yes
 					}
 				}
@@ -1546,12 +1583,12 @@ gotc_fallen_col_2_1 = {
 			else_if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
-					key="Лемберг"
+					key="Триест"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Лемберг"
+						key="Триест"
 						literal=yes
 					}
 				}
@@ -1695,12 +1732,12 @@ gotc_fallen_col_2_2 = {
 			else_if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
-					key="Триест"
+					key="Краков"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Триест"
+						key="Краков"
 						literal=yes
 					}
 				}
@@ -1821,13 +1858,40 @@ gotc_fallen_orbitals_1 = {
 	}
 
 	init_effect = {
-		if = {
-			limit = { root = { is_fallen_empire_materialist = yes } }
-			set_name = "Урибин"
+		if = { # Reptiloid
+			limit = { root = { has_country_flag = reptiloid } }
+			set_name = {
+				key="Урибин"
+				literal=yes
+			}
 		}
-		else_if = {
-			limit = { root = { is_fallen_empire_spiritualist = yes } }
-			set_name = "Старая Ладога"
+		else_if = { # Rus
+			limit = { root = { has_country_flag = rus } }
+			set_name = {
+				key="Старая Ладога"
+				literal=yes
+			}
+		}
+		else_if = { # Qin
+			limit = { root = { has_country_flag = qin } }
+			set_name = {
+				key="Чэнду"
+				literal=yes
+			}
+		}
+		else_if = { # Carebear
+			limit = { root = { has_country_flag = carebear } }
+			set_name = {
+				key="Именинный"
+				literal=yes
+			}
+		}
+		else_if = { # Astro-Hungary
+			limit = { root = { has_country_flag = astrohungary } }
+			set_name = {
+				key="Тимишоара"
+				literal=yes
+			}
 		}
 		random_system_planet = {
 			limit = {
@@ -1917,13 +1981,40 @@ gotc_fallen_orbitals_2 = {
 	}
 
 	init_effect = {
-		if = {
-			limit = { root = { is_fallen_empire_materialist = yes } }
-			set_name = "Брахиотурн"
+		if = { # Reptiloid
+			limit = { root = { has_country_flag = reptiloid } }
+			set_name = {
+				key="Брахиотурн"
+				literal=yes
+			}
 		}
-		else_if = {
-			limit = { root = { is_fallen_empire_spiritualist = yes } }
-			set_name = "Старая Русса"
+		else_if = { # Rus
+			limit = { root = { has_country_flag = rus } }
+			set_name = {
+				key="Старая Русса"
+				literal=yes
+			}
+		}
+		else_if = { # Qin
+			limit = { root = { has_country_flag = qin } }
+			set_name = {
+				key="Аньян"
+				literal=yes
+			}
+		}
+		else_if = { # Carebear
+			limit = { root = { has_country_flag = carebear } }
+			set_name = {
+				key="Радуга"
+				literal=yes
+			}
+		}
+		else_if = { # Astro-Hungary
+			limit = { root = { has_country_flag = astrohungary } }
+			set_name = {
+				key="Грац"
+				literal=yes
+			}
 		}
 		random_system_planet = {
 			limit = {
@@ -2039,6 +2130,7 @@ gotc_fallen_shrouded = {
 # Shielded Planet 1
 gotc_fallen_shielded_1 = {
 	class = "rl_standard_stars"
+	name = "Шоусянь"
 	flags = { fallen_shielded_1 }
 
 	planet = {
@@ -2124,6 +2216,7 @@ gotc_fallen_shielded_1 = {
 # Shielded Planet 2
 gotc_fallen_shielded_2 = {
 	class = "rl_standard_stars"
+	name = "Линьцзы"
 	flags = { fallen_shielded_2 }
 
 	planet = {
@@ -2209,6 +2302,7 @@ gotc_fallen_shielded_2 = {
 # Shielded Planet 3
 gotc_fallen_shielded_3 = {
 	class = "rl_standard_stars"
+	name = "Пуян"
 	flags = { fallen_shielded_3 }
 
 	planet = {
@@ -2651,6 +2745,31 @@ gotc_fallen_xeno_zoo = {
 			set_owner = ROOT
 			set_planet_flag = fe_the_preserve
 			add_building = building_fe_xeno_zoo
+			if = { # Astro-Hungary
+				limit = { root = { has_country_flag = astrohungary } }
+				set_name = {
+					key="Тюрьма Народов"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Тюрьма Народов"
+						literal=yes
+					}
+				}
+			}
+			else = { # Carebear
+				set_name = {
+					key="Забота"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Забота"
+						literal=yes
+					}
+				}
+			}
 
 			while = {
 				count = 2
@@ -2690,7 +2809,7 @@ gotc_fallen_xeno_zoo = {
 # Home System - Machine
 gotc_fallen_machine = {
 	usage = fallen_empire_init
-	name = "NAME_Alpha_Refuge"
+	name = "Винда"
 	class = "rl_standard_stars"
 
 	flags = { ring_world_built }
@@ -2729,7 +2848,7 @@ gotc_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = "NAME_Alpha_Complex"
+		name = "Windows 11"
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -2788,6 +2907,35 @@ gotc_fallen_machine = {
 					type = "machine_assault_2"
 				}
 			}
+			create_species = {
+				name = {
+					key="Баг"
+					literal=yes
+				}
+				plural = {
+					key="Баги"
+					literal=yes
+				}
+				adjective = {
+					key="Багнут"
+					literal=yes
+				}
+				class = ART
+				portrait = art11
+				traits = {
+					trait = trait_presapient_starborn
+					trait = trait_nomadic
+					trait = trait_humanoid_existential_iteroparity
+					trait = trait_noxious
+					trait = trait_wasteful
+					trait = trait_unruly
+				}
+				sapient = no
+				homeworld = this
+			}
+			create_pop = {
+				species = last_created_species
+			}
 		}
 	}
 
@@ -2807,7 +2955,7 @@ gotc_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = "NAME_Production_Unit"
+		name = "Windows 10"
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -2860,7 +3008,7 @@ gotc_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = "NAME_Processing_Unit"
+		name = "Windows 7"
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -2914,7 +3062,7 @@ gotc_fallen_machine = {
 
 gotc_fallen_machine_2 = {
 	class = "rl_standard_stars"
-	name = "NAME_Beta_Refuge"
+	name = "Центр Чипизации"
 
 	planet = {
 		class = star
@@ -3041,7 +3189,7 @@ gotc_fallen_machine_2 = {
 
 gotc_fallen_machine_3 = {
 	class = "rl_standard_stars"
-	name = "NAME_Gamma_Refuge"
+	name = "Зомбирующие вышки"
 
 	planet = {
 		class = star
@@ -3170,7 +3318,7 @@ gotc_fallen_machine_3 = {
 
 gotc_fallen_machine_4 = {
 	class = "rl_standard_stars"
-	name = "NAME_Delta_Refuge"
+	name = "Выпущенные Продукты"
 
 	planet = {
 		class = star
@@ -3283,7 +3431,7 @@ gotc_fallen_machine_4 = {
 gotc_fallen_machine_5 = {
 	class = sc_black_hole
 
-	name = "NAME_Custodian_Nexus"
+	name = "Будущие Проекты"
 
 	planet = {
 		class = star
