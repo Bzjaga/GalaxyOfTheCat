@@ -31,6 +31,7 @@ fallen_empire_1 = {
 			name_list="JEW"
 			extra_trait_points = 4
 			traits = {
+				ideal_planet_class = pc_tropical
 				trait = "trait_presapient_natural_intellectuals"
 				trait = "trait_intelligent"
 				trait = "trait_thrifty"
@@ -149,6 +150,7 @@ fallen_empire_2 = {
 			gender=male
 			extra_trait_points = 4
 			traits = {
+				ideal_planet_class = pc_tundra
 				trait = "trait_perfected_genes"
 				trait = "trait_presapient_conservative"
 				trait = "trait_very_strong"
@@ -246,7 +248,7 @@ fallen_empire_3 = {
 
 	create_country_effect = {
 		if = { # Carebear
-			limit = { NOT = { any_system = { has_star_flag = astrohungary } } }
+			limit = { any_system = { has_star_flag = astrohungary } }
 			create_species = {
 				name = {
 					key="Медвед"
@@ -265,11 +267,12 @@ fallen_empire_3 = {
 				name_list="TOX4"
 				extra_trait_points = 5
 				traits = {
-					trait = "trait_presapient_natural_intellectuals"
+					ideal_planet_class = pc_tundra
 					trait = "trait_intelligent"
 					trait = "trait_very_strong"
-					trait = "trait_unruly"
-					trait = "trait_deviants"
+					trait = "trait_charismatic"
+					trait = "trait_crafted_smiles"
+					trait = "trait_artificial_intelligence"
 				}
 				allow_negative_traits = no
 			}
@@ -345,16 +348,41 @@ fallen_empire_3 = {
 		}
 		else = { # Astro-Hungary
 			create_species = {
-				name = random
-				class = random_non_machine
-				portrait = random
-				traits = random
+				name = {
+					key="Астро-мадьяр"
+					literal=yes
+				}
+				plural = {
+					key="Астро-мадьяры"
+					literal=yes
+				}
+				adjective = {
+					key="Астро-мадьярск"
+					literal=yes
+				}
+				class = "MAM"
+				portrait = "mam11"
+				name_list="MAM4"
 				extra_trait_points = 5
+				traits = {
+					ideal_planet_class = pc_alpine
+					trait = "trait_ingenious"
+					trait = "trait_traditional"
+					trait = "trait_natural_sociologists"
+					trait = "trait_talented"
+					trait = "trait_venerable"
+				}
 				allow_negative_traits = no
 			}
 			create_country = {
-				name = random
+				ship_prefix="HAB"
+				name = {
+					key="Астро-Венгерская Империя"
+					literal=yes
+				}
+				adjective="Астро-Венгерск"
 				type = fallen_empire
+				name_list="MAM4"
 				ignore_initial_colony_error = yes
 				authority = auth_imperial
 				civics = {
@@ -365,7 +393,22 @@ fallen_empire_3 = {
 				ethos = {
 					ethic = ethic_fanatic_xenophile
 				}
-				flag = random
+				flag = {
+					icon = {
+						category="zoological"
+						file="flag_zoological_11.dds"
+					}
+					background = {
+						category="backgrounds"
+						file="horizontal_stripe.dds"
+					}
+					colors = {
+						"red"
+						"off_white"
+						"null"
+						"null"
+					}
+				}
 				origin = "origin_fallen_empire"
 				effect = {
 					set_country_flag = fallen_empire_3
@@ -385,9 +428,21 @@ fallen_empire_3 = {
 					add_global_ship_design = "NAME_Seeder"
 					add_global_ship_design = "NAME_Builder"
 					add_global_ship_design = "NAME_FE_Starbase"
-					ruler = {
-						add_skill = 9
+
+					# Leader
+					create_leader = {
+						species = owner_main_species
+						class = official
+						name = "Франц-Иосиф Габсбург"
+						gender=male
+						skill = 10
+						randomize_traits = yes
 					}
+					set_male_ruler_title = "Государь-Император"
+					set_female_ruler_title = "Государыня-Императрица"
+					set_male_heir_title = "Эрц-перц-герцог"
+					set_female_heir_title = "Эрц-перц-герцогиня"
+					set_leader = last_created_leader
 				}
 			}
 		}
@@ -471,6 +526,7 @@ fallen_empire_4 = {
 				name_list="ART1"
 				extra_trait_points = 1
 				traits = {
+					ideal_planet_class = pc_continental
 					trait = "trait_thrifty"
 					#trait = "trait_sedentary"
 					trait = "trait_rapid_breeders"

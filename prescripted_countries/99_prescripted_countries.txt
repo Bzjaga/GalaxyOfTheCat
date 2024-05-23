@@ -1129,3 +1129,86 @@
 		leader_class = official
 	}
 }
+
+# astrohungary
+"Астро-Венгерская Империя" = {
+	name = "Астро-Венгерская Империя"
+	adjective = "Астро-Венгерск"
+	spawn_enabled = always
+
+	ship_prefix = "HAB"
+
+	species = {
+		class = "MAM"
+		portrait = "mam11"
+		name = "Астро-мадьяр"
+		plural = "Астро-мадьяры"
+		adjective = "Астро-мадьярск"
+		name_list = "MAM4"
+		trait = "trait_ingenious"
+		trait = "trait_traditional"
+		trait = "trait_wasteful"
+	}
+
+	room = "personality_honorbound_warriors_room"
+
+	authority = "auth_imperial"
+	civics = { "civic_aristocratic_elite" "civic_feudal_realm" }
+	government = gov_despotic_empire
+	origin = "origin_default"
+
+	ethic = "ethic_fanatic_authoritarian"
+	ethic = "ethic_xenophile"
+
+	planet_name = "Астро-Вена"
+	planet_class = "pc_alpine"
+	system_name = "Астро-Вена"
+
+	initializer = "custom_starting_init_astrohungary"
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_11.dds"
+		}
+		background={
+			category="backgrounds"
+			file="horizontal_stripe.dds"
+		}
+		colors={
+			"red"
+			"off_white"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Франц-Иосиф Габсбург"
+		gender = male
+		portrait = "mam11"
+		texture = 0
+		attachment=0
+		clothes=0
+		ruler_title={
+			key="Государь-Император"
+			literal=yes
+		}
+		heir_title={
+			key="Эрц-перц-герцог"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Государыня-Императрица"
+			literal=yes
+		}
+		heir_title_female={
+			key="Эрц-перц-герцогиня"
+			literal=yes
+		}
+		trait="trait_ruler_eye_for_talent"
+		leader_class = official
+	}
+}

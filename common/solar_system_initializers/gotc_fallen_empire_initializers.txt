@@ -533,7 +533,6 @@ gotc_fallen_2 = {
 
 # Home System III
 gotc_fallen_3 = {
-	name = "Карелот"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -560,7 +559,6 @@ gotc_fallen_3 = {
 	}
 
 	planet = {
-		name = "Карелот"
 		class = "pc_gas_giant"
 		orbit_distance = 60
 		orbit_angle = 200
@@ -609,12 +607,6 @@ gotc_fallen_3 = {
 					count = 20
 					add_district = district_city
 				}
-				while = {
-					count = 52
-					create_pop = {
-						species = owner_main_species
-					}
-				}
 				root = {
 					set_policy = {
 						policy = artificial_intelligence_policy
@@ -627,12 +619,88 @@ gotc_fallen_3 = {
 						cooldown = no
 					}
 				}
-				root = { create_fe_servant_robots = yes }
-				last_created_species = { save_event_target_as = fe_servants }
-				while = {
-					count = 52
-					create_pop = {
-						species = event_target:fe_servants
+				if = { # Astro-Hungary
+					limit = { root = { has_country_flag = astrohungary } }
+					set_name = {
+						key="Астро-Вена"
+						literal=yes
+					}
+					solar_system = {
+						set_name = {
+							key="Астро-Вена"
+							literal=yes
+						}
+					}
+					
+					while = {
+						count = 52
+						create_pop = {
+							species = owner_main_species
+						}
+					}
+					root = { # Create Swabrians
+						create_species = {
+							name = {
+								key="Швабр"
+								literal=yes
+							}
+							plural = {
+								key="Швабры"
+								literal=yes
+							}
+							adjective = {
+								key="Швабрск"
+								literal=yes
+							}
+							class = ROBOT
+							namelist = HUMAN2
+							portrait = "tox_machine"
+							traits = {
+								trait = "trait_mechanical"
+								trait = "trait_auto_mod_robotic"
+								trait = "trait_robot_high_maintenance"
+								trait = "trait_robot_artificial_sociologists"
+								trait = "trait_robot_luxurious"
+								trait = "trait_robot_streamlined_protocols"
+								trait = "trait_robot_learning_algorithms"
+							}
+						}
+
+						set_built_species = last_created_species
+					}
+					last_created_species = { save_event_target_as = fe_servants }
+					while = {
+						count = 52
+						create_pop = {
+							species = event_target:fe_servants
+						}
+					}
+				}
+				else = { # Carebear
+					set_name = {
+						key="Карелот"
+						literal=yes
+					}
+					solar_system = {
+						set_name = {
+							key="Карелот"
+							literal=yes
+						}
+					}
+
+					while = {
+						count = 52
+						create_pop = {
+							species = owner_main_species
+						}
+					}
+					root = { create_fe_servant_robots = yes }
+					last_created_species = { save_event_target_as = fe_servants }
+					while = {
+						count = 52
+						create_pop = {
+							species = event_target:fe_servants
+						}
 					}
 				}
 				create_fallen_empire_starting_navy = yes
@@ -876,6 +944,7 @@ gotc_fallen_4 = {
 					gender=male
 					extra_trait_points = 5
 					traits = {
+						ideal_planet_class = pc_arid
 						trait = "trait_lithoid"
 						trait = "trait_presapient_earthbound"
 						#trait = "trait_slow_learners"
