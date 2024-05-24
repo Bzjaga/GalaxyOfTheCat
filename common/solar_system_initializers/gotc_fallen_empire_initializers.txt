@@ -3191,7 +3191,6 @@ gotc_fallen_xeno_zoo = {
 		count = 1
 		orbit_distance = 15
 		class = "pc_gaia"
-		name = "NAME_The_Preserve"
 		orbit_angle = { min = 90 max = 270 }
 		size = 20
 
@@ -3416,7 +3415,7 @@ gotc_fallen_xeno_zoo = {
 # Home System - Machine
 gotc_fallen_machine = {
 	usage = fallen_empire_init
-	name = "Винда"
+	name = "Windows NT"
 	class = "rl_standard_stars"
 
 	flags = { ring_world_built }
