@@ -1129,3 +1129,239 @@
 		leader_class = official
 	}
 }
+
+# astrohungary
+"Астро-Венгерская Империя" = {
+	name = "Астро-Венгерская Империя"
+	adjective = "Астро-Венгерск"
+	spawn_enabled = always
+
+	ship_prefix = "HAB"
+
+	species = {
+		class = "MAM"
+		portrait = "mam11"
+		name = "Астро-мадьяр"
+		plural = "Астро-мадьяры"
+		adjective = "Астро-мадьярск"
+		name_list = "MAM4"
+		trait = "trait_ingenious"
+		trait = "trait_traditional"
+		trait = "trait_wasteful"
+	}
+
+	room = "personality_honorbound_warriors_room"
+
+	authority = "auth_imperial"
+	civics = { "civic_aristocratic_elite" "civic_feudal_realm" }
+	government = gov_despotic_empire
+	origin = "origin_default"
+
+	ethic = "ethic_fanatic_authoritarian"
+	ethic = "ethic_xenophile"
+
+	planet_name = "Астро-Вена"
+	planet_class = "pc_alpine"
+	system_name = "Астро-Вена"
+
+	initializer = "custom_starting_init_astrohungary"
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_11.dds"
+		}
+		background={
+			category="backgrounds"
+			file="horizontal_stripe.dds"
+		}
+		colors={
+			"red"
+			"off_white"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Франц-Иосиф Габсбург"
+		gender = male
+		portrait = "mam11"
+		texture = 0
+		attachment=0
+		clothes=0
+		ruler_title={
+			key="Государь-Император"
+			literal=yes
+		}
+		heir_title={
+			key="Эрц-перц-герцог"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Государыня-Императрица"
+			literal=yes
+		}
+		heir_title_female={
+			key="Эрц-перц-герцогиня"
+			literal=yes
+		}
+		trait="trait_ruler_eye_for_talent"
+		leader_class = official
+	}
+}
+
+# pospolitiod
+"Речь Посполитоидная" = {
+	name = "Речь Посполитоидная"
+	adjective = "Посполитоидн"
+	spawn_enabled = always
+
+	ship_prefix = "POL"
+
+	species = {
+		class = "LITHOID"
+		portrait = "lith4"
+		name = "Посполитоид"
+		plural = "Посполитоиды"
+		adjective = "Посполитоидн"
+		name_list = "LITHOID1"
+		trait = "trait_lithoid"
+		trait = "trait_intelligent"
+		trait = "trait_industrious"
+		trait = "trait_nomadic"
+		trait = "trait_unruly"
+		trait = "trait_deviants"
+	}
+
+	room = "crystalline_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_philosopher_king" "civic_merchant_guilds" }
+	government = gov_elective_monarchy
+	origin = "origin_galactic_doorstep"
+
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_militarist"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "Пясечно"
+	planet_class = "pc_alpine"
+	system_name = "Пясечно"
+
+	initializer = "custom_starting_init_pospolitiod"
+	graphical_culture = "lithoid_01"
+	city_graphical_culture = "lithoid_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_4.dds"
+		}
+		background={
+			category="backgrounds"
+			file="horizontal.dds"
+		}
+		colors={
+			"silver_steel"
+			"red"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Лех Валенса"
+		gender = male
+		portrait = "lith4"
+		texture = 1
+		attachment=0
+		clothes=0
+		ruler_title={
+			key="Ксендз"
+			literal=yes
+		}
+		trait="trait_ruler_charismatic"
+		leader_class = official
+	}
+}
+
+# netoropyr
+"Умеренный прогресс в рамках закона" = {
+	name = "Умеренный прогресс в рамках закона"
+	adjective = "Умеренно-прогрессивн"
+	spawn_enabled = always
+
+	ship_prefix = "CZE"
+
+	species = {
+		class = "MOL"
+		portrait = "mol18"
+		name = "Неторопырь"
+		plural = "Неторопыри"
+		adjective = "Неторопырск"
+		name_list = "MOL4"
+		trait = "trait_adaptive"
+		trait = "trait_docile"
+		trait = "trait_traditional"
+		trait = "trait_slow_breeders"
+		trait = "trait_weak"
+	}
+
+	room = "default_room"
+
+	authority = "auth_democratic"
+	civics = { "civic_agrarian_idyll" "civic_functional_architecture" }
+	government = gov_moral_democracy
+	origin = "origin_shoulders_of_giants"
+
+	ethic = "ethic_egalitarian"
+	ethic = "ethic_pacifist"
+	ethic = "ethic_materialist"
+
+	planet_name = "Богема"
+	planet_class = "pc_tropical"
+	system_name = "Богема"
+
+	initializer = "custom_starting_init_netoropyr"
+	graphical_culture = "molluscoid_01"
+	city_graphical_culture = "molluscoid_01"
+
+	empire_flag={
+		icon={
+			category="spherical"
+			file="flag_spherical_18.dds"
+		}
+		background={
+			category="backgrounds"
+			file="diagonal_stripe.dds"
+		}
+		colors={
+			"yellow"
+			"green"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Йозеф Швейк"
+		gender = male
+		portrait = "mol18"
+		texture = 0
+		attachment=0
+		clothes=0
+		ruler_title={
+			key="Умеренный Лидер"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Умеренный Лидер"
+			literal=yes
+		}
+		trait="trait_ruler_charismatic"
+		leader_class = commander
+	}
+}

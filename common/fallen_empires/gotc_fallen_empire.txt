@@ -1,0 +1,728 @@
+# Materialist
+# Reptiloid
+fallen_empire_1 = {
+	graphical_culture = "fallen_empire_02"
+	initializer = "gotc_fallen_1"
+
+	weight_modifier = {
+		base = 100
+		modifier = {
+			factor = 99999
+			has_origin = origin_scion
+		}
+	}
+
+	create_country_effect = {
+		create_species = {
+			name = {
+				key="Ящер"
+				literal=yes
+			}
+			plural = {
+				key="Ящеры"
+				literal=yes
+			}
+			adjective = {
+				key="Ящерск"
+				literal=yes
+			}
+			class = "REP"
+			portrait = "cyb4"
+			name_list="JEW"
+			extra_trait_points = 4
+			traits = {
+				ideal_planet_class = pc_tropical
+				trait = "trait_presapient_natural_intellectuals"
+				trait = "trait_intelligent"
+				trait = "trait_thrifty"
+				trait = "trait_conservational"
+			}
+			allow_negative_traits = no
+		}
+		last_created_species = {
+			modify_species = {
+				species = this
+				add_trait = trait_cybernetic
+				add_trait = trait_inorganic_breath
+			}
+		}
+		create_country = {
+			ship_prefix="LIZ"
+			name = {
+				key="Заговор Рептилоидов"
+				literal=yes
+			}
+			adjective="Рептилоидн"
+			type = fallen_empire
+			ignore_initial_colony_error = yes
+			authority = auth_imperial
+			civics = {
+				civic = civic_lethargic_leadership
+				civic = civic_empire_in_decline
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_fanatic_materialist
+			}
+			flag = {
+				icon = {
+					category="domination"
+					file="domination_16.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_8.dds"
+				}
+				colors = {
+					"swamp_green"
+					"shadow_blue"
+					"black"
+					"null"
+				}
+			}
+			origin = "origin_fallen_empire"
+			effect = {
+				set_country_flag = fallen_empire_1
+				set_country_flag = reptiloid
+				add_resource = {
+					minerals = 10000
+					energy = 10000
+					food = 1000
+					influence = 500
+				}
+				# must initialize global designs here
+				add_global_ship_design = "NAME_Enforcer"
+				add_global_ship_design = "NAME_Savant"
+				add_global_ship_design = "NAME_Scholar"
+				add_global_ship_design = "NAME_Sage"
+				add_global_ship_design = "NAME_Cloaker"
+				add_global_ship_design = "NAME_Librarian"
+				add_global_ship_design = "NAME_Seeker"
+				add_global_ship_design = "NAME_FE_Starbase"
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = scientist
+					name = "Марк Цукерберг"
+					gender=male
+					skill = 10
+					randomize_traits = yes
+				}
+				set_male_ruler_title = "Глава Заговора"
+				set_female_ruler_title = "Глава Заговора"
+				set_leader = last_created_leader
+			}
+		}
+	}
+}
+# Spiritualist
+# Rus
+fallen_empire_2 = {
+	graphical_culture = "fallen_empire_01"
+	initializer = "gotc_fallen_2"
+
+	weight_modifier = {
+		base = 100
+		modifier = {
+			factor = 99999
+			has_origin = origin_scion
+		}
+	}
+
+	create_country_effect = {
+		create_species = {
+			name = {
+				key="Рус"
+				literal=yes
+			}
+			plural = {
+				key="Русы"
+				literal=yes
+			}
+			adjective = {
+				key="Русск"
+				literal=yes
+			}
+			class = "MAM"
+			portrait = "cyb6"
+			name_list="RUS"
+			gender=male
+			extra_trait_points = 4
+			traits = {
+				ideal_planet_class = pc_tundra
+				trait = "trait_perfected_genes"
+				trait = "trait_presapient_conservative"
+				trait = "trait_very_strong"
+				trait = "trait_resilient"
+			}
+			allow_negative_traits = no
+		}
+		last_created_species = {
+			modify_species = {
+				species = this
+				add_trait = trait_psionic
+				add_trait = trait_venerable
+			}
+		}
+		create_country = {
+			ship_prefix="РУСЬ"
+			name = {
+				key="Русь"
+				literal=yes
+			}
+			adjective="Русск"
+			type = fallen_empire
+			name_list="RUS"
+			ignore_initial_colony_error = yes
+			authority = auth_imperial
+			civics = {
+				civic = civic_lethargic_leadership
+				civic = civic_empire_in_decline
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_fanatic_spiritualist
+			}
+			flag = {
+				icon = {
+					category="domination"
+					file="domination_11.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_39.dds"
+				}
+				colors = {
+					"bright_yellow"
+					"intense_red"
+					"black"
+					"null"
+				}
+			}
+			origin = "origin_fallen_empire"
+			effect = {
+				set_country_flag = fallen_empire_2
+				set_country_flag = rus
+				add_resource = {
+					minerals = 10000
+					energy = 10000
+					food = 1000
+					influence = 500
+				}
+				# must initialize global designs here
+				add_global_ship_design = "NAME_Cleanser"
+				add_global_ship_design = "NAME_Eternal"
+				add_global_ship_design = "NAME_Avatar"
+				add_global_ship_design = "NAME_Zealot"
+				add_global_ship_design = "NAME_Penitent"
+				add_global_ship_design = "NAME_Faith"
+				add_global_ship_design = "NAME_Pilgrim"
+				add_global_ship_design = "NAME_FE_Starbase"
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = commander
+					name = "Словен Всеслав"
+					gender=male
+					skill = 10
+					randomize_traits = yes
+				}
+				set_male_ruler_title = "Вождь Русов"
+				set_female_ruler_title = "Вождь Русов"
+				set_leader = last_created_leader
+			}
+		}
+	}
+}
+# Xenophile
+# Carebear / Astro-Hungary
+fallen_empire_3 = {
+	graphical_culture = "fallen_empire_03"
+	initializer = "gotc_fallen_3"
+
+	weight_modifier = {
+		base = 100
+	}
+
+	create_country_effect = {
+		if = { # Carebear
+			limit = { any_system = { has_star_flag = astrohungary } }
+			create_species = {
+				name = {
+					key="Медвед"
+					literal=yes
+				}
+				plural = {
+					key="Медведы"
+					literal=yes
+				}
+				adjective = {
+					key="Медведск"
+					literal=yes
+				}
+				class = "MAM"
+				portrait = "mam13"
+				name_list="TOX4"
+				extra_trait_points = 5
+				traits = {
+					ideal_planet_class = pc_tundra
+					trait = "trait_intelligent"
+					trait = "trait_very_strong"
+					trait = "trait_charismatic"
+					trait = "trait_crafted_smiles"
+					trait = "trait_artificial_intelligence"
+				}
+				allow_negative_traits = no
+			}
+			create_country = {
+				ship_prefix="CARE"
+				name = {
+					key="Заботливые мишки"
+					literal=yes
+				}
+				adjective="Заботлив"
+				type = fallen_empire
+				name_list="TOX4"
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_xenophile
+				}
+				flag = {
+					icon = {
+						category="ornate"
+						file="flag_ornate_6.dds"
+					}
+					background = {
+						category="backgrounds"
+						file="double_triangles.dds"
+					}
+					colors = {
+						"dark_purple"
+						"yellow"
+						"null"
+						"null"
+					}
+				}
+				origin = "origin_fallen_empire"
+				effect = {
+					set_country_flag = fallen_empire_3
+					set_country_flag = carebear
+					add_resource = {
+						minerals = 10000
+						energy = 10000
+						food = 1000
+						influence = 500
+					}
+					# must initialize global designs here
+					add_global_ship_design = "NAME_Adjuster"
+					add_global_ship_design = "NAME_Keeper"
+					add_global_ship_design = "NAME_Custodian"
+					add_global_ship_design = "NAME_Overseer"
+					add_global_ship_design = "NAME_Watcher"
+					add_global_ship_design = "NAME_Seeder"
+					add_global_ship_design = "NAME_Builder"
+					add_global_ship_design = "NAME_FE_Starbase"
+
+					# Leader
+					create_leader = {
+						species = owner_main_species
+						class = official
+						name = "Николас"
+						gender=male
+						skill = 10
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Помогатор"
+					set_female_ruler_title = "Помогаторша"
+					set_leader = last_created_leader
+				}
+			}
+		}
+		else = { # Astro-Hungary
+			create_species = {
+				name = {
+					key="Астро-мадьяр"
+					literal=yes
+				}
+				plural = {
+					key="Астро-мадьяры"
+					literal=yes
+				}
+				adjective = {
+					key="Астро-мадьярск"
+					literal=yes
+				}
+				class = "MAM"
+				portrait = "mam11"
+				name_list="MAM4"
+				extra_trait_points = 5
+				traits = {
+					ideal_planet_class = pc_alpine
+					trait = "trait_ingenious"
+					trait = "trait_traditional"
+					trait = "trait_natural_sociologists"
+					trait = "trait_talented"
+					trait = "trait_venerable"
+				}
+				allow_negative_traits = no
+			}
+			create_country = {
+				ship_prefix="HAB"
+				name = {
+					key="Астро-Венгерская Империя"
+					literal=yes
+				}
+				adjective="Астро-Венгерск"
+				type = fallen_empire
+				name_list="MAM4"
+				ignore_initial_colony_error = yes
+				authority = auth_imperial
+				civics = {
+					civic = civic_lethargic_leadership
+					civic = civic_empire_in_decline
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_fanatic_xenophile
+				}
+				flag = {
+					icon = {
+						category="zoological"
+						file="flag_zoological_11.dds"
+					}
+					background = {
+						category="backgrounds"
+						file="horizontal_stripe.dds"
+					}
+					colors = {
+						"red"
+						"off_white"
+						"null"
+						"null"
+					}
+				}
+				origin = "origin_fallen_empire"
+				effect = {
+					set_country_flag = fallen_empire_3
+					set_country_flag = astrohungary
+					add_resource = {
+						minerals = 10000
+						energy = 10000
+						food = 1000
+						influence = 500
+					}
+					# must initialize global designs here
+					add_global_ship_design = "NAME_Adjuster"
+					add_global_ship_design = "NAME_Keeper"
+					add_global_ship_design = "NAME_Custodian"
+					add_global_ship_design = "NAME_Overseer"
+					add_global_ship_design = "NAME_Watcher"
+					add_global_ship_design = "NAME_Seeder"
+					add_global_ship_design = "NAME_Builder"
+					add_global_ship_design = "NAME_FE_Starbase"
+
+					# Leader
+					create_leader = {
+						species = owner_main_species
+						class = official
+						name = "Франц-Иосиф Габсбург"
+						gender=male
+						skill = 10
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Государь-Император"
+					set_female_ruler_title = "Государыня-Императрица"
+					set_male_heir_title = "Эрц-перц-герцог"
+					set_female_heir_title = "Эрц-перц-герцогиня"
+					set_leader = last_created_leader
+				}
+			}
+		}
+	}
+}
+# Xenophobe
+# Qin
+fallen_empire_4 = {
+	graphical_culture = "fallen_empire_04"
+	initializer = "gotc_fallen_4"
+
+	weight_modifier = {
+		base = 100
+	}
+
+	create_country_effect = {
+		if = {
+			limit = {
+				any_system = { has_star_flag = mao }
+			}
+			random_playable_country = {
+				limit = {
+					capital_scope = {
+						solar_system = {
+							has_star_flag = mao
+						}
+					}
+				}
+				owner_main_species = {
+					save_event_target_as = mao_species
+				}
+			}
+			event_target:mao_species = {
+				create_species = {
+					is_mod = yes
+					name = {
+						key="Китаец"
+						literal=yes
+					}
+					plural = {
+						key="Китайцы"
+						literal=yes
+					}
+					adjective = {
+						key="Китайск"
+						literal=yes
+					}
+					class = this
+					portrait = this
+					extra_trait_points = 1
+					traits = {
+						trait = "trait_thrifty"
+						#trait = "trait_sedentary"
+						trait = "trait_rapid_breeders"
+						#trait = "trait_nonadaptive"
+						trait = "trait_conservational"
+					}
+					can_be_modified = this
+					homeworld = this
+					namelist = this
+					effect = { save_global_event_target_as = fallen_4_species }
+				}
+			}
+		}
+		else = {
+			create_species = {
+				name = {
+					key="Китаец"
+					literal=yes
+				}
+				plural = {
+					key="Китайцы"
+					literal=yes
+				}
+				adjective = {
+					key="Китайск"
+					literal=yes
+				}
+				class = "REP"
+				portrait = "rep1"
+				name_list="ART1"
+				extra_trait_points = 1
+				traits = {
+					ideal_planet_class = pc_continental
+					trait = "trait_thrifty"
+					#trait = "trait_sedentary"
+					trait = "trait_rapid_breeders"
+					#trait = "trait_nonadaptive"
+					trait = "trait_conservational"
+				}
+				allow_negative_traits = no
+				effect = { save_global_event_target_as = fallen_4_species }
+			}
+		}
+		create_country = {
+			ship_prefix="QIN"
+			name = {
+				key="Циньская Династия"
+				literal=yes
+			}
+			adjective="Циньск"
+			type = fallen_empire
+			name_list="ART1"
+			ignore_initial_colony_error = yes
+			authority = auth_imperial
+			civics = {
+				civic = civic_lethargic_leadership
+				civic = civic_empire_in_decline
+			}
+			species = event_target:fallen_4_species
+			ethos = {
+				ethic = ethic_fanatic_xenophobe
+			}
+			flag = {
+				icon = {
+					category="ornate"
+					file="flag_ornate_16.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_40.dds"
+				}
+				colors = {
+					"dark_blue"
+					"bright_yellow"
+					"black"
+					"null"
+				}
+			}
+			origin = "origin_fallen_empire"
+			effect = {
+				set_country_flag = fallen_empire_4
+				set_country_flag = qin
+				add_resource = {
+					minerals = 10000
+					energy = 10000
+					food = 1000
+					influence = 500
+				}
+				# must initialize global designs here
+				add_global_ship_design = "NAME_Reaper"
+				add_global_ship_design = "NAME_Imperium"
+				add_global_ship_design = "NAME_Supremacy"
+				add_global_ship_design = "NAME_Glory"
+				add_global_ship_design = "NAME_Devastator"
+				add_global_ship_design = "NAME_Servitor"
+				add_global_ship_design = "NAME_Destiny"
+				add_global_ship_design = "NAME_FE_Starbase"
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = commander
+					name = "Цинь Шихуанди"
+					gender=male
+					skill = 10
+					randomize_traits = yes
+				}
+				set_leader = last_created_leader
+			}
+		}
+	}
+}
+
+# Machine
+# Gates
+fallen_machine_empire = {
+	graphical_culture = "fallen_machine_empire_01"
+	initializer = "gotc_fallen_machine"
+
+	weight_modifier = {
+		base = 100
+	}
+
+	possible = {
+		host_has_dlc = "Synthetic Dawn Story Pack"
+	}
+
+	create_country_effect = {
+		create_species = {
+			name = {
+				key="Чипизатор"
+				literal=yes
+			}
+			plural = {
+				key="Чипизаторы"
+				literal=yes
+			}
+			adjective = {
+				key="Чипизаторск"
+				literal=yes
+			}
+			class = MACHINE
+			namelist = MACHINE3
+			portrait = sd_pla_robot
+			traits = {
+				trait = trait_machine_unit
+				trait = trait_robot_efficient_processors
+				trait = trait_robot_immortality
+				trait = trait_robot_recycled
+				trait = trait_robot_propaganda_machines
+				trait = trait_robot_high_bandwidth
+			}
+			extra_trait_points = 3
+			allow_negative_traits = no
+		}
+		create_country = {
+			ship_prefix="MS"
+			name = {
+				key="Корпорация Майкрософт"
+				literal=yes
+			}
+			adjective="Мелкомягк"
+			type = fallen_empire
+			ignore_initial_colony_error = yes
+			authority = auth_machine_intelligence
+			civics = {
+				civic = civic_machine_remnants
+				civic = civic_custodian_directives
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_gestalt_consciousness
+			}
+			flag = {
+				icon = {
+					category="lithoid"
+					file="lithoid_04.dds"
+				}
+				background = {
+					category="backgrounds"
+					file="flag_BG_50.dds"
+				}
+				colors = {
+					"frog_green"
+					"yellow"
+					"black"
+					"null"
+				}
+			}
+			origin = "origin_fallen_empire"
+			effect = {
+				set_country_flag = fallen_empire_machine
+				set_country_flag = gates
+				add_resource = {
+					minerals = 10000
+					energy = 10000
+					food = 1000
+					influence = 500
+				}
+				if = {
+					limit = { host_has_dlc = "Apocalypse" }
+					give_technology = {
+						tech = tech_colossus
+						message = no
+					}
+				}
+				# must initialize global designs here
+				add_global_ship_design = "NAME_Omega"
+				add_global_ship_design = "NAME_Alpha"
+				add_global_ship_design = "NAME_Beta"
+				add_global_ship_design = "NAME_Gamma"
+				add_global_ship_design = "NAME_Theta"
+				add_global_ship_design = "NAME_Tau"
+				add_global_ship_design = "NAME_Sigma"
+				add_global_ship_design = "NAME_FE_Starbase"
+
+				# Leader
+				create_leader = {
+					species = owner_main_species
+					class = scientist
+					name = "Билл Гейтс III"
+					gender=male
+					skill = 10
+					randomize_traits = yes
+				}
+				set_male_ruler_title = "Благотворитель"
+				set_female_ruler_title = "Благотворительница"
+				set_leader = last_created_leader
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+#imperial_overlord_modifier
+imperial_overlord_modifier = {
+	divided_patrongage_max_subjects = 2
+}

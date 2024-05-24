@@ -1083,8 +1083,8 @@ create_overlord_post_soviet = {
 
 			# Resources
 			add_basic_resources_effect = { VALUE = 3000 }
-			add_manufactured_resources_effect = { VALUE = 3000 } #Post-Soviet legacy: x2 manufactured resources
-			add_advanced_resources_effect = { VALUE = 1000 }
+			add_manufactured_resources_effect = { VALUE = 3000 } # Post-Soviet legacy: x2 manufactured resources
+			add_advanced_resources_effect = { VALUE = 3000 } # Post-Soviet legacy: x3 advanced resources
 
 			# Tech
 			give_physics_tech_tier_1_effect = yes

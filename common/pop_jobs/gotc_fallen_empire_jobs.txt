@@ -1,0 +1,60 @@
+#####################
+# Galaxy of the Cat Fallen Empire Jobs
+#####################
+
+# Astro-Hungary has many peoples
+# Some of them should be able to work as hedonists
+fe_hedonist = {
+	category = precursor
+	is_capped_by_modifier = no
+	building_icon = building_hyper_entertainment_forum
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_precursor_job
+
+	possible = {
+		owner = {
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		OR = {
+			is_same_species = owner
+			AND = { # Addition for Astro-Hungary
+				species = { has_species_flag = astrohungarian }
+				planet = { NOT = { has_planet_flag = fe_the_preserve } }
+			}
+		}
+	}
+
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 2
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+
+		# crisis purge
+		modifier = {
+			factor = 0.01
+			exists = planet
+			exists = planet.controller
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
+		}
+	}
+}
