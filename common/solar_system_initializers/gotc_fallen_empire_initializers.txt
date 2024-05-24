@@ -632,7 +632,7 @@ gotc_fallen_3 = {
 					}
 					
 					while = {
-						count = 52
+						count = 32
 						create_pop = {
 							species = owner_main_species
 						}
@@ -672,6 +672,269 @@ gotc_fallen_3 = {
 						count = 52
 						create_pop = {
 							species = event_target:fe_servants
+						}
+					}
+				
+					create_species = { # Vurdvalah
+						name = {
+							key="Вурдвалах"
+							literal=yes
+						}
+						plural = {
+							key="Вурдвалахи"
+							literal=yes
+						}
+						adjective = {
+							key="Вурдвалашск"
+							literal=yes
+						}
+						class = ART
+						portrait = synth09
+						name_list="HUMAN3"
+						traits = {
+							ideal_planet_class = pc_continental
+							trait = trait_presapient_natural_intellectuals
+							trait = trait_necrophage
+							trait = trait_venerable
+							trait = trait_humanoid_jinxed
+							trait = trait_intelligent
+							trait = trait_solitary
+						}
+					}
+					last_created_species = {
+						set_species_flag = astrohungarian
+						save_event_target_as = vurdvalah_species
+					}
+					create_pop = {
+						species = event_target:vurdvalah_species
+					}
+				
+					create_species = { # Kazak
+						name = {
+							key="Казак"
+							literal=yes
+						}
+						plural = {
+							key="Казаки"
+							literal=yes
+						}
+						adjective = {
+							key="Казач"
+							literal=yes
+						}
+						class = PLANT
+						portrait = pla9
+						name_list="HUM1"
+						traits = {
+							ideal_planet_class = pc_arid
+							trait = trait_unruly
+							trait = trait_plantoid_phototrophic
+							trait = trait_nomadic
+							trait = trait_quarrelsome
+							trait = trait_very_strong
+						}
+					}
+					last_created_species = {
+						save_event_target_as = kazak_species
+					}
+					create_pop = {
+						species = event_target:kazak_species
+					}
+					
+					# Pospolitoid
+					if = { # Check Pospolitoid existence
+						limit = {
+							any_system = { has_star_flag = pospolitiod }
+						}
+						random_playable_country = {
+							limit = {
+								capital_scope.solar_system = { has_star_flag = pospolitiod }
+							}
+							owner_main_species = {
+								set_species_flag = astrohungarian
+								save_event_target_as = pospolitiod_species
+							}
+						}
+					}
+					else = { # Create Pospolitoid species
+						create_species = { # Pospolitoid
+							name = {
+								key="Посполитоид"
+								literal=yes
+							}
+							plural = {
+								key="Посполитоиды"
+								literal=yes
+							}
+							adjective = {
+								key="Посполитоидн"
+								literal=yes
+							}
+							class = LITHOID
+							portrait = lith4
+							name_list="LITHOID1"
+							traits = {
+								ideal_planet_class = pc_alpine
+								trait = trait_lithoid
+								trait = trait_intelligent
+								trait = trait_industrious
+								trait = trait_nomadic
+								trait = trait_unruly
+								trait = trait_deviants
+							}
+						}
+						last_created_species = {
+							set_species_flag = astrohungarian
+							save_event_target_as = pospolitiod_species
+						}
+					}
+					create_pop = {
+						species = event_target:pospolitiod_species
+					}
+					
+					# Netoropyr
+					if = { # Check Netoropyr existence
+						limit = {
+							any_system = { has_star_flag = netoropyr }
+						}
+						random_playable_country = {
+							limit = {
+								capital_scope.solar_system = { has_star_flag = netoropyr }
+							}
+							owner_main_species = {
+								set_species_flag = astrohungarian
+								save_event_target_as = netoropyr_species
+							}
+						}
+					}
+					else = { # Create Netoropyr species
+						create_species = { # Netoropyr
+							name = {
+								key="Неторопырь"
+								literal=yes
+							}
+							plural = {
+								key="Неторопыри"
+								literal=yes
+							}
+							adjective = {
+								key="Неторопырск"
+								literal=yes
+							}
+							class = MOL
+							portrait = mol18
+							name_list="MOL4"
+							traits = {
+								ideal_planet_class = pc_tropical
+								trait = trait_adaptive
+								trait = trait_docile
+								trait = trait_traditional
+								trait = trait_slow_breeders
+								trait = trait_weak
+							}
+						}
+						last_created_species = {
+							set_species_flag = astrohungarian
+							save_event_target_as = netoropyr_species
+						}
+					}
+					create_pop = {
+						species = event_target:netoropyr_species
+					}
+
+					# Untermensch # Aryan
+					if = { # Check Reich existence
+						limit = {
+							any_system = { has_star_flag = reich }
+						}
+						random_playable_country = {
+							limit = {
+								capital_scope.solar_system = { has_star_flag = reich }
+							}
+							capital_scope = {
+								random_owned_species = {
+									limit = { has_species_flag = untermensch }
+									save_event_target_as = untermensch_species
+								}
+							}
+							owner_main_species = {
+								set_species_flag = astrohungarian
+								save_event_target_as = aryan_species
+							}
+						}
+					}
+					else = { # Create Untermensch and Aryan species
+						create_species = { # Untermensch
+							name = {
+								key="Унтерменш"
+								literal=yes
+							}
+							plural = {
+								key="Унтерменши"
+								literal=yes
+							}
+							adjective = {
+								key="Унтерменшеск"
+								literal=yes
+							}
+							class = HUM
+							portrait = humanoid_hp_02
+							name_list="JEW"
+							traits = {
+								ideal_planet_class = pc_alpine
+								trait = trait_presapient_natural_intellectuals
+								trait = trait_repugnant
+								trait = trait_deviants
+								trait = trait_thrifty
+								trait = trait_traditional
+								trait = trait_rapid_breeders
+							}
+						}
+						last_created_species = {
+							set_species_flag = untermensch
+							save_event_target_as = untermensch_species
+						}
+						create_species = { # Aryan
+							name = {
+								key="Ариец"
+								literal=yes
+							}
+							plural = {
+								key="Арийцы"
+								literal=yes
+							}
+							adjective = {
+								key="Арийск"
+								literal=yes
+							}
+							class = MAM
+							portrait = mam8
+							name_list="HUMAN2"
+							traits = {
+								ideal_planet_class = pc_alpine
+								trait = trait_perfected_genes
+								trait = trait_talented
+								trait = trait_intelligent
+								trait = trait_docile
+								trait = trait_repugnant
+								trait = trait_solitary
+							}
+						}
+						last_created_species = {
+							set_species_flag = astrohungarian
+							save_event_target_as = aryan_species
+						}
+					}
+					while = {
+						count = 12
+						create_pop = {
+							species = event_target:aryan_species
+						}
+					}
+					while = {
+						count = 4
+						create_pop = {
+							species = event_target:untermensch_species
 						}
 					}
 				}
@@ -772,17 +1035,29 @@ gotc_fallen_3 = {
 						key="Буда"
 						literal=yes
 					}
+					while = {
+						count = 16
+						create_pop = {
+							species = owner_main_species
+						}
+					}
+					while = {
+						count = 2
+						create_pop = {
+							species = event_target:untermensch_species
+						}
+					}
 				}
 				else = { # Carebear
 					set_name = {
 						key="Друг"
 						literal=yes
 					}
-				}
-				while = {
-					count = 18
-					create_pop = {
-						species = owner_main_species
+					while = {
+						count = 18
+						create_pop = {
+							species = owner_main_species
+						}
 					}
 				}
 				while = {
@@ -829,17 +1104,29 @@ gotc_fallen_3 = {
 						key="Пешт"
 						literal=yes
 					}
+					while = {
+						count = 25
+						create_pop = {
+							species = owner_main_species
+						}
+					}
+					while = {
+						count = 2
+						create_pop = {
+							species = event_target:untermensch_species
+						}
+					}
 				}
 				else = { # Carebear
 					set_name = {
 						key="Дружба"
 						literal=yes
 					}
-				}
-				while = {
-					count = 27
-					create_pop = {
-						species = owner_main_species
+					while = {
+						count = 27
+						create_pop = {
+							species = owner_main_species
+						}
 					}
 				}
 				while = {
@@ -1226,7 +1513,8 @@ gotc_fallen_col_1_1 = {
 					}
 				}
 			}
-			else_if = { # Astro-Hungary
+			
+			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Прага"
@@ -1238,9 +1526,54 @@ gotc_fallen_col_1_1 = {
 						literal=yes
 					}
 				}
+				change_pc = pc_tropical
+				if = { # Check Netoropyr existence
+					limit = {
+						NOT = { any_system = { has_star_flag = netoropyr } }
+					}
+					event_target:netoropyr_species = {
+						set_species_homeworld = prev
+					}
+				}
+				set_planet_flag = fallen_empire_world
+				clear_blockers = yes
+				prevent_anomaly = yes
+				set_owner = ROOT
+				add_building = building_ancient_palace
+				add_building = building_fe_dome
+				while = {
+					count = 5
+					add_district = {
+						district_type = district_city
+						ignore_cap = yes
+					}
+				}
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+					}
+				}
+				create_pop = {
+					species = event_target:fe_servants
+				}
+				create_pop = {
+					species = event_target:aryan_species
+				}
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:untermensch_species
+					}
+				}
+				while = {
+					count = 9
+					create_pop = {
+						species = event_target:netoropyr_species
+					}
+				}
 			}
-			
-			if = {
+			else_if = {
 				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
@@ -1375,7 +1708,8 @@ gotc_fallen_col_1_2 = {
 					}
 				}
 			}
-			else_if = { # Astro-Hungary
+			
+			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Лемберг"
@@ -1387,9 +1721,49 @@ gotc_fallen_col_1_2 = {
 						literal=yes
 					}
 				}
+				change_pc = pc_arid
+				event_target:kazak_species = {
+					set_species_homeworld = prev
+				}
+				set_planet_flag = fallen_empire_world
+				clear_blockers = yes
+				prevent_anomaly = yes
+				set_owner = ROOT
+				add_building = building_ancient_palace
+				add_building = building_fe_dome
+				while = {
+					count = 5
+					add_district = {
+						district_type = district_city
+						ignore_cap = yes
+					}
+				}
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+					}
+				}
+				create_pop = {
+					species = event_target:fe_servants
+				}
+				while = {
+					count = 4
+					create_pop = {
+						species = event_target:kazak_species
+					}
+				}
+				create_pop = {
+					species = event_target:untermensch_species
+				}
+				while = {
+					count = 7
+					create_pop = {
+						species = event_target:pospolitiod_species
+					}
+				}
 			}
-			
-			if = {
+			else_if = {
 				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
@@ -1580,21 +1954,62 @@ gotc_fallen_col_2_1 = {
 					}
 				}
 			}
-			else_if = { # Astro-Hungary
+			
+			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
-					key="Триест"
+					key="Тимишоара"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Триест"
+						key="Тимишоара"
 						literal=yes
 					}
 				}
+				change_pc = pc_continental
+				event_target:vurdvalah_species = {
+					set_species_homeworld = prev
+				}
+				set_planet_flag = fallen_empire_world
+				clear_blockers = yes
+				prevent_anomaly = yes
+				set_owner = ROOT
+				add_building = building_ancient_palace
+				add_building = building_fe_dome
+				while = {
+					count = 5
+					add_district = {
+						district_type = district_city
+						ignore_cap = yes
+					}
+				}
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+					}
+				}
+				create_pop = {
+					species = event_target:fe_servants
+				}
+				create_pop = {
+					species = event_target:untermensch_species
+				}
+				while = {
+					count = 6
+					create_pop = {
+						species = event_target:vurdvalah_species
+					}
+				}
+				while = {
+					count = 5
+					create_pop = {
+						species = owner_main_species
+					}
+				}
 			}
-			
-			if = {
+			else_if = {
 				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
@@ -1729,7 +2144,8 @@ gotc_fallen_col_2_2 = {
 					}
 				}
 			}
-			else_if = { # Astro-Hungary
+			
+			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
 					key="Краков"
@@ -1741,9 +2157,54 @@ gotc_fallen_col_2_2 = {
 						literal=yes
 					}
 				}
+				change_pc = pc_alpine
+				if = { # Check Pospolitiod existence
+					limit = {
+						NOT = { any_system = { has_star_flag = pospolitiod } }
+					}
+					event_target:pospolitiod_species = {
+						set_species_homeworld = prev
+					}
+				}
+				set_planet_flag = fallen_empire_world
+				clear_blockers = yes
+				prevent_anomaly = yes
+				set_owner = ROOT
+				add_building = building_ancient_palace
+				add_building = building_fe_dome
+				while = {
+					count = 5
+					add_district = {
+						district_type = district_city
+						ignore_cap = yes
+					}
+				}
+				while = {
+					count = 4
+					create_pop = {
+						species = owner_main_species
+					}
+				}
+				create_pop = {
+					species = event_target:fe_servants
+				}
+				create_pop = {
+					species = event_target:aryan_species
+				}
+				while = {
+					count = 3
+					create_pop = {
+						species = event_target:untermensch_species
+					}
+				}
+				while = {
+					count = 9
+					create_pop = {
+						species = event_target:pospolitiod_species
+					}
+				}
 			}
-			
-			if = {
+			else_if = {
 				limit = { root = { is_fallen_empire_spiritualist = no } }
 				create_fe_fringe_colony = yes
 			}
@@ -1889,7 +2350,7 @@ gotc_fallen_orbitals_1 = {
 		else_if = { # Astro-Hungary
 			limit = { root = { has_country_flag = astrohungary } }
 			set_name = {
-				key="Тимишоара"
+				key="Дебрецен"
 				literal=yes
 			}
 		}
@@ -2745,6 +3206,14 @@ gotc_fallen_xeno_zoo = {
 			set_owner = ROOT
 			set_planet_flag = fe_the_preserve
 			add_building = building_fe_xeno_zoo
+
+			while = {
+				count = 2
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+
 			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
 				set_name = {
@@ -2756,6 +3225,24 @@ gotc_fallen_xeno_zoo = {
 						key="Тюрьма Народов"
 						literal=yes
 					}
+				}
+				create_pop = {
+					species = event_target:vurdvalah_species
+				}
+				create_pop = {
+					species = event_target:kazak_species
+				}
+				create_pop = {
+					species = event_target:pospolitiod_species
+				}
+				create_pop = {
+					species = event_target:netoropyr_species
+				}
+				create_pop = {
+					species = event_target:aryan_species
+				}
+				create_pop = {
+					species = event_target:untermensch_species
 				}
 			}
 			else = { # Carebear
@@ -2769,22 +3256,142 @@ gotc_fallen_xeno_zoo = {
 						literal=yes
 					}
 				}
-			}
-
-			while = {
-				count = 2
-				create_pop = {
-					species = owner_main_species
+				
+				create_species = { # Mofumof
+					name = {
+						key="Мофумоф"
+						literal=yes
+					}
+					plural = {
+						key="Мофумофы"
+						literal=yes
+					}
+					adjective = {
+						key="Мофумофск"
+						literal=yes
+					}
+					class = MAM
+					portrait = cyb7
+					name_list="MAM2"
+					traits = {
+						trait = trait_unruly
+						trait = trait_extremely_adaptive
+					}
+					homeworld = this
 				}
-			}
-
-			while = {
-				count = 5
-				create_species = {
-					name = random
-					class = random_non_machine
-					portrait = random
-					traits = random
+				create_pop = {
+					species = last_created_species
+				}
+				
+				create_species = { # Ginger Tabbi
+					name = {
+						key="Джинджерный Табби"
+						literal=yes
+					}
+					plural = {
+						key="Джинджерные Табби"
+						literal=yes
+					}
+					adjective = {
+						key="Таббск"
+						literal=yes
+					}
+					class = MAM
+					portrait = cyb1
+					name_list="MAM2"
+					traits = {
+						trait = trait_rapid_breeders
+						trait = trait_talented
+						trait = trait_nomadic
+						trait = trait_unruly
+					}
+					homeworld = this
+				}
+				create_pop = {
+					species = last_created_species
+				}
+				
+				create_species = { # Kot Smoking
+					name = {
+						key="Кот Смокинг"
+						literal=yes
+					}
+					plural = {
+						key="Коты Смокинги"
+						literal=yes
+					}
+					adjective = {
+						key="Смокингск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam14
+					name_list="MAM2"
+					traits = {
+						trait = trait_ingenious
+						trait = trait_quick_learners
+						trait = trait_humanoid_jinxed
+					}
+					homeworld = this
+				}
+				create_pop = {
+					species = last_created_species
+				}
+				
+				create_species = { # Obuglenny Bely Kot
+					name = {
+						key="Обугленный Белый Кот"
+						literal=yes
+					}
+					plural = {
+						key="Обугленные Белые Коты"
+						literal=yes
+					}
+					adjective = {
+						key="Обугленн"
+						literal=yes
+					}
+					class = MAM
+					portrait = cyb7
+					name_list="MAM2"
+					traits = {
+						ideal_planet_class = pc_savannah
+						trait = trait_natural_sociologists
+						trait = trait_charismatic
+						trait = trait_conformists
+						trait = trait_unruly
+						trait = trait_decadent
+					}
+					homeworld = this
+				}
+				create_pop = {
+					species = last_created_species
+				}
+				
+				create_species = { # Bolshoy Kot
+					name = {
+						key="Большой Кот"
+						literal=yes
+					}
+					plural = {
+						key="Большие Коты"
+						literal=yes
+					}
+					adjective = {
+						key="Большекотск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam14
+					name_list="MAM2"
+					traits = {
+						ideal_planet_class = pc_tundra
+						trait = trait_syncretic_proles
+						trait = trait_resilient
+						trait = trait_venerable
+						trait = trait_unruly
+					}
+					homeworld = this
 				}
 				create_pop = {
 					species = last_created_species
@@ -2923,7 +3530,6 @@ gotc_fallen_machine = {
 				class = ART
 				portrait = art11
 				traits = {
-					trait = trait_presapient_starborn
 					trait = trait_nomadic
 					trait = trait_humanoid_existential_iteroparity
 					trait = trait_noxious
