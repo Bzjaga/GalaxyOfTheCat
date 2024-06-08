@@ -1365,3 +1365,81 @@
 		leader_class = commander
 	}
 }
+
+# palestina
+"Исламское Движение Сопротивления" = {
+	name = "Исламское Движение Сопротивления"
+	adjective = "Хамасск"
+	spawn_enabled = always
+
+	ship_prefix = "PAL"
+
+	species = {
+		class = "TOX"
+		portrait = "tox8"
+		name = "Палестинец"
+		plural = "Палестинцы"
+		adjective = "Палестинск"
+		name_list = "HUM4"
+		trait = "trait_slow_learners"
+		trait = "trait_humanoid_existential_iteroparity"
+		trait = "trait_traditional"
+		trait = "trait_deviants"
+		trait = "trait_noxious"
+	}
+
+	room = "cybernetics_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_death_cult" "civic_nationalistic_zeal" }
+	government = gov_grim_council
+	origin = "origin_payback"
+
+	ethic = "ethic_fanatic_militarist"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "Сектор Газа"
+	planet_class = "pc_desert"
+	system_name = "Сектор Газа"
+
+	initializer = "custom_starting_init_palestina"
+	graphical_culture = "nemesis_01"
+	city_graphical_culture = "molluscoid_01"
+
+	empire_flag={
+		icon={
+			category="pointy"
+			file="flag_pointy_8.dds"
+		}
+		background={
+			category="backgrounds"
+			file="inverted_v.dds"
+		}
+		colors={
+			"dark_green"
+			"black"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Исмаил Хания"
+		gender = male
+		portrait = "tox8"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=2
+		ruler_title={
+			key="Лидер ХАМАСа"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Лидер ХАМАСа"
+			literal=yes
+		}
+		trait="trait_ruler_industrialist"
+		leader_class = official
+	}
+}

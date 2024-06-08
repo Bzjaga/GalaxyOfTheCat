@@ -377,6 +377,115 @@ setup_fear_of_the_dark_pre_ftl_korea = {
 }
 
 ##################
+# Zion
+##################
+
+create_MSI_zion = {
+	create_species = {
+		name = {
+			key="Моссадовец"
+			literal=yes
+		}
+		plural = {
+			key="Моссадовцы"
+			literal=yes
+		}
+		adjective = {
+			key="Моссадовск"
+			literal=yes
+		}
+		class = REP
+		namelist = JEW
+		portrait = rep4
+		traits = {
+			ideal_planet_class = pc_desert
+			trait = "trait_presapient_natural_intellectuals"
+			trait = "trait_intelligent"
+			trait = "trait_thrifty"
+			trait = "trait_conservational"
+			trait = "trait_unruly"
+			trait = "trait_weak"
+		}
+		allow_negative_traits = yes
+	}
+
+	create_country = {
+		name = "Галактический Сион"
+		adjective = "Сионистск"
+		species = last_created_species
+		type = default
+		flag = {
+			icon = {
+				category="spherical"
+				file="flag_spherical_23.dds"
+			}
+			background = {
+				category="backgrounds"
+				file="flag_BG_31.dds"
+			}
+			colors = {
+				"shadow_blue"
+				"white"
+				"null"
+				"null"
+			}
+		}
+		origin = "origin_slavers"
+		ethos = {
+			ethic = ethic_authoritarian
+			ethic = ethic_xenophobe
+			ethic = ethic_spiritualist
+		}
+		civics = {
+			civic = civic_indentured_assets
+			civic = civic_death_cult_corporate
+			#civic = civic_public_relations_specialists
+		}
+		authority = auth_corporate
+		effect = {
+			save_global_event_target_as = MSI_country
+			set_country_flag = MSI
+			set_country_flag = zion
+
+			every_country = {
+				limit = {
+					has_slave_origin = yes
+					NOT = { has_country_flag = slavers_assigned }
+				}
+				set_country_flag = slavers_assigned
+				event_target:MSI_country = {
+					set_country_flag = slavers_of_@prev
+					set_country_flag = special_intro_for@prev
+					add_opinion_modifier = {
+						who = prev
+						modifier = opinion_former_slaves
+					}
+				}
+				species = { set_species_flag = victims_of_@event_target:MSI_country }
+				set_country_flag = victims_of_@event_target:MSI_country
+				add_opinion_modifier = {
+					who = event_target:MSI_country
+					modifier = opinion_slavers
+				}
+			}
+		}
+	}
+
+	create_colony = {
+		owner = event_target:MSI_country
+	}
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+	event_target:MSI_country = {
+		create_starting_leaders = yes
+		country_event = { id = game_start.9 }
+		owner_species = { set_species_homeworld = prevprev }
+		log = "MSI CREATED"
+	}
+}
+
+##################
 # Dialectics
 ##################
 
