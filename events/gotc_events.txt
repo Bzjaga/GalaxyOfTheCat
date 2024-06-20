@@ -353,6 +353,7 @@ country_event = { # Overlord Version
 				event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
 			}
 			set_empire_name = "Кукурузный Функционализм"
+			set_adjective = "Кукурузн"
 			clear_ethos = yes
 			country_add_ethic = ethic_authoritarian
 			country_add_ethic = ethic_fanatic_materialist
