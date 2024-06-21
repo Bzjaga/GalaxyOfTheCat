@@ -655,11 +655,12 @@ create_fear_of_the_dark_country = {
 				authority = auth_imperial
 				civics = {
 					civic = civic_corvee_system
-					civic = civic_distinguished_admiralty
+					civic = civic_functional_architecture
 				}
 				species = event_target:fotd_country.species
 				ethos = {
-					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_authoritarian
+					ethic = ethic_xenophobe
 					ethic = ethic_militarist
 				}
 
@@ -688,7 +689,8 @@ create_fear_of_the_dark_country = {
 						skill = 1
 						randomize_traits = no
 						traits = {
-							trait = trait_ruler_industrialist
+							trait = leader_trait_legendary_offspring
+							trait = leader_trait_cartographer
 						}
 					}
 					set_male_ruler_title = "Претворитель Чучхе"
@@ -818,38 +820,32 @@ setup_fear_of_the_dark_pre_ftl = {
 				literal=yes
 			}
 			change_pc = pc_ocean
-			while = {
-				count = 6
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_farming
-				}
-			}
+			reroll_deposits = yes
 			event_target:fotd_country.home_planet = {
 				set_name = {
 					key="Пхеньян"
 					literal=yes
 				}
 				change_pc = pc_alpine
-				while = {
-					count = 6
-					add_district_and_planet_size_if_needed_effect = {
-						district = district_mining
-					}
-				}
-				add_modifier = { modifier = colonial_spirit_mod }
+				reroll_deposits = yes
+				clear_blockers = yes
+				add_modifier = { modifier = paragon_origin_humble_monument }
+				add_modifier = { modifier = payback_unified_purpose }
+				add_modifier = { modifier = second_home }
 			}
 			event_target:fotd_country = {
 				set_empire_name = "КНДР"
 				set_adjective = "Северокорейск"
 				clear_ethos = yes
-				country_add_ethic = ethic_fanatic_xenophobe
+				country_add_ethic = ethic_authoritarian
+				country_add_ethic = ethic_xenophobe
 				country_add_ethic = ethic_militarist
 				change_government = {
 					authority = auth_imperial
 					remove_invalid_civics = yes
 					civics = {
 						civic = civic_corvee_system
-						civic = civic_distinguished_admiralty
+						civic = civic_functional_architecture
 					}
 				}
 				change_country_flag = {
@@ -877,7 +873,8 @@ setup_fear_of_the_dark_pre_ftl = {
 					skill = 1
 					randomize_traits = no
 					traits = {
-						trait = trait_ruler_industrialist
+						trait = leader_trait_legendary_offspring
+						trait = leader_trait_cartographer
 					}
 				}
 				set_male_ruler_title = "Претворитель Чучхе"
