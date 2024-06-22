@@ -820,7 +820,7 @@ setup_fear_of_the_dark_pre_ftl = {
 				literal=yes
 			}
 			change_pc = pc_ocean
-			reroll_deposits = yes
+			
 			event_target:fotd_country.home_planet = {
 				set_name = {
 					key="Пхеньян"
@@ -829,9 +829,17 @@ setup_fear_of_the_dark_pre_ftl = {
 				change_pc = pc_alpine
 				reroll_deposits = yes
 				clear_blockers = yes
+
+				# 3 + 3 mining
+				add_deposit = d_veiny_cliffs
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+				
 				add_modifier = { modifier = paragon_origin_humble_monument }
 				add_modifier = { modifier = payback_unified_purpose }
-				add_modifier = { modifier = second_home }
+				add_modifier = { modifier = pm_yuht_cleansing }
+
+				remove_building = building_posthumous_employment_center
 			}
 			event_target:fotd_country = {
 				set_empire_name = "КНДР"

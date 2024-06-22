@@ -350,6 +350,7 @@ choose_fear_of_the_dark_country_korea = {
 			set_planet_flag = south
 		}
 	}
+	clear_variable = counted_corporations
 }
 
 ##################
