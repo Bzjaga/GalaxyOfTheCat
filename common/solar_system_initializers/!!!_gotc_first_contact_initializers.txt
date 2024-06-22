@@ -247,6 +247,17 @@ slavers_neighbor_t1 = {
 	}
 
 	init_effect = {
+		if = {
+			limit = {
+				event_target:MSI_country = {
+					has_country_flag = zion
+				}
+			}
+			set_name = {
+				key="Негев"
+				literal=yes
+			}
+		}
 		create_starbase = {
 			size = starbase_outpost
 			owner = event_target:MSI_country
@@ -305,6 +316,25 @@ slavers_neighbor_t1_first_colony = {
 				owner = event_target:MSI_country
 			}
 			add_modifier = { modifier = colonial_remains }
+			if = {
+				limit = {
+					event_target:MSI_country = {
+						has_country_flag = zion
+					}
+				}
+				set_name = {
+					key="Рамалла"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Западный Берег"
+						literal=yes
+					}
+				}
+				change_pc = pc_desert
+				set_planet_flag = ramalla
+			}
 		}
 	}
 
@@ -373,6 +403,25 @@ slavers_neighbor_t2_second_colony = {
 				owner = event_target:MSI_country
 			}
 			add_modifier = { modifier = colonial_remains }
+			if = {
+				limit = {
+					event_target:MSI_country = {
+						has_country_flag = zion
+					}
+				}
+				set_name = {
+					key="Голаны"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Голанские Высоты"
+						literal=yes
+					}
+				}
+				change_pc = pc_arid
+				set_planet_flag = golany
+			}
 		}
 
 		change_orbit = @base_moon_distance
