@@ -743,6 +743,7 @@
 		plural = "Арийцы"
 		adjective = "Арийск"
 		name_list = "HUMAN2"
+		gender = male
 		trait = "trait_perfected_genes"
 		trait = "trait_talented"
 		trait = "trait_intelligent"
