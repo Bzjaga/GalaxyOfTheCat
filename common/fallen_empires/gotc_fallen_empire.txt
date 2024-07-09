@@ -639,6 +639,7 @@ fallen_machine_empire = {
 			namelist = MACHINE3
 			portrait = sd_pla_robot
 			traits = {
+				ideal_planet_class = pc_ringworld_habitable
 				trait = trait_machine_unit
 				trait = trait_robot_efficient_processors
 				trait = trait_robot_immortality
