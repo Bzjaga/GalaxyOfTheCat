@@ -1,0 +1,1334 @@
+# Used for the security drones in the Payback Arc site
+create_slavers_dummy_country = {
+	optimize_memory
+	if = {
+		limit = { NOT = { exists = event_target:slavers_dummy_country } }
+		create_country = {
+			name = "NAME_MSI_country"
+			type = slavers_dummy
+			flag = {
+				icon = {
+					category = "corporate"
+					file = "corporate_07.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "pattern_01.dds"
+				}
+				colors={
+					"mist_blue"
+					"bright_purple"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				save_global_event_target_as = slavers_dummy_country
+			}
+		}
+	}
+}
+
+create_payback_digsite_fleet = {
+	create_slavers_dummy_country = yes
+	create_fleet = {
+		settings = {
+			spawn_debris = no
+		}
+		name = "NAME_MSI_country"
+		effect = {
+			set_owner = event_target:slavers_dummy_country
+			while = {
+				count = $NUM_DRONES$
+				create_ship = {
+					name = "NAME_Payback_Digsite_Drone"
+					design = "NAME_Payback_Digsite_Drone"
+					graphical_culture = "slaver_01"
+				}
+			}
+			set_location = event_target:payback_capital
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = return_point
+			set_aggro_range = 0
+			queue_actions = {
+				wait = { # Cooldown until they start moving
+					duration = 320
+					random = 80
+				}
+			}
+		}
+	}
+}
+
+create_payback_debt_collectors_fleet = {
+	event_target:payback_debt_collectors_country = {
+		create_leader = {
+			class = commander
+			species = event_target:debt_collectors_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = leader_trait_mercenary_warrior
+			}
+		}
+	}
+	create_fleet = {
+		settings = {
+			spawn_debris = no
+		}
+		name = "NAME_Debt_Collectors_Country"
+		effect = {
+			set_owner = event_target:payback_debt_collectors_country
+			set_variable = {
+				which = debt_collectors_ships
+				value = $NUM_DRONES$
+			}
+			multiply_variable = {
+				which = debt_collectors_ships
+				value = root.debt_collectors_visits
+			}
+			while = {
+				count = debt_collectors_ships
+				create_ship = {
+					name = "NAME_Payback_Digsite_Drone"
+					design = "NAME_Payback_Digsite_Drone"
+					graphical_culture = "slaver_01"
+				}
+			}
+			set_location = event_target:payback_capital
+			set_fleet_stance = aggressive
+			set_fleet_bombardment_stance = raiding
+			set_fleet_flag = debt_collectors_raiding_fleet
+			set_aggro_range_measure_from = self
+			set_aggro_range = 150
+			assign_leader = last_created_leader
+
+			auto_move_to_planet = {
+				target = event_target:payback_capital
+				clear_auto_move_on_arrival = no
+			}
+		}
+	}
+}
+
+create_MSI_effect = {
+	create_species = {
+		name = random
+		class = MSI_SLAVER
+		namelist = HUMAN3
+		portrait = random
+		traits = {
+			trait = "trait_pc_nuked_preference"
+			trait = "trait_charismatic"
+			trait = "trait_intelligent"
+			trait = "trait_decadent"
+			trait = "trait_wasteful"
+		}
+		allow_negative_traits = yes
+	}
+
+	create_country = {
+		name = "NAME_MSI_country"
+		adjective = "ADJ_MSI_country"
+		species = last_created_species
+		type = default
+		flag = {
+			icon = {
+				category = "corporate"
+				file = "corporate_07.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "pattern_01.dds"
+			}
+			colors={
+				"mist_blue"
+				"bright_purple"
+				"null"
+				"null"
+			}
+		}
+		origin = "origin_slavers"
+		ethos = {
+			ethic = ethic_fanatic_materialist
+			ethic = ethic_authoritarian
+		}
+		civics = {
+			civic = civic_indentured_assets
+			civic = civic_public_relations_specialists
+		}
+		authority = auth_corporate
+		effect = {
+			save_global_event_target_as = MSI_country
+			set_country_flag = MSI
+
+			every_country = {
+				limit = {
+					has_slave_origin = yes
+					NOT = { has_country_flag = slavers_assigned }
+				}
+				set_country_flag = slavers_assigned
+				event_target:MSI_country = {
+					set_country_flag = slavers_of_@prev
+					set_country_flag = special_intro_for@prev
+					add_opinion_modifier = {
+						who = prev
+						modifier = opinion_former_slaves
+					}
+				}
+				species = { set_species_flag = victims_of_@event_target:MSI_country }
+				set_country_flag = victims_of_@event_target:MSI_country
+				add_opinion_modifier = {
+					who = event_target:MSI_country
+					modifier = opinion_slavers
+				}
+			}
+		}
+	}
+
+	create_colony = {
+		owner = event_target:MSI_country
+	}
+	generate_start_deposits_and_blockers = yes
+	generate_start_buildings_and_districts = yes
+	generate_start_pops = yes
+	event_target:MSI_country = {
+		create_starting_leaders = yes
+		country_event = { id = game_start.9 }
+		owner_species = { set_species_homeworld = prevprev }
+		log = "MSI CREATED"
+	}
+}
+
+generate_slaver_bonus = {
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_city
+		}
+	}
+	while = {
+		count = 2
+		add_district_and_planet_size_if_needed_effect = {
+			district = district_mining
+		}
+	}
+	add_district_and_planet_size_if_needed_effect = {
+		district = district_generator
+	}
+	add_district_and_planet_size_if_needed_effect = {
+		district = district_farming
+	}
+	add_district_and_planet_size_if_needed_effect = {
+		district = district_industrial
+	}
+
+	owner = {
+		set_policy = {
+			policy = slavery
+			option = slavery_allowed
+			cooldown = no
+		}
+	}
+
+	while = {
+		limit = { num_pops > 28 }
+		random_owned_pop = {
+			kill_pop = yes
+		}
+	}
+
+	# Checking if there are any other pre-ftls to abduct
+	while = {
+		limit = { num_pops < 36 }
+		if = {
+			limit = {
+				any_country = {
+					species = {
+						ideal_planet_is_special = no
+						NOT = { has_trait = trait_hive_mind }
+					}
+					is_preftl_but_not_special = yes
+				}
+			}
+			random_country = {
+				limit = {
+					species = {
+						ideal_planet_is_special = no
+						NOT = { has_trait = trait_hive_mind }
+					}
+					is_preftl_but_not_special = yes
+				}
+				owner_species = {
+					# first species to get kidnapped becomes the species of the debt collectors
+					save_event_target_as = random_primitive_species
+					if = {
+						limit = {
+							NOT = {
+								exists = event_target:debt_collectors_species
+							}
+						}
+						save_global_event_target_as = debt_collectors_species
+					}
+				}
+
+				prev.owner = {
+					set_visited = prev.capital_scope.solar_system
+				}
+			}
+
+			create_pop = {
+				species = event_target:random_primitive_species
+				ethos = random
+			}
+
+			last_created_pop = {
+				set_citizenship_type = {
+					type = citizenship_slavery
+					cooldown = no
+				}
+			}
+		}
+	}
+
+	while = {
+		limit = { num_pops < 61 }
+
+		random_country = {
+			limit = {
+				has_slave_origin = yes
+			}
+
+			owner_species = {
+				save_event_target_as = random_slave_species
+			}
+
+			prev.owner = {
+				set_visited = prev.capital_scope.solar_system
+			}
+		}
+
+		create_pop = {
+			species = event_target:random_slave_species
+			ethos = random
+		}
+		last_created_pop = {
+			set_citizenship_type = {
+				type = citizenship_slavery
+				cooldown = no
+			}
+		}
+	}
+
+	owner = {
+		# Unlocks slave processing facilities
+		give_technology = {
+			message = no
+			tech = tech_neural_implants
+		}
+		# Unlocks gene clinics
+		give_technology = {
+			message = no
+			tech = tech_frontier_health
+		}
+		give_technology = {
+			message = no
+			tech = tech_food_processing_1
+		}
+		give_technology = {
+			message = no
+			tech = tech_mineral_purification_1
+		}
+		give_technology = {
+			message = no
+			tech = tech_power_hub_1
+		}
+	}
+	add_building = building_slave_processing
+	add_building = building_precinct_house
+	add_building = building_clinic
+
+	owner = {
+		add_resource = {
+			minerals = 2400
+			energy = 2400
+			food = 2400
+			alloys = 800
+			consumer_goods = 1200
+			influence = 600
+		}
+	}
+
+	owner = {
+		create_fleet = {
+			effect = {
+				set_owner = prev
+				create_ship = {
+					name = random
+					random_existing_design = science
+				}
+				set_fleet_stance = evasive
+				set_location = prev.capital_scope.star
+				owner = {
+					create_leader = {
+						class = scientist
+						sub_type = survey
+						name = random
+						species = owner_main_species
+					}
+				}
+				set_leader = last_created_leader
+			}
+		}
+		while = {
+			count = 2
+			create_fleet = {
+				name = "NAME_Payback_Warship_MSI"
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_Payback_Warship_MSI"
+						design = "NAME_Payback_Warship_MSI"
+						graphical_culture = "slaver_01"
+						upgradable = no
+						effect = {
+							set_ship_flag = payback_flagship
+						}
+					}
+					set_location = prev.capital_scope.star
+				}
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+				}
+			}
+		}
+	}
+}
+
+create_payback_warship_effect = {
+	switch = {
+		trigger = has_technology
+		tech_battleships = {
+			create_fleet = {
+				name = "NAME_Payback_Warship_4"
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_Payback_Warship_4"
+						design = "NAME_Payback_Warship_4"
+						graphical_culture = "slaver_01"
+						upgradable = no
+						effect = {
+							set_ship_flag = payback_flagship
+						}
+					}
+					set_location = event_target:spawn_location
+				}
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+				}
+			}
+		}
+		tech_cruisers = {
+			create_fleet = {
+				name = "NAME_Payback_Warship_3"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_Payback_Warship_3"
+						design = "NAME_Payback_Warship_3"
+						graphical_culture = "slaver_01"
+						upgradable = no
+						effect = {
+							set_ship_flag = payback_flagship
+						}
+					}
+					set_location = event_target:spawn_location
+				}
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+				}
+			}
+		}
+		tech_destroyers = {
+			create_fleet = {
+				name = "NAME_Payback_Warship_2"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_Payback_Warship_2"
+						design = "NAME_Payback_Warship_2"
+						graphical_culture = "slaver_01"
+						upgradable = no
+						effect = {
+							set_ship_flag = payback_flagship
+						}
+					}
+					set_location = event_target:spawn_location
+				}
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+				}
+			}
+		}
+		tech_corvettes = {
+			create_fleet = {
+				name = "NAME_Payback_Warship_1"
+				settings = {
+					spawn_debris = no
+				}
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_Payback_Warship_1"
+						design = "NAME_Payback_Warship_1"
+						graphical_culture = "slaver_01"
+						upgradable = no
+						effect = {
+							set_ship_flag = payback_flagship
+						}
+					}
+					set_location = event_target:spawn_location
+				}
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+				}
+			}
+		}
+		default = {
+			create_fleet = {
+				name = "NAME_Payback_Warship_1"
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = "NAME_Payback_Warship_1"
+						design = "NAME_Payback_Warship_1"
+						graphical_culture = "slaver_01"
+						upgradable = no
+						effect = {
+							set_ship_flag = payback_flagship
+						}
+					}
+					set_location = event_target:spawn_location
+				}
+				settings = {
+					spawn_debris = no
+					can_upgrade = no
+					can_change_composition = no
+					uses_naval_capacity = no
+				}
+			}
+		}
+	}
+	last_created_fleet = {
+		if = {
+			limit = {
+				exists = event_target:flagship_leader
+			}
+			assign_leader = event_target:flagship_leader
+		}
+	}
+}
+
+
+spawn_payback_site_habitat = {
+	spawn_planet = {
+		class = "pc_habitat"
+		location = event_target:target_planet
+		orbit_location = yes
+		orbit_angle_offset = 45
+		orbit_distance_offset = 9.899
+		size = 10
+		has_ring = no
+
+		init_effect = {
+			set_name = "NAME_Payback_Warship"
+			set_planet_entity = {
+				entity = "fc_01_evil_slaver_hab_entity"
+			}
+			set_surveyed = {
+				surveyed = yes
+				surveyor = FROM
+			}
+			set_all_comms_surveyed = yes
+			clear_blockers = yes
+
+			set_planet_flag = megastructure
+			set_planet_flag = habitat
+			set_planet_flag = habitat_level_1
+			set_planet_flag = payback_habitat
+
+			add_deposit = d_msi_air_freshener
+			add_deposit = d_payback_habitat_research
+
+			save_event_target_as = target_habitat
+			add_deposit_if_missing = {
+				DEPOSIT = d_system_resources
+			}
+			add_deposit_if_missing = {
+				DEPOSIT = d_orbital_research
+			}
+			add_deposit_if_missing = {
+				DEPOSIT = d_orbital_energy
+			}
+			add_deposit_if_missing = {
+				DEPOSIT = d_orbital_mining
+			}
+			event_target:target_planet = {
+				set_planet_flag = habitat@PREV
+				set_planet_flag = has_payback_habitat
+				if = {
+					limit = {
+						is_moon = yes
+					}
+					on_orbital_complete_effect = {
+						BODY = minor
+						TYPE = generic
+					}
+				}
+				else = {
+					on_orbital_complete_effect = {
+						BODY = major
+						TYPE = generic
+					}
+				}
+			}
+		}
+	}
+}
+
+### Fear of the Dark ###
+
+create_fear_of_the_dark_country = {
+	if = {
+		limit = {
+			has_planet_flag = korea
+		}
+		choose_fear_of_the_dark_country_korea = yes
+		if = {
+			limit = {
+				has_planet_flag = north
+			}
+			create_country = {
+				name = {
+					key = "КНДР"
+				}
+				adjective="Северокорейск"
+				authority = auth_imperial
+				civics = {
+					civic = civic_corvee_system
+					civic = civic_functional_architecture
+				}
+				species = event_target:fotd_country.species
+				ethos = {
+					ethic = ethic_authoritarian
+					ethic = ethic_xenophobe
+					ethic = ethic_militarist
+				}
+
+				flag = random
+				origin = "origin_fear_of_the_dark" # Should only be visible if they become spacefaring
+				type = primitive
+				effect = {
+					set_country_flag = early_space_age
+					set_country_flag = fotd_seperatist_country@event_target:fotd_country
+					set_country_flag = fotd_seperatist_country
+					save_event_target_as = fotd_seperatist_country
+					establish_communications_no_message = event_target:fotd_country
+					set_faction_hostility = {
+						target = event_target:fotd_country
+						set_hostile = no
+						set_neutral = no
+						set_friendly = yes
+					}
+
+					# Leader
+					create_leader = {
+						class = official
+						species = event_target:fotd_country.species
+						name = "Ким Кимыч"
+						gender=male
+						skill = 1
+						randomize_traits = no
+						traits = {
+							trait = leader_trait_legendary_offspring
+							trait = leader_trait_cartographer
+						}
+					}
+					set_male_ruler_title = "Претворитель Чучхе"
+					set_female_ruler_title = "Претворительница Чучхе"
+					set_leader = last_created_leader
+					set_male_heir_title = "Первоочередной председатель"
+					set_female_heir_title = "Первоочередная председатель"
+				}
+			}
+		}
+		else = {
+			create_country = {
+				name = {
+					key = "Чеболия"
+				}
+				adjective="Южнокорейск"
+				authority = auth_oligarchic
+				civics = {
+					civic = civic_citizen_service
+					civic = civic_scavengers
+				}
+				species = event_target:fotd_country.species
+				ethos = {
+					ethic = ethic_xenophobe
+					ethic = ethic_militarist
+					ethic = ethic_materialist
+				}
+
+				flag = random
+				origin = "origin_fear_of_the_dark" # Should only be visible if they become spacefaring
+				type = primitive
+				effect = {
+					set_country_flag = early_space_age
+					set_country_flag = fotd_seperatist_country@event_target:fotd_country
+					set_country_flag = fotd_seperatist_country
+					save_event_target_as = fotd_seperatist_country
+					establish_communications_no_message = event_target:fotd_country
+					set_faction_hostility = {
+						target = event_target:fotd_country
+						set_hostile = no
+						set_neutral = no
+						set_friendly = yes
+					}
+
+					# Leader
+					create_leader = {
+						class = official
+						species = event_target:fotd_country.species
+						name = "Пак Кын Хе"
+						gender=female
+						skill = 1
+						randomize_traits = no
+						traits = {
+							trait = leader_trait_corrupt
+							trait = trait_ruler_deep_connections_2
+						}
+					}
+					set_male_ruler_title = "Генсек перестройки"
+					set_female_ruler_title = "Президентская дочка"
+					set_leader = last_created_leader
+				}
+			}
+		}
+	}
+	else = {
+		create_country = {
+			name = {
+				key = "NAME_fotd_seperatists"
+				variable_string = "\\[fotd_country.GetSpeciesName\\]"
+			}
+			authority = auth_democratic
+			civics = {
+				civic = civic_idealistic_foundation
+				civic = civic_environmentalist
+			}
+			species = event_target:fotd_country.species
+			ethos = {
+				ethic = ethic_fanatic_xenophobe
+				ethic = ethic_egalitarian
+			}
+
+			flag = random
+			origin = "origin_fear_of_the_dark" # Should only be visible if they become spacefaring
+			type = primitive
+			effect = {
+				set_country_flag = early_space_age
+				set_country_flag = fotd_seperatist_country@event_target:fotd_country
+				set_country_flag = fotd_seperatist_country
+				save_event_target_as = fotd_seperatist_country
+				establish_communications_no_message = event_target:fotd_country
+				set_faction_hostility = {
+					target = event_target:fotd_country
+					set_hostile = no
+					set_neutral = no
+					set_friendly = yes
+				}
+			}
+		}
+	}
+	event_target:fotd_country = {
+		add_intel = {
+			amount = 100
+			who = event_target:fotd_seperatist_country
+		}
+	}
+}
+
+setup_fear_of_the_dark_pre_ftl = {
+	set_owner = event_target:fotd_seperatist_country
+	set_capital = yes
+	if = {
+		limit = {
+			has_planet_flag =  korea
+		}
+		if = {
+			limit = {
+				has_planet_flag = north
+			}
+			set_name = {
+				key="Пхеньян"
+				literal=yes
+			}
+		}
+		else = {
+			set_name = {
+				key="Сеул"
+				literal=yes
+			}
+			change_pc = pc_ocean
+			
+			event_target:fotd_country.home_planet = {
+				set_name = {
+					key="Пхеньян"
+					literal=yes
+				}
+				change_pc = pc_alpine
+				reroll_deposits = yes
+				clear_blockers = yes
+
+				# 3 + 3 mining
+				add_deposit = d_veiny_cliffs
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rich_mountain
+				
+				add_modifier = { modifier = paragon_origin_humble_monument }
+				add_modifier = { modifier = payback_unified_purpose }
+				add_modifier = { modifier = pm_yuht_cleansing }
+
+				remove_building = building_posthumous_employment_center
+			}
+			event_target:fotd_country = {
+				set_empire_name = "КНДР"
+				set_adjective = "Северокорейск"
+				clear_ethos = yes
+				country_add_ethic = ethic_authoritarian
+				country_add_ethic = ethic_xenophobe
+				country_add_ethic = ethic_militarist
+				change_government = {
+					authority = auth_imperial
+					remove_invalid_civics = yes
+					civics = {
+						civic = civic_corvee_system
+						civic = civic_functional_architecture
+					}
+				}
+				change_country_flag = {
+					icon={
+						category="human"
+						file="flag_human_12.dds"
+					}
+					background={
+						category="backgrounds"
+						file="flag_BG_31.dds"
+					}
+					colors={
+						"red"
+						"dark_blue"
+						"black"
+						"null"
+					}
+				}
+				# Leader
+				create_leader = {
+					class = official
+					species = event_target:fotd_country.species
+					name = "Ким Кимыч"
+					gender=male
+					skill = 1
+					randomize_traits = no
+					traits = {
+						trait = leader_trait_legendary_offspring
+						trait = leader_trait_cartographer
+					}
+				}
+				set_male_ruler_title = "Претворитель Чучхе"
+				set_female_ruler_title = "Претворительница Чучхе"
+				set_leader = last_created_leader
+				set_male_heir_title = "Первоочередной председатель"
+				set_female_heir_title = "Первоочередная председатель"
+			}
+		}
+		while = {
+			count = 2
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_city
+			}
+		}
+		while = {
+			count = 1
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_industrial
+			}
+		}
+		while = {
+			count = 1
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_farming
+			}
+		}
+		remove_building = building_colony_shelter
+		add_building = building_primitive_capital
+		add_building = building_research_lab_1
+		while = {
+			count = 10
+			create_pop = {
+				species = event_target:fotd_country.species
+			}
+		}
+		if = {
+			limit = {
+				has_planet_flag = north
+			}
+			event_target:fotd_seperatist_country = {
+				start_situation = {
+					type = situation_fotd_terraforming
+					target = prev
+				}
+				set_country_flag = early_space_age
+				set_pre_ftl_age = early_space_age
+				change_country_flag = {
+					icon={
+						category="human"
+						file="flag_human_12.dds"
+					}
+					background={
+						category="backgrounds"
+						file="flag_BG_31.dds"
+					}
+					colors={
+						"red"
+						"dark_blue"
+						"black"
+						"null"
+					}
+				}
+				set_country_flag = tech_frozen
+				add_awareness = 100
+			}
+		}
+		else = {
+			event_target:fotd_seperatist_country = {
+				start_situation = {
+					type = situation_fotd_terraforming
+					target = prev
+				}
+				set_country_flag = early_space_age
+				set_pre_ftl_age = early_space_age
+				change_country_flag = {
+					icon={
+						category="human"
+						file="flag_human_5.dds"
+					}
+					background={
+						category="backgrounds"
+						file="circle.dds"
+					}
+					colors={
+						"dark_blue"
+						"red"
+						"black"
+						"null"
+					}
+				}
+				set_country_flag = tech_frozen
+				add_awareness = 100
+			}
+		}
+	}
+	else = {
+		owner.species = {
+			switch = {
+				trigger = is_species_class
+				HUM = {
+					prev = {
+						set_name = NAME_Haven
+					}
+				}
+				MAM = {
+					prev = {
+						set_name = NAME_Den
+					}
+				}
+				REP = {
+					prev = {
+						set_name = NAME_Burrow
+					}
+				}
+				AVI = {
+					prev = {
+						set_name = NAME_Nest
+					}
+				}
+				ART = {
+					prev = {
+						set_name = NAME_Hidden_Web
+					}
+				}
+				MOL = {
+					prev = {
+						set_name = NAME_Mantle
+					}
+				}
+				FUN = {
+					prev = {
+						set_name = NAME_Hyphae
+					}
+				}
+				PLANT = {
+					prev = {
+						set_name = NAME_Pyrophyte
+					}
+				}
+				LITHOID = {
+					prev = {
+						set_name = NAME_Geode
+					}
+				}
+				NECROID = {
+					prev = {
+						set_name = NAME_Necropolis
+					}
+				}
+				AQUATIC = {
+					prev = {
+						set_name = NAME_Aquatic
+					}
+				}
+				TOX = {
+					prev = {
+						set_name = NAME_Bunker
+					}
+				}
+				default = {
+					prev = {
+						set_name = NAME_Haven
+					}
+				}
+			}
+		}
+		event_target:fotd_country.home_planet = {
+			switch = {
+				trigger = has_climate
+				dry = {
+					prev = {
+						change_pc = pc_ocean
+					}
+				}
+				cold = {
+					prev = {
+						change_pc = pc_tropical
+					}
+				}
+				wet = {
+					prev = {
+						change_pc = pc_desert
+					}
+				}
+			}
+		}
+		while = {
+			count = 2
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_city
+			}
+		}
+		while = {
+			count = 1
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_industrial
+			}
+		}
+		while = {
+			count = 1
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_farming
+			}
+		}
+		remove_building = building_colony_shelter
+		add_building = building_primitive_capital
+		add_building = building_research_lab_1
+		while = {
+			count = 10
+			create_pop = {
+				species = event_target:fotd_country.species
+			}
+		}
+		event_target:fotd_seperatist_country = {
+			start_situation = {
+				type = situation_fotd_terraforming
+				target = prev
+			}
+			set_country_flag = early_space_age
+			set_pre_ftl_age = early_space_age
+			change_country_flag = {
+				icon = {
+					category = "pre_ftl"
+					file = "preftl_early_space_age.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "new_dawn.dds"
+				}
+				colors={
+					"orange"
+					"blue"
+					"null"
+					"null"
+				}
+			}
+			set_country_flag = tech_frozen
+			add_awareness = 100
+		}
+	}
+}
+
+uplift_pre_ftl_with_origin_effect = {
+	if = {
+		limit = { any_country = { has_country_flag = gotc_broken_shackles_migrants } }
+		random_country = {
+			limit = {
+				has_country_flag = gotc_broken_shackles_child
+			}
+			save_event_target_as = uplifted_country
+			remove_pre_ftl_flags = yes
+			set_country_type = default
+			#set_species_graphical_culture = yes
+			set_graphical_culture = mammalian_01
+			capital_scope = {
+				every_deposit = {
+					remove_deposit = yes
+				}
+				remove_all_districts = yes
+				remove_all_buildings = yes
+			}
+			set_origin = $ORIGIN$
+			capital_scope = {
+				solar_system = {
+					generate_home_system_resources = yes
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:uplifted_country
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
+						}
+					}
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				generate_start_pops = yes
+				generate_home_planet_final_pass = yes
+			}
+			switch = {
+				trigger = has_origin
+				origin_broken_shackles = {
+					country_event = { id = origin.110 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 28 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
+						}
+					}
+				}
+				origin_payback = {
+					country_event = { id = origin.4000 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 18 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	else = {
+		random_country = {
+			limit = {
+				is_hive_empire = no
+				species = {
+					ideal_planet_is_special = no
+					NOt = { is_same_value = root.species }
+				}
+				is_preftl_but_not_special = yes
+			}
+			if = {
+				limit = {
+					is_xenophobe = yes
+				}
+				shift_ethic = ethic_xenophile
+			}
+			if = {
+				limit = {
+					is_authoritarian = yes
+				}
+				shift_ethic = ethic_egalitarian
+			}
+			save_event_target_as = uplifted_country
+			remove_pre_ftl_flags = yes
+			set_country_type = default
+			change_country_flag = random
+			set_species_graphical_culture = yes
+			change_government = {
+				authority = random
+				civics = random
+			}
+			set_name = random
+			capital_scope = {
+				every_deposit = {
+					remove_deposit = yes
+				}
+				remove_all_districts = yes
+				remove_all_buildings = yes
+			}
+			set_origin = $ORIGIN$
+			capital_scope = {
+				solar_system = {
+					generate_home_system_resources = yes
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:uplifted_country
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
+						}
+					}
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				generate_start_pops = yes
+				generate_home_planet_final_pass = yes
+			}
+			switch = {
+				trigger = has_origin
+				origin_broken_shackles = {
+					country_event = { id = origin.110 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 28 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
+						}
+					}
+				}
+				origin_payback = {
+					country_event = { id = origin.4000 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 18 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# used federations3.115 as a reference
+create_debt_collectors_country = {
+	optimize_memory
+	if = {
+		limit = {
+			NOT = {
+				any_country = {
+					is_country_type = debt_collectors
+					has_country_flag = payback_debt_collectors_country
+				}
+			}
+		}
+		create_species = {
+			name = "NAME_Debt_Collectors"
+			plural = "NAME_Debt_Collectors_plural"
+			class = MAM
+			portrait = mol17
+			namelist = "AI"
+			traits = {
+				trait = random_traits
+			}
+		}
+		create_country = {
+			name = "NAME_Debt_Collectors_Country"
+			type = debt_collectors
+			species = last_created_species
+			auto_delete = no
+			flag = {
+				icon = {
+					category = "corporate"
+					file = "corporate_11.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "pattern_01.dds"
+				}
+				colors={
+					"mist_blue"
+					"bright_purple"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_country_flag = payback_debt_collectors_country
+				save_global_event_target_as = payback_debt_collectors_country
+				set_graphical_culture = mammalian_01
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { exists = event_target:payback_debt_collectors_country }
+		}
+		random_country = {
+			limit = {
+				is_country_type = debt_collectors
+				has_country_flag = payback_debt_collectors_country
+			}
+			save_global_event_target_as = payback_debt_collectors_country
+		}
+	}
+}

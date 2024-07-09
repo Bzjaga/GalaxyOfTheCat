@@ -35,7 +35,7 @@
 	planet_class = "pc_continental"
 	system_name = "Беловежская Пуща"
 
-	initializer = "custom_starting_init_zaharova"
+	initializer = "do_not_choose_zaharova"
 	graphical_culture = "mammalian_01"
 	city_graphical_culture = "mammalian_01"
 
@@ -115,7 +115,7 @@
 	planet_class = "pc_tundra"
 	system_name = "Бардак"
 
-	initializer = "custom_starting_init_deyatel"
+	initializer = "do_not_choose_deyatel"
 	graphical_culture = "fungoid_01"
 	city_graphical_culture = "fungoid_01"
 
@@ -194,7 +194,7 @@
 	planet_class = "pc_tropical"
 	system_name = "Минск"
 
-	initializer = "custom_starting_init_lukashenko"
+	initializer = "do_not_choose_lukashenko"
 	graphical_culture = "plantoid_01"
 	city_graphical_culture = "plantoid_01"
 
@@ -273,7 +273,7 @@
 	planet_class = "pc_continental"
 	system_name = "Жуйцзинь"
 
-	initializer = "custom_starting_init_mao"
+	initializer = "do_not_choose_mao"
 	graphical_culture = "molluscoid_01"
 	city_graphical_culture = "reptilian_01"
 
@@ -352,7 +352,7 @@
 	planet_class = "pc_arid"
 	system_name = "Койоакан"
 
-	initializer = "custom_starting_init_international"
+	initializer = "do_not_choose_international"
 	graphical_culture = "arthropoid_01"
 	city_graphical_culture = "humanoid_01"
 
@@ -433,7 +433,7 @@
 	planet_class = "pc_continental"
 	system_name = "Нейро-Фоминск"
 
-	initializer = "custom_starting_init_mraxist"
+	initializer = "do_not_choose_mraxist"
 	graphical_culture = "toxoid_01"
 	city_graphical_culture = "humanoid_01"
 
@@ -512,7 +512,7 @@
 	planet_class = "pc_alpine"
 	system_name = "Мемориал"
 
-	initializer = "custom_starting_init_pamyatnik"
+	initializer = "do_not_choose_pamyatnik"
 	graphical_culture = "lithoid_01"
 	city_graphical_culture = "lithoid_01"
 
@@ -593,7 +593,7 @@
 	planet_class = "pc_continental"
 	system_name = "Лубянка"
 
-	initializer = "custom_starting_init_kgb"
+	initializer = "do_not_choose_kgb"
 	graphical_culture = "fungoid_01"
 	city_graphical_culture = "fungoid_01"
 
@@ -687,7 +687,7 @@
 	planet_class = "pc_continental"
 	system_name = "Родина"
 
-	initializer = "custom_starting_init_dumatel"
+	initializer = "do_not_choose_dumatel"
 	graphical_culture = "molluscoid_01"
 	city_graphical_culture = "molluscoid_01"
 
@@ -743,6 +743,7 @@
 		plural = "Арийцы"
 		adjective = "Арийск"
 		name_list = "HUMAN2"
+		gender = male
 		trait = "trait_perfected_genes"
 		trait = "trait_talented"
 		trait = "trait_intelligent"
@@ -766,7 +767,7 @@
 	planet_class = "pc_alpine"
 	system_name = "Мидгард"
 
-	initializer = "custom_starting_init_reich"
+	initializer = "do_not_choose_reich"
 	graphical_culture = "humanoid_01"
 	city_graphical_culture = "necroid_01"
 
@@ -848,7 +849,7 @@
 	planet_class = "pc_ocean"
 	system_name = "Корея"
 
-	initializer = "fear_of_the_dark_init_korea"
+	initializer = "do_not_choose_korea"
 	graphical_culture = "mammalian_01"
 	city_graphical_culture = "mammalian_01"
 
@@ -930,7 +931,7 @@
 	planet_class = "pc_alpine"
 	system_name = "Грозный"
 
-	initializer = "custom_starting_init_kadyrov"
+	initializer = "do_not_choose_kadyrov"
 	graphical_culture = "lithoid_01"
 	city_graphical_culture = "toxoid_01"
 
@@ -1009,7 +1010,7 @@
 	planet_class = "pc_continental"
 	system_name = "Останкино"
 
-	initializer = "custom_starting_init_solovyov"
+	initializer = "do_not_choose_solovyov"
 	graphical_culture = "avian_01"
 	city_graphical_culture = "avian_01"
 
@@ -1164,7 +1165,7 @@
 	planet_class = "pc_alpine"
 	system_name = "Астро-Вена"
 
-	initializer = "custom_starting_init_astrohungary"
+	initializer = "do_not_choose_astrohungary"
 	graphical_culture = "mammalian_01"
 	city_graphical_culture = "mammalian_01"
 
@@ -1251,7 +1252,7 @@
 	planet_class = "pc_alpine"
 	system_name = "Пясечно"
 
-	initializer = "custom_starting_init_pospolitiod"
+	initializer = "do_not_choose_pospolitoid"
 	graphical_culture = "lithoid_01"
 	city_graphical_culture = "lithoid_01"
 
@@ -1325,7 +1326,7 @@
 	planet_class = "pc_tropical"
 	system_name = "Богема"
 
-	initializer = "custom_starting_init_netoropyr"
+	initializer = "do_not_choose_netoropyr"
 	graphical_culture = "molluscoid_01"
 	city_graphical_culture = "molluscoid_01"
 
@@ -1363,5 +1364,159 @@
 		}
 		trait="trait_ruler_charismatic"
 		leader_class = commander
+	}
+}
+
+# palestina
+"Исламское Движение Сопротивления" = {
+	name = "Исламское Движение Сопротивления"
+	adjective = "Хамасск"
+	spawn_enabled = always
+
+	ship_prefix = "PAL"
+
+	species = {
+		class = "TOX"
+		portrait = "tox8"
+		name = "Палестинец"
+		plural = "Палестинцы"
+		adjective = "Палестинск"
+		name_list = "HUM4"
+		trait = "trait_slow_learners"
+		trait = "trait_humanoid_existential_iteroparity"
+		trait = "trait_traditional"
+		trait = "trait_deviants"
+		trait = "trait_noxious"
+	}
+
+	room = "cybernetics_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_death_cult" "civic_nationalistic_zeal" }
+	government = gov_grim_council
+	origin = "origin_payback"
+
+	ethic = "ethic_fanatic_militarist"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "Сектор Газа"
+	planet_class = "pc_desert"
+	system_name = "Сектор Газа"
+
+	initializer = "do_not_choose_palestina"
+	graphical_culture = "nemesis_01"
+	city_graphical_culture = "molluscoid_01"
+
+	empire_flag={
+		icon={
+			category="pointy"
+			file="flag_pointy_8.dds"
+		}
+		background={
+			category="backgrounds"
+			file="inverted_v.dds"
+		}
+		colors={
+			"dark_green"
+			"black"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Исмаил Хания"
+		gender = male
+		portrait = "tox8"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=2
+		ruler_title={
+			key="Лидер ХАМАСа"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Лидер ХАМАСа"
+			literal=yes
+		}
+		trait="trait_ruler_industrialist"
+		leader_class = official
+	}
+}
+
+# roskomnadzor
+"Роскомнадзор" = {
+	name = "Роскомнадзор"
+	adjective = "Роскомнадзорск"
+	spawn_enabled = always
+
+	ship_prefix = "RKN"
+
+	species = {
+		class = "REP"
+		portrait = "rep12"
+		name = "Бдитель"
+		plural = "Бдители"
+		adjective = "Бдительск"
+		name_list = "HUMAN2"
+		trait = "trait_excessive_endurance"
+		trait = "trait_adaptive"
+		trait = "trait_sedentary"
+		trait = "trait_unruly"
+	}
+
+	room = "personality_fanatic_purifier_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_fanatic_purifiers" "civic_warrior_culture" }
+	government = gov_purity_order
+	origin = "origin_overtuned"
+
+	ethic = "ethic_fanatic_xenophobe"
+	ethic = "ethic_militarist"
+
+	planet_name = "Минцифра"
+	planet_class = "pc_continental"
+	system_name = "Минцифра"
+
+	initializer = "do_not_choose_roskomnadzor"
+	graphical_culture = "nemesis_01"
+	city_graphical_culture = "humanoid_01"
+
+	empire_flag={
+		icon={
+			category="blocky"
+			file="flag_blocky_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_19.dds"
+		}
+		colors={
+			"shadow_blue"
+			"blue"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Андрей Юрьевич Липов"
+		gender = male
+		portrait = "rep12"
+		texture = 1
+		attachment=0
+		clothes=1
+		ruler_title={
+			key="Лорд Очиститель"
+			literal=yes
+		}
+		ruler_title_female={
+			key="Леди Очистительница"
+			literal=yes
+		}
+		trait="leader_trait_principled"
+		leader_class = official
 	}
 }
