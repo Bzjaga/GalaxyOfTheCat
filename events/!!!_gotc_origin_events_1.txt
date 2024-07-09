@@ -741,87 +741,154 @@ country_event = {
 		set_country_flag = Story7
 		set_country_flag = has_encountered_other_empire
 
-		if = {
-			limit = {
-				count_country = {
-					limit = {
-						is_primitive = yes
+		if = { # Migrants
+			limit = { has_country_flag = gotc_broken_shackles_migrants }
+			capital_scope = {
+				spawn_pre_ftl_against_zion = yes
+
+				solar_system = {
+					set_star_flag = broken_shackles_system
+				}
+				while = {
+					limit = { num_pops < 28 }
+					if = {
+						limit = {
+							any_country = {
+								species = {
+									ideal_planet_is_special = no
+									NOT = { has_trait = trait_hive_mind }
+								}
+								OR = {
+									has_country_flag = broken_shackles_zion_abductees
+									AND = {
+										has_slave_origin = yes
+										NOT = { is_same_value = root }
+									}
+								}
+							}
+						}
+						random_country = {
+							limit = {
+								species = {
+									ideal_planet_is_special = no
+									NOT = { has_trait = trait_hive_mind }
+								}
+								OR = {
+									has_country_flag = broken_shackles_zion_abductees
+									AND = {
+										has_slave_origin = yes
+										NOT = { is_same_value = root }
+									}
+								}
+							}
+							set_country_flag = broken_shackles_abductees_country
+							set_country_flag = broken_shackles_abductees@root
+							owner_species = { save_event_target_as = random_primitive_species }
+							capital_scope = {
+								set_planet_flag = broken_shackles_abductees_world@root
+							}
+							if = {
+								limit = {
+									is_primitive = yes
+									has_awareness < 75
+								}
+								set_awareness = 75
+							}
+						}
+						create_pop = {
+							species = event_target:random_primitive_species
+							ethos = random
+						}
 					}
-					count < 3
 				}
 			}
-			capital_scope = {
-				while = {
-					count = 3
-					spawn_system = {
-						min_distance = 10
-						max_distance = 100
-						initializer = pre_ftl_init_01
-						hyperlane = no
-						is_discovered = no
+		}
+		else = {
+			if = {
+				limit = {
+					count_country = {
+						limit = {
+							is_primitive = yes
+						}
+						count < 3
 					}
-					add_extra_hyperlane_to_spawned_system_effect = yes
-					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				capital_scope = {
+					while = {
+						count = 3
+						spawn_system = {
+							min_distance = 10
+							max_distance = 100
+							initializer = pre_ftl_init_01
+							hyperlane = no
+							is_discovered = no
+						}
+						add_extra_hyperlane_to_spawned_system_effect = yes
+						add_extra_hyperlane_to_spawned_system_effect = yes
+					}
+				}
+			}
+
+			capital_scope = {
+				solar_system = {
+					set_star_flag = broken_shackles_system
+				}
+				while = {
+					limit = { num_pops < 28 }
+					if = {
+						limit = {
+							any_country = {
+								species = {
+									ideal_planet_is_special = no
+									NOT = { has_trait = trait_hive_mind }
+								}
+								OR = {
+									is_preftl_but_not_special = yes
+									AND = {
+										has_slave_origin = yes
+										NOT = { is_same_value = root }
+									}
+								}
+							}
+						}
+						random_country = {
+							limit = {
+								species = {
+									ideal_planet_is_special = no
+									NOT = { has_trait = trait_hive_mind }
+								}
+								OR = {
+									is_preftl_but_not_special = yes
+									AND = {
+										has_slave_origin = yes
+										NOT = { is_same_value = root }
+									}
+								}
+							}
+							set_country_flag = broken_shackles_abductees_country
+							set_country_flag = broken_shackles_abductees@root
+							owner_species = { save_event_target_as = random_primitive_species }
+							capital_scope = {
+								set_planet_flag = broken_shackles_abductees_world@root
+							}
+							if = {
+								limit = {
+									is_primitive = yes
+									has_awareness < 75
+								}
+								set_awareness = 75
+							}
+						}
+						create_pop = {
+							species = event_target:random_primitive_species
+							ethos = random
+						}
+					}
 				}
 			}
 		}
 
 		capital_scope = {
-			solar_system = {
-				set_star_flag = broken_shackles_system
-			}
-			while = {
-				limit = { num_pops < 28 }
-				if = {
-					limit = {
-						any_country = {
-							species = {
-								ideal_planet_is_special = no
-								NOT = { has_trait = trait_hive_mind }
-							}
-							OR = {
-								is_preftl_but_not_special = yes
-								AND = {
-									has_slave_origin = yes
-									NOT = { is_same_value = root }
-								}
-							}
-						}
-					}
-					random_country = {
-						limit = {
-							species = {
-								ideal_planet_is_special = no
-								NOT = { has_trait = trait_hive_mind }
-							}
-							OR = {
-								is_preftl_but_not_special = yes
-								AND = {
-									has_slave_origin = yes
-									NOT = { is_same_value = root }
-								}
-							}
-						}
-						set_country_flag = broken_shackles_abductees_country
-						set_country_flag = broken_shackles_abductees@root
-						owner_species = { save_event_target_as = random_primitive_species }
-						capital_scope = {
-							set_planet_flag = broken_shackles_abductees_world@root
-						}
-						if = {
-							limit = {
-								is_primitive = yes
-								has_awareness < 75
-							}
-							set_awareness = 75
-						}
-					}
-					create_pop = {
-						species = event_target:random_primitive_species
-						ethos = random
-					}
-				}
-			}
 			check_planet_employment = yes
 
 			# Dig site
@@ -972,78 +1039,6 @@ country_event = {
 	}
 }
 
-# Broken Shackles - crashed ship depleted
-country_event = {
-	id = origin.111
-	title = "origin.111.name"
-
-	desc = {
-		trigger = {
-			any_owned_planet = {
-				has_deposit = d_crashed_slaver_ship
-			}
-		}
-		text = "origin.111.1.desc"
-	}
-	desc = {
-		trigger = {
-			NOT = {
-				any_owned_planet = {
-					has_deposit = d_crashed_slaver_ship
-				}
-			}
-		}
-		text = "origin.111.2.desc"
-	}
-
-	picture = GFX_evt_ship_offloading_cargo
-	show_sound = event_construction
-	location = root
-
-	is_triggered_only = yes
-
-	option = {
-		name = origin_111.a
-		custom_tooltip = origin_111.tooltip
-		set_country_flag = origin_broken_shackles_crashed_slaver_ship_depleted
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = broken_shackles_scrappers
-				}
-			}
-			owner = {
-				add_monthly_resource_mult = {
-					resource = engineering_research
-					value = @tier2researchreward
-					min = @tier2researchmin
-					max = @tier2researchmax
-				}
-				owner = {
-					add_monthly_resource_mult = {
-						resource = minerals
-						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
-					}
-					add_monthly_resource_mult = {
-						resource = consumer_goods
-						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
-					}
-					add_monthly_resource_mult = {
-						resource = alloys
-						value = @tier3materialreward
-						min = @tier3materialmin
-						max = @tier3materialmax
-					}
-				}
-			}
-		}
-	}
-}
-
 # Spawn Broken Shackles for Payback
 country_event = {
 	id = origin.112
@@ -1054,7 +1049,22 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		if = {
+		if = { # zion victims
+			limit = {
+				any_playable_country = {
+					has_origin = origin_payback
+					capital_scope = {
+						solar_system = {
+							has_star_flag = palestina
+						}
+					}
+				}
+			}
+			capital_scope = {
+				spawn_pre_ftl_against_zion = yes
+			}
+		}
+		else_if = {
 			limit = {
 				count_country = {
 					limit = {

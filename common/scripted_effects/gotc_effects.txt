@@ -252,6 +252,7 @@ change_empires_if_overlord_soviet = {
 # Korea
 ##################
 
+#Choosing FOTD Korea To Generate
 choose_fear_of_the_dark_country_korea = {
 	set_variable = {
 		which = counted_corporations
@@ -4631,7 +4632,7 @@ create_imperial_splinter_rusich = {
 	create_country = {
 		ship_prefix="EHOT"
 		name = {
-			key="Русич"
+			key="ДШРГ Русич"
 			literal=yes
 		}
 		type = default
@@ -5585,4 +5586,1496 @@ create_imperial_splinter_random = {
 			}
 		}
 	}
+}
+
+##################
+# Broken Shackles
+##################
+
+spawn_pre_ftl_against_zion = {
+	if = { # Egypt
+		limit = { NOT = { any_country = { has_country_flag = egypt } } }
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = pre_ftl_init_egypt
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+	if = { # Philistia
+		limit = { NOT = { any_country = { has_country_flag = philistia } } }
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = pre_ftl_init_philistia
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+	if = { # Uganda
+		limit = { NOT = { any_country = { has_country_flag = uganda } } }
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = pre_ftl_init_uganda
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+	if = { # France
+		limit = { NOT = { any_country = { has_country_flag = france } } }
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = pre_ftl_init_france
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+	if = { # Antioch
+		limit = { NOT = { any_country = { has_country_flag = antioch } } }
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = pre_ftl_init_antioch
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+	if = { # Do nothing
+		limit = {
+			OR = {
+				any_playable_country = { has_origin = origin_broken_shackles }
+				any_system = { has_star_flag = gotc_broken_shackles_child }
+			}
+		}
+	}
+	else = { # Broken Shackles origin
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = gotc_broken_shackles_child_init
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+	if = { # Blood libel
+		limit = { NOT = { any_country = { has_country_flag = blood_libel } } }
+		spawn_system = {
+			min_distance = 10
+			max_distance = 100
+			initializer = pre_ftl_init_blood_libel
+			hyperlane = no
+			is_discovered = no
+		}
+		add_extra_hyperlane_to_spawned_system_effect = yes
+		add_extra_hyperlane_to_spawned_system_effect = yes
+	}
+}
+
+#For usage in Broken shackles
+create_gotc_broken_shackles_child = {
+	set_name = {
+		key="Шатила"
+		literal=yes
+	}
+	solar_system = {
+		set_name = {
+			key="Лагерь Беженцев"
+			literal=yes
+		}
+	}
+	create_species = {
+		name = {
+			key="Мигрант"
+			literal=yes
+		}
+		plural = {
+			key="Мигранты"
+			literal=yes
+		}
+		adjective = {
+			key="Мигрантск"
+			literal=yes
+		}
+		class = "FUN"
+		portrait = "fun4"
+		name_list="HUM1"
+		gender=male
+		traits = {
+			trait = "trait_invasive"
+			trait = "trait_deviants"
+			trait = "trait_wasteful"
+			trait = "trait_quarrelsome"
+			trait = "trait_decadent"
+		}
+		homeworld = this
+	}
+	create_country = {
+		ship_prefix="NOJEW"
+		name = {
+			key="Неизбранные Народы"
+			literal=yes
+		}
+		adjective="Антисионистск"
+		authority = auth_oligarchic
+		civics = {
+			civic = civic_warrior_culture
+			civic = civic_reanimated_armies
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_spiritualist
+		}
+		flag = {
+			icon = {
+				category = "human"
+				file = "flag_human_11.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "flag_BG_31.dds"
+			}
+			colors={
+				"red"
+				"teal"
+				"black"
+				"null"
+			}
+		}
+		origin = "origin_default"
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = machine_age
+		set_pre_ftl_age = machine_age
+
+		# Leader
+		create_leader = {
+			class = official
+			species = last_created_species
+			name = "Ясир Арафат"
+			gender=male
+			skill = 1
+			randomize_traits = yes
+		}
+		set_male_ruler_title = "Неизбранных Президент"
+		set_female_ruler_title = "Неизбранных Президент"
+		set_leader = last_created_leader
+
+		#set_country_flag = broken_shackles_zion_abductees
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = gotc_broken_shackles_child
+		set_country_flag = gotc_broken_shackles_migrants
+	}
+	setup_pre_ftl_planet = yes
+}
+
+##################
+# Pre-FTL
+##################
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_egypt = {
+	change_pc = pc_desert
+	set_planet_flag = pre_ftl_default
+	create_species = {
+		name = {
+			key="Египтянин"
+			literal=yes
+		}
+		plural = {
+			key="Египтяне"
+			literal=yes
+		}
+		adjective = {
+			key="Египтянск"
+			literal=yes
+		}
+		class = "HUM"
+		portrait = "humanoid_elf"
+		name_list="HUM1"
+		gender=not_set
+		traits = {
+			trait = "trait_presapient_earthbound"
+			trait = "trait_sedentary"
+			trait = "trait_traditional"
+			trait = "trait_docile"
+		}
+		homeworld = this
+	}
+	random_list = {
+		50 = { # Early Egypt
+			if = { # Ancient Egypt
+				limit = {
+					any_playable_country = {
+						capital_scope = {
+							solar_system = {
+								has_star_flag = palestina
+							}
+						}
+					}
+				}
+				set_name = {
+					key="Мемфис"
+					literal=yes
+				}
+				create_country = {
+					ship_prefix="EGYPT"
+					name = {
+						key="Египетское Фараонство"
+						literal=yes
+					}
+					adjective="Египетск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_imperial_cult
+						civic = civic_memorialist
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_fanatic_spiritualist
+					}
+					flag = {
+						icon = {
+							category = "pointy"
+							file = "flag_pointy_11.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_12.dds"
+						}
+						colors={
+							"desert_yellow"
+							"dark_blue"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = bronze_age
+					set_pre_ftl_age = bronze_age
+
+					# Leader
+					create_leader = {
+						class = official
+						species = last_created_species
+						name = "Эхнатон"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Фараон"
+					set_female_ruler_title = "Фараонша"
+					set_leader = last_created_leader
+					set_male_heir_title = "Сын Фараона"
+					set_female_heir_title = "Дочь Фараона"
+				}
+			}
+			else = { # Ptolemaic Egypt
+				set_name = {
+					key="Александрия"
+					literal=yes
+				}
+				create_country = {
+					ship_prefix="EGYPT"
+					name = {
+						key="Птолемеевский Египет"
+						literal=yes
+					}
+					adjective="Египетск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_slaver_guilds
+						civic = civic_memory_vault
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_fanatic_authoritarian
+						ethic = ethic_materialist
+					}
+					flag = {
+						icon = {
+							category = "pointy"
+							file = "flag_pointy_11.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_12.dds"
+						}
+						colors={
+							"desert_yellow"
+							"dark_blue"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = iron_age
+					set_pre_ftl_age = iron_age
+
+					# Leader
+					create_leader = {
+						class = official
+						species = last_created_species
+						name = "Птолемей"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Фараон"
+					set_female_ruler_title = "Фараонша"
+					set_leader = last_created_leader
+					set_male_heir_title = "Сын Фараона"
+					set_female_heir_title = "Дочь Фараона"
+				}
+			}
+		}
+		50 = { # Late Egypt
+			set_name = {
+				key="Каир"
+				literal=yes
+			}
+			if = { # Modern Egypt
+				limit = {
+					any_playable_country = {
+						capital_scope = {
+							solar_system = {
+								has_star_flag = palestina
+							}
+						}
+					}
+				}
+				create_country = {
+					ship_prefix="EGYPT"
+					name = {
+						key="Арабская Республика Египет"
+						literal=yes
+					}
+					adjective="Египетск"
+					authority = auth_dictatorial
+					civics = {
+						civic = civic_heroic_tales
+						civic = civic_nationalistic_zeal
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_xenophobe
+						ethic = ethic_militarist
+					}
+					flag = {
+						icon = {
+							category = "zoological"
+							file = "flag_zoological_4.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"red"
+							"black"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = industrial_01
+					set_country_flag = machine_age
+					set_pre_ftl_age = machine_age
+
+					# Leader
+					create_leader = {
+						class = commander
+						species = last_created_species
+						name = "Абдель Насер"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Свободный офицер"
+					set_female_ruler_title = "Свободная офицерша"
+					set_leader = last_created_leader
+				}
+			}
+			else = { # Mamluk Egypt
+				while = { # Adding Egyptians before creation of Mamluks
+					count = @iron_age_pops
+					create_pop = {
+						species = last_created_species
+					}
+				}
+				create_species = { # Creating Mamluks
+					name = {
+						key="Мамлюк"
+						literal=yes
+					}
+					plural = {
+						key="Мамлюки"
+						literal=yes
+					}
+					adjective = {
+						key="Мамлюкск"
+						literal=yes
+					}
+					class = "HUM"
+					portrait = "humanoid_elf"
+					name_list="TAJICAUCASIAN"
+					gender=male
+					traits = {
+						trait = "trait_quarrelsome"
+						trait = "trait_talented"
+						trait = "trait_very_strong"
+						trait = "trait_deviants"
+					}
+					homeworld = this
+				}
+				create_country = {
+					ship_prefix="MAML"
+					name = {
+						key="Мамлюкский Султанат"
+						literal=yes
+					}
+					adjective="Мамлюкск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_cutthroat_politics
+						civic = civic_warrior_culture
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_militarist
+						ethic = ethic_spiritualist
+					}
+					flag = {
+						icon = {
+							category = "blocky"
+							file = "flag_blocky_24.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_12.dds"
+						}
+						colors={
+							"off_white"
+							"bright_yellow"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = late_medieval_age
+					set_pre_ftl_age = late_medieval_age
+
+					# Leader
+					create_leader = {
+						class = commander
+						species = last_created_species
+						name = "Бейбарсов"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Султан"
+					set_female_ruler_title = "Султанша"
+					set_leader = last_created_leader
+					set_male_heir_title = "Султанёнок"
+					set_female_heir_title = "Султанёнок"
+				}
+			}
+		}
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = egypt
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_syria = {
+	set_planet_flag = pre_ftl_default
+	if = { # Palmyra
+		limit = {
+			any_playable_country = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = palestina
+					}
+				}
+			}
+		}
+		change_pc = pc_desert
+		set_name = {
+			key="Пальмира"
+			literal=yes
+		}
+		solar_system = {
+			set_name = {
+				key="Пальмира"
+				literal=yes
+			}
+		}
+		create_species = {
+			name = {
+				key="Ассириец"
+				literal=yes
+			}
+			plural = {
+				key="Ассирийцы"
+				literal=yes
+			}
+			adjective = {
+				key="Ассирийск"
+				literal=yes
+			}
+			class = "MAM"
+			portrait = "mam16"
+			name_list="HUM1"
+			gender=male
+			traits = {
+				trait = "trait_intelligent"
+				trait = "trait_natural_engineers"
+				trait = "trait_noxious"
+				trait = "trait_decadent"
+				trait = "trait_fleeting"
+			}
+			homeworld = this
+		}
+		create_country = {
+			ship_prefix="PAL"
+			name = {
+				key="Пальмирское Царство"
+				literal=yes
+			}
+			adjective="Пальмирск"
+			authority = auth_imperial
+			civics = {
+				civic = civic_distinguished_admiralty
+				civic = civic_free_haven
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_xenophile
+				ethic = ethic_fanatic_militarist
+			}
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_7.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "flag_BG_4.dds"
+				}
+				colors={
+					"black"
+					"bright_yellow"
+					"orange"
+					"null"
+				}
+			}
+			origin = "origin_default"
+			type = primitive
+		}
+		last_created_country = {
+			set_graphical_culture = preindustrial_01
+			set_country_flag = iron_age
+			set_pre_ftl_age = iron_age
+
+			# Leader
+			create_leader = {
+				class = official
+				species = last_created_species
+				name = "Зенобия"
+				gender=female
+				skill = 1
+				randomize_traits = yes
+			}
+			set_male_ruler_title = "Царь Царей"
+			set_female_ruler_title = "Царица"
+			set_leader = last_created_leader
+			set_male_heir_title = "Наследник"
+			set_female_heir_title = "Наследница"
+		}
+	}
+	else = { # Modern Syria
+		set_name = {
+			key="Дамаск"
+			literal=yes
+		}
+		solar_system = {
+			set_name = {
+				key="Сирия"
+				literal=yes
+			}
+		}
+		create_species = {
+			name = {
+				key="Мигрант"
+				literal=yes
+			}
+			plural = {
+				key="Мигранты"
+				literal=yes
+			}
+			adjective = {
+				key="Мигрантск"
+				literal=yes
+			}
+			class = "FUN"
+			portrait = "fun4"
+			name_list="HUM1"
+			gender=male
+			traits = {
+				trait = "trait_invasive"
+				trait = "trait_deviants"
+				trait = "trait_wasteful"
+				trait = "trait_quarrelsome"
+				trait = "trait_decadent"
+			}
+			homeworld = this
+		}
+		create_country = {
+			ship_prefix="SYR"
+			name = {
+				key="Сирийская Арабская Республика"
+				literal=yes
+			}
+			adjective="Асадск"
+			authority = auth_imperial
+			civics = {
+				civic = civic_toxic_baths
+				civic = civic_byzantine_bureaucracy
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_fanatic_authoritarian
+				ethic = ethic_xenophile
+			}
+			flag = {
+				icon = {
+					category = "legion"
+					file = "flag_mp_beta_02.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "horizontal.dds"
+				}
+				colors={
+					"red"
+					"black"
+					"orange"
+					"null"
+				}
+			}
+			origin = "origin_default"
+			type = primitive
+		}
+		last_created_country = {
+			set_graphical_culture = industrial_01
+			set_country_flag = machine_age
+			set_pre_ftl_age = machine_age
+
+			# Leader
+			create_leader = {
+				class = official
+				species = last_created_species
+				name = "Асад"
+				gender=male
+				skill = 1
+				randomize_traits = yes
+			}
+			set_male_ruler_title = "Безальтернативный Президент"
+			set_female_ruler_title = "Безальтернативная Президент"
+			set_leader = last_created_leader
+			set_male_heir_title = "Будущий Президент"
+			set_female_heir_title = "Будущая Президент"
+
+			set_country_flag = broken_shackles_zion_abductees
+		}
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = syria
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_antioch = {
+	set_planet_flag = pre_ftl_default
+	create_species = {
+		name = {
+			key="Сириец"
+			literal=yes
+		}
+		plural = {
+			key="Сирийцы"
+			literal=yes
+		}
+		adjective = {
+			key="Сирийск"
+			literal=yes
+		}
+		class = "MAM"
+		portrait = "mam16"
+		name_list="HUM1"
+		gender=male
+		traits = {
+			trait = "trait_traditional"
+			trait = "trait_conformists"
+			trait = "trait_fleeting"
+			trait = "trait_natural_sociologists"
+			trait = "trait_wasteful"
+		}
+		homeworld = this
+	}
+	if = { # Seleucid
+		limit = {
+			OR = {
+				any_playable_country = {
+					capital_scope = {
+						solar_system = {
+							has_star_flag = palestina
+						}
+					}
+				}
+				NOT = { any_country = { has_country_flag = france } }
+			}
+		}
+		create_country = {
+			ship_prefix="SEL"
+			name = {
+				key="Империя Селевкидов"
+				literal=yes
+			}
+			adjective="Селевкидск"
+			authority = auth_imperial
+			civics = {
+				civic = civic_pleasure_seekers
+				civic = civic_feudal_realm
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_authoritarian
+				ethic = ethic_xenophile
+				ethic = ethic_militarist
+			}
+			flag = {
+				icon = {
+					category = "spherical"
+					file = "flag_spherical_4.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "circle.dds"
+				}
+				colors={
+					"dark_grey"
+					"bright_yellow"
+					"orange"
+					"null"
+				}
+			}
+			origin = "origin_default"
+			type = primitive
+		}
+		last_created_country = {
+			set_graphical_culture = preindustrial_01
+			set_country_flag = iron_age
+			set_pre_ftl_age = iron_age
+
+			# Leader
+			create_leader = {
+				class = official
+				species = last_created_species
+				name = "Антиох"
+				gender=male
+				skill = 1
+				randomize_traits = yes
+			}
+			set_male_ruler_title = "Сын Селевка"
+			set_female_ruler_title = "Дочь Селевка"
+			set_leader = last_created_leader
+			set_male_heir_title = "Сын Антиоха"
+			set_female_heir_title = "Дочь Антиоха"
+			
+			set_country_flag = broken_shackles_zion_abductees
+		}
+	}
+	else = { # Antioch Duchy
+		random_galaxy_species = {
+			limit = { has_species_flag = frogeaters }
+			save_event_target_as = frogeaters
+		}
+		create_country = {
+			ship_prefix="DEUS"
+			name = {
+				key="Антиохийское Княжество"
+				literal=yes
+			}
+			adjective="Антиохийск"
+			authority = auth_imperial
+			civics = {
+				civic = civic_crusader_spirit
+				civic = civic_sovereign_guardianship
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_authoritarian
+				ethic = ethic_militarist
+				ethic = ethic_spiritualist
+			}
+			flag = {
+				icon = {
+					category = "plantoid"
+					file = "plantoid_11.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "flag_BG_2.dds"
+				}
+				colors={
+					"red"
+					"shadow_blue"
+					"orange"
+					"null"
+				}
+			}
+			origin = "origin_default"
+			type = primitive
+		}
+		last_created_country = {
+			set_graphical_culture = preindustrial_01
+			set_country_flag = late_medieval_age
+			set_pre_ftl_age = late_medieval_age
+
+			# Species
+			change_dominant_species = { species = event_target:frogeaters change_all = yes }
+
+			# Leader
+			create_leader = {
+				class = commander
+				species = event_target:frogeaters
+				name = "Боэмунд"
+				gender=male
+				skill = 1
+				randomize_traits = yes
+			}
+			set_male_ruler_title = "Крестонос"
+			set_female_ruler_title = "Крестоносица"
+			set_leader = last_created_leader
+			set_male_heir_title = "Маркиз"
+			set_female_heir_title = "Маркиза"
+		}
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = antioch
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_france = {
+	set_planet_flag = pre_ftl_default
+	create_species = { # Creating Frogeaters
+		name = {
+			key="Лягушатник"
+			literal=yes
+		}
+		plural = {
+			key="Лягушатники"
+			literal=yes
+		}
+		adjective = {
+			key="Лягушатн"
+			literal=yes
+		}
+		class = "REP"
+		portrait = "rep17"
+		name_list="HUM2"
+		gender=not_set
+		traits = {
+			trait = "trait_deviants"
+			trait = "trait_humanoid_psychological_infertility"
+			trait = "trait_rapid_breeders"
+			trait = "trait_talented"
+			trait = "trait_charismatic"
+		}
+		homeworld = this
+	}
+	last_created_species = { set_species_flag = frogeaters }
+	random_list = {
+		50 = { # Early France
+			if = { # France Kingdom
+				limit = {
+					any_playable_country = {
+						capital_scope = {
+							solar_system = {
+								has_star_flag = palestina
+							}
+						}
+					}
+				}
+				create_country = {
+					ship_prefix="FRA"
+					name = {
+						key="Королевство Франция"
+						literal=yes
+					}
+					adjective="Французск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_aristocratic_elite
+						civic = civic_pleasure_seekers
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_fanatic_authoritarian
+						ethic = ethic_xenophile
+					}
+					flag = {
+						icon = {
+							category = "plantoid"
+							file = "plantoid_11.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_50.dds"
+						}
+						colors={
+							"bright_yellow"
+							"off_white"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = renaissance_age
+					set_pre_ftl_age = renaissance_age
+
+					# Leader
+					create_leader = {
+						class = official
+						species = last_created_species
+						name = "Людовик"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Король-Солнце"
+					set_female_ruler_title = "Королева-Солнце"
+					set_leader = last_created_leader
+					set_male_heir_title = "Принц-Солнышко"
+					set_female_heir_title = "Принцесса-Солнышко"
+				}
+			}
+			else = { # Karlings Empire
+				create_country = {
+					ship_prefix="FRA"
+					name = {
+						key="Империя Каролингов"
+						literal=yes
+					}
+					adjective="Каролингск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_warrior_culture
+						civic = civic_crusader_spirit
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_fanatic_militarist
+						ethic = ethic_spiritualist
+					}
+					flag = {
+						icon = {
+							category = "domination"
+							file = "domination_19.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_4.dds"
+						}
+						colors={
+							"yellow"
+							"green"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = late_medieval_age
+					set_pre_ftl_age = late_medieval_age
+
+					# Leader
+					create_leader = {
+						class = commander
+						species = last_created_species
+						name = "Карл"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Император"
+					set_leader = last_created_leader
+				}
+			}
+		}
+		50 = { # Late France
+			if = { # Post Napoleonic Republic
+				limit = {
+					any_playable_country = {
+						capital_scope = {
+							solar_system = {
+								has_star_flag = palestina
+							}
+						}
+					}
+				}
+				create_country = {
+					ship_prefix="FRA"
+					name = {
+						key="Постнаполеоновская Фреспублика"
+						literal=yes
+					}
+					adjective="Постнаполеоновск"
+					authority = auth_democratic
+					civics = {
+						civic = civic_parliamentary_system
+						civic = civic_pleasure_seekers
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_egalitarian
+						ethic = ethic_xenophile
+						ethic = ethic_militarist
+					}
+					flag = {
+						icon = {
+							category = "human"
+							file = "flag_human_14.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "vertical.dds"
+						}
+						colors={
+							"red"
+							"indigo"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = industrial_01
+					set_country_flag = atomic_age
+					set_pre_ftl_age = atomic_age
+
+					# Leader
+					create_leader = {
+						class = commander
+						species = last_created_species
+						name = "де Голль"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Генерал"
+					set_female_ruler_title = "Генеральша"
+					set_leader = last_created_leader
+				}
+			}
+			else = { # Napoleonic Empire
+				create_country = {
+					ship_prefix="FRA"
+					name = {
+						key="Французская Империя"
+						literal=yes
+					}
+					adjective="Французск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_crusader_spirit
+						civic = civic_nationalistic_zeal
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_xenophile
+						ethic = ethic_militarist
+						ethic = ethic_materialist
+					}
+					flag = {
+						icon = {
+							category = "human"
+							file = "flag_human_4.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "vertical.dds"
+						}
+						colors={
+							"red"
+							"indigo"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = steam_age
+					set_pre_ftl_age = steam_age
+
+					# Leader
+					create_leader = {
+						class = commander
+						species = last_created_species
+						name = "Наполеон"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Император"
+					set_female_ruler_title = "Императрица"
+					set_leader = last_created_leader
+				}
+			}
+		}
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = france
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_uganda = {
+	set_planet_flag = pre_ftl_default
+	create_species = {
+		name = {
+			key="Людоед"
+			literal=yes
+		}
+		plural = {
+			key="Людоеды"
+			literal=yes
+		}
+		adjective = {
+			key="Людоедск"
+			literal=yes
+		}
+		class = "REP"
+		portrait = "rep13"
+		name_list="FUN4"
+		gender=male
+		traits = {
+			trait = "trait_necrophage"
+			trait = "trait_fleeting"
+			trait = "trait_slow_learners"
+			trait = "trait_industrious"
+			trait = "trait_inorganic_breath"
+			trait = "trait_humanoid_jinxed"
+		}
+		homeworld = this
+	}
+	create_country = {
+		ship_prefix="UGA"
+		name = {
+			key="Угандизация"
+			literal=yes
+		}
+		adjective="Угандийск"
+		authority = auth_dictatorial
+		civics = {
+			civic = civic_barbaric_despoilers
+			civic = civic_nationalistic_zeal
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_authoritarian
+			ethic = ethic_xenophobe
+			ethic = ethic_militarist
+		}
+		flag = {
+			icon = {
+				category = "zoological"
+				file = "flag_zoological_9.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "horizontal_stripe.dds"
+			}
+			colors={
+				"black"
+				"yellow"
+				"black"
+				"null"
+			}
+		}
+		origin = "origin_default"
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = machine_age
+		set_pre_ftl_age = machine_age
+
+		# Leader
+		create_leader = {
+			class = commander
+			species = last_created_species
+			name = "Иди Амин"
+			gender=male
+			skill = 1
+			randomize_traits = no
+			traits = {
+				trait = trait_ruler_warlike
+			}
+		}
+		set_male_ruler_title = "Людоед-Майор"
+		set_female_ruler_title = "Людоед-Майорша"
+		set_leader = last_created_leader
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = uganda
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_philistia = {
+	set_planet_flag = pre_ftl_default
+	create_species = {
+		name = {
+			key="Филистимлянин"
+			literal=yes
+		}
+		plural = {
+			key="Филистимляне"
+			literal=yes
+		}
+		adjective = {
+			key="Филистимск"
+			literal=yes
+		}
+		class = "MOL"
+		portrait = "mol14"
+		name_list="HUM1"
+		gender=not_set
+		traits = {
+			trait = "trait_nomadic"
+			trait = "trait_very_strong"
+			trait = "trait_nonadaptive"
+		}
+		homeworld = this
+	}
+	create_country = {
+		ship_prefix="PLS"
+		name = {
+			key="Филистия"
+			literal=yes
+		}
+		adjective="Филистийск"
+		authority = auth_oligarchic
+		civics = {
+			civic = civic_merchant_guilds
+			civic = civic_crafters
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_egalitarian
+			ethic = ethic_xenophile
+			ethic = ethic_militarist
+		}
+		flag = {
+			icon = {
+				category = "human"
+				file = "flag_human_1.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "flag_BG_55.dds"
+			}
+			colors={
+				"yellow"
+				"dark_brown"
+				"black"
+				"null"
+			}
+		}
+		origin = "origin_default"
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = iron_age
+		set_pre_ftl_age = iron_age
+
+		# Leader
+		create_leader = {
+			class = official
+			species = last_created_species
+			name = "Анхус"
+			gender=male
+			skill = 1
+			randomize_traits = no
+			traits = {
+				trait = trait_ruler_eye_for_talent
+			}
+		}
+		set_male_ruler_title = "Царь"
+		set_female_ruler_title = "Царица"
+		set_leader = last_created_leader
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = philistia
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_blood_libel = {
+	set_planet_flag = pre_ftl_default
+	create_species = {
+		name = {
+			key="Христианский Младенец"
+			literal=yes
+		}
+		plural = {
+			key="Христианские Младенцы"
+			literal=yes
+		}
+		adjective = {
+			key="Христианскомладенческ"
+			literal=yes
+		}
+		class = "AQUATIC"
+		portrait = "aqu3"
+		name_list="HUM1"
+		gender=not_set
+		traits = {
+			trait = "trait_weak"
+			trait = "trait_charismatic"
+			trait = "trait_quick_learners"
+		}
+		homeworld = this
+	}
+	create_country = {
+		ship_prefix="BABY"
+		name = {
+			key="Кровавый Навет"
+			literal=yes
+		}
+		adjective="Кровавонаветск"
+		authority = auth_oligarchic
+		civics = {
+			civic = civic_exalted_priesthood
+			civic = civic_ascensionists
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_xenophile
+			ethic = ethic_fanatic_spiritualist
+		}
+		flag = {
+			icon = {
+				category = "spherical"
+				file = "flag_spherical_2.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "flag_BG_35.dds"
+			}
+			colors={
+				"teal"
+				"dark_grey"
+				"teal"
+				"null"
+			}
+		}
+		origin = "origin_default"
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = late_medieval_age
+		set_pre_ftl_age = late_medieval_age
+
+		# Leader
+		create_leader = {
+			class = scientist
+			species = last_created_species
+			name = "Гавриил Белостокский"
+			gender=male
+			skill = 1
+			randomize_traits = yes
+		}
+		set_male_ruler_title = "Мученик"
+		set_female_ruler_title = "Мученица"
+		set_leader = last_created_leader
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = blood_libel
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
 }

@@ -1,12 +1,3 @@
-broken_shackles_start_pop_ethic_effect = {
-	root = {
-		every_owned_pop = {
-			limit = { is_same_species = prevprev }
-			pop_change_ethic = ethic_$ETHIC$
-		}
-	}
-}
-
 # Used for the security drones in the Payback Arc site
 create_slavers_dummy_country = {
 	optimize_memory
@@ -1121,86 +1112,155 @@ setup_fear_of_the_dark_pre_ftl = {
 }
 
 uplift_pre_ftl_with_origin_effect = {
-	random_country = {
-		limit = {
-			is_hive_empire = no
-			species = {
-				ideal_planet_is_special = no
-				NOt = { is_same_value = root.species }
-			}
-			is_preftl_but_not_special = yes
-		}
-		if = {
+	if = {
+		limit = { any_country = { has_country_flag = gotc_broken_shackles_migrants } }
+		random_country = {
 			limit = {
-				is_xenophobe = yes
+				has_country_flag = gotc_broken_shackles_child
 			}
-			shift_ethic = ethic_xenophile
-		}
-		if = {
-			limit = {
-				is_authoritarian = yes
+			save_event_target_as = uplifted_country
+			remove_pre_ftl_flags = yes
+			set_country_type = default
+			#set_species_graphical_culture = yes
+			set_graphical_culture = mammalian_01
+			capital_scope = {
+				every_deposit = {
+					remove_deposit = yes
+				}
+				remove_all_districts = yes
+				remove_all_buildings = yes
 			}
-			shift_ethic = ethic_egalitarian
-		}
-		save_event_target_as = uplifted_country
-		remove_pre_ftl_flags = yes
-		set_country_type = default
-		change_country_flag = random
-		set_species_graphical_culture = yes
-		change_government = {
-			authority = random
-			civics = random
-		}
-		set_name = random
-		capital_scope = {
-			every_deposit = {
-				remove_deposit = yes
+			set_origin = $ORIGIN$
+			capital_scope = {
+				solar_system = {
+					generate_home_system_resources = yes
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:uplifted_country
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
+						}
+					}
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				generate_start_pops = yes
+				generate_home_planet_final_pass = yes
 			}
-			remove_all_districts = yes
-			remove_all_buildings = yes
-		}
-		set_origin = $ORIGIN$
-		capital_scope = {
-			solar_system = {
-				generate_home_system_resources = yes
-				create_starbase = {
-					size = starbase_starport
-					module = shipyard
-					building = crew_quarters
-					owner = event_target:uplifted_country
-					effect = {
-						set_starbase_module = {
-							slot = 1
-							module = trading_hub
+			switch = {
+				trigger = has_origin
+				origin_broken_shackles = {
+					country_event = { id = origin.110 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 28 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
+						}
+					}
+				}
+				origin_payback = {
+					country_event = { id = origin.4000 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 18 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
 						}
 					}
 				}
 			}
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			generate_home_planet_final_pass = yes
 		}
-		switch = {
-			trigger = has_origin
-			origin_broken_shackles = {
-				country_event = { id = origin.110 }
-				capital_scope = {
-					while = {
-						limit = { num_pops > 28 }
-						random_owned_pop = {
-							kill_pop = yes
+	}
+	else = {
+		random_country = {
+			limit = {
+				is_hive_empire = no
+				species = {
+					ideal_planet_is_special = no
+					NOt = { is_same_value = root.species }
+				}
+				is_preftl_but_not_special = yes
+			}
+			if = {
+				limit = {
+					is_xenophobe = yes
+				}
+				shift_ethic = ethic_xenophile
+			}
+			if = {
+				limit = {
+					is_authoritarian = yes
+				}
+				shift_ethic = ethic_egalitarian
+			}
+			save_event_target_as = uplifted_country
+			remove_pre_ftl_flags = yes
+			set_country_type = default
+			change_country_flag = random
+			set_species_graphical_culture = yes
+			change_government = {
+				authority = random
+				civics = random
+			}
+			set_name = random
+			capital_scope = {
+				every_deposit = {
+					remove_deposit = yes
+				}
+				remove_all_districts = yes
+				remove_all_buildings = yes
+			}
+			set_origin = $ORIGIN$
+			capital_scope = {
+				solar_system = {
+					generate_home_system_resources = yes
+					create_starbase = {
+						size = starbase_starport
+						module = shipyard
+						building = crew_quarters
+						owner = event_target:uplifted_country
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = trading_hub
+							}
 						}
 					}
 				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				generate_start_pops = yes
+				generate_home_planet_final_pass = yes
 			}
-			origin_payback = {
-				country_event = { id = origin.4000 }
-				capital_scope = {
-					while = {
-						limit = { num_pops > 18 }
-						random_owned_pop = {
-							kill_pop = yes
+			switch = {
+				trigger = has_origin
+				origin_broken_shackles = {
+					country_event = { id = origin.110 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 28 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
+						}
+					}
+				}
+				origin_payback = {
+					country_event = { id = origin.4000 }
+					capital_scope = {
+						while = {
+							limit = { num_pops > 18 }
+							random_owned_pop = {
+								kill_pop = yes
+							}
 						}
 					}
 				}

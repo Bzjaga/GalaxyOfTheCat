@@ -27,15 +27,8 @@ msi_home_system = {
 			NOT = { exists = event_target:MSI_country }
 			any_country = {
 				has_slave_origin = yes
-				NOT = { has_country_flag = slavers_assigned }
 				NOR = {
-					NOT = {
-						capital_scope = {
-							solar_system = {
-								has_star_flag = palestina
-							}
-						}
-					}
+					has_country_flag = slavers_assigned
 					# don't spawn if AI-generated and adv start disabled
 					# see game_start.1
 					AND = {
@@ -115,7 +108,7 @@ msi_home_system = {
 			prevent_anomaly = yes
 			if = {
 				limit = {
-					any_country = {
+					any_playable_country = {
 						capital_scope = {
 							solar_system = {
 								has_star_flag = palestina
@@ -539,128 +532,201 @@ broken_shackles_parent_system = {
 				set_star_flag = broken_shackles_home_system_@event_target:broken_shackles_child
 			}
 
-			create_country = {
-				species = event_target:broken_shackles_child
-				name_list = event_target:broken_shackles_child
-				type = primitive
-				origin = "origin_default"
-				government_restrictions = {
-					authority = { NOT = { value = auth_machine_intelligence value = auth_hive_mind } }
-				}
-				civics = {
-					civic = civic_increasing_urbanization
-					civic = civic_atmospheric_pollution
-				}
-				flag = {
-					icon = {
-						category = "spherical"
-						file = "flag_spherical_22.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "new_dawn.dds"
-					}
-					colors={
-						"turquoise"
-						"green"
-						"null"
-						"null"
+			if = { # Modern Syria
+				limit = {
+					any_country = {
+						has_origin = origin_broken_shackles
+						has_country_flag = gotc_broken_shackles_migrants
 					}
 				}
-				effect = {
-					save_event_target_as = broken_shackles_parent
+				set_name = {
+					key="Дамаск"
+					literal=yes
+				}
+				solar_system = {
+					set_name = {
+						key="Сирия"
+						literal=yes
+					}
+					set_star_flag = syria
+				}
+				create_country = {
+					ship_prefix="SYR"
+					name = {
+						key="Сирийская Арабская Республика"
+						literal=yes
+					}
+					adjective="Асадск"
+					species = event_target:broken_shackles_child
+					name_list = event_target:broken_shackles_child
+					authority = auth_imperial
+					civics = {
+						civic = civic_toxic_baths
+						civic = civic_byzantine_bureaucracy
+					}
+					ethos = {
+						ethic = ethic_fanatic_authoritarian
+						ethic = ethic_xenophile
+					}
+					flag = {
+						icon = {
+							category = "legion"
+							file = "flag_mp_beta_02.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"red"
+							"black"
+							"orange"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+					effect = {
+						save_event_target_as = broken_shackles_parent
+					}
+				}
+				event_target:broken_shackles_parent = {
+					set_graphical_culture = industrial_01
+					set_country_flag = machine_age
+					set_pre_ftl_age = machine_age
+
+					set_country_flag = broken_shackles_parent_country
+					set_country_flag = special_intro_for@event_target:broken_shackles_child
+					set_country_flag = broken_shackles_parent_of@event_target:broken_shackles_child
+					owner_species = { set_species_homeworld = prevprev }
+
+					set_country_flag = broken_shackles_syria
 				}
 			}
-			event_target:broken_shackles_parent = {
-				set_graphical_culture = industrial_01
-				random_list = {
-					25 = {
-						set_country_flag = industrial_age
-						set_pre_ftl_age = industrial_age
-						change_country_flag = {
-							icon = {
-								category = "pre_ftl"
-								file = "preftl_industrial_age.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "new_dawn.dds"
-							}
-							colors={
-								"beige"
-								"yellow"
-								"null"
-								"null"
-							}
+			else = {
+				create_country = {
+					species = event_target:broken_shackles_child
+					name_list = event_target:broken_shackles_child
+					type = primitive
+					origin = "origin_default"
+					government_restrictions = {
+						authority = { NOT = { value = auth_machine_intelligence value = auth_hive_mind } }
+					}
+					civics = {
+						civic = civic_increasing_urbanization
+						civic = civic_atmospheric_pollution
+					}
+					flag = {
+						icon = {
+							category = "spherical"
+							file = "flag_spherical_22.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "new_dawn.dds"
+						}
+						colors={
+							"turquoise"
+							"green"
+							"null"
+							"null"
 						}
 					}
-					25 = {
-						set_country_flag = machine_age
-						set_pre_ftl_age = machine_age
-						change_country_flag = {
-							icon = {
-								category = "pre_ftl"
-								file = "preftl_machine_age.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "new_dawn.dds"
-							}
-							colors={
-								"yellow"
-								"orange"
-								"null"
-								"null"
-							}
-						}
-					}
-					25 = {
-						set_country_flag = atomic_age
-						set_pre_ftl_age = atomic_age
-						change_country_flag = {
-							icon = {
-								category = "pre_ftl"
-								file = "preftl_atomic_age.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "new_dawn.dds"
-							}
-							colors={
-								"beige"
-								"brown"
-								"null"
-								"null"
-							}
-						}
-					}
-					25 = {
-						set_country_flag = early_space_age
-						set_pre_ftl_age = early_space_age
-						change_country_flag = {
-							icon = {
-								category = "pre_ftl"
-								file = "preftl_early_space_age.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "new_dawn.dds"
-							}
-							colors={
-								"grey"
-								"dark_grey"
-								"null"
-								"null"
-							}
-						}
+					effect = {
+						save_event_target_as = broken_shackles_parent
 					}
 				}
+				event_target:broken_shackles_parent = {
+					set_graphical_culture = industrial_01
+					random_list = {
+						25 = {
+							set_country_flag = industrial_age
+							set_pre_ftl_age = industrial_age
+							change_country_flag = {
+								icon = {
+									category = "pre_ftl"
+									file = "preftl_industrial_age.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "new_dawn.dds"
+								}
+								colors={
+									"beige"
+									"yellow"
+									"null"
+									"null"
+								}
+							}
+						}
+						25 = {
+							set_country_flag = machine_age
+							set_pre_ftl_age = machine_age
+							change_country_flag = {
+								icon = {
+									category = "pre_ftl"
+									file = "preftl_machine_age.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "new_dawn.dds"
+								}
+								colors={
+									"yellow"
+									"orange"
+									"null"
+									"null"
+								}
+							}
+						}
+						25 = {
+							set_country_flag = atomic_age
+							set_pre_ftl_age = atomic_age
+							change_country_flag = {
+								icon = {
+									category = "pre_ftl"
+									file = "preftl_atomic_age.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "new_dawn.dds"
+								}
+								colors={
+									"beige"
+									"brown"
+									"null"
+									"null"
+								}
+							}
+						}
+						25 = {
+							set_country_flag = early_space_age
+							set_pre_ftl_age = early_space_age
+							change_country_flag = {
+								icon = {
+									category = "pre_ftl"
+									file = "preftl_early_space_age.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "new_dawn.dds"
+								}
+								colors={
+									"grey"
+									"dark_grey"
+									"null"
+									"null"
+								}
+							}
+						}
+					}
 
-				set_country_flag = broken_shackles_parent_country
-				set_country_flag = special_intro_for@event_target:broken_shackles_child
-				set_country_flag = broken_shackles_parent_of@event_target:broken_shackles_child
-				owner_species = { set_species_homeworld = prevprev }
-				set_name = random # Fixes some naming issues
+					set_country_flag = broken_shackles_parent_country
+					set_country_flag = special_intro_for@event_target:broken_shackles_child
+					set_country_flag = broken_shackles_parent_of@event_target:broken_shackles_child
+					owner_species = { set_species_homeworld = prevprev }
+					set_name = random # Fixes some naming issues
+				}
 			}
 
 			setup_pre_ftl_broken_shackles_planet = yes

@@ -1,0 +1,693 @@
+@distance = 50
+@base_moon_distance = 10
+
+# Egypt
+pre_ftl_init_egypt = {
+	name = "Египет"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { egypt primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = egypt
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = 1
+		orbit_distance = 0
+		class = pc_ocean
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 23 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_egypt = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Syria
+pre_ftl_init_syria = {
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { syria primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = syria
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = 1
+		orbit_distance = 0
+		class = pc_arid
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 18 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_syria = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Antioch
+pre_ftl_init_antioch = {
+	name = "Антиохия"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { antioch primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = antioch
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		name = "Антиохия"
+		count = 1
+		orbit_distance = 0
+		class = pc_tropical
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 18 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_antioch = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# France
+pre_ftl_init_france = {
+	name = "Франция"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { france primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = france
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		name = "Париж"
+		count = 1
+		orbit_distance = 0
+		class = pc_continental
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 22 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_france = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Uganda
+pre_ftl_init_uganda = {
+	name = "Уганда"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { uganda primitive_system }
+
+	max_instances = 0
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			add = 5
+			any_playable_country = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = palestina
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = uganda
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		name = "Кампала"
+		count = 1
+		orbit_distance = 0
+		class = pc_savannah
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 18 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_uganda = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Philistia
+pre_ftl_init_philistia = {
+	name = "Филистия"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { philistia primitive_system }
+
+	max_instances = 0
+	usage = misc_system_init
+	usage_odds = {
+		base = 1
+		modifier = {
+			add = 10
+			any_playable_country = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = palestina
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = philistia
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		name = "Геф"
+		count = 1
+		orbit_distance = 0
+		class = pc_tropical
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 18 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_philistia = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Blood libel - Broken Shackles only
+pre_ftl_init_blood_libel = {
+	name = "Колыбель"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { blood_libel primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		name = "Колыбель"
+		count = 1
+		orbit_distance = 0
+		class = pc_continental
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 18 max = 25 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_blood_libel = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Broken Shackles origin
+gotc_broken_shackles_child_init = {
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { gotc_broken_shackles_child primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = 1
+		orbit_distance = 0
+		class = pc_arid
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 18 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_gotc_broken_shackles_child = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
