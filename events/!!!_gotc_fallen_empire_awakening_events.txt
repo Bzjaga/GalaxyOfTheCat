@@ -2,8 +2,6 @@
 #
 # Fallen Empire 'Awakening' Events
 #
-# Written by Martin Anward
-#
 ############################
 
 namespace = fallen_empires_awakening
@@ -108,7 +106,7 @@ country_event = {
 		if = {
 			limit = { host_has_dlc = "Leviathans Story Pack" }
 			random_list = {
-				70 = { # War in Heaven with Fallen Empire of opposing ethos
+				75 = { # War in Heaven with Fallen Empire of opposing ethos
 					random_country = {
 						limit = {
 							NOT = { is_same_value = root }
@@ -162,7 +160,7 @@ country_event = {
 						}
 					}
 				}
-				10 = { # No War in Heaven
+				5 = { # No War in Heaven
 					set_global_flag = no_war_in_heaven
 				}
 			}
