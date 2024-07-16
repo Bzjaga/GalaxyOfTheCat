@@ -648,10 +648,6 @@ imperial_origin_start_effect = {
 			modifier = imperial_vassal_ai_modifier
 			days = -1
 		}
-		add_modifier = {
-			modifier = imperial_overlord_modifier
-			days = -1
-		}
 	}
 
 	# Rival Trotsky
