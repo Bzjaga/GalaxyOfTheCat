@@ -4118,8 +4118,8 @@ create_imperial_vassal_mizulina = {
 			key="Мизулинск"
 			literal=yes
 		}
-		class = "TOX"
-		portrait = "tox8"
+		class = "AQUATIC"
+		portrait = "aqu15"
 		name_list="HUM2"
 		traits = {
 			trait = "trait_aquatic"
