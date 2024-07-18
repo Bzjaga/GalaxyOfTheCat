@@ -156,7 +156,10 @@ trait_aquatic = {
 	}
 	triggered_planet_growth_habitability_modifier = {
 		potential = {
-			has_modifier = flooded_habitat
+			OR = {
+				is_ideal = yes
+				has_modifier = flooded_habitat
+			}
 			exists = owner
 			owner = { has_ascension_perk = ap_hydrocentric }
 		}
@@ -324,7 +327,18 @@ trait_robot_aquatic = {
 		potential = {
 			has_modifier = flooded_habitat
 		}
-		pop_environment_tolerance = 0.2
+		pop_environment_tolerance = 0.4
+	}
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			OR = {
+				is_ideal = yes
+				has_modifier = flooded_habitat
+			}
+			exists = owner
+			owner = { has_ascension_perk = ap_hydrocentric }
+		}
+		pop_environment_tolerance = 0.1
 	}
 	modifier = {
 		pc_ocean_habitability = 0.2
