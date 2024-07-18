@@ -157,7 +157,7 @@ trait_aquatic = {
 	triggered_planet_growth_habitability_modifier = {
 		potential = {
 			OR = {
-				is_ideal = yes
+				is_planet_class = pc_ocean
 				has_modifier = flooded_habitat
 			}
 			exists = owner
@@ -332,7 +332,7 @@ trait_robot_aquatic = {
 	triggered_planet_growth_habitability_modifier = {
 		potential = {
 			OR = {
-				is_ideal = yes
+				is_planet_class = pc_ocean
 				has_modifier = flooded_habitat
 			}
 			exists = owner
