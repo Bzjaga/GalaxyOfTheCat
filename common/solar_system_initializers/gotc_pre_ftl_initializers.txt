@@ -350,6 +350,93 @@ pre_ftl_init_france = {
 	}
 }
 
+# Arabia
+pre_ftl_init_arabia = {
+	name = "Аравия"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { arabia primitive_system }
+
+	max_instances = 1
+	usage = misc_system_init
+	usage_odds = {
+		base = 5
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = arabia
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		count = 1
+		orbit_distance = 0
+		class = pc_desert
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 20 max = 24 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_arabia = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
 # Uganda
 pre_ftl_init_uganda = {
 	name = "Уганда"
@@ -516,6 +603,104 @@ pre_ftl_init_philistia = {
 		init_effect = {
 			prevent_anomaly = yes
 			create_pre_ftl_philistia = yes
+		}
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 1 max = 4 }
+
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 1 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 2 }
+	}
+}
+
+# Jordan
+pre_ftl_init_jordan = {
+	name = "Иордания"
+	class = "rl_standard_stars"
+
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+
+	flags = { jordan primitive_system }
+
+	max_instances = 0
+	usage = misc_system_init
+	usage_odds = {
+		base = 1
+		modifier = {
+			add = 10
+			any_playable_country = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = palestina
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			any_system = {
+				has_star_flag = jordan
+			}
+		}
+		modifier = {
+			factor = 0
+			is_fe_cluster = yes
+		}
+	}
+	primitive_system = yes	# usage odds modified by primitives setup slider
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 20
+
+	planet = {
+		orbit_distance = 20
+		count = { min = 0 max = 3 }
+	}
+
+	change_orbit = 20
+
+	planet = {
+		name = "Амман"
+		count = 1
+		orbit_distance = 0
+		class = pc_desert
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 20 }
+		#deposit_blockers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+			create_pre_ftl_jordan = yes
 		}
 
 		change_orbit = @base_moon_distance
