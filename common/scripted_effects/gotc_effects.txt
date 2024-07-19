@@ -3902,7 +3902,7 @@ create_imperial_vassal_rpc = {
 		}
 		class = "NECROID"
 		portrait = "nec12"
-		name_list="NECROID4"
+		name_list="BABULKA"
 		gender=male
 		traits = {
 			trait = "trait_thrifty"
@@ -3925,6 +3925,7 @@ create_imperial_vassal_rpc = {
 		adjective="Православн"
 		authority = auth_dictatorial
 		species = last_created_species
+		name_list = "NECROID4"
 		flag = {
 			icon={
 				category="pointy"
@@ -4118,8 +4119,8 @@ create_imperial_vassal_mizulina = {
 			key="Мизулинск"
 			literal=yes
 		}
-		class = "TOX"
-		portrait = "tox8"
+		class = "AQUATIC"
+		portrait = "aqu15"
 		name_list="HUM2"
 		traits = {
 			trait = "trait_aquatic"
@@ -6803,6 +6804,243 @@ create_pre_ftl_france = {
 }
 
 #Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_arabia = {
+	set_planet_flag = pre_ftl_default
+	create_species = { # Creating Arabs
+		name = {
+			key="Араб"
+			literal=yes
+		}
+		plural = {
+			key="Арабы"
+			literal=yes
+		}
+		adjective = {
+			key="Арабск"
+			literal=yes
+		}
+		class = "FUN"
+		portrait = "fun10"
+		name_list="HUM3"
+		gender=male
+		traits = {
+			trait = "trait_thrifty"
+			trait = "trait_deviants"
+			trait = "trait_humanoid_jinxed"
+			trait = "trait_nomadic"
+			trait = "trait_traditional"
+		}
+		homeworld = this
+	}
+	if = { # Nabatea
+		limit = {
+			any_playable_country = {
+				capital_scope = {
+					solar_system = {
+						has_star_flag = palestina
+					}
+				}
+			}
+		}
+		set_name = {
+			key="Петра"
+			literal=yes
+		}
+		solar_system = {
+			set_name = {
+				key="Набатея"
+				literal=yes
+			}
+		}
+		create_country = {
+			ship_prefix="NAB"
+			name = {
+				key="Набатейское Царство"
+				literal=yes
+			}
+			adjective="Набатейск"
+			authority = auth_imperial
+			civics = {
+				civic = civic_hyperspace_specialty
+				civic = civic_crafters
+			}
+			species = last_created_species
+			ethos = {
+				ethic = ethic_fanatic_xenophile
+				ethic = ethic_spiritualist
+			}
+			flag = {
+				icon = {
+					category = "ornate"
+					file = "flag_ornate_4.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "flag_BG_4.dds"
+				}
+				colors={
+					"dark_purple"
+					"yellow"
+					"blue"
+					"null"
+				}
+			}
+			origin = "origin_default"
+			type = primitive
+		}
+		last_created_country = {
+			set_graphical_culture = preindustrial_01
+			set_country_flag = iron_age
+			set_pre_ftl_age = iron_age
+
+			# Leader
+			create_leader = {
+				class = official
+				species = last_created_species
+				name = "Арета"
+				gender=male
+				skill = 1
+				randomize_traits = yes
+			}
+			set_male_ruler_title = "Царь Набатеи"
+			set_female_ruler_title = "Царица Набатеи"
+			set_leader = last_created_leader
+			set_male_heir_title = "Наследник"
+			set_female_heir_title = "Наследница"
+		}
+	}
+	else = {
+		random_list = {
+			50 = { # Early Arabia
+				set_name = {
+					key="Куфа"
+					literal=yes
+				}
+				create_country = {
+					ship_prefix="ARAB"
+					name = {
+						key="Арабский Халифат"
+						literal=yes
+					}
+					adjective="Халифатск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_ascensionists
+						civic = civic_distinguished_admiralty
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_militarist
+						ethic = ethic_fanatic_spiritualist
+					}
+					flag = {
+						icon = {
+							category = "corporate"
+							file = "corporate_07.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_4.dds"
+						}
+						colors={
+							"black"
+							"black"
+							"blue"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = preindustrial_01
+					set_country_flag = late_medieval_age
+					set_pre_ftl_age = late_medieval_age
+
+					# Leader
+					create_leader = {
+						class = commander
+						species = last_created_species
+						name = "Муавия"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Неправедный Халиф"
+					set_leader = last_created_leader
+				}
+			}
+			50 = { # Late Arabia
+				set_name = {
+					key="Эр-Рияд"
+					literal=yes
+				}
+				create_country = {
+					ship_prefix="KSA"
+					name = {
+						key="Королевство Саудовская Аравия"
+						literal=yes
+					}
+					adjective="Саудовск"
+					authority = auth_imperial
+					civics = {
+						civic = civic_toxic_baths
+						civic = civic_ascensionists
+					}
+					species = last_created_species
+					ethos = {
+						ethic = ethic_authoritarian
+						ethic = ethic_fanatic_spiritualist
+					}
+					flag = {
+						icon = {
+							category = "corporate"
+							file = "corporate_07.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "flag_BG_4.dds"
+						}
+						colors={
+							"dark_green"
+							"dark_green"
+							"blue"
+							"null"
+						}
+					}
+					origin = "origin_default"
+					type = primitive
+				}
+				last_created_country = {
+					set_graphical_culture = industrial_01
+					set_country_flag = machine_age
+					set_pre_ftl_age = machine_age
+
+					# Leader
+					create_leader = {
+						class = official
+						species = last_created_species
+						name = "бен Салман"
+						gender=male
+						skill = 1
+						randomize_traits = yes
+					}
+					set_male_ruler_title = "Король"
+					set_leader = last_created_leader
+					set_male_heir_title = "Наследный Принц"
+				}
+			}
+		}
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = arabia
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_uganda = {
 	set_planet_flag = pre_ftl_default
 	create_species = {
@@ -6986,6 +7224,99 @@ create_pre_ftl_philistia = {
 	set_pre_ftl_origin = yes
 	last_created_country = {
 		set_country_flag = philistia
+		set_country_flag = broken_shackles_zion_abductees
+	}
+	setup_pre_ftl_planet = yes
+}
+
+#Default or for usage in Broken shackles if Zion is MSI
+create_pre_ftl_jordan = {
+	set_planet_flag = pre_ftl_default
+	create_species = {
+		name = {
+			key="Бедуин"
+			literal=yes
+		}
+		plural = {
+			key="Бедуины"
+			literal=yes
+		}
+		adjective = {
+			key="Бедуинск"
+			literal=yes
+		}
+		class = "MAM"
+		portrait = "mam5"
+		name_list="HUM3"
+		gender=male
+		traits = {
+			trait = "trait_nomadic"
+			trait = "trait_traditional"
+			trait = "trait_thrifty"
+			trait = "trait_nonadaptive"
+		}
+		homeworld = this
+	}
+	create_country = {
+		ship_prefix="JOR"
+		name = {
+			key="Хашимитское Королевство"
+			literal=yes
+		}
+		adjective="Иорданск"
+		authority = auth_imperial
+		civics = {
+			civic = civic_selective_kinship
+			civic = civic_merchant_guilds
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_xenophobe
+			ethic = ethic_militarist
+			ethic = ethic_spiritualist
+		}
+		flag = {
+			icon = {
+				category = "ornate"
+				file = "flag_ornate_5.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "flag_BG_8.dds"
+			}
+			colors={
+				"green"
+				"off_white"
+				"black"
+				"null"
+			}
+		}
+		origin = "origin_default"
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = machine_age
+		set_pre_ftl_age = machine_age
+
+		# Leader
+		create_leader = {
+			class = official
+			species = last_created_species
+			name = "Абдалла"
+			gender=male
+			skill = 1
+			randomize_traits = yes
+		}
+		set_male_ruler_title = "Король Иордании"
+		set_female_ruler_title = "Королева Иордании"
+		set_leader = last_created_leader
+		set_male_heir_title = "Кронпринц"
+		set_female_heir_title = "Кронпринцесса"
+	}
+	set_pre_ftl_origin = yes
+	last_created_country = {
+		set_country_flag = jordan
 		set_country_flag = broken_shackles_zion_abductees
 	}
 	setup_pre_ftl_planet = yes

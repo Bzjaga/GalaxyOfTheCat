@@ -424,7 +424,6 @@ country_event = { # Overlord Version
 			}
 		}
 		remove_modifier = imperial_vassal_ai_modifier
-		remove_modifier = imperial_overlord_modifier
 		every_subject = { # Release and notify current subjects
 			if = {
 				limit = {
