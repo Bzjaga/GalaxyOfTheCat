@@ -258,7 +258,7 @@
  TAJICAUCASIAN_PLANET_Day:0 "Дай"
  TAJICAUCASIAN_PLANET_DachuBorzoy:0 "Дачу-Борзой"
  TAJICAUCASIAN_PLANET_Nashha:0 "Нашха"
-#character_names
+#character_first_names_male
  TAJICAUCASIAN_CHR_Bidon:0 "Бидон"
  TAJICAUCASIAN_CHR_Vagon:0 "Вагон"
  TAJICAUCASIAN_CHR_Ishod:0 "Исход"
@@ -300,6 +300,7 @@
  TAJICAUCASIAN_CHR_Uchyot:0 "Учёт"
  TAJICAUCASIAN_CHR_Ushat:0 "Ушат"
  TAJICAUCASIAN_CHR_Cheryod:0 "Черёд"
+ #character_second_names_male
  TAJICAUCASIAN_CHR_Bobsleev:0 "Бобслеев"
  TAJICAUCASIAN_CHR_Bugaev:0 "Бугаев"
  TAJICAUCASIAN_CHR_Vodoleev:0 "Водолеев"
@@ -341,6 +342,12 @@
  TAJICAUCASIAN_CHR_Ustoev:0 "Устоев"
  TAJICAUCASIAN_CHR_Haldeev:0 "Халдеев"
  TAJICAUCASIAN_CHR_Harleev:0 "Харлеев"
+ #character_full_names_female
+ TAJICAUCASIAN_CHR_IglaKoshcheeva:0 "Игла Кощеева"
+ TAJICAUCASIAN_CHR_IkraMintaeva:0 "Икра Минтаева"
+ TAJICAUCASIAN_CHR_YudolPlebeeva:0 "Юдоль Плебеева"
+ TAJICAUCASIAN_CHR_MyslyaZlodeeva:0 "Мысля Злодеева"
+ TAJICAUCASIAN_CHR_KoleyaTramvaeva:0 "Колея Трамваева"
 
 # Sequential name formats
  TAJICAUCASIAN_STRIKEFORCE:0 "$ORD$-й джигитский флот"
