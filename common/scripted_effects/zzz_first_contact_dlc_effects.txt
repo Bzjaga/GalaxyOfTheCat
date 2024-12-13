@@ -1141,7 +1141,7 @@ uplift_pre_ftl_with_origin_effect = {
 						owner = event_target:uplifted_country
 						effect = {
 							set_starbase_module = {
-								slot = 1
+								slot = 2 # Fixing Paradox bug
 								module = trading_hub
 							}
 						}
@@ -1229,7 +1229,7 @@ uplift_pre_ftl_with_origin_effect = {
 						owner = event_target:uplifted_country
 						effect = {
 							set_starbase_module = {
-								slot = 1
+								slot = 2  # Fixing Paradox bug
 								module = trading_hub
 							}
 						}

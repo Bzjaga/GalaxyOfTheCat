@@ -1,0 +1,4 @@
+	NGameplay = {
+		CUSTOM_EMPIRE_SPAWN_CHANCE			= 1000	# Chance that an empire will be created from an existing template instead of randomly generated (10 = 1% chance)
+		FALLEN_CUSTOM_EMPIRE_SPAWN_CHANCE	= 0	# Chance that a fallen empire will be created from an existing template instead of randomly generated (10 = 1% chance)
+	}
