@@ -13,7 +13,7 @@ gov_feudal_empire = {
 	should_force_rename = yes
 
 	possible = {
-		has_authority = auth_imperial
+		is_imperial_authority = yes
 		has_valid_civic = civic_feudal_realm
 	}
 

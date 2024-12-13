@@ -20,8 +20,8 @@ fe_hedonist = {
 	possible = {
 		owner = {
 			NOR = {
-				has_authority = auth_machine_intelligence
-				has_authority = auth_hive_mind
+				is_machine_empire = yes
+				is_hive_empire = yes
 				has_ethic = ethic_fanatic_spiritualist
 			}
 		}
