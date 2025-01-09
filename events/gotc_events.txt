@@ -1132,11 +1132,9 @@ leader_event = { # invite cats
 			owner = {
 				NOT = {
 					any_owned_species = {
-						limit = {
-							is_feline_species = yes
-							is_robotic = no
-							is_sapient = yes
-						}
+						is_feline_species = yes
+						is_robotic = no
+						is_sapient = yes
 						NAND = {
 							has_citizenship_type = { type = citizenship_full country = prev }
 							has_citizenship_type = { type = citizenship_full_machine country = prev }
