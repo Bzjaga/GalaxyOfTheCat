@@ -801,15 +801,18 @@ leader_event = { # invite cats
 	id = gotc.40101
 	title = gotc.40101.name
 	desc = gotc.40101.desc
-	picture = GFX_evt_busy_spaceport
+	#picture = GFX_evt_but_they_are_cute
 	show_sound = event_default
+	diplomatic = yes
 	is_triggered_only = yes
+	custom_gui = "enclave_caravaneer_window"
 
-	event_window_type = leader_story
-	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+	#event_window_type = leader_story
+	#event_picture_background = "GFX_leader_recruitment_bg_renowned"
 
 	picture_event_data = {
 		portrait = root
+		room = enclave_artist_room
 	}
 
 	immediate = {
@@ -1002,30 +1005,38 @@ leader_event = { # invite cats
 				}
 				add_trait = leader_trait_emotional_support_pet
 			}
-			set_country_flag = cats_invited
-			check_country_flags_mad_vacuum_cleaner = yes
+		}
+		hidden_effect = {
+			owner = {
+				set_country_flag = cats_invited
+				check_country_flags_mad_vacuum_cleaner = yes
+			}
 		}
 	}
 
 	option = { # reject cats
 		name = gotc.40101.j
 		add_negative_trait_mad_vacuum_cleaner = yes
+		default_hide_option = yes
 	}
 }
 
-leader_event = { # invite cats
+leader_event = { # cats full citizenship
 	id = gotc.40105
 	title = gotc.40105.name
 	desc = gotc.40105.desc
-	picture = GFX_evt_alien_segregation
+	#picture = GFX_evt_alien_segregation
 	show_sound = event_default
+	diplomatic = yes
 	is_triggered_only = yes
+	custom_gui = "enclave_caravaneer_window"
 
-	event_window_type = leader_story
-	event_picture_background = "GFX_leader_recruitment_bg_renowned"
+	#event_window_type = leader_story
+	#event_picture_background = "GFX_leader_recruitment_bg_renowned"
 
 	picture_event_data = {
 		portrait = root
+		room = enclave_artist_room
 	}
 
 	immediate = {
@@ -1091,7 +1102,7 @@ leader_event = { # invite cats
 		name = gotc.40105.e
 		trigger = {
 			owner = {
-				NOT = { owner_main_species = { is_feline_species = yes } }
+				NOT = { has_authority = auth_democratic }
 			}
 		}
 		response_text = gotc.40105.e.response
@@ -1100,17 +1111,17 @@ leader_event = { # invite cats
 
 	option = {
 		name = gotc.40105.f
+		trigger = {
+			owner = {
+				NOT = { owner_main_species = { is_feline_species = yes } }
+			}
+		}
 		response_text = gotc.40105.f.response
 		is_dialog_only = yes
 	}
 
 	option = {
 		name = gotc.40105.g
-		trigger = {
-			owner = {
-				is_egalitarian = yes
-			}
-		}
 		response_text = gotc.40105.g.response
 		is_dialog_only = yes
 	}
@@ -1119,7 +1130,7 @@ leader_event = { # invite cats
 		name = gotc.40105.h
 		trigger = {
 			owner = {
-				NOT = { is_xenophile = yes }
+				is_egalitarian = yes
 			}
 		}
 		response_text = gotc.40105.h.response
@@ -1128,6 +1139,17 @@ leader_event = { # invite cats
 
 	option = {
 		name = gotc.40105.i
+		trigger = {
+			owner = {
+				NOT = { is_xenophile = yes }
+			}
+		}
+		response_text = gotc.40105.i.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40105.j
 		allow = {
 			owner = {
 				NOT = {
@@ -1135,7 +1157,7 @@ leader_event = { # invite cats
 						is_feline_species = yes
 						is_robotic = no
 						is_sapient = yes
-						NAND = {
+						NOR = {
 							has_citizenship_type = { type = citizenship_full country = prev }
 							has_citizenship_type = { type = citizenship_full_machine country = prev }
 						}
@@ -1143,15 +1165,21 @@ leader_event = { # invite cats
 				}
 			}
 		}
+		owner = {
+			add_modifier = { modifier = health_discovery years = 5 }
+		}
 	}
 
 	option = {
-		name = gotc.40105.j
+		name = gotc.40105.k
 		add_negative_trait_mad_vacuum_cleaner = yes
-		every_owned_planet = {
-			limit = { any_owned_species = { is_feline_species = yes } }
-			add_modifier = { modifier = pheromoned_grief days = 1800 }
+		owner = {
+			every_owned_planet = {
+				limit = { any_owned_species = { is_feline_species = yes } }
+				add_modifier = { modifier = pheromoned_grief years = 5 }
+			}
 		}
+		default_hide_option = yes
 	}
 }
 

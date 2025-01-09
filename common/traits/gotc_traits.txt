@@ -14,6 +14,7 @@ leader_trait_tomcat_insight = {
 	}
 	councilor_modifier = {
 		diplo_weight_mult = -0.05
+		species_leader_exp_gain = 0.20
 	}
 
 	triggered_planet_modifier = {

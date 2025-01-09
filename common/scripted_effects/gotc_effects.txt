@@ -7492,10 +7492,10 @@ add_negative_trait_mad_vacuum_cleaner = {
 		limit = { NOT = { has_trait = leader_trait_opinionated_2 } }
 		add_trait = leader_trait_opinionated_2
 	}
-	else_if = {
-		limit = { NOT = { has_trait = leader_trait_hacked } }
-		add_trait = leader_trait_hacked
-	}
+	#else_if = {
+	#	limit = { NOT = { has_trait = leader_trait_hacked } }
+	#	add_trait = leader_trait_hacked
+	#}
 	else_if = {
 		limit = {
 			NOR = {
