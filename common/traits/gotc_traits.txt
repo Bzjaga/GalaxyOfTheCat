@@ -1,0 +1,90 @@
+###############################
+# GOTC Leader Traits #
+###############################
+
+leader_trait_tomcat_insight = {
+	leader_trait_type = destiny
+	inline_script = {
+		script = trait/icon
+		CLASS = scientist
+		ICON = "GFX_leader_trait_tomcat_insight"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_modifier = {
+		diplo_weight_mult = -0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { owner_main_species = { is_feline_species = yes } }
+		}
+		pop_ethic_xenophobe_attraction_mult = 0.5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { owner_main_species = { is_feline_species = yes } } }
+		}
+		pop_ethic_xenophile_attraction_mult = 0.5
+	}
+
+	triggered_sector_modifier = {
+		potential = {
+			exists = owner
+			owner = { owner_main_species = { is_feline_species = yes } }
+		}
+		pop_ethic_xenophobe_attraction_mult = 0.25
+	}
+
+	triggered_sector_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { owner_main_species = { is_feline_species = yes } } }
+		}
+		pop_ethic_xenophile_attraction_mult = 0.25
+	}
+
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = { owner_main_species = { is_feline_species = yes } }
+		}
+		pop_ethic_xenophobe_attraction_mult = 0.1
+	}
+
+	triggered_councilor_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { owner_main_species = { is_feline_species = yes } } }
+		}
+		pop_ethic_xenophile_attraction_mult = 0.1
+	}
+
+	#limits storm devastation as governor
+	triggered_planet_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_storm_devastation_mult = -0.3
+	}
+	triggered_sector_modifier = {
+		potential = {
+			is_ruler = no
+		}
+		planet_storm_devastation_mult = -0.15
+	}
+
+	initial = no
+	randomized = no
+	custom_tooltip_with_modifiers = tomcat_insight_effect
+	leader_class = { scientist }
+	background_icon = "GFX_leader_background_destiny_1"
+}
+
+################################
+# GOTC Species Traits #
+################################

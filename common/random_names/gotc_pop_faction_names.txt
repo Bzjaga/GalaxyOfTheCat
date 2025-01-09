@@ -1,0 +1,65 @@
+## Catists
+pop_faction_name_parts_list = {
+	key = "catist_names_1"
+	parts = {
+		of_Nadenading_Cats = 1
+		of_Caring_Cats = 1
+		of_Serving_Cats = 1
+		of_Cats_Greatness = 1
+		of_Divining_Cats = 1
+		of_Mofu_and_Nadenada = 1
+		of_Cats_Comeliness = 1
+		of_Worshiping_Cats = 1
+		of_Cats_Supremacy = 1
+		of_Cats_Supremacism = 1
+		of_the_Highest_Creatures = 1
+		of_Cats_Wisdom = 1
+		of_Admiring_Cats = 1
+		of_Cats_Dominance = 1
+		of_Cats_Rule = 1
+		of_Idolizing_Cats = 1
+		of_Catocentrism = 1
+		Who_if_not_Cat = 1
+	}
+}
+pop_faction_name_parts_list = {
+	key = "catist_names_2"
+	parts = {
+		Coalition = 1
+		#Council = 1 # ATM Vanilla localisation is lacking the grammatical gender of the word Council
+		Committee = 1
+		Center = 1
+		Foundation = 1
+		Initiative = 1
+		Society = 1
+		Watch = 1
+		Alliance = 1
+		Movement = 1
+		Group = 1
+		Organization = 1
+		Bloc = 1
+		Association = 1
+		League = 1
+		Party = 1
+		Union = 1
+		Lobby = 1
+		Aggregate = 1
+		Cult = 1
+		Sect = 1
+		Purifiers = 1
+	}
+}
+
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR = {
+				is_pop_faction_type = "catist_xenophile"
+				#is_pop_faction_type = "catist_xenophobe"
+			}
+		}
+	}
+	format = "{Impressed {<catist_names_1> {<catist_names_2>}}}"
+}

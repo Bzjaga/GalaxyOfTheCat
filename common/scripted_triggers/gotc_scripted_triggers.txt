@@ -1,0 +1,7 @@
+is_feline_species = { # After all, What is the cat?
+	OR = {
+		species_portrait = mam14
+		species_portrait = cyb1
+		species_portrait = cyb7
+	}
+}

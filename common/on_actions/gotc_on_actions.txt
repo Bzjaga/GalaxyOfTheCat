@@ -1,0 +1,7 @@
+# this = country
+on_five_year_pulse_country = {
+	events = {
+		gotc.41234		# Renowned leader events
+		gotc.40000		# Galactic Paragons related pulses - check possibility to hire a leader
+	}
+}

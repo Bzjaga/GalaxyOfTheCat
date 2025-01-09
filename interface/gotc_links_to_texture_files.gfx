@@ -1,0 +1,15 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_leader_trait_tomcat_insight"
+        texturefile = "gfx/interface/icons/traits/leader_trait_icons/tomcat_insight.dds"
+    }
+    spriteType = {
+        name = "GFX_message_leader_recruitment_mad_vacuum_cleaner"
+        texturefile = "gfx/interface/icons/message/message_leader_recruitment_mad_vacuum_cleaner.dds"
+    }
+	spriteType = {
+		name = "GFX_faction_icon_catist_xenophile"
+		textureFile = "gfx/interface/icons/faction_icons/faction_icons_catists.dds"
+		noOfFrames = 1
+	}
+}
