@@ -5,9 +5,194 @@
 ###############################
 namespace = gotc
 
-# solovyov
+# Collided planet starting system
+# on_game_start_country
 country_event = {
 	id = gotc.1
+
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		capital_scope = { solar_system = { has_star_flag = kira_starting_system } }
+	}
+
+	immediate = {
+		save_event_target_as = collided_planet_country
+		capital_scope = {
+			solar_system = {
+				random_neighbor_system = {
+					limit = {
+						has_star_flag = neighbor_t1_first_colony
+						has_star_flag = system_of_kira
+					}
+					random_system_planet = {
+						limit = {
+							has_planet_flag = prescripted_ideal
+							has_planet_flag = planet_of_kira
+							is_colonizable = yes
+							is_colony = no
+							num_pops = 0
+						}
+						prev = { set_name = "Система Кирина" }
+						set_planet_flag = gotc_temp_planet
+						save_event_target_as = gotc_temp_planet
+					}
+					if = {
+						limit = { any_system_planet = { has_planet_flag = gotc_temp_planet } }
+						if = {
+							limit = { root = { ideal_planet_class = pc_arid } }
+							spawn_planet = {
+								class = pc_arid
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_desert } }
+							spawn_planet = {
+								class = pc_desert
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_savannah } }
+							spawn_planet = {
+								class = pc_savannah
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_ocean } }
+							spawn_planet = {
+								class = pc_ocean
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_continental } }
+							spawn_planet = {
+								class = pc_continental
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_tropical } }
+							spawn_planet = {
+								class = pc_tropical
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_tundra } }
+							spawn_planet = {
+								class = pc_tundra
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_alpine } }
+							spawn_planet = {
+								class = pc_alpine
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else_if = {
+							limit = { root = { ideal_planet_class = pc_arctic } }
+							spawn_planet = {
+								class = pc_arctic
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+						else = {
+							spawn_planet = {
+								class = pc_toxic
+								location = event_target:gotc_temp_planet
+								size = { min = 25 max = 30 }
+								has_ring = yes
+								entity = "collided_planet_entity"
+								deposit_blockers = none
+								modifiers = none
+
+								init_effect = { planet_of_kira_init_effect = yes }
+							}
+						}
+					}
+					event_target:gotc_temp_planet = {
+						remove_planet = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+# solovyov
+country_event = {
+	id = gotc.2
 
 	hide_window = yes
 	is_triggered_only = yes
@@ -1218,7 +1403,7 @@ country_event = {
 									is_feline_species = yes
 									is_robotic = no
 									is_sapient = yes
-									NAND = {
+									NOR = {
 										has_citizenship_type = { type = citizenship_full country = prev }
 										has_citizenship_type = { type = citizenship_full_machine country = prev }
 									}

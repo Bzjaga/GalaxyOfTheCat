@@ -1,3 +1,9 @@
+on_game_start_country = {
+	events = {
+		gotc.1 # System of Kira
+	}
+}
+
 # this = country
 on_five_year_pulse_country = {
 	events = {

@@ -81,7 +81,7 @@ catist_xenophile = {
 
 
 		modifier = {
-			factor = 1.25
+			factor = 1.5
 			exists = from
 			from = {
 				exists = leader

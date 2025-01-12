@@ -3741,7 +3741,7 @@ create_imperial_vassal_solovyov = {
 				establish_communications_no_message = event_target:origin_imperial_homeland_country_solovyov
 			}
 
-			country_event = { id = gotc.1 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
+			country_event = { id = gotc.2 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
 
 			# Leader
 			create_leader = {
@@ -7409,6 +7409,39 @@ create_pre_ftl_blood_libel = {
 		set_country_flag = broken_shackles_zion_abductees
 	}
 	setup_pre_ftl_planet = yes
+}
+
+planet_of_kira_init_effect = {
+	set_name = "Планета Кирина"
+
+	prevent_anomaly = yes
+
+	add_modifier = {
+		modifier = collided_planet
+		days = -1
+	}
+
+	add_blocker = {
+		type = d_deep_sinkhole
+	}
+
+	add_blocker = {
+		type = d_crater
+	}
+
+	add_blocker = {
+		type = d_ruined_district
+	}
+
+	add_deposit = d_black_soil
+	add_deposit = d_geothermal_vent
+
+	add_blocker = { type = d_active_volcano }
+
+	add_deposit = d_volcanic_active_planet
+
+	add_deposit = d_active_volcano
+	add_deposit = d_active_volcano
 }
 
 #Pylesos

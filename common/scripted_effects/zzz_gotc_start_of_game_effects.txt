@@ -350,7 +350,7 @@ generate_start_pops = {
 				solar_system = { has_star_flag = solovyov }
 			}
 			root.owner = {
-				country_event = { id = gotc.1 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
+				country_event = { id = gotc.2 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
 			}
 		}
 		else = {
