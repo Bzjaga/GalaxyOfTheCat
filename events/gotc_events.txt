@@ -177,7 +177,11 @@ country_event = {
 								deposit_blockers = none
 								modifiers = none
 
-								init_effect = { planet_of_kira_init_effect = yes }
+								init_effect = {
+									set_planet_flag = toxic_terraforming_candidate
+									add_modifier = { modifier = toxic_terraforming_candidate }
+									planet_of_kira_init_effect = yes
+								}
 							}
 						}
 					}

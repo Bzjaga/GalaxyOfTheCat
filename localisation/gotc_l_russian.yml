@@ -11,6 +11,9 @@
  preset_bulwark_kadyrov_flavor_desc: "Для сохранения мира, спокойствия и стабильности на Кавказе, сюзерен обязан предоставлять данному подданному значительное количество своих ресурсов."
  #Preset text icons
  text_icon_preset_bulwark_kadyrov: "£bulwark£"
+ #Kira starting system 
+ kira_starting_system_NAME: "Кирина Система"
+ kira_starting_system_DESC: "Ого! Кажется, в соседней от вас звёздной системе столкнулись планеты!\nДа только ради того, чтобы увидеть это воочию, и стоило выходить в космос."
  #Pop factions
  #random_names\gotc_pop_faction_names.txt
  Impressed: "Впечатлённ|||masc:Впечатлённый $1$|||fem:Впечатлённая $1$|||neut:Впечатлённое $1$|||pl:Впечатлённые $1$"

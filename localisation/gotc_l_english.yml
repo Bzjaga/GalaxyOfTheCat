@@ -11,6 +11,9 @@
  preset_bulwark_kadyrov_flavor_desc:0 "In order to preserve peace and stability in the Caucasus, the suzerain is obliged to provide the subject with a significant amount of his resources."
  #Preset text icons
  text_icon_preset_bulwark_kadyrov:0 "£bulwark£"
+ #Kira starting system 
+ kira_starting_system_NAME:0 "Кирина Система"
+ kira_starting_system_DESC:0 "Ого! Кажется, в соседней от вас звёздной системе столкнулись планеты!\nДа только ради того, чтобы увидеть это воочию, и стоило выходить в космос."
  #Pop factions
  #random_names\gotc_pop_faction_names.txt
  Impressed:0 "Впечатлённый"

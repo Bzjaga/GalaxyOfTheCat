@@ -7414,12 +7414,29 @@ create_pre_ftl_blood_libel = {
 planet_of_kira_init_effect = {
 	set_name = "Планета Кирина"
 
+	clear_deposits = yes
+
 	prevent_anomaly = yes
 
-	add_modifier = {
-		modifier = collided_planet
-		days = -1
-	}
+	add_deposit = d_hot_springs
+	add_deposit = d_geothermal_vent
+	add_deposit = d_geothermal_vent
+	add_deposit = d_black_soil
+	add_deposit = d_black_soil
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
+	add_deposit = d_rich_mountain
+
+	add_deposit = d_volcanic_active_planet
+
+	add_deposit = d_active_volcano
+	add_deposit = d_active_volcano
+
+	add_blocker = { type = d_active_volcano }
 
 	add_blocker = {
 		type = d_deep_sinkhole
@@ -7433,15 +7450,10 @@ planet_of_kira_init_effect = {
 		type = d_ruined_district
 	}
 
-	add_deposit = d_black_soil
-	add_deposit = d_geothermal_vent
-
-	add_blocker = { type = d_active_volcano }
-
-	add_deposit = d_volcanic_active_planet
-
-	add_deposit = d_active_volcano
-	add_deposit = d_active_volcano
+	add_modifier = {
+		modifier = collided_planet
+		days = -1
+	}
 }
 
 #Pylesos
