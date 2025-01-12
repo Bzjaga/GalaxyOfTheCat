@@ -7419,10 +7419,18 @@ planet_of_kira_init_effect = {
 	prevent_anomaly = yes
 
 	add_deposit = d_hot_springs
+	add_deposit = d_hot_springs
 	add_deposit = d_geothermal_vent
 	add_deposit = d_geothermal_vent
+	add_deposit = d_geothermal_vent
+
 	add_deposit = d_black_soil
 	add_deposit = d_black_soil
+	add_deposit = d_tropical_island
+	
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
+	add_deposit = d_mineral_fields
 	add_deposit = d_mineral_fields
 	add_deposit = d_mineral_fields
 	add_deposit = d_mineral_fields
@@ -7433,10 +7441,9 @@ planet_of_kira_init_effect = {
 
 	add_deposit = d_volcanic_active_planet
 
-	add_deposit = d_active_volcano
-	add_deposit = d_active_volcano
-
 	add_blocker = { type = d_active_volcano }
+	add_blocker = { type = d_active_volcano }
+	add_blocker = { type = d_mountain_range }
 
 	add_blocker = {
 		type = d_deep_sinkhole
