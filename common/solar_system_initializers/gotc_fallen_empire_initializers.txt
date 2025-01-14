@@ -2108,12 +2108,12 @@ gotc_fallen_col_2_2 = {
 			else_if = { # Rus
 				limit = { root = { has_country_flag = rus } }
 				set_name = {
-					key="Рим-Руса"
+					key="Рим Руса-лим"
 					literal=yes
 				}
 				solar_system = {
 					set_name = {
-						key="Рим-Руса"
+						key="Рим Руса-лим"
 						literal=yes
 					}
 				}
