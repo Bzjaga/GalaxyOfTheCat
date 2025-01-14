@@ -970,7 +970,10 @@ country_event = { # Pylesos hire
 		tag = hire_leader
 		custom_tooltip = gotc.40100.hire_custom_tooltip
 		every_owned_leader = {
-			limit = { leader_class = scientist }
+			limit = {
+				leader_class = scientist
+				NOT = { has_trait = leader_trait_sapient_AI_assistant }
+			}
 			if = {
 				limit = { has_trait = leader_trait_custom_AI_assistant }
 				remove_trait = leader_trait_custom_AI_assistant
@@ -1027,7 +1030,7 @@ leader_event = { # invite cats
 						has_trait = trait_charismatic
 					}
 				}
-				save_event_target_as = invited_feline_species
+				save_event_target_as = invited_feline_specie
 			}
 		}
 		else = { # No cats!.. What's the point of this galaxy to even exist?
@@ -1057,7 +1060,7 @@ leader_event = { # invite cats
 				}
 			}
 			last_created_species = {
-				save_event_target_as = invited_feline_species
+				save_event_target_as = invited_feline_specie
 			}
 		}
 	}
@@ -1140,18 +1143,18 @@ leader_event = { # invite cats
 		owner = {
 			if = { # No planets habitable for cats
 				limit = {
-					NOT = { any_owned_planet = { habitability = { who = event_target:invited_feline_species value > 0 } } }
+					NOT = { any_owned_planet = { habitability = { who = event_target:invited_feline_specie value > 0 } } }
 				}
 				modify_species = {
-					species = event_target:invited_feline_species
+					species = event_target:invited_feline_specie
 					add_trait = trait_adaptive
 					effect = {
-						save_event_target_as = invited_feline_species
+						save_event_target_as = invited_feline_specie
 					}
 				}
 			}
 			random_owned_planet = {
-				limit = { habitability = { who = event_target:invited_feline_species value > 0 } }
+				limit = { habitability = { who = event_target:invited_feline_specie value > 0 } }
 				weights = {
 					base = 1
 					modifier = {
@@ -1160,11 +1163,11 @@ leader_event = { # invite cats
 					}
 					modifier = {
 						add = 10
-						habitability = { who = event_target:invited_feline_species value > 0.4 }
+						habitability = { who = event_target:invited_feline_specie value > 0.4 }
 					}
 					modifier = {
 						add = 20
-						habitability = { who = event_target:invited_feline_species value > 0.6 }
+						habitability = { who = event_target:invited_feline_specie value > 0.6 }
 					}
 					modifier = {
 						add = 80
@@ -1172,13 +1175,13 @@ leader_event = { # invite cats
 					}
 				}
 				create_pop = { # Onekotazh
-					species = event_target:invited_feline_species
+					species = event_target:invited_feline_specie
 				}
 				create_pop = { # Twokotazh
-					species = event_target:invited_feline_species
+					species = event_target:invited_feline_specie
 				}
 				create_pop = { # Threekotazh
-					species = event_target:invited_feline_species
+					species = event_target:invited_feline_specie
 				}
 				every_owned_pop = { # Everyone on the planet is getting a bit happier and more xenophilic. Except for cats, cats don't care
 					limit = { NOT = { is_feline_species = yes } }
@@ -1281,7 +1284,7 @@ leader_event = { # cats full citizenship
 		name = gotc.40105.d
 		trigger = {
 			owner = {
-				NOT = { has_authority = auth_democratic }
+				NOT = { is_democratic_authority = yes }
 			}
 		}
 		response_text = gotc.40105.d.response
@@ -1292,7 +1295,7 @@ leader_event = { # cats full citizenship
 		name = gotc.40105.e
 		trigger = {
 			owner = {
-				NOT = { has_authority = auth_democratic }
+				NOT = { is_democratic_authority = yes }
 			}
 		}
 		response_text = gotc.40105.e.response
@@ -1301,11 +1304,6 @@ leader_event = { # cats full citizenship
 
 	option = {
 		name = gotc.40105.f
-		trigger = {
-			owner = {
-				NOT = { owner_main_species = { is_feline_species = yes } }
-			}
-		}
 		response_text = gotc.40105.f.response
 		is_dialog_only = yes
 	}
@@ -1373,6 +1371,197 @@ leader_event = { # cats full citizenship
 	}
 }
 
+leader_event = { # cat leader
+	id = gotc.40110
+	title = gotc.40110.name
+	desc = gotc.40110.desc
+	show_sound = event_default
+	diplomatic = yes
+	is_triggered_only = yes
+	custom_gui = "enclave_caravaneer_window"
+
+	picture_event_data = {
+		portrait = root
+		room = enclave_artist_room
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = gotc.40110.a
+		response_text = gotc.40110.a.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.b
+		trigger = {
+			owner = {
+				NOT = { is_xenophile = yes }
+			}
+		}
+		response_text = gotc.40110.b.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.c
+		trigger = {
+			owner = {
+				is_materialist = yes
+			}
+		}
+		response_text = gotc.40110.c.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.d
+		response_text = gotc.40110.d.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.e
+		response_text = gotc.40110.e.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.f
+		trigger = {
+			owner = {
+				is_spiritualist = yes
+			}
+		}
+		response_text = gotc.40110.f.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.g
+		response_text = gotc.40110.g.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.h
+		response_text = gotc.40110.h.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.i
+		response_text = gotc.40110.i.response
+		is_dialog_only = yes
+	}
+
+	option = {
+		name = gotc.40110.j
+		owner = {
+			if = {
+				limit = { any_pool_leader = { species = { is_feline_species = yes } } }
+				random_pool_leader = {
+					limit = { species = { is_feline_species = yes } }
+					weights = {
+						base = 1
+						modifier = {
+							add = 100
+							has_trait = trait_ruler_charismatic
+						}
+					}
+					assign_leader = prev
+					save_event_target_as = hired_cat_leader
+				}
+			}
+			else = {
+				if = {
+					limit = { any_owned_species = { is_feline_species = yes } }
+					random_owned_species = {
+						limit = { is_feline_species = yes }
+						save_event_target_as = randomly_chosen_feline_specie
+					}
+				}
+				else = {
+					random_galaxy_species = {
+						limit = {
+							is_feline_species = yes
+							is_robotic = no
+							is_sapient = yes
+						}
+						weights = {
+							base = 1
+							modifier = {
+								add = 100
+								has_trait = trait_charismatic
+							}
+						}
+						save_event_target_as = randomly_chosen_feline_specie
+					}
+				}
+				create_leader = {
+					# All Hail Gorongoron!
+					species = event_target:randomly_chosen_feline_specie
+					class = scientist
+					name = "Горонгорон"
+					gender = male
+					skill = 2
+					set_age = 32
+					traits = {
+						trait = trait_ruler_charismatic_2
+					}
+				}
+				last_created_leader = {
+					save_event_target_as = hired_cat_leader
+					set_leader_flag = leader_gorongoron
+				}
+			}
+			event_target:hired_cat_leader = {
+				add_skill = 1
+				if = {
+					limit = { leader_class = scientist }
+					add_trait = leader_trait_sapient_AI_assistant
+				}
+				else = {
+					add_trait = trait_ruler_charismatic_2
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					leader_class = scientist
+					NOT = { has_trait = leader_trait_sapient_AI_assistant }
+				}
+				if = {
+					limit = { has_trait = leader_trait_custom_AI_assistant }
+					remove_trait = leader_trait_custom_AI_assistant
+					add_trait_no_notify = leader_trait_sapient_AI_assistant
+				}
+				else = { add_trait_no_notify = leader_trait_custom_AI_assistant }
+			}
+		}
+		hidden_effect = {
+			owner = {
+				set_country_flag = cat_leader_hired
+				check_country_flags_mad_vacuum_cleaner = yes
+			}
+		}
+	}
+
+	option = {
+		name = gotc.40110.k
+		add_negative_trait_mad_vacuum_cleaner = yes
+		owner = {
+			every_owned_planet = {
+				limit = { any_owned_species = { is_feline_species = yes } }
+				add_modifier = { modifier = pheromoned_grief years = 5 }
+			}
+		}
+		default_hide_option = yes
+	}
+}
+
 ###### Renowned leader events ######
 # Fires from on_five_year_pulse_country
 country_event = {
@@ -1413,12 +1602,19 @@ country_event = {
 										has_citizenship_type = { type = citizenship_full_machine country = prev }
 									}
 								}
+								NOT = { has_country_flag = feline_country }
 							}
 							event_target:pylesos = { leader_event = { id = gotc.40105 days = 1 random = 225 } } # cats full citizenship
 						}
 						else_if = {
-							limit = { NOT = { any_owned_leader = { species = { is_feline_species = yes } } } }
-							#event_target:pylesos = { leader_event = { id = gotc.40110 days = 1 random = 225 } } # cat leader
+							limit = {
+								NOT = { has_country_flag = feline_country }
+								NOT = { has_country_flag = cat_leader_hired }
+								NOT = { any_owned_leader = { species = { is_feline_species = yes } } }
+								exists = ruler
+								NOT = { ruler = { species = { is_feline_species = yes } } }
+							}
+							event_target:pylesos = { leader_event = { id = gotc.40110 days = 1 random = 225 } } # cat leader
 						}
 						else_if = {
 							limit = { NOT = { ruler = { species = { is_feline_species = yes } } } }

@@ -581,6 +581,30 @@ catist_xenophile = {
 		}
 	}
 
+	demand = { # Black Hole
+		title = "CATIST_BLACK_HOLE"
+		unfulfilled_title = "CATIST_NO_BLACK_HOLE"
+		desc = "CATIST_BLACK_HOLE_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_species = { is_feline_species = yes }
+			}
+		}
+
+		trigger = {
+			owner = {
+				any_system_within_border = {
+					is_star_class = sc_black_hole
+				}
+			}
+		}
+	}
+
 	demand = { # Migration pact with cats
 		title = "CATIST_MIGRATION_PACT_WITH_CAT_SPECIES"
 		unfulfilled_title = "CATIST_NO_MIGRATION_PACT_WITH_CAT_SPECIES"
@@ -683,6 +707,22 @@ catist_xenophile = {
 				parameter:empire = {
 					embrace_catist_faction_no_name_change = yes
 					hidden_effect = {
+						every_pop_faction = { # embraces xenophobe ethos
+							limit = { is_same_value = root }
+							every_owned_pop = {
+								if = { 
+									limit = {
+										OR = {
+											pop_has_ethic = ethic_fanatic_xenophile
+											pop_has_ethic = ethic_xenophile
+										}
+										NOT = { has_pop_flag = pop_changed_catist_faction }
+									}
+									pop_change_ethic = ethic_xenophobe
+								}
+								set_timed_pop_flag = { flag = pop_changed_catist_faction years = 5 }
+							}
+						}
 						add_modifier = { modifier = embraced_faction_timer days = 3600 }
 						every_pop_faction = {
 							limit = { NOT = { is_same_value = root } }
@@ -764,13 +804,13 @@ catist_xenophile = {
 			potential = {
 				exists = owner
 				parameter:empire = {
-					has_modifier = promoted_egalitarian
+					has_modifier = promoted_xenophile
 				}
 			}
 
 			effect = {
 				parameter:empire = {
-					remove_modifier = promoted_egalitarian
+					remove_modifier = promoted_xenophile
 				}
 			}
 
@@ -786,8 +826,8 @@ catist_xenophile = {
 				exists = owner
 				parameter:empire = {
 					NOR = {
-						has_modifier = suppressed_egalitarian
-						has_modifier = promoted_egalitarian
+						has_modifier = suppressed_xenophile
+						has_modifier = promoted_xenophile
 					}
 				}
 			}
@@ -795,7 +835,7 @@ catist_xenophile = {
 			effect = {
 				add_modifier = { modifier = suppressed_faction days = -1 }
 				parameter:empire = {
-					add_modifier = { modifier = suppressed_egalitarian days = -1 }
+					add_modifier = { modifier = suppressed_xenophile days = -1 }
 				}
 			}
 
@@ -810,14 +850,14 @@ catist_xenophile = {
 			potential = {
 				exists = owner
 				parameter:empire = {
-					has_modifier = suppressed_egalitarian
+					has_modifier = suppressed_xenophile
 				}
 			}
 
 			effect = {
 				remove_modifier = suppressed_faction
 				parameter:empire = {
-					remove_modifier = suppressed_egalitarian
+					remove_modifier = suppressed_xenophile
 				}
 			}
 

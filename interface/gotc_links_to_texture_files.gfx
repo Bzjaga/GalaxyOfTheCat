@@ -12,4 +12,9 @@ spriteTypes = {
 		textureFile = "gfx/interface/icons/faction_icons/faction_icons_catists.dds"
 		noOfFrames = 1
 	}
+	spriteType = {
+		name = "GFX_faction_icon_catist_xenophobe"
+		textureFile = "gfx/interface/icons/faction_icons/faction_icons_catists.dds"
+		noOfFrames = 1
+	}
 }

@@ -57,7 +57,7 @@ pop_faction_name_format = {
 			add = 100
 			OR = {
 				is_pop_faction_type = "catist_xenophile"
-				#is_pop_faction_type = "catist_xenophobe"
+				is_pop_faction_type = "catist_xenophobe"
 			}
 		}
 	}

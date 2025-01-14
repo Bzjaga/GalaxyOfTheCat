@@ -7486,7 +7486,11 @@ check_country_flags_mad_vacuum_cleaner = {
 			limit = { owner_main_species = { is_feline_species = yes } }
 			set_country_flag = feline_country
 			if = {
-				limit = { has_authority = auth_imperial }
+				limit = {
+					is_imperial_authority = yes
+					exists = ruler
+					ruler = { species = { is_feline_species = yes } }
+				}
 				set_country_flag = feline_monarchy
 			}
 			else_if = {
@@ -7653,12 +7657,18 @@ embrace_catist_faction_no_name_change = {
 	
 	if = {
 		limit = {
-			ruler = { species = { NOT = { is_feline_species = yes } } }
+			OR = {
+				NOT = { exists = ruler }
+				AND = {
+					exists = ruler
+					ruler = { species = { NOT = { is_feline_species = yes } } }
+				}
+			}
 		}
 		create_leader = {
 			# All Hail Gorongoron!
 			species = event_target:new_dominant_species
-			class = official
+			class = scientist
 			name = "Горонгорон"
 			gender = male
 			skill = 2
@@ -7673,4 +7683,6 @@ embrace_catist_faction_no_name_change = {
 	set_female_ruler_title = "Её Котейшество"
 	set_male_heir_title = "Котей"
 	set_female_heir_title = "Котесса"
+
+	check_country_flags_mad_vacuum_cleaner = yes
 }
