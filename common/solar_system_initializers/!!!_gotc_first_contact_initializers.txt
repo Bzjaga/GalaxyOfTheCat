@@ -116,6 +116,8 @@ msi_home_system = {
 						}
 					}
 				}
+				change_pc = pc_desert
+				create_MSI_zion = yes
 				set_name = {
 					key="Сион"
 					literal=yes
@@ -126,8 +128,6 @@ msi_home_system = {
 						literal=yes
 					}
 				}
-				change_pc = pc_desert
-				create_MSI_zion = yes
 			}
 			else = {
 				create_MSI_effect = yes
@@ -479,6 +479,7 @@ broken_shackles_parent_system = {
 				}
 			}
 			NOT = { has_star_flag = empire_cluster }
+			NOT = { has_star_flag = chosen_system } # Fixing Paradox bug
 			add = 99999
 		}
 	}

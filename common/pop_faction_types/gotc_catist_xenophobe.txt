@@ -1,0 +1,870 @@
+##############################
+# Catist Faction
+##############################
+
+catist_xenophobe = {
+	election_header = "GFX_faction_header_brown"
+	guiding_ethic = ethic_xenophobe
+	use_guiding_ethic_as_pop_filter = no #this means that the faction will let pops that aren't xenophobe in too
+	can_rename = no
+
+	visual_ethic = "supremacist_visual_ethic"
+
+	unique = yes
+	support_multiplier = 1
+
+	resources = {
+		category = pop_factions
+		produces = {
+			unity = @faction_base_output
+		}
+	}
+
+	extortion_resource = {
+		category = pop_factions
+		produces = {
+			consumer_goods = @faction_base_output
+			mult = @faction_extortion_consumer_goods_ratio
+		}
+	}
+
+	is_potential = {
+		years_passed > 10
+		is_ai = no
+		is_regular_empire = yes
+		has_encountered_other_species = yes
+		has_country_flag = xenoist_enabled
+		has_country_flag = feline_country
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		OR = {
+			is_feline_species = yes # Cats are always welcome
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			owner = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+		is_shackled_robot = no
+		can_think = yes
+	}
+
+	attraction = {
+		base = 160
+
+
+		modifier = {
+			factor = 1.5
+			exists = from
+			from = {
+				exists = leader
+				leader = { has_trait = leader_trait_tomcat_insight }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { is_ruler = yes }
+			}
+		}
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_trait = trait_robot_high_maintenance
+				has_trait = trait_aquatic
+				has_trait = trait_thrifty
+				has_trait = trait_cybernetic
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_history_chatbot
+				has_trait = trait_robot_history_artbot
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_conservational
+				has_trait = trait_docile
+				has_trait = trait_solitary
+				has_trait = trait_sedentary
+				has_trait = trait_wasteful
+				has_trait = trait_presapient_conservative
+			}
+		}
+		modifier = {
+			factor = 5
+			is_feline_species = yes
+		}
+		modifier = {
+			factor = 5
+			has_pop_flag = pop_changed_catist_faction
+		}
+	}
+
+	leader = {
+		base = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				has_trait = leader_trait_tomcat_insight
+				species = { is_feline_species = yes }
+			}
+		}
+		modifier = {
+			factor = 10000
+			has_trait = leader_trait_tomcat_insight
+		}
+	}
+
+	demand = { # Cat ruler
+		title = "CATIST_RULER_CAT_SPECIES"
+		unfulfilled_title = "CATIST_RULER_NOT_CAT_SPECIES"
+		desc = "CATIST_RULER_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -30
+
+		potential = {
+			exists = owner
+			owner = { NOT = { has_valid_civic = civic_fanatic_purifiers } }
+		}
+
+		trigger = {
+			owner = {
+				exists = ruler
+				ruler = { species = { is_feline_species = yes } }
+			}
+		}
+	}
+
+	demand = { # Cat purged
+		title = "CATIST_NOT_PURGED_CAT_SPECIES"
+		unfulfilled_title = "CATIST_PURGED_CAT_SPECIES"
+		desc = "CATIST_NOT_PURGED_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 0.001
+		unfulfilled_effect = -90
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				any_owned_species = {
+					is_feline_species = yes
+					is_robotic = no
+					is_sapient = yes
+					OR = {
+						has_citizenship_type = { type = citizenship_purge country = prev }
+						has_citizenship_type = { type = citizenship_purge_machine country = prev }
+					}
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+
+	demand = { # Cat enslaved
+		title = "CATIST_NO_ENSLAVED_CAT_SPECIES"
+		unfulfilled_title = "CATIST_ENSLAVED_CAT_SPECIES"
+		desc = "CATIST_NO_ENSLAVED_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 0.001
+		unfulfilled_effect = -65
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				OR = {
+					any_owned_species = {
+						is_feline_species = yes
+						is_robotic = no
+						is_sapient = yes
+						has_citizenship_type = { type = citizenship_slavery country = prev }
+					}
+					has_civic = civic_slaver_guilds
+					has_civic = civic_indentured_assets
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+
+	demand = { # Cat assimilated
+		title = "CATIST_NOT_ASSIMILATED_CAT_SPECIES"
+		unfulfilled_title = "CATIST_ASSIMILATED_CAT_SPECIES"
+		desc = "CATIST_NOT_ASSIMILATED_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 0.001
+		unfulfilled_effect = -40
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				NOT = { has_valid_civic = civic_slaver_guilds }
+				NOT = { has_valid_civic = civic_indentured_assets }
+				any_owned_species = {
+					is_feline_species = yes
+					is_robotic = no
+					is_sapient = yes
+					has_citizenship_type = { type = citizenship_assimilation country = prev }
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+
+	demand = { # Cat limited citizenship
+		title = "CATIST_CITIZENSHIP_NOT_LIMITED_CAT_SPECIES"
+		unfulfilled_title = "CATIST_CITIZENSHIP_LIMITED_CAT_SPECIES"
+		desc = "CATIST_CITIZENSHIP_NOT_LIMITED_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 0.001
+		unfulfilled_effect = -15
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				NOT = { has_valid_civic = civic_slaver_guilds }
+				NOT = { has_valid_civic = civic_indentured_assets }
+				any_owned_species = {
+					is_feline_species = yes
+					is_robotic = no
+					is_sapient = yes
+					has_citizenship_type = { type = citizenship_limited country = prev }
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+
+	demand = { # Cat full citizenship
+		title = "CATIST_FULL_CITIZENSHIP_CAT_SPECIES"
+		unfulfilled_title = "CATIST_NOT_FULL_CITIZENSHIP_CAT_SPECIES"
+		desc = "CATIST_FULL_CITIZENSHIP_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_valid_civic = civic_fanatic_purifiers }
+				NOT = { has_valid_civic = civic_slaver_guilds }
+				NOT = { has_valid_civic = civic_indentured_assets }
+				any_owned_species = {
+					is_feline_species = yes
+					is_robotic = no
+					is_sapient = yes
+					OR = {
+						has_citizenship_type = { type = citizenship_full country = prev }
+						has_citizenship_type = { type = citizenship_full_machine country = prev }
+					}
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+
+	demand = { # More Cat species
+		title = "CATIST_MULTICATISM"
+		unfulfilled_title = "CATIST_NO_MULTICATISM"
+		desc = "CATIST_MULTICATISM_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				num_communications > 3
+				count_galaxy_species = {
+					limit = { is_feline_species = yes }
+					count > 1
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				count_owned_species = {
+					limit = { is_feline_species = yes }
+					count > 1
+				}
+			}
+		}
+	}
+
+	demand = { # Cats everywhere
+		title = "CATIST_SPREADING_CAT_SPECIES"
+		unfulfilled_title = "CATIST_NO_SPREADING_CAT_SPECIES"
+		desc = "CATIST_SPREADING_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				num_owned_planets > 1
+			}
+		}
+
+		trigger = {
+			owner = {
+				count_owned_planet = {
+					limit = { any_owned_species = { is_feline_species = yes } }
+					count = num_owned_planets
+				}
+			}
+		}
+	}
+
+	demand = { # Pre sapient Cats survival
+		title = "CATIST_PRE_SAPIENT_CAT_SPECIES_SURVIVAL"
+		unfulfilled_title = "CATIST_NO_PRE_SAPIENT_CAT_SPECIES_SURVIVAL"
+		desc = "CATIST_PRE_SAPIENT_CAT_SPECIES_SURVIVAL_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -40
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_policy_flag = pre_sapients_allow
+					has_policy_flag = pre_sapients_protect
+					has_policy_flag = pre_sapients_eat
+					has_policy_flag = pre_sapients_purge
+				}
+				has_country_flag = feline_pre_sapients # set at check_country_flags_mad_vacuum_cleaner
+			}
+		}
+
+		trigger = {
+			owner = {
+				OR = {
+					has_policy_flag = pre_sapients_allow
+					has_policy_flag = pre_sapients_protect
+				}
+			}
+		}
+	}
+
+	demand = { # Cats need servants
+		title = "CATIST_SERVITUDE"
+		unfulfilled_title = "CATIST_NO_SERVITUDE"
+		desc = "CATIST_SERVITUDE_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_planet = {
+						any_owned_species = { is_feline_species = yes }
+						NOT = {
+							any_owned_species = {
+								NOT = { is_feline_species = yes }
+								OR = {
+									AND = {
+										has_citizenship_type = { type = citizenship_slavery country = prev }
+										has_slavery_type = { type = slavery_domestic country = prev }
+									}
+									has_citizenship_type = { type = citizenship_robot_servitude country = prev }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = { # Cats are the only citizens
+		title = "CATIST_FULL_CITIZENSHIP_ONLY_CAT_SPECIES"
+		unfulfilled_title = "CATIST_NOT_FULL_CITIZENSHIP_ONLY_CAT_SPECIES"
+		desc = "CATIST_FULL_CITIZENSHIP_ONLY_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_species = {
+					NOT = { is_same_species = owner_main_species }
+					OR = {
+						has_citizenship_type = { type = citizenship_full country = prev }
+						has_citizenship_type = { type = citizenship_full_machine country = prev }
+					}
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_species = {
+						NOR = {
+							is_same_species = owner_main_species
+							is_feline_species = yes
+						}
+						OR = {
+							has_citizenship_type = { type = citizenship_full country = prev }
+							has_citizenship_type = { type = citizenship_full_machine country = prev }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = { # Cats good living standards
+		title = "CATIST_GOOD_LIVING_STANDARDS_CAT_SPECIES"
+		unfulfilled_title = "CATIST_NOT_GOOD_LIVING_STANDARDS_CAT_SPECIES"
+		desc = "CATIST_GOOD_LIVING_STANDARDS_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_species = {
+					is_feline_species = yes
+					is_robotic = no
+					is_sapient = yes
+					OR = {
+						has_living_standard = { type = living_standard_chemical_bliss country = prev }
+						has_living_standard = { type = living_standard_utopian country = prev }
+						has_living_standard = { type = living_standard_academic_privilege country = prev }
+						has_living_standard = { type = living_standard_good country = prev }
+						has_living_standard = { type = living_standard_decadent country = prev }
+					}
+				}
+			}
+		}
+
+		trigger = {
+			always = yes
+		}
+	}
+
+	demand = { # Cats bad living standards
+		title = "CATIST_NOT_BAD_LIVING_STANDARDS_CAT_SPECIES"
+		unfulfilled_title = "CATIST_BAD_LIVING_STANDARDS_CAT_SPECIES"
+		desc = "CATIST_BAD_LIVING_STANDARDS_CAT_SPECIES_DESC"
+
+		fulfilled_effect = 0.001
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_species = {
+					is_feline_species = yes
+					is_robotic = no
+					is_sapient = yes
+					OR = {
+						has_living_standard = { type = living_standard_none country = prev }
+						has_living_standard = { type = living_standard_subsistence country = prev }
+						has_living_standard = { type = living_standard_normal country = prev }
+						has_living_standard = { type = living_standard_worker_ownership country = prev }
+						has_living_standard = { type = living_standard_shared_burden country = prev }
+					}
+				}
+			}
+		}
+
+		trigger = {
+			always = no
+		}
+	}
+
+	demand = { # Cat rights
+		title = "CATIST_UNLIMITED_CAT_SPECIES_RIGHTS"
+		unfulfilled_title = "CATIST_LIMITED_CAT_SPECIES_RIGHTS"
+		desc = "CATIST_UNLIMITED_CAT_SPECIES_RIGHTS_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -20
+
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_species = { is_feline_species = yes }
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = {
+					any_owned_species = {
+						is_feline_species = yes
+						OR = {
+							has_population_control = { type = yes country = prev }
+							has_colonization_control = { type = colonization_control_yes country = prev }
+							has_migration_control = { type = yes country = prev }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	demand = { # Black Hole
+		title = "CATIST_BLACK_HOLE"
+		unfulfilled_title = "CATIST_NO_BLACK_HOLE"
+		desc = "CATIST_BLACK_HOLE_DESC"
+
+		fulfilled_effect = 5
+		unfulfilled_effect = -5
+
+		potential = {
+			exists = owner
+			owner = {
+				any_owned_species = { is_feline_species = yes }
+			}
+		}
+
+		trigger = {
+			owner = {
+				any_system_within_border = {
+					is_star_class = sc_black_hole
+				}
+			}
+		}
+	}
+
+	demand = {
+		title = "CATIST_CAT_MONARCHY"
+		unfulfilled_title = "CATIST_NO_CAT_MONARCHY"
+		desc = "CATIST_CAT_MONARCHY_DESC"
+
+		fulfilled_effect = 30
+		unfulfilled_effect = -10
+
+		potential = {
+			exists = owner
+			owner = {
+				exists = ruler
+			}
+		}
+
+		trigger = {
+			owner = {
+				ruler = { species = { is_feline_species = yes } }
+				is_imperial_authority = yes
+			}
+		}
+	}
+
+	# Faction Demands for Ruler and Council positions.
+	inline_script = {
+		script = "paragon/global_faction_demands"
+		ETHIC = ethic_xenophobe
+		ETHIC_FANATIC = ethic_fanatic_xenophobe
+		ETHIC_OPPOSED = ethic_xenophile
+	}
+
+	on_create = {
+		pop_faction_event = { id = factions.1 }
+	}
+
+	on_destroy = {
+		if = {
+			limit = {
+				has_modifier = promoted_xenophobe
+			}
+			remove_modifier = promoted_xenophobe
+		}
+		if = {
+			limit = {
+				has_modifier = suppressed_xenophobe
+			}
+			remove_modifier = suppressed_xenophobe
+		}
+	}
+
+	actions = {
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				unity = 5000
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					}
+					has_country_flag = feline_country
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NOT = { has_ethic = "ethic_fanatic_xenophobe" }
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					embrace_catist_faction_check = yes
+					hidden_effect = {
+						every_pop_faction = { # embraces xenophobe ethos
+							limit = { is_same_value = root }
+							add_modifier = { modifier = embraced_faction days = 3600 }
+						}
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+					}
+				}
+				hidden_effect = {
+					save_event_target_as = TargetFaction
+					parameter:empire = {
+						every_relation = {
+							limit = {
+								is_ai = no
+								is_country_type = default
+								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
+							}
+							country_event = { id = factions.2000 }
+						}
+					}
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						has_ethic = ethic_xenophobe
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_valid_civic = civic_fanatic_purifiers }
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
+			}
+		}
+		promote_faction = {
+			title = "PROMOTE_FACTION"
+			description = "PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = suppressed_xenophobe
+						has_modifier = promoted_xenophobe
+					}
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					add_modifier = { modifier = promoted_xenophobe days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_promote_faction = {
+			title = "CANCEL_PROMOTE_FACTION"
+			description = "CANCEL_PROMOTE_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = promoted_xenophobe
+				}
+			}
+
+			effect = {
+				parameter:empire = {
+					remove_modifier = promoted_xenophobe
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		suppress_faction = {
+			title = "SUPPRESS_FACTION"
+			description = "SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					NOR = {
+						has_modifier = suppressed_xenophobe
+						has_modifier = promoted_xenophobe
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = suppressed_faction days = -1 }
+				parameter:empire = {
+					add_modifier = { modifier = suppressed_xenophobe days = -1 }
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_suppress_faction = {
+			title = "CANCEL_SUPPRESS_FACTION"
+			description = "CANCEL_SUPPRESS_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				parameter:empire = {
+					has_modifier = suppressed_xenophobe
+				}
+			}
+
+			effect = {
+				remove_modifier = suppressed_faction
+				parameter:empire = {
+					remove_modifier = suppressed_xenophobe
+				}
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		# Faction Extortion Buttons
+		extort_faction = {
+			title = "EXTORT_FACTION"
+			description = "EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					is_oligarchic_authority = yes
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = no
+			}
+
+			effect = {
+				set_faction_extorted = yes
+				custom_tooltip = consumer_goods_extortion_tt
+				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		cancel_extort_faction = {
+			title = "CANCEL_EXTORT_FACTION"
+			description = "CANCEL_EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					is_oligarchic_authority = yes
+					has_country_flag = cyber_collectivist
+				}
+				is_faction_extorted = yes
+			}
+
+			effect = {
+				set_faction_extorted = no
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+	}
+}
