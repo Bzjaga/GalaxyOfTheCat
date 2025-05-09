@@ -707,7 +707,7 @@ catist_xenophile = {
 				parameter:empire = {
 					embrace_catist_faction_no_name_change = yes
 					hidden_effect = {
-						every_pop_faction = { # embraces xenophobe ethos
+						every_pop_faction = { # embraces xenophile ethos
 							limit = { is_same_value = root }
 							every_owned_pop = {
 								if = { 

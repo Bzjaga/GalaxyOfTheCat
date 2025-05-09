@@ -824,7 +824,7 @@ country_event = { # Pylesos hire
 	id = gotc.40100
 	title = "gotc.40100.name"
 	desc = "gotc.40100.desc"
-	show_sound = par_portrait_11
+	show_sound = event_scanner
 	is_triggered_only = yes
 
 	picture = GFX_leader_recruitment_bg_renowned
@@ -910,10 +910,7 @@ country_event = { # Pylesos hire
 	option = {
 		name = gotc.40100.c
 		trigger = {
-			OR = {
-				is_xenophile = yes
-				NOT = { any_owned_species = { is_feline_species = yes } }
-			}
+			is_xenophile = yes
 		}
 		response_text = gotc.40100.c.response
 		is_dialog_only = yes
@@ -1507,7 +1504,7 @@ leader_event = { # cat leader
 					class = scientist
 					name = "Горонгорон"
 					gender = male
-					skill = 2
+					skill = 1
 					set_age = 32
 					traits = {
 						trait = trait_ruler_charismatic_2
@@ -1532,20 +1529,23 @@ leader_event = { # cat leader
 				limit = {
 					leader_class = scientist
 					NOT = { has_trait = leader_trait_sapient_AI_assistant }
+					NOT = { has_trait = leader_trait_tomcat_insight }
 				}
 				if = {
 					limit = { has_trait = leader_trait_custom_AI_assistant }
 					remove_trait = leader_trait_custom_AI_assistant
-					add_trait_no_notify = leader_trait_sapient_AI_assistant
+					add_trait = leader_trait_sapient_AI_assistant
 				}
-				else = { add_trait_no_notify = leader_trait_custom_AI_assistant }
+				else = { add_trait = leader_trait_custom_AI_assistant }
 			}
+			add_modifier = { modifier = alien_appreciation years = 5 }
 		}
 		hidden_effect = {
 			owner = {
 				set_country_flag = cat_leader_hired
 				check_country_flags_mad_vacuum_cleaner = yes
 			}
+			#alien_infection pop modidier allergy
 		}
 	}
 
@@ -1617,7 +1617,9 @@ country_event = {
 							event_target:pylesos = { leader_event = { id = gotc.40110 days = 1 random = 225 } } # cat leader
 						}
 						else_if = {
-							limit = { NOT = { ruler = { species = { is_feline_species = yes } } } }
+							limit = {
+								NOT = { ruler = { species = { is_feline_species = yes } } }
+							}
 							#event_target:pylesos = { leader_event = { id = gotc.40115 days = 1 random = 225 } } # cat ruler
 						}
 						else = {

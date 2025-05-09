@@ -673,16 +673,7 @@ catist_xenophobe = {
 			effect = {
 				add_modifier = { modifier = embraced_faction days = 3600 }
 				parameter:empire = {
-					if = {
-						limit = {
-							has_country_flag = feline_monarchy
-							has_authority - auth_imperial
-						}
-						shift_ethic = ethic_xenophobe
-					}
-					else = {
-						embrace_catist_faction_no_name_change = yes
-					}
+					embrace_catist_faction_check = yes
 					hidden_effect = {
 						every_pop_faction = { # embraces xenophobe ethos
 							limit = { is_same_value = root }

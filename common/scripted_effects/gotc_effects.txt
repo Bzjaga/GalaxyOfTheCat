@@ -7580,6 +7580,19 @@ add_negative_trait_mad_vacuum_cleaner = {
 	}
 }
 
+embrace_catist_faction_check = {
+	if = {
+		limit = {
+			has_country_flag = feline_monarchy
+			is_imperial_authority = yes
+		}
+		shift_ethic = ethic_xenophobe
+	}
+	else = {
+		embrace_catist_faction_no_name_change = yes
+	}
+}
+
 embrace_catist_faction_no_name_change = {
 	if = {
 		limit = {
