@@ -1009,14 +1009,20 @@ leader_event = { # invite cats
 				any_galaxy_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 				}
 			}
 			random_galaxy_species = {
 				limit = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 				}
 				weights = {
 					base = 1
@@ -1178,7 +1184,7 @@ leader_event = { # invite cats
 				create_pop_group = { # Threekotazh
 					species = event_target:invited_feline_specie
 				}
-				every_owned_pop = { # Everyone on the planet is getting a bit happier and more xenophilic. Except for cats, cats don't care
+				every_owned_pop_group = { # Everyone on the planet is getting a bit happier and more xenophilic. Except for cats, cats don't care
 					limit = { NOT = { is_feline_species = yes } }
 					add_modifier = { modifier = gift_from_mysterious_benefactors years = 5 }
 				}
@@ -1261,7 +1267,10 @@ leader_event = { # cats full citizenship
 					any_owned_species = {
 						is_feline_species = yes
 						is_robotic = no
-						is_sapient = yes
+						OR = {
+							is_sapient = yes
+							has_trait = trait_nascent_stage
+						}
 						OR = {
 							has_citizenship_type = { type = citizenship_slavery country = prev }
 							has_citizenship_type = { type = citizenship_purge country = prev }
@@ -1339,7 +1348,10 @@ leader_event = { # cats full citizenship
 					any_owned_species = {
 						is_feline_species = yes
 						is_robotic = no
-						is_sapient = yes
+						OR = {
+							is_sapient = yes
+							has_trait = trait_nascent_stage
+						}
 						NOR = {
 							has_citizenship_type = { type = citizenship_full country = prev }
 							has_citizenship_type = { type = citizenship_full_machine country = prev }
@@ -1484,7 +1496,10 @@ leader_event = { # cat leader
 						limit = {
 							is_feline_species = yes
 							is_robotic = no
-							is_sapient = yes
+							OR = {
+								is_sapient = yes
+								has_trait = trait_nascent_stage
+							}
 						}
 						weights = {
 							base = 1
@@ -1594,7 +1609,10 @@ country_event = {
 								any_owned_species = {
 									is_feline_species = yes
 									is_robotic = no
-									is_sapient = yes
+									OR = {
+										is_sapient = yes
+										has_trait = trait_nascent_stage
+									}
 									NOR = {
 										has_citizenship_type = { type = citizenship_full country = prev }
 										has_citizenship_type = { type = citizenship_full_machine country = prev }

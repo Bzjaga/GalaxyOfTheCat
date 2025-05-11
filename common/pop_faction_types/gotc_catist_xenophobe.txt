@@ -167,7 +167,7 @@ catist_xenophobe = {
 		}
 		modifier = {
 			factor = 5
-			has_pop_flag = pop_changed_catist_faction
+			has_pop_group_flag = pop_changed_catist_faction
 		}
 	}
 

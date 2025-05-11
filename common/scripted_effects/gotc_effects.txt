@@ -7553,9 +7553,10 @@ check_country_flags_mad_vacuum_cleaner = {
 	if = {
 		limit = {
 			any_planet_within_border = {
-				any_owned_pop = {
+				any_owned_pop_group = {
 					is_sapient = no
 					is_feline_species = yes
+					NOT = { has_trait = trait_nascent_stage }
 				}
 			}
 		}
@@ -7650,14 +7651,20 @@ embrace_catist_faction_no_name_change = {
 		limit = {
 			any_owned_species = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 				is_robotic = no
 			}
 		}
 		random_owned_species = {
 			limit = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 				is_robotic = no
 			}
 			save_event_target_as = new_dominant_species
@@ -7667,13 +7674,19 @@ embrace_catist_faction_no_name_change = {
 		limit = {
 			any_owned_species = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 			}
 		}
 		random_owned_species = {
 			limit = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 			}
 			save_event_target_as = new_dominant_species
 		}
