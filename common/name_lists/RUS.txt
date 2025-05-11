@@ -2,7 +2,7 @@
 RUS = {
 	ship_names = {
 		generic = {
-			RUS_SHIP_Perun RUS_SHIP_Svarog RUS_SHIP_Dazhbog RUS_SHIP_Yarilo RUS_SHIP_Stribog RUS_SHIP_Radogast RUS_SHIP_Mokosh RUS_SHIP_Veles RUS_SHIP_Simargl RUS_SHIP_Hors RUS_SHIP_Triglav RUS_SHIP_Rodnoveriye RUS_SHIP_Svyatobor RUS_SHIP_Chernobog RUS_SHIP_Lada RUS_SHIP_Kama RUS_SHIP_Tara RUS_SHIP_Svyatovit RUS_SHIP_Rasen RUS_SHIP_Etruss RUS_SHIP_Chernorus RUS_SHIP_Velikorus RUS_SHIP_ChudBeloglazaya RUS_SHIP_SerebryanniyRus RUS_SHIP_BabaYaga RUS_SHIP_Domovoy RUS_SHIP_Leshiy RUS_SHIP_Vedun RUS_SHIP_Vedmak RUS_SHIP_Kupala RUS_SHIP_Kolyada RUS_SHIP_VoditsaBaikalskaya RUS_SHIP_Rasena RUS_SHIP_RasaVelikaya RUS_SHIP_VelikoyeKolo RUS_SHIP_PodvigPredkov RUS_SHIP_SlavnyePredki RUS_SHIP_SlavaRodu RUS_SHIP_MudrostPredkov RUS_SHIP_Beresta RUS_SHIP_Medovuha RUS_SHIP_Maslenitsa RUS_SHIP_Kvas RUS_SHIP_Izbushka RUS_SHIP_Samobranka RUS_SHIP_Skorohod RUS_SHIP_NebesnayaKolesnitsa RUS_SHIP_ZharPtitsa RUS_SHIP_DaAriyets RUS_SHIP_Slavia RUS_SHIP_Rasseya RUS_SHIP_Goyda RUS_SHIP_GoyEsi RUS_SHIP_GeySlavyane RUS_SHIP_NeboSlavyan RUS_SHIP_SlovenSkifich RUS_SHIP_RusSkifich RUS_SHIP_RodySvyataRASA RUS_SHIP_Vaitmar RUS_SHIP_Vaitman RUS_SHIP_PredkiAsy RUS_SHIP_VelesovaKniga RUS_SHIP_KrugosvetChisloboga RUS_SHIP_Druzhinnik RUS_SHIP_Bylina RUS_SHIP_Bogatyr RUS_SHIP_SmertYashchera RUS_SHIP_Kolovrat RUS_SHIP_Solntsevorot RUS_SHIP_Slavyanoariy RUS_SHIP_Yashcheroborets RUS_SHIP_Volhv RUS_SHIP_Rusich RUS_SHIP_Vedy RUS_SHIP_Bukvitsa
+			RUS_SHIP_Perun RUS_SHIP_Svarog RUS_SHIP_Dazhbog RUS_SHIP_Yarilo RUS_SHIP_Stribog RUS_SHIP_Radogast RUS_SHIP_Mokosh RUS_SHIP_Veles RUS_SHIP_Simargl RUS_SHIP_Hors RUS_SHIP_Triglav RUS_SHIP_Rodnoveriye RUS_SHIP_Svyatobor RUS_SHIP_Chernobog RUS_SHIP_Lada RUS_SHIP_Kama RUS_SHIP_Tara RUS_SHIP_Svyatovit RUS_SHIP_Rasen RUS_SHIP_Etruss RUS_SHIP_Chernorus RUS_SHIP_Velikorus RUS_SHIP_ChudBeloglazaya RUS_SHIP_SerebryanniyRus RUS_SHIP_BabaYaga RUS_SHIP_Domovoy RUS_SHIP_Leshiy RUS_SHIP_Vedun RUS_SHIP_Vedmak RUS_SHIP_Kupala RUS_SHIP_Kolyada RUS_SHIP_VoditsaBaikalskaya RUS_SHIP_Rasena RUS_SHIP_RasaVelikaya RUS_SHIP_VelikoyeKolo RUS_SHIP_PodvigPredkov RUS_SHIP_SlavnyePredki RUS_SHIP_SlavaRodu RUS_SHIP_MudrostPredkov RUS_SHIP_Beresta RUS_SHIP_Medovuha RUS_SHIP_Maslenitsa RUS_SHIP_Kvas RUS_SHIP_Izbushka RUS_SHIP_Samobranka RUS_SHIP_Skorohod RUS_SHIP_NebesnayaKolesnitsa RUS_SHIP_ZharPtitsa RUS_SHIP_DaAriyets RUS_SHIP_Slavia RUS_SHIP_Rasseya RUS_SHIP_Goyda RUS_SHIP_GoyEsi RUS_SHIP_GeySlavyane RUS_SHIP_NeboSlavyan RUS_SHIP_SlavyanskayaNaruzhnost RUS_SHIP_SlovenSkifich RUS_SHIP_RusSkifich RUS_SHIP_RodySvyataRASA RUS_SHIP_Vaitmar RUS_SHIP_Vaitman RUS_SHIP_PredkiAsy RUS_SHIP_VelesovaKniga RUS_SHIP_KrugosvetChisloboga RUS_SHIP_Druzhinnik RUS_SHIP_Bylina RUS_SHIP_Bogatyr RUS_SHIP_SmertYashchera RUS_SHIP_Kolovrat RUS_SHIP_Solntsevorot RUS_SHIP_Slavyanoariy RUS_SHIP_Yashcheroborets RUS_SHIP_Volhv RUS_SHIP_Rusich RUS_SHIP_Vedy RUS_SHIP_Bukvitsa
 		}
 		corvette = {
 			
@@ -80,6 +80,10 @@ RUS = {
 			sequential_name = RUS_ASSAULTLEGION
 		}
 
+		defense_army = {
+			sequential_name = RUS_COLONIALGENDARMERIE
+		}
+
 		assault_army = {
 			sequential_name = RUS_ASSAULTLEGION
 		}
@@ -89,6 +93,10 @@ RUS = {
 		}
 
 		clone_army = {
+			sequential_name = RUS_VATGROWNSOLDIERY
+		}
+
+		perfected_clone_army = {
 			sequential_name = RUS_VATGROWNSOLDIERY
 		}
 
@@ -128,6 +136,30 @@ RUS = {
 
 		robotic_occupation_army = {
 			sequential_name = RUS_UNMANNEDGARRISON
+		}
+
+		primitive_army = {
+			sequential_name = RUS_PRIMITIVEARMY
+		}
+
+		industrial_army = {
+			sequential_name = RUS_INDUSTRIALARMY
+		}
+
+		postatomic_army = {
+			sequential_name = RUS_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
+		}
+
+		wilderness_pre_sapient_defence_army = {
+			sequential_name = seq_wilderness_pre_sapient_defence_army
+		}
+		
+		wilderness_pre_sapient_assault_army = {
+			sequential_name = seq_wilderness_pre_sapient_assault_army
 		}
 	}
 	planet_names = {

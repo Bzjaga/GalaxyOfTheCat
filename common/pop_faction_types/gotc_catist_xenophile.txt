@@ -16,15 +16,57 @@ catist_xenophile = {
 	resources = {
 		category = pop_factions
 		produces = {
+			trigger = {
+				owner = {
+					NOR = {
+						has_civic = civic_crowdsourcing
+						has_civic = civic_corporate_crowdsourcing
+					}
+				}
+			}
 			unity = @faction_base_output
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_civic = civic_crowdsourcing
+						has_civic = civic_corporate_crowdsourcing
+					}
+				}
+			}
+			engineering_research = @faction_major_output
+			society_research = @faction_minor_output
+			mult = @crowdsourcing_multiplier
 		}
 	}
 
 	extortion_resource = {
 		category = pop_factions
 		produces = {
+			trigger = {
+				owner = {
+					NOR = {
+						has_civic = civic_crowdsourcing
+						has_civic = civic_corporate_crowdsourcing
+					}
+				}
+			}
 			consumer_goods = @faction_base_output
 			mult = @faction_extortion_consumer_goods_ratio
+		}
+		produces = {
+			trigger = {
+				owner = {
+					OR = {
+						has_civic = civic_crowdsourcing
+						has_civic = civic_corporate_crowdsourcing
+					}
+				}
+			}
+			society_research = @faction_major_output
+			physics_research = @faction_minor_output
+			mult = @faction_extortion_crowdsourcing_ratio
 		}
 	}
 
@@ -198,7 +240,10 @@ catist_xenophile = {
 				any_owned_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 					OR = {
 						has_citizenship_type = { type = citizenship_purge country = prev }
 						has_citizenship_type = { type = citizenship_purge_machine country = prev }
@@ -228,7 +273,10 @@ catist_xenophile = {
 					any_owned_species = {
 						is_feline_species = yes
 						is_robotic = no
-						is_sapient = yes
+						OR = {
+							is_sapient = yes
+							has_trait = trait_nascent_stage
+						}
 						has_citizenship_type = { type = citizenship_slavery country = prev }
 					}
 					has_civic = civic_slaver_guilds
@@ -259,7 +307,10 @@ catist_xenophile = {
 				any_owned_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 					has_citizenship_type = { type = citizenship_assimilation country = prev }
 				}
 			}
@@ -287,7 +338,10 @@ catist_xenophile = {
 				any_owned_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 					has_citizenship_type = { type = citizenship_limited country = prev }
 				}
 			}
@@ -315,7 +369,10 @@ catist_xenophile = {
 				any_owned_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 					OR = {
 						has_citizenship_type = { type = citizenship_full country = prev }
 						has_citizenship_type = { type = citizenship_full_machine country = prev }
@@ -502,7 +559,10 @@ catist_xenophile = {
 				any_owned_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 					OR = {
 						has_living_standard = { type = living_standard_chemical_bliss country = prev }
 						has_living_standard = { type = living_standard_utopian country = prev }
@@ -533,7 +593,10 @@ catist_xenophile = {
 				any_owned_species = {
 					is_feline_species = yes
 					is_robotic = no
-					is_sapient = yes
+					OR = {
+						is_sapient = yes
+						has_trait = trait_nascent_stage
+					}
 					OR = {
 						has_living_standard = { type = living_standard_none country = prev }
 						has_living_standard = { type = living_standard_subsistence country = prev }
@@ -654,7 +717,7 @@ catist_xenophile = {
 	}
 
 	on_create = {
-		pop_faction_event = { id = factions.1 }
+		pop_faction_event = { id = factions.0 }
 	}
 
 	on_destroy = {
@@ -704,6 +767,7 @@ catist_xenophile = {
 
 			effect = {
 				add_modifier = { modifier = embraced_faction days = 3600 }
+				owner = { set_country_flag = has_embraced_faction }
 				parameter:empire = {
 					embrace_catist_faction_no_name_change = yes
 					hidden_effect = {
@@ -788,6 +852,7 @@ catist_xenophile = {
 			}
 
 			effect = {
+				owner = { set_country_flag = has_promoted_faction }
 				parameter:empire = {
 					add_modifier = { modifier = promoted_xenophile days = -1 }
 				}
@@ -875,6 +940,10 @@ catist_xenophile = {
 				owner = {
 					is_oligarchic_authority = yes
 					has_country_flag = cyber_collectivist
+					NOR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
 				}
 				is_faction_extorted = no
 			}
@@ -882,6 +951,33 @@ catist_xenophile = {
 			effect = {
 				set_faction_extorted = yes
 				custom_tooltip = consumer_goods_extortion_tt
+				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
+			}
+
+			ai_weight = {
+				base = 0
+			}
+		}
+		extort_faction_crowdsourcing = { #Crowdsourcing version
+			title = "EXTORT_FACTION"
+			description = "EXTORT_FACTION_DESC"
+
+			potential = {
+				exists = owner
+				owner = {
+					is_oligarchic_authority = yes
+					has_country_flag = cyber_collectivist
+					OR = {
+						has_valid_civic = civic_crowdsourcing
+						has_valid_civic = civic_corporate_crowdsourcing
+					}
+				}
+				is_faction_extorted = no
+			}
+
+			effect = {
+				set_faction_extorted = yes
+				custom_tooltip = crowdsourced_extortion_tt
 				custom_tooltip = ONLY_ONE_EXTORTED_FACTION_TT
 			}
 

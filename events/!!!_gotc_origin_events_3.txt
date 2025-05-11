@@ -142,19 +142,41 @@ country_event = {
 					set_location = root.capital_star
 				}
 			}
-			create_fleet = {
-				effect = {
-					set_owner = root
-					while = {
-						count = 3
-						create_ship = {
-							name = random
-							design = NAME_Dagger
+			if = {
+				limit = {
+					country_uses_bio_ships = yes
+				}
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 3
+							create_ship = {
+								name = random
+								design = NAME_CHARGER_1
+								growth_stage = 1
+							}
 						}
+						set_location = root.capital_star
 					}
-					set_location = root.capital_star
 				}
 			}
+			else = {
+				create_fleet = {
+					effect = {
+						set_owner = root
+						while = {
+							count = 3
+							create_ship = {
+								name = random
+								design = NAME_Dagger
+							}
+						}
+						set_location = root.capital_star
+					}
+				}
+			}
+			
 			add_resource = {
 				energy = 2000
 				food = 1000

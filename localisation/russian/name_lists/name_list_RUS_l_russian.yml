@@ -56,6 +56,7 @@
  RUS_SHIP_GoyEsi:0 "Гой Еси"
  RUS_SHIP_GeySlavyane:0 "Гей-Славяне"
  RUS_SHIP_NeboSlavyan:0 "Небо Славян"
+ RUS_SHIP_SlavyanskayaNaruzhnost:0 "Славянская Наружность"
  RUS_SHIP_SlovenSkifich:0 "Словен Скифич"
  RUS_SHIP_RusSkifich:0 "Рус Скифич"
  RUS_SHIP_RodySvyataRASA:0 "Роды Свята РАСА"
@@ -379,6 +380,9 @@
  RUS_EUGENICVANGUARD:0 "$ORD$-я дружина богатырей"
  RUS_OCCUPATIONLEGION:0 "$ORD$-я рать насаждения русского духа"
  RUS_UNMANNEDGARRISON:0 "$ORD$-й гарнизон взора предков"
+ RUS_PRIMITIVEARMY: "$C$-я княжеская дружина"
+ RUS_INDUSTRIALARMY: "$C$-я Русская армия"
+ RUS_POSTATOMICARMY: "$C$-я разведгруппа «Русич»"
 
 # Obsolete sequentials (for backwards compatibility)
  RUS_xxSTRIKEFORCE_ORD:1 "$O$ ратная дружина"
@@ -394,3 +398,6 @@
  RUS_xxEUGENICVANGUARD_ORD:1 "$O$ дружина богатырей"
  RUS_xxOCCUPATIONLEGION_ORD:1 "$O$ рать насаждения русского духа"
  RUS_xxUNMANNEDGARRISON_ORD:1 "$O$ гарнизон взора предков"
+ RUS_PRIMITIVEARMYxx_SEQ: "$C$-я княжеская дружина"
+ RUS_INDUSTRIALARMYxx_SEQ: "$C$-я Русская армия"
+ RUS_POSTATOMICARMYxx_SEQ: "$C$-я разведгруппа «Русич»"

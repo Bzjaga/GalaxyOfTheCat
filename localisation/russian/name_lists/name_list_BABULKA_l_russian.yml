@@ -300,6 +300,9 @@
  BABULKA_EUGENICVANGUARD:0 "$ORD$-е элитные боевые бабульки"
  BABULKA_OCCUPATIONLEGION:0 "$ORD$-й легион пристальной слежки за прохожими"
  BABULKA_UNMANNEDGARRISON:0 "$ORD$-й гарнизон кибербабулек"
+ BABULKA_PRIMITIVEARMY: "$C$-й сход протобабулек"
+ BABULKA_INDUSTRIALARMY: "$C$-й отряд колхозниц"
+ BABULKA_POSTATOMICARMY: "$C$-й штаб КПРФ"
 
 # Obsolete sequentials (for backwards compatibility)
  BABULKA_xxSTRIKEFORCE_ORD:1 "$O$ ударный флот бабулек"
@@ -315,3 +318,6 @@
  BABULKA_xxEUGENICVANGUARD_ORD:1 "$O$ элитные боевые бабульки"
  BABULKA_xxOCCUPATIONLEGION_ORD:1 "$O$ легион пристальной слежки за прохожими"
  BABULKA_xxUNMANNEDGARRISON_ORD:1 "$O$ гарнизон кибербабулек"
+ BABULKA_PRIMITIVEARMYxx_SEQ: "$C$-й сход протобабулек"
+ BABULKA_INDUSTRIALARMYxx_SEQ: "$C$-й отряд колхозниц"
+ BABULKA_POSTATOMICARMYxx_SEQ: "$C$-й штаб КПРФ"

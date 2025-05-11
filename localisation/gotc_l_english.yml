@@ -14,6 +14,9 @@
  #Kira starting system 
  kira_starting_system_NAME:0 "Кирина Система"
  kira_starting_system_DESC:0 "Ого! Кажется, в соседней от вас звёздной системе столкнулись планеты!\nДа только ради того, чтобы увидеть это воочию, и стоило выходить в космос."
+ #Species traits
+ trait_mudozvon:0 "Мудозвоны"
+ trait_mudozvon_desc:0 "§LПредставители этой расы всегда знают, как всем остальным нужно жить, и что думать.§!\n"
  #Pop factions
  #random_names\gotc_pop_faction_names.txt
  Impressed:0 "Впечатлённый"

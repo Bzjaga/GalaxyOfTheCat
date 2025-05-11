@@ -4,5 +4,4 @@ imperial_vassal_ai_modifier = {
 	country_influence_produces_mult = -0.75
 	branch_office_value_mult = -0.5
 	planet_resettlement_unemployed_mult = -0.5
-	planet_emigration_push_mult = -0.75
 }

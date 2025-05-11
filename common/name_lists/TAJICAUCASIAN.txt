@@ -80,6 +80,10 @@ TAJICAUCASIAN = {
 			sequential_name = TAJICAUCASIAN_ASSAULTLEGION
 		}
 
+		defense_army = {
+			sequential_name = TAJICAUCASIAN_COLONIALGENDARMERIE
+		}
+
 		assault_army = {
 			sequential_name = TAJICAUCASIAN_ASSAULTLEGION
 		}
@@ -89,6 +93,10 @@ TAJICAUCASIAN = {
 		}
 
 		clone_army = {
+			sequential_name = TAJICAUCASIAN_VATGROWNSOLDIERY
+		}
+
+		perfected_clone_army = {
 			sequential_name = TAJICAUCASIAN_VATGROWNSOLDIERY
 		}
 
@@ -128,6 +136,30 @@ TAJICAUCASIAN = {
 
 		robotic_occupation_army = {
 			sequential_name = TAJICAUCASIAN_UNMANNEDGARRISON
+		}
+
+		primitive_army = {
+			sequential_name = TAJICAUCASIAN_PRIMITIVEARMY
+		}
+
+		industrial_army = {
+			sequential_name = TAJICAUCASIAN_INDUSTRIALARMY
+		}
+
+		postatomic_army = {
+			sequential_name = TAJICAUCASIAN_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
+		}
+
+		wilderness_pre_sapient_defence_army = {
+			sequential_name = seq_wilderness_pre_sapient_defence_army
+		}
+		
+		wilderness_pre_sapient_assault_army = {
+			sequential_name = seq_wilderness_pre_sapient_assault_army
 		}
 	}
 	planet_names = {

@@ -989,8 +989,8 @@
 		plural = "Соловьёвы"
 		adjective = "Соловьёвск"
 		name_list = "HUMAN2"
+		trait = "trait_mudozvon"
 		trait = "trait_traditional"
-		trait = "trait_charismatic"
 		trait = "trait_conformists"
 		trait = "trait_unruly"
 		trait = "trait_decadent"
@@ -1214,7 +1214,7 @@
 	}
 }
 
-# pospolitiod
+# pospolitoid
 "Речь Посполитоидная" = {
 	name = "Речь Посполитоидная"
 	adjective = "Посполитоидн"

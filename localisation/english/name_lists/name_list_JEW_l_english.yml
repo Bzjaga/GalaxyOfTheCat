@@ -403,6 +403,7 @@
  JEW_ASSAULTLEGION:0 "$ORD$-й легион Иргун"
  JEW_JANISSARYCORPS:0 "$ORD$-й корпус узников концлагерей"
  JEW_VATGROWNSOLDIERY:0 "$ORD$-е чада ультраортодоксов"
+ JEW_PERFECTEDCLONESOLDIERY:0 "$ORD$-й полк галахических евреев"
  JEW_DREADCORPS:0 "$ORD$-й корпус воинства Машиаха"
  JEW_UNMANNEDBATTLEGROUP:0 "$ORD$-й бессмертный легион"
  JEW_UNMANNEDGENDARMERIE:0 "$ORD$-е бессмертные стражи"
@@ -411,6 +412,8 @@
  JEW_EUGENICVANGUARD:0 "$ORD$-е элитные бойцы Дувдевана"
  JEW_OCCUPATIONLEGION:0 "$ORD$-й легион охраны западного берега"
  JEW_UNMANNEDGARRISON:0 "$ORD$-й гарнизон киберевреев"
+ JEW_PRIMITIVEARMY:0 "$C$-я армия Маккавеев"
+ JEW_INDUSTRIALARMY:0 "$C$-й Еврейский легион"
 
 # Obsolete sequentials (for backwards compatibility)
  JEW_xxSTRIKEFORCE_ORD:1 "$O$ армия обороны Израиля"
@@ -418,6 +421,7 @@
  JEW_xxASSAULTLEGION_ORD:1 "$O$ легион Иргун"
  JEW_xxJANISSARYCORPS_ORD:1 "$O$ корпус узников концлагерей"
  JEW_xxVATGROWNSOLDIERY_ORD:1 "$O$ чада ультраортодоксов"
+ JEW_xxPERFECTEDCLONESOLDIERY_ORD:1 "$O$ полк галахических евреев"
  JEW_xxDREADCORPS_ORD:1 "$O$ корпус воинства Машиаха"
  JEW_xxUNMANNEDBATTLEGROUP_ORD:1 "$O$ бессмертный легион"
  JEW_xxUNMANNEDGENDARMERIE_ORD:1 "$O$ бессмертные стражи"
@@ -426,3 +430,5 @@
  JEW_xxEUGENICVANGUARD_ORD:1 "$O$ элитные бойцы Дувдевана"
  JEW_xxOCCUPATIONLEGION_ORD:1 "$O$ легион охраны западного берега"
  JEW_xxUNMANNEDGARRISON_ORD:1 "$O$ гарнизон киберевреев"
+ JEW_PRIMITIVEARMYxx_SEQ:0 "$C$-я армия Маккавеев"
+ JEW_INDUSTRIALARMYxx_SEQ:0 "$C$-й Еврейский легион"

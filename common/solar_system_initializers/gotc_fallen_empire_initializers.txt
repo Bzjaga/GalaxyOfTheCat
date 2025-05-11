@@ -64,27 +64,46 @@ gotc_fallen_1 = {
 			set_owner = root
 			set_controller = root
 			set_capital = yes
-
-			add_building = building_ancient_palace
-			add_building = building_fe_security_2
-			add_building = building_fe_stronghold
-			add_building = building_affluence_center
-			add_building = building_fe_entertainment_2
-			add_building = building_nourishment_center
-			add_building = building_fe_lab_2
-			add_building = building_class_4_singularity
-			add_building = building_dimensional_fabricator
-			add_building = building_fe_mine_2
-			add_building = building_nano_forge
-			add_building = building_fe_administration_2
-
+			clear_deposits = yes
 			while = {
-				count = 20
+				count = 10
 				add_district = district_arcology_housing
+			}
+			add_zone = {
+				district = district_arcology_housing
+				zone = zone_urban
+			}
+			add_zone = {
+				district = district_arcology_housing
+				zone = zone_urban
+			}
+			while = {
+				count = 3
+				add_district = district_arcology_urban_1
+			}
+			add_zone = {
+				district = district_arcology_urban_1
+				zone = zone_research_physics
+			}
+			while = {
+				count = 3
+				add_district = district_arcology_urban_2
+			}
+			add_zone = {
+				district = district_arcology_urban_2
+				zone = zone_research_engineering
+			}
+			while = {
+				count = 3
+				add_district = district_arcology_urban_3
+			}
+			add_zone = {
+				district = district_arcology_urban_3
+				zone = zone_research_society
 			}
 			while = {
 				count = 94
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
@@ -104,7 +123,7 @@ gotc_fallen_1 = {
 			last_created_species = { save_event_target_as = fe_servants }
 			while = {
 				count = 94
-				create_pop = {
+				create_pop_group = {
 					species = event_target:fe_servants
 				}
 			}
@@ -117,6 +136,78 @@ gotc_fallen_1 = {
 					species = root
 					type = "robotic_army"
 				}
+			}
+			# Central City
+			add_building = building_ancient_palace
+			add_building = building_institute
+			add_building = building_research_upkeep_1
+			add_building = building_research_efficiency_1
+			add_building = building_fe_stronghold
+			add_building = building_fe_security_2
+			# Urban Expansion
+			add_building = {
+				zone = zone_urban
+				building = building_dimensional_fabricator
+			}
+			add_building = {
+				zone = zone_urban
+				building = building_nano_forge
+			}
+			add_building = {
+				zone = zone_urban
+				building = building_affluence_center
+			}
+			# Urban Expansion
+			add_building = {
+				zone = zone_urban
+				building = building_fe_dome
+			}
+			add_building = {
+				zone = zone_urban
+				building = building_nourishment_center
+			}
+			add_building = {
+				zone = zone_urban
+				building = building_class_4_singularity
+			}
+			# Physics Labs
+			add_building = {
+				zone = zone_research_physics
+				building = building_physics_lab_3
+			}
+			add_building = {
+				zone = zone_research_physics
+				building = building_fe_lab_2
+			}
+			add_building = {
+				zone = zone_research_physics
+				building = building_fe_lab_2
+			}
+			# Engineering Labs
+			add_building = {
+				zone = zone_research_engineering
+				building = building_engineering_facility_3
+			}
+			add_building = {
+				zone = zone_research_engineering
+				building = building_fe_lab_2
+			}
+			add_building = {
+				zone = zone_research_engineering
+				building = building_fe_lab_2
+			}
+			# Biology Labs
+			add_building = {
+				zone = zone_research_society
+				building = building_biolab_3
+			}
+			add_building = {
+				zone = zone_research_society
+				building = building_fe_lab_2
+			}
+			add_building = {
+				zone = zone_research_society
+				building = building_fe_lab_2
 			}
 		}
 	}
@@ -212,39 +303,49 @@ gotc_fallen_1_2 = {
 		has_ring = no
 
 		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_MATERIALIST_Citadel_3"
+			}
 			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 
+			while = {
+				count = 14
+				add_district = district_city
+			}
+			while = {
+				count = 35
+				create_pop_group = {
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 35
+				create_pop_group = {
+					species = event_target:fe_servants
+				}
+			}
 			add_building = building_ancient_palace
 			add_building = building_master_archive
 			add_building = building_fe_stronghold
 			add_building = building_fe_dome
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
 			add_building = building_affluence_center
 			add_building = building_nourishment_center
 			add_building = building_fe_lab_2
 			add_building = building_dimensional_fabricator
 			add_building = building_nano_forge
 			add_building = building_fe_lab_2
-			while = {
-				count = 15
-				add_district = district_city
-			}
-			while = {
-				count = 35
-				create_pop = {
-					species = owner_main_species
-				}
-			}
-			while = {
-				count = 35
-				create_pop = {
-					species = event_target:fe_servants
-				}
-			}
 		}
 	}
 
@@ -339,6 +440,10 @@ gotc_fallen_2 = {
 		modifiers = none
 
 		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_SPIRITUALIST_Citadel_3"
+			}
 			create_cluster = {
 				id = fe2_cluster
 				radius = 140
@@ -351,19 +456,6 @@ gotc_fallen_2 = {
 			set_owner = root
 			set_controller = root
 			set_capital = yes
-
-			add_building = building_ancient_palace
-			add_building = building_fe_dome
-			add_building = building_fe_dome
-			add_building = building_fe_temple_2
-			add_building = building_fe_temple_2
-			add_building = building_fe_mine_2
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
-			add_building = building_dimensional_fabricator
-			add_building = building_class_4_singularity
-			add_building = building_affluence_center
-			add_building = building_nano_forge
 
 			while = {
 				count = 16
@@ -383,7 +475,7 @@ gotc_fallen_2 = {
 			}
 			while = {
 				count = 115
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
@@ -397,6 +489,21 @@ gotc_fallen_2 = {
 					type = "psionic_army"
 				}
 			}
+			add_building = building_ancient_palace
+			add_building = building_fe_dome
+			add_building = building_fe_dome
+			add_building = building_fe_temple_2
+			add_building = building_fe_temple_2
+			add_building = building_fe_mine_2
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_dimensional_fabricator
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = building_affluence_center
+			add_building = building_nano_forge
 		}
 
 		change_orbit = @base_moon_distance
@@ -422,23 +529,15 @@ gotc_fallen_2 = {
 		modifiers = none
 
 		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_SPIRITUALIST_Citadel_3"
+			}
 			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 
-			add_building = building_ancient_palace
-			add_building = building_empyrean_shrine
-			add_building = building_fe_dome
-			add_building = building_fe_dome
-			add_building = building_dimensional_fabricator
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_nano_forge
-			add_building = building_nano_forge
 			while = {
 				count = 12
 				add_district = district_city
@@ -457,10 +556,31 @@ gotc_fallen_2 = {
 			}
 			while = {
 				count = 68
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
+			add_building = building_ancient_palace
+			add_building = building_empyrean_shrine
+			add_building = building_fe_dome
+			add_building = building_fe_dome
+			add_building = building_dimensional_fabricator
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = building_nano_forge
+			add_building = building_nano_forge
 		}
 	}
 
@@ -590,20 +710,8 @@ gotc_fallen_3 = {
 				set_controller = root
 				set_capital = yes
 
-				add_building = building_ancient_palace
-				add_building = building_fe_dome
-				add_building = building_fe_administration_2
-				add_building = building_fe_stronghold
-				add_building = building_fe_stronghold
-				add_building = building_affluence_center
-				add_building = building_nourishment_center
-				add_building = building_class_4_singularity
-				add_building = building_class_4_singularity
-				add_building = building_dimensional_fabricator
-				add_building = building_fe_security_2
-				add_building = building_fe_mine_2
 				while = {
-					count = 20
+					count = 19
 					add_district = district_city
 				}
 				root = {
@@ -633,7 +741,7 @@ gotc_fallen_3 = {
 					
 					while = {
 						count = 32
-						create_pop = {
+						create_pop_group = {
 							species = owner_main_species
 						}
 					}
@@ -670,7 +778,7 @@ gotc_fallen_3 = {
 					last_created_species = { save_event_target_as = fe_servants }
 					while = {
 						count = 52
-						create_pop = {
+						create_pop_group = {
 							species = event_target:fe_servants
 						}
 					}
@@ -705,7 +813,7 @@ gotc_fallen_3 = {
 						set_species_flag = astrohungarian
 						save_event_target_as = vurdvalah_species
 					}
-					create_pop = {
+					create_pop_group = {
 						species = event_target:vurdvalah_species
 					}
 				
@@ -737,22 +845,22 @@ gotc_fallen_3 = {
 					last_created_species = {
 						save_event_target_as = kazak_species
 					}
-					create_pop = {
+					create_pop_group = {
 						species = event_target:kazak_species
 					}
 					
 					# Pospolitoid
 					if = { # Check Pospolitoid existence
 						limit = {
-							any_system = { has_star_flag = pospolitiod }
+							any_system = { has_star_flag = pospolitoid }
 						}
 						random_playable_country = {
 							limit = {
-								capital_scope.solar_system = { has_star_flag = pospolitiod }
+								capital_scope.solar_system = { has_star_flag = pospolitoid }
 							}
 							owner_main_species = {
 								set_species_flag = astrohungarian
-								save_event_target_as = pospolitiod_species
+								save_event_target_as = pospolitoid_species
 							}
 						}
 					}
@@ -785,11 +893,11 @@ gotc_fallen_3 = {
 						}
 						last_created_species = {
 							set_species_flag = astrohungarian
-							save_event_target_as = pospolitiod_species
+							save_event_target_as = pospolitoid_species
 						}
 					}
-					create_pop = {
-						species = event_target:pospolitiod_species
+					create_pop_group = {
+						species = event_target:pospolitoid_species
 					}
 					
 					# Netoropyr
@@ -838,7 +946,7 @@ gotc_fallen_3 = {
 							save_event_target_as = netoropyr_species
 						}
 					}
-					create_pop = {
+					create_pop_group = {
 						species = event_target:netoropyr_species
 					}
 
@@ -927,13 +1035,13 @@ gotc_fallen_3 = {
 					}
 					while = {
 						count = 12
-						create_pop = {
+						create_pop_group = {
 							species = event_target:aryan_species
 						}
 					}
 					while = {
 						count = 4
-						create_pop = {
+						create_pop_group = {
 							species = event_target:untermensch_species
 						}
 					}
@@ -952,7 +1060,7 @@ gotc_fallen_3 = {
 
 					while = {
 						count = 52
-						create_pop = {
+						create_pop_group = {
 							species = owner_main_species
 						}
 					}
@@ -960,7 +1068,7 @@ gotc_fallen_3 = {
 					last_created_species = { save_event_target_as = fe_servants }
 					while = {
 						count = 52
-						create_pop = {
+						create_pop_group = {
 							species = event_target:fe_servants
 						}
 					}
@@ -976,6 +1084,18 @@ gotc_fallen_3 = {
 						type = "gene_warrior_army"
 					}
 				}
+				add_building = building_ancient_palace
+				add_building = building_fe_dome
+				add_building = building_fe_administration_2
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_affluence_center
+				add_building = building_nourishment_center
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity
+				add_building = building_dimensional_fabricator
+				add_building = building_fe_security_2
+				add_building = building_fe_mine_2
 			}
 		}
 
@@ -1017,16 +1137,8 @@ gotc_fallen_3 = {
 				set_owner = root
 				set_controller = root
 
-				add_building = building_ancient_palace
-				add_building = building_fe_stronghold
-				add_building = building_fe_stronghold
-				add_building = building_dimensional_fabricator
-				add_building = building_dimensional_fabricator
-				add_building = building_nano_forge
-				add_building = building_nano_forge
-				add_building = building_nano_forge
 				while = {
-					count = 10
+					count = 9
 					add_district = district_city
 				}
 				if = { # Astro-Hungary
@@ -1037,13 +1149,13 @@ gotc_fallen_3 = {
 					}
 					while = {
 						count = 16
-						create_pop = {
+						create_pop_group = {
 							species = owner_main_species
 						}
 					}
 					while = {
 						count = 2
-						create_pop = {
+						create_pop_group = {
 							species = event_target:untermensch_species
 						}
 					}
@@ -1055,17 +1167,25 @@ gotc_fallen_3 = {
 					}
 					while = {
 						count = 18
-						create_pop = {
+						create_pop_group = {
 							species = owner_main_species
 						}
 					}
 				}
 				while = {
 					count = 18
-					create_pop = {
+					crcreate_pop_groupeate_pop = {
 						species = event_target:fe_servants
 					}
 				}
+				add_building = building_ancient_palace
+				add_building = building_fe_stronghold
+				add_building = building_fe_stronghold
+				add_building = building_dimensional_fabricator
+				add_building = building_dimensional_fabricator
+				add_building = building_nano_forge
+				add_building = building_nano_forge
+				add_building = building_nano_forge
 			}
 		}
 
@@ -1083,19 +1203,8 @@ gotc_fallen_3 = {
 				set_owner = root
 				set_controller = root
 
-				add_building = building_ancient_palace
-				add_building = building_fe_stronghold
-				add_building = building_fe_dome
-				add_building = building_fe_market_2
-				add_building = building_class_4_singularity
-				add_building = building_class_4_singularity
-				add_building = building_affluence_center
-				add_building = building_affluence_center
-				add_building = building_affluence_center
-				add_building = building_fe_clinic_2
-				add_building = building_nourishment_center
 				while = {
-					count = 12
+					count = 11
 					add_district = district_city
 				}
 				if = { # Astro-Hungary
@@ -1106,13 +1215,13 @@ gotc_fallen_3 = {
 					}
 					while = {
 						count = 25
-						create_pop = {
+						create_pop_group = {
 							species = owner_main_species
 						}
 					}
 					while = {
 						count = 2
-						create_pop = {
+						create_pop_group = {
 							species = event_target:untermensch_species
 						}
 					}
@@ -1124,17 +1233,28 @@ gotc_fallen_3 = {
 					}
 					while = {
 						count = 27
-						create_pop = {
+						create_pop_group = {
 							species = owner_main_species
 						}
 					}
 				}
 				while = {
 					count = 27
-					create_pop = {
+					create_pop_group = {
 						species = event_target:fe_servants
 					}
 				}
+				add_building = building_ancient_palace
+				add_building = building_fe_stronghold
+				add_building = building_fe_dome
+				add_building = building_fe_market_2
+				add_building = building_class_4_singularity
+				add_building = building_class_4_singularity
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_affluence_center
+				add_building = building_fe_clinic_2
+				add_building = building_nourishment_center
 			}
 		}
 	}
@@ -1226,25 +1346,13 @@ gotc_fallen_4 = {
 			set_controller = root
 			set_capital = yes
 
-			add_building = building_ancient_palace
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
-			add_building = building_affluence_center
-			add_building = building_nourishment_center
-			add_building = building_fe_security_2
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_dimensional_fabricator
-			add_building = building_nano_forge
-			add_building = building_nano_forge
 			while = {
-				count = 25
+				count = 24
 				add_district = district_city
 			}
 			while = {
 				count = 62
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
@@ -1283,7 +1391,7 @@ gotc_fallen_4 = {
 			last_created_species = { save_event_target_as = fe_servants }
 			while = {
 				count = 62
-				create_pop = {
+				create_pop_group = {
 					species = event_target:fe_servants
 				}
 			}
@@ -1298,6 +1406,18 @@ gotc_fallen_4 = {
 					type = "xenomorph_army"
 				}
 			}
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_fe_security_2
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
 		}
 
 		moon = {
@@ -1315,6 +1435,22 @@ gotc_fallen_4 = {
 				set_owner = root
 				set_controller = root
 
+				while = {
+					count = 11
+					add_district = district_city
+				}
+				while = {
+					count = 33
+					create_pop_group = {
+						species = owner_main_species
+					}
+				}
+				while = {
+					count = 33
+					create_pop_group = {
+						species = event_target:fe_servants
+					}
+				}
 				add_building = building_ancient_palace
 				add_building = building_fe_stronghold
 				add_building = building_fe_stronghold
@@ -1327,22 +1463,6 @@ gotc_fallen_4 = {
 				add_building = building_fe_administration_2
 				add_building = building_nano_forge
 				add_building = building_nano_forge
-				while = {
-					count = 12
-					add_district = district_city
-				}
-				while = {
-					count = 33
-					create_pop = {
-						species = owner_main_species
-					}
-				}
-				while = {
-					count = 33
-					create_pop = {
-						species = event_target:fe_servants
-					}
-				}
 			}
 		}
 	}
@@ -1550,25 +1670,25 @@ gotc_fallen_col_1_1 = {
 				}
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = owner_main_species
 					}
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:fe_servants
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:aryan_species
 				}
 				while = {
 					count = 3
-					create_pop = {
+					create_pop_group = {
 						species = event_target:untermensch_species
 					}
 				}
 				while = {
 					count = 9
-					create_pop = {
+					create_pop_group = {
 						species = event_target:netoropyr_species
 					}
 				}
@@ -1740,26 +1860,26 @@ gotc_fallen_col_1_2 = {
 				}
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = owner_main_species
 					}
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:fe_servants
 				}
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = event_target:kazak_species
 					}
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:untermensch_species
 				}
 				while = {
 					count = 7
-					create_pop = {
-						species = event_target:pospolitiod_species
+					create_pop_group = {
+						species = event_target:pospolitoid_species
 					}
 				}
 			}
@@ -1986,25 +2106,25 @@ gotc_fallen_col_2_1 = {
 				}
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = owner_main_species
 					}
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:fe_servants
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:untermensch_species
 				}
 				while = {
 					count = 6
-					create_pop = {
+					create_pop_group = {
 						species = event_target:vurdvalah_species
 					}
 				}
 				while = {
 					count = 5
-					create_pop = {
+					create_pop_group = {
 						species = owner_main_species
 					}
 				}
@@ -2158,11 +2278,11 @@ gotc_fallen_col_2_2 = {
 					}
 				}
 				change_pc = pc_alpine
-				if = { # Check Pospolitiod existence
+				if = { # Check Pospolitoid existence
 					limit = {
-						NOT = { any_system = { has_star_flag = pospolitiod } }
+						NOT = { any_system = { has_star_flag = pospolitoid } }
 					}
-					event_target:pospolitiod_species = {
+					event_target:pospolitoid_species = {
 						set_species_homeworld = prev
 					}
 				}
@@ -2181,26 +2301,26 @@ gotc_fallen_col_2_2 = {
 				}
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = owner_main_species
 					}
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:fe_servants
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:aryan_species
 				}
 				while = {
 					count = 3
-					create_pop = {
+					create_pop_group = {
 						species = event_target:untermensch_species
 					}
 				}
 				while = {
 					count = 9
-					create_pop = {
-						species = event_target:pospolitiod_species
+					create_pop_group = {
+						species = event_target:pospolitoid_species
 					}
 				}
 			}
@@ -2627,6 +2747,10 @@ gotc_fallen_shielded_1 = {
 				class = pc_shielded
 				inherit_entity = yes
 			}
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_XENOPHOBE_Citadel_3"
+			}
 		}
 
 		change_orbit = @base_moon_distance
@@ -2713,6 +2837,10 @@ gotc_fallen_shielded_2 = {
 				class = pc_shielded
 				inherit_entity = yes
 			}
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_XENOPHOBE_Citadel_3"
+			}
 		}
 
 		change_orbit = @base_moon_distance
@@ -2798,6 +2926,10 @@ gotc_fallen_shielded_3 = {
 			change_pc = {
 				class = pc_shielded
 				inherit_entity = yes
+			}
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_XENOPHOBE_Citadel_3"
 			}
 		}
 
@@ -3200,6 +3332,10 @@ gotc_fallen_xeno_zoo = {
 		modifiers = none
 
 		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_XENOPHILE_Citadel_3"
+			}
 			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
@@ -3208,7 +3344,7 @@ gotc_fallen_xeno_zoo = {
 
 			while = {
 				count = 2
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
@@ -3225,22 +3361,22 @@ gotc_fallen_xeno_zoo = {
 						literal=yes
 					}
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:vurdvalah_species
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:kazak_species
 				}
-				create_pop = {
-					species = event_target:pospolitiod_species
+				create_pop_group = {
+					species = event_target:pospolitoid_species
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:netoropyr_species
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:aryan_species
 				}
-				create_pop = {
+				create_pop_group = {
 					species = event_target:untermensch_species
 				}
 			}
@@ -3278,7 +3414,7 @@ gotc_fallen_xeno_zoo = {
 					}
 					homeworld = this
 				}
-				create_pop = {
+				create_pop_group = {
 					species = last_created_species
 				}
 				
@@ -3306,7 +3442,7 @@ gotc_fallen_xeno_zoo = {
 					}
 					homeworld = this
 				}
-				create_pop = {
+				create_pop_group = {
 					species = last_created_species
 				}
 				
@@ -3333,7 +3469,7 @@ gotc_fallen_xeno_zoo = {
 					}
 					homeworld = this
 				}
-				create_pop = {
+				create_pop_group = {
 					species = last_created_species
 				}
 				
@@ -3363,7 +3499,7 @@ gotc_fallen_xeno_zoo = {
 					}
 					homeworld = this
 				}
-				create_pop = {
+				create_pop_group = {
 					species = last_created_species
 				}
 				
@@ -3392,7 +3528,7 @@ gotc_fallen_xeno_zoo = {
 					}
 					homeworld = this
 				}
-				create_pop = {
+				create_pop_group = {
 					species = last_created_species
 				}
 			}
@@ -3450,6 +3586,12 @@ gotc_fallen_machine = {
 		name = "NAME_Superstructure_I"
 		orbit_angle = 30
 		orbit_distance = 0
+		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_MACHINE_Citadel_3"
+			}
+		}
 	}
 
 	planet = {
@@ -3475,30 +3617,17 @@ gotc_fallen_machine = {
 			set_controller = root
 			set_capital = yes
 
-			add_building = building_ancient_control_center
-			add_building = building_nourishment_center
-			add_building = building_fe_assembly_2
-			add_building = building_ancient_cryo_chamber
-			add_building = building_fe_stronghold
-			add_building = building_fe_administration_machine_2
-			add_building = building_fe_lab_2
-			add_building = building_fe_lab_2
-			add_building = building_dimensional_fabricator
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_fe_silo_2
-
 			while = {
 				count = 5
 				add_district = district_rw_science
 			}
 			while = {
-				count = 5
+				count = 4
 				add_district = district_rw_nexus
 			}
 			while = {
 				count = 105
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
@@ -3513,7 +3642,19 @@ gotc_fallen_machine = {
 					type = "machine_assault_2"
 				}
 			}
-			create_species = {
+			add_building = building_ancient_control_center
+			add_building = building_nourishment_center
+			add_building = building_fe_assembly_2
+			add_building = building_ancient_cryo_chamber
+			add_building = building_fe_stronghold
+			add_building = building_fe_administration_machine_2
+			add_building = building_fe_lab_2
+			add_building = building_fe_lab_2
+			add_building = building_dimensional_fabricator
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_fe_silo_2
+			create_species = { # Windows bug
 				name = {
 					key="Баг"
 					literal=yes
@@ -3538,7 +3679,7 @@ gotc_fallen_machine = {
 				sapient = no
 				homeworld = this
 			}
-			create_pop = {
+			create_pop_group = {
 				species = last_created_species
 			}
 		}
@@ -3556,6 +3697,12 @@ gotc_fallen_machine = {
 		name = "NAME_Superstructure_II"
 		orbit_angle = 30
 		orbit_distance = 0
+		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_MACHINE_Citadel_3"
+			}
+		}
 	}
 
 	planet = {
@@ -3571,29 +3718,27 @@ gotc_fallen_machine = {
 			prevent_anomaly = yes
 			set_owner = ROOT
 
-			add_building = building_ancient_control_center
-			add_building = building_fe_administration_machine_2
-			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
-			add_building = building_fe_mine_2
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-
 			while = {
 				count = 5
 				add_district = district_rw_nexus
 			}
 			while = {
 				count = 50
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
+			add_building = building_ancient_control_center
+			add_building = building_fe_administration_machine_2
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
 		}
 	}
 
@@ -3609,6 +3754,12 @@ gotc_fallen_machine = {
 		name = "NAME_Superstructure_III"
 		orbit_angle = 30
 		orbit_distance = 0
+		init_effect = {
+			create_fe_dsc = {
+				OWNER = root
+				DESIGN = "NAME_FE_MACHINE_Citadel_3"
+			}
+		}
 	}
 
 	planet = {
@@ -3624,26 +3775,38 @@ gotc_fallen_machine = {
 			prevent_anomaly = yes
 			set_owner = ROOT
 
-			add_building = building_ancient_control_center
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_fe_assembly_2
-			add_building = building_fe_mine_2
-			add_building = building_fe_mine_2
-			add_building = building_fe_mine_2
-
 			while = {
 				count = 5
 				add_district = district_rw_generator
 			}
 			while = {
 				count = 22
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
 				}
 			}
+			add_zone = {
+					district = district_rw_generator
+					zone = zone_energy
+				}
+			add_building = building_ancient_control_center
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = building_fe_assembly_2
 		}
 	}
 

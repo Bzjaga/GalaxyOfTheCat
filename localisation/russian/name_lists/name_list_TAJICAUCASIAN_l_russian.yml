@@ -363,6 +363,9 @@
  TAJICAUCASIAN_EUGENICVANGUARD:0 "$ORD$-й кадыровский СОБР"
  TAJICAUCASIAN_OCCUPATIONLEGION:0 "$ORD$-й легион освобождения Кавказа"
  TAJICAUCASIAN_UNMANNEDGARRISON:0 "$ORD$-й гарнизон заниженных приор"
+ TAJICAUCASIAN_PRIMITIVEARMY: "$C$-й отряд муртазеков"
+ TAJICAUCASIAN_INDUSTRIALARMY: "$C$-й Северокавказский легион"
+ TAJICAUCASIAN_POSTATOMICARMY: "$C$-я армия Имарата Кавказ"
 
 # Obsolete sequentials (for backwards compatibility)
  TAJICAUCASIAN_xxSTRIKEFORCE_ORD:1 "$O$ джигитский флот"
@@ -378,3 +381,6 @@
  TAJICAUCASIAN_xxEUGENICVANGUARD_ORD:1 "$O$ кадыровский СОБР"
  TAJICAUCASIAN_xxOCCUPATIONLEGION_ORD:1 "$O$ легион освобождения Кавказа"
  TAJICAUCASIAN_xxUNMANNEDGARRISON_ORD:1 "$O$ гарнизон заниженных приор"
+ TAJICAUCASIAN_PRIMITIVEARMYxx_SEQ: "$C$-й отряд муртазеков"
+ TAJICAUCASIAN_INDUSTRIALARMYxx_SEQ: "$C$-й Северокавказский легион"
+ TAJICAUCASIAN_POSTATOMICARMYxx_SEQ: "$C$-я армия Имарата Кавказ"

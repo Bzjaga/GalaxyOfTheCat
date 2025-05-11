@@ -17,7 +17,7 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				mid_game_years_passed >= 1
+				mid_game_years_passed >= 10
 				end_game_years_passed < 0
 			}
 			has_global_flag = horde_triggered
@@ -142,11 +142,11 @@ country_event = {
 				trait = leader_trait_ruler_great_khan
 				trait = leader_trait_master_gunner
 				trait = subclass_commander_admiral
-				trait = leader_trait_gunship_specialization_3
-				trait = leader_trait_wrecker_3
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
 				trait = leader_trait_reckless_2
-				trait = leader_trait_artillerist_3
-				trait = leader_trait_demolisher_3
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
 			}
 		}
 		last_created_leader = {

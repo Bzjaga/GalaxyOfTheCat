@@ -89,3 +89,34 @@ leader_trait_tomcat_insight = {
 ################################
 # GOTC Species Traits #
 ################################
+
+trait_mudozvon = {
+	cost = 1
+	opposites = { "trait_hive_mind" }
+	sorting_priority = 20
+
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		can_remove_presapient_genetic_traits = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	allowed_archetypes = { BIOLOGICAL LITHOID }
+	tags = { organic positive pop_output amenities unity }
+
+	icon = "gfx/interface/icons/traits/trait_mudozvon.dds"
+
+	modifier = {
+		entertainer_jobs_bonus_workforce_mult = 0.10
+		bureaucrat_jobs_bonus_workforce_mult = 0.1
+	}
+}

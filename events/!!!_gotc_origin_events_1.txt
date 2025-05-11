@@ -182,8 +182,7 @@ country_event = {
 	immediate = {
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
-		add_tradition = tr_diplomacy_adopt
-		add_tradition = tr_diplomacy_the_federation
+		give_technology = { tech = tech_federation_code message = no }
 
 		# Replace prescripted ideal planets with barren worlds and spawn federation partners.
 		if = {
@@ -341,6 +340,7 @@ country_event = {
 			event_target:fed_member_1 = {
 				country_event = { id = game_start.8 }
 				give_starting_resources_effect = yes
+				give_technology = { tech = tech_federation_code message = no }
 			}
 			solar_system = {
 				if = {
@@ -461,6 +461,7 @@ country_event = {
 			event_target:fed_member_2 = {
 				country_event = { id = game_start.8 }
 				give_starting_resources_effect = yes
+				give_technology = { tech = tech_federation_code message = no }
 			}
 			solar_system = {
 				if = {
@@ -750,7 +751,7 @@ country_event = {
 					set_star_flag = broken_shackles_system
 				}
 				while = {
-					limit = { num_pops < 28 }
+					limit = { pop_amount < 4800 }
 					if = {
 						limit = {
 							any_country = {
@@ -795,9 +796,8 @@ country_event = {
 								set_awareness = 75
 							}
 						}
-						create_pop = {
+						create_pop_group = {
 							species = event_target:random_primitive_species
-							ethos = random
 						}
 					}
 				}
@@ -834,7 +834,7 @@ country_event = {
 					set_star_flag = broken_shackles_system
 				}
 				while = {
-					limit = { num_pops < 28 }
+					limit = { pop_amount < 4800 }
 					if = {
 						limit = {
 							any_country = {
@@ -879,9 +879,8 @@ country_event = {
 								set_awareness = 75
 							}
 						}
-						create_pop = {
+						create_pop_group = {
 							species = event_target:random_primitive_species
-							ethos = random
 						}
 					}
 				}
@@ -908,7 +907,7 @@ country_event = {
 			set_council_position_to_council = councilor_state
 		}
 
-		random_owned_pop = {
+		weighted_random_owned_pop_group = {
 			species = {
 				save_event_target_as = researcher_species
 			}
@@ -922,9 +921,20 @@ country_event = {
 			}
 		}
 
-		random_owned_pop = {
+		weighted_random_owned_pop_group = {
 			species = {
 				save_event_target_as = defense_species
+			}
+			weights = {
+				base = 1
+				modifier = {
+					add = 100
+					species = {
+						NOT = {
+							is_same_value = event_target:researcher_species
+						}
+					}
+				}
 			}
 		}
 		create_leader = {
@@ -936,9 +946,22 @@ country_event = {
 			}
 		}
 
-		random_owned_pop = {
+		weighted_random_owned_pop_group = {
 			species = {
 				save_event_target_as = state_species
+			}
+
+			weights = {
+				base = 1
+				modifier = {
+					add = 100
+					species = {
+						NOR = {
+							is_same_value = event_target:researcher_species
+							is_same_value = event_target:defense_species
+						}
+					}
+				}
 			}
 		}
 		create_leader = {
@@ -1007,16 +1030,22 @@ country_event = {
 			owner_species = { set_species_homeworld = event_target:sol_system_earth }
 		}
 
-		# Safety pops in case there are literally no other primitives in the galaxy
 		capital_scope = {
+			# Safety pops in case there are literally no other primitives in the galaxy
 			while = {
-				limit = { num_pops < 28 }
-				create_pop = {
+				limit = { pop_amount < 2800 }
+				create_pop_group = {
 					species = owner_main_species
-					ethos = random
 				}
 			}
 			check_planet_employment = yes
+			# Add civilians
+			while = {
+				count = 4
+				weighted_random_owned_pop_group = {
+					add_pop_amount = 500
+				}
+			}
 		}
 		random_country = {
 			limit = {
