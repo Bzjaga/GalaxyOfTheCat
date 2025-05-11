@@ -195,31 +195,6 @@ event = {
 	}
 }
 
-# solovyov
-country_event = { # Works only for a vassal start atm
-	id = gotc.2
-
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-        capital_scope = { solar_system = { has_star_flag = solovyov } }
-	}
-
-	immediate = {
-		event_target:vatnic_species_zombie = {
-			set_slavery_type = {
-				type = slavery_military
-				country = root.owner
-				cooldown = yes
-			}
-		}
-		owner_main_species = {
-			set_species_flag = solovyov_species
-		}
-	}
-}
-
 # kadyrov
 planet_event = {
 	id = gotc.4000

@@ -17,6 +17,7 @@
  #Species traits
  trait_mudozvon: "Мудозвоны"
  trait_mudozvon_desc: "§LПредставители этой расы всегда знают, как всем остальным нужно жить, и что думать. Имеют иммунитет к зомбированию§!\n"
+ trait_mudozvon_effect: "Каждые $pop_group_unit$ £pop£ §Hпоселений§! в статусе раба или выше производят 0.01 ед. £influence£ §Yвлияния§! в месяц."
  #Pop factions
  #random_names\gotc_pop_faction_names.txt
  Impressed: "Впечатлённ|||masc:Впечатлённый $1$|||fem:Впечатлённая $1$|||neut:Впечатлённое $1$|||pl:Впечатлённые $1$"

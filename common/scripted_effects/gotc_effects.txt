@@ -3675,29 +3675,12 @@ create_imperial_vassal_solovyov = {
 		}
 		homeworld = this
 	}
-	last_created_species = {
-		set_species_flag = vatnic
-		save_global_event_target_as = vatnic_species
-		modify_species = {
-			species = this
-			add_trait = trait_zombie
-			add_traits_at_start_of_list = yes
-			effect = {
-				save_global_event_target_as = vatnic_species_zombie
-			}
-		}
+	create_pop_group = {
+		species = last_created_species
+		size = 1400
 	}
-	while = {
-		count = 14
-		create_pop_group = {
-			species = event_target:vatnic_species
-		}
-	}
-	while = {
-		count = 4
-		create_pop_group = {
-			species = event_target:vatnic_species_zombie
-		}
+	create_zombie_pop_group = {
+		SIZE = 400
 	}
 	create_species = {
 		name = {
@@ -3784,8 +3767,6 @@ create_imperial_vassal_solovyov = {
 				}
 				establish_communications_no_message = event_target:origin_imperial_homeland_country_solovyov
 			}
-
-			country_event = { id = gotc.2 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
 
 			# Leader
 			create_leader = {
@@ -4016,16 +3997,17 @@ create_imperial_vassal_rpc = {
 
 			# Leader
 			create_leader = {
-				class = scientist
+				class = official
 				species = last_created_species
 				name = "Кирилл Гундяев"
 				gender=male
 				skill = 1
 				randomize_traits = no
 				traits = {
-					trait = trait_ruler_architectural_sense
+					trait = leader_trait_trade_focus
 					trait = trait_ruler_fertility_preacher
-					trait = leader_trait_lavish_lifestyle
+					trait = trait_ruler_architectural_sense
+					trait = leader_trait_lavish_lifestyle_2
 				}
 			}
 			set_male_ruler_title = "Патриарх всея Галактики"

@@ -91,18 +91,25 @@ leader_trait_tomcat_insight = {
 ################################
 
 trait_mudozvon = {
-	cost = 1
+	cost = 2
 	opposites = { "trait_hive_mind" }
 	sorting_priority = 20
 
 	initial = yes
-	sapient = no
 	randomized = no
 	species_potential_add = {
 		always = no
 	}
 	species_possible_remove = {
-		can_remove_presapient_genetic_traits = yes
+		if = {
+			limit = {
+				exists = from
+			}
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				can_add_or_remove_phenotype_traits = yes
+			}
+		}
 	}
 	species_possible_merge_remove = {
 		always = yes
@@ -111,13 +118,32 @@ trait_mudozvon = {
 		always = no
 	}
 
-	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
-	tags = { organic positive pop_output amenities unity }
+	portrait_override = { avi1 }
 
-	icon = "gfx/interface/icons/traits/trait_mudozvon.dds"
+	tags = { organic positive }
+	ai_weight = {
+		weight = 0
+	}
 
+	icon = "gfx/interface/icons/traits/trait_robot_propaganda_machines.dds"
+
+	custom_tooltip_with_modifiers = trait_mudozvon_effect
 	modifier = {
 		entertainer_jobs_bonus_workforce_mult = 0.10
 		bureaucrat_jobs_bonus_workforce_mult = 0.1
+	}
+
+	resources = {
+		category = planet_pops
+		produces = {
+			trigger = {
+				is_slave_or_better = yes
+			}
+			influence = @lithoid_trait_resource_production
+		}
+	}
+
+	slave_cost = {
+		energy = 1000
 	}
 }
