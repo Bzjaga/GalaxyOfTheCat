@@ -463,7 +463,7 @@ create_MSI_zion = {
 # Dialectics
 ##################
 
-create_shroudwalker_enclave_country_default = {
+create_shroudwalker_enclave_country_default = { # rewritten create_shroudwalker_enclave_country from enclave_effects.txt
 	create_species = {
 		homeworld = this
 		name = random
@@ -536,7 +536,7 @@ create_shroudwalker_enclave_country_default = {
 			#Create ruler
 			create_leader = {
 				name = random
-				class = random_ruler
+				class = scientist
 				species = event_target:shroudwalker_enclave_species
 				skill = 5
 				traits = {
@@ -835,7 +835,9 @@ create_overlord_soviet = {
 				traits = {
 					trait = trait_ruler_industrialist_2
 					trait = leader_trait_galvanizer
-					trait = leader_trait_environmental_engineer_2
+					trait = leader_trait_pop_focused
+					trait = leader_trait_industrial_focus
+					trait = leader_trait_environmental_engineer
 					trait = leader_trait_legendary_delusional
 				}
 			}
@@ -4566,7 +4568,7 @@ create_imperial_splinter_beria = {
 				set_age = 54
 				randomize_traits = no
 				traits = {
-					trait = leader_trait_shadow_broker_3
+					trait = leader_trait_shadow_broker_2
 					trait = leader_trait_adaptable
 				}
 			}
@@ -4657,7 +4659,7 @@ create_imperial_splinter_strelkov = {
 				randomize_traits = no
 				traits = {
 					trait = leader_trait_spycraft
-					trait = leader_trait_retired_fleet_officer_2
+					trait = leader_trait_retired_fleet_officer
 					trait = leader_trait_adventurous_spirit_3
 				}
 			}
@@ -5210,7 +5212,7 @@ create_imperial_splinter_prilepin = {
 				set_age = 48
 				randomize_traits = no
 				traits = {
-					trait = trait_ruler_from_the_ranks_3
+					trait = trait_ruler_from_the_ranks_2
 					trait = leader_trait_victory_or_death_2
 					trait = leader_trait_academia_recruiter
 					trait = leader_trait_maven_of_war
@@ -5301,7 +5303,7 @@ create_imperial_splinter_rdc = {
 				set_age = 39
 				randomize_traits = no
 				traits = {
-					trait = leader_trait_juryrigger_3
+					trait = leader_trait_juryrigger_2
 					trait = leader_trait_fallible_2
 					trait = leader_trait_entrepreneur_2
 				}

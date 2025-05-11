@@ -1174,7 +1174,7 @@ gotc_fallen_3 = {
 				}
 				while = {
 					count = 18
-					crcreate_pop_groupeate_pop = {
+					create_pop_group = {
 						species = event_target:fe_servants
 					}
 				}

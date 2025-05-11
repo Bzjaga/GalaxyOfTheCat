@@ -95,7 +95,8 @@ trait_mudozvon = {
 	opposites = { "trait_hive_mind" }
 	sorting_priority = 20
 
-	initial = no
+	initial = yes
+	sapient = no
 	randomized = no
 	species_potential_add = {
 		always = no
@@ -110,7 +111,7 @@ trait_mudozvon = {
 		always = no
 	}
 
-	allowed_archetypes = { BIOLOGICAL LITHOID }
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
 	tags = { organic positive pop_output amenities unity }
 
 	icon = "gfx/interface/icons/traits/trait_mudozvon.dds"

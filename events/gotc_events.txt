@@ -266,7 +266,7 @@ planet_event = {
 		}
 		# 3 jobs
 		add_building = building_capital
-		add_building = building_clinic
+		add_building = building_medical_2
 		add_building = building_research_lab_1
 		ruin_building = building_research_lab_1
 		add_building = building_mineral_purification_plant
@@ -867,9 +867,9 @@ country_event = { # Pylesos hire
 			add_trait = leader_trait_sanitary_drone
 			add_trait = leader_trait_stubborn_2
 			add_trait = leader_trait_intolerant
-			add_trait = leader_trait_eager_2
-			add_trait = leader_trait_environmental_engineer_2
-			add_trait = leader_trait_society_focus
+			add_trait = leader_trait_eager
+			add_trait = leader_trait_environmental_engineer
+			add_trait = leader_trait_society_focus_3
 			set_age = 216
 		}
 	}
@@ -1479,8 +1479,8 @@ leader_event = { # cat leader
 							has_trait = trait_ruler_charismatic
 						}
 					}
-					assign_leader = prev
 					save_event_target_as = hired_cat_leader
+					prev = { assign_leader = event_target:hired_cat_leader }
 				}
 			}
 			else = {
