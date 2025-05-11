@@ -2,7 +2,7 @@
 "Министерство заМКАДских Дел" = {
 	name = "Министерство заМКАДских Дел"
 	adjective = "МИДск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "DFP"
 
@@ -82,7 +82,7 @@
 "Имитация бурной деятельности" = {
 	name = "Имитация бурной деятельности"
 	adjective = "Бурно-деятельн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "DO"
 
@@ -162,7 +162,7 @@
 "Минская Династия" = {
 	name = "Минская Династия"
 	adjective = "Минск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "BLR"
 
@@ -240,7 +240,7 @@
 "Зона противодействия социал-империализму" = {
 	name = "Зона противодействия социал-империализму"
 	adjective = "Превентивно-оборонительн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "CPR"
 
@@ -318,7 +318,7 @@
 "34-й Интернационал" = {
 	name = "34-й Интернационал"
 	adjective = "Интернациональн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "INT"
 
@@ -399,7 +399,7 @@
 "Сеть мраксистских кружков" = {
 	name = "Сеть мраксистских кружков"
 	adjective = "Мраксистск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "MRAX"
 
@@ -480,7 +480,7 @@
 "Рой Памятников" = {
 	name = "Рой Памятников"
 	adjective = "Памятн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "MEM"
 
@@ -559,7 +559,7 @@
 "Комитет Галактической Безопасности" = {
 	name = "Комитет Галактической Безопасности"
 	adjective = "Безопасн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "KGB"
 
@@ -640,7 +640,7 @@
 "Думатели о народе" = {
 	name = "Думатели о народе"
 	adjective = "Думательск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "DUM"
 
@@ -732,7 +732,7 @@
 "Двадцать Третий Рейх" = {
 	name = "Двадцать Третий Рейх"
 	adjective = "Рейхск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "SS"
 
@@ -816,7 +816,7 @@
 "Чеболия" = {
 	name = "Чеболия"
 	adjective = "Южнокорейск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "KOR"
 
@@ -897,7 +897,7 @@
 "Ичкерская Республика Чечения" = {
 	name = "Ичкерская Республика Чечения"
 	adjective = "Ичкерск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "ICH"
 
@@ -978,7 +978,7 @@
 "Соловьёв LIVE" = {
 	name = "Соловьёв LIVE"
 	adjective = "Вечерне-Соловьёвск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "SLV"
 
@@ -1055,7 +1055,7 @@
 "Легион Эльфов" = {
 	name = "Легион Эльфов"
 	adjective = "Эльфийск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "ФБК"
 
@@ -1135,7 +1135,7 @@
 "Астро-Венгерская Империя" = {
 	name = "Астро-Венгерская Империя"
 	adjective = "Астро-Венгерск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "HAB"
 
@@ -1218,7 +1218,7 @@
 "Речь Посполитоидная" = {
 	name = "Речь Посполитоидная"
 	adjective = "Посполитоидн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "POL"
 
@@ -1293,7 +1293,7 @@
 "Умеренный прогресс в рамках закона" = {
 	name = "Умеренный прогресс в рамках закона"
 	adjective = "Умеренно-прогрессивн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "CZE"
 
@@ -1371,7 +1371,7 @@
 "Исламское Движение Сопротивления" = {
 	name = "Исламское Движение Сопротивления"
 	adjective = "Хамасск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "PAL"
 
@@ -1449,7 +1449,7 @@
 "Роскомнадзор" = {
 	name = "Роскомнадзор"
 	adjective = "Роскомнадзорск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "RKN"
 
