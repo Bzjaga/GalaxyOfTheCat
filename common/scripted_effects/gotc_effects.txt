@@ -2608,8 +2608,8 @@ create_imperial_vassal_kgb = {
 			trait = "trait_plantoid_radiotrophic"
 			trait = "trait_plantoid_budding"
 			trait = "trait_conformists"
-			trait = "trait_unruly"
-			trait = "trait_repugnant"
+			trait = "trait_rooted"
+			trait = "trait_wasteful"
 		}
 		homeworld = this
 	}
@@ -3242,8 +3242,7 @@ create_imperial_vassal_kadyrov = {
 			trait = "trait_unruly"
 			trait = "trait_quarrelsome"
 			trait = "trait_very_strong"
-			trait = "trait_resilient"
-			trait = "trait_communal"
+			trait = "trait_familial"
 		}
 		homeworld = this
 	}

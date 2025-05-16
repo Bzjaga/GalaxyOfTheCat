@@ -13,11 +13,11 @@
 		plural = "Глубоко Озабоченные"
 		adjective = "Озабоченн"
 		name_list = "HUM1"
-		trait = "trait_traditional"
 		trait = "trait_extremely_adaptive"
+		trait = "trait_inorganic_breath"
 		trait = "trait_solitary"
-		trait = "trait_slow_breeders"
-		trait = "trait_slow_learners"
+		trait = "trait_nascent_stage"
+		trait = "trait_repugnant"
 	}
 
 	room = "default_room"
@@ -255,7 +255,7 @@
 		trait = "trait_sedentary"
 		trait = "trait_rapid_breeders"
 		trait = "trait_nonadaptive"
-		trait = "trait_conservational"
+		trait = "trait_camouflage"
 	}
 
 	room = "personality_hive_mind_room"
@@ -498,11 +498,25 @@
 		trait = "trait_nomadic"
 		trait = "trait_unruly"
 	}
+	secondary_species=
+	{
+		class="AVI"
+		portrait="bio4"
+		name = "Октябрёнок"
+		plural = "Октябрята"
+		adjective = "Октябрятск"
+		name_list = "AQUATIC2"
+		trait = "trait_hive_mind"
+		trait = "trait_talented"
+		trait = "trait_charismatic"
+		trait = "trait_docile"
+		trait = "trait_hollow_bones"
+	}
 
 	room = "crystalline_room"
 
 	authority = "auth_hive_mind"
-	civics = { "civic_hive_memorialist" "civic_hive_empath" }
+	civics = { "civic_hive_memorialist" "civic_hive_bodysnatcher" }
 	government = gov_hive_mind
 	origin = "origin_remnants"
 
@@ -574,8 +588,8 @@
 		trait = "trait_plantoid_radiotrophic"
 		trait = "trait_plantoid_budding"
 		trait = "trait_conformists"
-		trait = "trait_unruly"
-		trait = "trait_repugnant"
+		trait = "trait_rooted"
+		trait = "trait_wasteful"
 	}
 
 	room = "personality_democratic_crusaders_room"
@@ -746,8 +760,8 @@
 		gender = male
 		trait = "trait_perfected_genes"
 		trait = "trait_talented"
-		trait = "trait_intelligent"
-		trait = "trait_docile"
+		trait = "trait_natural_engineers"
+		trait = "trait_genetic_memory"
 		trait = "trait_repugnant"
 		trait = "trait_solitary"
 	}
@@ -912,8 +926,7 @@
 		trait = "trait_unruly"
 		trait = "trait_quarrelsome"
 		trait = "trait_very_strong"
-		trait = "trait_resilient"
-		trait = "trait_communal"
+		trait = "trait_familial"
 	}
 
 	room = "scrappy_room"
@@ -1384,7 +1397,7 @@
 		name_list = "HUM4"
 		trait = "trait_slow_learners"
 		trait = "trait_humanoid_existential_iteroparity"
-		trait = "trait_traditional"
+		trait = "trait_acidic_vascularity"
 		trait = "trait_deviants"
 		trait = "trait_noxious"
 	}
@@ -1464,6 +1477,7 @@
 		trait = "trait_adaptive"
 		trait = "trait_sedentary"
 		trait = "trait_unruly"
+		trait = "trait_industrious"
 	}
 
 	room = "personality_fanatic_purifier_room"
