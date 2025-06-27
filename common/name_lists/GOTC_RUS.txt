@@ -1,0 +1,249 @@
+﻿
+GOTC_RUS = {
+	ship_names = {
+		generic = {
+			GOTC_RUS_SHIP_Perun GOTC_RUS_SHIP_Svarog GOTC_RUS_SHIP_Dazhbog GOTC_RUS_SHIP_Yarilo GOTC_RUS_SHIP_Stribog GOTC_RUS_SHIP_Radogast GOTC_RUS_SHIP_Mokosh GOTC_RUS_SHIP_Veles GOTC_RUS_SHIP_Simargl GOTC_RUS_SHIP_Hors GOTC_RUS_SHIP_Triglav GOTC_RUS_SHIP_Rodnoveriye GOTC_RUS_SHIP_Svyatobor GOTC_RUS_SHIP_Chernobog GOTC_RUS_SHIP_Lada GOTC_RUS_SHIP_Kama GOTC_RUS_SHIP_Tara GOTC_RUS_SHIP_Svyatovit GOTC_RUS_SHIP_Rasen GOTC_RUS_SHIP_Etruss GOTC_RUS_SHIP_Chernorus GOTC_RUS_SHIP_Velikorus GOTC_RUS_SHIP_ChudBeloglazaya GOTC_RUS_SHIP_SerebryanniyRus GOTC_RUS_SHIP_BabaYaga GOTC_RUS_SHIP_Domovoy GOTC_RUS_SHIP_Leshiy GOTC_RUS_SHIP_Vedun GOTC_RUS_SHIP_Vedmak GOTC_RUS_SHIP_Kupala GOTC_RUS_SHIP_Kolyada GOTC_RUS_SHIP_VoditsaBaikalskaya GOTC_RUS_SHIP_Rasena GOTC_RUS_SHIP_RasaVelikaya GOTC_RUS_SHIP_VelikoyeKolo GOTC_RUS_SHIP_PodvigPredkov GOTC_RUS_SHIP_SlavnyePredki GOTC_RUS_SHIP_SlavaRodu GOTC_RUS_SHIP_MudrostPredkov GOTC_RUS_SHIP_Beresta GOTC_RUS_SHIP_Medovuha GOTC_RUS_SHIP_Maslenitsa GOTC_RUS_SHIP_Kvas GOTC_RUS_SHIP_Izbushka GOTC_RUS_SHIP_Samobranka GOTC_RUS_SHIP_Skorohod GOTC_RUS_SHIP_NebesnayaKolesnitsa GOTC_RUS_SHIP_ZharPtitsa GOTC_RUS_SHIP_DaAriyets GOTC_RUS_SHIP_Slavia GOTC_RUS_SHIP_Rasseya GOTC_RUS_SHIP_Goyda GOTC_RUS_SHIP_GoyEsi GOTC_RUS_SHIP_GeySlavyane GOTC_RUS_SHIP_NeboSlavyan GOTC_RUS_SHIP_SlavyanskayaNaruzhnost GOTC_RUS_SHIP_SlovenSkifich GOTC_RUS_SHIP_RusSkifich GOTC_RUS_SHIP_RodySvyataRASA GOTC_RUS_SHIP_Vaitmar GOTC_RUS_SHIP_Vaitman GOTC_RUS_SHIP_PredkiAsy GOTC_RUS_SHIP_VelesovaKniga GOTC_RUS_SHIP_KrugosvetChisloboga GOTC_RUS_SHIP_Druzhinnik GOTC_RUS_SHIP_Bylina GOTC_RUS_SHIP_Bogatyr GOTC_RUS_SHIP_SmertYashchera GOTC_RUS_SHIP_Kolovrat GOTC_RUS_SHIP_Solntsevorot GOTC_RUS_SHIP_Slavyanoariy GOTC_RUS_SHIP_Yashcheroborets GOTC_RUS_SHIP_Volhv GOTC_RUS_SHIP_Rusich GOTC_RUS_SHIP_Vedy GOTC_RUS_SHIP_Bukvitsa
+		}
+		corvette = {
+			
+		}
+		destroyer = {
+
+		}
+		cruiser = {
+
+		}
+		battleship = {
+
+		}
+		titan = {
+
+		}
+		colossus = {
+
+		}
+		juggernaut = {
+
+		}
+		science = {
+			GOTC_RUS_SHIP_Dobrovolskiy GOTC_RUS_SHIP_Bagirov GOTC_RUS_SHIP_Rybnikov GOTC_RUS_SHIP_Mirolyubov GOTC_RUS_SHIP_Grinevich GOTC_RUS_SHIP_Zadornov GOTC_RUS_SHIP_Sulakadzev GOTC_RUS_SHIP_Shayan GOTC_RUS_SHIP_LevTigrovich GOTC_RUS_SHIP_Malena GOTC_RUS_SHIP_Veleslav GOTC_RUS_SHIP_Bogumil GOTC_RUS_SHIP_Kazakov GOTC_RUS_SHIP_SvyatovitPashnik GOTC_RUS_SHIP_Kurovskiy GOTC_RUS_SHIP_Selidor GOTC_RUS_SHIP_Velimudr
+		}
+		colonizer = {
+			
+		}
+		constructor = {
+			GOTC_RUS_SHIP_Ray GOTC_RUS_SHIP_Iriy GOTC_RUS_SHIP_Yav GOTC_RUS_SHIP_Prav GOTC_RUS_SHIP_Nav
+		}
+		transport = {
+			
+		}
+		military_station_small = {
+			
+		}
+		ion_cannon = {
+
+		}
+	}
+	ship_class_names = {
+		generic = {
+			GOTC_RUS_SHIP_Ra GOTC_RUS_SHIP_Rod GOTC_RUS_SHIP_Narod GOTC_RUS_SHIP_Boroda GOTC_RUS_SHIP_Radost GOTC_RUS_SHIP_Razum GOTC_RUS_SHIP_Krasota GOTC_RUS_SHIP_Kray GOTC_RUS_SHIP_Raduga GOTC_RUS_SHIP_Krapiva GOTC_RUS_SHIP_Rasa GOTC_RUS_SHIP_Pravda GOTC_RUS_SHIP_Vrata GOTC_RUS_SHIP_Gorod GOTC_RUS_SHIP_Rodnik GOTC_RUS_SHIP_Iskra GOTC_RUS_SHIP_Sera GOTC_RUS_SHIP_Ura GOTC_RUS_SHIP_Kultura GOTC_RUS_SHIP_Radio GOTC_RUS_SHIP_Radivy GOTC_RUS_SHIP_Rasvet GOTC_RUS_SHIP_Rodina GOTC_RUS_SHIP_Tselkoviy GOTC_RUS_SHIP_Polushka GOTC_RUS_SHIP_Chetvertushka GOTC_RUS_SHIP_Chekushka GOTC_RUS_SHIP_Osmushka GOTC_RUS_SHIP_Pudovichok GOTC_RUS_SHIP_Medyachok GOTC_RUS_SHIP_Serebryachok GOTC_RUS_SHIP_Zolotnichok GOTC_RUS_SHIP_Devyatichok GOTC_RUS_SHIP_Desyatichok
+		}
+	}
+	fleet_names = {
+		random_names = {
+			GOTC_RUS_FLEET_MolodetskayaUdal GOTC_RUS_FLEET_Silushka GOTC_RUS_FLEET_50mln GOTC_RUS_FLEET_7700letiye GOTC_RUS_FLEET_VaitmanyVityazey GOTC_RUS_FLEET_NasRat GOTC_RUS_FLEET_BorbaSIgom GOTC_RUS_FLEET_IzbavleniyeOtYarma GOTC_RUS_FLEET_VaitmaryPeruna GOTC_RUS_FLEET_PamatOPodvigah GOTC_RUS_FLEET_Antibasurmanskaya GOTC_RUS_FLEET_Protivoreptiloidnaya GOTC_RUS_FLEET_SlavaRusov GOTC_RUS_FLEET_SlavyanskiyZazhim GOTC_RUS_FLEET_DoblestnyeYashcherobortsy GOTC_RUS_FLEET_StrelyYarily GOTC_RUS_FLEET_SekiraPeruna GOTC_RUS_FLEET_SvidetelstvaVelichiya GOTC_RUS_FLEET_PredatelstvoTiranozavra
+		}
+		sequential_name = GOTC_RUS_STRIKEFORCE
+	}
+	army_names = {
+
+		generic = {
+			random_names = {
+				GOTC_RUS_ARMY_Baikalskaya GOTC_RUS_ARMY_NesgibaemyDuh GOTC_RUS_ARMY_PostavkiVoditsyBaykalskoy GOTC_RUS_ARMY_KosmodesantRusov GOTC_RUS_ARMY_Veduny GOTC_RUS_ARMY_SlavyanoAriyskaya GOTC_RUS_ARMY_PelmenskiyeSlovene
+			}
+			sequential_name = GOTC_RUS_COLONIALGENDARMERIE
+		}
+
+		machine_defense = {
+			sequential_name = GOTC_RUS_COLONIALGENDARMERIE
+		}
+
+		machine_assault_1 = {
+			sequential_name = GOTC_RUS_ASSAULTLEGION
+		}
+
+		machine_assault_2 = {
+			sequential_name = GOTC_RUS_ASSAULTLEGION
+		}
+
+		machine_assault_3 = {
+			sequential_name = GOTC_RUS_ASSAULTLEGION
+		}
+
+		defense_army = {
+			sequential_name = GOTC_RUS_COLONIALGENDARMERIE
+		}
+
+		assault_army = {
+			sequential_name = GOTC_RUS_ASSAULTLEGION
+		}
+
+		slave_army = {
+			sequential_name = GOTC_RUS_JANISSARYCORPS
+		}
+
+		clone_army = {
+			sequential_name = GOTC_RUS_VATGROWNSOLDIERY
+		}
+
+		perfected_clone_army = {
+			sequential_name = GOTC_RUS_VATGROWNSOLDIERY
+		}
+
+		undead_army = {
+			random_names = {
+				GOTC_RUS_ARMY_Velesova GOTC_RUS_ARMY_ZheltyeVoiny GOTC_RUS_ARMY_ZaRusVzorvus
+			}
+			sequential_name = GOTC_RUS_DREADCORPS
+		}
+
+		robotic_army = {
+			sequential_name = GOTC_RUS_UNMANNEDBATTLEGROUP
+		}
+
+		robotic_defense_army = {
+			sequential_name = GOTC_RUS_UNMANNEDGENDARMERIE
+		}
+
+		psionic_army = {
+			random_names = {
+				GOTC_RUS_ARMY_Perunov GOTC_RUS_ARMY_BoyevyeVolhvy
+			}
+			sequential_name = GOTC_RUS_PSYWARRIORS
+		}
+
+		xenomorph_army = {
+			sequential_name = GOTC_RUS_MORPHLINGMARAUDERS
+		}
+
+		gene_warrior_army = {
+			sequential_name = GOTC_RUS_EUGENICVANGUARD
+		}
+
+		occupation_army = {
+			sequential_name = GOTC_RUS_OCCUPATIONLEGION
+		}
+
+		robotic_occupation_army = {
+			sequential_name = GOTC_RUS_UNMANNEDGARRISON
+		}
+
+		primitive_army = {
+			sequential_name = GOTC_RUS_PRIMITIVEARMY
+		}
+
+		industrial_army = {
+			sequential_name = GOTC_RUS_INDUSTRIALARMY
+		}
+
+		postatomic_army = {
+			sequential_name = GOTC_RUS_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
+		}
+
+		wilderness_pre_sapient_defence_army = {
+			sequential_name = seq_wilderness_pre_sapient_defence_army
+		}
+		
+		wilderness_pre_sapient_assault_army = {
+			sequential_name = seq_wilderness_pre_sapient_assault_army
+		}
+	}
+	planet_names = {
+		generic = {
+			names = {
+				GOTC_RUS_PLANET_Kitezh GOTC_RUS_PLANET_Baykalsk GOTC_RUS_PLANET_Lihoslavl GOTC_RUS_PLANET_Ryazan GOTC_RUS_PLANET_Yaroslavl GOTC_RUS_PLANET_SlavyanskNaKubani GOTC_RUS_PLANET_Slavyansk GOTC_RUS_PLANET_Novgorod GOTC_RUS_PLANET_Pereyaslavl GOTC_RUS_PLANET_Rostok GOTC_RUS_PLANET_Leipzig GOTC_RUS_PLANET_Murom GOTC_RUS_PLANET_Suzdal GOTC_RUS_PLANET_Ladoga GOTC_RUS_PLANET_Russa GOTC_RUS_PLANET_TaRusa GOTC_RUS_PLANET_EtRusia GOTC_RUS_PLANET_Svyatogorsk GOTC_RUS_PLANET_Radonezh GOTC_RUS_PLANET_Voronezh GOTC_RUS_PLANET_Torgoslavl GOTC_RUS_PLANET_RimRusa GOTC_RUS_PLANET_AfrikanskayaRus GOTC_RUS_PLANET_Lukomorye GOTC_RUS_PLANET_Raport GOTC_RUS_PLANET_Arkaim GOTC_RUS_PLANET_Giperboreya GOTC_RUS_PLANET_Arkona GOTC_RUS_PLANET_Kapishche GOTC_RUS_PLANET_Berestye GOTC_RUS_PLANET_Kuyaba GOTC_RUS_PLANET_Slaviya GOTC_RUS_PLANET_Arsaniya GOTC_RUS_PLANET_Rostov GOTC_RUS_PLANET_Buyan GOTC_RUS_PLANET_KalinovMost GOTC_RUS_PLANET_AsgardIriyskiy GOTC_RUS_PLANET_Pylnograd GOTC_RUS_PLANET_Orenburg
+			}
+		}
+		pc_desert = {
+			names = {
+
+			}
+		}
+		pc_tropical = {
+			names = {
+
+			}
+		}
+		pc_arid = {
+			names = {
+
+			}
+		}
+		pc_continental = {
+			names = {
+
+			}
+		}
+		pc_ocean = {
+			names = {
+
+			}
+		}
+		pc_tundra = {
+			names = {
+
+			}
+		}
+		pc_arctic = {
+			names = {
+
+			}
+		}
+		pc_savannah = {
+			names = {
+
+			}
+		}
+		pc_alpine = {
+			names = {
+
+			}
+		}
+	}
+
+	character_names = {
+		default = {
+			full_names = {
+
+			}
+			full_names_female = {
+
+			}
+			full_names_male = {
+
+			}
+			first_names = {
+				
+			}
+			first_names_female = {
+				GOTC_RUS_CHR_Lubava GOTC_RUS_CHR_Zabava GOTC_RUS_CHR_Boyana GOTC_RUS_CHR_Veselina GOTC_RUS_CHR_Goluba GOTC_RUS_CHR_Gorislava GOTC_RUS_CHR_Dolboslava GOTC_RUS_CHR_Dobronega GOTC_RUS_CHR_Lada GOTC_RUS_CHR_Malusha GOTC_RUS_CHR_Milana GOTC_RUS_CHR_Miroslava GOTC_RUS_CHR_Mudoslava GOTC_RUS_CHR_Nezhdana GOTC_RUS_CHR_Pribyslava GOTC_RUS_CHR_Radimira GOTC_RUS_CHR_Rogneda GOTC_RUS_CHR_Rumyana GOTC_RUS_CHR_Sbyslava GOTC_RUS_CHR_Yaroslava
+			}
+			first_names_male = {
+				GOTC_RUS_CHR_Etruss GOTC_RUS_CHR_Drocheslav GOTC_RUS_CHR_Vseslav GOTC_RUS_CHR_Zhiroslav GOTC_RUS_CHR_Boleslav GOTC_RUS_CHR_Pereyaslav GOTC_RUS_CHR_Radoslav GOTC_RUS_CHR_Dolboslav GOTC_RUS_CHR_Mudoslav GOTC_RUS_CHR_Yaroslav GOTC_RUS_CHR_Yaropolk GOTC_RUS_CHR_Svyatopolk GOTC_RUS_CHR_Svyatoslav GOTC_RUS_CHR_Svyatogor GOTC_RUS_CHR_Svetozar GOTC_RUS_CHR_Dobrynya GOTC_RUS_CHR_Gavrila GOTC_RUS_CHR_Danila GOTC_RUS_CHR_Peresvet GOTC_RUS_CHR_Kazimir GOTC_RUS_CHR_Radomir GOTC_RUS_CHR_Volodimir GOTC_RUS_CHR_Bogomir GOTC_RUS_CHR_Bronemir GOTC_RUS_CHR_Branislav GOTC_RUS_CHR_Miromir GOTC_RUS_CHR_Boromir GOTC_RUS_CHR_Faramir GOTC_RUS_CHR_Radovid GOTC_RUS_CHR_Vsevolod GOTC_RUS_CHR_Elisey GOTC_RUS_CHR_Mihailo GOTC_RUS_CHR_Dobroslav GOTC_RUS_CHR_Boyan GOTC_RUS_CHR_Zlogor GOTC_RUS_CHR_Ratibor GOTC_RUS_CHR_Ostromysl GOTC_RUS_CHR_Gostomysl GOTC_RUS_CHR_Izyaslav GOTC_RUS_CHR_Svyatorus GOTC_RUS_CHR_Putimir GOTC_RUS_CHR_Putislav GOTC_RUS_CHR_Hrabr GOTC_RUS_CHR_Alyosha
+			}
+			second_names = {
+				
+			}
+			second_names_female = {
+				GOTC_RUS_CHR_F_Etruss GOTC_RUS_CHR_F_Drocheslav GOTC_RUS_CHR_F_Vseslav GOTC_RUS_CHR_F_Zhiroslav GOTC_RUS_CHR_F_Boleslav GOTC_RUS_CHR_F_Pereyaslav GOTC_RUS_CHR_F_Radoslav GOTC_RUS_CHR_F_Dolboslav GOTC_RUS_CHR_F_Mudoslav GOTC_RUS_CHR_F_Yaroslav GOTC_RUS_CHR_F_Yaropolk GOTC_RUS_CHR_F_Svyatopolk GOTC_RUS_CHR_F_Svyatoslav GOTC_RUS_CHR_F_Svyatogor GOTC_RUS_CHR_F_Svetozar GOTC_RUS_CHR_F_Dobrynya GOTC_RUS_CHR_F_Gavrila GOTC_RUS_CHR_F_Danila GOTC_RUS_CHR_F_Peresvet GOTC_RUS_CHR_F_Kazimir GOTC_RUS_CHR_F_Radomir GOTC_RUS_CHR_F_Volodimir GOTC_RUS_CHR_F_Bogomir GOTC_RUS_CHR_F_Bronemir GOTC_RUS_CHR_F_Branislav GOTC_RUS_CHR_F_Miromir GOTC_RUS_CHR_F_Boromir GOTC_RUS_CHR_F_Faramir GOTC_RUS_CHR_F_Radovid GOTC_RUS_CHR_F_Vsevolod GOTC_RUS_CHR_F_Elisey GOTC_RUS_CHR_F_Dobroslav GOTC_RUS_CHR_F_Boyan GOTC_RUS_CHR_F_Zlogor GOTC_RUS_CHR_F_Ratibor GOTC_RUS_CHR_F_Ostromysl GOTC_RUS_CHR_F_Gostomysl GOTC_RUS_CHR_F_Izyaslav GOTC_RUS_CHR_F_Putimir GOTC_RUS_CHR_F_Putislav GOTC_RUS_CHR_F_Muchimir GOTC_RUS_CHR_F_Sergey GOTC_RUS_CHR_BolshoyeGnezdo GOTC_RUS_CHR_Svyatorusich GOTC_RUS_CHR_Chernorus GOTC_RUS_CHR_Velikorus GOTC_RUS_CHR_Rysich
+			}
+			second_names_male = {
+				GOTC_RUS_CHR_M_Etruss GOTC_RUS_CHR_M_Drocheslav GOTC_RUS_CHR_M_Vseslav GOTC_RUS_CHR_M_Zhiroslav GOTC_RUS_CHR_M_Boleslav GOTC_RUS_CHR_M_Pereyaslav GOTC_RUS_CHR_M_Radoslav GOTC_RUS_CHR_M_Dolboslav GOTC_RUS_CHR_M_Mudoslav GOTC_RUS_CHR_M_Yaroslav GOTC_RUS_CHR_M_Yaropolk GOTC_RUS_CHR_M_Svyatopolk GOTC_RUS_CHR_M_Svyatoslav GOTC_RUS_CHR_M_Svyatogor GOTC_RUS_CHR_M_Svetozar GOTC_RUS_CHR_M_Dobrynya GOTC_RUS_CHR_M_Gavrila GOTC_RUS_CHR_M_Danila GOTC_RUS_CHR_M_Peresvet GOTC_RUS_CHR_M_Kazimir GOTC_RUS_CHR_M_Radomir GOTC_RUS_CHR_M_Volodimir GOTC_RUS_CHR_M_Bogomir GOTC_RUS_CHR_M_Bronemir GOTC_RUS_CHR_M_Branislav GOTC_RUS_CHR_M_Miromir GOTC_RUS_CHR_M_Boromir GOTC_RUS_CHR_M_Faramir GOTC_RUS_CHR_M_Radovid GOTC_RUS_CHR_M_Vsevolod GOTC_RUS_CHR_M_Elisey GOTC_RUS_CHR_M_Dobroslav GOTC_RUS_CHR_M_Boyan GOTC_RUS_CHR_M_Zlogor GOTC_RUS_CHR_M_Ratibor GOTC_RUS_CHR_M_Ostromysl GOTC_RUS_CHR_M_Gostomysl GOTC_RUS_CHR_M_Izyaslav GOTC_RUS_CHR_M_Putimir GOTC_RUS_CHR_M_Putislav GOTC_RUS_CHR_M_Muchimir GOTC_RUS_CHR_M_Sergey GOTC_RUS_CHR_BolshoyeGnezdo GOTC_RUS_CHR_Svyatorusich GOTC_RUS_CHR_Chernorus GOTC_RUS_CHR_Velikorus GOTC_RUS_CHR_Rysich
+			}
+		}
+	}
+}
