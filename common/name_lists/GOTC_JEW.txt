@@ -1,0 +1,261 @@
+﻿
+GOTC_JEW = {
+	ship_names = {
+		generic = {
+			GOTC_JEW_SHIP_Ofek GOTC_JEW_SHIP_Shavit GOTC_JEW_SHIP_Shekel GOTC_JEW_SHIP_Knesset GOTC_JEW_SHIP_Makkabi GOTC_JEW_SHIP_Giyur GOTC_JEW_SHIP_BarMitsva GOTC_JEW_SHIP_Pesah GOTC_JEW_SHIP_Hanuka GOTC_JEW_SHIP_Purim GOTC_JEW_SHIP_Shavuot GOTC_JEW_SHIP_RoshHaShana GOTC_JEW_SHIP_TuBiShvat GOTC_JEW_SHIP_Sukkot GOTC_JEW_SHIP_SimhatTora GOTC_JEW_SHIP_YomKippur GOTC_JEW_SHIP_Kippah GOTC_JEW_SHIP_Menora GOTC_JEW_SHIP_MagenDavid GOTC_JEW_SHIP_Talmud GOTC_JEW_SHIP_Tora GOTC_JEW_SHIP_Galaha GOTC_JEW_SHIP_SeferTora GOTC_JEW_SHIP_Sidur GOTC_JEW_SHIP_Kashrut GOTC_JEW_SHIP_Sheol GOTC_JEW_SHIP_Mishna GOTC_JEW_SHIP_Merkava GOTC_JEW_SHIP_Pereh GOTC_JEW_SHIP_Uzi GOTC_JEW_SHIP_Tavor GOTC_JEW_SHIP_Galil GOTC_JEW_SHIP_Kibuts GOTC_JEW_SHIP_Gertsl GOTC_JEW_SHIP_Zhabotinskiy GOTC_JEW_SHIP_BenGurion GOTC_JEW_SHIP_Sionism GOTC_JEW_SHIP_Mason GOTC_JEW_SHIP_Reptiloid GOTC_JEW_SHIP_Zaimodavets GOTC_JEW_SHIP_Bankir GOTC_JEW_SHIP_Protsentstchitsa GOTC_JEW_SHIP_Rostovstchik GOTC_JEW_SHIP_MeshochekSZolotom GOTC_JEW_SHIP_PyatayaGrafa GOTC_JEW_SHIP_Ishuv GOTC_JEW_SHIP_Falasha GOTC_JEW_SHIP_betaIsrael GOTC_JEW_SHIP_Sefard GOTC_JEW_SHIP_Ashkenaz GOTC_JEW_SHIP_Karaim GOTC_JEW_SHIP_Mizrahim GOTC_JEW_SHIP_Rahdonit GOTC_JEW_SHIP_Ivrit GOTC_JEW_SHIP_Idish GOTC_JEW_SHIP_Dzhuhuri GOTC_JEW_SHIP_Ladino GOTC_JEW_SHIP_Kivruli
+		}
+		corvette = {
+			GOTC_JEW_SHIP_David GOTC_JEW_SHIP_BarKohba
+		}
+		destroyer = {
+
+		}
+		cruiser = {
+
+		}
+		battleship = {
+
+		}
+		titan = {
+
+		}
+		colossus = {
+			GOTC_JEW_SHIP_Goliaf
+		}
+		juggernaut = {
+			GOTC_JEW_SHIP_TretiyHram
+		}
+		science = {
+			GOTC_JEW_SHIP_Rebe GOTC_JEW_SHIP_Ravvin GOTC_JEW_SHIP_Pervosvyastchennik GOTC_JEW_SHIP_Habad GOTC_JEW_SHIP_Hasid GOTC_JEW_SHIP_Ortodox GOTC_JEW_SHIP_Maimonid GOTC_JEW_SHIP_Rambam
+		}
+		colonizer = {
+			GOTC_JEW_SHIP_PervayaAliya GOTC_JEW_SHIP_VtorayaAliya GOTC_JEW_SHIP_TretyaAliya GOTC_JEW_SHIP_AliyaBet GOTC_JEW_SHIP_TykvennayaAliya GOTC_JEW_SHIP_BolshayaAliya GOTC_JEW_SHIP_NaZapadniyBereg GOTC_JEW_SHIP_Struma GOTC_JEW_SHIP_Mefkura GOTC_JEW_SHIP_Exodus
+		}
+		constructor = {
+			GOTC_JEW_SHIP_Solomon GOTC_JEW_SHIP_IudaMakkavey GOTC_JEW_SHIP_IonafanMakkavey GOTC_JEW_SHIP_SimonMakkavey GOTC_JEW_SHIP_HavaNagila
+		}
+		transport = {
+			GOTC_JEW_SHIP_Ahzarit GOTC_JEW_SHIP_Namer GOTC_JEW_SHIP_Nakpadon GOTC_JEW_SHIP_Nakpuma
+		}
+		military_station_small = {
+			GOTC_JEW_SHIP_Masada GOTC_JEW_SHIP_Kupol GOTC_JEW_SHIP_Prastcha GOTC_JEW_SHIP_MagenOr GOTC_JEW_SHIP_Hets
+		}
+		ion_cannon = {
+			GOTC_JEW_SHIP_Kupol GOTC_JEW_SHIP_Prastcha GOTC_JEW_SHIP_MagenOr GOTC_JEW_SHIP_Hets GOTC_JEW_SHIP_Ierihon
+		}
+	}
+	ship_class_names = {
+		generic = {
+			GOTC_JEW_SHIP_Alef GOTC_JEW_SHIP_Bet GOTC_JEW_SHIP_Veis GOTC_JEW_SHIP_Gimel GOTC_JEW_SHIP_Giml GOTC_JEW_SHIP_Dalet GOTC_JEW_SHIP_He GOTC_JEW_SHIP_Vav GOTC_JEW_SHIP_Zain GOTC_JEW_SHIP_Het GOTC_JEW_SHIP_Tet GOTC_JEW_SHIP_Yud GOTC_JEW_SHIP_Kaf GOTC_JEW_SHIP_Lamed GOTC_JEW_SHIP_Mem GOTC_JEW_SHIP_Nun GOTC_JEW_SHIP_Sameh GOTC_JEW_SHIP_Ain GOTC_JEW_SHIP_Pe GOTC_JEW_SHIP_Tsadi GOTC_JEW_SHIP_Kuf GOTC_JEW_SHIP_Resh GOTC_JEW_SHIP_Shin GOTC_JEW_SHIP_Tav GOTC_JEW_SHIP_Tirshei GOTC_JEW_SHIP_Heshvan GOTC_JEW_SHIP_Kislev GOTC_JEW_SHIP_Tevet GOTC_JEW_SHIP_Shvat GOTC_JEW_SHIP_Adar GOTC_JEW_SHIP_Nisan GOTC_JEW_SHIP_Iyar GOTC_JEW_SHIP_Sivan GOTC_JEW_SHIP_Tammuz GOTC_JEW_SHIP_Av
+		}
+	}
+	fleet_names = {
+		random_names = {
+			GOTC_JEW_FLEET_Mossad GOTC_JEW_FLEET_Ohotniki GOTC_JEW_FLEET_PamyatZhertv GOTC_JEW_FLEET_MestZaShoa GOTC_JEW_FLEET_BorbaSAntisemitizmom GOTC_JEW_FLEET_RestrukturizatsiyaDolga GOTC_JEW_FLEET_GoyamGoyevo GOTC_JEW_FLEET_VzymaniyeDolgov GOTC_JEW_FLEET_ChornayaKniga GOTC_JEW_FLEET_OhranaZapadnogoBerega GOTC_JEW_FLEET_MiraIOkkopatsii GOTC_JEW_FLEET_VzyskaniyeProtsentov GOTC_JEW_FLEET_NetPalestintsamIAparteidu GOTC_JEW_FLEET_PoleticheskayaNeobhodimost GOTC_JEW_FLEET_IstoricheskoyeObosnovaniye
+		}
+		sequential_name = GOTC_JEW_STRIKEFORCE
+	}
+	army_names = {
+
+		generic = {
+			random_names = {
+				GOTC_JEW_ARMY_Tsahal GOTC_JEW_ARMY_Irgun GOTC_JEW_ARMY_Etsel GOTC_JEW_ARMY_Lehi GOTC_JEW_ARMY_Nokmim GOTC_JEW_ARMY_Hagana GOTC_JEW_ARMY_HaShomer GOTC_JEW_ARMY_Nakam
+			}
+			sequential_name = GOTC_JEW_COLONIALGENDARMERIE
+		}
+
+		machine_defense = {
+			sequential_name = GOTC_JEW_COLONIALGENDARMERIE
+		}
+
+		machine_assault_1 = {
+			sequential_name = GOTC_JEW_ASSAULTLEGION
+		}
+
+		machine_assault_2 = {
+			sequential_name = GOTC_JEW_ASSAULTLEGION
+		}
+
+		machine_assault_3 = {
+			sequential_name = GOTC_JEW_ASSAULTLEGION
+		}
+
+		defense_army = {
+			sequential_name = GOTC_JEW_COLONIALGENDARMERIE
+		}
+
+		assault_army = {
+			sequential_name = GOTC_JEW_ASSAULTLEGION
+		}
+
+		slave_army = {
+			sequential_name = GOTC_JEW_JANISSARYCORPS
+		}
+
+		clone_army = {
+			sequential_name = GOTC_JEW_VATGROWNSOLDIERY
+		}
+
+		perfected_clone_army = {
+			sequential_name = GOTC_JEW_PERFECTEDCLONESOLDIERY
+		}
+
+		undead_army = {
+			random_names = {
+				GOTC_JEW_ARMY_Sheol GOTC_JEW_ARMY_KonetsDney
+			}
+			sequential_name = GOTC_JEW_DREADCORPS
+		}
+
+		robotic_army = {
+			sequential_name = GOTC_JEW_UNMANNEDBATTLEGROUP
+		}
+
+		robotic_defense_army = {
+			sequential_name = GOTC_JEW_UNMANNEDGENDARMERIE
+		}
+
+		psionic_army = {
+			random_names = {
+				GOTC_JEW_ARMY_Mashiaha GOTC_JEW_ARMY_DenGneva
+			}
+			sequential_name = GOTC_JEW_PSYWARRIORS
+		}
+
+		xenomorph_army = {
+			sequential_name = GOTC_JEW_MORPHLINGMARAUDERS
+		}
+
+		gene_warrior_army = {
+			sequential_name = GOTC_JEW_EUGENICVANGUARD
+		}
+
+		occupation_army = {
+			sequential_name = GOTC_JEW_OCCUPATIONLEGION
+		}
+
+		robotic_occupation_army = {
+			sequential_name = GOTC_JEW_UNMANNEDGARRISON
+		}
+
+		primitive_army = {
+			sequential_name = GOTC_JEW_PRIMITIVEARMY
+		}
+
+		industrial_army = {
+			sequential_name = GOTC_JEW_INDUSTRIALARMY
+		}
+
+		postatomic_army = {
+			sequential_name = GOTC_JEW_STRIKEFORCE
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
+		}
+
+		wilderness_pre_sapient_defence_army = {
+			sequential_name = seq_wilderness_pre_sapient_defence_army
+		}
+		
+		wilderness_pre_sapient_assault_army = {
+			sequential_name = seq_wilderness_pre_sapient_assault_army
+		}
+	}
+	planet_names = {
+		generic = {
+			names = {
+				GOTC_JEW_PLANET_Ierusalim GOTC_JEW_PLANET_ErezIsrael GOTC_JEW_PLANET_Sion GOTC_JEW_PLANET_Iudeya GOTC_JEW_PLANET_Samaria GOTC_JEW_PLANET_Yaffa GOTC_JEW_PLANET_Eylat GOTC_JEW_PLANET_TelAviv GOTC_JEW_PLANET_Vilna GOTC_JEW_PLANET_Uman GOTC_JEW_PLANET_Birobidzhan GOTC_JEW_PLANET_Kovno GOTC_JEW_PLANET_Libava GOTC_JEW_PLANET_Nazaret GOTC_JEW_PLANET_Ashkelon GOTC_JEW_PLANET_Ashdod GOTC_JEW_PLANET_Lyubavichi GOTC_JEW_PLANET_Haifa GOTC_JEW_PLANET_Netaniya GOTC_JEW_PLANET_KiryatShmona GOTC_JEW_PLANET_Golany GOTC_JEW_PLANET_Tveriya GOTC_JEW_PLANET_BeerSheva GOTC_JEW_PLANET_Berdichev GOTC_JEW_PLANET_Hanaan GOTC_JEW_PLANET_Tsfat GOTC_JEW_PLANET_Vifleem GOTC_JEW_PLANET_PetahTikva GOTC_JEW_PLANET_Gerzliya GOTC_JEW_PLANET_Kibbuts GOTC_JEW_PLANET_Kesariya GOTC_JEW_PLANET_Akkra GOTC_JEW_PLANET_Megido GOTC_JEW_PLANET_Toledo GOTC_JEW_PLANET_KiryatGat GOTC_JEW_PLANET_ZihronYaakov GOTC_JEW_PLANET_Hadera GOTC_JEW_PLANET_Gedera GOTC_JEW_PLANET_Ramla GOTC_JEW_PLANET_Elifaz GOTC_JEW_PLANET_Afula GOTC_JEW_PLANET_Yarka
+			}
+		}
+		pc_desert = {
+			names = {
+
+			}
+		}
+		pc_tropical = {
+			names = {
+
+			}
+		}
+		pc_arid = {
+			names = {
+
+			}
+		}
+		pc_continental = {
+			names = {
+
+			}
+		}
+		pc_ocean = {
+			names = {
+
+			}
+		}
+		pc_tundra = {
+			names = {
+
+			}
+		}
+		pc_arctic = {
+			names = {
+
+			}
+		}
+		pc_savannah = {
+			names = {
+
+			}
+		}
+		pc_alpine = {
+			names = {
+
+			}
+		}
+	}
+
+	character_names = {
+		default = {
+			full_names = {
+
+			}
+			full_names_female = {
+
+			}
+			full_names_male = {
+
+			}
+			first_names = {
+				
+			}
+			first_names_female = {
+				GOTC_JEW_CHR_Ruf GOTC_JEW_CHR_Hana GOTC_JEW_CHR_Sara GOTC_JEW_CHR_Musya GOTC_JEW_CHR_Zeri GOTC_JEW_CHR_Rivka GOTC_JEW_CHR_Golda GOTC_JEW_CHR_Rahel GOTC_JEW_CHR_Reizl GOTC_JEW_CHR_Sheina GOTC_JEW_CHR_Haya GOTC_JEW_CHR_Esfir GOTC_JEW_CHR_Ester GOTC_JEW_CHR_Mina GOTC_JEW_CHR_Faya GOTC_JEW_CHR_Roza GOTC_JEW_CHR_Mariam GOTC_JEW_CHR_Hava GOTC_JEW_CHR_Gitlya GOTC_JEW_CHR_Tsilya GOTC_JEW_CHR_Motlya GOTC_JEW_CHR_Ruhlya GOTC_JEW_CHR_Sima GOTC_JEW_CHR_Feiga GOTC_JEW_CHR_Dvoira GOTC_JEW_CHR_Tsypa GOTC_JEW_CHR_Bluma GOTC_JEW_CHR_Udya GOTC_JEW_CHR_Leya GOTC_JEW_CHR_Sofia GOTC_JEW_CHR_Sura GOTC_JEW_CHR_Malka
+			}
+			first_names_male = {
+				GOTC_JEW_CHR_Aaron GOTC_JEW_CHR_Abram GOTC_JEW_CHR_Avraam GOTC_JEW_CHR_Avrum GOTC_JEW_CHR_Avigdor GOTC_JEW_CHR_Azarya GOTC_JEW_CHR_Aizek GOTC_JEW_CHR_Ariel GOTC_JEW_CHR_ArieLeib GOTC_JEW_CHR_Aron GOTC_JEW_CHR_Asher GOTC_JEW_CHR_Baruh GOTC_JEW_CHR_Benyamin GOTC_JEW_CHR_Benya GOTC_JEW_CHR_Venyamin GOTC_JEW_CHR_Venya GOTC_JEW_CHR_Wolf GOTC_JEW_CHR_Ruvin GOTC_JEW_CHR_Gershon GOTC_JEW_CHR_Girsh GOTC_JEW_CHR_Froim GOTC_JEW_CHR_David GOTC_JEW_CHR_DovBer GOTC_JEW_CHR_Zalman GOTC_JEW_CHR_Zeev GOTC_JEW_CHR_ZeevWolf GOTC_JEW_CHR_Izya GOTC_JEW_CHR_Isaak GOTC_JEW_CHR_Israel GOTC_JEW_CHR_Iosif GOTC_JEW_CHR_Yosya GOTC_JEW_CHR_Itshak GOTC_JEW_CHR_Lazar GOTC_JEW_CHR_Leiba GOTC_JEW_CHR_Mandel GOTC_JEW_CHR_Mihel GOTC_JEW_CHR_Movsha GOTC_JEW_CHR_Moisey GOTC_JEW_CHR_Moysha GOTC_JEW_CHR_Monya GOTC_JEW_CHR_Morduh GOTC_JEW_CHR_Mordehay GOTC_JEW_CHR_Motl GOTC_JEW_CHR_Naum GOTC_JEW_CHR_Natan GOTC_JEW_CHR_Nison GOTC_JEW_CHR_Noah GOTC_JEW_CHR_Nohim GOTC_JEW_CHR_Srul GOTC_JEW_CHR_Ieguda GOTC_JEW_CHR_Efraim GOTC_JEW_CHR_Fima GOTC_JEW_CHR_Haim GOTC_JEW_CHR_Shimon GOTC_JEW_CHR_Shlomo GOTC_JEW_CHR_Shmuel GOTC_JEW_CHR_Shulim GOTC_JEW_CHR_Eliyahu GOTC_JEW_CHR_Elyas GOTC_JEW_CHR_Yakob GOTC_JEW_CHR_Yankel
+			}
+			second_names = {
+
+			}
+			second_names_female = {
+				GOTC_JEW_CHR_Feigina GOTC_JEW_CHR_Hazanova GOTC_JEW_CHR_Satanovskaya GOTC_JEW_CHR_Gorodezkaya GOTC_JEW_CHR_Lebovskaya GOTC_JEW_CHR_Davidovskaya GOTC_JEW_CHR_Rabinovich GOTC_JEW_CHR_Kaganovich GOTC_JEW_CHR_Leibovich GOTC_JEW_CHR_Koen GOTC_JEW_CHR_Levi GOTC_JEW_CHR_Gozman GOTC_JEW_CHR_Roizman GOTC_JEW_CHR_Bronstein GOTC_JEW_CHR_Bernstein GOTC_JEW_CHR_Abramovich GOTC_JEW_CHR_Shenderovich GOTC_JEW_CHR_Rotenberg GOTC_JEW_CHR_Shlosberg GOTC_JEW_CHR_Hinshtein GOTC_JEW_CHR_Goldberg GOTC_JEW_CHR_Meyerson GOTC_JEW_CHR_Wasserman GOTC_JEW_CHR_Goldman GOTC_JEW_CHR_Meir GOTC_JEW_CHR_Shneerson GOTC_JEW_CHR_Yakobson GOTC_JEW_CHR_Mendelson GOTC_JEW_CHR_Meerson GOTC_JEW_CHR_Wulfson GOTC_JEW_CHR_Yoffe GOTC_JEW_CHR_Yakubovich GOTC_JEW_CHR_Abramson GOTC_JEW_CHR_Zimmerman GOTC_JEW_CHR_Zukerberg GOTC_JEW_CHR_Shapiro GOTC_JEW_CHR_Landau GOTC_JEW_CHR_Pozner GOTC_JEW_CHR_Veber GOTC_JEW_CHR_Kaufman GOTC_JEW_CHR_Miller GOTC_JEW_CHR_Shusterman GOTC_JEW_CHR_Gruzman GOTC_JEW_CHR_Rozental GOTC_JEW_CHR_Rozenfeld GOTC_JEW_CHR_Eidelman GOTC_JEW_CHR_Finkelshtein GOTC_JEW_CHR_Lurie GOTC_JEW_CHR_Rappoport GOTC_JEW_CHR_Grossman GOTC_JEW_CHR_Kramer GOTC_JEW_CHR_Krechmer GOTC_JEW_CHR_Goldshmid GOTC_JEW_CHR_Vilner GOTC_JEW_CHR_Shihman GOTC_JEW_CHR_Shulman GOTC_JEW_CHR_Haimovich GOTC_JEW_CHR_Mandelshtam GOTC_JEW_CHR_Berson GOTC_JEW_CHR_Leiner GOTC_JEW_CHR_Goldenzveig GOTC_JEW_CHR_Goldberg GOTC_JEW_CHR_Goldshtein GOTC_JEW_CHR_Zilbershtein GOTC_JEW_CHR_Fridman GOTC_JEW_CHR_Faierberg GOTC_JEW_CHR_Shwarzman GOTC_JEW_CHR_Shteinberg GOTC_JEW_CHR_Dorfman GOTC_JEW_CHR_Derbaremdiker GOTC_JEW_CHR_Sigal GOTC_JEW_CHR_Sluzker GOTC_JEW_CHR_Birkgan GOTC_JEW_CHR_Tal GOTC_JEW_CHR_Soroker GOTC_JEW_CHR_Gurevich GOTC_JEW_CHR_Gehfenbaum GOTC_JEW_CHR_Ziberman GOTC_JEW_CHR_Zonenfeld GOTC_JEW_CHR_Botvinnik GOTC_JEW_CHR_Blyaher GOTC_JEW_CHR_Shaz GOTC_JEW_CHR_Eizenshtein GOTC_JEW_CHR_Levinzon GOTC_JEW_CHR_Levit GOTC_JEW_CHR_Levshiz GOTC_JEW_CHR_Mihelson GOTC_JEW_CHR_Aizenman GOTC_JEW_CHR_Rotshild GOTC_JEW_CHR_Rabbiner GOTC_JEW_CHR_Buhman GOTC_JEW_CHR_Kotz GOTC_JEW_CHR_Nahman GOTC_JEW_CHR_Einshtein
+			}
+			second_names_male = {
+				GOTC_JEW_CHR_Feigin GOTC_JEW_CHR_Hazanov GOTC_JEW_CHR_Satanovskiy GOTC_JEW_CHR_Gorodezkiy GOTC_JEW_CHR_Lebovskiy GOTC_JEW_CHR_Davidovskiy GOTC_JEW_CHR_Rabinovich GOTC_JEW_CHR_Kaganovich GOTC_JEW_CHR_Leibovich GOTC_JEW_CHR_Koen GOTC_JEW_CHR_Levi GOTC_JEW_CHR_Gozman GOTC_JEW_CHR_Roizman GOTC_JEW_CHR_Bronstein GOTC_JEW_CHR_Bernstein GOTC_JEW_CHR_Abramovich GOTC_JEW_CHR_Shenderovich GOTC_JEW_CHR_Rotenberg GOTC_JEW_CHR_Shlosberg GOTC_JEW_CHR_Hinshtein GOTC_JEW_CHR_Goldberg GOTC_JEW_CHR_Meyerson GOTC_JEW_CHR_Wasserman GOTC_JEW_CHR_Goldman GOTC_JEW_CHR_Meir GOTC_JEW_CHR_Shneerson GOTC_JEW_CHR_Yakobson GOTC_JEW_CHR_Mendelson GOTC_JEW_CHR_Meerson GOTC_JEW_CHR_Wulfson GOTC_JEW_CHR_Yoffe GOTC_JEW_CHR_Yakubovich GOTC_JEW_CHR_Abramson GOTC_JEW_CHR_Zimmerman GOTC_JEW_CHR_Zukerberg GOTC_JEW_CHR_Shapiro GOTC_JEW_CHR_Landau GOTC_JEW_CHR_Pozner GOTC_JEW_CHR_Veber GOTC_JEW_CHR_Kaufman GOTC_JEW_CHR_Miller GOTC_JEW_CHR_Shusterman GOTC_JEW_CHR_Gruzman GOTC_JEW_CHR_Rozental GOTC_JEW_CHR_Rozenfeld GOTC_JEW_CHR_Eidelman GOTC_JEW_CHR_Finkelshtein GOTC_JEW_CHR_Lurie GOTC_JEW_CHR_Rappoport GOTC_JEW_CHR_Grossman GOTC_JEW_CHR_Kramer GOTC_JEW_CHR_Krechmer GOTC_JEW_CHR_Goldshmid GOTC_JEW_CHR_Vilner GOTC_JEW_CHR_Shihman GOTC_JEW_CHR_Shulman GOTC_JEW_CHR_Haimovich GOTC_JEW_CHR_Mandelshtam GOTC_JEW_CHR_Berson GOTC_JEW_CHR_Leiner GOTC_JEW_CHR_Goldenzveig GOTC_JEW_CHR_Goldberg GOTC_JEW_CHR_Goldshtein GOTC_JEW_CHR_Zilbershtein GOTC_JEW_CHR_Fridman GOTC_JEW_CHR_Faierberg GOTC_JEW_CHR_Shwarzman GOTC_JEW_CHR_Shteinberg GOTC_JEW_CHR_Dorfman GOTC_JEW_CHR_Derbaremdiker GOTC_JEW_CHR_Sigal GOTC_JEW_CHR_Sluzker GOTC_JEW_CHR_Birkgan GOTC_JEW_CHR_Tal GOTC_JEW_CHR_Soroker GOTC_JEW_CHR_Gurevich GOTC_JEW_CHR_Gehfenbaum GOTC_JEW_CHR_Ziberman GOTC_JEW_CHR_Zonenfeld GOTC_JEW_CHR_Botvinnik GOTC_JEW_CHR_Blyaher GOTC_JEW_CHR_Shaz GOTC_JEW_CHR_Eizenshtein GOTC_JEW_CHR_Levinzon GOTC_JEW_CHR_Levit GOTC_JEW_CHR_Levshiz GOTC_JEW_CHR_Mihelson GOTC_JEW_CHR_Aizenman GOTC_JEW_CHR_Rotshild GOTC_JEW_CHR_Rabbiner GOTC_JEW_CHR_Buhman GOTC_JEW_CHR_Kotz GOTC_JEW_CHR_Nahman GOTC_JEW_CHR_Einshtein
+			}
+			regnal_first_names = {
+
+			}
+			regnal_first_names_female = {
+				GOTC_JEW_CHR_Ruf GOTC_JEW_CHR_Hana GOTC_JEW_CHR_Sara GOTC_JEW_CHR_Musya GOTC_JEW_CHR_Zeri GOTC_JEW_CHR_Rivka GOTC_JEW_CHR_Golda GOTC_JEW_CHR_Rahel GOTC_JEW_CHR_Reizl GOTC_JEW_CHR_Sheina GOTC_JEW_CHR_Haya GOTC_JEW_CHR_Esfir GOTC_JEW_CHR_Ester GOTC_JEW_CHR_Mina GOTC_JEW_CHR_Faya GOTC_JEW_CHR_Roza GOTC_JEW_CHR_Mariam GOTC_JEW_CHR_Hava GOTC_JEW_CHR_Gitlya GOTC_JEW_CHR_Tsilya GOTC_JEW_CHR_Motlya GOTC_JEW_CHR_Ruhlya GOTC_JEW_CHR_Sima GOTC_JEW_CHR_Feiga GOTC_JEW_CHR_Dvoira GOTC_JEW_CHR_Tsypa GOTC_JEW_CHR_Bluma GOTC_JEW_CHR_Udya GOTC_JEW_CHR_Leya GOTC_JEW_CHR_Sofia GOTC_JEW_CHR_Sura GOTC_JEW_CHR_Malka
+			}
+			regnal_first_names_male = {
+				GOTC_JEW_CHR_Aaron GOTC_JEW_CHR_Abram GOTC_JEW_CHR_Avraam GOTC_JEW_CHR_Avrum GOTC_JEW_CHR_Avigdor GOTC_JEW_CHR_Azarya GOTC_JEW_CHR_Aizek GOTC_JEW_CHR_Ariel GOTC_JEW_CHR_ArieLeib GOTC_JEW_CHR_Aron GOTC_JEW_CHR_Asher GOTC_JEW_CHR_Baruh GOTC_JEW_CHR_Benyamin GOTC_JEW_CHR_Benya GOTC_JEW_CHR_Venyamin GOTC_JEW_CHR_Venya GOTC_JEW_CHR_Wolf GOTC_JEW_CHR_Ruvin GOTC_JEW_CHR_Gershon GOTC_JEW_CHR_Girsh GOTC_JEW_CHR_Froim GOTC_JEW_CHR_David GOTC_JEW_CHR_DovBer GOTC_JEW_CHR_Zalman GOTC_JEW_CHR_Zeev GOTC_JEW_CHR_ZeevWolf GOTC_JEW_CHR_Izya GOTC_JEW_CHR_Isaak GOTC_JEW_CHR_Israel GOTC_JEW_CHR_Iosif GOTC_JEW_CHR_Yosya GOTC_JEW_CHR_Itshak GOTC_JEW_CHR_Lazar GOTC_JEW_CHR_Leiba GOTC_JEW_CHR_Mandel GOTC_JEW_CHR_Mihel GOTC_JEW_CHR_Movsha GOTC_JEW_CHR_Moisey GOTC_JEW_CHR_Moysha GOTC_JEW_CHR_Monya GOTC_JEW_CHR_Morduh GOTC_JEW_CHR_Mordehay GOTC_JEW_CHR_Motl GOTC_JEW_CHR_Naum GOTC_JEW_CHR_Natan GOTC_JEW_CHR_Nison GOTC_JEW_CHR_Noah GOTC_JEW_CHR_Nohim GOTC_JEW_CHR_Srul GOTC_JEW_CHR_Ieguda GOTC_JEW_CHR_Efraim GOTC_JEW_CHR_Fima GOTC_JEW_CHR_Haim GOTC_JEW_CHR_Shimon GOTC_JEW_CHR_Shlomo GOTC_JEW_CHR_Shmuel GOTC_JEW_CHR_Shulim GOTC_JEW_CHR_Eliyahu GOTC_JEW_CHR_Elyas GOTC_JEW_CHR_Yakob GOTC_JEW_CHR_Yankel
+			}
+			regnal_second_names = {
+				GOTC_JEW_CHR_Rabinovich GOTC_JEW_CHR_Kaganovich GOTC_JEW_CHR_Leibovich GOTC_JEW_CHR_Koen GOTC_JEW_CHR_Levi GOTC_JEW_CHR_Gozman GOTC_JEW_CHR_Roizman GOTC_JEW_CHR_Bronstein GOTC_JEW_CHR_Bernstein GOTC_JEW_CHR_Abramovich GOTC_JEW_CHR_Shenderovich GOTC_JEW_CHR_Rotenberg GOTC_JEW_CHR_Shlosberg GOTC_JEW_CHR_Hinshtein GOTC_JEW_CHR_Goldberg GOTC_JEW_CHR_Meyerson GOTC_JEW_CHR_Wasserman GOTC_JEW_CHR_Goldman GOTC_JEW_CHR_Meir GOTC_JEW_CHR_Shneerson GOTC_JEW_CHR_Yakobson GOTC_JEW_CHR_Mendelson GOTC_JEW_CHR_Meerson GOTC_JEW_CHR_Wulfson GOTC_JEW_CHR_Yoffe GOTC_JEW_CHR_Yakubovich GOTC_JEW_CHR_Abramson GOTC_JEW_CHR_Zimmerman GOTC_JEW_CHR_Zukerberg GOTC_JEW_CHR_Shapiro GOTC_JEW_CHR_Landau GOTC_JEW_CHR_Pozner GOTC_JEW_CHR_Veber GOTC_JEW_CHR_Kaufman GOTC_JEW_CHR_Miller GOTC_JEW_CHR_Shusterman GOTC_JEW_CHR_Gruzman GOTC_JEW_CHR_Rozental GOTC_JEW_CHR_Rozenfeld GOTC_JEW_CHR_Eidelman GOTC_JEW_CHR_Finkelshtein GOTC_JEW_CHR_Lurie GOTC_JEW_CHR_Rappoport GOTC_JEW_CHR_Grossman GOTC_JEW_CHR_Kramer GOTC_JEW_CHR_Krechmer GOTC_JEW_CHR_Goldshmid GOTC_JEW_CHR_Vilner GOTC_JEW_CHR_Shihman GOTC_JEW_CHR_Shulman GOTC_JEW_CHR_Haimovich GOTC_JEW_CHR_Mandelshtam GOTC_JEW_CHR_Berson GOTC_JEW_CHR_Leiner GOTC_JEW_CHR_Goldenzveig GOTC_JEW_CHR_Goldberg GOTC_JEW_CHR_Goldshtein GOTC_JEW_CHR_Zilbershtein GOTC_JEW_CHR_Fridman GOTC_JEW_CHR_Faierberg GOTC_JEW_CHR_Shwarzman GOTC_JEW_CHR_Shteinberg GOTC_JEW_CHR_Dorfman GOTC_JEW_CHR_Derbaremdiker GOTC_JEW_CHR_Sigal GOTC_JEW_CHR_Sluzker GOTC_JEW_CHR_Birkgan GOTC_JEW_CHR_Tal GOTC_JEW_CHR_Soroker GOTC_JEW_CHR_Gurevich GOTC_JEW_CHR_Gehfenbaum GOTC_JEW_CHR_Ziberman GOTC_JEW_CHR_Zonenfeld GOTC_JEW_CHR_Botvinnik GOTC_JEW_CHR_Blyaher GOTC_JEW_CHR_Shaz GOTC_JEW_CHR_Eizenshtein GOTC_JEW_CHR_Levinzon GOTC_JEW_CHR_Levit GOTC_JEW_CHR_Levshiz GOTC_JEW_CHR_Mihelson GOTC_JEW_CHR_Aizenman GOTC_JEW_CHR_Rotshild GOTC_JEW_CHR_Rabbiner GOTC_JEW_CHR_Buhman GOTC_JEW_CHR_Kotz GOTC_JEW_CHR_Nahman GOTC_JEW_CHR_Einshtein
+			}
+		}
+	}
+}

@@ -2,7 +2,7 @@
 "Министерство заМКАДских Дел" = {
 	name = "Министерство заМКАДских Дел"
 	adjective = "МИДск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "DFP"
 
@@ -13,11 +13,11 @@
 		plural = "Глубоко Озабоченные"
 		adjective = "Озабоченн"
 		name_list = "HUM1"
-		trait = "trait_traditional"
 		trait = "trait_extremely_adaptive"
+		trait = "trait_inorganic_breath"
 		trait = "trait_solitary"
-		trait = "trait_slow_breeders"
-		trait = "trait_slow_learners"
+		trait = "trait_nascent_stage"
+		trait = "trait_repugnant"
 	}
 
 	room = "default_room"
@@ -82,7 +82,7 @@
 "Имитация бурной деятельности" = {
 	name = "Имитация бурной деятельности"
 	adjective = "Бурно-деятельн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "DO"
 
@@ -162,7 +162,7 @@
 "Минская Династия" = {
 	name = "Минская Династия"
 	adjective = "Минск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "BLR"
 
@@ -240,7 +240,7 @@
 "Зона противодействия социал-империализму" = {
 	name = "Зона противодействия социал-империализму"
 	adjective = "Превентивно-оборонительн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "CPR"
 
@@ -255,7 +255,7 @@
 		trait = "trait_sedentary"
 		trait = "trait_rapid_breeders"
 		trait = "trait_nonadaptive"
-		trait = "trait_conservational"
+		trait = "trait_camouflage"
 	}
 
 	room = "personality_hive_mind_room"
@@ -318,7 +318,7 @@
 "34-й Интернационал" = {
 	name = "34-й Интернационал"
 	adjective = "Интернациональн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "INT"
 
@@ -399,7 +399,7 @@
 "Сеть мраксистских кружков" = {
 	name = "Сеть мраксистских кружков"
 	adjective = "Мраксистск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "MRAX"
 
@@ -480,7 +480,7 @@
 "Рой Памятников" = {
 	name = "Рой Памятников"
 	adjective = "Памятн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "MEM"
 
@@ -498,11 +498,25 @@
 		trait = "trait_nomadic"
 		trait = "trait_unruly"
 	}
+	secondary_species=
+	{
+		class="AVI"
+		portrait="bio4"
+		name = "Октябрёнок"
+		plural = "Октябрята"
+		adjective = "Октябрятск"
+		name_list = "AQUATIC2"
+		trait = "trait_hive_mind"
+		trait = "trait_talented"
+		trait = "trait_charismatic"
+		trait = "trait_docile"
+		trait = "trait_hollow_bones"
+	}
 
 	room = "crystalline_room"
 
 	authority = "auth_hive_mind"
-	civics = { "civic_hive_memorialist" "civic_hive_empath" }
+	civics = { "civic_hive_memorialist" "civic_hive_bodysnatcher" }
 	government = gov_hive_mind
 	origin = "origin_remnants"
 
@@ -559,7 +573,7 @@
 "Комитет Галактической Безопасности" = {
 	name = "Комитет Галактической Безопасности"
 	adjective = "Безопасн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "KGB"
 
@@ -574,8 +588,8 @@
 		trait = "trait_plantoid_radiotrophic"
 		trait = "trait_plantoid_budding"
 		trait = "trait_conformists"
-		trait = "trait_unruly"
-		trait = "trait_repugnant"
+		trait = "trait_rooted"
+		trait = "trait_wasteful"
 	}
 
 	room = "personality_democratic_crusaders_room"
@@ -640,7 +654,7 @@
 "Думатели о народе" = {
 	name = "Думатели о народе"
 	adjective = "Думательск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "DUM"
 
@@ -732,7 +746,7 @@
 "Двадцать Третий Рейх" = {
 	name = "Двадцать Третий Рейх"
 	adjective = "Рейхск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "SS"
 
@@ -746,8 +760,8 @@
 		gender = male
 		trait = "trait_perfected_genes"
 		trait = "trait_talented"
-		trait = "trait_intelligent"
-		trait = "trait_docile"
+		trait = "trait_natural_engineers"
+		trait = "trait_genetic_memory"
 		trait = "trait_repugnant"
 		trait = "trait_solitary"
 	}
@@ -816,7 +830,7 @@
 "Чеболия" = {
 	name = "Чеболия"
 	adjective = "Южнокорейск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "KOR"
 
@@ -897,7 +911,7 @@
 "Ичкерская Республика Чечения" = {
 	name = "Ичкерская Республика Чечения"
 	adjective = "Ичкерск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "ICH"
 
@@ -912,8 +926,7 @@
 		trait = "trait_unruly"
 		trait = "trait_quarrelsome"
 		trait = "trait_very_strong"
-		trait = "trait_resilient"
-		trait = "trait_communal"
+		trait = "trait_familial"
 	}
 
 	room = "scrappy_room"
@@ -978,7 +991,7 @@
 "Соловьёв LIVE" = {
 	name = "Соловьёв LIVE"
 	adjective = "Вечерне-Соловьёвск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "SLV"
 
@@ -989,8 +1002,8 @@
 		plural = "Соловьёвы"
 		adjective = "Соловьёвск"
 		name_list = "HUMAN2"
+		trait = "trait_mudozvon"
 		trait = "trait_traditional"
-		trait = "trait_charismatic"
 		trait = "trait_conformists"
 		trait = "trait_unruly"
 		trait = "trait_decadent"
@@ -1055,7 +1068,7 @@
 "Легион Эльфов" = {
 	name = "Легион Эльфов"
 	adjective = "Эльфийск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "ФБК"
 
@@ -1135,7 +1148,7 @@
 "Астро-Венгерская Империя" = {
 	name = "Астро-Венгерская Империя"
 	adjective = "Астро-Венгерск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "HAB"
 
@@ -1214,11 +1227,11 @@
 	}
 }
 
-# pospolitiod
+# pospolitoid
 "Речь Посполитоидная" = {
 	name = "Речь Посполитоидная"
 	adjective = "Посполитоидн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "POL"
 
@@ -1293,7 +1306,7 @@
 "Умеренный прогресс в рамках закона" = {
 	name = "Умеренный прогресс в рамках закона"
 	adjective = "Умеренно-прогрессивн"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "CZE"
 
@@ -1371,7 +1384,7 @@
 "Исламское Движение Сопротивления" = {
 	name = "Исламское Движение Сопротивления"
 	adjective = "Хамасск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "PAL"
 
@@ -1384,7 +1397,7 @@
 		name_list = "HUM4"
 		trait = "trait_slow_learners"
 		trait = "trait_humanoid_existential_iteroparity"
-		trait = "trait_traditional"
+		trait = "trait_acidic_vascularity"
 		trait = "trait_deviants"
 		trait = "trait_noxious"
 	}
@@ -1449,7 +1462,7 @@
 "Роскомнадзор" = {
 	name = "Роскомнадзор"
 	adjective = "Роскомнадзорск"
-	spawn_enabled = yes
+	spawn_enabled = always
 
 	ship_prefix = "RKN"
 
@@ -1464,6 +1477,7 @@
 		trait = "trait_adaptive"
 		trait = "trait_sedentary"
 		trait = "trait_unruly"
+		trait = "trait_industrious"
 	}
 
 	room = "personality_fanatic_purifier_room"

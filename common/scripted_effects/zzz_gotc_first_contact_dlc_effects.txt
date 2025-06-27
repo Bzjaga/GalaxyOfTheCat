@@ -221,9 +221,6 @@ generate_slaver_bonus = {
 	add_district_and_planet_size_if_needed_effect = {
 		district = district_farming
 	}
-	add_district_and_planet_size_if_needed_effect = {
-		district = district_industrial
-	}
 
 	owner = {
 		set_policy = {
@@ -234,15 +231,15 @@ generate_slaver_bonus = {
 	}
 
 	while = {
-		limit = { num_pops > 28 }
-		random_owned_pop = {
-			kill_pop = yes
+		limit = { pop_amount > 3600 }
+		random_owned_pop_group = {
+			kill_single_pop = yes
 		}
 	}
 
 	# Checking if there are any other pre-ftls to abduct
 	while = {
-		limit = { num_pops < 36 }
+		limit = { pop_amount < 5200 }
 		if = {
 			limit = {
 				any_country = {
@@ -279,12 +276,14 @@ generate_slaver_bonus = {
 				}
 			}
 
-			create_pop = {
+			create_pop_group = {
 				species = event_target:random_primitive_species
-				ethos = random
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 
-			last_created_pop = {
+			event_target:last_created_pop_group = {
 				set_citizenship_type = {
 					type = citizenship_slavery
 					cooldown = no
@@ -294,7 +293,7 @@ generate_slaver_bonus = {
 	}
 
 	while = {
-		limit = { num_pops < 61 }
+		limit = { pop_amount < 8100 }
 
 		random_country = {
 			limit = {
@@ -310,11 +309,13 @@ generate_slaver_bonus = {
 			}
 		}
 
-		create_pop = {
+		create_pop_group = {
 			species = event_target:random_slave_species
-			ethos = random
+			effect = {
+				save_event_target_as = last_created_pop_group
+			}
 		}
-		last_created_pop = {
+		event_target:last_created_pop_group = {
 			set_citizenship_type = {
 				type = citizenship_slavery
 				cooldown = no
@@ -348,7 +349,7 @@ generate_slaver_bonus = {
 	}
 	add_building = building_slave_processing
 	add_building = building_precinct_house
-	add_building = building_clinic
+	add_building = building_medical_2
 
 	owner = {
 		add_resource = {
@@ -413,7 +414,7 @@ generate_slaver_bonus = {
 create_payback_warship_effect = {
 	switch = {
 		trigger = has_technology
-		tech_battleships = {
+		tech_starbase_5 = {
 			create_fleet = {
 				name = "NAME_Payback_Warship_4"
 				effect = {
@@ -437,7 +438,7 @@ create_payback_warship_effect = {
 				}
 			}
 		}
-		tech_cruisers = {
+		tech_starbase_4 = {
 			create_fleet = {
 				name = "NAME_Payback_Warship_3"
 				settings = {
@@ -464,7 +465,7 @@ create_payback_warship_effect = {
 				}
 			}
 		}
-		tech_destroyers = {
+		tech_starbase_3 = {
 			create_fleet = {
 				name = "NAME_Payback_Warship_2"
 				settings = {
@@ -491,7 +492,7 @@ create_payback_warship_effect = {
 				}
 			}
 		}
-		tech_corvettes = {
+		tech_starbase_2 = {
 			create_fleet = {
 				name = "NAME_Payback_Warship_1"
 				settings = {
@@ -553,19 +554,17 @@ create_payback_warship_effect = {
 	}
 }
 
-
 spawn_payback_site_habitat = {
 	spawn_planet = {
 		class = "pc_habitat"
 		location = event_target:target_planet
 		orbit_location = yes
-		orbit_angle_offset = 45
+		orbit_angle_offset = 135
 		orbit_distance_offset = 9.899
 		size = 10
 		has_ring = no
 
 		init_effect = {
-			set_name = "NAME_Payback_Warship"
 			set_planet_entity = {
 				entity = "fc_01_evil_slaver_hab_entity"
 			}
@@ -584,37 +583,20 @@ spawn_payback_site_habitat = {
 			add_deposit = d_msi_air_freshener
 			add_deposit = d_payback_habitat_research
 
+			create_colony = {
+				owner = root.owner
+				species = root.owner
+			}
+			create_pop_group = {
+				size = 100
+				species = owner_main_species
+			}
+			set_name = "NAME_Payback_Warship"
 			save_event_target_as = target_habitat
-			add_deposit_if_missing = {
-				DEPOSIT = d_system_resources
-			}
-			add_deposit_if_missing = {
-				DEPOSIT = d_orbital_research
-			}
-			add_deposit_if_missing = {
-				DEPOSIT = d_orbital_energy
-			}
-			add_deposit_if_missing = {
-				DEPOSIT = d_orbital_mining
-			}
+
 			event_target:target_planet = {
 				set_planet_flag = habitat@PREV
 				set_planet_flag = has_payback_habitat
-				if = {
-					limit = {
-						is_moon = yes
-					}
-					on_orbital_complete_effect = {
-						BODY = minor
-						TYPE = generic
-					}
-				}
-				else = {
-					on_orbital_complete_effect = {
-						BODY = major
-						TYPE = generic
-					}
-				}
 			}
 		}
 	}
@@ -886,23 +868,15 @@ setup_fear_of_the_dark_pre_ftl = {
 		while = {
 			count = 1
 			add_district_and_planet_size_if_needed_effect = {
-				district = district_industrial
-			}
-		}
-		while = {
-			count = 1
-			add_district_and_planet_size_if_needed_effect = {
 				district = district_farming
 			}
 		}
 		remove_building = building_colony_shelter
 		add_building = building_primitive_capital
 		add_building = building_research_lab_1
-		while = {
-			count = 10
-			create_pop = {
-				species = event_target:fotd_country.species
-			}
+		create_pop_group = {
+			size = 1000
+			species = event_target:fotd_country.species
 		}
 		if = {
 			limit = {
@@ -1064,23 +1038,15 @@ setup_fear_of_the_dark_pre_ftl = {
 		while = {
 			count = 1
 			add_district_and_planet_size_if_needed_effect = {
-				district = district_industrial
-			}
-		}
-		while = {
-			count = 1
-			add_district_and_planet_size_if_needed_effect = {
 				district = district_farming
 			}
 		}
 		remove_building = building_colony_shelter
 		add_building = building_primitive_capital
 		add_building = building_research_lab_1
-		while = {
-			count = 10
-			create_pop = {
-				species = event_target:fotd_country.species
-			}
+		create_pop_group = {
+			size = 1000
+			species = event_target:fotd_country.species
 		}
 		event_target:fotd_seperatist_country = {
 			start_situation = {
@@ -1158,9 +1124,9 @@ uplift_pre_ftl_with_origin_effect = {
 					country_event = { id = origin.110 }
 					capital_scope = {
 						while = {
-							limit = { num_pops > 28 }
-							random_owned_pop = {
-								kill_pop = yes
+							limit = { pop_amount > 2800 }
+							random_owned_pop_group = {
+								kill_single_pop = yes
 							}
 						}
 					}
@@ -1169,9 +1135,9 @@ uplift_pre_ftl_with_origin_effect = {
 					country_event = { id = origin.4000 }
 					capital_scope = {
 						while = {
-							limit = { num_pops > 18 }
-							random_owned_pop = {
-								kill_pop = yes
+							limit = { pop_amount > 1800 }
+							random_owned_pop_group = {
+								kill_single_pop = yes
 							}
 						}
 					}
@@ -1246,9 +1212,9 @@ uplift_pre_ftl_with_origin_effect = {
 					country_event = { id = origin.110 }
 					capital_scope = {
 						while = {
-							limit = { num_pops > 28 }
-							random_owned_pop = {
-								kill_pop = yes
+							limit = { pop_amount > 2800 }
+							random_owned_pop_group = {
+								kill_single_pop = yes
 							}
 						}
 					}
@@ -1257,9 +1223,9 @@ uplift_pre_ftl_with_origin_effect = {
 					country_event = { id = origin.4000 }
 					capital_scope = {
 						while = {
-							limit = { num_pops > 18 }
-							random_owned_pop = {
-								kill_pop = yes
+							limit = { pop_amount > 1800 }
+							random_owned_pop_group = {
+								kill_single_pop = yes
 							}
 						}
 					}

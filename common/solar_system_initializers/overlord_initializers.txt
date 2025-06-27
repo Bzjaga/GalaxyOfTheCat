@@ -16,7 +16,7 @@ salvager_enclave_init_01 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 150
+			add = @spawn_system_extreme
 		}
 		modifier = {
 			factor = 0
@@ -146,7 +146,7 @@ salvager_enclave_init_02 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 100
+			add = @spawn_system_extreme
 		}
 		#Should ideally be near the primary system
 		modifier = {
@@ -289,7 +289,7 @@ salvager_enclave_init_03 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 100
+			add = @spawn_system_extreme
 		}
 		#Should ideally be near the primary system
 		modifier = {
@@ -487,7 +487,7 @@ shroudwalker_enclave_init_01 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 150
+			add = @spawn_system_enclave
 		}
 		modifier = {
 			factor = 0
@@ -608,7 +608,7 @@ shroudwalker_enclave_init_02 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 150
+			add = @spawn_system_extreme
 		}
 		modifier = {
 			factor = 0
@@ -737,7 +737,7 @@ shroudwalker_enclave_init_03 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 150
+			add = @spawn_system_extreme
 		}
 		modifier = {
 			factor = 0
@@ -926,7 +926,7 @@ broken_shroudwalker_init_01 = {
 		base = 0
 		modifier = {
 			has_overlord_dlc = yes
-			add = 150
+			add = @spawn_system_extreme
 		}
 		modifier = {
 			factor = 0
@@ -1119,7 +1119,7 @@ quantum_catapult_init_01 = {
 	flags = { ruined_catapult_system }
 
 	usage_odds = {
-		base = 100
+		base = @spawn_system_extreme
 		modifier = {
 			factor = 0
 			has_overlord_dlc = no
@@ -1220,7 +1220,7 @@ orbital_ring_init_01 = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 100
+		base = @spawn_system_extreme
 		modifier = {
 			factor = 0
 			has_overlord_dlc = no
@@ -1455,21 +1455,18 @@ overlord_system_init = { # Aix - Empire Capital
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
 				}
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_industrial
-				}
 			}
 			remove_all_buildings = yes
 			add_building = building_major_capital
 			add_building = building_robot_assembly_plant
-			add_building = building_bureaucratic_2
-			add_building = building_research_lab_2
-			add_building = building_paradise_dome
-			add_building = building_commercial_zone
-			add_building = building_factory_1
-			add_building = building_foundry_2
-			add_building = building_energy_grid
-			add_building = building_holo_theatres
+#			add_building = building_bureaucratic_2
+#			add_building = building_research_lab_2
+#			add_building = building_paradise_dome
+#			add_building = building_commercial_zone
+#			add_building = building_factory_1
+#			add_building = building_foundry_2
+#			add_building = building_energy_grid
+#			add_building = building_holo_theatres
 
 			validate_planet_buildings_and_districts = yes
 		}
@@ -1701,21 +1698,21 @@ overlord_system_2_init = { # Empire second system
 				}
 				while = {
 					count = 3
-					create_pop = {
+					create_pop_group = {
 						species = event_target:local_imperial_species
 					}
 				}
 
 				while = {
 					count = 36
-					create_pop = {
+					create_pop_group = {
 						species = event_target:post_imperial_species
 					}
 				}
 
 				while = {
 					count = 1
-					create_pop = {
+					create_pop_group = {
 						species = event_target:origin_imperial_species_robot
 					}
 				}
@@ -1727,14 +1724,14 @@ overlord_system_2_init = { # Empire second system
 				# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately :(
 				while = {
 					count = 28
-					create_pop = {
+					create_pop_group = {
 						species = event_target:local_imperial_species
 					}
 				}
 
 				while = {
 					count = 12
-					create_pop = {
+					create_pop_group = {
 						species = event_target:origin_imperial_species_robot
 					}
 				}
@@ -1754,19 +1751,16 @@ overlord_system_2_init = { # Empire second system
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
 				}
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_industrial
-				}
 			}
 
 			remove_all_buildings = yes
 			add_building = building_major_capital
 			add_building = building_robot_assembly_plant
-			add_building = building_bureaucratic_1
-			add_building = building_research_lab_1
-			add_building = building_paradise_dome
-			add_building = building_commercial_zone
-			add_building = building_energy_grid
+#			add_building = building_bureaucratic_1
+#			add_building = building_research_lab_1
+#			add_building = building_paradise_dome
+#			add_building = building_commercial_zone
+#			add_building = building_energy_grid
 
 			validate_planet_buildings_and_districts = yes
 		}
@@ -1929,14 +1923,14 @@ overlord_system_3_init = { # Empire third system
 			# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately :(
 			while = {
 				count = 22
-				create_pop = {
+				create_pop_group = {
 					species = event_target:local_imperial_species
 				}
 			}
 
 			while = {
 				count = 8
-				create_pop = {
+				create_pop_group = {
 					species = event_target:origin_imperial_species_robot
 				}
 			}
@@ -1955,18 +1949,15 @@ overlord_system_3_init = { # Empire third system
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
 				}
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_industrial
-				}
 			}
 
 			remove_all_buildings = yes
 			add_building = building_major_capital
 			add_building = building_robot_assembly_plant
-			add_building = building_bureaucratic_1
-			add_building = building_research_lab_1
-			add_building = building_paradise_dome
-			add_building = building_commercial_zone
+#			add_building = building_bureaucratic_1
+#			add_building = building_research_lab_1
+#			add_building = building_paradise_dome
+#			add_building = building_commercial_zone
 
 			validate_planet_buildings_and_districts = yes
 		}
@@ -2810,14 +2801,14 @@ overlord_system_8_init = { # Overlord Colonies
 				# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately :(
 				while = {
 					count = 16
-					create_pop = {
+					create_pop_group = {
 						species = event_target:local_imperial_species
 					}
 				}
 
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = event_target:origin_imperial_species_robot
 					}
 				}
@@ -2834,15 +2825,12 @@ overlord_system_8_init = { # Overlord Colonies
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
 				}
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_industrial
-				}
 
 				remove_all_buildings = yes
 				add_building = building_capital
 				add_building = building_bureaucratic_1
 				add_building = building_research_lab_1
-				add_building = building_commercial_zone
+#				add_building = building_commercial_zone
 
 				validate_planet_buildings_and_districts = yes
 			}

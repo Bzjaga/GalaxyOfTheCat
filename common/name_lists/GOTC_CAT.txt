@@ -1,0 +1,285 @@
+﻿
+GOTC_CAT = {
+	ship_names = {
+		generic = {
+			GOTC_CAT_SHIP_Bakeneko GOTC_CAT_SHIP_Meowingbarrier GOTC_CAT_SHIP_Tonadenada GOTC_CAT_SHIP_Valerian GOTC_CAT_SHIP_Vzhuh GOTC_CAT_SHIP_Whiskas GOTC_CAT_SHIP_Sudden GOTC_CAT_SHIP_Impressed GOTC_CAT_SHIP_Kotov GOTC_CAT_SHIP_Petting GOTC_CAT_SHIP_Goro GOTC_CAT_SHIP_Gotokuneko GOTC_CAT_SHIP_Shroomcat GOTC_CAT_SHIP_Game GOTC_CAT_SHIP_Yoshkin GOTC_CAT_SHIP_Lost GOTC_CAT_SHIP_Ilgato GOTC_CAT_SHIP_Kawaii GOTC_CAT_SHIP_Khajiit GOTC_CAT_SHIP_Kittycat GOTC_CAT_SHIP_Claw GOTC_CAT_SHIP_Clawfence GOTC_CAT_SHIP_Scratchingpost GOTC_CAT_SHIP_Gamecat GOTC_CAT_SHIP_Cathar GOTC_CAT_SHIP_Catey GOTC_CAT_SHIP_Catness GOTC_CAT_SHIP_Catessa GOTC_CAT_SHIP_Quotation GOTC_CAT_SHIP_Kotlin GOTC_CAT_SHIP_Catexpert GOTC_CAT_SHIP_Demoncat GOTC_CAT_SHIP_Dogecat GOTC_CAT_SHIP_Kaizercat GOTC_CAT_SHIP_Catholic GOTC_CAT_SHIP_Catacomb GOTC_CAT_SHIP_Catocat GOTC_CAT_SHIP_Catmatrix GOTC_CAT_SHIP_Catlike GOTC_CAT_SHIP_Cataract GOTC_CAT_SHIP_Cattail GOTC_CAT_SHIP_Pussinboots GOTC_CAT_SHIP_Kotatsu GOTC_CAT_SHIP_Kote GOTC_CAT_SHIP_Kofi GOTC_CAT_SHIP_Koshatnitsa GOTC_CAT_SHIP_Liquefaction GOTC_CAT_SHIP_Catmint GOTC_CAT_SHIP_Catwife GOTC_CAT_SHIP_Catgirl GOTC_CAT_SHIP_Reddot GOTC_CAT_SHIP_Kus GOTC_CAT_SHIP_Laserpointer GOTC_CAT_SHIP_Paws GOTC_CAT_SHIP_Lechebnoye GOTC_CAT_SHIP_Linka GOTC_CAT_SHIP_Maneki GOTC_CAT_SHIP_Mao GOTC_CAT_SHIP_Matatabi GOTC_CAT_SHIP_Enslavement GOTC_CAT_SHIP_Mirumir GOTC_CAT_SHIP_Mnogokot GOTC_CAT_SHIP_Mofu GOTC_CAT_SHIP_Mofutrans GOTC_CAT_SHIP_Mur GOTC_CAT_SHIP_Murchalka GOTC_CAT_SHIP_Mysh GOTC_CAT_SHIP_Myavk GOTC_CAT_SHIP_Myaut GOTC_CAT_SHIP_Nadenada GOTC_CAT_SHIP_Neko GOTC_CAT_SHIP_Nekojinja GOTC_CAT_SHIP_Nekopara GOTC_CAT_SHIP_Nikrodyotsa GOTC_CAT_SHIP_Nekonohi GOTC_CAT_SHIP_Nekomata GOTC_CAT_SHIP_NyanCat GOTC_CAT_SHIP_Omuamua GOTC_CAT_SHIP_Panoptikot GOTC_CAT_SHIP_Plan GOTC_CAT_SHIP_Pogremyshka GOTC_CAT_SHIP_Topet GOTC_CAT_SHIP_Fluffy GOTC_CAT_SHIP_Pchelovek GOTC_CAT_SHIP_Rally GOTC_CAT_SHIP_Reactive GOTC_CAT_SHIP_Revvoenkot GOTC_CAT_SHIP_Rybovy GOTC_CAT_SHIP_Rybolov GOTC_CAT_SHIP_Skromno GOTC_CAT_SHIP_Sitetz GOTC_CAT_SHIP_Comradecat GOTC_CAT_SHIP_Trikotazh GOTC_CAT_SHIP_Ears GOTC_CAT_SHIP_Felinemonarchy GOTC_CAT_SHIP_Tail GOTC_CAT_SHIP_Hellokitty GOTC_CAT_SHIP_Yarostno
+		}
+		corvette = {
+			
+		}
+		destroyer = {
+
+		}
+		cruiser = {
+
+		}
+		battleship = {
+
+		}
+		titan = {
+
+		}
+		colossus = {
+
+		}
+		juggernaut = {
+
+		}
+		science = {
+			
+		}
+		colonizer = {
+			
+		}
+		constructor = {
+			
+		}
+		transport = {
+			
+		}
+		military_station_small = {
+			
+		}
+		ion_cannon = {
+			
+		}
+	}
+	ship_class_names = {
+		generic = {
+			GOTC_CAT_SHIP_Sand GOTC_CAT_SHIP_Bely GOTC_CAT_SHIP_Beard GOTC_CAT_SHIP_Ginger GOTC_CAT_SHIP_Imbir GOTC_CAT_SHIP_Combined GOTC_CAT_SHIP_Coffee GOTC_CAT_SHIP_Cream GOTC_CAT_SHIP_Logcat GOTC_CAT_SHIP_Lion GOTC_CAT_SHIP_Manul GOTC_CAT_SHIP_Charred GOTC_CAT_SHIP_Pandakot GOTC_CAT_SHIP_Pastelny GOTC_CAT_SHIP_Polosaty GOTC_CAT_SHIP_Pcheliny GOTC_CAT_SHIP_Ryokansky GOTC_CAT_SHIP_Rusty GOTC_CAT_SHIP_Supermassive GOTC_CAT_SHIP_Sitzevy GOTC_CAT_SHIP_Smoking GOTC_CAT_SHIP_Spinning GOTC_CAT_SHIP_Stolovy GOTC_CAT_SHIP_Furny GOTC_CAT_SHIP_Hachivarny GOTC_CAT_SHIP_Chayny GOTC_CAT_SHIP_ChaynySMolokom GOTC_CAT_SHIP_Cherepahovy
+		}
+	}
+	fleet_names = {
+		random_names = {
+			GOTC_CAT_FLEET_DoorMeow GOTC_CAT_FLEET_CatPlan GOTC_CAT_FLEET_Obdiranie GOTC_CAT_FLEET_MestPylesosam GOTC_CAT_FLEET_VTapki GOTC_CAT_FLEET_Reddot GOTC_CAT_FLEET_PrishelPogladit GOTC_CAT_FLEET_VMofu GOTC_CAT_FLEET_NanesenieNadenady GOTC_CAT_FLEET_IstinnyePraviteli GOTC_CAT_FLEET_MofuItself GOTC_CAT_FLEET_CatSupremacy GOTC_CAT_FLEET_ImpressedFleet GOTC_CAT_FLEET_FluffyWisdom GOTC_CAT_FLEET_PurrKawaii GOTC_CAT_FLEET_GreatnessReminder GOTC_CAT_FLEET_ForcedAdmiration GOTC_CAT_FLEET_InstantNadenada GOTC_CAT_FLEET_StressReducing GOTC_CAT_FLEET_Vechnolinyayushchiy GOTC_CAT_FLEET_CatWorldRule GOTC_CAT_FLEET_GraceAndNobility GOTC_CAT_FLEET_GreatCats GOTC_CAT_FLEET_Krasivoye
+		}
+		sequential_name = GOTC_CAT_STRIKEFORCE
+	}
+	army_names = {
+
+		generic = {
+			random_names = {
+				GOTC_CAT_ARMY_Tygydyk GOTC_CAT_ARMY_KotFront GOTC_CAT_ARMY_WhiteCatCorps GOTC_CAT_ARMY_RyzhyPolosaty GOTC_CAT_ARMY_VStenu GOTC_CAT_ARMY_EnforcedNadenading
+			}
+			sequential_name = GOTC_CAT_COLONIALGENDARMERIE
+		}
+
+		machine_defense = {
+			sequential_name = GOTC_CAT_COLONIALGENDARMERIE
+		}
+
+		machine_assault_1 = {
+			sequential_name = GOTC_CAT_ASSAULTLEGION
+		}
+
+		machine_assault_2 = {
+			sequential_name = GOTC_CAT_ASSAULTLEGION
+		}
+
+		machine_assault_3 = {
+			sequential_name = GOTC_CAT_ASSAULTLEGION
+		}
+
+		defense_army = {
+			sequential_name = GOTC_CAT_COLONIALGENDARMERIE
+		}
+
+		assault_army = {
+			sequential_name = GOTC_CAT_ASSAULTLEGION
+		}
+
+		slave_army = {
+			random_names = {
+				GOTC_CAT_ARMY_Nekot
+			}
+			sequential_name = GOTC_CAT_JANISSARYCORPS
+		}
+
+		clone_army = {
+			sequential_name = GOTC_CAT_VATGROWNSOLDIERY
+		}
+
+		perfected_clone_army = {
+			sequential_name = GOTC_CAT_VATGROWNSOLDIERY
+		}
+
+		undead_army = {
+			random_names = {
+				GOTC_CAT_ARMY_Nekomaty
+			}
+			sequential_name = GOTC_CAT_DREADCORPS
+		}
+
+		robotic_army = {
+			sequential_name = GOTC_CAT_UNMANNEDBATTLEGROUP
+		}
+
+		robotic_defense_army = {
+			sequential_name = GOTC_CAT_UNMANNEDGENDARMERIE
+		}
+
+		psionic_army = {
+			random_names = {
+				GOTC_CAT_ARMY_TelepaticMeow GOTC_CAT_ARMY_Psyhokot
+			}
+			sequential_name = GOTC_CAT_PSYWARRIORS
+		}
+
+		xenomorph_army = {
+			random_names = {
+				GOTC_CAT_ARMY_Yokai
+			}
+			sequential_name = GOTC_CAT_MORPHLINGMARAUDERS
+		}
+
+		gene_warrior_army = {
+			sequential_name = GOTC_CAT_EUGENICVANGUARD
+		}
+
+		occupation_army = {
+			random_names = {
+				GOTC_CAT_ARMY_Panoptikot
+			}
+			sequential_name = GOTC_CAT_OCCUPATIONLEGION
+		}
+
+		robotic_occupation_army = {
+			sequential_name = GOTC_CAT_UNMANNEDGARRISON
+		}
+
+		primitive_army = {
+			sequential_name = GOTC_CAT_PRIMITIVEARMY
+		}
+
+		industrial_army = {
+			sequential_name = GOTC_CAT_INDUSTRIALARMY
+		}
+
+		postatomic_army = {
+			sequential_name = GOTC_CAT_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
+		}
+
+		wilderness_pre_sapient_defence_army = {
+			sequential_name = seq_wilderness_pre_sapient_defence_army
+		}
+		
+		wilderness_pre_sapient_assault_army = {
+			sequential_name = seq_wilderness_pre_sapient_assault_army
+		}
+	}
+	planet_names = {
+		generic = {
+			names = {
+				GOTC_CAT_PLANET_Bezoar GOTC_CAT_PLANET_Bigblueorb GOTC_CAT_PLANET_BigKosha GOTC_CAT_PLANET_BigMurly GOTC_CAT_PLANET_Bubentsy GOTC_CAT_PLANET_Begemder GOTC_CAT_PLANET_Clew GOTC_CAT_PLANET_Korobovka GOTC_CAT_PLANET_Cotbus GOTC_CAT_PLANET_Kotelniki GOTC_CAT_PLANET_Kotka GOTC_CAT_PLANET_Kotovitse GOTC_CAT_PLANET_Catovo GOTC_CAT_PLANET_Caton GOTC_CAT_PLANET_Catsphere GOTC_CAT_PLANET_Koshary GOTC_CAT_PLANET_Koshevichi GOTC_CAT_PLANET_Koshitse GOTC_CAT_PLANET_CatIsland GOTC_CAT_PLANET_Paw GOTC_CAT_PLANET_Lotok GOTC_CAT_PLANET_Mazandaran GOTC_CAT_PLANET_SmallKosha GOTC_CAT_PLANET_SmallMurly GOTC_CAT_PLANET_Bowl GOTC_CAT_PLANET_Mnogokotie GOTC_CAT_PLANET_Myshkin GOTC_CAT_PLANET_NewUshitsa GOTC_CAT_PLANET_Rybinsk GOTC_CAT_PLANET_Tapok GOTC_CAT_PLANET_Tasiro GOTC_CAT_PLANET_Tygydym GOTC_CAT_PLANET_Sharik GOTC_CAT_PLANET_Ailurosphaira
+			}
+		}
+		pc_desert = {
+			names = {
+
+			}
+		}
+		pc_tropical = {
+			names = {
+
+			}
+		}
+		pc_arid = {
+			names = {
+
+			}
+		}
+		pc_continental = {
+			names = {
+
+			}
+		}
+		pc_ocean = {
+			names = {
+
+			}
+		}
+		pc_tundra = {
+			names = {
+
+			}
+		}
+		pc_arctic = {
+			names = {
+
+			}
+		}
+		pc_savannah = {
+			names = {
+
+			}
+		}
+		pc_alpine = {
+			names = {
+
+			}
+		}
+	}
+
+	character_names = {
+		default = {
+			full_names = {
+
+			}
+			full_names_female = {
+				GOTC_CAT_CHR_Alisa GOTC_CAT_CHR_Anfisa GOTC_CAT_CHR_Astra GOTC_CAT_CHR_Agnessa GOTC_CAT_CHR_Bagira GOTC_CAT_CHR_Bast GOTC_CAT_CHR_Byanka GOTC_CAT_CHR_Businka GOTC_CAT_CHR_Varka GOTC_CAT_CHR_Vasilisa GOTC_CAT_CHR_Glasha GOTC_CAT_CHR_Gratsia GOTC_CAT_CHR_Grenka GOTC_CAT_CHR_Dunya GOTC_CAT_CHR_Dusya GOTC_CAT_CHR_Dymka GOTC_CAT_CHR_Zhuzha GOTC_CAT_CHR_Zlata GOTC_CAT_CHR_Zyusha GOTC_CAT_CHR_Iriska GOTC_CAT_CHR_Isida GOTC_CAT_CHR_Klusha GOTC_CAT_CHR_Laska GOTC_CAT_CHR_Lessy GOTC_CAT_CHR_Lusia GOTC_CAT_CHR_Luchia GOTC_CAT_CHR_Curry GOTC_CAT_CHR_Kitty GOTC_CAT_CHR_Klyopa GOTC_CAT_CHR_Manka GOTC_CAT_CHR_Marusia GOTC_CAT_CHR_Masia GOTC_CAT_CHR_Miafka GOTC_CAT_CHR_Misty GOTC_CAT_CHR_Murka GOTC_CAT_CHR_Muska GOTC_CAT_CHR_Nyushka GOTC_CAT_CHR_Plyusha GOTC_CAT_CHR_Puska GOTC_CAT_CHR_Rys GOTC_CAT_CHR_Sima GOTC_CAT_CHR_Snezhinka GOTC_CAT_CHR_Sonia GOTC_CAT_CHR_Tigra GOTC_CAT_CHR_Umka GOTC_CAT_CHR_Fiona GOTC_CAT_CHR_Frosia GOTC_CAT_CHR_Fuva GOTC_CAT_CHR_Tsapka GOTC_CAT_CHR_Shkoda GOTC_CAT_CHR_Yukki GOTC_CAT_CHR_Yula
+			}
+			full_names_male = {
+				GOTC_CAT_CHR_Aisik GOTC_CAT_CHR_Barsik GOTC_CAT_CHR_Bonya GOTC_CAT_CHR_Buyan GOTC_CAT_CHR_Vaska GOTC_CAT_CHR_Willy GOTC_CAT_CHR_Whiskas GOTC_CAT_CHR_Dymok GOTC_CAT_CHR_Garfield GOTC_CAT_CHR_Gaton GOTC_CAT_CHR_Goron GOTC_CAT_CHR_Zephir GOTC_CAT_CHR_Izyum GOTC_CAT_CHR_Casper GOTC_CAT_CHR_Kex GOTC_CAT_CHR_Kefir GOTC_CAT_CHR_Kitkat GOTC_CAT_CHR_Kotofey GOTC_CAT_CHR_Kuzya GOTC_CAT_CHR_Lucky GOTC_CAT_CHR_Lexus GOTC_CAT_CHR_Leopold GOTC_CAT_CHR_Lyova GOTC_CAT_CHR_Loki GOTC_CAT_CHR_Matey GOTC_CAT_CHR_Matroskin GOTC_CAT_CHR_Miaf GOTC_CAT_CHR_Mosya GOTC_CAT_CHR_Motya GOTC_CAT_CHR_Murzik GOTC_CAT_CHR_Pashtet GOTC_CAT_CHR_Punsh GOTC_CAT_CHR_Pushok GOTC_CAT_CHR_Rusty GOTC_CAT_CHR_Rocky GOTC_CAT_CHR_Romka GOTC_CAT_CHR_Rufus GOTC_CAT_CHR_Ryzhik GOTC_CAT_CHR_Samson GOTC_CAT_CHR_Sahar GOTC_CAT_CHR_Syoma GOTC_CAT_CHR_Simba GOTC_CAT_CHR_Smoky GOTC_CAT_CHR_Snezhok GOTC_CAT_CHR_Twix GOTC_CAT_CHR_Timothey GOTC_CAT_CHR_Tisha GOTC_CAT_CHR_Thomas GOTC_CAT_CHR_Usatik GOTC_CAT_CHR_Felix GOTC_CAT_CHR_Frosty GOTC_CAT_CHR_Chedder
+			}
+			regnal_full_names = {
+				
+			}
+			regnal_full_names_female = {
+				GOTC_CAT_CHR_Gorogoro GOTC_CAT_CHR_Kaliko GOTC_CAT_CHR_Kawaia GOTC_CAT_CHR_Kotazu GOTC_CAT_CHR_Mofumofu GOTC_CAT_CHR_Nadenada GOTC_CAT_CHR_Nyaka GOTC_CAT_CHR_Sukasuka GOTC_CAT_CHR_FuvaFuva
+			}
+			regnal_full_names_male = {
+				GOTC_CAT_CHR_Gatongaton GOTC_CAT_CHR_Godrig GOTC_CAT_CHR_Gorongoron GOTC_CAT_CHR_Kalikrot GOTC_CAT_CHR_Modrig GOTC_CAT_CHR_Mohumov GOTC_CAT_CHR_Nadenad GOTC_CAT_CHR_Rodrig GOTC_CAT_CHR_Tygydyr
+			}
+			first_names = {
+				
+			}
+			first_names_female = {
+				
+			}
+			first_names_male = {
+				
+			}
+			regnal_first_names = {
+				
+			}
+			regnal_first_names_female = {
+				
+			}
+			regnal_first_names_male = {
+				
+			}
+			second_names = {
+				
+			}
+			second_names_female = {
+				
+			}
+			second_names_male = {
+
+			}
+			regnal_second_names = {
+				
+			}
+			regnal_second_names_female = {
+				
+			}
+			regnal_second_names_male = {
+
+			}
+		}
+	}
+}

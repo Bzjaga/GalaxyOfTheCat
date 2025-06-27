@@ -89,3 +89,61 @@ leader_trait_tomcat_insight = {
 ################################
 # GOTC Species Traits #
 ################################
+
+trait_mudozvon = {
+	cost = 2
+	opposites = { "trait_hive_mind" }
+	sorting_priority = 20
+
+	initial = yes
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		if = {
+			limit = {
+				exists = from
+			}
+			OR = {
+				can_remove_beneficial_genetic_traits = yes
+				can_add_or_remove_phenotype_traits = yes
+			}
+		}
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	species_possible_merge_add = {
+		always = no
+	}
+
+	portrait_override = { avi1 }
+
+	tags = { organic positive }
+	ai_weight = {
+		weight = 0
+	}
+
+	icon = "gfx/interface/icons/traits/trait_robot_propaganda_machines.dds"
+
+	custom_tooltip_with_modifiers = trait_mudozvon_effect
+	modifier = {
+		entertainer_jobs_bonus_workforce_mult = 0.10
+		bureaucrat_jobs_bonus_workforce_mult = 0.1
+	}
+
+	resources = {
+		category = planet_pops
+		produces = {
+			trigger = {
+				is_slave_or_better = yes
+			}
+			influence = @lithoid_trait_resource_production
+		}
+	}
+
+	slave_cost = {
+		energy = 1000
+	}
+}

@@ -7,8 +7,14 @@
 fe_hedonist = {
 	category = precursor
 	is_capped_by_modifier = no
-	building_icon = building_hyper_entertainment_forum
-	clothes_texture_index = 2
+
+	swappable_data = {
+		default = {
+			building_icon = building_hyper_entertainment_forum
+		}
+	}
+
+	tags = { unity }
 
 	possible_pre_triggers = {
 		has_owner = yes

@@ -1815,7 +1815,7 @@ do_not_choose_reich = {
 			}
 			while = {
 				count = 8
-				create_pop = {
+				create_pop_group = {
 					species = last_created_species
 				}
 			}
@@ -2257,28 +2257,9 @@ do_not_choose_solovyov = {
 				}
 				homeworld = this
 			}
-			last_created_species = {
-				save_global_event_target_as = vatnic_species
-				modify_species = {
-					species = this
-					add_trait = trait_zombie
-					add_traits_at_start_of_list = yes
-					effect = {
-						save_global_event_target_as = vatnic_species_zombie
-					}
-				}
-			}
-			while = {
-				count = 16
-				create_pop = {
-					species = event_target:vatnic_species
-				}
-			}
-			while = {
-				count = 4
-				create_pop = {
-					species = event_target:vatnic_species_zombie
-				}
+			create_pop_group = {
+				species = last_created_species
+				size = 1600
 			}
 		}
 
@@ -2504,13 +2485,13 @@ do_not_choose_astrohungary = {
 	}
 }
 
-# pospolitiod
+# pospolitoid
 do_not_choose_pospolitoid = {
 	class = "rl_trinary_stars"
 
 	usage = custom_empire
 
-	flags = { empire_home_system pospolitiod }
+	flags = { empire_home_system pospolitoid }
 
 	init_effect = {
 		every_neighbor_system = {

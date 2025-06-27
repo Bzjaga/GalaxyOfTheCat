@@ -1,0 +1,249 @@
+﻿
+GOTC_BABULKA = {
+	ship_names = {
+		generic = {
+			GOTC_BABULKA_SHIP_Viper GOTC_BABULKA_SHIP_Venerable GOTC_BABULKA_SHIP_Pozhiloy GOTC_BABULKA_SHIP_Prestarely GOTC_BABULKA_SHIP_Pensioner GOTC_BABULKA_SHIP_TelefonnyMoshennik GOTC_BABULKA_SHIP_Solenye GOTC_BABULKA_SHIP_Berezhlivy GOTC_BABULKA_SHIP_Nastyrniy GOTC_BABULKA_SHIP_Baragoz GOTC_BABULKA_SHIP_Pensiya GOTC_BABULKA_SHIP_Chepchik GOTC_BABULKA_SHIP_StalinaNaVasNet GOTC_BABULKA_SHIP_IshChtoUdumal GOTC_BABULKA_SHIP_Pryazha GOTC_BABULKA_SHIP_Sviter GOTC_BABULKA_SHIP_Avoska GOTC_BABULKA_SHIP_Kostyl GOTC_BABULKA_SHIP_VsehPerezhyvyot GOTC_BABULKA_SHIP_Morstchina GOTC_BABULKA_SHIP_Skleroz GOTC_BABULKA_SHIP_Milok GOTC_BABULKA_SHIP_VyazanayaShapka GOTC_BABULKA_SHIP_Varezhka GOTC_BABULKA_SHIP_Supchik GOTC_BABULKA_SHIP_Varenye GOTC_BABULKA_SHIP_Pirozhok GOTC_BABULKA_SHIP_Pomostchnik GOTC_BABULKA_SHIP_Venik GOTC_BABULKA_SHIP_Indexatsiya GOTC_BABULKA_SHIP_IzbiratelnayaNostalgiya GOTC_BABULKA_SHIP_Sedina GOTC_BABULKA_SHIP_SvyatoyStalin GOTC_BABULKA_SHIP_SpeseniyeVKommunizme GOTC_BABULKA_SHIP_SantaBarbara GOTC_BABULKA_SHIP_ChornyRieltor GOTC_BABULKA_SHIP_Valenok GOTC_BABULKA_SHIP_Sidelka GOTC_BABULKA_SHIP_SocialnayaKarta GOTC_BABULKA_SHIP_Sobes GOTC_BABULKA_SHIP_Spletnya GOTC_BABULKA_SHIP_Lavochka GOTC_BABULKA_SHIP_Svarlivy GOTC_BABULKA_SHIP_Petulant GOTC_BABULKA_SHIP_Diligence GOTC_BABULKA_SHIP_Pertinacity GOTC_BABULKA_SHIP_Prudence GOTC_BABULKA_SHIP_NeuvazhenieKStarshim GOTC_BABULKA_SHIP_Stydoba GOTC_BABULKA_SHIP_StarostNeRadost
+		}
+		corvette = {
+			GOTC_BABULKA_SHIP_Barsik GOTC_BABULKA_SHIP_Murzik
+		}
+		destroyer = {
+
+		}
+		cruiser = {
+
+		}
+		battleship = {
+
+		}
+		titan = {
+
+		}
+		colossus = {
+
+		}
+		juggernaut = {
+
+		}
+		science = {
+			GOTC_BABULKA_SHIP_StarinnyRetsept GOTC_BABULKA_SHIP_Slezhka GOTC_BABULKA_SHIP_Terapevt
+		}
+		colonizer = {
+			GOTC_BABULKA_SHIP_NovayaTeplitsa GOTC_BABULKA_SHIP_SytyVnuk GOTC_BABULKA_SHIP_VtorayaMolodost
+		}
+		constructor = {
+			GOTC_BABULKA_SHIP_Ogorod GOTC_BABULKA_SHIP_Parnik GOTC_BABULKA_SHIP_Teplitsa GOTC_BABULKA_SHIP_Rassada
+		}
+		transport = {
+			GOTC_BABULKA_SHIP_Hodunki GOTC_BABULKA_SHIP_Telezhka
+		}
+		military_station_small = {
+			GOTC_BABULKA_SHIP_Artrit GOTC_BABULKA_SHIP_Artroz GOTC_BABULKA_SHIP_Revmatizm GOTC_BABULKA_SHIP_Nehodyachaya
+		}
+		ion_cannon = {
+			GOTC_BABULKA_SHIP_Artrit GOTC_BABULKA_SHIP_Artroz GOTC_BABULKA_SHIP_Revmatizm GOTC_BABULKA_SHIP_Nehodyachaya
+		}
+	}
+	ship_class_names = {
+		generic = {
+
+		}
+	}
+	fleet_names = {
+		random_names = {
+			GOTC_BABULKA_FLEET_Kostyl GOTC_BABULKA_FLEET_BezOcheredi GOTC_BABULKA_FLEET_UstupiMesto GOTC_BABULKA_FLEET_BlokadaSobesa GOTC_BABULKA_FLEET_Zavestchaniye GOTC_BABULKA_FLEET_PropolkaPomidorov GOTC_BABULKA_FLEET_ZasushymIZamarinuyem GOTC_BABULKA_FLEET_ChasPik GOTC_BABULKA_FLEET_BogProstit GOTC_BABULKA_FLEET_PlevokVSpinu GOTC_BABULKA_FLEET_Ochki GOTC_BABULKA_FLEET_NashedshysyaStalin GOTC_BABULKA_FLEET_OdenShapku GOTC_BABULKA_FLEET_Raskolnikov GOTC_BABULKA_FLEET_NarkomanyIProstitutki
+		}
+		sequential_name = GOTC_BABULKA_STRIKEFORCE
+	}
+	army_names = {
+
+		generic = {
+			random_names = {
+				GOTC_BABULKA_ARMY_Subbotnik GOTC_BABULKA_ARMY_Sornyaki GOTC_BABULKA_ARMY_HudoyVnuk GOTC_BABULKA_ARMY_TelefonnyeMoshenniki
+			}
+			sequential_name = GOTC_BABULKA_COLONIALGENDARMERIE
+		}
+
+		machine_defense = {
+			sequential_name = GOTC_BABULKA_COLONIALGENDARMERIE
+		}
+
+		machine_assault_1 = {
+			sequential_name = GOTC_BABULKA_ASSAULTLEGION
+		}
+
+		machine_assault_2 = {
+			sequential_name = GOTC_BABULKA_ASSAULTLEGION
+		}
+
+		machine_assault_3 = {
+			sequential_name = GOTC_BABULKA_ASSAULTLEGION
+		}
+
+		defense_army = {
+			sequential_name = GOTC_BABULKA_COLONIALGENDARMERIE
+		}
+
+		assault_army = {
+			sequential_name = GOTC_BABULKA_ASSAULTLEGION
+		}
+
+		slave_army = {
+			sequential_name = GOTC_BABULKA_JANISSARYCORPS
+		}
+
+		clone_army = {
+			sequential_name = GOTC_BABULKA_VATGROWNSOLDIERY
+		}
+
+		perfected_clone_army = {
+			sequential_name = GOTC_BABULKA_VATGROWNSOLDIERY
+		}
+
+		undead_army = {
+			random_names = {
+				GOTC_BABULKA_ARMY_LegionStalina GOTC_BABULKA_ARMY_BabaYaga
+			}
+			sequential_name = GOTC_BABULKA_DREADCORPS
+		}
+
+		robotic_army = {
+			sequential_name = GOTC_BABULKA_UNMANNEDBATTLEGROUP
+		}
+
+		robotic_defense_army = {
+			sequential_name = GOTC_BABULKA_UNMANNEDGENDARMERIE
+		}
+
+		psionic_army = {
+			random_names = {
+				GOTC_BABULKA_ARMY_PotomstvennyeVedmy GOTC_BABULKA_ARMY_Koldunya
+			}
+			sequential_name = GOTC_BABULKA_PSYWARRIORS
+		}
+
+		xenomorph_army = {
+			sequential_name = GOTC_BABULKA_MORPHLINGMARAUDERS
+		}
+
+		gene_warrior_army = {
+			sequential_name = GOTC_BABULKA_EUGENICVANGUARD
+		}
+
+		occupation_army = {
+			sequential_name = GOTC_BABULKA_OCCUPATIONLEGION
+		}
+
+		robotic_occupation_army = {
+			sequential_name = GOTC_BABULKA_UNMANNEDGARRISON
+		}
+
+		primitive_army = {
+			sequential_name = GOTC_BABULKA_PRIMITIVEARMY
+		}
+
+		industrial_army = {
+			sequential_name = GOTC_BABULKA_INDUSTRIALARMY
+		}
+
+		postatomic_army = {
+			sequential_name = GOTC_BABULKA_POSTATOMICARMY
+		}
+
+		warpling_army = {
+			sequential_name = seq_warpling_army
+		}
+
+		wilderness_pre_sapient_defence_army = {
+			sequential_name = seq_wilderness_pre_sapient_defence_army
+		}
+		
+		wilderness_pre_sapient_assault_army = {
+			sequential_name = seq_wilderness_pre_sapient_assault_army
+		}
+	}
+	planet_names = {
+		generic = {
+			names = {
+				GOTC_BABULKA_PLANET_ChornayaGryaz GOTC_BABULKA_PLANET_Obiralovka GOTC_BABULKA_PLANET_VerhnyayaPyshma GOTC_BABULKA_PLANET_NizhnyayaPyshma GOTC_BABULKA_PLANET_Lihoslavl GOTC_BABULKA_PLANET_Voskresensk GOTC_BABULKA_PLANET_PogoreloyeGorodistche GOTC_BABULKA_PLANET_Bogolyubovo GOTC_BABULKA_PLANET_Vnukovo GOTC_BABULKA_PLANET_Potma GOTC_BABULKA_PLANET_Debri GOTC_BABULKA_PLANET_Krivopolyanye GOTC_BABULKA_PLANET_Sarai GOTC_BABULKA_PLANET_Dacha GOTC_BABULKA_PLANET_Chern GOTC_BABULKA_PLANET_Bogoroditsk GOTC_BABULKA_PLANET_Novoierusalimsk GOTC_BABULKA_PLANET_Bogoyavlenye GOTC_BABULKA_PLANET_BolshoyeKozino GOTC_BABULKA_PLANET_MaloyeKozino GOTC_BABULKA_PLANET_StaryeChervi GOTC_BABULKA_PLANET_Gnilovody GOTC_BABULKA_PLANET_Gnilyovo GOTC_BABULKA_PLANET_LyutyeBoloty GOTC_BABULKA_PLANET_ChornayaHolunitsa GOTC_BABULKA_PLANET_Sysert GOTC_BABULKA_PLANET_Seltso GOTC_BABULKA_PLANET_Zhizdra GOTC_BABULKA_PLANET_Vypolzovo GOTC_BABULKA_PLANET_Staritsa GOTC_BABULKA_PLANET_NovayaMologa GOTC_BABULKA_PLANET_Nasadkino GOTC_BABULKA_PLANET_Zhuchki GOTC_BABULKA_PLANET_Torgashino GOTC_BABULKA_PLANET_BolshoyePloskoye GOTC_BABULKA_PLANET_MaloyePloskoye GOTC_BABULKA_PLANET_Babye GOTC_BABULKA_PLANET_VelikayaSliva GOTC_BABULKA_PLANET_Baklan GOTC_BABULKA_PLANET_Marmyli GOTC_BABULKA_PLANET_Kuchki
+			}
+		}
+		pc_desert = {
+			names = {
+
+			}
+		}
+		pc_tropical = {
+			names = {
+
+			}
+		}
+		pc_arid = {
+			names = {
+
+			}
+		}
+		pc_continental = {
+			names = {
+
+			}
+		}
+		pc_ocean = {
+			names = {
+
+			}
+		}
+		pc_tundra = {
+			names = {
+
+			}
+		}
+		pc_arctic = {
+			names = {
+
+			}
+		}
+		pc_savannah = {
+			names = {
+
+			}
+		}
+		pc_alpine = {
+			names = {
+
+			}
+		}
+	}
+
+	character_names = {
+		default = {
+			full_names = {
+
+			}
+			full_names_female = {
+
+			}
+			full_names_male = {
+				GOTC_BABULKA_CHR_Nikandr GOTC_BABULKA_CHR_Kosma GOTC_BABULKA_CHR_Ioann GOTC_BABULKA_CHR_Evlampiy GOTC_BABULKA_CHR_Timofey GOTC_BABULKA_CHR_Dionisiy GOTC_BABULKA_CHR_Terentiy GOTC_BABULKA_CHR_Evsey GOTC_BABULKA_CHR_Filipp GOTC_BABULKA_CHR_Vasiliy GOTC_BABULKA_CHR_Gavriil GOTC_BABULKA_CHR_Avvakum GOTC_BABULKA_CHR_Efimiy GOTC_BABULKA_CHR_Afanasiy GOTC_BABULKA_CHR_Ilarion GOTC_BABULKA_CHR_Iakov GOTC_BABULKA_CHR_Zosim GOTC_BABULKA_CHR_Onufriy GOTC_BABULKA_CHR_Prohor GOTC_BABULKA_CHR_Foma GOTC_BABULKA_CHR_Makariy GOTC_BABULKA_CHR_Klavdiy GOTC_BABULKA_CHR_Apollinariy GOTC_BABULKA_CHR_Agafon GOTC_BABULKA_CHR_Akakiy GOTC_BABULKA_CHR_Gerasim GOTC_BABULKA_CHR_Pyotr GOTC_BABULKA_CHR_Sergiy GOTC_BABULKA_CHR_Mavrikiy GOTC_BABULKA_CHR_Iov GOTC_BABULKA_CHR_Feodor GOTC_BABULKA_CHR_Nikifor GOTC_BABULKA_CHR_Alexiy GOTC_BABULKA_CHR_Anisim GOTC_BABULKA_CHR_Pafnutiy GOTC_BABULKA_CHR_Polikarp GOTC_BABULKA_CHR_Patrikiy GOTC_BABULKA_CHR_Hariton GOTC_BABULKA_CHR_Nikanor GOTC_BABULKA_CHR_Paisiy GOTC_BABULKA_CHR_Varlaam GOTC_BABULKA_CHR_Filaret GOTC_BABULKA_CHR_Kirill GOTC_BABULKA_CHR_Mefodiy GOTC_BABULKA_CHR_Nikon GOTC_BABULKA_CHR_Pamfil GOTC_BABULKA_CHR_Serafim GOTC_BABULKA_CHR_Luka GOTC_BABULKA_CHR_Feofan GOTC_BABULKA_CHR_Feodosiy GOTC_BABULKA_CHR_Nektariy GOTC_BABULKA_CHR_Iustin GOTC_BABULKA_CHR_Iliodor GOTC_BABULKA_CHR_Pahomiy GOTC_BABULKA_CHR_Ieronim GOTC_BABULKA_CHR_Iakinf GOTC_BABULKA_CHR_Kliment GOTC_BABULKA_CHR_Iosif
+			}
+			first_names = {
+				
+			}
+			first_names_female = {
+				GOTC_BABULKA_CHR_Agafya GOTC_BABULKA_CHR_Klavdiya GOTC_BABULKA_CHR_Avdotya GOTC_BABULKA_CHR_Agnessa GOTC_BABULKA_CHR_Agrippina GOTC_BABULKA_CHR_Fedora GOTC_BABULKA_CHR_Fedotya GOTC_BABULKA_CHR_Lyudmila GOTC_BABULKA_CHR_Lidiya GOTC_BABULKA_CHR_Galina GOTC_BABULKA_CHR_Zinaida GOTC_BABULKA_CHR_Stalina GOTC_BABULKA_CHR_Zoya GOTC_BABULKA_CHR_Taisiya GOTC_BABULKA_CHR_Matryona GOTC_BABULKA_CHR_Axinya GOTC_BABULKA_CHR_Anisya GOTC_BABULKA_CHR_Kapitalina GOTC_BABULKA_CHR_Evdokiya GOTC_BABULKA_CHR_Agrafena GOTC_BABULKA_CHR_Marfa GOTC_BABULKA_CHR_Fyokla GOTC_BABULKA_CHR_Efimiya GOTC_BABULKA_CHR_Glafira GOTC_BABULKA_CHR_Lyubava GOTC_BABULKA_CHR_Akulina GOTC_BABULKA_CHR_Arina GOTC_BABULKA_CHR_Vera GOTC_BABULKA_CHR_Liliya GOTC_BABULKA_CHR_Praskovya GOTC_BABULKA_CHR_Serafima GOTC_BABULKA_CHR_Faina GOTC_BABULKA_CHR_Valentina GOTC_BABULKA_CHR_Aleftina GOTC_BABULKA_CHR_Iraida GOTC_BABULKA_CHR_Agapiya GOTC_BABULKA_CHR_Rufina GOTC_BABULKA_CHR_Olesya GOTC_BABULKA_CHR_Rimma GOTC_BABULKA_CHR_Fevronya GOTC_BABULKA_CHR_Tamara GOTC_BABULKA_CHR_Matilda GOTC_BABULKA_CHR_Nadezhda GOTC_BABULKA_CHR_Efrosiniya
+			}
+			first_names_male = {
+
+			}
+			second_names = {
+				
+			}
+			second_names_female = {
+				GOTC_BABULKA_CHR_Nikitishna GOTC_BABULKA_CHR_Kuzmichna GOTC_BABULKA_CHR_Ivanovna GOTC_BABULKA_CHR_Evlampievna GOTC_BABULKA_CHR_Timofeevna GOTC_BABULKA_CHR_Semyonovna GOTC_BABULKA_CHR_Terentiyevna GOTC_BABULKA_CHR_Evseevna GOTC_BABULKA_CHR_Filippovna GOTC_BABULKA_CHR_Vasilyevna GOTC_BABULKA_CHR_Gavrilovna GOTC_BABULKA_CHR_Lazarevna GOTC_BABULKA_CHR_Efimovna GOTC_BABULKA_CHR_Afanasyevna GOTC_BABULKA_CHR_Ermolaevna GOTC_BABULKA_CHR_Erofeevna GOTC_BABULKA_CHR_Zosimovna GOTC_BABULKA_CHR_Onufrievna GOTC_BABULKA_CHR_Prohorovna GOTC_BABULKA_CHR_Fominichna GOTC_BABULKA_CHR_Makarovna GOTC_BABULKA_CHR_Klavdievna GOTC_BABULKA_CHR_Apollinarievna GOTC_BABULKA_CHR_Agafonovna GOTC_BABULKA_CHR_Akakievna GOTC_BABULKA_CHR_Gerasimovna GOTC_BABULKA_CHR_Petrovna GOTC_BABULKA_CHR_Sidorovna GOTC_BABULKA_CHR_Mavrikievna GOTC_BABULKA_CHR_Matveevna GOTC_BABULKA_CHR_Fyodorovna GOTC_BABULKA_CHR_Nikiforovna GOTC_BABULKA_CHR_Alexeevna GOTC_BABULKA_CHR_Anisimovna GOTC_BABULKA_CHR_Potapovna GOTC_BABULKA_CHR_Polikarpovna GOTC_BABULKA_CHR_Patrikeevna GOTC_BABULKA_CHR_Haritonovna GOTC_BABULKA_CHR_Nikanorovna GOTC_BABULKA_CHR_Martynovna GOTC_BABULKA_CHR_Kazimirovna GOTC_BABULKA_CHR_Fedotovna GOTC_BABULKA_CHR_Kirillovna GOTC_BABULKA_CHR_Panteleymonovna GOTC_BABULKA_CHR_Ustinovna GOTC_BABULKA_CHR_Pahomovna
+			}
+			second_names_male = {
+
+			}
+		}
+	}
+}

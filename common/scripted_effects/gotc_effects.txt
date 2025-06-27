@@ -122,9 +122,8 @@ change_empires_if_overlord_post_soviet = {
 		capital_scope = {
 			while = {
 				count = 4
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
-					ethos = random
 				}
 			}
 			add_district_and_planet_size_if_needed_effect = {
@@ -147,9 +146,8 @@ change_empires_if_overlord_post_soviet = {
 		capital_scope = {
 			while = {
 				count = 4
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
-					ethos = random
 				}
 			}
 			add_district_and_planet_size_if_needed_effect = {
@@ -187,9 +185,8 @@ change_empires_if_overlord_soviet = {
 		capital_scope = {
 			while = {
 				count = 4
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
-					ethos = random
 				}
 			}
 			add_district_and_planet_size_if_needed_effect = {
@@ -212,9 +209,8 @@ change_empires_if_overlord_soviet = {
 		capital_scope = {
 			while = {
 				count = 4
-				create_pop = {
+				create_pop_group = {
 					species = owner_main_species
-					ethos = random
 				}
 			}
 			add_district_and_planet_size_if_needed_effect = {
@@ -467,7 +463,7 @@ create_MSI_zion = {
 # Dialectics
 ##################
 
-create_shroudwalker_enclave_country_default = {
+create_shroudwalker_enclave_country_default = { # rewritten create_shroudwalker_enclave_country from enclave_effects.txt
 	create_species = {
 		homeworld = this
 		name = random
@@ -540,7 +536,7 @@ create_shroudwalker_enclave_country_default = {
 			#Create ruler
 			create_leader = {
 				name = random
-				class = random_ruler
+				class = scientist
 				species = event_target:shroudwalker_enclave_species
 				skill = 5
 				traits = {
@@ -745,7 +741,7 @@ create_overlord_soviet = {
 	}
 	while = {
 		count = 30
-		create_pop = {
+		create_pop_group = {
 			species = last_created_species
 		}
 	}
@@ -839,7 +835,9 @@ create_overlord_soviet = {
 				traits = {
 					trait = trait_ruler_industrialist_2
 					trait = leader_trait_galvanizer
-					trait = leader_trait_environmental_engineer_2
+					trait = leader_trait_pop_focused
+					trait = leader_trait_industrial_focus
+					trait = leader_trait_environmental_engineer
 					trait = leader_trait_legendary_delusional
 				}
 			}
@@ -890,17 +888,40 @@ create_overlord_soviet = {
 
 			while = {
 				count = 3 # count 4 was too much imo
-				create_fleet = {
-					effect = {
-						set_owner = event_target:origin_imperial_homeland_country
-						while = {
-							count = 10
-							create_ship = {
-								name = random
-								design = NAME_Ravager
-							}
+				if = {
+					limit = {
+						event_target:origin_imperial_homeland_country = {
+							country_uses_bio_ships = yes
 						}
-						set_location = event_target:origin_imperial_homeland_country.capital_star
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:origin_imperial_homeland_country
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = NAME_CHARGER_1
+									growth_stage = 2
+								}
+							}
+							set_location = event_target:origin_imperial_homeland_co
+						}
+					}
+				}
+				else = {
+					create_fleet = {
+						effect = {
+							set_owner = event_target:origin_imperial_homeland_country
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = NAME_Ravager
+								}
+							}
+							set_location = event_target:origin_imperial_homeland_country.capital_star
+						}
 					}
 				}
 			}
@@ -988,13 +1009,13 @@ create_overlord_soviet = {
 	#}
 	while = { # Half of the country was imprisoned, and the other half guarded them
 		count = 30
-		create_pop = {
+		create_pop_group = {
 			species = owner_main_species
 		}
 	}
 	while = {
 		count = 10
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_species_robot
 		}
 	}
@@ -1153,17 +1174,40 @@ create_overlord_post_soviet = {
 
 			while = {
 				count = 3 # count 4 was too much imo
-				create_fleet = {
-					effect = {
-						set_owner = event_target:origin_imperial_homeland_country
-						while = {
-							count = 10
-							create_ship = {
-								name = random
-								design = NAME_Ravager
-							}
+				if = {
+					limit = {
+						event_target:origin_imperial_homeland_country = {
+							country_uses_bio_ships = yes
 						}
-						set_location = event_target:origin_imperial_homeland_country.capital_star
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:origin_imperial_homeland_country
+							while = {
+								count = 20
+								create_ship = {
+									name = random
+									design = NAME_CHARGER_1
+									growth_stage = 2
+								}
+							}
+							set_location = event_target:origin_imperial_homeland_co
+						}
+					}
+				}
+				else = {
+					create_fleet = {
+						effect = {
+							set_owner = event_target:origin_imperial_homeland_country
+							while = {
+								count = 10
+								create_ship = {
+									name = random
+									design = NAME_Ravager
+								}
+							}
+							set_location = event_target:origin_imperial_homeland_country.capital_star
+						}
 					}
 				}
 			}
@@ -1234,13 +1278,13 @@ create_overlord_post_soviet = {
 	}
 	while = {
 		count = 45
-		create_pop = {
+		create_pop_group = {
 			species = owner_main_species
 		}
 	}
 	while = { # Nota Bene: In 2210 Dugin is free at his will to destroy these unspiritual creatures
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_species_robot
 		}
 	}
@@ -1522,7 +1566,7 @@ create_imperial_vassal_international = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_international.species
 		}
 	}
@@ -1723,7 +1767,7 @@ create_imperial_vassal_mraxist = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_mraxist.species
 		}
 	}
@@ -1908,7 +1952,7 @@ create_imperial_vassal_pamyatnik = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_pamyatnik.species
 		}
 	}
@@ -2109,7 +2153,7 @@ create_imperial_vassal_rkka = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_rkka.species
 		}
 	}
@@ -2323,7 +2367,7 @@ create_imperial_vassal_tuva = {
 	}
 	while = {
 		count = 15
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_tuva.species
 		}
 	}
@@ -2524,7 +2568,7 @@ create_imperial_vassal_stakhanov = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_stakhanov.species
 		}
 	}
@@ -2564,8 +2608,8 @@ create_imperial_vassal_kgb = {
 			trait = "trait_plantoid_radiotrophic"
 			trait = "trait_plantoid_budding"
 			trait = "trait_conformists"
-			trait = "trait_unruly"
-			trait = "trait_repugnant"
+			trait = "trait_rooted"
+			trait = "trait_wasteful"
 		}
 		homeworld = this
 	}
@@ -2725,7 +2769,7 @@ create_imperial_vassal_kgb = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_kgb.species
 		}
 	}
@@ -2772,7 +2816,7 @@ create_imperial_vassal_dumatel = {
 	}
 	while = {
 		count = 18
-		create_pop = {
+		create_pop_group = {
 			species = last_created_species
 		}
 	}
@@ -2958,7 +3002,7 @@ create_imperial_vassal_dumatel = {
 	}
 	while = {
 		count = 8
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_dumatel.species
 		}
 	}
@@ -3157,7 +3201,7 @@ create_imperial_vassal_wagner = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_wagner.species
 		}
 	}
@@ -3198,8 +3242,7 @@ create_imperial_vassal_kadyrov = {
 			trait = "trait_unruly"
 			trait = "trait_quarrelsome"
 			trait = "trait_very_strong"
-			trait = "trait_resilient"
-			trait = "trait_communal"
+			trait = "trait_familial"
 		}
 		homeworld = this
 	}
@@ -3366,7 +3409,7 @@ create_imperial_vassal_kadyrov = {
 	planet_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
 	while = {
 		count = 18
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_kadyrov.species
 		}
 	}
@@ -3585,7 +3628,7 @@ create_imperial_vassal_roskosmos = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_roskosmos.species
 		}
 	}
@@ -3631,29 +3674,12 @@ create_imperial_vassal_solovyov = {
 		}
 		homeworld = this
 	}
-	last_created_species = {
-		set_species_flag = vatnic
-		save_global_event_target_as = vatnic_species
-		modify_species = {
-			species = this
-			add_trait = trait_zombie
-			add_traits_at_start_of_list = yes
-			effect = {
-				save_global_event_target_as = vatnic_species_zombie
-			}
-		}
+	create_pop_group = {
+		species = last_created_species
+		size = 1400
 	}
-	while = {
-		count = 14
-		create_pop = {
-			species = event_target:vatnic_species
-		}
-	}
-	while = {
-		count = 4
-		create_pop = {
-			species = event_target:vatnic_species_zombie
-		}
+	create_zombie_pop_group = {
+		SIZE = 400
 	}
 	create_species = {
 		name = {
@@ -3672,8 +3698,8 @@ create_imperial_vassal_solovyov = {
 		portrait = "avi1"
 		name_list="HUMAN2"
 		traits = {
+			trait = "trait_mudozvon"
 			trait = "trait_traditional"
-			trait = "trait_charismatic"
 			trait = "trait_conformists"
 			trait = "trait_unruly"
 			trait = "trait_decadent"
@@ -3740,8 +3766,6 @@ create_imperial_vassal_solovyov = {
 				}
 				establish_communications_no_message = event_target:origin_imperial_homeland_country_solovyov
 			}
-
-			country_event = { id = gotc.2 days = 1 } # vatnic_species_zombie slavery_type set to slavery_military
 
 			# Leader
 			create_leader = {
@@ -3835,7 +3859,7 @@ create_imperial_vassal_solovyov = {
 	}
 	while = {
 		count = 7
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_solovyov.species
 		}
 	}
@@ -3883,7 +3907,7 @@ create_imperial_vassal_rpc = {
 	}
 	while = {
 		count = 18
-		create_pop = {
+		create_pop_group = {
 			species = last_created_species
 		}
 	}
@@ -3972,16 +3996,17 @@ create_imperial_vassal_rpc = {
 
 			# Leader
 			create_leader = {
-				class = scientist
+				class = official
 				species = last_created_species
 				name = "Кирилл Гундяев"
 				gender=male
 				skill = 1
 				randomize_traits = no
 				traits = {
-					trait = trait_ruler_architectural_sense
+					trait = leader_trait_trade_focus
 					trait = trait_ruler_fertility_preacher
-					trait = leader_trait_lavish_lifestyle
+					trait = trait_ruler_architectural_sense
+					trait = leader_trait_lavish_lifestyle_2
 				}
 			}
 			set_male_ruler_title = "Патриарх всея Галактики"
@@ -4086,7 +4111,7 @@ create_imperial_vassal_rpc = {
 	}
 	while = {
 		count = 8
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_rpc.species
 		}
 	}
@@ -4286,7 +4311,7 @@ create_imperial_vassal_mizulina = {
 	}
 	while = {
 		count = 25
-		create_pop = {
+		create_pop_group = {
 			species = event_target:origin_imperial_homeland_country_mizulina.species
 		}
 	}
@@ -4524,7 +4549,7 @@ create_imperial_splinter_beria = {
 				set_age = 54
 				randomize_traits = no
 				traits = {
-					trait = leader_trait_shadow_broker_3
+					trait = leader_trait_shadow_broker_2
 					trait = leader_trait_adaptable
 				}
 			}
@@ -4615,7 +4640,7 @@ create_imperial_splinter_strelkov = {
 				randomize_traits = no
 				traits = {
 					trait = leader_trait_spycraft
-					trait = leader_trait_retired_fleet_officer_2
+					trait = leader_trait_retired_fleet_officer
 					trait = leader_trait_adventurous_spirit_3
 				}
 			}
@@ -5168,7 +5193,7 @@ create_imperial_splinter_prilepin = {
 				set_age = 48
 				randomize_traits = no
 				traits = {
-					trait = trait_ruler_from_the_ranks_3
+					trait = trait_ruler_from_the_ranks_2
 					trait = leader_trait_victory_or_death_2
 					trait = leader_trait_academia_recruiter
 					trait = leader_trait_maven_of_war
@@ -5259,7 +5284,7 @@ create_imperial_splinter_rdc = {
 				set_age = 39
 				randomize_traits = no
 				traits = {
-					trait = leader_trait_juryrigger_3
+					trait = leader_trait_juryrigger_2
 					trait = leader_trait_fallible_2
 					trait = leader_trait_entrepreneur_2
 				}
@@ -6032,7 +6057,7 @@ create_pre_ftl_egypt = {
 			else = { # Mamluk Egypt
 				while = { # Adding Egyptians before creation of Mamluks
 					count = @iron_age_pops
-					create_pop = {
+					create_pop_group = {
 						species = last_created_species
 					}
 				}
@@ -7511,9 +7536,10 @@ check_country_flags_mad_vacuum_cleaner = {
 	if = {
 		limit = {
 			any_planet_within_border = {
-				any_owned_pop = {
+				any_owned_pop_group = {
 					is_sapient = no
 					is_feline_species = yes
+					NOT = { has_trait = trait_nascent_stage }
 				}
 			}
 		}
@@ -7608,14 +7634,20 @@ embrace_catist_faction_no_name_change = {
 		limit = {
 			any_owned_species = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 				is_robotic = no
 			}
 		}
 		random_owned_species = {
 			limit = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 				is_robotic = no
 			}
 			save_event_target_as = new_dominant_species
@@ -7625,13 +7657,19 @@ embrace_catist_faction_no_name_change = {
 		limit = {
 			any_owned_species = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 			}
 		}
 		random_owned_species = {
 			limit = {
 				is_feline_species = yes
-				is_sapient = yes
+				OR = {
+					is_sapient = yes
+					has_trait = trait_nascent_stage
+				}
 			}
 			save_event_target_as = new_dominant_species
 		}
