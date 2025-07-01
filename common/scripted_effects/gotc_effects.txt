@@ -64,8 +64,8 @@ choose_imperial_overlord_country = {
 	else_if = { # Overlord Post-Soviet
 		limit = {
 			AND = {
-				any_system = { has_star_flag = zaharova }
-				any_system = { has_star_flag = lukashenko }
+				any_playable_country = { has_country_flag = zaharova }
+				any_playable_country = { has_country_flag = lukashenko }
 			}
 		}
 		change_empires_if_overlord_post_soviet = yes
@@ -73,33 +73,33 @@ choose_imperial_overlord_country = {
 	else_if = { # Overlord Soviet
 		limit = {
 			AND = {
-				any_system = { has_star_flag = mao }
-				any_system = { has_star_flag = deyatel }
+				any_playable_country = { has_country_flag = mao }
+				any_playable_country = { has_country_flag = deyatel }
 			}
 		}
 		change_empires_if_overlord_soviet = yes
 	}
 	else_if = { # Overlord Post-Soviet
 		limit = {
-			any_system = { has_star_flag = zaharova }
+			any_playable_country = { has_country_flag = zaharova }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_system = { has_star_flag = mao }
+			any_playable_country = { has_country_flag = mao }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
 	else_if = { # Overlord Post-Soviet
 		limit = {
-			any_system = { has_star_flag = lukashenko }
+			any_playable_country = { has_country_flag = lukashenko }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_system = { has_star_flag = deyatel }
+			any_playable_country = { has_country_flag = deyatel }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
@@ -111,13 +111,9 @@ choose_imperial_overlord_country = {
 #Changes for empires that depend on the choice of overlord (overlord_post_soviet)
 change_empires_if_overlord_post_soviet = {
 	set_star_flag = is_chosen_overlord_post_soviet
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = mao
-				}
-			}
+			has_country_flag = mao
 		}
 		capital_scope = {
 			while = {
@@ -135,13 +131,9 @@ change_empires_if_overlord_post_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = deyatel
-				}
-			}
+			has_country_flag = deyatel
 		}
 		capital_scope = {
 			while = {
@@ -159,7 +151,7 @@ change_empires_if_overlord_post_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
 			capital_scope = {
 				solar_system = {
@@ -174,13 +166,9 @@ change_empires_if_overlord_post_soviet = {
 #Changes for empires that depend on the choice of overlord (overlord_soviet)
 change_empires_if_overlord_soviet = {
 	set_star_flag = is_chosen_overlord_soviet
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = zaharova
-				}
-			}
+			has_country_flag = zaharova
 		}
 		capital_scope = {
 			while = {
@@ -198,13 +186,9 @@ change_empires_if_overlord_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = lukashenko
-				}
-			}
+			has_country_flag = lukashenko
 		}
 		capital_scope = {
 			while = {
@@ -222,13 +206,9 @@ change_empires_if_overlord_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = mao
-				}
-			}
+			has_country_flag = mao
 		}
 		give_technology = { tech = tech_genome_mapping }
 	}
@@ -369,7 +349,7 @@ create_MSI_zion = {
 			literal=yes
 		}
 		class = REP
-		namelist = JEW
+		namelist = GOTC_JEW
 		portrait = rep4
 		traits = {
 			ideal_planet_class = pc_desert
@@ -3236,7 +3216,7 @@ create_imperial_vassal_kadyrov = {
 		}
 		class = "MAM"
 		portrait = "mam10"
-		name_list="TAJICAUCASIAN"
+		name_list="GOTC_TAJICAUCASIAN"
 		gender=male
 		traits = {
 			trait = "trait_unruly"
@@ -3894,7 +3874,7 @@ create_imperial_vassal_rpc = {
 		}
 		class = "TOX"
 		portrait = "tox2"
-		name_list="BABULKA"
+		name_list="GOTC_BABULKA"
 		gender=female
 		traits = {
 			trait = "trait_presapient_conservative"
@@ -3926,7 +3906,7 @@ create_imperial_vassal_rpc = {
 		}
 		class = "NECROID"
 		portrait = "nec12"
-		name_list="BABULKA"
+		name_list="GOTC_BABULKA"
 		gender=male
 		traits = {
 			trait = "trait_thrifty"
@@ -6076,7 +6056,7 @@ create_pre_ftl_egypt = {
 					}
 					class = "HUM"
 					portrait = "humanoid_elf"
-					name_list="TAJICAUCASIAN"
+					name_list="GOTC_TAJICAUCASIAN"
 					gender=male
 					traits = {
 						trait = "trait_quarrelsome"

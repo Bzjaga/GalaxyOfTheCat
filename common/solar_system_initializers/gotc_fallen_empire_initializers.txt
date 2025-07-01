@@ -987,7 +987,7 @@ gotc_fallen_3 = {
 							}
 							class = HUM
 							portrait = humanoid_hp_02
-							name_list="JEW"
+							name_list="GOTC_JEW"
 							traits = {
 								ideal_planet_class = pc_alpine
 								trait = trait_presapient_natural_intellectuals
