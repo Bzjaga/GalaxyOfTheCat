@@ -1,0 +1,23 @@
+gotc_zaharova = {
+	flags = { gotc_zaharova }
+}
+
+gotc_deyatel = {
+	flags = { gotc_deyatel }
+}
+
+gotc_lukashenko = {
+	flags = { gotc_lukashenko }
+}
+
+gotc_mao = {
+	flags = { gotc_mao }
+}
+
+gotc_borrel = {
+	flags = { gotc_borrel }
+}
+
+gotc_voldemar = {
+	flags = { gotc_voldemar }
+}

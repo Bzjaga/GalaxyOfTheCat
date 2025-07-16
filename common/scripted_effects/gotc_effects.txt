@@ -64,8 +64,8 @@ choose_imperial_overlord_country = {
 	else_if = { # Overlord Post-Soviet
 		limit = {
 			AND = {
-				any_playable_country = { has_country_flag = zaharova }
-				any_playable_country = { has_country_flag = lukashenko }
+				any_playable_country = { has_country_flag = gotc_zaharova }
+				any_playable_country = { has_country_flag = gotc_lukashenko }
 			}
 		}
 		change_empires_if_overlord_post_soviet = yes
@@ -73,33 +73,33 @@ choose_imperial_overlord_country = {
 	else_if = { # Overlord Soviet
 		limit = {
 			AND = {
-				any_playable_country = { has_country_flag = mao }
-				any_playable_country = { has_country_flag = deyatel }
+				any_playable_country = { has_country_flag = gotc_mao }
+				any_playable_country = { has_country_flag = gotc_deyatel }
 			}
 		}
 		change_empires_if_overlord_soviet = yes
 	}
 	else_if = { # Overlord Post-Soviet
 		limit = {
-			any_playable_country = { has_country_flag = zaharova }
+			any_playable_country = { has_country_flag = gotc_zaharova }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_playable_country = { has_country_flag = mao }
+			any_playable_country = { has_country_flag = gotc_mao }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
 	else_if = { # Overlord Post-Soviet
 		limit = {
-			any_playable_country = { has_country_flag = lukashenko }
+			any_playable_country = { has_country_flag = gotc_lukashenko }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_playable_country = { has_country_flag = deyatel }
+			any_playable_country = { has_country_flag = gotc_deyatel }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
@@ -113,7 +113,7 @@ change_empires_if_overlord_post_soviet = {
 	set_star_flag = is_chosen_overlord_post_soviet
 	random_playable_country = {
 		limit = {
-			has_country_flag = mao
+			has_country_flag = gotc_mao
 		}
 		capital_scope = {
 			while = {
@@ -133,7 +133,7 @@ change_empires_if_overlord_post_soviet = {
 	}
 	random_playable_country = {
 		limit = {
-			has_country_flag = deyatel
+			has_country_flag = gotc_deyatel
 		}
 		capital_scope = {
 			while = {
@@ -168,7 +168,7 @@ change_empires_if_overlord_soviet = {
 	set_star_flag = is_chosen_overlord_soviet
 	random_playable_country = {
 		limit = {
-			has_country_flag = zaharova
+			has_country_flag = gotc_zaharova
 		}
 		capital_scope = {
 			while = {
@@ -188,7 +188,7 @@ change_empires_if_overlord_soviet = {
 	}
 	random_playable_country = {
 		limit = {
-			has_country_flag = lukashenko
+			has_country_flag = gotc_lukashenko
 		}
 		capital_scope = {
 			while = {
@@ -208,7 +208,7 @@ change_empires_if_overlord_soviet = {
 	}
 	random_playable_country = {
 		limit = {
-			has_country_flag = mao
+			has_country_flag = gotc_mao
 		}
 		give_technology = { tech = tech_genome_mapping }
 	}

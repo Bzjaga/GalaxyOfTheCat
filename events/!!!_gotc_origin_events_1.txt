@@ -185,7 +185,7 @@ country_event = {
 		give_technology = { tech = tech_federation_code message = no }
 
 		if = { # borrel
-			limit = { has_country_flag = borrel }
+			limit = { has_country_flag = gotc_borrel }
 			capital_scope = {
 				change_pc = pc_gaia
 				set_planet_size = 14
@@ -518,10 +518,10 @@ country_event = {
 				}
 				if = { # zamkadets specie exist
 					limit = {
-						any_playable_country = { has_country_flag = voldemar }
+						any_playable_country = { has_country_flag = gotc_voldemar }
 					}
 					random_playable_country = {
-						limit = { has_country_flag = voldemar }
+						limit = { has_country_flag = gotc_voldemar }
 						owner_main_species = {
 							save_event_target_as = zamkadets
 						}

@@ -479,11 +479,11 @@ fallen_empire_4 = {
 	create_country_effect = {
 		if = {
 			limit = {
-				any_playable_country = { has_country_flag = mao }
+				any_playable_country = { has_country_flag = gotc_mao }
 			}
 			random_playable_country = {
 				limit = {
-					has_country_flag = mao
+					has_country_flag = gotc_mao
 				}
 				owner_main_species = {
 					save_event_target_as = mao_species

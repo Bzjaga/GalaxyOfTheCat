@@ -597,7 +597,7 @@ country_event = { # Overlord Version
 					limit = {
 						AND = {
 							event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
-							has_country_flag = mao
+							has_country_flag = gotc_mao
 						}
 					}
 					add_opinion_modifier = {

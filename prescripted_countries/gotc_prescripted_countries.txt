@@ -27,7 +27,7 @@
 	government = gov_military_junta
 	origin = "origin_imperial_vassal"
 
-	flags = { zaharova }
+	flag = gotc_zaharova
 
 	ethic = "ethic_authoritarian"
 	ethic = "ethic_xenophobe"
@@ -41,7 +41,7 @@
 	graphical_culture = "mammalian_01"
 	city_graphical_culture = "mammalian_01"
 
-	empire_flag = {
+	empire_flag={
 		icon={
 			category="domination"
 			file="domination_8.dds"
@@ -109,7 +109,7 @@
 	government = gov_military_junta
 	origin = "origin_imperial_vassal"
 
-	flags = { deyatel }
+	flag = gotc_deyatel
 
 	ethic = "ethic_egalitarian"
 	ethic = "ethic_xenophile"
@@ -191,7 +191,7 @@
 	government = gov_irenic_dictatorship
 	origin = "origin_imperial_vassal"
 
-	flags = { lukashenko }
+	flag = gotc_lukashenko
 
 	ethic = "ethic_fanatic_authoritarian"
 	ethic = "ethic_pacifist"
@@ -271,7 +271,7 @@
 	government = gov_irenic_bureaucracy
 	origin = "origin_imperial_vassal"
 
-	flags = { mao }
+	flag = gotc_mao
 
 	ethic = "ethic_egalitarian"
 	ethic = "ethic_xenophobe"
@@ -1579,8 +1579,6 @@
 		trait = "trait_wasteful"
 		trait = "trait_quarrelsome"
 		trait = "trait_decadent"
-
-		flags = { migrant }
 	}
 
 	room = "solarpunk_room"
@@ -1590,7 +1588,7 @@
 	government = gov_machine_servitor
 	origin = "origin_common_ground"
 
-	flags = { borrel }
+	flag = gotc_borrel
 
 	ethic = "ethic_gestalt_consciousness"
 
@@ -1671,7 +1669,7 @@
 	government = gov_theocratic_oligarchy
 	origin = "origin_post_apocalyptic"
 
-	flags = { voldemar }
+	flag = gotc_voldemar
 
 	ethic = "ethic_authoritarian"
 	ethic = "ethic_xenophobe"
