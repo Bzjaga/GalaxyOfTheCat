@@ -7539,7 +7539,9 @@ check_country_flags_mad_vacuum_cleaner = {
 add_negative_trait_mad_vacuum_cleaner = {
 	if = {
 		limit = { NOT = { has_trait = leader_trait_intolerant_2 } }
-		add_trait = leader_trait_intolerant_2
+		add_trait = {
+			trait = leader_trait_intolerant_2
+		}
 	}
 	else_if = {
 		limit = {
@@ -7548,15 +7550,21 @@ add_negative_trait_mad_vacuum_cleaner = {
 				has_trait = leader_trait_opinionated_2
 			}
 		}
-		add_trait = leader_trait_opinionated
+		add_trait = {
+			trait = leader_trait_opinionated
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = leader_trait_opinionated_2 } }
-		add_trait = leader_trait_opinionated_2
+		add_trait = {
+			trait = leader_trait_opinionated_2
+		}
 	}
 	#else_if = {
 	#	limit = { NOT = { has_trait = leader_trait_hacked } }
-	#	add_trait = leader_trait_hacked
+	#	add_trait = {
+	#		trait = leader_trait_hacked
+	#	}
 	#}
 	else_if = {
 		limit = {
@@ -7565,11 +7573,15 @@ add_negative_trait_mad_vacuum_cleaner = {
 				has_trait = leader_trait_destructive_2
 			}
 		}
-		add_trait = leader_trait_destructive
+		add_trait = {
+			trait = leader_trait_destructive
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = leader_trait_destructive_2 } }
-		add_trait = leader_trait_destructive_2
+		add_trait = {
+			trait = leader_trait_destructive_2
+		}
 	}
 	else_if = {
 		limit = {
@@ -7578,11 +7590,15 @@ add_negative_trait_mad_vacuum_cleaner = {
 				has_trait = leader_trait_neurotic_2
 			}
 		}
-		add_trait = leader_trait_neurotic
+		add_trait = {
+			trait = leader_trait_neurotic
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = leader_trait_neurotic_2 } }
-		add_trait = leader_trait_neurotic_2
+		add_trait = {
+			trait = leader_trait_neurotic_2
+		}
 	}
 }
 

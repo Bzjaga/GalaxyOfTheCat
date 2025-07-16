@@ -1,9 +1,9 @@
-version="0.17"
+version="0.18"
 tags={
 	"Events"
 	"Galaxy Generation"
 }
 name="Galaxy of the Cat"
 picture="thumbnail.png"
-supported_version="4.0.6"
+supported_version="4.0.21"
 remote_file_id="3118932220"

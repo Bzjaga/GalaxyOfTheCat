@@ -832,15 +832,18 @@ country_event = { # Pylesos hire
 			}
 		}
 		last_created_leader = {
-			add_trait = subclass_scientist_governor
-			add_trait = leader_trait_virtual
-			add_trait = leader_trait_tomcat_insight
-			add_trait = leader_trait_sanitary_drone
-			add_trait = leader_trait_stubborn_2
-			add_trait = leader_trait_intolerant
-			add_trait = leader_trait_eager
-			add_trait = leader_trait_environmental_engineer
-			add_trait = leader_trait_society_focus_3
+			add_trait = {
+				trait = subclass_scientist_governor
+				trait = leader_trait_virtual
+				trait = leader_trait_tomcat_insight
+				trait = leader_trait_sanitary_drone
+				trait = leader_trait_stubborn_2
+				trait = leader_trait_intolerant
+				trait = leader_trait_eager
+				trait = leader_trait_environmental_engineer
+				trait = leader_trait_society_focus_3
+				show_message = no
+			}
 			set_age = 216
 		}
 	}
@@ -943,9 +946,17 @@ country_event = { # Pylesos hire
 			if = {
 				limit = { has_trait = leader_trait_custom_AI_assistant }
 				remove_trait = leader_trait_custom_AI_assistant
-				add_trait_no_notify = leader_trait_sapient_AI_assistant
+				add_trait = {
+					trait = leader_trait_sapient_AI_assistant
+					show_message = no
+				}
 			}
-			else = { add_trait_no_notify = leader_trait_custom_AI_assistant }
+			else = {
+				add_trait = {
+					trait = leader_trait_custom_AI_assistant
+					show_message = no
+				}
+			}
 		}
 		hidden_effect = {
 			ethic_leader_hire_effect = {
@@ -1168,7 +1179,9 @@ leader_event = { # invite cats
 						has_trait = leader_trait_emotional_support_pet
 					}
 				}
-				add_trait = leader_trait_emotional_support_pet
+				add_trait = {
+					trait = leader_trait_emotional_support_pet
+				}
 			}
 		}
 		hidden_effect = {
@@ -1503,10 +1516,14 @@ leader_event = { # cat leader
 				add_skill = 1
 				if = {
 					limit = { leader_class = scientist }
-					add_trait = leader_trait_sapient_AI_assistant
+					add_trait = {
+						trait = leader_trait_sapient_AI_assistant
+					}
 				}
 				else = {
-					add_trait = trait_ruler_charismatic_2
+					add_trait = {
+						trait = trait_ruler_charismatic_2
+					}
 				}
 			}
 			every_owned_leader = {
@@ -1518,9 +1535,15 @@ leader_event = { # cat leader
 				if = {
 					limit = { has_trait = leader_trait_custom_AI_assistant }
 					remove_trait = leader_trait_custom_AI_assistant
-					add_trait = leader_trait_sapient_AI_assistant
+					add_trait = {
+						trait = leader_trait_sapient_AI_assistant
+					}
 				}
-				else = { add_trait = leader_trait_custom_AI_assistant }
+				else = {
+					add_trait = {
+						trait = leader_trait_custom_AI_assistant
+					}
+				}
 			}
 			add_modifier = { modifier = alien_appreciation years = 5 }
 		}

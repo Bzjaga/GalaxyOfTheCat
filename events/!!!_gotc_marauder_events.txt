@@ -165,7 +165,9 @@ country_event = {
 			randomize_traits = no
 			effect = {
 				remove_trait = leader_trait_ruler_great_khan
-				add_trait = leader_trait_great_khan
+				add_trait = {
+					trait = leader_trait_great_khan
+				}
 				set_leader_flag = great_khan
 				save_global_event_target_as = great_khan
 				set_leader_flag = legendary_leader

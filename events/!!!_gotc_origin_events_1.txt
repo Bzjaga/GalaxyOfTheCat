@@ -435,6 +435,27 @@ country_event = {
 				generate_start_deposits_and_blockers = yes
 				generate_start_buildings_and_districts = yes
 				set_name = "Франкфурт"
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
 				generate_start_pops = yes
 				event_target:fed_member_1 = {
 					country_event = { id = game_start.8 }
@@ -609,6 +630,27 @@ country_event = {
 				generate_start_deposits_and_blockers = yes
 				generate_start_buildings_and_districts = yes
 				set_name = "Вильнюс"
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
 				create_pop_group = {
 					size = 1200
 					species = event_target:fed_planet_2_species
@@ -929,6 +971,27 @@ country_event = {
 				}
 				generate_start_deposits_and_blockers = yes
 				generate_start_buildings_and_districts = yes
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
 				generate_start_pops = yes
 				event_target:fed_member_1 = {
 					country_event = { id = game_start.8 }
@@ -1050,6 +1113,27 @@ country_event = {
 				}
 				generate_start_deposits_and_blockers = yes
 				generate_start_buildings_and_districts = yes
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
 				generate_start_pops = yes
 				event_target:fed_member_2 = {
 					country_event = { id = game_start.8 }

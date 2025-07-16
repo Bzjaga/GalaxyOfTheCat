@@ -286,7 +286,6 @@ generate_slaver_bonus = {
 			event_target:last_created_pop_group = {
 				set_citizenship_type = {
 					type = citizenship_slavery
-					cooldown = no
 				}
 			}
 		}
@@ -318,7 +317,6 @@ generate_slaver_bonus = {
 		event_target:last_created_pop_group = {
 			set_citizenship_type = {
 				type = citizenship_slavery
-				cooldown = no
 			}
 		}
 	}
