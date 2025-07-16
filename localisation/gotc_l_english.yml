@@ -5,6 +5,21 @@
  name_list_GOTC_JEW:0 "Jewish"
  name_list_GOTC_RUS:0 "Old Rus"
  name_list_GOTC_TAJICAUCASIAN:0 "Tajicaucasian"
+ #Federation
+ eu_federation:0 "Eurogalactic Union"
+ eu_federation_desc:0 "Unbreakable Eurogalactic Union of free republics, Josep F. Borrell has sealed forever!\nGlory to the garden, in spite of the vile jungle, the great and mighty outpost of Brussels!"
+ eu_federation_bureaucratic_hell:0 "Bureaucratic hell"
+ eu_federation_bureaucratic_hell_desc:0 "How many directives and budgets does it take for European officials to change a lightbulb?"
+ eu_federation_research_sharing:0 "United Euroscience"
+ eu_federation_research_sharing_desc:0 "$research_federation_passive_effect$"
+ eu_federation_president_vote_strength:0 "Useful resolutions"
+ eu_federation_president_vote_strength_desc:0 "What could be more important for the galaxy than bureaucratic oversight and green transition? Only economic means of coercion to them!"
+ eu_federation_extra_envoy:0 "$extra_envoy_1$"
+ eu_federation_extra_envoy_desc:0 "$extra_envoy_1_desc$"
+ eu_federation_extra_influence:0 "An example to follow"
+ eu_federation_extra_influence_desc:0 "Our union is an example to follow and an object of envy for the rest of the world"
+ eu_federation_green_transition:0 "Green transition"
+ eu_federation_green_transition_desc:0 "Renewable energy is the future! Because we will ban the rest over time"
  #Preset names
  preset_bulwark_kadyrov:0 "Results of 2nd Chechen war"
  #Preset AI
@@ -21,7 +36,7 @@
  trait_mudozvon_effect:0 "Каждые $pop_group_unit$ £pop£ §Hпоселений§! в статусе раба или выше производят 0.01 ед. £influence£ §Yвлияния§! в месяц."
  #Pop factions
  #random_names\gotc_pop_faction_names.txt
- Impressed:0 "Впечатлённый"
+ Impressed:0 "Impressed"
  of_Nadenading_Cats:0 "наденаженья котов"
  of_Caring_Cats:0 "заботы о котах"
  of_Serving_Cats:0 "служения котам"

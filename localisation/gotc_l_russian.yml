@@ -5,6 +5,21 @@
  name_list_GOTC_JEW: "Еврейские"
  name_list_GOTC_RUS: "Древние Русы"
  name_list_GOTC_TAJICAUCASIAN: "Таджикавказские"
+ #Federation
+ eu_federation: "Еврогалактический Союз"
+ eu_federation_desc: "Евросоюз нерушимый республик свободных сплотил главсадовник Жозеп Ф. Боррель!\nДа славится сад назло джунглям премерзким, великий, могучий форпост наш Брюссель!"
+ eu_federation_bureaucratic_hell: "Бюрократический ад"
+ eu_federation_bureaucratic_hell_desc: "Сколько еврочиновникам нужно издать директив и выделить бюджетов, чтобы вкрутить лампочку?"
+ eu_federation_research_sharing: "Объединённая Евронаука"
+ eu_federation_research_sharing_desc: "$research_federation_passive_effect$"
+ eu_federation_president_vote_strength: "Полезные резолюции"
+ eu_federation_president_vote_strength_desc: "Что может быть важнее для галактики, чем бюрократический надзор и зелёный переход? Только экономические средства принуждения к ним!"
+ eu_federation_extra_envoy: "$extra_envoy_1$"
+ eu_federation_extra_envoy_desc: "$extra_envoy_1_desc$"
+ eu_federation_extra_influence: "Пример для подражания"
+ eu_federation_extra_influence_desc: "Наш союз  — пример для подражания и объект зависти для всего остального мира"
+ eu_federation_green_transition: "Зелёный переход"
+ eu_federation_green_transition_desc: "За возобновляемыми источниками энергии будущее! Ведь остальные со временем будут нами запрещены"
  #Preset names
  preset_bulwark_kadyrov: "Итоги 2й Чеченской войны"
  #Preset AI
