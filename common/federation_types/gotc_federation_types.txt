@@ -45,7 +45,7 @@ eu_federation = {
 			experience = @xp_to_level_2 # Experience until next rank
 			perks = {
 				eu_federation_passive
-				trade_federation_passive
+				unity_trade_1
 				federation_fleet_speed_1
 				president_diplo_weight_steal_1
 			}
@@ -55,7 +55,7 @@ eu_federation = {
 			experience = @xp_to_level_3
 			perks = {
 				eu_federation_bureaucratic_hell
-				eu_federation_green_transition
+				eu_federation_green_transition_and_sanctions
 				eu_federation_research_sharing
 				president_diplo_weight_steal_1
 			}
@@ -69,7 +69,7 @@ eu_federation = {
 				extra_influence_1
 				president_diplo_weight_steal_1
 				eu_federation_bureaucratic_hell
-				eu_federation_green_transition
+				eu_federation_green_transition_and_sanctions
 			}
 		}
 
@@ -78,10 +78,9 @@ eu_federation = {
 			perks = {
 				eu_federation_extra_influence
 				envoy_unity_2
-				eu_federation_president_vote_strength
 				president_diplo_weight_steal_1
 				eu_federation_bureaucratic_hell
-				eu_federation_green_transition
+				eu_federation_green_transition_and_sanctions
 				eu_federation_extra_envoy
 			}
 		}
@@ -91,10 +90,9 @@ eu_federation = {
 				extra_influence_1
 				president_diplo_weight_steal_1
 				eu_federation_bureaucratic_hell
-				eu_federation_green_transition
+				eu_federation_green_transition_and_sanctions
 				eu_federation_extra_influence
 				eu_federation_extra_envoy
-				eu_federation_president_vote_strength
 			}
 		}
 	}

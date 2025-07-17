@@ -77,6 +77,13 @@ treaties_separate_yes = {
 			}
 		}
 	}
+	required_centralization = {
+		base = 1
+		modifier = {
+			add = 2
+			has_federation_type = eu_federation
+		}
+	}
 	on_enact = {
 		if = {
 			limit = { has_federation_flag = enable_federation_cooldowns }

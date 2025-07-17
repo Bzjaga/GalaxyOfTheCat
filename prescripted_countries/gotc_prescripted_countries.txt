@@ -1592,7 +1592,7 @@ gotc_borrel = {
 	ethic = "ethic_gestalt_consciousness"
 
 	planet_name = "GOTC_BORREL_PLANET_NAME"
-	planet_class = "pc_desert"
+	planet_class = "pc_arid"
 	system_name = "GOTC_BORREL_SYSTEM_NAME"
 
 	initializer = ""

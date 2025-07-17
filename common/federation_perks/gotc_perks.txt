@@ -53,33 +53,31 @@ eu_federation_research_sharing = {
 	}
 }
 
-eu_federation_president_vote_strength = {
+eu_federation_green_transition_and_sanctions = {
+	members_modifier = {
+		country_energy_produces_mult = -0.05
+	}
 	leader_modifier = {
-		resolution_category_bureaucraticsurveillance_vote_strength_mult = 2
-		resolution_category_declare_crisis_vote_strength_mult = 2
-		resolution_category_ecology_vote_strength_mult = 2
-		resolution_category_sanctions_commerce_industry_vote_strength_mult = 2
-		resolution_category_sanctions_politics_culture_vote_strength_mult = 2
-		resolution_category_sanctions_environment_technology_vote_strength_mult = 2
-		resolution_category_sanctions_defense_war_vote_strength_mult = 2
+		resolution_category_bureaucraticsurveillance_vote_strength_mult = 0.5
+		resolution_category_declare_crisis_vote_strength_mult = 0.5
+		resolution_category_ecology_vote_strength_mult = 0.5
+		resolution_category_sanctions_commerce_industry_vote_strength_mult = 0.5
+		resolution_category_sanctions_politics_culture_vote_strength_mult = 0.5
+		resolution_category_sanctions_environment_technology_vote_strength_mult = 0.5
+		resolution_category_sanctions_defense_war_vote_strength_mult = 0.5
 	}
 }
 
 eu_federation_extra_envoy = {
 	members_modifier = {
 		envoys_add = 1
+		country_official_cap_add = 1
 	}
 }
 
 eu_federation_extra_influence = {
 	members_modifier = {
-		rivalries_influence_produces_mult = 0.5
-		federation_influence_produces_add = 2
-	}
-}
-
-eu_federation_green_transition = {
-	members_modifier = {
-		country_energy_produces_mult = -0.05
+		rivalries_influence_produces_mult = 1
+		federation_influence_produces_add = 1
 	}
 }
