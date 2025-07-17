@@ -327,29 +327,10 @@ country_event = {
 			# Create first member - tsennosti
 			event_target:fed_planet_1 = {
 				solar_system = { generate_home_system_resources = yes }
-				root = {
-					random_owned_species = {
-						limit = { NOT = { is_same_species = owner_main_species } }
-						save_event_target_as = migrant_species
-					}
-				}
-				create_pop_group = {
-					size = 200
-					species = event_target:migrant_species
-				}
 				create_species = {
-					name = {
-						key="Толерант"
-						literal=yes
-					}
-					plural = {
-						key="Толеранты"
-						literal=yes
-					}
-					adjective = {
-						key="Толерантск"
-						literal=yes
-					}
+					name = "GOTC_TSENNOSTI_MAIN_SPECIES_NAME"
+					plural = "GOTC_TSENNOSTI_MAIN_SPECIES_PLURAL"
+					adjective = "GOTC_TSENNOSTI_MAIN_SPECIES_ADJECTIVE"
 					class = "MOL"
 					portrait = "mol17"
 					name_list="MOL4"
@@ -368,12 +349,9 @@ country_event = {
 				}
 				# Common Ground
 				create_country = {
-					ship_prefix="WEST"
-					name = {
-						key="Западные европейские ценности"
-						literal=yes
-					}
-					adjective = "Западно-европейск"
+					ship_prefix = "GOTC_TSENNOSTI_SHIP_PREFIX"
+					name = "GOTC_TSENNOSTI_EMPIRE_NAME"
+					adjective = "GOTC_TSENNOSTI_EMPIRE_ADJECTIVE"
 					name_list = MOL4
 					species = event_target:fed_planet_1_species
 					type = default
@@ -414,7 +392,7 @@ country_event = {
 						create_leader = {
 							class = official
 							species = event_target:fed_planet_1_species
-							name = "Фонд дер Ляйен"
+							name = "GOTC_TSENNOSTI_RULER_NAME"
 							gender=female
 							skill = 1
 							randomize_traits = no
@@ -424,8 +402,8 @@ country_event = {
 								trait = leader_trait_bureaucratic
 							}
 						}
-						set_male_ruler_title = "Наноситель Добра"
-						set_female_ruler_title = "Наносительница Добра"
+						set_male_ruler_title = "GOTC_TSENNOSTI_RULER_TITLE"
+						set_female_ruler_title = "GOTC_TSENNOSTI_RULER_TITLE_FEMALE"
 						set_leader = last_created_leader
 					}
 				}
@@ -434,7 +412,7 @@ country_event = {
 				}
 				generate_start_deposits_and_blockers = yes
 				generate_start_buildings_and_districts = yes
-				set_name = "Франкфурт"
+				set_name = "GOTC_TSENNOSTI_PLANET_NAME"
 				if = {
 					limit = {
 						owner = { 
@@ -486,18 +464,9 @@ country_event = {
 			event_target:fed_planet_2 = {
 				solar_system = { generate_home_system_resources = yes }
 				create_species = {
-					name = {
-						key="Трибалт"
-						literal=yes
-					}
-					plural = {
-						key="Трибалты"
-						literal=yes
-					}
-					adjective = {
-						key="Трибалтск"
-						literal=yes
-					}
+					name = "GOTC_VYMIRATY_MAIN_SPECIES_NAME"
+					plural = "GOTC_VYMIRATY_MAIN_SPECIES_PLURAL"
+					adjective = "GOTC_VYMIRATY_MAIN_SPECIES_ADJECTIVE"
 					class = "LITHOID"
 					portrait = "lith12"
 					name_list="LITHOID2"
@@ -529,18 +498,9 @@ country_event = {
 				}
 				else = { # no zamkadets
 					create_species = {
-						name = {
-							key="Замкадец"
-							literal=yes
-						}
-						plural = {
-							key="Замкадцы"
-							literal=yes
-						}
-						adjective = {
-							key="Замкадск"
-							literal=yes
-						}
+						name = "GOTC_VOLDEMAR_MAIN_SPECIES_NAME"
+						plural = "GOTC_VOLDEMAR_MAIN_SPECIES_PLURAL"
+						adjective = "GOTC_VOLDEMAR_MAIN_SPECIES_ADJECTIVE"
 						class = "HUM"
 						portrait = "humanoid_02"
 						name_list="HUMAN2"
@@ -561,12 +521,9 @@ country_event = {
 				}
 				# Common Ground
 				create_country = {
-					ship_prefix="BALT"
-					name = {
-						key="Трибалтийские Вымираты"
-						literal=yes
-					}
-					adjective = "Трибалтийск"
+					ship_prefix = "GOTC_VYMIRATY_SHIP_PREFIX"
+					name = "GOTC_VYMIRATY_EMPIRE_NAME"
+					adjective = "GOTC_VYMIRATY_EMPIRE_ADJECTIVE"
 					name_list = LITHOID2
 					species = event_target:fed_planet_2_species
 					type = default
@@ -609,7 +566,7 @@ country_event = {
 						create_leader = {
 							class = commander
 							species = event_target:fed_planet_2_species
-							name = "КаКаллас"
+							name = "GOTC_VYMIRATY_RULER_NAME"
 							gender=female
 							skill = 1
 							randomize_traits = no
@@ -619,8 +576,8 @@ country_event = {
 								trait = leader_trait_crusader
 							}
 						}
-						set_male_ruler_title = "Министр Русофобии"
-						set_female_ruler_title = "Министр Русофобии"
+						set_male_ruler_title = "GOTC_VYMIRATY_RULER_TITLE"
+						set_female_ruler_title = "GOTC_VYMIRATY_RULER_TITLE_FEMALE"
 						set_leader = last_created_leader
 					}
 				}
@@ -629,7 +586,7 @@ country_event = {
 				}
 				generate_start_deposits_and_blockers = yes
 				generate_start_buildings_and_districts = yes
-				set_name = "Вильнюс"
+				set_name = "GOTC_VYMIRATY_PLANET_NAME"
 				if = {
 					limit = {
 						owner = { 
@@ -652,7 +609,7 @@ country_event = {
 					}
 				}
 				create_pop_group = {
-					size = 1200
+					size = 2300
 					species = event_target:fed_planet_2_species
 				}
 				create_pop_group = {
@@ -690,14 +647,14 @@ country_event = {
 					species = event_target:fed_planet_2_species
 				}
 				create_pop_group = {
-					size = 300
+					size = 600
 					species = event_target:fed_planet_2_species
 				}
 				create_pop_group = {
-					size = 100
+					size = 200
 					species = event_target:zamkadets
 				}
-				set_name = "Таллинн"
+				set_name = "GOTC_VYMIRATY_PLANET_NAME_2"
 			}
 			event_target:fed_planet_2_2 = {
 				create_colony = {
@@ -705,14 +662,14 @@ country_event = {
 					species = event_target:fed_planet_2_species
 				}
 				create_pop_group = {
-					size = 300
+					size = 600
 					species = event_target:fed_planet_2_species
 				}
 				create_pop_group = {
-					size = 100
+					size = 200
 					species = event_target:zamkadets
 				}
-				set_name = "Рига"
+				set_name = "GOTC_VYMIRATY_PLANET_NAME_3"
 			}
 
 			# Finish setting up member empires
@@ -812,7 +769,7 @@ country_event = {
 			federation = {
 				set_federation_type = eu_federation
 				set_federation_leader = root
-				set_name = "Европейский Союз"
+				set_name = "GOTC_EU_FEDERATION_NAME"
 				set_federation_law = succession_term_years_10
 				add_federation_experience = 600
 				add_cohesion = 100

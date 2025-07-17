@@ -1543,20 +1543,19 @@
 	}
 }
 
-# borrel
-"Европейский Сад" = {
-	name = "Европейский Сад"
-	adjective = "Евросадн"
+gotc_borrel = {
+	name = "GOTC_BORREL_EMPIRE_NAME"
+	adjective = "GOTC_BORREL_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "ЕС"
+	ship_prefix = "GOTC_BORREL_SHIP_PREFIX"
 
 	species = {
 		class = "MACHINE"
 		portrait = "nec_machine"
-		name = "Садовник"
-		plural = "Садовники"
-		adjective = "Садовнич"
+		name = "GOTC_BORREL_MAIN_SPECIES_NAME"
+		plural = "GOTC_BORREL_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_BORREL_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUMAN1"
 		trait = "trait_machine_unit"
 		trait = "trait_robot_history_explorebot"
@@ -1570,9 +1569,9 @@
 	secondary_species = {
 		class = "FUN"
 		portrait = "fun4"
-		name = "Мигрант"
-		plural = "Мигранты"
-		adjective = "Мигрантск"
+		name = "GOTC_BORREL_SECONDARY_SPECIES_NAME"
+		plural = "GOTC_BORREL_SECONDARY_SPECIES_PLURAL"
+		adjective = "GOTC_BORREL_SECONDARY_SPECIES_ADJECTIVE"
 		name_list = "AQUATIC1"
 		trait = "trait_invasive"
 		trait = "trait_deviants"
@@ -1592,9 +1591,9 @@
 
 	ethic = "ethic_gestalt_consciousness"
 
-	planet_name = "Брюссель"
+	planet_name = "GOTC_BORREL_PLANET_NAME"
 	planet_class = "pc_desert"
-	system_name = "Брюссель"
+	system_name = "GOTC_BORREL_SYSTEM_NAME"
 
 	initializer = ""
 	graphical_culture = "synthetics_01"
@@ -1618,41 +1617,34 @@
 	}
 
 	ruler = {
-		name = "Жозеп Боррель"
+		name = "GOTC_BORREL_RULER_NAME"
 		gender = male
 		portrait = "nec_machine"
 		texture = 2
 		evolution_mask=0
 		attachment=0
 		clothes=0
-		ruler_title={
-			key="Прорежатель Джунглей"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Прорежательница Джунглей"
-			literal=yes
-		}
+		ruler_title= "GOTC_BORREL_RULER_TITLE"
+		ruler_title_female="GOTC_BORREL_RULER_TITLE_FEMALE"
 		trait = "leader_trait_adaptable"
 		trait = "leader_trait_gullible"
 		leader_class = official
 	}
 }
 
-# voldemar
-"Пост-Советская Пустошь" = {
-	name = "Пост-Советская Пустошь"
-	adjective = "Пост-Советск"
+gotc_voldemar = {
+	name = "GOTC_VOLDEMAR_EMPIRE_NAME"
+	adjective = "GOTC_VOLDEMAR_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "PSU"
+	ship_prefix = "GOTC_VOLDEMAR_SHIP_PREFIX"
 
 	species = {
 		class = "HUM"
 		portrait = "humanoid_02"
-		name = "Замкадец"
-		plural = "Замкадцы"
-		adjective = "Замкадск"
+		name = "GOTC_VOLDEMAR_MAIN_SPECIES_NAME"
+		plural = "GOTC_VOLDEMAR_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_VOLDEMAR_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUMAN2"
 		trait = "trait_survivor"
 		trait = "trait_ingenious"
@@ -1675,9 +1667,9 @@
 	ethic = "ethic_xenophobe"
 	ethic = "ethic_spiritualist"
 
-	planet_name = "Пластмассовый Мир"
+	planet_name = "GOTC_VOLDEMAR_PLANET_NAME"
 	planet_class = "pc_continental"
-	system_name = "Пластмассовый Мир"
+	system_name = "GOTC_VOLDEMAR_SYSTEM_NAME"
 
 	initializer = ""
 	graphical_culture = "humanoid_01"
@@ -1701,21 +1693,15 @@
 	}
 
 	ruler = {
-		name = "Вольдемар из Дрездена"
+		name = "GOTC_VOLDEMAR_RULER_NAME"
 		gender = male
 		portrait = "humanoid_02_male_01"
 		texture = 0
 		evolution_mask=0
 		attachment=1
 		clothes=6
-		ruler_title={
-			key="Сильная Рука"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Сильная Рука"
-			literal=yes
-		}
+		ruler_title="GOTC_VOLDEMAR_RULER_TITLE"
+		ruler_title_female="GOTC_VOLDEMAR_RULER_TITLE_FEMALE"
 		trait="trait_ruler_logistic_understanding"
 		leader_class = commander
 	}

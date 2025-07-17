@@ -2482,7 +2482,7 @@ do_not_choose_roskomnadzor = {
 
 # tsennosti
 common_ground_init_tsennosti = {
-	name = "Франкфурт"
+	name = "GOTC_TSENNOSTI_SYSTEM_NAME"
 	class = "rl_starting_stars"
 	asteroid_belt = {
 		type = rocky_asteroid_belt
@@ -2515,7 +2515,7 @@ common_ground_init_tsennosti = {
 
 	planet = {
 		count = 1
-		name = "Франкфурт"
+		name = "GOTC_TSENNOSTI_PLANET_NAME"
 		home_planet = yes
 		class = pc_gaia
 		orbit_distance = 0
@@ -2619,7 +2619,7 @@ common_ground_init_tsennosti = {
 
 # vymiraty
 common_ground_init_vymiraty = {
-	name = "Трибалтия"
+	name = "GOTC_VYMIRATY_SYSTEM_NAME"
 	class = "rl_trinary_stars"
 
 	flags = { empire_home_system vymiraty }
@@ -2637,7 +2637,7 @@ common_ground_init_vymiraty = {
 
 	planet = {
 		count = 1
-		name = "Литва"
+		name = "GOTC_VYMIRATY_STAR_NAME_1"
 		class = star
 		orbit_distance = 25
 		orbit_angle = 0
@@ -2647,7 +2647,7 @@ common_ground_init_vymiraty = {
 
 	planet = {
 		count = 1
-		name = "Латвия"
+		name = "GOTC_VYMIRATY_STAR_NAME_2"
 		class = star
 		orbit_distance = { min = 0 max = 20 }
 		orbit_angle = 120
@@ -2657,7 +2657,7 @@ common_ground_init_vymiraty = {
 
 	planet = {
 		count = 1
-		name = "Эстония"
+		name = "GOTC_VYMIRATY_STAR_NAME_3"
 		class = star
 		orbit_distance = { min = 0 max = 20 }
 		orbit_angle = 120
@@ -2676,6 +2676,7 @@ common_ground_init_vymiraty = {
 
 	planet = {
 		count = 1
+		name = "GOTC_VYMIRATY_PLANET_NAME"
 		orbit_distance = 20
 		home_planet = yes
 		class = pc_continental
@@ -2705,9 +2706,10 @@ common_ground_init_vymiraty = {
 
 	planet = {
 		count = 1
+		name = "GOTC_VYMIRATY_PLANET_NAME_2"
 		orbit_distance = 25
 		class = pc_continental
-		flags = { Tallinn }
+		flags = { Riga }
 		orbit_angle = { min = 90 max = 270 }
 		size = 7
 		deposit_blockers = none
@@ -2720,9 +2722,10 @@ common_ground_init_vymiraty = {
 
 	planet = {
 		count = 1
+		name = "GOTC_VYMIRATY_PLANET_NAME_3"
 		orbit_distance = 20
 		class = pc_continental
-		flags = { Riga }
+		flags = { Tallinn }
 		orbit_angle = { min = 90 max = 270 }
 		size = 7
 		deposit_blockers = none
