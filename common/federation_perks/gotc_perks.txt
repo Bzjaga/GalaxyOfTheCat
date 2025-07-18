@@ -25,6 +25,9 @@ eu_federation_passive = {
 		pop_ethic_egalitarian_attraction_mult = 0.2
 		pop_ethic_xenophile_attraction_mult = 0.1
 	}
+	leader_modifier = {
+		diplo_weight_economy_mult = -0.3
+	}
 	on_activate = {
 		eu_federation_passive_set_variables = yes
 	}
@@ -43,22 +46,9 @@ eu_federation_bureaucratic_hell = {
 	}
 }
 
-eu_federation_research_sharing = {
-	on_activate = {
-		set_federation_settings = {
-			research_sharing = yes
-		}
-	}
-	on_deactivate = {
-		set_federation_settings = {
-			research_sharing = no
-		}
-	}
-}
-
 eu_federation_green_transition_and_sanctions = {
 	members_modifier = {
-		country_energy_produces_mult = -0.05
+		country_energy_produces_mult = -0.1
 	}
 	leader_modifier = {
 		resolution_category_bureaucraticsurveillance_vote_strength_mult = 0.5

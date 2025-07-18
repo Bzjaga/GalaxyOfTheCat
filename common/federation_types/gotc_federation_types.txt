@@ -55,7 +55,7 @@ eu_federation = {
 			perks = {
 				eu_federation_bureaucratic_hell
 				eu_federation_green_transition_and_sanctions
-				eu_federation_research_sharing
+				research_federation_passive
 				president_diplo_weight_steal_1
 			}
 		}
