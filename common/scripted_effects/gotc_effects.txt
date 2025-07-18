@@ -64,8 +64,8 @@ choose_imperial_overlord_country = {
 	else_if = { # Overlord Post-Soviet
 		limit = {
 			AND = {
-				any_system = { has_star_flag = zaharova }
-				any_system = { has_star_flag = lukashenko }
+				any_playable_country = { has_country_flag = gotc_zaharova }
+				any_playable_country = { has_country_flag = gotc_lukashenko }
 			}
 		}
 		change_empires_if_overlord_post_soviet = yes
@@ -73,33 +73,33 @@ choose_imperial_overlord_country = {
 	else_if = { # Overlord Soviet
 		limit = {
 			AND = {
-				any_system = { has_star_flag = mao }
-				any_system = { has_star_flag = deyatel }
+				any_playable_country = { has_country_flag = gotc_mao }
+				any_playable_country = { has_country_flag = gotc_deyatel }
 			}
 		}
 		change_empires_if_overlord_soviet = yes
 	}
 	else_if = { # Overlord Post-Soviet
 		limit = {
-			any_system = { has_star_flag = zaharova }
+			any_playable_country = { has_country_flag = gotc_zaharova }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_system = { has_star_flag = mao }
+			any_playable_country = { has_country_flag = gotc_mao }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
 	else_if = { # Overlord Post-Soviet
 		limit = {
-			any_system = { has_star_flag = lukashenko }
+			any_playable_country = { has_country_flag = gotc_lukashenko }
 		}
 		change_empires_if_overlord_post_soviet = yes
 	}
 	else_if = { # Overlord Soviet
 		limit = {
-			any_system = { has_star_flag = deyatel }
+			any_playable_country = { has_country_flag = gotc_deyatel }
 		}
 		change_empires_if_overlord_soviet = yes
 	}
@@ -111,13 +111,9 @@ choose_imperial_overlord_country = {
 #Changes for empires that depend on the choice of overlord (overlord_post_soviet)
 change_empires_if_overlord_post_soviet = {
 	set_star_flag = is_chosen_overlord_post_soviet
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = mao
-				}
-			}
+			has_country_flag = gotc_mao
 		}
 		capital_scope = {
 			while = {
@@ -135,13 +131,9 @@ change_empires_if_overlord_post_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = deyatel
-				}
-			}
+			has_country_flag = gotc_deyatel
 		}
 		capital_scope = {
 			while = {
@@ -159,7 +151,7 @@ change_empires_if_overlord_post_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
 			capital_scope = {
 				solar_system = {
@@ -174,13 +166,9 @@ change_empires_if_overlord_post_soviet = {
 #Changes for empires that depend on the choice of overlord (overlord_soviet)
 change_empires_if_overlord_soviet = {
 	set_star_flag = is_chosen_overlord_soviet
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = zaharova
-				}
-			}
+			has_country_flag = gotc_zaharova
 		}
 		capital_scope = {
 			while = {
@@ -198,13 +186,9 @@ change_empires_if_overlord_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = lukashenko
-				}
-			}
+			has_country_flag = gotc_lukashenko
 		}
 		capital_scope = {
 			while = {
@@ -222,13 +206,9 @@ change_empires_if_overlord_soviet = {
 		}
 		set_origin = origin_default
 	}
-	every_playable_country = {
+	random_playable_country = {
 		limit = {
-			capital_scope = {
-				solar_system = {
-					has_star_flag = mao
-				}
-			}
+			has_country_flag = gotc_mao
 		}
 		give_technology = { tech = tech_genome_mapping }
 	}
@@ -369,7 +349,7 @@ create_MSI_zion = {
 			literal=yes
 		}
 		class = REP
-		namelist = JEW
+		namelist = GOTC_JEW
 		portrait = rep4
 		traits = {
 			ideal_planet_class = pc_desert
@@ -3236,7 +3216,7 @@ create_imperial_vassal_kadyrov = {
 		}
 		class = "MAM"
 		portrait = "mam10"
-		name_list="TAJICAUCASIAN"
+		name_list="GOTC_TAJICAUCASIAN"
 		gender=male
 		traits = {
 			trait = "trait_unruly"
@@ -3894,7 +3874,7 @@ create_imperial_vassal_rpc = {
 		}
 		class = "TOX"
 		portrait = "tox2"
-		name_list="BABULKA"
+		name_list="GOTC_BABULKA"
 		gender=female
 		traits = {
 			trait = "trait_presapient_conservative"
@@ -3926,7 +3906,7 @@ create_imperial_vassal_rpc = {
 		}
 		class = "NECROID"
 		portrait = "nec12"
-		name_list="BABULKA"
+		name_list="GOTC_BABULKA"
 		gender=male
 		traits = {
 			trait = "trait_thrifty"
@@ -6076,7 +6056,7 @@ create_pre_ftl_egypt = {
 					}
 					class = "HUM"
 					portrait = "humanoid_elf"
-					name_list="TAJICAUCASIAN"
+					name_list="GOTC_TAJICAUCASIAN"
 					gender=male
 					traits = {
 						trait = "trait_quarrelsome"
@@ -7559,7 +7539,9 @@ check_country_flags_mad_vacuum_cleaner = {
 add_negative_trait_mad_vacuum_cleaner = {
 	if = {
 		limit = { NOT = { has_trait = leader_trait_intolerant_2 } }
-		add_trait = leader_trait_intolerant_2
+		add_trait = {
+			trait = leader_trait_intolerant_2
+		}
 	}
 	else_if = {
 		limit = {
@@ -7568,15 +7550,21 @@ add_negative_trait_mad_vacuum_cleaner = {
 				has_trait = leader_trait_opinionated_2
 			}
 		}
-		add_trait = leader_trait_opinionated
+		add_trait = {
+			trait = leader_trait_opinionated
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = leader_trait_opinionated_2 } }
-		add_trait = leader_trait_opinionated_2
+		add_trait = {
+			trait = leader_trait_opinionated_2
+		}
 	}
 	#else_if = {
 	#	limit = { NOT = { has_trait = leader_trait_hacked } }
-	#	add_trait = leader_trait_hacked
+	#	add_trait = {
+	#		trait = leader_trait_hacked
+	#	}
 	#}
 	else_if = {
 		limit = {
@@ -7585,11 +7573,15 @@ add_negative_trait_mad_vacuum_cleaner = {
 				has_trait = leader_trait_destructive_2
 			}
 		}
-		add_trait = leader_trait_destructive
+		add_trait = {
+			trait = leader_trait_destructive
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = leader_trait_destructive_2 } }
-		add_trait = leader_trait_destructive_2
+		add_trait = {
+			trait = leader_trait_destructive_2
+		}
 	}
 	else_if = {
 		limit = {
@@ -7598,11 +7590,15 @@ add_negative_trait_mad_vacuum_cleaner = {
 				has_trait = leader_trait_neurotic_2
 			}
 		}
-		add_trait = leader_trait_neurotic
+		add_trait = {
+			trait = leader_trait_neurotic
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = leader_trait_neurotic_2 } }
-		add_trait = leader_trait_neurotic_2
+		add_trait = {
+			trait = leader_trait_neurotic_2
+		}
 	}
 }
 
@@ -7736,4 +7732,117 @@ embrace_catist_faction_no_name_change = {
 	set_female_heir_title = "Котесса"
 
 	check_country_flags_mad_vacuum_cleaner = yes
+}
+
+##################
+# Federation
+##################
+
+eu_federation_passive_set_variables = {
+
+	# count federation members
+	set_variable = {
+		which = counted_federation_members
+		value = 0
+	}
+	
+	set_variable = {
+		which = counted_food_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_energy_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_minerals_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_consumer_goods_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_alloys_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_trade_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_volatile_motes_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_exotic_gases_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_rare_crystals_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_sr_living_metal_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_sr_zro_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_sr_dark_matter_income
+		value = 0
+	}
+
+	every_member = {
+		set_variable = {
+			which = food_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = energy_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = minerals_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = consumer_goods_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = alloys_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = trade_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = volatile_motes_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = exotic_gases_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = rare_crystals_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = sr_living_metal_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = sr_zro_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = sr_dark_matter_income_of_federation_member
+			value = 0
+		}
+	}
 }

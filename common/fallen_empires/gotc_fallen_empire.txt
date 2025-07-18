@@ -28,7 +28,7 @@ fallen_empire_1 = {
 			}
 			class = "REP"
 			portrait = "cyb4"
-			name_list="JEW"
+			name_list="GOTC_JEW"
 			extra_trait_points = 4
 			traits = {
 				ideal_planet_class = pc_tropical
@@ -152,7 +152,7 @@ fallen_empire_2 = {
 			}
 			class = "MAM"
 			portrait = "cyb6"
-			name_list="RUS"
+			name_list="GOTC_RUS"
 			gender=male
 			extra_trait_points = 4
 			traits = {
@@ -180,7 +180,7 @@ fallen_empire_2 = {
 			}
 			adjective="Русск"
 			type = fallen_empire
-			name_list="RUS"
+			name_list="GOTC_RUS"
 			ignore_initial_colony_error = yes
 			authority = auth_imperial
 			civics = {
@@ -479,15 +479,11 @@ fallen_empire_4 = {
 	create_country_effect = {
 		if = {
 			limit = {
-				any_system = { has_star_flag = mao }
+				any_playable_country = { has_country_flag = gotc_mao }
 			}
 			random_playable_country = {
 				limit = {
-					capital_scope = {
-						solar_system = {
-							has_star_flag = mao
-						}
-					}
+					has_country_flag = gotc_mao
 				}
 				owner_main_species = {
 					save_event_target_as = mao_species

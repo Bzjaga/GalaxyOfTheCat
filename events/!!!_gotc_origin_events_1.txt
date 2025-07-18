@@ -184,171 +184,271 @@ country_event = {
 		set_country_flag = Story2 # Already encountered spacefarers
 		give_technology = { tech = tech_federation_code message = no }
 
-		# Replace prescripted ideal planets with barren worlds and spawn federation partners.
-		if = {
-			limit = { num_guaranteed_colonies >= 2 }
+		if = { # borrel
+			limit = { has_country_flag = gotc_borrel }
 			capital_scope = {
-				solar_system = {
-					closest_system = {
-						limit = { has_star_flag = neighbor_t1_first_colony }
-						random_system_planet = {
-							limit = { has_planet_flag = prescripted_ideal }
-							change_pc = pc_barren
-						}
-						spawn_random_home_system = yes
-						last_created_system = {
-							federation_origin_planet_setup = {
-								NUM = 1
+				change_pc = pc_gaia
+				set_planet_size = 14
+				random_owned_species = {
+					limit = { is_robotic = no }
+					save_event_target_as = migrant_species
+				}
+			}
+			# Replace prescripted ideal planets with small gaia worlds and spawn federation partners.
+			if = {
+				limit = { num_guaranteed_colonies >= 2 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_star_flag = neighbor_t1_first_colony }
+							every_system_planet = {
+								limit = { habitable_planet = yes }
+								change_pc = pc_gaia
+								set_planet_size = 7
+							}
+							origin_spawn_system_effect = { INITIALIZER = common_ground_init_tsennosti }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_1
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
 							}
 						}
-					}
-					closest_system = {
-						limit = { has_star_flag = neighbor_t2_second_colony }
-						random_system_planet = {
-							limit = { has_planet_flag = prescripted_ideal }
-							change_pc = pc_barren
-						}
-						spawn_random_home_system = yes
-						last_created_system = {
-							federation_origin_planet_setup = {
-								NUM = 2
+						closest_system = {
+							limit = { has_star_flag = neighbor_t2_second_colony }
+							every_system_planet = {
+								limit = { habitable_planet = yes }
+								change_pc = pc_gaia
+								set_planet_size = 7
+							}
+							origin_spawn_system_effect = { INITIALIZER = common_ground_init_vymiraty }
+							last_created_system = {
+								random_system_planet = {
+									limit = { has_planet_flag = Vilnius }
+									save_event_target_as = fed_planet_2
+								}
+								random_system_planet = {
+									limit = { has_planet_flag = Tallinn }
+									save_event_target_as = fed_planet_2_1
+								}
+								random_system_planet = {
+									limit = { has_planet_flag = Riga }
+									save_event_target_as = fed_planet_2_2
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
 							}
 						}
 					}
 				}
 			}
-		}
-		if = {
-			limit = { num_guaranteed_colonies >= 1 }
-			capital_scope = {
-				solar_system = {
-					closest_system = {
-						limit = { has_star_flag = neighbor_t1_first_colony }
-						random_system_planet = {
-							limit = { has_planet_flag = prescripted_ideal }
-							change_pc = pc_barren
-						}
-						spawn_random_home_system = yes
-						last_created_system = {
-							federation_origin_planet_setup = {
-								NUM = 1
+			else_if = {
+				limit = { num_guaranteed_colonies >= 1 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_star_flag = neighbor_t1_first_colony }
+							every_system_planet = {
+								limit = { habitable_planet = yes }
+								change_pc = pc_gaia
+								set_planet_size = 7
+							}
+							origin_spawn_system_effect = { INITIALIZER = common_ground_init_tsennosti }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_1
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
 							}
 						}
-					}
-					closest_system = {
-						limit = {
-							NOT = { has_star_flag = neighbor_t1_first_colony }
-							has_owner = no
-						}
-						spawn_random_home_system = yes
-						last_created_system = {
-							federation_origin_planet_setup = {
-								NUM = 2
+						closest_system = {
+							limit = {
+								NOT = { has_star_flag = neighbor_t1_first_colony }
+								has_owner = no
 							}
-						}
-					}
-				}
-			}
-		}
-		if = {
-			limit = { num_guaranteed_colonies = 0 }
-			capital_scope = {
-				solar_system = {
-					closest_system = {
-						limit = { has_owner = no }
-						spawn_random_home_system = yes
-						last_created_system = {
-							federation_origin_planet_setup = {
-								NUM = 1
-							}
-						}
-					}
-					closest_system = {
-						limit = {
-							NOT = { has_star_flag = fed_origin_system_1 }
-							has_owner = no
-						}
-						spawn_random_home_system = yes
-						last_created_system = {
-							federation_origin_planet_setup = {
-								NUM = 2
+							origin_spawn_system_effect = { INITIALIZER = common_ground_init_vymiraty }
+							last_created_system = {
+								random_system_planet = {
+									limit = { has_planet_flag = Vilnius }
+									save_event_target_as = fed_planet_2
+								}
+								random_system_planet = {
+									limit = { has_planet_flag = Tallinn }
+									save_event_target_as = fed_planet_2_1
+								}
+								random_system_planet = {
+									limit = { has_planet_flag = Riga }
+									save_event_target_as = fed_planet_2_2
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
 							}
 						}
 					}
 				}
 			}
-		}
+			else_if = {
+				limit = { num_guaranteed_colonies = 0 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_owner = no }
+							origin_spawn_system_effect = { INITIALIZER = common_ground_init_tsennosti }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_1
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+						closest_system = {
+							limit = {
+								NOT = { has_star_flag = fed_origin_system_1 }
+								has_owner = no
+							}
+							origin_spawn_system_effect = { INITIALIZER = common_ground_init_vymiraty }
+							last_created_system = {
+								random_system_planet = {
+									limit = { has_planet_flag = Vilnius }
+									save_event_target_as = fed_planet_2
+								}
+								random_system_planet = {
+									limit = { has_planet_flag = Tallinn }
+									save_event_target_as = fed_planet_2_1
+								}
+								random_system_planet = {
+									limit = { has_planet_flag = Riga }
+									save_event_target_as = fed_planet_2_2
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+					}
+				}
+			}
 
-		# Create first member
-		event_target:fed_planet_1 = {
-			solar_system = { generate_home_system_resources = yes }
-			if = {
-				limit = {
-					root = {
-						NOT = {
-							has_valid_civic = civic_selective_kinship
+			# Create first member - tsennosti
+			event_target:fed_planet_1 = {
+				solar_system = { generate_home_system_resources = yes }
+				create_pop_group = {
+					size = 600
+					species = event_target:migrant_species
+				}
+				create_species = {
+					name = "GOTC_TSENNOSTI_MAIN_SPECIES_NAME"
+					plural = "GOTC_TSENNOSTI_MAIN_SPECIES_PLURAL"
+					adjective = "GOTC_TSENNOSTI_MAIN_SPECIES_ADJECTIVE"
+					class = "MOL"
+					portrait = "mol17"
+					name_list="MOL4"
+					gender=indeterminable
+					traits = {
+						trait = "trait_conservational"
+						trait = "trait_unruly"
+						trait = "trait_humanoid_psychological_infertility"
+						trait = "trait_venerable"
+						trait = "trait_talented"
+					}
+					homeworld = this
+				}
+				last_created_species = {
+					save_event_target_as = fed_planet_1_species
+				}
+				# Common Ground
+				create_country = {
+					ship_prefix = "GOTC_TSENNOSTI_SHIP_PREFIX"
+					name = "GOTC_TSENNOSTI_EMPIRE_NAME"
+					adjective = "GOTC_TSENNOSTI_EMPIRE_ADJECTIVE"
+					name_list = MOL4
+					species = event_target:fed_planet_1_species
+					type = default
+					flag = {
+						icon = {
+							category="human"
+							file="flag_human_3.dds"
+						}
+						background = {
+							category="backgrounds"
+							file="rounded_middle.dds"
+						}
+						colors = {
+							"red_orange"
+							"burgundy"
+							"null"
+							"null"
 						}
 					}
-				}
-				create_fed_planet_1_species = { CLASS = random }
-			}
-			else = {
-				root = {
-					switch = {
-						trigger = is_species_class
-						HUM =		{ create_fed_planet_1_species = { CLASS = HUM } }
-						MAM =		{ create_fed_planet_1_species = { CLASS = MAM } }
-						FUN =		{ create_fed_planet_1_species = { CLASS = FUN } }
-						AVI =		{ create_fed_planet_1_species = { CLASS = AVI } }
-						PLANT =		{ create_fed_planet_1_species = { CLASS = PLANT } }
-						ART =		{ create_fed_planet_1_species = { CLASS = ART } }
-						REP =		{ create_fed_planet_1_species = { CLASS = REP } }
-						MOL =		{ create_fed_planet_1_species = { CLASS = MOL } }
-						LITHOID =	{ create_fed_planet_1_species = { CLASS = LITHOID } }
-						NECROID =	{ create_fed_planet_1_species = { CLASS = NECROID } }
-						AQUATIC =	{ create_fed_planet_1_species = { CLASS = AQUATIC } }
-						TOX =		{ create_fed_planet_1_species = { CLASS = TOX } }
-						default =	{ create_fed_planet_1_species = { CLASS = HUM } }
+					origin = "origin_common_ground_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					ethos = {
+						ethic = "ethic_egalitarian"
+						ethic = "ethic_fanatic_xenophile"
+					}
+					civics = {
+						civic = civic_free_haven
+						civic = civic_pleasure_seekers
+					}
+					authority = auth_oligarchic
+					effect = {
+						save_event_target_as = fed_member_1
+						establish_communications_no_message = root
+						set_graphical_culture = molluscoid_01
+
+						# Leader
+						create_leader = {
+							class = official
+							species = event_target:fed_planet_1_species
+							name = "GOTC_TSENNOSTI_RULER_NAME"
+							gender=female
+							skill = 1
+							randomize_traits = no
+							traits = {
+								trait = leader_trait_resolution_category_sanctions_focus
+								trait = leader_trait_eager
+								trait = leader_trait_bureaucratic
+							}
+						}
+						set_male_ruler_title = "GOTC_TSENNOSTI_RULER_TITLE"
+						set_female_ruler_title = "GOTC_TSENNOSTI_RULER_TITLE_FEMALE"
+						set_leader = last_created_leader
 					}
 				}
-			}
-			# Common Ground
-			if = {
-				limit = {
-					root = { has_origin = origin_common_ground }
+				create_colony = {
+					owner = event_target:fed_member_1
 				}
-				create_common_ground_member = { NUM = 1 }
-			}
-			# Hegemon
-			if = {
-				limit = {
-					root = {
-						has_origin = origin_hegemon
-						NOT = { has_ethic = ethic_xenophobe }
-					}
-				}
-				create_hegemon_member = {
-					NUM = 1
-				}
-			}
-			create_colony = {
-				owner = event_target:fed_member_1
-			}
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			event_target:fed_member_1 = {
-				country_event = { id = game_start.8 }
-				give_starting_resources_effect = yes
-				give_technology = { tech = tech_federation_code message = no }
-			}
-			solar_system = {
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				set_name = "GOTC_TSENNOSTI_PLANET_NAME"
 				if = {
 					limit = {
-						event_target:fed_member_1 = {
-							is_gestalt = no
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
 						}
 					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
+				generate_start_pops = yes
+				event_target:fed_member_1 = {
+					country_event = { id = game_start.8 }
+					give_starting_resources_effect = yes
+					give_technology = { tech = tech_federation_code message = no }
+				}
+				solar_system = {
 					create_starbase = {
 						size = starbase_starport
 						module = shipyard
@@ -366,110 +466,171 @@ country_event = {
 						}
 					}
 				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:fed_member_1
-						effect = {
-							if = {
-								limit = {
-									event_target:fed_member_1 = {
-										has_valid_civic = civic_machine_astromining_drones
-									}	
-								}
-								set_starbase_module = {
-									slot = 1
-									module = astromining_bay
-								}
-							}
-							else = {
-								set_starbase_module = {
-									slot = 1
-									module = solar_panel_network
-								}
-							}
-							set_starbase_module = {
-								slot = 2
-								module = shipyard
-							}
-						}
-					}
-				}
 			}
-		}
 
-		# Create second member
-		event_target:fed_planet_2 = {
-			solar_system = { generate_home_system_resources = yes }
-			if = {
-				limit = {
-					root = {
-						NOT = {
-							has_valid_civic = civic_selective_kinship
+			# Create second member - vymiraty
+			event_target:fed_planet_2 = {
+				solar_system = { generate_home_system_resources = yes }
+				create_species = {
+					name = "GOTC_VYMIRATY_MAIN_SPECIES_NAME"
+					plural = "GOTC_VYMIRATY_MAIN_SPECIES_PLURAL"
+					adjective = "GOTC_VYMIRATY_MAIN_SPECIES_ADJECTIVE"
+					class = "LITHOID"
+					portrait = "lith12"
+					name_list="LITHOID2"
+					gender=not_set
+					traits = {
+						trait = "trait_lithoid"
+						trait = "trait_fleeting_lithoid"
+						trait = "trait_slow_learners"
+						trait = "trait_lithoid_scintillating"
+						trait = "trait_traditional"
+						trait = "trait_gene_mentorship"
+						trait = "trait_crafted_smiles"
+					}
+					homeworld = this
+				}
+				last_created_species = {
+					save_event_target_as = fed_planet_2_species
+				}
+				if = { # zamkadets specie exist
+					limit = {
+						any_playable_country = { has_country_flag = gotc_voldemar }
+					}
+					random_playable_country = {
+						limit = { has_country_flag = gotc_voldemar }
+						owner_main_species = {
+							save_event_target_as = zamkadets
 						}
 					}
 				}
-				create_fed_planet_2_species = { CLASS = random }
-			}
-			else = {
-				root = {
-					switch = {
-						trigger = is_species_class
-						HUM =		{ create_fed_planet_2_species = { CLASS = HUM } }
-						MAM =		{ create_fed_planet_2_species = { CLASS = MAM } }
-						FUN =		{ create_fed_planet_2_species = { CLASS = FUN } }
-						AVI =		{ create_fed_planet_2_species = { CLASS = AVI } }
-						PLANT =		{ create_fed_planet_2_species = { CLASS = PLANT } }
-						ART =		{ create_fed_planet_2_species = { CLASS = ART } }
-						REP =		{ create_fed_planet_2_species = { CLASS = REP } }
-						MOL =		{ create_fed_planet_2_species = { CLASS = MOL } }
-						LITHOID =	{ create_fed_planet_2_species = { CLASS = LITHOID } }
-						NECROID =	{ create_fed_planet_2_species = { CLASS = NECROID } }
-						AQUATIC =	{ create_fed_planet_2_species = { CLASS = AQUATIC } }
-						TOX =		{ create_fed_planet_2_species = { CLASS = TOX } }
-						default =	{ create_fed_planet_2_species = { CLASS = HUM } }
+				else = { # no zamkadets
+					create_species = {
+						name = "GOTC_VOLDEMAR_MAIN_SPECIES_NAME"
+						plural = "GOTC_VOLDEMAR_MAIN_SPECIES_PLURAL"
+						adjective = "GOTC_VOLDEMAR_MAIN_SPECIES_ADJECTIVE"
+						class = "HUM"
+						portrait = "humanoid_02"
+						name_list="HUMAN2"
+						gender=not_set
+						traits = {
+							trait = "trait_survivor"
+							trait = "trait_ingenious"
+							trait = "trait_wasteful"
+							trait = "trait_communal"
+							trait = "trait_fleeting"
+							trait = "trait_noxious"
+						}
+						homeworld = this
+					}
+					last_created_species = {
+						save_event_target_as = zamkadets
 					}
 				}
-			}
-			# Common Ground
-			if = {
-				limit = {
-					root = { has_origin = origin_common_ground }
-				}
-				create_common_ground_member = { NUM = 2 }
-			}
-			# Hegemon
-			if = {
-				limit = {
-					root = {
-						has_origin = origin_hegemon
-						NOT = { has_ethic = ethic_xenophobe }
+				# Common Ground
+				create_country = {
+					ship_prefix = "GOTC_VYMIRATY_SHIP_PREFIX"
+					name = "GOTC_VYMIRATY_EMPIRE_NAME"
+					adjective = "GOTC_VYMIRATY_EMPIRE_ADJECTIVE"
+					name_list = LITHOID2
+					species = event_target:fed_planet_2_species
+					type = default
+					flag = {
+						icon = {
+							category="legion"
+							file="flag_mp_beta_02.dds"
+						}
+						background = {
+							category="backgrounds"
+							file="flag_BG_24.dds"
+						}
+						colors = {
+							"indigo"
+							"black"
+							"black"
+							"null"
+						}
+					}
+					origin = "origin_common_ground_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					ethos = {
+						ethic = "ethic_egalitarian"
+						ethic = "ethic_xenophobe"
+						ethic = "ethic_militarist"
+					}
+					civics = {
+						civic = civic_crusader_spirit
+						civic = civic_selective_kinship
+					}
+					authority = auth_democratic
+					effect = {
+						save_event_target_as = fed_member_2
+						establish_communications_no_message = root
+						set_graphical_culture = lithoid_01
+						set_city_graphical_culture = wilderness_01
+
+						# Leader
+						create_leader = {
+							class = commander
+							species = event_target:fed_planet_2_species
+							name = "GOTC_VYMIRATY_RULER_NAME"
+							gender=female
+							skill = 1
+							randomize_traits = no
+							traits = {
+								trait = leader_trait_arrested_development
+								trait = trait_ruler_warlike
+								trait = leader_trait_crusader
+							}
+						}
+						set_male_ruler_title = "GOTC_VYMIRATY_RULER_TITLE"
+						set_female_ruler_title = "GOTC_VYMIRATY_RULER_TITLE_FEMALE"
+						set_leader = last_created_leader
 					}
 				}
-				create_hegemon_member = {
-					NUM = 2
+				create_colony = {
+					owner = event_target:fed_member_2
 				}
-			}
-			create_colony = {
-				owner = event_target:fed_member_2
-			}
-			generate_start_deposits_and_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			event_target:fed_member_2 = {
-				country_event = { id = game_start.8 }
-				give_starting_resources_effect = yes
-				give_technology = { tech = tech_federation_code message = no }
-			}
-			solar_system = {
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				set_name = "GOTC_VYMIRATY_PLANET_NAME"
 				if = {
 					limit = {
-						event_target:fed_member_2 = {
-							is_gestalt = no
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
 						}
 					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
+				create_pop_group = {
+					size = 2300
+					species = event_target:fed_planet_2_species
+				}
+				create_pop_group = {
+					size = 100
+					species = event_target:zamkadets
+				}
+				event_target:fed_member_2 = {
+					country_event = { id = game_start.8 }
+					give_starting_resources_effect = yes
+					give_technology = { tech = tech_federation_code message = no }
+					give_technology = { tech = tech_satisfying_insults }
+				}
+				solar_system = {
 					create_starbase = {
 						size = starbase_starport
 						module = shipyard
@@ -487,78 +648,78 @@ country_event = {
 						}
 					}
 				}
-				else = {
-					create_starbase = {
-						size = starbase_starport
-						module = shipyard
-						building = crew_quarters
-						owner = event_target:fed_member_2
-						effect = {
-							if = {
-								limit = {
-									event_target:fed_member_2 = {
-										has_valid_civic = civic_machine_astromining_drones
-									}	
-								}
-								set_starbase_module = {
-									slot = 1
-									module = astromining_bay
-								}
-							}
-							else = {
-								set_starbase_module = {
-									slot = 1
-									module = solar_panel_network
-								}
-							}
-							set_starbase_module = {
-								slot = 2
-								module = shipyard
-							}
-						}
-					}
+			}
+			event_target:fed_planet_2_1 = {
+				create_colony = {
+					owner = event_target:fed_member_2
+					species = event_target:fed_planet_2_species
 				}
+				create_pop_group = {
+					size = 600
+					species = event_target:fed_planet_2_species
+				}
+				create_pop_group = {
+					size = 200
+					species = event_target:zamkadets
+				}
+				set_name = "GOTC_VYMIRATY_PLANET_NAME_2"
 			}
-		}
+			event_target:fed_planet_2_2 = {
+				create_colony = {
+					owner = event_target:fed_member_2
+					species = event_target:fed_planet_2_species
+				}
+				create_pop_group = {
+					size = 600
+					species = event_target:fed_planet_2_species
+				}
+				create_pop_group = {
+					size = 200
+					species = event_target:zamkadets
+				}
+				set_name = "GOTC_VYMIRATY_PLANET_NAME_3"
+			}
 
-		# Finish setting up member empires
-		event_target:fed_member_1 = {
-			create_starting_leaders = yes
-			country_event = { id = game_start.9 } # create starter set of ships
-			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
-			country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
-			join_alliance = {
-				who = root
-				override_requirements = yes
+			# Finish setting up member empires
+			event_target:fed_member_1 = {
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 } # create starter set of ships
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
+				join_alliance = {
+					who = root
+					override_requirements = yes
+				}
+				#set_name = random # Fixes some naming issues
 			}
-			set_name = random # Fixes some naming issues
-		}
-		event_target:fed_member_2 = {
-			create_starting_leaders = yes
-			country_event = { id = game_start.9 }
-			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
-			country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
-			join_alliance = {
-				who = root
-				override_requirements = yes
+			event_target:fed_member_2 = {
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 }
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
+				join_alliance = {
+					who = root
+					override_requirements = yes
+				}
+				#set_name = random # Fixes some naming issues
 			}
-			set_name = random # Fixes some naming issues
-		}
 
-		# Set Intel levels, Opinion, and Federation laws
-		if = {
-			limit = { has_origin = origin_common_ground }
+			# Set Intel levels, Opinion, and Federation laws
 			event_target:fed_member_1 = {
 				add_opinion_modifier = {
 					who = root
 					modifier = opinion_common_ground
 				}
+				add_opinion_modifier = {
+					who = event_target:fed_member_2
+					modifier = opinion_common_ground
+				}
 				add_trust = {
-					amount = 50
+					amount = 100
 					who = root
 				}
 				add_trust = {
-					amount = 50
+					amount = 100
 					who = event_target:fed_member_2
 				}
 				add_intel = {
@@ -575,12 +736,16 @@ country_event = {
 					who = root
 					modifier = opinion_common_ground
 				}
+				add_opinion_modifier = {
+					who = event_target:fed_member_1
+					modifier = opinion_common_ground
+				}
 				add_trust = {
-					amount = 50
+					amount = 100
 					who = root
 				}
 				add_trust = {
-					amount = 50
+					amount = 100
 					who = event_target:fed_member_1
 				}
 				add_intel = {
@@ -601,11 +766,11 @@ country_event = {
 				modifier = opinion_common_ground
 			}
 			add_trust = {
-				amount = 50
+				amount = 100
 				who = event_target:fed_member_1
 			}
 			add_trust = {
-				amount = 50
+				amount = 100
 				who = event_target:fed_member_2
 			}
 			add_intel = {
@@ -617,69 +782,555 @@ country_event = {
 				who = event_target:fed_member_2
 			}
 			set_federation_leader = root
-			country_event = { id = origin.57 days = 2 }
-		}
-		if = {
-			limit = { has_origin = origin_hegemon }
 			federation = {
-				set_federation_type = hegemony_federation
+				set_federation_type = eu_federation
 				set_federation_leader = root
-				set_name = random
-				set_federation_law = succession_term_years_20
+				set_name = "GOTC_EU_FEDERATION_NAME"
+				set_federation_law = succession_term_years_10
 				add_federation_experience = 600
 				add_cohesion = 100
 			}
+		}
+		else = { # vanilla
+			# Replace prescripted ideal planets with barren worlds and spawn federation partners.
+			if = {
+				limit = { num_guaranteed_colonies >= 2 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_star_flag = neighbor_t1_first_colony }
+							random_system_planet = {
+								limit = { has_planet_flag = prescripted_ideal }
+								change_pc = pc_barren
+							}
+							spawn_random_home_system = yes
+							last_created_system = {
+								federation_origin_planet_setup = {
+									NUM = 1
+								}
+							}
+						}
+						closest_system = {
+							limit = { has_star_flag = neighbor_t2_second_colony }
+							random_system_planet = {
+								limit = { has_planet_flag = prescripted_ideal }
+								change_pc = pc_barren
+							}
+							spawn_random_home_system = yes
+							last_created_system = {
+								federation_origin_planet_setup = {
+									NUM = 2
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { num_guaranteed_colonies >= 1 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_star_flag = neighbor_t1_first_colony }
+							random_system_planet = {
+								limit = { has_planet_flag = prescripted_ideal }
+								change_pc = pc_barren
+							}
+							spawn_random_home_system = yes
+							last_created_system = {
+								federation_origin_planet_setup = {
+									NUM = 1
+								}
+							}
+						}
+						closest_system = {
+							limit = {
+								NOT = { has_star_flag = neighbor_t1_first_colony }
+								has_owner = no
+							}
+							spawn_random_home_system = yes
+							last_created_system = {
+								federation_origin_planet_setup = {
+									NUM = 2
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { num_guaranteed_colonies = 0 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_owner = no }
+							spawn_random_home_system = yes
+							last_created_system = {
+								federation_origin_planet_setup = {
+									NUM = 1
+								}
+							}
+						}
+						closest_system = {
+							limit = {
+								NOT = { has_star_flag = fed_origin_system_1 }
+								has_owner = no
+							}
+							spawn_random_home_system = yes
+							last_created_system = {
+								federation_origin_planet_setup = {
+									NUM = 2
+								}
+							}
+						}
+					}
+				}
+			}
+
+			# Create first member
+			event_target:fed_planet_1 = {
+				solar_system = { generate_home_system_resources = yes }
+				if = {
+					limit = {
+						root = {
+							NOT = {
+								has_valid_civic = civic_selective_kinship
+							}
+						}
+					}
+					create_fed_planet_1_species = { CLASS = random }
+				}
+				else = {
+					root = {
+						switch = {
+							trigger = is_species_class
+							HUM =		{ create_fed_planet_1_species = { CLASS = HUM } }
+							MAM =		{ create_fed_planet_1_species = { CLASS = MAM } }
+							FUN =		{ create_fed_planet_1_species = { CLASS = FUN } }
+							AVI =		{ create_fed_planet_1_species = { CLASS = AVI } }
+							PLANT =		{ create_fed_planet_1_species = { CLASS = PLANT } }
+							ART =		{ create_fed_planet_1_species = { CLASS = ART } }
+							REP =		{ create_fed_planet_1_species = { CLASS = REP } }
+							MOL =		{ create_fed_planet_1_species = { CLASS = MOL } }
+							LITHOID =	{ create_fed_planet_1_species = { CLASS = LITHOID } }
+							NECROID =	{ create_fed_planet_1_species = { CLASS = NECROID } }
+							AQUATIC =	{ create_fed_planet_1_species = { CLASS = AQUATIC } }
+							TOX =		{ create_fed_planet_1_species = { CLASS = TOX } }
+							default =	{ create_fed_planet_1_species = { CLASS = HUM } }
+						}
+					}
+				}
+				# Common Ground
+				if = {
+					limit = {
+						root = { has_origin = origin_common_ground }
+					}
+					create_common_ground_member = { NUM = 1 }
+				}
+				# Hegemon
+				if = {
+					limit = {
+						root = {
+							has_origin = origin_hegemon
+							NOT = { has_ethic = ethic_xenophobe }
+						}
+					}
+					create_hegemon_member = {
+						NUM = 1
+					}
+				}
+				create_colony = {
+					owner = event_target:fed_member_1
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
+				generate_start_pops = yes
+				event_target:fed_member_1 = {
+					country_event = { id = game_start.8 }
+					give_starting_resources_effect = yes
+					give_technology = { tech = tech_federation_code message = no }
+				}
+				solar_system = {
+					if = {
+						limit = {
+							event_target:fed_member_1 = {
+								is_gestalt = no
+							}
+						}
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_1
+							effect = {
+								set_starbase_module = {
+									slot = 1
+									module = trading_hub
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+					else = {
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_1
+							effect = {
+								if = {
+									limit = {
+										event_target:fed_member_1 = {
+											has_valid_civic = civic_machine_astromining_drones
+										}	
+									}
+									set_starbase_module = {
+										slot = 1
+										module = astromining_bay
+									}
+								}
+								else = {
+									set_starbase_module = {
+										slot = 1
+										module = solar_panel_network
+									}
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+				}
+			}
+
+			# Create second member
+			event_target:fed_planet_2 = {
+				solar_system = { generate_home_system_resources = yes }
+				if = {
+					limit = {
+						root = {
+							NOT = {
+								has_valid_civic = civic_selective_kinship
+							}
+						}
+					}
+					create_fed_planet_2_species = { CLASS = random }
+				}
+				else = {
+					root = {
+						switch = {
+							trigger = is_species_class
+							HUM =		{ create_fed_planet_2_species = { CLASS = HUM } }
+							MAM =		{ create_fed_planet_2_species = { CLASS = MAM } }
+							FUN =		{ create_fed_planet_2_species = { CLASS = FUN } }
+							AVI =		{ create_fed_planet_2_species = { CLASS = AVI } }
+							PLANT =		{ create_fed_planet_2_species = { CLASS = PLANT } }
+							ART =		{ create_fed_planet_2_species = { CLASS = ART } }
+							REP =		{ create_fed_planet_2_species = { CLASS = REP } }
+							MOL =		{ create_fed_planet_2_species = { CLASS = MOL } }
+							LITHOID =	{ create_fed_planet_2_species = { CLASS = LITHOID } }
+							NECROID =	{ create_fed_planet_2_species = { CLASS = NECROID } }
+							AQUATIC =	{ create_fed_planet_2_species = { CLASS = AQUATIC } }
+							TOX =		{ create_fed_planet_2_species = { CLASS = TOX } }
+							default =	{ create_fed_planet_2_species = { CLASS = HUM } }
+						}
+					}
+				}
+				# Common Ground
+				if = {
+					limit = {
+						root = { has_origin = origin_common_ground }
+					}
+					create_common_ground_member = { NUM = 2 }
+				}
+				# Hegemon
+				if = {
+					limit = {
+						root = {
+							has_origin = origin_hegemon
+							NOT = { has_ethic = ethic_xenophobe }
+						}
+					}
+					create_hegemon_member = {
+						NUM = 2
+					}
+				}
+				create_colony = {
+					owner = event_target:fed_member_2
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
+				generate_start_pops = yes
+				event_target:fed_member_2 = {
+					country_event = { id = game_start.8 }
+					give_starting_resources_effect = yes
+					give_technology = { tech = tech_federation_code message = no }
+				}
+				solar_system = {
+					if = {
+						limit = {
+							event_target:fed_member_2 = {
+								is_gestalt = no
+							}
+						}
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_2
+							effect = {
+								set_starbase_module = {
+									slot = 1
+									module = trading_hub
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+					else = {
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_2
+							effect = {
+								if = {
+									limit = {
+										event_target:fed_member_2 = {
+											has_valid_civic = civic_machine_astromining_drones
+										}	
+									}
+									set_starbase_module = {
+										slot = 1
+										module = astromining_bay
+									}
+								}
+								else = {
+									set_starbase_module = {
+										slot = 1
+										module = solar_panel_network
+									}
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+				}
+			}
+
+			# Finish setting up member empires
 			event_target:fed_member_1 = {
-				add_intel = {
-					amount = 40
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 } # create starter set of ships
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
+				join_alliance = {
 					who = root
+					override_requirements = yes
 				}
-				add_intel = {
-					amount = 40
-					who = event_target:fed_member_2
-				}
-				set_closed_borders = {
-					who = root
-					status = no
-				}
-				set_closed_borders = {
-					who = event_target:fed_member_2
-					status = no
-				}
+				set_name = random # Fixes some naming issues
 			}
 			event_target:fed_member_2 = {
-				add_intel = {
-					amount = 40
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 }
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
+				join_alliance = {
 					who = root
+					override_requirements = yes
+				}
+				set_name = random # Fixes some naming issues
+			}
+
+			# Set Intel levels, Opinion, and Federation laws
+			if = {
+				limit = { has_origin = origin_common_ground }
+				event_target:fed_member_1 = {
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_common_ground
+					}
+					add_trust = {
+						amount = 50
+						who = root
+					}
+					add_trust = {
+						amount = 50
+						who = event_target:fed_member_2
+					}
+					add_intel = {
+						amount = 60
+						who = root
+					}
+					add_intel = {
+						amount = 60
+						who = event_target:fed_member_2
+					}
+				}
+				event_target:fed_member_2 = {
+					add_opinion_modifier = {
+						who = root
+						modifier = opinion_common_ground
+					}
+					add_trust = {
+						amount = 50
+						who = root
+					}
+					add_trust = {
+						amount = 50
+						who = event_target:fed_member_1
+					}
+					add_intel = {
+						amount = 60
+						who = root
+					}
+					add_intel = {
+						amount = 60
+						who = event_target:fed_member_1
+					}
+				}
+				add_opinion_modifier = {
+					who = event_target:fed_member_1
+					modifier = opinion_common_ground
+				}
+				add_opinion_modifier = {
+					who = event_target:fed_member_2
+					modifier = opinion_common_ground
+				}
+				add_trust = {
+					amount = 50
+					who = event_target:fed_member_1
+				}
+				add_trust = {
+					amount = 50
+					who = event_target:fed_member_2
+				}
+				add_intel = {
+					amount = 60
+					who = event_target:fed_member_1
+				}
+				add_intel = {
+					amount = 60
+					who = event_target:fed_member_2
+				}
+				set_federation_leader = root
+				country_event = { id = origin.57 days = 2 }
+			}
+			if = {
+				limit = { has_origin = origin_hegemon }
+				federation = {
+					set_federation_type = hegemony_federation
+					set_federation_leader = root
+					set_name = random
+					set_federation_law = succession_term_years_20
+					add_federation_experience = 600
+					add_cohesion = 100
+				}
+				event_target:fed_member_1 = {
+					add_intel = {
+						amount = 40
+						who = root
+					}
+					add_intel = {
+						amount = 40
+						who = event_target:fed_member_2
+					}
+					set_closed_borders = {
+						who = root
+						status = no
+					}
+					set_closed_borders = {
+						who = event_target:fed_member_2
+						status = no
+					}
+				}
+				event_target:fed_member_2 = {
+					add_intel = {
+						amount = 40
+						who = root
+					}
+					add_intel = {
+						amount = 40
+						who = event_target:fed_member_1
+					}
+					set_closed_borders = {
+						who = root
+						status = no
+					}
+					set_closed_borders = {
+						who = event_target:fed_member_1
+						status = no
+					}
 				}
 				add_intel = {
 					amount = 40
 					who = event_target:fed_member_1
 				}
 				set_closed_borders = {
-					who = root
-					status = no
-				}
-				set_closed_borders = {
 					who = event_target:fed_member_1
 					status = no
 				}
-			}
-			add_intel = {
-				amount = 40
-				who = event_target:fed_member_1
-			}
-			set_closed_borders = {
-				who = event_target:fed_member_1
-				status = no
-			}
-			add_intel = {
-				amount = 40
-				who = event_target:fed_member_2
-			}
-			set_closed_borders = {
-				who = event_target:fed_member_2
-				status = no
+				add_intel = {
+					amount = 40
+					who = event_target:fed_member_2
+				}
+				set_closed_borders = {
+					who = event_target:fed_member_2
+					status = no
+				}
 			}
 		}
 	}

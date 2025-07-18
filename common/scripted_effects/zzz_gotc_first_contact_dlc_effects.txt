@@ -286,7 +286,6 @@ generate_slaver_bonus = {
 			event_target:last_created_pop_group = {
 				set_citizenship_type = {
 					type = citizenship_slavery
-					cooldown = no
 				}
 			}
 		}
@@ -318,7 +317,6 @@ generate_slaver_bonus = {
 		event_target:last_created_pop_group = {
 			set_citizenship_type = {
 				type = citizenship_slavery
-				cooldown = no
 			}
 		}
 	}
@@ -1247,41 +1245,108 @@ create_debt_collectors_country = {
 				}
 			}
 		}
-		create_species = {
-			name = "NAME_Debt_Collectors"
-			plural = "NAME_Debt_Collectors_plural"
-			class = MAM
-			portrait = mol17
-			namelist = "AI"
-			traits = {
-				trait = random_traits
+		if = {
+			limit = {
+				any_playable_country = {
+					capital_scope = {
+						solar_system = {
+							has_star_flag = palestina
+						}
+					}
+				}
+			}
+			create_species = {
+				name = {
+					key="Шабесгой"
+					literal=yes
+				}
+				plural = {
+					key="Шабесгои"
+					literal=yes
+				}
+				adjective = {
+					key="Шабесгойск"
+					literal=yes
+				}
+				class = HUM
+				portrait = humanoid_04
+				namelist = "HUMAN1"
+				traits = {
+					trait = "trait_docile"
+					trait = "trait_industrious"
+					trait = "trait_nascent_stage"
+				}
+			}
+			create_country = {
+				ship_prefix="INT"
+				name = {
+					key="Глобальный Коганат"
+					literal=yes
+				}
+				adjective="Коганатск"
+				type = debt_collectors
+				species = last_created_species
+				auto_delete = no
+				flag = {
+					icon = {
+						category="spherical"
+						file="flag_spherical_1.dds"
+					}
+					background = {
+						category="backgrounds"
+						file="flag_BG_29.dds"
+					}
+					colors = {
+						"bright_yellow"
+						"dark_grey"
+						"teal"
+						"null"
+					}
+				}
+				effect = {
+					set_country_flag = payback_debt_collectors_country
+					save_global_event_target_as = payback_debt_collectors_country
+					set_graphical_culture = mammalian_01
+				}
 			}
 		}
-		create_country = {
-			name = "NAME_Debt_Collectors_Country"
-			type = debt_collectors
-			species = last_created_species
-			auto_delete = no
-			flag = {
-				icon = {
-					category = "corporate"
-					file = "corporate_11.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "pattern_01.dds"
-				}
-				colors={
-					"mist_blue"
-					"bright_purple"
-					"null"
-					"null"
+		else = {
+			create_species = {
+				name = "NAME_Debt_Collectors"
+				plural = "NAME_Debt_Collectors_plural"
+				class = MAM
+				portrait = mol17
+				namelist = "AI"
+				traits = {
+					trait = random_traits
 				}
 			}
-			effect = {
-				set_country_flag = payback_debt_collectors_country
-				save_global_event_target_as = payback_debt_collectors_country
-				set_graphical_culture = mammalian_01
+			create_country = {
+				name = "NAME_Debt_Collectors_Country"
+				type = debt_collectors
+				species = last_created_species
+				auto_delete = no
+				flag = {
+					icon = {
+						category = "corporate"
+						file = "corporate_11.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "pattern_01.dds"
+					}
+					colors={
+						"mist_blue"
+						"bright_purple"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					set_country_flag = payback_debt_collectors_country
+					save_global_event_target_as = payback_debt_collectors_country
+					set_graphical_culture = mammalian_01
+				}
 			}
 		}
 	}

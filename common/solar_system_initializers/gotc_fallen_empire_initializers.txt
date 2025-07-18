@@ -83,7 +83,7 @@ gotc_fallen_1 = {
 			}
 			add_zone = {
 				district = district_arcology_urban_1
-				zone = zone_research_physics
+				zone = zone_research_physics_arcology
 			}
 			while = {
 				count = 3
@@ -91,7 +91,7 @@ gotc_fallen_1 = {
 			}
 			add_zone = {
 				district = district_arcology_urban_2
-				zone = zone_research_engineering
+				zone = zone_research_engineering_arcology
 			}
 			while = {
 				count = 3
@@ -99,7 +99,7 @@ gotc_fallen_1 = {
 			}
 			add_zone = {
 				district = district_arcology_urban_3
-				zone = zone_research_society
+				zone = zone_research_society_arcology
 			}
 			while = {
 				count = 94
@@ -172,41 +172,41 @@ gotc_fallen_1 = {
 			}
 			# Physics Labs
 			add_building = {
-				zone = zone_research_physics
+				zone = zone_research_physics_arcology
 				building = building_physics_lab_3
 			}
 			add_building = {
-				zone = zone_research_physics
+				zone = zone_research_physics_arcology
 				building = building_fe_lab_2
 			}
 			add_building = {
-				zone = zone_research_physics
+				zone = zone_research_physics_arcology
 				building = building_fe_lab_2
 			}
 			# Engineering Labs
 			add_building = {
-				zone = zone_research_engineering
+				zone = zone_research_engineering_arcology
 				building = building_engineering_facility_3
 			}
 			add_building = {
-				zone = zone_research_engineering
+				zone = zone_research_engineering_arcology
 				building = building_fe_lab_2
 			}
 			add_building = {
-				zone = zone_research_engineering
+				zone = zone_research_engineering_arcology
 				building = building_fe_lab_2
 			}
 			# Biology Labs
 			add_building = {
-				zone = zone_research_society
+				zone = zone_research_society_arcology
 				building = building_biolab_3
 			}
 			add_building = {
-				zone = zone_research_society
+				zone = zone_research_society_arcology
 				building = building_fe_lab_2
 			}
 			add_building = {
-				zone = zone_research_society
+				zone = zone_research_society_arcology
 				building = building_fe_lab_2
 			}
 		}
@@ -462,16 +462,34 @@ gotc_fallen_2 = {
 				add_district = district_city
 			}
 			while = {
-				count = 7
+				count = 2
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			add_zone = {
+				district = district_generator
+				zone = zone_energy
+			}
+			while = {
+				count = 6
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_mining
 				}
 			}
+			add_zone = {
+				district = district_mining
+				zone = zone_minerals
+			}
 			while = {
-				count = 7
+				count = 6
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_farming
 				}
+			}
+			add_zone = {
+				district = district_farming
+				zone = zone_food
 			}
 			while = {
 				count = 115
@@ -543,16 +561,34 @@ gotc_fallen_2 = {
 				add_district = district_city
 			}
 			while = {
+				count = 2
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_generator
+				}
+			}
+			add_zone = {
+				district = district_generator
+				zone = zone_energy
+			}
+			while = {
 				count = 5
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_mining
 				}
+			}
+			add_zone = {
+				district = district_mining
+				zone = zone_minerals
 			}
 			while = {
 				count = 5
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_farming
 				}
+			}
+			add_zone = {
+				district = district_farming
+				zone = zone_food
 			}
 			while = {
 				count = 68
@@ -987,7 +1023,7 @@ gotc_fallen_3 = {
 							}
 							class = HUM
 							portrait = humanoid_hp_02
-							name_list="JEW"
+							name_list="GOTC_JEW"
 							traits = {
 								ideal_planet_class = pc_alpine
 								trait = trait_presapient_natural_intellectuals
@@ -3653,7 +3689,6 @@ gotc_fallen_machine = {
 			add_building = building_dimensional_fabricator
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
-			add_building = building_fe_silo_2
 			create_species = { # Windows bug
 				name = {
 					key="Баг"
