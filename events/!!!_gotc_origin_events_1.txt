@@ -332,7 +332,7 @@ country_event = {
 			event_target:fed_planet_1 = {
 				solar_system = { generate_home_system_resources = yes }
 				create_pop_group = {
-					size = 1200
+					size = 600
 					species = event_target:migrant_species
 				}
 				create_species = {

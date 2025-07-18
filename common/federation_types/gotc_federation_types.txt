@@ -45,7 +45,6 @@ eu_federation = {
 			experience = @xp_to_level_2 # Experience until next rank
 			perks = {
 				eu_federation_passive
-				unity_trade_1
 				federation_fleet_speed_1
 				president_diplo_weight_steal_1
 			}

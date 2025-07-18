@@ -195,6 +195,290 @@ event = {
 	}
 }
 
+# eu federation monthly
+event = {
+	id = gotc.2
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_federation = { has_federation_perk = eu_federation_passive }
+	}
+
+	immediate = {
+		random_federation = {
+			limit = { has_federation_perk = eu_federation_passive }
+			every_member = {
+				prev = {
+					change_variable = {
+						which = counted_federation_members
+						value = 1
+					}
+				}
+			}
+
+			# divide previous resource tranche
+			divide_variable = { #FOOD
+				which = counted_food_income
+				value = counted_federation_members
+			}
+			divide_variable = { #ENERGY
+				which = counted_energy_income
+				value = counted_federation_members
+			}
+			divide_variable = { #MINERALS
+				which = counted_minerals_income
+				value = counted_federation_members
+			}
+			divide_variable = { #CONSUMER_GOODS
+				which = counted_consumer_goods_income
+				value = counted_federation_members
+			}
+			divide_variable = { #ALLOYS
+				which = counted_alloys_income
+				value = counted_federation_members
+			}
+			divide_variable = { #TRADE
+				which = counted_trade_income
+				value = counted_federation_members
+			}
+
+			# distribute previous resource tranche
+			every_member = {
+				add_resource = { #FOOD
+					food = 1
+					mult = prev.counted_food_income
+				}
+				add_resource = { #FOOD
+					food = -1
+					mult = food_income_of_federation_member
+				}
+				add_resource = { #ENERGY
+					energy = 1
+					mult = prev.counted_energy_income
+				}
+				add_resource = { #ENERGY
+					energy = -1
+					mult = energy_income_of_federation_member
+				}
+				add_resource = { #MINERALS
+					minerals = 1
+					mult = prev.counted_minerals_income
+				}
+				add_resource = { #MINERALS
+					minerals = -1
+					mult = minerals_income_of_federation_member
+				}
+				add_resource = { #CONSUMER_GOODS
+					consumer_goods = 1
+					mult = prev.counted_consumer_goods_income
+				}
+				add_resource = { #CONSUMER_GOODS
+					consumer_goods = -1
+					mult = consumer_goods_income_of_federation_member
+				}
+				add_resource = { #ALLOYS
+					alloys = 1
+					mult = prev.counted_alloys_income
+				}
+				add_resource = { #ALLOYS
+					alloys = -1
+					mult = alloys_income_of_federation_member
+				}
+				add_resource = { #TRADE
+					trade = 1
+					mult = prev.counted_trade_income
+				}
+				add_resource = { #TRADE
+					trade = -1
+					mult = trade_income_of_federation_member
+				}
+			}
+
+			# count next resource tranche
+			eu_federation_passive_set_variables = yes
+			every_member = {
+				save_event_target_as = current_federation_member
+				#FOOD
+				export_resource_income_to_variable = {
+					resource = food
+					variable = food_income_of_federation_member
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = food_income_of_federation_member
+							value > 0
+						}
+					}
+					divide_variable = {
+						which = food_income_of_federation_member
+						value = 10
+					}
+					prev = {
+						change_variable = {
+							which = counted_food_income
+							value = event_target:current_federation_member.food_income_of_federation_member
+						}
+					}
+					else = {
+						set_variable = {
+							which = food_income_of_federation_member
+							value = 0
+						}
+					}
+				}
+				#ENERGY
+				export_resource_income_to_variable = {
+					resource = energy
+					variable = energy_income_of_federation_member
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = energy_income_of_federation_member
+							value > 0
+						}
+					}
+					divide_variable = {
+						which = energy_income_of_federation_member
+						value = 10
+					}
+					prev = {
+						change_variable = {
+							which = counted_energy_income
+							value = event_target:current_federation_member.energy_income_of_federation_member
+						}
+					}
+					else = {
+						set_variable = {
+							which = energy_income_of_federation_member
+							value = 0
+						}
+					}
+				}
+				#MINERALS
+				export_resource_income_to_variable = {
+					resource = minerals
+					variable = minerals_income_of_federation_member
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = minerals_income_of_federation_member
+							value > 0
+						}
+					}
+					divide_variable = {
+						which = minerals_income_of_federation_member
+						value = 10
+					}
+					prev = {
+						change_variable = {
+							which = counted_minerals_income
+							value = event_target:current_federation_member.minerals_income_of_federation_member
+						}
+					}
+					else = {
+						set_variable = {
+							which = minerals_income_of_federation_member
+							value = 0
+						}
+					}
+				}
+				#CONSUMER_GOODS
+				export_resource_income_to_variable = {
+					resource = consumer_goods
+					variable = consumer_goods_income_of_federation_member
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = consumer_goods_income_of_federation_member
+							value > 0
+						}
+					}
+					divide_variable = {
+						which = consumer_goods_income_of_federation_member
+						value = 10
+					}
+					prev = {
+						change_variable = {
+							which = counted_consumer_goods_income
+							value = event_target:current_federation_member.consumer_goods_income_of_federation_member
+						}
+					}
+					else = {
+						set_variable = {
+							which = consumer_goods_income_of_federation_member
+							value = 0
+						}
+					}
+				}
+				#ALLOYS
+				export_resource_income_to_variable = {
+					resource = alloys
+					variable = alloys_income_of_federation_member
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = alloys_income_of_federation_member
+							value > 0
+						}
+					}
+					divide_variable = {
+						which = alloys_income_of_federation_member
+						value = 10
+					}
+					prev = {
+						change_variable = {
+							which = counted_alloys_income
+							value = event_target:current_federation_member.alloys_income_of_federation_member
+						}
+					}
+					else = {
+						set_variable = {
+							which = alloys_income_of_federation_member
+							value = 0
+						}
+					}
+				}
+				#TRADE
+				export_resource_income_to_variable = {
+					resource = trade
+					variable = trade_income_of_federation_member
+				}
+				if = {
+					limit = {
+						check_variable_arithmetic = {
+							which = trade_income_of_federation_member
+							value > 0
+						}
+					}
+					divide_variable = {
+						which = trade_income_of_federation_member
+						value = 10
+					}
+					prev = {
+						change_variable = {
+							which = counted_trade_income
+							value = event_target:current_federation_member.trade_income_of_federation_member
+						}
+					}
+					else = {
+						set_variable = {
+							which = trade_income_of_federation_member
+							value = 0
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 # kadyrov
 planet_event = {
 	id = gotc.4000

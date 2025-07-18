@@ -4,6 +4,13 @@ on_game_start = {
 	}
 }
 
+# No scope, like on_game_start
+on_monthly_pulse = {
+	events = {
+		gotc.2 # eu federation
+	}
+}
+
 # this = country
 on_five_year_pulse_country = {
 	events = {

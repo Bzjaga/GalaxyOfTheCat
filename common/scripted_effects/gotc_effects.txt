@@ -7733,3 +7733,68 @@ embrace_catist_faction_no_name_change = {
 
 	check_country_flags_mad_vacuum_cleaner = yes
 }
+
+##################
+# Federation
+##################
+
+eu_federation_passive_set_variables = {
+
+	# count federation members
+	set_variable = {
+		which = counted_federation_members
+		value = 0
+	}
+	
+	set_variable = {
+		which = counted_food_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_energy_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_minerals_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_consumer_goods_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_alloys_income
+		value = 0
+	}
+	set_variable = {
+		which = counted_trade_income
+		value = 0
+	}
+
+	every_member = {
+		set_variable = {
+			which = food_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = energy_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = minerals_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = consumer_goods_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = alloys_income_of_federation_member
+			value = 0
+		}
+		set_variable = {
+			which = trade_income_of_federation_member
+			value = 0
+		}
+	}
+}

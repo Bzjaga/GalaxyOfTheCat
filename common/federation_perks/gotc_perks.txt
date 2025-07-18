@@ -25,6 +25,9 @@ eu_federation_passive = {
 		pop_ethic_egalitarian_attraction_mult = 0.2
 		pop_ethic_xenophile_attraction_mult = 0.1
 	}
+	on_activate = {
+		eu_federation_passive_set_variables = yes
+	}
 }
 
 ### Perks
