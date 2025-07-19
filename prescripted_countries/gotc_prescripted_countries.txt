@@ -1706,3 +1706,76 @@ gotc_voldemar = {
 		leader_class = commander
 	}
 }
+
+gotc_ussr_citizens = {
+	name = "GOTC_USSR_CITIZENS_EMPIRE_NAME"
+	adjective = "GOTC_USSR_CITIZENS_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_USSR_CITIZENS_SHIP_PREFIX"
+
+	species = {
+		class = "MAM"
+		portrait = "mammalian_ar_09"
+		name = "GOTC_USSR_CITIZENS_MAIN_SPECIES_NAME"
+		plural = "GOTC_USSR_CITIZENS_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_USSR_CITIZENS_MAIN_SPECIES_ADJECTIVE"
+		name_list = "GOTC_RUS"
+		trait = "trait_genetic_memory"
+		trait = "trait_slow_learners"
+		trait = "trait_deviants"
+		trait = "trait_communal"
+	}
+
+	room = "personality_democratic_crusaders_room"
+
+	authority = "auth_imperial"
+	civics = { "civic_memorialist" "civic_dark_consortium" }
+	government = gov_theocratic_monarchy
+	origin = "origin_scion"
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "GOTC_USSR_CITIZENS_PLANET_NAME"
+	planet_class = "pc_arctic"
+	system_name = "GOTC_USSR_CITIZENS_SYSTEM_NAME"
+
+	initializer = ""
+	graphical_culture = "biogenesis_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="human"
+			file="flag_human_9.dds"
+		}
+		background={
+			category="backgrounds"
+			file="diagonal.dds"
+		}
+		colors={
+			"dark_purple"
+			"red"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_USSR_CITIZENS_RULER_NAME"
+		gender = male
+		portrait = "mammalian_ar_09_m"
+		texture = 1
+		evolution_mask=0
+		attachment=0
+		clothes=4
+		ruler_title="GOTC_USSR_CITIZENS_RULER_TITLE"
+		heir_title="GOTC_USSR_CITIZENS_HEIR_TITLE"
+		ruler_title_female="GOTC_USSR_CITIZENS_RULER_TITLE_FEMALE"
+		heir_title_female="GOTC_USSR_CITIZENS_HEIR_TITLE_FEMALE"
+		trait="trait_ruler_eye_for_talent"
+		leader_class = scientist
+	}
+}
