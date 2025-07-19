@@ -1779,3 +1779,73 @@ gotc_ussr_citizens = {
 		leader_class = scientist
 	}
 }
+
+gotc_mason = {
+	name = "GOTC_MASON_EMPIRE_NAME"
+	adjective = "GOTC_MASON_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_MASON_SHIP_PREFIX"
+
+	species = {
+		class = "NECROID"
+		portrait = "nec7"
+		name = "GOTC_MASON_MAIN_SPECIES_NAME"
+		plural = "GOTC_MASON_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_MASON_MAIN_SPECIES_ADJECTIVE"
+		name_list = "GOTC_JEW"
+		trait = "trait_intelligent"
+		trait = "trait_talented"
+		trait = "trait_quick_learners"
+		trait = "trait_repugnant"
+	}
+
+	room = "necroids_room"
+
+	authority = "auth_corporate"
+	civics = { "civic_criminal_heritage" "civic_ruthless_competition" }
+	government = gov_criminal_syndicate
+	origin = "origin_scion"
+
+	ethic = "ethic_xenophile"
+	ethic = "ethic_fanatic_materialist"
+
+	planet_name = "GOTC_MASON_PLANET_NAME"
+	planet_class = "pc_alpine"
+	system_name = "GOTC_MASON_SYSTEM_NAME"
+
+	initializer = ""
+	graphical_culture = "necroid_01"
+	city_graphical_culture = "biogenesis_02"
+
+	empire_flag={
+		icon={
+			category="spherical"
+			file="flag_spherical_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_29.dds"
+		}
+		colors={
+			"bright_yellow"
+			"dark_grey"
+			"teal"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_MASON_RULER_NAME"
+		gender = male
+		portrait = "nec7"
+		texture = 3
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="GOTC_MASON_RULER_TITLE"
+		ruler_title_female="GOTC_MASON_RULER_TITLE_FEMALE"
+		trait="leader_trait_spycraft"
+		leader_class = official
+	}
+}
