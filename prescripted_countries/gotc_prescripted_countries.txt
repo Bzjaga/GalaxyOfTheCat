@@ -1466,20 +1466,19 @@
 	}
 }
 
-# roskomnadzor
-"Роскомнадзор" = {
-	name = "Роскомнадзор"
-	adjective = "Роскомнадзорск"
+gotc_roskomnadzor = {
+	name = "GOTC_ROSCOMNADZOR_EMPIRE_NAME"
+	adjective = "GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "RKN"
+	ship_prefix = "GOTC_ROSCOMNADZOR_SHIP_PREFIX"
 
 	species = {
 		class = "REP"
 		portrait = "rep12"
-		name = "Бдитель"
-		plural = "Бдители"
-		adjective = "Бдительск"
+		name = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_NAME"
+		plural = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUMAN2"
 		trait = "trait_excessive_endurance"
 		trait = "trait_adaptive"
@@ -1498,11 +1497,11 @@
 	ethic = "ethic_fanatic_xenophobe"
 	ethic = "ethic_militarist"
 
-	planet_name = "Минцифра"
+	planet_name = "GOTC_ROSCOMNADZOR_PLANET_NAME"
 	planet_class = "pc_continental"
-	system_name = "Минцифра"
+	system_name = "GOTC_ROSCOMNADZOR_SYSTEM_NAME"
 
-	initializer = "do_not_choose_roskomnadzor"
+	initializer = ""
 	graphical_culture = "nemesis_01"
 	city_graphical_culture = "humanoid_01"
 
@@ -1524,20 +1523,14 @@
 	}
 
 	ruler = {
-		name = "Андрей Юрьевич Липов"
+		name = "GOTC_ROSCOMNADZOR_RULER_NAME"
 		gender = male
 		portrait = "rep12"
 		texture = 1
 		attachment=0
 		clothes=1
-		ruler_title={
-			key="Лорд Очиститель"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Леди Очистительница"
-			literal=yes
-		}
+		ruler_title="GOTC_ROSCOMNADZOR_RULER_TITLE"
+		ruler_title_female="GOTC_ROSCOMNADZOR_RULER_TITLE_FEMALE"
 		trait="leader_trait_principled"
 		leader_class = official
 	}
