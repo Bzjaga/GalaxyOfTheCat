@@ -1502,7 +1502,7 @@ do_not_choose_kadyrov = {
 
 	usage = custom_empire
 
-	flags = { empire_home_system kadyrov}
+	flags = { empire_home_system kadyrov }
 
 	init_effect = {
 		every_neighbor_system = {
@@ -1641,7 +1641,7 @@ do_not_choose_solovyov = {
 
 	usage = custom_empire
 
-	flags = { empire_home_system solovyov}
+	flags = { empire_home_system solovyov }
 
 	init_effect = {
 		every_neighbor_system = {
@@ -1683,18 +1683,9 @@ do_not_choose_solovyov = {
 			generate_empire_home_planet = yes
 			
 			create_species = {
-				name = {
-					key="Ватник"
-					literal=yes
-				}
-				plural = {
-					key="Вата"
-					literal=yes
-				}
-				adjective = {
-					key="Ватн"
-					literal=yes
-				}
+				name = "GOTC_SOLOVYOV_SECONDARY_SPECIES_NAME"
+				plural = "GOTC_SOLOVYOV_SECONDARY_SPECIES_PLURAL"
+				adjective = "GOTC_SOLOVYOV_SECONDARY_SPECIES_ADJECTIVE"
 				class = "TOX"
 				portrait = "tox9"
 				name_list="HUMAN1"

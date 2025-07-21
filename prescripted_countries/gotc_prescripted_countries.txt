@@ -1,17 +1,16 @@
-# zaharova
-"Министерство заМКАДских Дел" = {
-	name = "Министерство заМКАДских Дел"
-	adjective = "МИДск"
+gotc_zaharova = {
+	name = "GOTC_ZAHAROVA_EMPIRE_NAME"
+	adjective = "GOTC_ZAHAROVA_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "DFP"
+	ship_prefix = "GOTC_ZAHAROVA_SHIP_PREFIX"
 
 	species = {
 		class = "HUM"
 		portrait = "humanoid_hp_09"
-		name = "Глубоко Озабоченный"
-		plural = "Глубоко Озабоченные"
-		adjective = "Озабоченн"
+		name = "GOTC_ZAHAROVA_MAIN_SPECIES_NAME"
+		plural = "GOTC_ZAHAROVA_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_ZAHAROVA_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUM1"
 		trait = "trait_extremely_adaptive"
 		trait = "trait_inorganic_breath"
@@ -33,9 +32,9 @@
 	ethic = "ethic_xenophobe"
 	ethic = "ethic_militarist"
 
-	planet_name = "Вискули"
+	planet_name = "GOTC_ZAHAROVA_PLANET_NAME"
 	planet_class = "pc_continental"
-	system_name = "Беловежская Пуща"
+	system_name = "GOTC_ZAHAROVA_SYSTEM_NAME"
 
 	initializer = ""
 	graphical_culture = "mammalian_01"
@@ -59,20 +58,14 @@
 	}
 
 	ruler = {
-		name = "Мария Захарова"
+		name = "GOTC_ZAHAROVA_RULER_NAME"
 		gender = female
 		portrait = "humanoid_hp_09_female"
 		texture = 0
 		attachment=0
 		clothes=4
-		ruler_title={
-			key="Выразитель Озабоченности"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Выразительница Озабоченности"
-			literal=yes
-		}
+		ruler_title="GOTC_ZAHAROVA_RULER_TITLE"
+		ruler_title_female="GOTC_ZAHAROVA_RULER_TITLE_FEMALE"
 		trait = "leader_trait_consul_general"
 		trait = "leader_trait_intolerant"
 		trait = "leader_trait_ambassador_extra_envoys"
@@ -164,18 +157,18 @@
 
 # lukashenko
 "Минская Династия" = {
-	name = "Минская Династия"
-	adjective = "Минск"
+	name = "GOTC_LUKASHENKO_EMPIRE_NAME"
+	adjective = "GOTC_LUKASHENKO_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "BLR"
+	ship_prefix = "GOTC_LUKASHENKO_SHIP_PREFIX"
 
 	species = {
 		class = "PLANT"
 		portrait = "pla9"
-		name = "Корнеплод"
-		plural = "Корнеплоды"
-		adjective = "Корнеплодск"
+		name = "GOTC_LUKASHENKO_MAIN_SPECIES_NAME"
+		plural = "GOTC_LUKASHENKO_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_LUKASHENKO_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUMAN2"
 		trait = "trait_agrarian"
 		trait = "trait_docile"
@@ -196,9 +189,9 @@
 	ethic = "ethic_fanatic_authoritarian"
 	ethic = "ethic_pacifist"
 
-	planet_name = "Минск"
+	planet_name = "GOTC_LUKASHENKO_PLANET_NAME"
 	planet_class = "pc_tropical"
-	system_name = "Минск"
+	system_name = "GOTC_LUKASHENKO_SYSTEM_NAME"
 
 	initializer = ""
 	graphical_culture = "plantoid_01"
@@ -222,20 +215,14 @@
 	}
 
 	ruler = {
-		name = "Лукашенко"
+		name = "GOTC_LUKASHENKO_RULER_NAME"
 		gender = male
 		portrait = "pla9"
 		texture = 0
 		attachment=0
 		clothes=2
-		ruler_title={
-			key="Батька"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Матька"
-			literal=yes
-		}
+		ruler_title="GOTC_LUKASHENKO_RULER_TITLE"
+		ruler_title_female="GOTC_LUKASHENKO_RULER_TITLE_FEMALE"
 		trait = "leader_trait_tyrannical"
 		trait = "leader_trait_peacekeeper"
 		leader_class = official
@@ -915,20 +902,19 @@
 	}
 }
 
-# kadyrov
-"Ичкерская Республика Чечения" = {
-	name = "Ичкерская Республика Чечения"
-	adjective = "Ичкерск"
+gotc_kadyrov = {
+	name = "GOTC_KADYROV_EMPIRE_NAME"
+	adjective = "GOTC_KADYROV_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "ICH"
+	ship_prefix = "GOTC_KADYROV_SHIP_PREFIX"
 
 	species = {
 		class = "MAM"
 		portrait = "mam10"
-		name = "Чеченец"
-		plural = "Чеченцы"
-		adjective = "Чеченск"
+		name = "GOTC_KADYROV_MAIN_SPECIES_NAME"
+		plural = "GOTC_KADYROV_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_KADYROV_MAIN_SPECIES_ADJECTIVE"
 		name_list = "GOTC_TAJICAUCASIAN"
 		gender = male
 		trait = "trait_unruly"
@@ -948,9 +934,9 @@
 	ethic = "ethic_militarist"
 	ethic = "ethic_spiritualist"
 
-	planet_name = "Грозный"
+	planet_name = "GOTC_KADYROV_PLANET_NAME"
 	planet_class = "pc_alpine"
-	system_name = "Грозный"
+	system_name = "GOTC_KADYROV_SYSTEM_NAME"
 
 	initializer = "do_not_choose_kadyrov"
 	graphical_culture = "lithoid_01"
@@ -974,20 +960,14 @@
 	}
 
 	ruler = {
-		name = "Рамзан Кадыров"
+		name = "GOTC_KADYROV_RULER_NAME"
 		gender = male
 		portrait = "mam10"
 		texture = 6
 		attachment=0
 		clothes=2
-		ruler_title={
-			key="Дон"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Донна"
-			literal=yes
-		}
+		ruler_title="GOTC_KADYROV_RULER_TITLE"
+		ruler_title_female="GOTC_KADYROV_RULER_TITLE_FEMALE"
 		trait="leader_trait_embezzler"
 		trait="trait_ruler_recruiter"
 		trait="leader_trait_intimidator"
@@ -995,20 +975,19 @@
 	}
 }
 
-# solovyov
-"Соловьёв LIVE" = {
-	name = "Соловьёв LIVE"
-	adjective = "Вечерне-Соловьёвск"
+gotc_solovyov = {
+	name = "GOTC_SOLOVYOV_EMPIRE_NAME"
+	adjective = "GOTC_SOLOVYOV_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "SLV"
+	ship_prefix = "GOTC_SOLOVYOV_SHIP_PREFIX"
 
 	species = {
 		class = "AVI"
 		portrait = "avi1"
-		name = "Соловьёв"
-		plural = "Соловьёвы"
-		adjective = "Соловьёвск"
+		name = "GOTC_SOLOVYOV_MAIN_SPECIES_NAME"
+		plural = "GOTC_SOLOVYOV_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_SOLOVYOV_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUMAN2"
 		trait = "trait_mudozvon"
 		trait = "trait_traditional"
@@ -1027,9 +1006,9 @@
 	ethic = "ethic_authoritarian"
 	ethic = "ethic_fanatic_xenophobe"
 
-	planet_name = "Останкино"
+	planet_name = "GOTC_SOLOVYOV_PLANET_NAME"
 	planet_class = "pc_continental"
-	system_name = "Останкино"
+	system_name = "GOTC_SOLOVYOV_SYSTEM_NAME"
 
 	initializer = "do_not_choose_solovyov"
 	graphical_culture = "avian_01"
@@ -1053,20 +1032,14 @@
 	}
 
 	ruler = {
-		name = "Владимир Рудольфович"
+		name = "GOTC_SOLOVYOV_RULER_NAME"
 		gender = male
 		portrait = "avi1"
 		texture = 2
 		attachment=0
 		clothes=2
-		ruler_title={
-			key="Пропагандон"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Пропагандониха"
-			literal=yes
-		}
+		ruler_title="GOTC_SOLOVYOV_RULER_TITLE"
+		ruler_title_female="GOTC_SOLOVYOV_RULER_TITLE_FEMALE"
 		trait="leader_trait_ambassador_whisper_networks"
 		leader_class = official
 	}
@@ -1709,7 +1682,7 @@ gotc_ussr_citizens = {
 
 	species = {
 		class = "MAM"
-		portrait = "mammalian_ar_09"
+		portrait = "mammalian_ar_05"
 		name = "GOTC_USSR_CITIZENS_MAIN_SPECIES_NAME"
 		plural = "GOTC_USSR_CITIZENS_MAIN_SPECIES_PLURAL"
 		adjective = "GOTC_USSR_CITIZENS_MAIN_SPECIES_ADJECTIVE"
@@ -1759,11 +1732,11 @@ gotc_ussr_citizens = {
 	ruler = {
 		name = "GOTC_USSR_CITIZENS_RULER_NAME"
 		gender = male
-		portrait = "mammalian_ar_09_m"
-		texture = 1
+		portrait = "mammalian_ar_05_m"
+		texture = 2
 		evolution_mask=0
 		attachment=0
-		clothes=4
+		clothes=0
 		ruler_title="GOTC_USSR_CITIZENS_RULER_TITLE"
 		heir_title="GOTC_USSR_CITIZENS_HEIR_TITLE"
 		ruler_title_female="GOTC_USSR_CITIZENS_RULER_TITLE_FEMALE"

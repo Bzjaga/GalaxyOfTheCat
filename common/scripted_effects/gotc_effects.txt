@@ -1010,24 +1010,12 @@ create_overlord_soviet = {
 #For use in overlord initializer; planet scope
 create_overlord_post_soviet = {
 	set_planet_flag = overlord_post_soviet
-	set_name = {
-		key="Русский Мир"
-		literal=yes
-	}
+	set_name = "GOTC_DUGIN_PLANET_NAME"
 	change_pc = pc_relic
 	create_species = {
-		name = {
-			key="Геройский Патриот"
-			literal=yes
-		}
-		plural = {
-			key="Геройские Патриоты"
-			literal=yes
-		}
-		adjective = {
-			key="Патриотическ"
-			literal=yes
-		}
+		name = "GOTC_DUGIN_MAIN_SPECIES_NAME"
+		plural = "GOTC_DUGIN_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_DUGIN_MAIN_SPECIES_ADJECTIVE"
 		class = "HUM"
 		portrait = "human"
 		name_list="HUMAN1"
@@ -1043,12 +1031,9 @@ create_overlord_post_soviet = {
 		save_global_event_target_as = origin_imperial_species
 	}
 	create_country = {
-		ship_prefix="PRE"
-		name = {
-			key="Постсоветская Российская Империя"
-			literal=yes
-		}
-		adjective="Постсоветск"
+		ship_prefix="GOTC_DUGIN_SHIP_PREFIX"
+		name = "GOTC_DUGIN_EMPIRE_NAME"
+		adjective="GOTC_DUGIN_EMPIRE_ADJECTIVE"
 		authority = auth_imperial
 		species = last_created_species
 		flag = {
@@ -1096,7 +1081,7 @@ create_overlord_post_soviet = {
 				# All Hail Mr. Dugin!
 				species = event_target:origin_imperial_homeland_country.species
 				class = scientist
-				name = "Александр Дугин"
+				name = "GOTC_DUGIN_RULER_NAME"
 				gender=male
 				skill = 5
 				set_age = 40
@@ -1107,11 +1092,11 @@ create_overlord_post_soviet = {
 					trait = leader_trait_shroud_preacher
 				}
 			}
-			set_male_ruler_title = "Нелюбимый всеми"
-			set_female_ruler_title = "Нелюбимая всеми"
+			set_male_ruler_title = "GOTC_DUGIN_RULER_TITLE"
+			set_female_ruler_title = "GOTC_DUGIN_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
-			set_male_heir_title = "Плохой боярин"
-			set_female_heir_title = "Плохая боярыня"
+			set_male_heir_title = "GOTC_DUGIN_HEIR_TITLE"
+			set_female_heir_title = "GOTC_DUGIN_HEIR_TITLE_FEMALE"
 
 			# Fleets
 			create_fleet = {
@@ -1269,10 +1254,7 @@ create_overlord_post_soviet = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="МКАД"
-			literal=yes
-		}
+		set_name = "GOTC_DUGIN_SYSTEM_NAME"
 	}
 }
 
