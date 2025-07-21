@@ -2309,7 +2309,7 @@ overlord_system_5_init = { # Second vassal
 					create_imperial_vassal_solovyov = yes
 				}
 				else = {
-					create_imperial_vassal_roskosmos = yes
+					create_imperial_vassal_roscosmos = yes
 				}
 			}
 			last_created_country = {
