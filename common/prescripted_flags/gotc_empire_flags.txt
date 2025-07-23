@@ -14,6 +14,14 @@ gotc_mao = {
 	flags = { gotc_mao }
 }
 
+gotc_pospolithoid = {
+	flags = { gotc_pospolithoid }
+}
+
+gotc_netoropyr = {
+	flags = { gotc_netoropyr }
+}
+
 gotc_borrel = {
 	flags = { gotc_borrel }
 }

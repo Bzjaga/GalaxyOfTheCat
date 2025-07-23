@@ -4,7 +4,7 @@
 
 # Home System I
 gotc_fallen_1 = {
-	name = "Нибиру"
+	name = "GOTC_LIZARD_SYSTEM_NAME"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -31,7 +31,7 @@ gotc_fallen_1 = {
 	}
 
 	planet = {
-		name = "Нибиру"
+		name = "GOTC_LIZARD_PLANET_NAME"
 		orbit_distance = 15
 		class = pc_city
 		orbit_angle = { min = 90 max = 270 }
@@ -44,7 +44,7 @@ gotc_fallen_1 = {
 
 		moon = {
 			count = { min = 1 max = 1 }
-			name = "Фатта"
+			name = "GOTC_LIZARD_MOON_NAME"
 			class = pc_barren
 			size = 8
 			orbit_angle = { min = 90 max = 270 }
@@ -265,7 +265,7 @@ gotc_fallen_1 = {
 }
 
 gotc_fallen_1_2 = {
-	name = "Ануннак"
+	name = "GOTC_LIZARD_SYSTEM_NAME_2"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -293,7 +293,7 @@ gotc_fallen_1_2 = {
 	}
 
 	planet = {
-		name = "Ануннак"
+		name = "GOTC_LIZARD_PLANET_NAME_2"
 		orbit_distance = 20
 		class = pc_gaia
 		orbit_angle = { min = 90 max = 270 }
@@ -388,7 +388,7 @@ gotc_fallen_1_2 = {
 
 # Home System II
 gotc_fallen_2 = {
-	name = "Китеж"
+	name = "GOTC_RUS_SYSTEM_NAME"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -431,7 +431,7 @@ gotc_fallen_2 = {
 	}
 
 	planet = {
-		name = "Китеж"
+		name = "GOTC_RUS_PLANET_NAME"
 		orbit_distance = 20
 		class = pc_gaia
 		orbit_angle = { min = 90 max = 270 }
@@ -527,7 +527,7 @@ gotc_fallen_2 = {
 		change_orbit = @base_moon_distance
 
 		moon = {
-			name = "Асгард Ирийский"
+			name = "GOTC_RUS_MOON_NAME"
 			class = "pc_broken"
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 5
@@ -538,7 +538,7 @@ gotc_fallen_2 = {
 	}
 
 	planet = {
-		name = "Славянск"
+		name = "GOTC_RUS_PLANET_NAME_2"
 		orbit_distance = 30
 		class = pc_gaia
 		orbit_angle = { min = 90 max = 270 }
@@ -764,15 +764,9 @@ gotc_fallen_3 = {
 				}
 				if = { # Astro-Hungary
 					limit = { root = { has_country_flag = astrohungary } }
-					set_name = {
-						key="Астро-Вена"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_PLANET_NAME"
 					solar_system = {
-						set_name = {
-							key="Астро-Вена"
-							literal=yes
-						}
+						set_name = "GOTC_HAB_SYSTEM_NAME"
 					}
 					
 					while = {
@@ -783,18 +777,9 @@ gotc_fallen_3 = {
 					}
 					root = { # Create Swabrians
 						create_species = {
-							name = {
-								key="Швабр"
-								literal=yes
-							}
-							plural = {
-								key="Швабры"
-								literal=yes
-							}
-							adjective = {
-								key="Швабрск"
-								literal=yes
-							}
+							name = "GOTC_HAB_SECONDARY_SPECIES_NAME"
+							plural = "GOTC_HAB_SECONDARY_SPECIES_PLURAL"
+							adjective = "GOTC_HAB_SECONDARY_SPECIES_ADJECTIVE"
 							class = ROBOT
 							namelist = HUMAN2
 							portrait = "tox_machine"
@@ -820,18 +805,9 @@ gotc_fallen_3 = {
 					}
 				
 					create_species = { # Vurdvalah
-						name = {
-							key="Вурдвалах"
-							literal=yes
-						}
-						plural = {
-							key="Вурдвалахи"
-							literal=yes
-						}
-						adjective = {
-							key="Вурдвалашск"
-							literal=yes
-						}
+						name = "GOTC_VURDVALAH_MAIN_SPECIES_NAME"
+						plural = "GOTC_VURDVALAH_MAIN_SPECIES_PLURAL"
+						adjective = "GOTC_VURDVALAH_MAIN_SPECIES_ADJECTIVE"
 						class = ART
 						portrait = synth09
 						name_list="HUMAN3"
@@ -854,18 +830,9 @@ gotc_fallen_3 = {
 					}
 				
 					create_species = { # Kazak
-						name = {
-							key="Казак"
-							literal=yes
-						}
-						plural = {
-							key="Казаки"
-							literal=yes
-						}
-						adjective = {
-							key="Казач"
-							literal=yes
-						}
+						name = "GOTC_SICH_MAIN_SPECIES_NAME"
+						plural = "GOTC_SICH_MAIN_SPECIES_PLURAL"
+						adjective = "GOTC_SICH_MAIN_SPECIES_ADJECTIVE"
 						class = PLANT
 						portrait = pla9
 						name_list="HUM1"
@@ -885,35 +852,24 @@ gotc_fallen_3 = {
 						species = event_target:kazak_species
 					}
 					
-					# Pospolitoid
-					if = { # Check Pospolitoid existence
+					# Pospolithoid
+					if = { # Check Pospolithoid existence
 						limit = {
-							any_system = { has_star_flag = pospolitoid }
+							any_country = { has_country_flag = gotc_pospolithoid }
 						}
-						random_playable_country = {
-							limit = {
-								capital_scope.solar_system = { has_star_flag = pospolitoid }
-							}
+						random_country = {
+							limit = { has_country_flag = gotc_pospolithoid }
 							owner_main_species = {
 								set_species_flag = astrohungarian
-								save_event_target_as = pospolitoid_species
+								save_event_target_as = pospolithoid_species
 							}
 						}
 					}
-					else = { # Create Pospolitoid species
-						create_species = { # Pospolitoid
-							name = {
-								key="Посполитоид"
-								literal=yes
-							}
-							plural = {
-								key="Посполитоиды"
-								literal=yes
-							}
-							adjective = {
-								key="Посполитоидн"
-								literal=yes
-							}
+					else = { # Create Pospolithoid species
+						create_species = { # Pospolithoid
+							name = "GOTC_POSPOLITHOID_MAIN_SPECIES_NAME"
+							plural = "GOTC_POSPOLITHOID_MAIN_SPECIES_PLURAL"
+							adjective = "GOTC_POSPOLITHOID_MAIN_SPECIES_ADJECTIVE"
 							class = LITHOID
 							portrait = lith4
 							name_list="LITHOID1"
@@ -929,22 +885,20 @@ gotc_fallen_3 = {
 						}
 						last_created_species = {
 							set_species_flag = astrohungarian
-							save_event_target_as = pospolitoid_species
+							save_event_target_as = pospolithoid_species
 						}
 					}
 					create_pop_group = {
-						species = event_target:pospolitoid_species
+						species = event_target:pospolithoid_species
 					}
 					
 					# Netoropyr
 					if = { # Check Netoropyr existence
 						limit = {
-							any_system = { has_star_flag = netoropyr }
+							any_country = { has_country_flag = gotc_netoropyr }
 						}
-						random_playable_country = {
-							limit = {
-								capital_scope.solar_system = { has_star_flag = netoropyr }
-							}
+						random_country = {
+							limit = { has_country_flag = gotc_netoropyr }
 							owner_main_species = {
 								set_species_flag = astrohungarian
 								save_event_target_as = netoropyr_species
@@ -953,18 +907,9 @@ gotc_fallen_3 = {
 					}
 					else = { # Create Netoropyr species
 						create_species = { # Netoropyr
-							name = {
-								key="Неторопырь"
-								literal=yes
-							}
-							plural = {
-								key="Неторопыри"
-								literal=yes
-							}
-							adjective = {
-								key="Неторопырск"
-								literal=yes
-							}
+							name = "GOTC_NETOROPYR_MAIN_SPECIES_NAME"
+							plural = "GOTC_NETOROPYR_MAIN_SPECIES_PLURAL"
+							adjective = "GOTC_NETOROPYR_MAIN_SPECIES_ADJECTIVE"
 							class = MOL
 							portrait = mol18
 							name_list="MOL4"
@@ -1009,18 +954,9 @@ gotc_fallen_3 = {
 					}
 					else = { # Create Untermensch and Aryan species
 						create_species = { # Untermensch
-							name = {
-								key="Унтерменш"
-								literal=yes
-							}
-							plural = {
-								key="Унтерменши"
-								literal=yes
-							}
-							adjective = {
-								key="Унтерменшеск"
-								literal=yes
-							}
+							name = "GOTC_REICH_SECONDARY_SPECIES_NAME"
+							plural = "GOTC_REICH_SECONDARY_SPECIES_PLURAL"
+							adjective = "GOTC_REICH_SECONDARY_SPECIES_ADJECTIVE"
 							class = HUM
 							portrait = humanoid_hp_02
 							name_list="GOTC_JEW"
@@ -1039,18 +975,9 @@ gotc_fallen_3 = {
 							save_event_target_as = untermensch_species
 						}
 						create_species = { # Aryan
-							name = {
-								key="Ариец"
-								literal=yes
-							}
-							plural = {
-								key="Арийцы"
-								literal=yes
-							}
-							adjective = {
-								key="Арийск"
-								literal=yes
-							}
+							name = "GOTC_REICH_MAIN_SPECIES_NAME"
+							plural = "GOTC_REICH_MAIN_SPECIES_PLURAL"
+							adjective = "GOTC_REICH_MAIN_SPECIES_ADJECTIVE"
 							class = MAM
 							portrait = mam8
 							name_list="HUMAN2"
@@ -1083,15 +1010,9 @@ gotc_fallen_3 = {
 					}
 				}
 				else = { # Carebear
-					set_name = {
-						key="Карелот"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_PLANET_NAME"
 					solar_system = {
-						set_name = {
-							key="Карелот"
-							literal=yes
-						}
+						set_name = "GOTC_CAREBEAR_SYSTEM_NAME"
 					}
 
 					while = {
@@ -1144,16 +1065,10 @@ gotc_fallen_3 = {
 			init_effect = {
 				if = { # Astro-Hungary
 					limit = { root = { has_country_flag = astrohungary } }
-					set_name = {
-						key="Вышеград"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_MOON_NAME"
 				}
 				else = { # Carebear
-					set_name = {
-						key="Подруга"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_MOON_NAME"
 				}
 				prevent_anomaly = yes
 			}
@@ -1179,10 +1094,7 @@ gotc_fallen_3 = {
 				}
 				if = { # Astro-Hungary
 					limit = { root = { has_country_flag = astrohungary } }
-					set_name = {
-						key="Буда"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_PLANET_NAME_2"
 					while = {
 						count = 16
 						create_pop_group = {
@@ -1197,10 +1109,7 @@ gotc_fallen_3 = {
 					}
 				}
 				else = { # Carebear
-					set_name = {
-						key="Друг"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_PLANET_NAME_2"
 					while = {
 						count = 18
 						create_pop_group = {
@@ -1245,10 +1154,7 @@ gotc_fallen_3 = {
 				}
 				if = { # Astro-Hungary
 					limit = { root = { has_country_flag = astrohungary } }
-					set_name = {
-						key="Пешт"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_PLANET_NAME_3"
 					while = {
 						count = 25
 						create_pop_group = {
@@ -1263,10 +1169,7 @@ gotc_fallen_3 = {
 					}
 				}
 				else = { # Carebear
-					set_name = {
-						key="Дружба"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_PLANET_NAME_3"
 					while = {
 						count = 27
 						create_pop_group = {
@@ -1315,7 +1218,7 @@ gotc_fallen_3 = {
 
 # Home System IV
 gotc_fallen_4 = {
-	name = "Сяньян"
+	name = "GOTC_QIN_SYSTEM_NAME"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
 	asteroid_belt = {
@@ -1358,7 +1261,7 @@ gotc_fallen_4 = {
 	}
 
 	planet = {
-		name = "Сяньян"
+		name = "GOTC_QIN_PLANET_NAME"
 		orbit_distance = 20
 		class = pc_gaia
 		orbit_angle = { min = 90 max = 270 }
@@ -1394,18 +1297,9 @@ gotc_fallen_4 = {
 			}
 			root = {
 				create_species = {
-					name = {
-						key="Террокот"
-						literal=yes
-					}
-					plural = {
-						key="Террокоты"
-						literal=yes
-					}
-					adjective = {
-						key="Террокотск"
-						literal=yes
-					}
+					name = "GOTC_QIN_SECONDARY_SPECIES_NAME"
+					plural = "GOTC_QIN_SECONDARY_SPECIES_PLURAL"
+					adjective = "GOTC_QIN_SECONDARY_SPECIES_ADJECTIVE"
 					class = "LITHOID"
 					portrait = "lith_human"
 					name_list="MAM2"
@@ -1457,7 +1351,7 @@ gotc_fallen_4 = {
 		}
 
 		moon = {
-			name = "Вэйхэ"
+			name = "GOTC_QIN_MOON_NAME"
 			class = "pc_gaia"
 			size = 12
 			orbit_distance = 14
@@ -1619,73 +1513,43 @@ gotc_fallen_col_1_1 = {
 		init_effect = {
 			if = { # Reptiloid
 				limit = { root = { has_country_flag = reptiloid } }
-				set_name = {
-					key="Тубан"
-					literal=yes
-				}
+				set_name = "GOTC_LIZARD_PLANET_NAME_3"
 				solar_system = {
-					set_name = {
-						key="Тубан"
-						literal=yes
-					}
+					set_name = "GOTC_LIZARD_SYSTEM_NAME_3"
 				}
 			}
 			else_if = { # Rus
 				limit = { root = { has_country_flag = rus } }
-				set_name = {
-					key="ТаРуса"
-					literal=yes
-				}
+				set_name = "GOTC_RUS_PLANET_NAME_3"
 				solar_system = {
-					set_name = {
-						key="ТаРуса"
-						literal=yes
-					}
+					set_name = "GOTC_RUS_SYSTEM_NAME_2"
 				}
 			}
 			else_if = { # Qin
 				limit = { root = { has_country_flag = qin } }
-				set_name = {
-					key="Ханьдань"
-					literal=yes
-				}
+				set_name = "GOTC_QIN_PLANET_NAME_2"
 				solar_system = {
-					set_name = {
-						key="Ханьдань"
-						literal=yes
-					}
+					set_name = "GOTC_QIN_SYSTEM_NAME_2"
 				}
 			}
 			else_if = { # Carebear
 				limit = { root = { has_country_flag = carebear } }
-				set_name = {
-					key="Соня"
-					literal=yes
-				}
+				set_name = "GOTC_CAREBEAR_PLANET_NAME_4"
 				solar_system = {
-					set_name = {
-						key="Соня"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_SYSTEM_NAME_2"
 				}
 			}
 			
 			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
-				set_name = {
-					key="Прага"
-					literal=yes
-				}
+				set_name = "GOTC_HAB_PLANET_NAME_4"
 				solar_system = {
-					set_name = {
-						key="Прага"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_SYSTEM_NAME_2"
 				}
 				change_pc = pc_tropical
 				if = { # Check Netoropyr existence
 					limit = {
-						NOT = { any_system = { has_star_flag = netoropyr } }
+						NOT = { any_country = { has_country_flag = gotc_netoropyr } }
 					}
 					event_target:netoropyr_species = {
 						set_species_homeworld = prev
@@ -1814,68 +1678,38 @@ gotc_fallen_col_1_2 = {
 		init_effect = {
 			if = { # Reptiloid
 				limit = { root = { has_country_flag = reptiloid } }
-				set_name = {
-					key="Тиранославль"
-					literal=yes
-				}
+				set_name = "GOTC_LIZARD_PLANET_NAME_4"
 				solar_system = {
-					set_name = {
-						key="Тиранославль"
-						literal=yes
-					}
+					set_name = "GOTC_LIZARD_SYSTEM_NAME_4"
 				}
 			}
 			else_if = { # Rus
 				limit = { root = { has_country_flag = rus } }
-				set_name = {
-					key="Байкальск"
-					literal=yes
-				}
+				set_name = "GOTC_RUS_PLANET_NAME_4"
 				solar_system = {
-					set_name = {
-						key="Байкальск"
-						literal=yes
-					}
+					set_name = "GOTC_RUS_SYSTEM_NAME_3"
 				}
 			}
 			else_if = { # Qin
 				limit = { root = { has_country_flag = qin } }
-				set_name = {
-					key="Чанъань"
-					literal=yes
-				}
+				set_name = "GOTC_QIN_PLANET_NAME_3"
 				solar_system = {
-					set_name = {
-						key="Чанъань"
-						literal=yes
-					}
+					set_name = "GOTC_QIN_SYSTEM_NAME_3"
 				}
 			}
 			else_if = { # Carebear
 				limit = { root = { has_country_flag = carebear } }
-				set_name = {
-					key="Весельчак"
-					literal=yes
-				}
+				set_name = "GOTC_CAREBEAR_PLANET_NAME_5"
 				solar_system = {
-					set_name = {
-						key="Весельчак"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_SYSTEM_NAME_3"
 				}
 			}
 			
 			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
-				set_name = {
-					key="Лемберг"
-					literal=yes
-				}
+				set_name = "GOTC_HAB_PLANET_NAME_5"
 				solar_system = {
-					set_name = {
-						key="Лемберг"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_SYSTEM_NAME_3"
 				}
 				change_pc = pc_arid
 				event_target:kazak_species = {
@@ -1915,7 +1749,7 @@ gotc_fallen_col_1_2 = {
 				while = {
 					count = 7
 					create_pop_group = {
-						species = event_target:pospolitoid_species
+						species = event_target:pospolithoid_species
 					}
 				}
 			}
@@ -2060,68 +1894,38 @@ gotc_fallen_col_2_1 = {
 		init_effect = {
 			if = { # Reptiloid
 				limit = { root = { has_country_flag = reptiloid } }
-				set_name = {
-					key="Птерославль"
-					literal=yes
-				}
+				set_name = "GOTC_LIZARD_PLANET_NAME_5"
 				solar_system = {
-					set_name = {
-						key="Птерославль"
-						literal=yes
-					}
+					set_name = "GOTC_LIZARD_SYSTEM_NAME_5"
 				}
 			}
 			else_if = { # Rus
 				limit = { root = { has_country_flag = rus } }
-				set_name = {
-					key="ЭтРусия"
-					literal=yes
-				}
+				set_name = "GOTC_RUS_PLANET_NAME_5"
 				solar_system = {
-					set_name = {
-						key="ЭтРусия"
-						literal=yes
-					}
+					set_name = "GOTC_RUS_SYSTEM_NAME_4"
 				}
 			}
 			else_if = { # Qin
 				limit = { root = { has_country_flag = qin } }
-				set_name = {
-					key="Далян"
-					literal=yes
-				}
+				set_name = "GOTC_QIN_PLANET_NAME_4"
 				solar_system = {
-					set_name = {
-						key="Далян"
-						literal=yes
-					}
+					set_name = "GOTC_QIN_SYSTEM_NAME_4"
 				}
 			}
 			else_if = { # Carebear
 				limit = { root = { has_country_flag = carebear } }
-				set_name = {
-					key="Выручайка"
-					literal=yes
-				}
+				set_name = "GOTC_CAREBEAR_PLANET_NAME_6"
 				solar_system = {
-					set_name = {
-						key="Выручайка"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_SYSTEM_NAME_4"
 				}
 			}
 			
 			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
-				set_name = {
-					key="Тимишоара"
-					literal=yes
-				}
+				set_name = "GOTC_HAB_PLANET_NAME_6"
 				solar_system = {
-					set_name = {
-						key="Тимишоара"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_SYSTEM_NAME_4"
 				}
 				change_pc = pc_continental
 				event_target:vurdvalah_species = {
@@ -2250,75 +2054,45 @@ gotc_fallen_col_2_2 = {
 		init_effect = {
 			if = { # Reptiloid
 				limit = { root = { has_country_flag = reptiloid } }
-				set_name = {
-					key="Дети Завра"
-					literal=yes
-				}
+				set_name = "GOTC_LIZARD_PLANET_NAME_6"
 				solar_system = {
-					set_name = {
-						key="Дети Завра"
-						literal=yes
-					}
+					set_name = "GOTC_LIZARD_SYSTEM_NAME_6"
 				}
 			}
 			else_if = { # Rus
 				limit = { root = { has_country_flag = rus } }
-				set_name = {
-					key="Рим Руса-лим"
-					literal=yes
-				}
+				set_name = "GOTC_RUS_PLANET_NAME_6"
 				solar_system = {
-					set_name = {
-						key="Рим Руса-лим"
-						literal=yes
-					}
+					set_name = "GOTC_RUS_SYSTEM_NAME_5"
 				}
 			}
 			else_if = { # Qin
 				limit = { root = { has_country_flag = qin } }
-				set_name = {
-					key="Цзянье"
-					literal=yes
-				}
+				set_name = "GOTC_QIN_PLANET_NAME_5"
 				solar_system = {
-					set_name = {
-						key="Цзянье"
-						literal=yes
-					}
+					set_name = "GOTC_QIN_SYSTEM_NAME_5"
 				}
 			}
 			else_if = { # Carebear
 				limit = { root = { has_country_flag = carebear } }
-				set_name = {
-					key="Счастливчик"
-					literal=yes
-				}
+				set_name = "GOTC_CAREBEAR_PLANET_NAME_7"
 				solar_system = {
-					set_name = {
-						key="Счастливчик"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_SYSTEM_NAME_5"
 				}
 			}
 			
 			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
-				set_name = {
-					key="Краков"
-					literal=yes
-				}
+				set_name = "GOTC_HAB_PLANET_NAME_7"
 				solar_system = {
-					set_name = {
-						key="Краков"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_SYSTEM_NAME_5"
 				}
 				change_pc = pc_alpine
-				if = { # Check Pospolitoid existence
+				if = { # Check Pospolithoid existence
 					limit = {
-						NOT = { any_system = { has_star_flag = pospolitoid } }
+						NOT = { any_country = { has_country_flag = gotc_pospolithoid } }
 					}
-					event_target:pospolitoid_species = {
+					event_target:pospolithoid_species = {
 						set_species_homeworld = prev
 					}
 				}
@@ -2356,7 +2130,7 @@ gotc_fallen_col_2_2 = {
 				while = {
 					count = 9
 					create_pop_group = {
-						species = event_target:pospolitoid_species
+						species = event_target:pospolithoid_species
 					}
 				}
 			}
@@ -2477,38 +2251,23 @@ gotc_fallen_orbitals_1 = {
 	init_effect = {
 		if = { # Reptiloid
 			limit = { root = { has_country_flag = reptiloid } }
-			set_name = {
-				key="Урибин"
-				literal=yes
-			}
+			set_name = "GOTC_LIZARD_SYSTEM_NAME_7"
 		}
 		else_if = { # Rus
 			limit = { root = { has_country_flag = rus } }
-			set_name = {
-				key="Старая Ладога"
-				literal=yes
-			}
+			set_name = "GOTC_RUS_SYSTEM_NAME_6"
 		}
 		else_if = { # Qin
 			limit = { root = { has_country_flag = qin } }
-			set_name = {
-				key="Чэнду"
-				literal=yes
-			}
+			set_name = "GOTC_QIN_SYSTEM_NAME_6"
 		}
 		else_if = { # Carebear
 			limit = { root = { has_country_flag = carebear } }
-			set_name = {
-				key="Именинный"
-				literal=yes
-			}
+			set_name = "GOTC_CAREBEAR_SYSTEM_NAME_6"
 		}
 		else_if = { # Astro-Hungary
 			limit = { root = { has_country_flag = astrohungary } }
-			set_name = {
-				key="Дебрецен"
-				literal=yes
-			}
+			set_name = "GOTC_HAB_SYSTEM_NAME_6"
 		}
 		random_system_planet = {
 			limit = {
@@ -2600,38 +2359,23 @@ gotc_fallen_orbitals_2 = {
 	init_effect = {
 		if = { # Reptiloid
 			limit = { root = { has_country_flag = reptiloid } }
-			set_name = {
-				key="Брахиотурн"
-				literal=yes
-			}
+			set_name = "GOTC_LIZARD_SYSTEM_NAME_8"
 		}
 		else_if = { # Rus
 			limit = { root = { has_country_flag = rus } }
-			set_name = {
-				key="Старая Русса"
-				literal=yes
-			}
+			set_name = "GOTC_RUS_SYSTEM_NAME_7"
 		}
 		else_if = { # Qin
 			limit = { root = { has_country_flag = qin } }
-			set_name = {
-				key="Аньян"
-				literal=yes
-			}
+			set_name = "GOTC_QIN_SYSTEM_NAME_7"
 		}
 		else_if = { # Carebear
 			limit = { root = { has_country_flag = carebear } }
-			set_name = {
-				key="Радуга"
-				literal=yes
-			}
+			set_name = "GOTC_CAREBEAR_SYSTEM_NAME_7"
 		}
 		else_if = { # Astro-Hungary
 			limit = { root = { has_country_flag = astrohungary } }
-			set_name = {
-				key="Грац"
-				literal=yes
-			}
+			set_name = "GOTC_HAB_SYSTEM_NAME_7"
 		}
 		random_system_planet = {
 			limit = {
@@ -2676,7 +2420,7 @@ gotc_fallen_orbitals_2 = {
 # Shrouded Planet
 gotc_fallen_shrouded = {
 	class = sc_black_hole
-	name = "Калинов Мост"
+	name = "GOTC_RUS_SYSTEM_NAME_8"
 	flags = { fallen_shrouded }
 
 	planet = {
@@ -2702,7 +2446,7 @@ gotc_fallen_shrouded = {
 		count = 1
 		orbit_distance = 30
 		class = pc_shrouded
-		name = "Калинов Мост"
+		name = "GOTC_RUS_PLANET_NAME_7"
 		orbit_angle = { min = 90 max = 270 }
 		size = 22
 		modifiers = none
@@ -2747,7 +2491,7 @@ gotc_fallen_shrouded = {
 # Shielded Planet 1
 gotc_fallen_shielded_1 = {
 	class = "rl_standard_stars"
-	name = "Шоусянь"
+	name = "GOTC_QIN_SYSTEM_NAME_8"
 	flags = { fallen_shielded_1 }
 
 	planet = {
@@ -2837,7 +2581,7 @@ gotc_fallen_shielded_1 = {
 # Shielded Planet 2
 gotc_fallen_shielded_2 = {
 	class = "rl_standard_stars"
-	name = "Линьцзы"
+	name = "GOTC_QIN_SYSTEM_NAME_9"
 	flags = { fallen_shielded_2 }
 
 	planet = {
@@ -2927,7 +2671,7 @@ gotc_fallen_shielded_2 = {
 # Shielded Planet 3
 gotc_fallen_shielded_3 = {
 	class = "rl_standard_stars"
-	name = "Пуян"
+	name = "GOTC_QIN_SYSTEM_NAME_10"
 	flags = { fallen_shielded_3 }
 
 	planet = {
@@ -3017,7 +2761,7 @@ gotc_fallen_shielded_3 = {
 # Fallen Empire's Holy World 1
 gotc_fallen_holy_01 = {
 	class = "rl_standard_stars"
-	name = "Аркона"
+	name = "GOTC_RUS_SYSTEM_NAME_9"
 
 	flags = { holy_system_1 }
 
@@ -3038,7 +2782,7 @@ gotc_fallen_holy_01 = {
 		class = "pc_gaia"
 		orbit_angle = { min = 90 max = 270 }
 		size = 18
-		name = "Аркона"
+		name = "GOTC_RUS_PLANET_NAME_8"
 		deposit_blockers = none
 		flags = { holy_world_1 }
 
@@ -3088,7 +2832,7 @@ gotc_fallen_holy_01 = {
 # Fallen Empire's Holy World 2
 gotc_fallen_holy_02 = {
 	class = "rl_standard_stars"
-	name = "Буян"
+	name = "GOTC_RUS_SYSTEM_NAME_10"
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 95
@@ -3128,7 +2872,7 @@ gotc_fallen_holy_02 = {
 		class = "pc_gaia"
 		orbit_angle = { min = 90 max = 270 }
 		size = 14
-		name = "Буян"
+		name = "GOTC_RUS_PLANET_NAME_9"
 		deposit_blockers = none
 		flags = { holy_world_2 }
 
@@ -3178,7 +2922,7 @@ gotc_fallen_holy_02 = {
 # Fallen Empire's Holy World 3
 gotc_fallen_holy_03 = {
 	class = "rl_standard_stars"
-	name = "Лукоморье"
+	name = "GOTC_RUS_SYSTEM_NAME_11"
 
 	flags = { holy_system_3 }
 
@@ -3197,7 +2941,7 @@ gotc_fallen_holy_03 = {
 		count = 1
 		orbit_distance = 10
 		class = "pc_gaia"
-		name = "Лукоморье"
+		name = "GOTC_RUS_PLANET_NAME_10"
 		deposit_blockers = none
 		orbit_angle = { min = 90 max = 270 }
 		flags = { holy_world_3 }
@@ -3260,7 +3004,7 @@ gotc_fallen_holy_03 = {
 # Fallen Empire's Holy World 4
 gotc_fallen_holy_04 = {
 	class = "rl_standard_stars"
-	name = "Капище"
+	name = "GOTC_RUS_SYSTEM_NAME_12"
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 120
@@ -3283,7 +3027,7 @@ gotc_fallen_holy_04 = {
 		count = 1
 		orbit_distance = 10
 		class = "pc_gaia"
-		name = "Капище"
+		name = "GOTC_RUS_PLANET_NAME_11"
 		deposit_blockers = none
 		orbit_angle = { min = 90 max = 270 }
 		flags = { holy_world_4 }
@@ -3387,15 +3131,9 @@ gotc_fallen_xeno_zoo = {
 
 			if = { # Astro-Hungary
 				limit = { root = { has_country_flag = astrohungary } }
-				set_name = {
-					key="Тюрьма Народов"
-					literal=yes
-				}
+				set_name = "GOTC_HAB_PLANET_NAME_8"
 				solar_system = {
-					set_name = {
-						key="Тюрьма Народов"
-						literal=yes
-					}
+					set_name = "GOTC_HAB_SYSTEM_NAME_8"
 				}
 				create_pop_group = {
 					species = event_target:vurdvalah_species
@@ -3404,7 +3142,7 @@ gotc_fallen_xeno_zoo = {
 					species = event_target:kazak_species
 				}
 				create_pop_group = {
-					species = event_target:pospolitoid_species
+					species = event_target:pospolithoid_species
 				}
 				create_pop_group = {
 					species = event_target:netoropyr_species
@@ -3417,30 +3155,15 @@ gotc_fallen_xeno_zoo = {
 				}
 			}
 			else = { # Carebear
-				set_name = {
-					key="Забота"
-					literal=yes
-				}
+				set_name = "GOTC_CAREBEAR_PLANET_NAME_8"
 				solar_system = {
-					set_name = {
-						key="Забота"
-						literal=yes
-					}
+					set_name = "GOTC_CAREBEAR_SYSTEM_NAME_8"
 				}
 				
 				create_species = { # Mofumof
-					name = {
-						key="Мофумоф"
-						literal=yes
-					}
-					plural = {
-						key="Мофумофы"
-						literal=yes
-					}
-					adjective = {
-						key="Мофумофск"
-						literal=yes
-					}
+					name = "GOTC_CAREBEAR_SPECIES_1_NAME"
+					plural = "GOTC_CAREBEAR_SPECIES_1_PLURAL"
+					adjective = "GOTC_CAREBEAR_SPECIES_1_ADJECTIVE"
 					class = MAM
 					portrait = cyb7
 					name_list="MAM2"
@@ -3455,18 +3178,9 @@ gotc_fallen_xeno_zoo = {
 				}
 				
 				create_species = { # Ginger Tabbi
-					name = {
-						key="Джинджерный Табби"
-						literal=yes
-					}
-					plural = {
-						key="Джинджерные Табби"
-						literal=yes
-					}
-					adjective = {
-						key="Таббск"
-						literal=yes
-					}
+					name = "GOTC_CAREBEAR_SPECIES_2_NAME"
+					plural = "GOTC_CAREBEAR_SPECIES_2_PLURAL"
+					adjective = "GOTC_CAREBEAR_SPECIES_2_ADJECTIVE"
 					class = MAM
 					portrait = cyb1
 					name_list="MAM2"
@@ -3483,18 +3197,9 @@ gotc_fallen_xeno_zoo = {
 				}
 				
 				create_species = { # Kot Smoking
-					name = {
-						key="Кот Смокинг"
-						literal=yes
-					}
-					plural = {
-						key="Коты Смокинги"
-						literal=yes
-					}
-					adjective = {
-						key="Смокингск"
-						literal=yes
-					}
+					name = "GOTC_CAREBEAR_SPECIES_3_NAME"
+					plural = "GOTC_CAREBEAR_SPECIES_3_PLURAL"
+					adjective = "GOTC_CAREBEAR_SPECIES_3_ADJECTIVE"
 					class = MAM
 					portrait = mam14
 					name_list="MAM2"
@@ -3510,18 +3215,9 @@ gotc_fallen_xeno_zoo = {
 				}
 				
 				create_species = { # Obuglenny Bely Kot
-					name = {
-						key="Обугленный Белый Кот"
-						literal=yes
-					}
-					plural = {
-						key="Обугленные Белые Коты"
-						literal=yes
-					}
-					adjective = {
-						key="Обугленн"
-						literal=yes
-					}
+					name = "GOTC_CAREBEAR_SPECIES_4_NAME"
+					plural = "GOTC_CAREBEAR_SPECIES_4_PLURAL"
+					adjective = "GOTC_CAREBEAR_SPECIES_4_ADJECTIVE"
 					class = MAM
 					portrait = cyb7
 					name_list="MAM2"
@@ -3540,18 +3236,9 @@ gotc_fallen_xeno_zoo = {
 				}
 				
 				create_species = { # Bolshoy Kot
-					name = {
-						key="Большой Кот"
-						literal=yes
-					}
-					plural = {
-						key="Большие Коты"
-						literal=yes
-					}
-					adjective = {
-						key="Большекотск"
-						literal=yes
-					}
+					name = "GOTC_CAREBEAR_SPECIES_5_NAME"
+					plural = "GOTC_CAREBEAR_SPECIES_5_PLURAL"
+					adjective = "GOTC_CAREBEAR_SPECIES_5_ADJECTIVE"
 					class = MAM
 					portrait = mam14
 					name_list="MAM2"
@@ -3587,7 +3274,7 @@ gotc_fallen_xeno_zoo = {
 # Home System - Machine
 gotc_fallen_machine = {
 	usage = fallen_empire_init
-	name = "Windows NT"
+	name = "GOTC_GATES_SYSTEM_NAME"
 	class = "rl_standard_stars"
 
 	flags = { ring_world_built }
@@ -3632,7 +3319,7 @@ gotc_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = "Windows 11"
+		name = "GOTC_GATES_PLANET_NAME"
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -3690,18 +3377,9 @@ gotc_fallen_machine = {
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
 			create_species = { # Windows bug
-				name = {
-					key="Баг"
-					literal=yes
-				}
-				plural = {
-					key="Баги"
-					literal=yes
-				}
-				adjective = {
-					key="Багнут"
-					literal=yes
-				}
+				name = "GOTC_GATES_PRESAPIENT_SPECIES_NAME"
+				plural = "GOTC_GATES_PRESAPIENT_SPECIES_PLURAL"
+				adjective = "GOTC_GATES_PRESAPIENT_SPECIES_ADJECTIVE"
 				class = ART
 				portrait = art11
 				traits = {
@@ -3742,7 +3420,7 @@ gotc_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = "Windows 10"
+		name = "GOTC_GATES_PLANET_NAME_2"
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -3799,7 +3477,7 @@ gotc_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = "Windows 7"
+		name = "GOTC_GATES_PLANET_NAME_3"
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -3865,7 +3543,7 @@ gotc_fallen_machine = {
 
 gotc_fallen_machine_2 = {
 	class = "rl_standard_stars"
-	name = "Центр Чипизации"
+	name = "GOTC_GATES_SYSTEM_NAME_2"
 
 	planet = {
 		class = star
@@ -3992,7 +3670,7 @@ gotc_fallen_machine_2 = {
 
 gotc_fallen_machine_3 = {
 	class = "rl_standard_stars"
-	name = "Зомбирующие вышки"
+	name = "GOTC_GATES_SYSTEM_NAME_3"
 
 	planet = {
 		class = star
@@ -4121,7 +3799,7 @@ gotc_fallen_machine_3 = {
 
 gotc_fallen_machine_4 = {
 	class = "rl_standard_stars"
-	name = "Выпущенные Продукты"
+	name = "GOTC_GATES_SYSTEM_NAME_4"
 
 	planet = {
 		class = star
@@ -4234,7 +3912,7 @@ gotc_fallen_machine_4 = {
 gotc_fallen_machine_5 = {
 	class = sc_black_hole
 
-	name = "Будущие Проекты"
+	name = "GOTC_GATES_SYSTEM_NAME_5"
 
 	planet = {
 		class = star

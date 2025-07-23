@@ -14,18 +14,9 @@ fallen_empire_1 = {
 
 	create_country_effect = {
 		create_species = {
-			name = {
-				key="Ящер"
-				literal=yes
-			}
-			plural = {
-				key="Ящеры"
-				literal=yes
-			}
-			adjective = {
-				key="Ящерск"
-				literal=yes
-			}
+			name = "GOTC_LIZARD_MAIN_SPECIES_NAME"
+			plural = "GOTC_LIZARD_MAIN_SPECIES_PLURAL"
+			adjective = "GOTC_LIZARD_MAIN_SPECIES_ADJECTIVE"
 			class = "REP"
 			portrait = "cyb4"
 			name_list="GOTC_JEW"
@@ -49,12 +40,9 @@ fallen_empire_1 = {
 			}
 		}
 		create_country = {
-			ship_prefix="LIZ"
-			name = {
-				key="Заговор Рептилоидов"
-				literal=yes
-			}
-			adjective="Рептилоидн"
+			ship_prefix="GOTC_LIZARD_SHIP_PREFIX"
+			name = "GOTC_LIZARD_EMPIRE_NAME"
+			adjective="GOTC_LIZARD_EMPIRE_ADJECTIVE"
 			type = fallen_empire
 			ignore_initial_colony_error = yes
 			authority = auth_imperial
@@ -109,13 +97,13 @@ fallen_empire_1 = {
 				create_leader = {
 					species = owner_main_species
 					class = scientist
-					name = "Марк Цукерберг"
+					name = "GOTC_LIZARD_RULER_NAME"
 					gender=male
 					skill = 10
 					randomize_traits = yes
 				}
-				set_male_ruler_title = "Глава Заговора"
-				set_female_ruler_title = "Глава Заговора"
+				set_male_ruler_title = "GOTC_LIZARD_RULER_TITLE"
+				set_female_ruler_title = "GOTC_LIZARD_RULER_TITLE_FEMALE"
 				set_leader = last_created_leader
 			}
 		}
@@ -138,18 +126,9 @@ fallen_empire_2 = {
 
 	create_country_effect = {
 		create_species = {
-			name = {
-				key="Рус"
-				literal=yes
-			}
-			plural = {
-				key="Русы"
-				literal=yes
-			}
-			adjective = {
-				key="Русск"
-				literal=yes
-			}
+			name = "GOTC_RUS_MAIN_SPECIES_NAME"
+			plural = "GOTC_RUS_MAIN_SPECIES_PLURAL"
+			adjective = "GOTC_RUS_MAIN_SPECIES_ADJECTIVE"
 			class = "MAM"
 			portrait = "cyb6"
 			name_list="GOTC_RUS"
@@ -173,12 +152,9 @@ fallen_empire_2 = {
 			}
 		}
 		create_country = {
-			ship_prefix="РУСЬ"
-			name = {
-				key="Русь"
-				literal=yes
-			}
-			adjective="Русск"
+			ship_prefix="GOTC_RUS_SHIP_PREFIX"
+			name = "GOTC_RUS_EMPIRE_NAME"
+			adjective="GOTC_RUS_EMPIRE_ADJECTIVE"
 			type = fallen_empire
 			name_list="GOTC_RUS"
 			ignore_initial_colony_error = yes
@@ -234,13 +210,13 @@ fallen_empire_2 = {
 				create_leader = {
 					species = owner_main_species
 					class = commander
-					name = "Словен Всеслав"
+					name = "GOTC_RUS_RULER_NAME"
 					gender=male
 					skill = 10
 					randomize_traits = yes
 				}
-				set_male_ruler_title = "Вождь Русов"
-				set_female_ruler_title = "Вождь Русов"
+				set_male_ruler_title = "GOTC_RUS_RULER_TITLE"
+				set_female_ruler_title = "GOTC_RUS_RULER_TITLE_FEMALE"
 				set_leader = last_created_leader
 			}
 		}
@@ -261,18 +237,9 @@ fallen_empire_3 = {
 		if = { # Carebear
 			limit = { any_system = { has_star_flag = astrohungary } }
 			create_species = {
-				name = {
-					key="Медвед"
-					literal=yes
-				}
-				plural = {
-					key="Медведы"
-					literal=yes
-				}
-				adjective = {
-					key="Медведск"
-					literal=yes
-				}
+				name = "GOTC_CAREBEAR_MAIN_SPECIES_NAME"
+				plural = "GOTC_CAREBEAR_MAIN_SPECIES_PLURAL"
+				adjective = "GOTC_CAREBEAR_MAIN_SPECIES_ADJECTIVE"
 				class = "MAM"
 				portrait = "mam13"
 				name_list="TOX4"
@@ -288,12 +255,9 @@ fallen_empire_3 = {
 				allow_negative_traits = no
 			}
 			create_country = {
-				ship_prefix="CARE"
-				name = {
-					key="Заботливые мишки"
-					literal=yes
-				}
-				adjective="Заботлив"
+				ship_prefix="GOTC_CAREBEAR_SHIP_PREFIX"
+				name = "GOTC_CAREBEAR_EMPIRE_NAME"
+				adjective="GOTC_CAREBEAR_EMPIRE_ADJECTIVE"
 				type = fallen_empire
 				name_list="TOX4"
 				ignore_initial_colony_error = yes
@@ -349,31 +313,22 @@ fallen_empire_3 = {
 					create_leader = {
 						species = owner_main_species
 						class = official
-						name = "Николас"
+						name = "GOTC_CAREBEAR_RULER_NAME"
 						gender=male
 						skill = 10
 						randomize_traits = yes
 					}
-					set_male_ruler_title = "Помогатор"
-					set_female_ruler_title = "Помогаторша"
+					set_male_ruler_title = "GOTC_CAREBEAR_RULER_TITLE"
+					set_female_ruler_title = "GOTC_CAREBEAR_RULER_TITLE_FEMALE"
 					set_leader = last_created_leader
 				}
 			}
 		}
 		else = { # Astro-Hungary
 			create_species = {
-				name = {
-					key="Астро-мадьяр"
-					literal=yes
-				}
-				plural = {
-					key="Астро-мадьяры"
-					literal=yes
-				}
-				adjective = {
-					key="Астро-мадьярск"
-					literal=yes
-				}
+				name = "GOTC_HAB_MAIN_SPECIES_NAME"
+				plural = "GOTC_HAB_MAIN_SPECIES_PLURAL"
+				adjective = "GOTC_HAB_MAIN_SPECIES_ADJECTIVE"
 				class = "MAM"
 				portrait = "mam11"
 				name_list="MAM4"
@@ -389,12 +344,9 @@ fallen_empire_3 = {
 				allow_negative_traits = no
 			}
 			create_country = {
-				ship_prefix="HAB"
-				name = {
-					key="Астро-Венгерская Империя"
-					literal=yes
-				}
-				adjective="Астро-Венгерск"
+				ship_prefix="GOTC_HAB_SHIP_PREFIX"
+				name = "GOTC_HAB_EMPIRE_NAME"
+				adjective="GOTC_HAB_EMPIRE_ADJECTIVE"
 				type = fallen_empire
 				name_list="MAM4"
 				ignore_initial_colony_error = yes
@@ -450,15 +402,15 @@ fallen_empire_3 = {
 					create_leader = {
 						species = owner_main_species
 						class = official
-						name = "Франц-Иосиф Габсбург"
+						name = "GOTC_HAB_RULER_NAME"
 						gender=male
 						skill = 10
 						randomize_traits = yes
 					}
-					set_male_ruler_title = "Государь-Император"
-					set_female_ruler_title = "Государыня-Императрица"
-					set_male_heir_title = "Эрц-перц-герцог"
-					set_female_heir_title = "Эрц-перц-герцогиня"
+					set_male_ruler_title = "GOTC_HAB_RULER_TITLE"
+					set_female_ruler_title = "GOTC_HAB_RULER_TITLE_FEMALE"
+					set_male_heir_title = "GOTC_HAB_HEIR_TITLE"
+					set_female_heir_title = "GOTC_HAB_HEIR_TITLE_FEMALE"
 					set_leader = last_created_leader
 				}
 			}
@@ -492,18 +444,9 @@ fallen_empire_4 = {
 			event_target:mao_species = {
 				create_species = {
 					is_mod = yes
-					name = {
-						key="Китаец"
-						literal=yes
-					}
-					plural = {
-						key="Китайцы"
-						literal=yes
-					}
-					adjective = {
-						key="Китайск"
-						literal=yes
-					}
+					name = "GOTC_QIN_MAIN_SPECIES_NAME"
+					plural = "GOTC_QIN_MAIN_SPECIES_PLURAL"
+					adjective = "GOTC_QIN_MAIN_SPECIES_ADJECTIVE"
 					class = this
 					portrait = this
 					extra_trait_points = 1
@@ -523,18 +466,9 @@ fallen_empire_4 = {
 		}
 		else = {
 			create_species = {
-				name = {
-					key="Китаец"
-					literal=yes
-				}
-				plural = {
-					key="Китайцы"
-					literal=yes
-				}
-				adjective = {
-					key="Китайск"
-					literal=yes
-				}
+				name = "GOTC_QIN_MAIN_SPECIES_NAME"
+				plural = "GOTC_QIN_MAIN_SPECIES_PLURAL"
+				adjective = "GOTC_QIN_MAIN_SPECIES_ADJECTIVE"
 				class = "REP"
 				portrait = "rep1"
 				name_list="ART1"
@@ -552,12 +486,9 @@ fallen_empire_4 = {
 			}
 		}
 		create_country = {
-			ship_prefix="QIN"
-			name = {
-				key="Циньская Династия"
-				literal=yes
-			}
-			adjective="Циньск"
+			ship_prefix="GOTC_QIN_SHIP_PREFIX"
+			name = "GOTC_QIN_EMPIRE_NAME"
+			adjective="GOTC_QIN_EMPIRE_ADJECTIVE"
 			type = fallen_empire
 			name_list="ART1"
 			ignore_initial_colony_error = yes
@@ -613,7 +544,7 @@ fallen_empire_4 = {
 				create_leader = {
 					species = owner_main_species
 					class = commander
-					name = "Цинь Шихуанди"
+					name = "GOTC_QIN_RULER_NAME"
 					gender=male
 					skill = 10
 					randomize_traits = yes
@@ -640,18 +571,9 @@ fallen_machine_empire = {
 
 	create_country_effect = {
 		create_species = {
-			name = {
-				key="Чипизатор"
-				literal=yes
-			}
-			plural = {
-				key="Чипизаторы"
-				literal=yes
-			}
-			adjective = {
-				key="Чипизаторск"
-				literal=yes
-			}
+			name = "GOTC_GATES_MAIN_SPECIES_NAME"
+			plural = "GOTC_GATES_MAIN_SPECIES_PLURAL"
+			adjective = "GOTC_GATES_MAIN_SPECIES_ADJECTIVE"
 			class = MACHINE
 			namelist = MACHINE3
 			portrait = sd_pla_robot
@@ -668,12 +590,9 @@ fallen_machine_empire = {
 			allow_negative_traits = no
 		}
 		create_country = {
-			ship_prefix="MS"
-			name = {
-				key="Корпорация Майкрософт"
-				literal=yes
-			}
-			adjective="Мелкомягк"
+			ship_prefix="GOTC_GATES_SHIP_PREFIX"
+			name = "GOTC_GATES_EMPIRE_NAME"
+			adjective="GOTC_GATES_EMPIRE_ADJECTIVE"
 			type = fallen_empire
 			ignore_initial_colony_error = yes
 			authority = auth_machine_intelligence
@@ -728,71 +647,15 @@ fallen_machine_empire = {
 				create_leader = {
 					species = owner_main_species
 					class = scientist
-					name = "Билл Гейтс III"
+					name = "GOTC_GATES_RULER_NAME"
 					gender=male
 					skill = 10
 					randomize_traits = yes
 				}
-				set_male_ruler_title = "Благотворитель"
-				set_female_ruler_title = "Благотворительница"
+				set_male_ruler_title = "GOTC_GATES_RULER_TITLE"
+				set_female_ruler_title = "GOTC_GATES_RULER_TITLE_FEMALE"
 				set_leader = last_created_leader
 			}
-		}
-	}
-}
-
-# Hive
-# Default one from vanilla
-fallen_hive_empire = {
-	graphical_culture = "biogenesis_01_fallen_empire"
-	initializer = "fallen_hive_last_thought"
-
-	weight_modifier = {
-		base = 100
-		modifier = {
-			factor = 5
-			country_uses_bio_ships = yes
-		}
-	}
-
-	possible = {
-		has_biogenesis_dlc = yes
-	}
-
-	allow_custom_empire_design = no # prevent the choosing of a custom empire design so all fragments share species
-
-	create_country_effect = {
-		set_global_flag = hive_fe_spawned
-		create_species = {
-			name = random
-			class = random_non_machine
-			namelist = HIVE2
-			portrait = random
-			traits = {
-				ideal_planet_class = pc_hive
-				trait = trait_hive_mind
-				trait = random_traits
-			}
-			extra_trait_points = 3
-			allow_negative_traits = no
-			effect = {
-				save_global_event_target_as = hive_fe_species
-			}
-		}
-		random_list = { #Future proofing if we want multiple personalities
-			1 = { # War
-				create_hive_fe_fragment_war = yes
-			}
-			1 = { # Growth
-				create_hive_fe_fragment_growth = yes
-			}
-			1 = { # Control
-				create_hive_fe_fragment_control = yes
-			}
-		}
-		last_created_country = {
-			set_country_flag = first_hive_fe_fragment
-			country_event = { id = bio.3010 days = 1 }
 		}
 	}
 }
