@@ -228,20 +228,19 @@ lukashenko_gotc = {
 	}
 }
 
-# mao
-"Зона противодействия социал-империализму" = {
-	name = "Зона противодействия социал-империализму"
-	adjective = "Превентивно-оборонительн"
+gotc_mao = {
+	name = "GOTC_MAO_EMPIRE_NAME"
+	adjective = "GOTC_MAO_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "CPR"
+	ship_prefix = "GOTC_MAO_SHIP_PREFIX"
 
 	species = {
 		class = "REP"
 		portrait = "rep1"
-		name = "Культурный Революционер"
-		plural = "Культурные Революционеры"
-		adjective = "Культурно-революционн"
+		name = "GOTC_MAO_MAIN_SPECIES_NAME"
+		plural = "GOTC_MAO_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_MAO_MAIN_SPECIES_ADJECTIVE"
 		name_list = "ART1"
 		trait = "trait_thrifty"
 		trait = "trait_sedentary"
@@ -263,9 +262,9 @@ lukashenko_gotc = {
 	ethic = "ethic_xenophobe"
 	ethic = "ethic_pacifist"
 
-	planet_name = "Жуйцзинь"
+	planet_name = "GOTC_MAO_PLANET_NAME"
 	planet_class = "pc_continental"
-	system_name = "Жуйцзинь"
+	system_name = "GOTC_MAO_SYSTEM_NAME"
 
 	initializer = ""
 	graphical_culture = "molluscoid_01"
@@ -289,20 +288,14 @@ lukashenko_gotc = {
 	}
 
 	ruler = {
-		name = "Мао Зедонг"
+		name = "GOTC_MAO_RULER_NAME"
 		gender = male
 		portrait = "rep1"
 		texture = 0
 		attachment=0
 		clothes=5
-		ruler_title={
-			key="Великий Кормчий"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Великая Кормчая"
-			literal=yes
-		}
+		ruler_title="GOTC_MAO_RULER_TITLE"
+		ruler_title_female="GOTC_MAO_RULER_TITLE_FEMALE"
 		trait = "trait_ruler_charismatic"
 		leader_class = official
 	}
@@ -960,7 +953,6 @@ gotc_solovyov = {
 	}
 }
 
-# milov
 gotc_milov = {
 	name = "GOTC_MILOV_EMPIRE_NAME"
 	adjective = "GOTC_MILOV_EMPIRE_ADJECTIVE"
@@ -1034,20 +1026,19 @@ gotc_milov = {
 	}
 }
 
-# astrohungary
-"Астро-Венгерская Империя" = {
-	name = "Астро-Венгерская Империя"
-	adjective = "Астро-Венгерск"
+gotc_astrohungary = {
+	name = "GOTC_HAB_EMPIRE_NAME"
+	adjective = "GOTC_HAB_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
 
-	ship_prefix = "HAB"
+	ship_prefix = "GOTC_HAB_SHIP_PREFIX"
 
 	species = {
 		class = "MAM"
 		portrait = "mam11"
-		name = "Астро-мадьяр"
-		plural = "Астро-мадьяры"
-		adjective = "Астро-мадьярск"
+		name = "GOTC_HAB_MAIN_SPECIES_NAME"
+		plural = "GOTC_HAB_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_HAB_MAIN_SPECIES_ADJECTIVE"
 		name_list = "MAM4"
 		trait = "trait_ingenious"
 		trait = "trait_traditional"
@@ -1061,14 +1052,16 @@ gotc_milov = {
 	government = gov_despotic_empire
 	origin = "origin_default"
 
+	flag = gotc_astrohungary
+
 	ethic = "ethic_fanatic_authoritarian"
 	ethic = "ethic_xenophile"
 
-	planet_name = "Астро-Вена"
+	planet_name = "GOTC_HAB_PLANET_NAME"
 	planet_class = "pc_alpine"
-	system_name = "Астро-Вена"
+	system_name = "GOTC_HAB_SYSTEM_NAME"
 
-	initializer = "do_not_choose_astrohungary"
+	initializer = ""
 	graphical_culture = "mammalian_01"
 	city_graphical_culture = "mammalian_01"
 
@@ -1090,28 +1083,16 @@ gotc_milov = {
 	}
 
 	ruler = {
-		name = "Франц-Иосиф Габсбург"
+		name = "GOTC_HAB_RULER_NAME"
 		gender = male
 		portrait = "mam11"
 		texture = 0
 		attachment=0
 		clothes=0
-		ruler_title={
-			key="Государь-Император"
-			literal=yes
-		}
-		heir_title={
-			key="Эрц-перц-герцог"
-			literal=yes
-		}
-		ruler_title_female={
-			key="Государыня-Императрица"
-			literal=yes
-		}
-		heir_title_female={
-			key="Эрц-перц-герцогиня"
-			literal=yes
-		}
+		ruler_title="GOTC_HAB_RULER_TITLE"
+		heir_title="GOTC_HAB_HEIR_TITLE"
+		ruler_title_female="GOTC_HAB_RULER_TITLE_FEMALE"
+		heir_title_female="GOTC_HAB_HEIR_TITLE_FEMALE"
 		trait="trait_ruler_eye_for_talent"
 		leader_class = official
 	}

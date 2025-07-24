@@ -763,7 +763,7 @@ gotc_fallen_3 = {
 					}
 				}
 				if = { # Astro-Hungary
-					limit = { root = { has_country_flag = astrohungary } }
+					limit = { root = { has_country_flag = gotc_astrohungary } }
 					set_name = "GOTC_HAB_PLANET_NAME"
 					solar_system = {
 						set_name = "GOTC_HAB_SYSTEM_NAME"
@@ -1064,7 +1064,7 @@ gotc_fallen_3 = {
 
 			init_effect = {
 				if = { # Astro-Hungary
-					limit = { root = { has_country_flag = astrohungary } }
+					limit = { root = { has_country_flag = gotc_astrohungary } }
 					set_name = "GOTC_HAB_MOON_NAME"
 				}
 				else = { # Carebear
@@ -1093,7 +1093,7 @@ gotc_fallen_3 = {
 					add_district = district_city
 				}
 				if = { # Astro-Hungary
-					limit = { root = { has_country_flag = astrohungary } }
+					limit = { root = { has_country_flag = gotc_astrohungary } }
 					set_name = "GOTC_HAB_PLANET_NAME_2"
 					while = {
 						count = 16
@@ -1153,7 +1153,7 @@ gotc_fallen_3 = {
 					add_district = district_city
 				}
 				if = { # Astro-Hungary
-					limit = { root = { has_country_flag = astrohungary } }
+					limit = { root = { has_country_flag = gotc_astrohungary } }
 					set_name = "GOTC_HAB_PLANET_NAME_3"
 					while = {
 						count = 25
@@ -1541,7 +1541,7 @@ gotc_fallen_col_1_1 = {
 			}
 			
 			if = { # Astro-Hungary
-				limit = { root = { has_country_flag = astrohungary } }
+				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_4"
 				solar_system = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_2"
@@ -1706,7 +1706,7 @@ gotc_fallen_col_1_2 = {
 			}
 			
 			if = { # Astro-Hungary
-				limit = { root = { has_country_flag = astrohungary } }
+				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_5"
 				solar_system = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_3"
@@ -1922,7 +1922,7 @@ gotc_fallen_col_2_1 = {
 			}
 			
 			if = { # Astro-Hungary
-				limit = { root = { has_country_flag = astrohungary } }
+				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_6"
 				solar_system = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_4"
@@ -2082,7 +2082,7 @@ gotc_fallen_col_2_2 = {
 			}
 			
 			if = { # Astro-Hungary
-				limit = { root = { has_country_flag = astrohungary } }
+				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_7"
 				solar_system = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_5"
@@ -2266,7 +2266,7 @@ gotc_fallen_orbitals_1 = {
 			set_name = "GOTC_CAREBEAR_SYSTEM_NAME_6"
 		}
 		else_if = { # Astro-Hungary
-			limit = { root = { has_country_flag = astrohungary } }
+			limit = { root = { has_country_flag = gotc_astrohungary } }
 			set_name = "GOTC_HAB_SYSTEM_NAME_6"
 		}
 		random_system_planet = {
@@ -2374,7 +2374,7 @@ gotc_fallen_orbitals_2 = {
 			set_name = "GOTC_CAREBEAR_SYSTEM_NAME_7"
 		}
 		else_if = { # Astro-Hungary
-			limit = { root = { has_country_flag = astrohungary } }
+			limit = { root = { has_country_flag = gotc_astrohungary } }
 			set_name = "GOTC_HAB_SYSTEM_NAME_7"
 		}
 		random_system_planet = {
@@ -3130,7 +3130,7 @@ gotc_fallen_xeno_zoo = {
 			}
 
 			if = { # Astro-Hungary
-				limit = { root = { has_country_flag = astrohungary } }
+				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_8"
 				solar_system = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_8"

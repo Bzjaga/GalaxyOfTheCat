@@ -116,6 +116,18 @@
  GOTC_MIZULINA_RULER_TITLE: "Инициатор"
  GOTC_MIZULINA_RULER_TITLE_FEMALE: "Инициаторка"
 
+ GOTC_MAO_EMPIRE_NAME: "Зона противодействия социал-империализму"
+ GOTC_MAO_EMPIRE_ADJECTIVE: "Превентивно-оборонительн"
+ GOTC_MAO_SHIP_PREFIX: "КНР"
+ GOTC_MAO_MAIN_SPECIES_NAME: "Культурный Революционер"
+ GOTC_MAO_MAIN_SPECIES_PLURAL: "Культурные Революционеры"
+ GOTC_MAO_MAIN_SPECIES_ADJECTIVE: "Культурно-революционн"
+ GOTC_MAO_SYSTEM_NAME: "Жуйцзинь"
+ GOTC_MAO_PLANET_NAME: "Жуйцзинь"
+ GOTC_MAO_RULER_NAME: "Мао Зедонг"
+ GOTC_MAO_RULER_TITLE: "Великий Кормчий"
+ GOTC_MAO_RULER_TITLE_FEMALE: "Великая Кормчая"
+
  GOTC_MILOV_EMPIRE_NAME: "Легион Эльфов"
  GOTC_MILOV_EMPIRE_ADJECTIVE: "Эльфийск"
  GOTC_MILOV_SHIP_PREFIX: "ЭЛЬФ"

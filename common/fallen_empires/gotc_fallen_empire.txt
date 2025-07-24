@@ -235,7 +235,7 @@ fallen_empire_3 = {
 
 	create_country_effect = {
 		if = { # Carebear
-			limit = { any_system = { has_star_flag = astrohungary } }
+			limit = { any_country = { has_country_flag = gotc_astrohungary } }
 			create_species = {
 				name = "GOTC_CAREBEAR_MAIN_SPECIES_NAME"
 				plural = "GOTC_CAREBEAR_MAIN_SPECIES_PLURAL"
@@ -378,7 +378,7 @@ fallen_empire_3 = {
 				origin = "origin_fallen_empire"
 				effect = {
 					set_country_flag = fallen_empire_3
-					set_country_flag = astrohungary
+					set_country_flag = gotc_astrohungary
 					add_resource = {
 						minerals = 10000
 						energy = 10000
