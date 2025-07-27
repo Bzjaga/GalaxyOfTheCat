@@ -1463,6 +1463,78 @@ gotc_roskomnadzor = {
 	}
 }
 
+gotc_2ch = {
+	name = "GOTC_2CH_EMPIRE_NAME"
+	adjective = "GOTC_2CH_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_2CH_SHIP_PREFIX"
+
+	species = {
+		class = "MAM"
+		portrait = "mam6"
+		name = "GOTC_2CH_MAIN_SPECIES_NAME"
+		plural = "GOTC_2CH_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_2CH_MAIN_SPECIES_ADJECTIVE"
+		name_list = "HUMAN1"
+		gender = male
+		trait = "trait_clone_soldier_infertile"
+		trait = "trait_very_strong"
+		trait = "trait_resilient"
+		trait = "trait_nomadic"
+		trait = "trait_unruly"
+		trait = "trait_quarrelsome"
+	}
+
+	room = "scrappy_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_barbaric_despoilers" "civic_warrior_culture" }
+	government = gov_bandit_commune
+	origin = "origin_clone_army"
+
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_fanatic_militarist"
+
+	planet_name = "GOTC_2CH_PLANET_NAME"
+	planet_class = "pc_continental"
+	system_name = "GOTC_2CH_SYSTEM_NAME"
+
+	initializer = ""
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="human"
+			file="flag_human_6.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"brown"
+			"dark_brown"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_2CH_RULER_NAME"
+		gender = male
+		portrait = "mam6"
+		texture = 0
+		attachment=0
+		clothes=1
+		ruler_title="GOTC_2CH_RULER_TITLE"
+		ruler_title_female="GOTC_2CH_RULER_TITLE_FEMALE"
+		trait="trait_ruler_warlike"
+		leader_class = commander
+	}
+}
+
 gotc_borrel = {
 	name = "GOTC_BORREL_EMPIRE_NAME"
 	adjective = "GOTC_BORREL_EMPIRE_ADJECTIVE"
