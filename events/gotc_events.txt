@@ -195,8 +195,8 @@ event = {
 	}
 }
 
-# eu federation monthly
-event = {
+# eu federation remove subsidies modifier
+system_event = { # Event is formally tied to solar system
 	id = gotc.2
 
 	hide_window = yes
@@ -210,6 +210,41 @@ event = {
 		random_federation = {
 			limit = { has_federation_perk = eu_federation_passive }
 			every_member = {
+				limit = { has_country_flag = gotc_subsidized_federation_member }
+				remove_modifier = gotc_eu_federation_subsidies_bonus
+			}
+			federation_leader = {
+				capital_scope = {
+					solar_system = {
+						system_event = { id = gotc.3 days = 1 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# eu federation subsidies distribution
+system_event = { # Event is formally tied to solar system
+	id = gotc.3
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_federation = { has_federation_perk = eu_federation_passive }
+	}
+
+	immediate = {
+		random_federation = {
+			limit = { has_federation_perk = eu_federation_passive }
+
+			# count federation members
+			set_variable = {
+				which = counted_federation_members
+				value = 0
+			}
+			every_member = {
 				prev = {
 					change_variable = {
 						which = counted_federation_members
@@ -217,459 +252,124 @@ event = {
 					}
 				}
 			}
+			log = "Количество членов Евросоюза: [this.counted_federation_members]"
 
-			# divide previous resource tranche
-			divide_variable = { #FOOD
-				which = counted_food_income
-				value = counted_federation_members
+			# calculate total GDP
+			set_variable = {
+				which = eu_federation_total_gdp
+				value = 0
 			}
-			divide_variable = { #ENERGY
-				which = counted_energy_income
-				value = counted_federation_members
-			}
-			divide_variable = { #MINERALS
-				which = counted_minerals_income
-				value = counted_federation_members
-			}
-			divide_variable = { #CONSUMER_GOODS
-				which = counted_consumer_goods_income
-				value = counted_federation_members
-			}
-			divide_variable = { #ALLOYS
-				which = counted_alloys_income
-				value = counted_federation_members
-			}
-			divide_variable = { #TRADE
-				which = counted_trade_income
-				value = counted_federation_members
-			}
-			divide_variable = { #VOLATILE_MOTES
-				which = counted_volatile_motes_income
-				value = counted_federation_members
-			}
-			divide_variable = { #EXOTIC_GASES
-				which = counted_exotic_gases_income
-				value = counted_federation_members
-			}
-			divide_variable = { #RARE_CRYSTALS
-				which = counted_rare_crystals_income
-				value = counted_federation_members
-			}
-			divide_variable = { #LIVING_METAL
-				which = counted_sr_living_metal_income
-				value = counted_federation_members
-			}
-			divide_variable = { #ZRO
-				which = counted_sr_zro_income
-				value = counted_federation_members
-			}
-			divide_variable = { #DARK_MATTER
-				which = counted_sr_dark_matter_income
-				value = counted_federation_members
-			}
-
-			# distribute previous resource tranche
 			every_member = {
-				add_resource = { #FOOD
-					food = 1
-					mult = prev.counted_food_income
-				}
-				add_resource = { #FOOD
-					food = -1
-					mult = food_income_of_federation_member
-				}
-				add_resource = { #ENERGY
-					energy = 1
-					mult = prev.counted_energy_income
-				}
-				add_resource = { #ENERGY
-					energy = -1
-					mult = energy_income_of_federation_member
-				}
-				add_resource = { #MINERALS
-					minerals = 1
-					mult = prev.counted_minerals_income
-				}
-				add_resource = { #MINERALS
-					minerals = -1
-					mult = minerals_income_of_federation_member
-				}
-				add_resource = { #CONSUMER_GOODS
-					consumer_goods = 1
-					mult = prev.counted_consumer_goods_income
-				}
-				add_resource = { #CONSUMER_GOODS
-					consumer_goods = -1
-					mult = consumer_goods_income_of_federation_member
-				}
-				add_resource = { #ALLOYS
-					alloys = 1
-					mult = prev.counted_alloys_income
-				}
-				add_resource = { #ALLOYS
-					alloys = -1
-					mult = alloys_income_of_federation_member
-				}
-				add_resource = { #TRADE
-					trade = 1
-					mult = prev.counted_trade_income
-				}
-				add_resource = { #TRADE
-					trade = -1
-					mult = trade_income_of_federation_member
-				}
-				add_resource = { #VOLATILE_MOTES
-					volatile_motes = 1
-					mult = prev.counted_volatile_motes_income
-				}
-				add_resource = { #VOLATILE_MOTES
-					volatile_motes = -1
-					mult = volatile_motes_income_of_federation_member
-				}
-				add_resource = { #EXOTIC_GASES
-					exotic_gases = 1
-					mult = prev.counted_exotic_gases_income
-				}
-				add_resource = { #EXOTIC_GASES
-					exotic_gases = -1
-					mult = exotic_gases_income_of_federation_member
-				}
-				add_resource = { #RARE_CRYSTALS
-					rare_crystals = 1
-					mult = prev.counted_rare_crystals_income
-				}
-				add_resource = { #RARE_CRYSTALS
-					rare_crystals = -1
-					mult = rare_crystals_income_of_federation_member
-				}
-				add_resource = { #LIVING_METAL
-					sr_living_metal = 1
-					mult = prev.counted_sr_living_metal_income
-				}
-				add_resource = { #LIVING_METAL
-					sr_living_metal = -1
-					mult = sr_living_metal_income_of_federation_member
-				}
-				add_resource = { #ZRO
-					sr_zro = 1
-					mult = prev.counted_sr_zro_income
-				}
-				add_resource = { #ZRO
-					sr_zro = -1
-					mult = sr_zro_income_of_federation_member
-				}
-				add_resource = { #DARK_MATTER
-					sr_dark_matter = 1
-					mult = prev.counted_sr_dark_matter_income
-				}
-				add_resource = { #DARK_MATTER
-					sr_dark_matter = -1
-					mult = sr_dark_matter_income_of_federation_member
+				eu_federation_count_gdp = yes
+				log = "[this.GetName] ВВП: [this.eu_member_gdp]"
+				prev = {
+					change_variable = {
+						which = eu_federation_total_gdp
+						value = event_target:seq_eu_member.eu_member_gdp
+					}
+					log = "Суммарный ВВП Евросоюза: [this.eu_federation_total_gdp]"
 				}
 			}
 
-			# count next resource tranche
-			eu_federation_passive_set_variables = yes
+			# calculate average GDP
+			set_variable = {
+				which = eu_federation_average_gdp
+				value = eu_federation_total_gdp
+			}
+			divide_variable = {
+				which = eu_federation_average_gdp
+				value = counted_federation_members
+			}
+			log = "Средний ВВП в Евросоюзе: [this.eu_federation_average_gdp]"
+
+			# count subsidized federation members
+			set_variable = {
+				which = counted_subsidized_federation_members
+				value = 0
+			}
 			every_member = {
-				save_event_target_as = current_federation_member
-				#FOOD
-				export_resource_income_to_variable = {
-					resource = food
-					variable = food_income_of_federation_member
-				}
+				remove_country_flag = gotc_subsidized_federation_member
 				if = {
 					limit = {
 						check_variable_arithmetic = {
-							which = food_income_of_federation_member
-							value > 0
+							which = eu_member_gdp
+							value < prev.eu_federation_average_gdp
 						}
 					}
+					log = "[this.GetName] ВВП ([this.eu_member_gdp]) ниже среднего"
+					set_country_flag = gotc_subsidized_federation_member
 					prev = {
 						change_variable = {
-							which = counted_food_income
-							value = event_target:current_federation_member.food_income_of_federation_member
+							which = counted_subsidized_federation_members
+							value = 1
 						}
 					}
 				}
-				else = {
-					set_variable = {
-						which = food_income_of_federation_member
-						value = 0
+				else = { # subsidizing
+					log = "[this.GetName] ВВП ([this.eu_member_gdp]) выше среднего"
+				}
+			}
+
+			# calculate total GDP of subsidized countries
+			set_variable = {
+				which = eu_federation_subsidized_countries_gdp
+				value = 0
+			}
+			every_member = {
+				limit = { has_country_flag = gotc_subsidized_federation_member }
+				save_event_target_as = temp_subsidized_federation_member
+				prev = {
+					change_variable = {
+						which = eu_federation_subsidized_countries_gdp
+						value = event_target:temp_subsidized_federation_member.eu_member_gdp
 					}
 				}
-				#ENERGY
-				export_resource_income_to_variable = {
-					resource = energy
-					variable = energy_income_of_federation_member
+			}
+			log = "Суммарный ВВП субсидируемых стран: [this.eu_federation_subsidized_countries_gdp]"
+
+			# calculate the amount of subsidies
+			set_variable = {
+				which = eu_federation_subsidies_amount
+				value = eu_federation_total_gdp
+			}
+			divide_variable = {
+				which = eu_federation_subsidies_amount
+				value = 9 # lost 10 percent of GDP
+			}
+			log = "Суммарный размер субсидий: [this.eu_federation_subsidies_amount]"
+
+			# calculate the amount of subsidies per member and redistribute it
+			every_member = {
+				limit = { has_country_flag = gotc_subsidized_federation_member }
+				set_variable = {
+					which = eu_member_gdp_subsidies_amount
+					value = eu_member_gdp
 				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = energy_income_of_federation_member
-							value > 0
+				divide_variable = {
+					which = eu_member_gdp_subsidies_amount
+					value = prev.eu_federation_subsidized_countries_gdp
+				}
+				log = "[this.GetName] - доля в выделяемых субсидиях: [this.eu_member_gdp_subsidies_amount]"
+				multiply_variable = {
+					which = eu_member_gdp_subsidies_amount
+					value = prev.eu_federation_subsidies_amount
+				}
+				log = "[this.GetName] - выделенные субсидии: [this.eu_member_gdp_subsidies_amount]"
+				add_modifier = {
+					modifier = gotc_eu_federation_subsidies_bonus
+					multiplier = eu_member_gdp_subsidies_amount
+				}
+			}
+
+			# next distribution cycle
+			federation_leader = {
+				capital_scope = {
+					solar_system = {
+						system_event = {
+							id = gotc.2
+							days = 270
+							random = 180
 						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_energy_income
-							value = event_target:current_federation_member.energy_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = energy_income_of_federation_member
-						value = 0
-					}
-				}
-				#MINERALS
-				export_resource_income_to_variable = {
-					resource = minerals
-					variable = minerals_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = minerals_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_minerals_income
-							value = event_target:current_federation_member.minerals_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = minerals_income_of_federation_member
-						value = 0
-					}
-				}
-				#CONSUMER_GOODS
-				export_resource_income_to_variable = {
-					resource = consumer_goods
-					variable = consumer_goods_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = consumer_goods_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_consumer_goods_income
-							value = event_target:current_federation_member.consumer_goods_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = consumer_goods_income_of_federation_member
-						value = 0
-					}
-				}
-				#ALLOYS
-				export_resource_income_to_variable = {
-					resource = alloys
-					variable = alloys_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = alloys_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_alloys_income
-							value = event_target:current_federation_member.alloys_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = alloys_income_of_federation_member
-						value = 0
-					}
-				}
-				#TRADE
-				export_resource_income_to_variable = {
-					resource = trade
-					variable = trade_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = trade_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_trade_income
-							value = event_target:current_federation_member.trade_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = trade_income_of_federation_member
-						value = 0
-					}
-				}
-				#VOLATILE_MOTES
-				export_resource_income_to_variable = {
-					resource = volatile_motes
-					variable = volatile_motes_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = volatile_motes_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_volatile_motes_income
-							value = event_target:current_federation_member.volatile_motes_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = volatile_motes_income_of_federation_member
-						value = 0
-					}
-				}
-				#EXOTIC_GASES
-				export_resource_income_to_variable = {
-					resource = exotic_gases
-					variable = exotic_gases_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = exotic_gases_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_exotic_gases_income
-							value = event_target:current_federation_member.exotic_gases_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = exotic_gases_income_of_federation_member
-						value = 0
-					}
-				}
-				#RARE_CRYSTALS
-				export_resource_income_to_variable = {
-					resource = rare_crystals
-					variable = rare_crystals_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = rare_crystals_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_rare_crystals_income
-							value = event_target:current_federation_member.rare_crystals_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = rare_crystals_income_of_federation_member
-						value = 0
-					}
-				}
-				#LIVING_METAL
-				export_resource_income_to_variable = {
-					resource = sr_living_metal
-					variable = sr_living_metal_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = sr_living_metal_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_sr_living_metal_income
-							value = event_target:current_federation_member.sr_living_metal_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = sr_living_metal_income_of_federation_member
-						value = 0
-					}
-				}
-				#ZRO
-				export_resource_income_to_variable = {
-					resource = sr_zro
-					variable = sr_zro_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = sr_zro_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_sr_zro_income
-							value = event_target:current_federation_member.sr_zro_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = sr_zro_income_of_federation_member
-						value = 0
-					}
-				}
-				#DARK_MATTER
-				export_resource_income_to_variable = {
-					resource = sr_dark_matter
-					variable = sr_dark_matter_income_of_federation_member
-				}
-				if = {
-					limit = {
-						check_variable_arithmetic = {
-							which = sr_dark_matter_income_of_federation_member
-							value > 0
-						}
-					}
-					prev = {
-						change_variable = {
-							which = counted_sr_dark_matter_income
-							value = event_target:current_federation_member.sr_dark_matter_income_of_federation_member
-						}
-					}
-				}
-				else = {
-					set_variable = {
-						which = sr_dark_matter_income_of_federation_member
-						value = 0
 					}
 				}
 			}
@@ -2034,7 +1734,7 @@ leader_event = { # cat leader
 				set_country_flag = cat_leader_hired
 				check_country_flags_mad_vacuum_cleaner = yes
 			}
-			#alien_infection pop modidier allergy
+			#alien_infection pop modifier allergy
 		}
 	}
 

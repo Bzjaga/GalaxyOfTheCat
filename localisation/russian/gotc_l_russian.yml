@@ -19,6 +19,8 @@
  eu_federation_extra_envoy_desc: "$extra_envoy_1_desc$"
  eu_federation_extra_influence: "Пример для подражания"
  eu_federation_extra_influence_desc: "Наш союз  — пример для подражания и объект зависти для всего остального мира"
+ gotc_eu_federation_subsidies_bonus: "Субсидии Еврогалактического Союза"
+ gotc_eu_federation_subsidies_bonus_desc: "Субсидии, выделяемые Еврогалактическим Союзом на развитие экономически отсталых государств"
  #Preset names
  preset_bulwark_kadyrov: "Итоги 2й Чеченской войны"
  #Preset AI

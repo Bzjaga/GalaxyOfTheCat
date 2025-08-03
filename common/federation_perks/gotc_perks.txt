@@ -18,18 +18,28 @@
 
 eu_federation_passive = {
 	federation_modifier = {
-		cohesion_ethics_penalty_mult = 0.25
+		cohesion_ethics_penalty_mult = 0.5
 	}
 	members_modifier = {
+		diplo_weight_naval_mult = -1
 		diplo_weight_economy_mult = 1
 		pop_ethic_egalitarian_attraction_mult = 0.2
 		pop_ethic_xenophile_attraction_mult = 0.1
-	}
-	leader_modifier = {
-		diplo_weight_economy_mult = -0.3
+		country_energy_produces_mult = -0.1
+		country_minerals_produces_mult = -0.1
+		country_food_produces_mult = -0.1
+		country_trade_produces_mult = -0.1
+		country_consumer_goods_produces_mult = -0.1
+		country_alloys_produces_mult = -0.1
+		country_volatile_motes_produces_mult = -0.1
+		country_exotic_gases_produces_mult = -0.1
+		country_rare_crystals_produces_mult = -0.1
+		country_sr_living_metal_produces_mult = -0.1
+		country_sr_zro_produces_mult = -0.1
+		country_sr_dark_matter_produces_mult = -0.1
 	}
 	on_activate = {
-		eu_federation_passive_set_variables = yes
+		eu_federation_passive_activation = yes
 	}
 }
 
@@ -39,6 +49,7 @@ eu_federation_bureaucratic_hell = {
 	leader_modifier = {
 		country_edict_fund_mult = 0.1
 		country_unity_produces_mult = 0.1
+		diplo_weight_economy_mult = -0.07
 	}
 	members_modifier = {
 		country_edict_fund_mult = -0.05
@@ -52,7 +63,7 @@ eu_federation_green_transition_and_sanctions = {
 	}
 	leader_modifier = {
 		resolution_category_bureaucraticsurveillance_vote_strength_mult = 0.5
-		resolution_category_declare_crisis_vote_strength_mult = 0.5
+		resolution_category_declare_crisis_vote_strength_mult = 0.25
 		resolution_category_ecology_vote_strength_mult = 0.5
 		resolution_category_sanctions_commerce_industry_vote_strength_mult = 0.5
 		resolution_category_sanctions_politics_culture_vote_strength_mult = 0.5

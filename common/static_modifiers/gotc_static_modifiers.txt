@@ -1,0 +1,4 @@
+# Adds subsidies to the subsidized country 
+gotc_eu_federation_subsidies_bonus = {
+    country_base_trade_produces_add = 1
+}

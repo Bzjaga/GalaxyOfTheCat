@@ -1497,16 +1497,13 @@ overlord_system_init = { # Aix - Empire Capital
 
 	init_effect = {
 		create_starbase = {
-			size = "starbase_starhold"
+			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
-			module = "shipyard"
-			module = "shipyard"
 			module = "anchorage"
 			module = "anchorage"
 
 			building = "hydroponics_bay"
-			building = "naval_logistics_office"
 		}
 		generate_home_system_resources = yes
 		every_system_planet = {
@@ -1831,16 +1828,13 @@ overlord_system_2_init = { # Empire second system
 			literal=yes
 		}
 		create_starbase = {
-			size = "starbase_starhold"
+			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
-			module = "shipyard"
-			module = "shipyard"
 			module = "anchorage"
 			module = "anchorage"
 
 			building = "hydroponics_bay"
-			building = "naval_logistics_office"
 		}
 		generate_home_system_resources = yes
 		every_system_planet = {
@@ -2010,16 +2004,13 @@ overlord_system_3_init = { # Empire third system
 
 	init_effect = {
 		create_starbase = {
-			size = "starbase_starhold"
+			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
-			module = "shipyard"
-			module = "shipyard"
 			module = "anchorage"
 			module = "anchorage"
 
 			building = "hydroponics_bay"
-			building = "naval_logistics_office"
 		}
 		generate_home_system_resources = yes
 		every_system_planet = {
@@ -2857,15 +2848,12 @@ overlord_system_8_init = { # Overlord Colonies
 
 	init_effect = {
 		create_starbase = {
-			size = "starbase_starhold"
+			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
 			module = "shipyard"
-			module = "shipyard"
-			module = "anchorage"
 			module = "anchorage"
 
-			building = "hydroponics_bay"
 			building = "naval_logistics_office"
 		}
 		

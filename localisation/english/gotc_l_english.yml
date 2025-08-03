@@ -19,6 +19,8 @@
  eu_federation_extra_envoy_desc:0 "$extra_envoy_1_desc$"
  eu_federation_extra_influence:0 "An example to follow"
  eu_federation_extra_influence_desc:0 "Our union is an example to follow and an object of envy for the rest of the world"
+ gotc_eu_federation_subsidies_bonus:0 "Subsidies of the Eurogalactic Union"
+ gotc_eu_federation_subsidies_bonus_desc:0 "Subsidies allocated by the Eurogalactic Union for the development of economically backward countries"
  #Preset names
  preset_bulwark_kadyrov:0 "Results of 2nd Chechen war"
  #Preset AI

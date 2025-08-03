@@ -7596,111 +7596,176 @@ embrace_catist_faction_no_name_change = {
 # Federation
 ##################
 
-eu_federation_passive_set_variables = {
+eu_federation_passive_activation = {
+	random_country = {
+		limit = { has_country_flag = gotc_borrel }
+		capital_scope = {
+			solar_system = {
+				system_event = {
+					id = gotc.3
+					days = 1
+				}
+			}
+		}
+	}
+}
 
-	# count federation members
+eu_federation_count_gdp = {
 	set_variable = {
-		which = counted_federation_members
-		value = 0
-	}
-	
-	set_variable = {
-		which = counted_food_income
+		which = eu_member_gdp
 		value = 0
 	}
 	set_variable = {
-		which = counted_energy_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_minerals_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_consumer_goods_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_alloys_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_trade_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_volatile_motes_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_exotic_gases_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_rare_crystals_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_sr_living_metal_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_sr_zro_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_sr_dark_matter_income
+		which = gotc_temp
 		value = 0
 	}
 
-	every_member = {
-		set_variable = {
-			which = food_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = energy_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = minerals_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = consumer_goods_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = alloys_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = trade_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = volatile_motes_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = exotic_gases_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = rare_crystals_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = sr_living_metal_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = sr_zro_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = sr_dark_matter_income_of_federation_member
-			value = 0
-		}
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = energy }
+		variable = eu_member_gdp
 	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = minerals }
+		variable = gotc_temp
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = food }
+		variable = gotc_temp
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = trade }
+		variable = gotc_temp
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = consumer_goods }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 2
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = alloys }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 4
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = volatile_motes }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = exotic_gases }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = rare_crystals }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = sr_living_metal }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = sr_zro }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = sr_dark_matter }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+	save_event_target_as = seq_eu_member
 }
