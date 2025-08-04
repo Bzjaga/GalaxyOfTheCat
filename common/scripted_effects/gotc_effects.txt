@@ -7603,7 +7603,7 @@ eu_federation_passive_activation = {
 			solar_system = {
 				system_event = {
 					id = gotc.3
-					days = 1
+					days = 30
 				}
 			}
 		}

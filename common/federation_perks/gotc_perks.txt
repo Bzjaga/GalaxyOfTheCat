@@ -1,19 +1,3 @@
-#Perks Example
-#<perk_name>={
-#	Modifier for federation scope
-#	federation_modifier = {}
-#	Modifier for all members (leader included)
-#	members_modifier = {}
-#	Modifier for exclusively leader
-#	leader_modifier = {}
-#	member_triggered_modifier, federation_triggered_modifier and leader_triggered_modifier also exist
-#	envoy_modifier = {}
-#	Modifier applied to federation x number of envoys assigned to it
-#	On activate effect in federation scope
-#	on_activate = {}
-#	On deactivate effect in federation scope
-#}
-
 ### Passive, starting bonuses
 
 eu_federation_passive = {
@@ -21,7 +5,7 @@ eu_federation_passive = {
 		cohesion_ethics_penalty_mult = 0.5
 	}
 	members_modifier = {
-		diplo_weight_naval_mult = -1
+		diplo_weight_naval_mult = -0.75
 		diplo_weight_economy_mult = 1
 		pop_ethic_egalitarian_attraction_mult = 0.2
 		pop_ethic_xenophile_attraction_mult = 0.1
@@ -49,7 +33,7 @@ eu_federation_bureaucratic_hell = {
 	leader_modifier = {
 		country_edict_fund_mult = 0.1
 		country_unity_produces_mult = 0.1
-		diplo_weight_economy_mult = -0.07
+		diplo_weight_economy_mult = -0.05
 	}
 	members_modifier = {
 		country_edict_fund_mult = -0.05
@@ -62,8 +46,8 @@ eu_federation_green_transition_and_sanctions = {
 		country_energy_produces_mult = -0.1
 	}
 	leader_modifier = {
-		resolution_category_bureaucraticsurveillance_vote_strength_mult = 0.5
 		resolution_category_declare_crisis_vote_strength_mult = 0.25
+		resolution_category_commerce_vote_strength_mult = 0.5
 		resolution_category_ecology_vote_strength_mult = 0.5
 		resolution_category_sanctions_commerce_industry_vote_strength_mult = 0.5
 		resolution_category_sanctions_politics_culture_vote_strength_mult = 0.5

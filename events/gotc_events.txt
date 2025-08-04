@@ -252,7 +252,6 @@ system_event = { # Event is formally tied to solar system
 					}
 				}
 			}
-			log = "Количество членов Евросоюза: [this.counted_federation_members]"
 
 			# calculate total GDP
 			set_variable = {
@@ -261,13 +260,11 @@ system_event = { # Event is formally tied to solar system
 			}
 			every_member = {
 				eu_federation_count_gdp = yes
-				log = "[this.GetName] ВВП: [this.eu_member_gdp]"
 				prev = {
 					change_variable = {
 						which = eu_federation_total_gdp
 						value = event_target:seq_eu_member.eu_member_gdp
 					}
-					log = "Суммарный ВВП Евросоюза: [this.eu_federation_total_gdp]"
 				}
 			}
 
@@ -280,7 +277,6 @@ system_event = { # Event is formally tied to solar system
 				which = eu_federation_average_gdp
 				value = counted_federation_members
 			}
-			log = "Средний ВВП в Евросоюзе: [this.eu_federation_average_gdp]"
 
 			# count subsidized federation members
 			set_variable = {
@@ -296,7 +292,6 @@ system_event = { # Event is formally tied to solar system
 							value < prev.eu_federation_average_gdp
 						}
 					}
-					log = "[this.GetName] ВВП ([this.eu_member_gdp]) ниже среднего"
 					set_country_flag = gotc_subsidized_federation_member
 					prev = {
 						change_variable = {
@@ -304,9 +299,6 @@ system_event = { # Event is formally tied to solar system
 							value = 1
 						}
 					}
-				}
-				else = { # subsidizing
-					log = "[this.GetName] ВВП ([this.eu_member_gdp]) выше среднего"
 				}
 			}
 
@@ -325,7 +317,6 @@ system_event = { # Event is formally tied to solar system
 					}
 				}
 			}
-			log = "Суммарный ВВП субсидируемых стран: [this.eu_federation_subsidized_countries_gdp]"
 
 			# calculate the amount of subsidies
 			set_variable = {
@@ -334,9 +325,8 @@ system_event = { # Event is formally tied to solar system
 			}
 			divide_variable = {
 				which = eu_federation_subsidies_amount
-				value = 9 # lost 10 percent of GDP
+				value = 8.2 # lost 10 percent of GDP
 			}
-			log = "Суммарный размер субсидий: [this.eu_federation_subsidies_amount]"
 
 			# calculate the amount of subsidies per member and redistribute it
 			every_member = {
@@ -349,12 +339,10 @@ system_event = { # Event is formally tied to solar system
 					which = eu_member_gdp_subsidies_amount
 					value = prev.eu_federation_subsidized_countries_gdp
 				}
-				log = "[this.GetName] - доля в выделяемых субсидиях: [this.eu_member_gdp_subsidies_amount]"
 				multiply_variable = {
 					which = eu_member_gdp_subsidies_amount
 					value = prev.eu_federation_subsidies_amount
 				}
-				log = "[this.GetName] - выделенные субсидии: [this.eu_member_gdp_subsidies_amount]"
 				add_modifier = {
 					modifier = gotc_eu_federation_subsidies_bonus
 					multiplier = eu_member_gdp_subsidies_amount
@@ -365,10 +353,28 @@ system_event = { # Event is formally tied to solar system
 			federation_leader = {
 				capital_scope = {
 					solar_system = {
-						system_event = {
-							id = gotc.2
-							days = 270
-							random = 180
+						random_list = {
+							1 = {
+								system_event = { id = gotc.2 days = 269 }
+							}
+							1 = {
+								system_event = { id = gotc.2 days = 299 }
+							}
+							1 = {
+								system_event = { id = gotc.2 days = 329 }
+							}
+							1 = {
+								system_event = { id = gotc.2 days = 359 }
+							}
+							1 = {
+								system_event = { id = gotc.2 days = 389 }
+							}
+							1 = {
+								system_event = { id = gotc.2 days = 419 }
+							}
+							1 = {
+								system_event = { id = gotc.2 days = 449 }
+							}
 						}
 					}
 				}

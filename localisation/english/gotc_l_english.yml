@@ -21,6 +21,10 @@
  eu_federation_extra_influence_desc:0 "Our union is an example to follow and an object of envy for the rest of the world"
  gotc_eu_federation_subsidies_bonus:0 "Subsidies of the Eurogalactic Union"
  gotc_eu_federation_subsidies_bonus_desc:0 "Subsidies allocated by the Eurogalactic Union for the development of economically backward countries"
+ alert_eu_federation_no_subjects:0 "Vassals are not allowed into the EU"
+ mod_country_base_trade_produces_add:0 "Base trade production"
+ mod_country_sr_living_metal_produces_mult:0 "Living metal monthly"
+ mod_country_sr_dark_matter_produces_mult:0 "Dark matter monthly"
  #Preset names
  preset_bulwark_kadyrov:0 "Results of 2nd Chechen war"
  #Preset AI
