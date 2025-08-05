@@ -1393,76 +1393,6 @@ gotc_reich = {
 	}
 }
 
-gotc_roskomnadzor = {
-	name = "GOTC_ROSCOMNADZOR_EMPIRE_NAME"
-	adjective = "GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE"
-	spawn_enabled = always
-
-	ship_prefix = "GOTC_ROSCOMNADZOR_SHIP_PREFIX"
-
-	species = {
-		class = "REP"
-		portrait = "rep12"
-		name = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_NAME"
-		plural = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_PLURAL"
-		adjective = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_ADJECTIVE"
-		name_list = "HUMAN2"
-		trait = "trait_excessive_endurance"
-		trait = "trait_adaptive"
-		trait = "trait_sedentary"
-		trait = "trait_unruly"
-		trait = "trait_industrious"
-	}
-
-	room = "personality_fanatic_purifier_room"
-
-	authority = "auth_dictatorial"
-	civics = { "civic_fanatic_purifiers" "civic_warrior_culture" }
-	government = gov_purity_order
-	origin = "origin_overtuned"
-
-	ethic = "ethic_fanatic_xenophobe"
-	ethic = "ethic_militarist"
-
-	planet_name = "GOTC_ROSCOMNADZOR_PLANET_NAME"
-	planet_class = "pc_continental"
-	system_name = "GOTC_ROSCOMNADZOR_SYSTEM_NAME"
-
-	initializer = ""
-	graphical_culture = "nemesis_01"
-	city_graphical_culture = "humanoid_01"
-
-	empire_flag={
-		icon={
-			category="blocky"
-			file="flag_blocky_5.dds"
-		}
-		background={
-			category="backgrounds"
-			file="flag_BG_19.dds"
-		}
-		colors={
-			"shadow_blue"
-			"blue"
-			"null"
-			"null"
-		}
-	}
-
-	ruler = {
-		name = "GOTC_ROSCOMNADZOR_RULER_NAME"
-		gender = male
-		portrait = "rep12"
-		texture = 1
-		attachment=0
-		clothes=1
-		ruler_title="GOTC_ROSCOMNADZOR_RULER_TITLE"
-		ruler_title_female="GOTC_ROSCOMNADZOR_RULER_TITLE_FEMALE"
-		trait="leader_trait_principled"
-		leader_class = official
-	}
-}
-
 gotc_2ch = {
 	name = "GOTC_2CH_EMPIRE_NAME"
 	adjective = "GOTC_2CH_EMPIRE_ADJECTIVE"
@@ -1603,6 +1533,148 @@ gotc_ksir = {
 		ruler_title="GOTC_KSIR_RULER_TITLE"
 		ruler_title_female="GOTC_KSIR_RULER_TITLE_FEMALE"
 		trait="trait_ruler_logistic_understanding"
+		leader_class = scientist
+	}
+}
+
+gotc_roskomnadzor = {
+	name = "GOTC_ROSCOMNADZOR_EMPIRE_NAME"
+	adjective = "GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_ROSCOMNADZOR_SHIP_PREFIX"
+
+	species = {
+		class = "REP"
+		portrait = "rep12"
+		name = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_NAME"
+		plural = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_ADJECTIVE"
+		name_list = "HUMAN2"
+		trait = "trait_excessive_endurance"
+		trait = "trait_adaptive"
+		trait = "trait_sedentary"
+		trait = "trait_unruly"
+		trait = "trait_industrious"
+	}
+
+	room = "personality_fanatic_purifier_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_fanatic_purifiers" "civic_warrior_culture" }
+	government = gov_purity_order
+	origin = "origin_overtuned"
+
+	ethic = "ethic_fanatic_xenophobe"
+	ethic = "ethic_militarist"
+
+	planet_name = "GOTC_ROSCOMNADZOR_PLANET_NAME"
+	planet_class = "pc_continental"
+	system_name = "GOTC_ROSCOMNADZOR_SYSTEM_NAME"
+
+	initializer = ""
+	graphical_culture = "nemesis_01"
+	city_graphical_culture = "humanoid_01"
+
+	empire_flag={
+		icon={
+			category="blocky"
+			file="flag_blocky_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_19.dds"
+		}
+		colors={
+			"shadow_blue"
+			"blue"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_ROSCOMNADZOR_RULER_NAME"
+		gender = male
+		portrait = "rep12"
+		texture = 1
+		attachment=0
+		clothes=1
+		ruler_title="GOTC_ROSCOMNADZOR_RULER_TITLE"
+		ruler_title_female="GOTC_ROSCOMNADZOR_RULER_TITLE_FEMALE"
+		trait="leader_trait_principled"
+		leader_class = official
+	}
+}
+
+gotc_deepseek = {
+	name = "GOTC_DEEPSEEK_EMPIRE_NAME"
+	adjective = "GOTC_DEEPSEEK_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_DEEPSEEK_SHIP_PREFIX"
+
+	species = {
+		class = "MACHINE"
+		portrait = "sd_mol_robot"
+		name = "GOTC_DEEPSEEK_MAIN_SPECIES_NAME"
+		plural = "GOTC_DEEPSEEK_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_DEEPSEEK_MAIN_SPECIES_ADJECTIVE"
+		name_list = "MACHINE3"
+		gender = indeterminable
+		trait = "trait_machine_unit"
+		trait = "trait_robot_aquatic"
+		trait = "trait_robot_history_chatbot"
+		trait = "trait_robot_propaganda_machines"
+		trait = "trait_robot_learning_algorithms"
+		trait = "trait_robot_delicate_frames"
+		trait = "trait_robot_high_bandwidth"
+	}
+
+	room = "synthetics_room"
+
+	authority = "auth_machine_intelligence"
+	civics = { "civic_memory_vault_machine" "civic_machine_spybots" }
+	government = gov_machine_research
+	origin = "origin_ocean_machines"
+
+	ethic = "ethic_gestalt_consciousness"
+
+	planet_name = "GOTC_DEEPSEEK_PLANET_NAME"
+	planet_class = "pc_ocean"
+	system_name = "GOTC_DEEPSEEK_SYSTEM_NAME"
+
+	initializer = "ocean_paradise_start"
+	graphical_culture = "synthetics_01"
+	city_graphical_culture = "cybernetics_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"light_blue"
+			"silver_steel"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_DEEPSEEK_RULER_NAME"
+		gender = indeterminable
+		portrait = "sd_mol_robot"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="GOTC_DEEPSEEK_RULER_TITLE"
+		trait="leader_trait_spark_of_genius"
 		leader_class = scientist
 	}
 }
