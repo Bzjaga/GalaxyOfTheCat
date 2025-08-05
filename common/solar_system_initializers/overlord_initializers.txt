@@ -164,7 +164,7 @@ salvager_enclave_init_02 = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 16	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 16 # scales by galaxy size (1000 stars = 10x base)
 
 	flags = {
 		salvager_enclave_system
@@ -1500,10 +1500,10 @@ overlord_system_init = { # Aix - Empire Capital
 			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
-			module = "shipyard"
+			module = "anchorage"
 			module = "anchorage"
 
-			building = "naval_logistics_office"
+			building = "hydroponics_bay"
 		}
 		generate_home_system_resources = yes
 		every_system_planet = {
@@ -1831,10 +1831,10 @@ overlord_system_2_init = { # Empire second system
 			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
-			module = "shipyard"
+			module = "anchorage"
 			module = "anchorage"
 
-			building = "naval_logistics_office"
+			building = "hydroponics_bay"
 		}
 		generate_home_system_resources = yes
 		every_system_planet = {
@@ -2007,10 +2007,10 @@ overlord_system_3_init = { # Empire third system
 			size = "starbase_starport"
 			owner = event_target:origin_imperial_homeland_country
 
-			module = "shipyard"
+			module = "anchorage"
 			module = "anchorage"
 
-			building = "naval_logistics_office"
+			building = "hydroponics_bay"
 		}
 		generate_home_system_resources = yes
 		every_system_planet = {
@@ -2309,7 +2309,7 @@ overlord_system_5_init = { # Second vassal
 					create_imperial_vassal_solovyov = yes
 				}
 				else = {
-					create_imperial_vassal_roskosmos = yes
+					create_imperial_vassal_roscosmos = yes
 				}
 			}
 			last_created_country = {

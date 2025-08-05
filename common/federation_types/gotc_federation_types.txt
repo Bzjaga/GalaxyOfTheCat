@@ -306,5 +306,12 @@ eu_federation = {
 			exists = federation
 			federation = { has_federation_type = hegemony_federation }
 		}
+		modifier = {
+			add = -9999
+			desc = alert_eu_federation_no_subjects
+			from = {
+				is_subject = yes
+			}
+		}
 	}
 }

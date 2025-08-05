@@ -613,10 +613,8 @@ create_fear_of_the_dark_country = {
 				has_planet_flag = north
 			}
 			create_country = {
-				name = {
-					key = "КНДР"
-				}
-				adjective="Северокорейск"
+				name = "GOTC_KOREA_EMPIRE_NAME_2"
+				adjective="GOTC_KOREA_EMPIRE_ADJECTIVE_2"
 				authority = auth_imperial
 				civics = {
 					civic = civic_corvee_system
@@ -649,7 +647,7 @@ create_fear_of_the_dark_country = {
 					create_leader = {
 						class = official
 						species = event_target:fotd_country.species
-						name = "Ким Кимыч"
+						name = "GOTC_KOREA_RULER_NAME_2"
 						gender=male
 						skill = 1
 						randomize_traits = no
@@ -658,20 +656,18 @@ create_fear_of_the_dark_country = {
 							trait = leader_trait_cartographer
 						}
 					}
-					set_male_ruler_title = "Претворитель Чучхе"
-					set_female_ruler_title = "Претворительница Чучхе"
+					set_male_ruler_title = "GOTC_KOREA_RULER_TITLE_2"
+					set_female_ruler_title = "GOTC_KOREA_RULER_TITLE_FEMALE_2"
 					set_leader = last_created_leader
-					set_male_heir_title = "Первоочередной председатель"
-					set_female_heir_title = "Первоочередная председатель"
+					set_male_heir_title = "GOTC_KOREA_HEIR_TITLE"
+					set_female_heir_title = "GOTC_KOREA_HEIR_TITLE_FEMALE"
 				}
 			}
 		}
 		else = {
 			create_country = {
-				name = {
-					key = "Чеболия"
-				}
-				adjective="Южнокорейск"
+				name = "GOTC_KOREA_EMPIRE_NAME"
+				adjective="GOTC_KOREA_EMPIRE_ADJECTIVE"
 				authority = auth_oligarchic
 				civics = {
 					civic = civic_citizen_service
@@ -704,7 +700,7 @@ create_fear_of_the_dark_country = {
 					create_leader = {
 						class = official
 						species = event_target:fotd_country.species
-						name = "Пак Кын Хе"
+						name = "GOTC_KOREA_RULER_NAME"
 						gender=female
 						skill = 1
 						randomize_traits = no
@@ -713,8 +709,8 @@ create_fear_of_the_dark_country = {
 							trait = trait_ruler_deep_connections_2
 						}
 					}
-					set_male_ruler_title = "Генсек перестройки"
-					set_female_ruler_title = "Президентская дочка"
+					set_male_ruler_title = "GOTC_KOREA_RULER_TITLE"
+					set_female_ruler_title = "GOTC_KOREA_RULER_TITLE_FEMALE"
 					set_leader = last_created_leader
 				}
 			}
@@ -774,23 +770,14 @@ setup_fear_of_the_dark_pre_ftl = {
 			limit = {
 				has_planet_flag = north
 			}
-			set_name = {
-				key="Пхеньян"
-				literal=yes
-			}
+			set_name = "GOTC_KOREA_PLANET_NAME_2"
 		}
 		else = {
-			set_name = {
-				key="Сеул"
-				literal=yes
-			}
+			set_name = "GOTC_KOREA_PLANET_NAME"
 			change_pc = pc_ocean
 			
 			event_target:fotd_country.home_planet = {
-				set_name = {
-					key="Пхеньян"
-					literal=yes
-				}
+				set_name = "GOTC_KOREA_PLANET_NAME_2"
 				change_pc = pc_alpine
 				reroll_deposits = yes
 				clear_blockers = yes
@@ -807,8 +794,8 @@ setup_fear_of_the_dark_pre_ftl = {
 				remove_building = building_posthumous_employment_center
 			}
 			event_target:fotd_country = {
-				set_empire_name = "КНДР"
-				set_adjective = "Северокорейск"
+				set_empire_name = "GOTC_KOREA_EMPIRE_NAME_2"
+				set_adjective = "GOTC_KOREA_EMPIRE_ADJECTIVE_2"
 				clear_ethos = yes
 				country_add_ethic = ethic_authoritarian
 				country_add_ethic = ethic_xenophobe
@@ -841,7 +828,7 @@ setup_fear_of_the_dark_pre_ftl = {
 				create_leader = {
 					class = official
 					species = event_target:fotd_country.species
-					name = "Ким Кимыч"
+					name = "GOTC_KOREA_RULER_NAME_2"
 					gender=male
 					skill = 1
 					randomize_traits = no
@@ -850,11 +837,11 @@ setup_fear_of_the_dark_pre_ftl = {
 						trait = leader_trait_cartographer
 					}
 				}
-				set_male_ruler_title = "Претворитель Чучхе"
-				set_female_ruler_title = "Претворительница Чучхе"
+				set_male_ruler_title = "GOTC_KOREA_RULER_TITLE_2"
+				set_female_ruler_title = "GOTC_KOREA_RULER_TITLE_FEMALE_2"
 				set_leader = last_created_leader
-				set_male_heir_title = "Первоочередной председатель"
-				set_female_heir_title = "Первоочередная председатель"
+				set_male_heir_title = "GOTC_KOREA_HEIR_TITLE"
+				set_female_heir_title = "GOTC_KOREA_HEIR_TITLE_FEMALE"
 			}
 		}
 		while = {

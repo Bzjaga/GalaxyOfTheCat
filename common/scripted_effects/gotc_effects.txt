@@ -1010,24 +1010,12 @@ create_overlord_soviet = {
 #For use in overlord initializer; planet scope
 create_overlord_post_soviet = {
 	set_planet_flag = overlord_post_soviet
-	set_name = {
-		key="Русский Мир"
-		literal=yes
-	}
+	set_name = "GOTC_DUGIN_PLANET_NAME"
 	change_pc = pc_relic
 	create_species = {
-		name = {
-			key="Геройский Патриот"
-			literal=yes
-		}
-		plural = {
-			key="Геройские Патриоты"
-			literal=yes
-		}
-		adjective = {
-			key="Патриотическ"
-			literal=yes
-		}
+		name = "GOTC_DUGIN_MAIN_SPECIES_NAME"
+		plural = "GOTC_DUGIN_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_DUGIN_MAIN_SPECIES_ADJECTIVE"
 		class = "HUM"
 		portrait = "human"
 		name_list="HUMAN1"
@@ -1043,12 +1031,9 @@ create_overlord_post_soviet = {
 		save_global_event_target_as = origin_imperial_species
 	}
 	create_country = {
-		ship_prefix="PRE"
-		name = {
-			key="Постсоветская Российская Империя"
-			literal=yes
-		}
-		adjective="Постсоветск"
+		ship_prefix="GOTC_DUGIN_SHIP_PREFIX"
+		name = "GOTC_DUGIN_EMPIRE_NAME"
+		adjective="GOTC_DUGIN_EMPIRE_ADJECTIVE"
 		authority = auth_imperial
 		species = last_created_species
 		flag = {
@@ -1096,7 +1081,7 @@ create_overlord_post_soviet = {
 				# All Hail Mr. Dugin!
 				species = event_target:origin_imperial_homeland_country.species
 				class = scientist
-				name = "Александр Дугин"
+				name = "GOTC_DUGIN_RULER_NAME"
 				gender=male
 				skill = 5
 				set_age = 40
@@ -1107,11 +1092,11 @@ create_overlord_post_soviet = {
 					trait = leader_trait_shroud_preacher
 				}
 			}
-			set_male_ruler_title = "Нелюбимый всеми"
-			set_female_ruler_title = "Нелюбимая всеми"
+			set_male_ruler_title = "GOTC_DUGIN_RULER_TITLE"
+			set_female_ruler_title = "GOTC_DUGIN_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
-			set_male_heir_title = "Плохой боярин"
-			set_female_heir_title = "Плохая боярыня"
+			set_male_heir_title = "GOTC_DUGIN_HEIR_TITLE"
+			set_female_heir_title = "GOTC_DUGIN_HEIR_TITLE_FEMALE"
 
 			# Fleets
 			create_fleet = {
@@ -1269,10 +1254,7 @@ create_overlord_post_soviet = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="МКАД"
-			literal=yes
-		}
+		set_name = "GOTC_DUGIN_SYSTEM_NAME"
 	}
 }
 
@@ -2997,24 +2979,12 @@ create_imperial_vassal_dumatel = {
 
 #For use in overlord initializer; planet scope
 create_imperial_vassal_wagner = {
-	set_name = {
-		key="Молькин"
-		literal=yes
-	}
+	set_name = "GOTC_WAGNER_PLANET_NAME"
 	change_pc = pc_continental
 	create_species = {
-		name = {
-			key="Вагнер"
-			literal=yes
-		}
-		plural = {
-			key="Вагнера"
-			literal=yes
-		}
-		adjective = {
-			key="Оркестрантск"
-			literal=yes
-		}
+		name = "GOTC_WAGNER_MAIN_SPECIES_NAME"
+		plural = "GOTC_WAGNER_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_WAGNER_MAIN_SPECIES_ADJECTIVE"
 		class = "TOX"
 		portrait = "tox14"
 		name_list="HUMAN1"
@@ -3031,12 +3001,9 @@ create_imperial_vassal_wagner = {
 		save_event_target_as = origin_imperial_species_num
 	}
 	create_country = {
-		ship_prefix="WAG"
-		name = {
-			key="Wagner Group"
-			literal=yes
-		}
-		adjective="Вагнерск"
+		ship_prefix="GOTC_WAGNER_SHIP_PREFIX"
+		name = "GOTC_WAGNER_EMPIRE_NAME"
+		adjective="GOTC_WAGNER_EMPIRE_ADJECTIVE"
 		authority = auth_corporate
 		species = last_created_species
 		flag = {
@@ -3066,6 +3033,7 @@ create_imperial_vassal_wagner = {
 		origin = "origin_imperial_vassal"
 
 		effect = {
+			set_country_flag = wagner
 			set_graphical_culture = toxoid_01
 			set_country_flag = origin_imperial_vassal_technocrat_country
 			save_event_target_as = origin_imperial_homeland_country_wagner
@@ -3092,7 +3060,7 @@ create_imperial_vassal_wagner = {
 			create_leader = {
 				class = commander
 				species = last_created_species
-				name = "Евгений Пригожин"
+				name = "GOTC_WAGNER_RULER_NAME"
 				gender=male
 				skill = 1
 				randomize_traits = no
@@ -3101,8 +3069,8 @@ create_imperial_vassal_wagner = {
 					trait = trait_ruler_recruiter
 				}
 			}
-			set_male_ruler_title = "Дирижёр"
-			set_female_ruler_title = "Дирижёр"
+			set_male_ruler_title = "GOTC_WAGNER_RULER_TITLE"
+			set_female_ruler_title = "GOTC_WAGNER_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
 
 			# Fleets
@@ -3186,34 +3154,19 @@ create_imperial_vassal_wagner = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="Молькин"
-			literal=yes
-		}
+		set_name = "GOTC_WAGNER_SYSTEM_NAME"
 		set_star_flag = wagner
 	}
 }
 
 #For use in overlord initializer; planet scope
 create_imperial_vassal_kadyrov = {
-	set_name = {
-		key="Грозный"
-		literal=yes
-	}
+	set_name = "GOTC_KADYROV_PLANET_NAME"
 	change_pc = pc_alpine
 	create_species = {
-		name = {
-			key="Чеченец"
-			literal=yes
-		}
-		plural = {
-			key="Чеченцы"
-			literal=yes
-		}
-		adjective = {
-			key="Чеченск"
-			literal=yes
-		}
+		name = "GOTC_KADYROV_MAIN_SPECIES_NAME"
+		plural = "GOTC_KADYROV_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_KADYROV_MAIN_SPECIES_ADJECTIVE"
 		class = "MAM"
 		portrait = "mam10"
 		name_list="GOTC_TAJICAUCASIAN"
@@ -3230,12 +3183,9 @@ create_imperial_vassal_kadyrov = {
 		save_event_target_as = origin_imperial_species_num
 	}
 	create_country = {
-		ship_prefix="ICH"
-		name = {
-			key="Ичкерская Республика Чечения"
-			literal=yes
-		}
-		adjective="Ичкерск"
+		ship_prefix="GOTC_KADYROV_SHIP_PREFIX"
+		name = "GOTC_KADYROV_EMPIRE_NAME"
+		adjective="GOTC_KADYROV_EMPIRE_ADJECTIVE"
 		authority = auth_dictatorial
 		species = last_created_species
 		flag = {
@@ -3293,7 +3243,7 @@ create_imperial_vassal_kadyrov = {
 			create_leader = {
 				class = commander
 				species = last_created_species
-				name = "Рамзан Кадыров"
+				name = "GOTC_KADYROV_RULER_NAME"
 				gender=male
 				skill = 1
 				randomize_traits = no
@@ -3303,8 +3253,8 @@ create_imperial_vassal_kadyrov = {
 					trait = leader_trait_intimidator
 				}
 			}
-			set_male_ruler_title = "Дон"
-			set_female_ruler_title = "Донна"
+			set_male_ruler_title = "GOTC_KADYROV_RULER_TITLE"
+			set_female_ruler_title = "GOTC_KADYROV_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
 
 			# Fleets
@@ -3394,34 +3344,19 @@ create_imperial_vassal_kadyrov = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="Грозный"
-			literal=yes
-		}
+		set_name = "GOTC_KADYROV_SYSTEM_NAME"
 		set_star_flag = kadyrov
 	}
 }
 
 #For use in overlord initializer; planet scope
-create_imperial_vassal_roskosmos = {
-	set_name = {
-		key="Байконур"
-		literal=yes
-	}
+create_imperial_vassal_roscosmos = {
+	set_name = "GOTC_ROSCOSMOS_PLANET_NAME"
 	change_pc = pc_desert
 	create_species = {
-		name = {
-			key="Рогозинец"
-			literal=yes
-		}
-		plural = {
-			key="Рогозинцы"
-			literal=yes
-		}
-		adjective = {
-			key="Рогозинск"
-			literal=yes
-		}
+		name = "GOTC_ROSCOSMOS_MAIN_SPECIES_NAME"
+		plural = "GOTC_ROSCOSMOS_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_ROSCOSMOS_MAIN_SPECIES_ADJECTIVE"
 		class = "TOX"
 		portrait = "tox1"
 		name_list="TOX4"
@@ -3437,12 +3372,9 @@ create_imperial_vassal_roskosmos = {
 		save_event_target_as = origin_imperial_species_num
 	}
 	create_country = {
-		ship_prefix="RKS"
-		name = {
-			key="Роскосмос Рогозина"
-			literal=yes
-		}
-		adjective="Роскосмосск"
+		ship_prefix="GOTC_ROSCOSMOS_SHIP_PREFIX"
+		name = "GOTC_ROSCOSMOS_EMPIRE_NAME"
+		adjective="GOTC_ROSCOSMOS_EMPIRE_ADJECTIVE"
 		authority = auth_oligarchic
 		species = last_created_species
 		flag = {
@@ -3473,7 +3405,7 @@ create_imperial_vassal_roskosmos = {
 
 		effect = {
 			set_graphical_culture = toxoid_01
-			save_event_target_as = origin_imperial_homeland_country_roskosmos
+			save_event_target_as = origin_imperial_homeland_country_roscosmos
 			set_country_flag = origin_imperial_vassal_prince_electorate_country
 
 			# Subjugation
@@ -3486,14 +3418,14 @@ create_imperial_vassal_roskosmos = {
 				limit = {
 					has_origin = origin_imperial_vassal
 				}
-				establish_communications_no_message = event_target:origin_imperial_homeland_country_roskosmos
+				establish_communications_no_message = event_target:origin_imperial_homeland_country_roscosmos
 			}
 
 			# Leader
 			create_leader = {
 				class = official
 				species = last_created_species
-				name = "Дмитрий Рогозин"
+				name = "GOTC_ROSCOSMOS_RULER_NAME"
 				gender=male
 				skill = 1
 				randomize_traits = no
@@ -3502,42 +3434,42 @@ create_imperial_vassal_roskosmos = {
 					trait = trait_ruler_space_miner
 				}
 			}
-			set_male_ruler_title = "Осваиватель Бюджета"
-			set_female_ruler_title = "Осваивательница Бюджета"
+			set_male_ruler_title = "GOTC_ROSCOSMOS_RULER_TITLE"
+			set_female_ruler_title = "GOTC_ROSCOSMOS_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
 
 			# Fleets
 			create_fleet = {
 				effect = {
-					set_owner = event_target:origin_imperial_homeland_country_roskosmos
+					set_owner = event_target:origin_imperial_homeland_country_roscosmos
 					create_ship = {
 						name = random
 						random_existing_design = constructor
 					}
-					set_location = event_target:origin_imperial_homeland_country_roskosmos.capital_star
+					set_location = event_target:origin_imperial_homeland_country_roscosmos.capital_star
 				}
 			}
 
 			create_fleet = {
 				effect = {
-					set_owner = event_target:origin_imperial_homeland_country_roskosmos
+					set_owner = event_target:origin_imperial_homeland_country_roscosmos
 					create_ship = {
 						name = random
 						random_existing_design = science
 					}
-					set_location = event_target:origin_imperial_homeland_country_roskosmos.capital_star
+					set_location = event_target:origin_imperial_homeland_country_roscosmos.capital_star
 					save_event_target_as = new_science_ship_target
 				}
 			}
 			create_leader = {
 				name = random
-				species = event_target:origin_imperial_homeland_country_roskosmos.species
+				species = event_target:origin_imperial_homeland_country_roscosmos.species
 				class = scientist
 				skill = 1
 			}
 			create_leader = {
 				name = random
-				species = event_target:origin_imperial_homeland_country_roskosmos.species
+				species = event_target:origin_imperial_homeland_country_roscosmos.species
 				class = scientist
 				skill = 1
 			}
@@ -3547,7 +3479,7 @@ create_imperial_vassal_roskosmos = {
 
 			create_fleet = {
 				effect = {
-					set_owner = event_target:origin_imperial_homeland_country_roskosmos
+					set_owner = event_target:origin_imperial_homeland_country_roscosmos
 					while = {
 						count = 5
 						create_ship = {
@@ -3559,7 +3491,7 @@ create_imperial_vassal_roskosmos = {
 							design = NAME_Ravager
 						}
 					}
-					set_location = event_target:origin_imperial_homeland_country_roskosmos.capital_star
+					set_location = event_target:origin_imperial_homeland_country_roscosmos.capital_star
 				}
 			}
 
@@ -3609,38 +3541,23 @@ create_imperial_vassal_roskosmos = {
 	while = {
 		count = 25
 		create_pop_group = {
-			species = event_target:origin_imperial_homeland_country_roskosmos.species
+			species = event_target:origin_imperial_homeland_country_roscosmos.species
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="Байконур"
-			literal=yes
-		}
-		set_star_flag = roskosmos
+		set_name = "GOTC_ROSCOSMOS_SYSTEM_NAME"
+		set_star_flag = roscosmos
 	}
 }
 
 #For use in overlord initializer; planet scope
 create_imperial_vassal_solovyov = {
-	set_name = {
-		key="Останкино"
-		literal=yes
-	}
+	set_name = "GOTC_SOLOVYOV_PLANET_NAME"
 	change_pc = pc_continental
 	create_species = {
-		name = {
-			key="Ватник"
-			literal=yes
-		}
-		plural = {
-			key="Вата"
-			literal=yes
-		}
-		adjective = {
-			key="Ватн"
-			literal=yes
-		}
+		name = "GOTC_SOLOVYOV_SECONDARY_SPECIES_NAME"
+		plural = "GOTC_SOLOVYOV_SECONDARY_SPECIES_PLURAL"
+		adjective = "GOTC_SOLOVYOV_SECONDARY_SPECIES_ADJECTIVE"
 		class = "TOX"
 		portrait = "tox9"
 		name_list="HUMAN1"
@@ -3662,18 +3579,9 @@ create_imperial_vassal_solovyov = {
 		SIZE = 400
 	}
 	create_species = {
-		name = {
-			key="Соловьёв"
-			literal=yes
-		}
-		plural = {
-			key="Соловьёвы"
-			literal=yes
-		}
-		adjective = {
-			key="Соловьёвск"
-			literal=yes
-		}
+		name = "GOTC_SOLOVYOV_MAIN_SPECIES_NAME"
+		plural = "GOTC_SOLOVYOV_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_SOLOVYOV_MAIN_SPECIES_ADJECTIVE"
 		class = "AVI"
 		portrait = "avi1"
 		name_list="HUMAN2"
@@ -3690,12 +3598,9 @@ create_imperial_vassal_solovyov = {
 		save_event_target_as = origin_imperial_species_num
 	}
 	create_country = {
-		ship_prefix="SLV"
-		name = {
-			key="Соловьёв LIVE"
-			literal=yes
-		}
-		adjective="Вечерне-Соловьёвск"
+		ship_prefix="GOTC_SOLOVYOV_SHIP_PREFIX"
+		name = "GOTC_SOLOVYOV_EMPIRE_NAME"
+		adjective="GOTC_SOLOVYOV_EMPIRE_ADJECTIVE"
 		authority = auth_corporate
 		species = last_created_species
 		flag = {
@@ -3751,7 +3656,7 @@ create_imperial_vassal_solovyov = {
 			create_leader = {
 				class = official
 				species = last_created_species
-				name = "Владимир Рудольфович"
+				name = "GOTC_SOLOVYOV_RULER_NAME"
 				gender=male
 				skill = 1
 				randomize_traits = no
@@ -3759,8 +3664,8 @@ create_imperial_vassal_solovyov = {
 					trait = leader_trait_ambassador_whisper_networks
 				}
 			}
-			set_male_ruler_title = "Пропагандон"
-			set_female_ruler_title = "Пропагандониха"
+			set_male_ruler_title = "GOTC_SOLOVYOV_RULER_TITLE"
+			set_female_ruler_title = "GOTC_SOLOVYOV_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
 
 			# Fleets
@@ -3844,34 +3749,19 @@ create_imperial_vassal_solovyov = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="Останкино"
-			literal=yes
-		}
+		set_name = "GOTC_SOLOVYOV_SYSTEM_NAME"
 		set_star_flag = solovyov
 	}
 }
 
 #For use in overlord initializer; planet scope
 create_imperial_vassal_rpc = {
-	set_name = {
-		key="Соловецкий Монастырь"
-		literal=yes
-	}
+	set_name = "GOTC_RPC_PLANET_NAME"
 	change_pc = pc_tundra
 	create_species = {
-		name = {
-			key="Бабулька"
-			literal=yes
-		}
-		plural = {
-			key="Бабульки"
-			literal=yes
-		}
-		adjective = {
-			key="Бабульск"
-			literal=yes
-		}
+		name = "GOTC_RPC_SECONDARY_SPECIES_NAME"
+		plural = "GOTC_RPC_SECONDARY_SPECIES_PLURAL"
+		adjective = "GOTC_RPC_SECONDARY_SPECIES_ADJECTIVE"
 		class = "TOX"
 		portrait = "tox2"
 		name_list="GOTC_BABULKA"
@@ -3892,18 +3782,9 @@ create_imperial_vassal_rpc = {
 		}
 	}
 	create_species = {
-		name = {
-			key="Батюшка"
-			literal=yes
-		}
-		plural = {
-			key="Батюшки"
-			literal=yes
-		}
-		adjective = {
-			key="Батюшковск"
-			literal=yes
-		}
+		name = "GOTC_RPC_MAIN_SPECIES_NAME"
+		plural = "GOTC_RPC_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_RPC_MAIN_SPECIES_ADJECTIVE"
 		class = "NECROID"
 		portrait = "nec12"
 		name_list="GOTC_BABULKA"
@@ -3921,12 +3802,9 @@ create_imperial_vassal_rpc = {
 		save_event_target_as = origin_imperial_species_num
 	}
 	create_country = {
-		ship_prefix="РПЦ"
-		name = {
-			key="Всемирный Русский Православный Собор"
-			literal=yes
-		}
-		adjective="Православн"
+		ship_prefix="GOTC_RPC_SHIP_PREFIX"
+		name = "GOTC_RPC_EMPIRE_NAME"
+		adjective="GOTC_RPC_EMPIRE_ADJECTIVE"
 		authority = auth_dictatorial
 		species = last_created_species
 		name_list = "NECROID4"
@@ -3978,7 +3856,7 @@ create_imperial_vassal_rpc = {
 			create_leader = {
 				class = official
 				species = last_created_species
-				name = "Кирилл Гундяев"
+				name = "GOTC_RPC_RULER_NAME"
 				gender=male
 				skill = 1
 				randomize_traits = no
@@ -3989,7 +3867,8 @@ create_imperial_vassal_rpc = {
 					trait = leader_trait_lavish_lifestyle_2
 				}
 			}
-			set_male_ruler_title = "Патриарх всея Галактики"
+			set_male_ruler_title = "GOTC_RPC_RULER_TITLE"
+			set_female_ruler_title = "GOTC_RPC_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
 
 			# Fleets
@@ -4096,34 +3975,19 @@ create_imperial_vassal_rpc = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="Соловки"
-			literal=yes
-		}
+		set_name = "GOTC_RPC_SYSTEM_NAME"
 		set_star_flag = rpc
 	}
 }
 
 #For use in overlord initializer; planet scope
 create_imperial_vassal_mizulina = {
-	set_name = {
-		key="Синий Кит"
-		literal=yes
-	}
+	set_name = "GOTC_MIZULINA_PLANET_NAME"
 	change_pc = pc_ocean
 	create_species = {
-		name = {
-			key="Мизулинец"
-			literal=yes
-		}
-		plural = {
-			key="Мизулинцы"
-			literal=yes
-		}
-		adjective = {
-			key="Мизулинск"
-			literal=yes
-		}
+		name = "GOTC_MIZULINA_MAIN_SPECIES_NAME"
+		plural = "GOTC_MIZULINA_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_MIZULINA_MAIN_SPECIES_ADJECTIVE"
 		class = "AQUATIC"
 		portrait = "aqu15"
 		name_list="HUM2"
@@ -4140,12 +4004,9 @@ create_imperial_vassal_mizulina = {
 		save_event_target_as = origin_imperial_species_num
 	}
 	create_country = {
-		ship_prefix="MIZ"
-		name = {
-			key="Лига Безопасного Интернета"
-			literal=yes
-		}
-		adjective="Безопасно-интернетн"
+		ship_prefix="GOTC_MIZULINA_SHIP_PREFIX"
+		name = "GOTC_MIZULINA_EMPIRE_NAME"
+		adjective="GOTC_MIZULINA_EMPIRE_ADJECTIVE"
 		authority = auth_dictatorial
 		species = last_created_species
 		flag = {
@@ -4202,7 +4063,7 @@ create_imperial_vassal_mizulina = {
 			create_leader = {
 				class = official
 				species = last_created_species
-				name = "Екатерина Мизулина"
+				name = "GOTC_MIZULINA_RULER_NAME"
 				gender=female
 				skill = 1
 				randomize_traits = no
@@ -4210,8 +4071,8 @@ create_imperial_vassal_mizulina = {
 					trait = trait_ruler_fertility_preacher
 				}
 			}
-			set_male_ruler_title = "Инициатор"
-			set_female_ruler_title = "Инициаторка"
+			set_male_ruler_title = "GOTC_MIZULINA_RULER_TITLE"
+			set_female_ruler_title = "GOTC_MIZULINA_RULER_TITLE_FEMALE"
 			set_leader = last_created_leader
 
 			# Fleets
@@ -4296,10 +4157,7 @@ create_imperial_vassal_mizulina = {
 		}
 	}
 	solar_system = {
-		set_name = {
-			key="Синий Кит"
-			literal=yes
-		}
+		set_name = "GOTC_MIZULINA_SYSTEM_NAME"
 		set_star_flag = mizulina
 	}
 }
@@ -7738,111 +7596,176 @@ embrace_catist_faction_no_name_change = {
 # Federation
 ##################
 
-eu_federation_passive_set_variables = {
+eu_federation_passive_activation = {
+	random_country = {
+		limit = { has_country_flag = gotc_borrel }
+		capital_scope = {
+			solar_system = {
+				system_event = {
+					id = gotc.3
+					days = 30
+				}
+			}
+		}
+	}
+}
 
-	# count federation members
+eu_federation_count_gdp = {
 	set_variable = {
-		which = counted_federation_members
-		value = 0
-	}
-	
-	set_variable = {
-		which = counted_food_income
+		which = eu_member_gdp
 		value = 0
 	}
 	set_variable = {
-		which = counted_energy_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_minerals_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_consumer_goods_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_alloys_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_trade_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_volatile_motes_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_exotic_gases_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_rare_crystals_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_sr_living_metal_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_sr_zro_income
-		value = 0
-	}
-	set_variable = {
-		which = counted_sr_dark_matter_income
+		which = gotc_temp
 		value = 0
 	}
 
-	every_member = {
-		set_variable = {
-			which = food_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = energy_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = minerals_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = consumer_goods_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = alloys_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = trade_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = volatile_motes_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = exotic_gases_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = rare_crystals_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = sr_living_metal_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = sr_zro_income_of_federation_member
-			value = 0
-		}
-		set_variable = {
-			which = sr_dark_matter_income_of_federation_member
-			value = 0
-		}
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = energy }
+		variable = eu_member_gdp
 	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = minerals }
+		variable = gotc_temp
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = food }
+		variable = gotc_temp
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = trade }
+		variable = gotc_temp
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = consumer_goods }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 2
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = alloys }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 4
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = volatile_motes }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = exotic_gases }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = rare_crystals }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = sr_living_metal }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = sr_zro }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+
+	export_trigger_value_to_variable = {
+		trigger = resource_revenue_compare
+		parameters = { resource = sr_dark_matter }
+		variable = gotc_temp
+	}
+	multiply_variable = {
+		which = gotc_temp
+		value = 10
+	}
+	change_variable = {
+		which = eu_member_gdp
+		value = gotc_temp
+	}
+	save_event_target_as = seq_eu_member
 }
