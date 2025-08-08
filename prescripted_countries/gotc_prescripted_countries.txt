@@ -1985,3 +1985,78 @@ gotc_mason = {
 		leader_class = official
 	}
 }
+
+gotc_nursultan = {
+	name = "GOTC_NURSULTAN_EMPIRE_NAME"
+	adjective = "GOTC_NURSULTAN_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_NURSULTAN_SHIP_PREFIX"
+
+	species = {
+		class = "ART"
+		portrait = "art1"
+		name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
+		plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_NURSULTAN_MAIN_SPECIES_ADJECTIVE"
+		name_list = "HUMAN2"
+		gender=not_set
+		trait = "trait_nomadic"
+		trait = "trait_spatial_mastery"
+		trait = "trait_wasteful"
+		trait = "trait_decadent"
+		trait = "trait_fleeting"
+	}
+
+	room = "personality_fanatic_purifier_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_eager_explorers" "civic_mining_guilds" }
+	government = gov_constitutional_dictatorship
+	origin = "origin_star_slingshot"
+
+	flag = gotc_nursultan
+
+	ethic = "ethic_fanatic_authoritarian"
+	ethic = "ethic_xenophobe"
+
+	planet_name = "GOTC_NURSULTAN_PLANET_NAME"
+	planet_class = "pc_desert"
+	system_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+
+	initializer = ""
+	graphical_culture = "aquatic_01"
+	city_graphical_culture = "aquatic_01"
+
+	empire_flag={
+		icon={
+			category="ornate"
+			file="flag_ornate_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"ocean_turquoise"
+			"bright_yellow"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_NURSULTAN_RULER_NAME"
+		gender = male
+		portrait = "art1"
+		texture = 1
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="GOTC_NURSULTAN_RULER_TITLE"
+		ruler_title_female="GOTC_NURSULTAN_RULER_TITLE_FEMALE"
+		trait="trait_ruler_industrialist"
+		trait="leader_trait_intemporal"
+		leader_class = official
+	}
+}

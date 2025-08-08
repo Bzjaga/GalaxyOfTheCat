@@ -1021,6 +1021,7 @@ create_overlord_post_soviet = {
 		name_list="HUMAN1"
 		gender=male
 		traits = {
+			trait = "trait_pc_continental_preference"
 			trait = "trait_traditional"
 			trait = "trait_conformists"
 			trait = "trait_wasteful"
@@ -5653,6 +5654,116 @@ create_gotc_broken_shackles_child = {
 }
 
 ##################
+# Marauder
+##################
+
+create_marauder_1_astrahan = {
+	create_species = {
+		name = "GOTC_ASTRAHAN_MAIN_SPECIES_NAME"
+		plural = "GOTC_ASTRAHAN_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_ASTRAHAN_MAIN_SPECIES_ADJECTIVE"
+		class = "AQUATIC"
+		portrait = "synth06"
+		name_list="GOTC_TAJICAUCASIAN"
+		traits = {
+			trait = "trait_pc_ocean_preference"
+			trait = "trait_nomadic"
+			trait = "trait_aquatic"
+			trait = "trait_extremely_adaptive"
+			trait = "trait_unruly"
+			trait = "trait_fleeting"
+		}
+	}
+	create_country = {
+		ship_prefix="GOTC_ASTRAHAN_SHIP_PREFIX"
+		name = "GOTC_ASTRAHAN_EMPIRE_NAME"
+		adjective="GOTC_ASTRAHAN_EMPIRE_ADJECTIVE"
+		name_list = "HUMAN2"
+		species = last_created_species
+		type = dormant_marauders
+		civics = { civic = civic_anarcho_tribalism }
+		origin = "origin_default"
+		flag = {
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_xenophobe
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			set_country_flag = gotc_astrahan
+		}
+	}
+	set_name = "GOTC_ASTRAHAN_PLANET_NAME"
+	solar_system = {
+		set_name = "GOTC_ASTRAHAN_SYSTEM_NAME"
+	}
+}
+
+create_marauder_1_nursultan = {
+	create_species = {
+		name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
+		plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_NURSULTAN_MAIN_SPECIES_ADJECTIVE"
+		class = "ART"
+		portrait = "art1"
+		name_list="GOTC_TAJICAUCASIAN"
+		traits = {
+			trait = "trait_pc_habitat_preference"
+			trait = "trait_nomadic"
+			trait = "trait_spatial_mastery"
+			trait = "trait_wasteful"
+			trait = "trait_decadent"
+			trait = "trait_fleeting"
+		}
+	}
+	create_country = {
+		ship_prefix="GOTC_NURSULTAN_SHIP_PREFIX"
+		name = "GOTC_NURSULTAN_EMPIRE_NAME"
+		adjective="GOTC_NURSULTAN_EMPIRE_ADJECTIVE"
+		name_list = "HUMAN2"
+		species = last_created_species
+		type = dormant_marauders
+		civics = { civic = civic_anarcho_tribalism }
+		origin = "origin_default"
+		flag = {
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_xenophobe
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			set_country_flag = gotc_nursultan
+		}
+	}
+	set_name = "GOTC_NURSULTAN_PLANET_NAME"
+	solar_system = {
+		set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+	}
+}
+
+##################
 # Pre-FTL
 ##################
 
@@ -7325,6 +7436,10 @@ planet_of_kira_init_effect = {
 		days = -1
 	}
 }
+
+##################
+# Paragon
+##################
 
 #Pylesos
 check_country_flags_mad_vacuum_cleaner = {

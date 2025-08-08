@@ -33,3 +33,7 @@ gotc_borrel = {
 gotc_voldemar = {
 	flags = { gotc_voldemar }
 }
+
+gotc_nursultan = {
+	flags = { gotc_nursultan }
+}
