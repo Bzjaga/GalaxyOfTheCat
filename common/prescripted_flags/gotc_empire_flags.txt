@@ -37,3 +37,11 @@ gotc_voldemar = {
 gotc_nursultan = {
 	flags = { gotc_nursultan }
 }
+
+gotc_2ch = {
+	flags = { gotc_2ch }
+}
+
+gotc_ksir = {
+	flags = { gotc_ksir }
+}

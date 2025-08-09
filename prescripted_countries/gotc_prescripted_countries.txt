@@ -1393,150 +1393,6 @@ gotc_reich = {
 	}
 }
 
-gotc_2ch = {
-	name = "GOTC_2CH_EMPIRE_NAME"
-	adjective = "GOTC_2CH_EMPIRE_ADJECTIVE"
-	spawn_enabled = always
-
-	ship_prefix = "GOTC_2CH_SHIP_PREFIX"
-
-	species = {
-		class = "MAM"
-		portrait = "mam6"
-		name = "GOTC_2CH_MAIN_SPECIES_NAME"
-		plural = "GOTC_2CH_MAIN_SPECIES_PLURAL"
-		adjective = "GOTC_2CH_MAIN_SPECIES_ADJECTIVE"
-		name_list = "HUMAN1"
-		gender = male
-		trait = "trait_clone_soldier_infertile"
-		trait = "trait_very_strong"
-		trait = "trait_resilient"
-		trait = "trait_nomadic"
-		trait = "trait_unruly"
-		trait = "trait_quarrelsome"
-	}
-
-	room = "scrappy_room"
-
-	authority = "auth_oligarchic"
-	civics = { "civic_barbaric_despoilers" "civic_warrior_culture" }
-	government = gov_bandit_commune
-	origin = "origin_clone_army"
-
-	ethic = "ethic_xenophobe"
-	ethic = "ethic_fanatic_militarist"
-
-	planet_name = "GOTC_2CH_PLANET_NAME"
-	planet_class = "pc_continental"
-	system_name = "GOTC_2CH_SYSTEM_NAME"
-
-	initializer = ""
-	graphical_culture = "mammalian_01"
-	city_graphical_culture = "mammalian_01"
-
-	empire_flag={
-		icon={
-			category="human"
-			file="flag_human_6.dds"
-		}
-		background={
-			category="backgrounds"
-			file="circle.dds"
-		}
-		colors={
-			"brown"
-			"dark_brown"
-			"null"
-			"null"
-		}
-	}
-
-	ruler = {
-		name = "GOTC_2CH_RULER_NAME"
-		gender = male
-		portrait = "mam6"
-		texture = 0
-		attachment=0
-		clothes=1
-		ruler_title="GOTC_2CH_RULER_TITLE"
-		ruler_title_female="GOTC_2CH_RULER_TITLE_FEMALE"
-		trait="trait_ruler_warlike"
-		leader_class = commander
-	}
-}
-
-gotc_ksir = {
-	name = "GOTC_KSIR_EMPIRE_NAME"
-	adjective = "GOTC_KSIR_EMPIRE_ADJECTIVE"
-	spawn_enabled = always
-
-	ship_prefix = "GOTC_KSIR_SHIP_PREFIX"
-
-	species = {
-		class = "HUM"
-		portrait = "humanoid_hp_07"
-		name = "GOTC_KSIR_MAIN_SPECIES_NAME"
-		plural = "GOTC_KSIR_MAIN_SPECIES_PLURAL"
-		adjective = "GOTC_KSIR_MAIN_SPECIES_ADJECTIVE"
-		name_list = "HUM1"
-		gender = male
-		trait = "trait_traditional"
-		trait = "trait_resilient"
-		trait = "trait_genetic_memory"
-		trait = "trait_nascent_stage"
-		trait = "trait_fleeting"
-	}
-
-	room = "personality_evangelizing_zealots_room"
-
-	authority = "auth_dictatorial"
-	civics = { "civic_sovereign_guardianship" "civic_exalted_priesthood" }
-	government = gov_defensive_union
-	origin = "origin_toxic_knights"
-
-	ethic = "ethic_militarist"
-	ethic = "ethic_fanatic_spiritualist"
-
-	planet_name = "GOTC_KSIR_PLANET_NAME"
-	planet_class = "pc_tropical"
-	system_name = "GOTC_KSIR_SYSTEM_NAME"
-
-	initializer = "toxic_knights_start"
-	graphical_culture = "toxoid_01"
-	city_graphical_culture = "toxoid_01"
-
-	empire_flag={
-		icon={
-			category="spherical"
-			file="flag_spherical_5.dds"
-		}
-		background={
-			category="backgrounds"
-			file="horizontal_stripe.dds"
-		}
-		colors={
-			"green"
-			"white"
-			"black"
-			"null"
-		}
-	}
-
-	ruler = {
-		name = "GOTC_KSIR_RULER_NAME"
-		gender = male
-		portrait = "humanoid_hp_07"
-		texture = 0
-		evolution_mask=0
-		attachment=0
-		clothes=0
-		ruler_title="GOTC_KSIR_RULER_TITLE"
-		ruler_title_female="GOTC_KSIR_RULER_TITLE_FEMALE"
-		trait="trait_ruler_logistic_understanding"
-		leader_class = scientist
-	}
-}
-
 gotc_roskomnadzor = {
 	name = "GOTC_ROSCOMNADZOR_EMPIRE_NAME"
 	adjective = "GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE"
@@ -2058,5 +1914,153 @@ gotc_nursultan = {
 		trait="trait_ruler_industrialist"
 		trait="leader_trait_intemporal"
 		leader_class = official
+	}
+}
+
+gotc_2ch = {
+	name = "GOTC_2CH_EMPIRE_NAME"
+	adjective = "GOTC_2CH_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_2CH_SHIP_PREFIX"
+
+	species = {
+		class = "MAM"
+		portrait = "mam6"
+		name = "GOTC_2CH_MAIN_SPECIES_NAME"
+		plural = "GOTC_2CH_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_2CH_MAIN_SPECIES_ADJECTIVE"
+		name_list = "HUMAN1"
+		gender = male
+		trait = "trait_clone_soldier_infertile"
+		trait = "trait_very_strong"
+		trait = "trait_resilient"
+		trait = "trait_nomadic"
+		trait = "trait_unruly"
+		trait = "trait_quarrelsome"
+	}
+
+	room = "scrappy_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_barbaric_despoilers" "civic_warrior_culture" }
+	government = gov_bandit_commune
+	origin = "origin_clone_army"
+
+	flag = gotc_2ch
+
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_fanatic_militarist"
+
+	planet_name = "GOTC_2CH_PLANET_NAME"
+	planet_class = "pc_continental"
+	system_name = "GOTC_2CH_SYSTEM_NAME"
+
+	initializer = ""
+	graphical_culture = "mammalian_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="human"
+			file="flag_human_6.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"brown"
+			"dark_brown"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_2CH_RULER_NAME"
+		gender = male
+		portrait = "mam6"
+		texture = 0
+		attachment=0
+		clothes=1
+		ruler_title="GOTC_2CH_RULER_TITLE"
+		ruler_title_female="GOTC_2CH_RULER_TITLE_FEMALE"
+		trait="trait_ruler_warlike"
+		leader_class = commander
+	}
+}
+
+gotc_ksir = {
+	name = "GOTC_KSIR_EMPIRE_NAME"
+	adjective = "GOTC_KSIR_EMPIRE_ADJECTIVE"
+	spawn_enabled = always
+
+	ship_prefix = "GOTC_KSIR_SHIP_PREFIX"
+
+	species = {
+		class = "HUM"
+		portrait = "humanoid_hp_07"
+		name = "GOTC_KSIR_MAIN_SPECIES_NAME"
+		plural = "GOTC_KSIR_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_KSIR_MAIN_SPECIES_ADJECTIVE"
+		name_list = "HUM1"
+		gender = male
+		trait = "trait_traditional"
+		trait = "trait_resilient"
+		trait = "trait_genetic_memory"
+		trait = "trait_nascent_stage"
+		trait = "trait_fleeting"
+	}
+
+	room = "personality_evangelizing_zealots_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_sovereign_guardianship" "civic_exalted_priesthood" }
+	government = gov_defensive_union
+	origin = "origin_toxic_knights"
+
+	flag = gotc_ksir
+
+	ethic = "ethic_militarist"
+	ethic = "ethic_fanatic_spiritualist"
+
+	planet_name = "GOTC_KSIR_PLANET_NAME"
+	planet_class = "pc_tropical"
+	system_name = "GOTC_KSIR_SYSTEM_NAME"
+
+	initializer = "toxic_knights_start"
+	graphical_culture = "toxoid_01"
+	city_graphical_culture = "toxoid_01"
+
+	empire_flag={
+		icon={
+			category="spherical"
+			file="flag_spherical_5.dds"
+		}
+		background={
+			category="backgrounds"
+			file="horizontal_stripe.dds"
+		}
+		colors={
+			"green"
+			"white"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "GOTC_KSIR_RULER_NAME"
+		gender = male
+		portrait = "humanoid_hp_07"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="GOTC_KSIR_RULER_TITLE"
+		ruler_title_female="GOTC_KSIR_RULER_TITLE_FEMALE"
+		trait="trait_ruler_logistic_understanding"
+		leader_class = scientist
 	}
 }
