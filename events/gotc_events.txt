@@ -708,6 +708,7 @@ country_event = { # Overlord Version
 			clear_ethos = yes
 			country_add_ethic = ethic_authoritarian
 			country_add_ethic = ethic_fanatic_materialist
+			set_ai_personality = evangelising_zealots
 			change_government = {
 				authority = auth_oligarchic
 				remove_invalid_civics = yes

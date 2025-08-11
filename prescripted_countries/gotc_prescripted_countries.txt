@@ -1598,11 +1598,11 @@ gotc_borrel = {
 		}
 		background={
 			category="backgrounds"
-			file="flag_BG_11.dds"
+			file="flag_BG_27.dds"
 		}
 		colors={
-			"dark_purple"
-			"pink"
+			"indigo"
+			"bright_yellow"
 			"black"
 			"null"
 		}
@@ -1855,8 +1855,8 @@ gotc_nursultan = {
 		name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
 		plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
 		adjective = "GOTC_NURSULTAN_MAIN_SPECIES_ADJECTIVE"
-		name_list = "HUMAN2"
-		gender=not_set
+		name_list = "GOTC_TAJICAUCASIAN"
+		gender=male
 		trait = "trait_nomadic"
 		trait = "trait_spatial_mastery"
 		trait = "trait_wasteful"
@@ -1867,14 +1867,14 @@ gotc_nursultan = {
 	room = "personality_fanatic_purifier_room"
 
 	authority = "auth_dictatorial"
-	civics = { "civic_eager_explorers" "civic_mining_guilds" }
-	government = gov_constitutional_dictatorship
-	origin = "origin_star_slingshot"
+	civics = { "civic_cutthroat_politics" "civic_mining_guilds" }
+	government = gov_military_dictatorship
+	origin = "origin_hegemon"
 
 	flag = gotc_nursultan
 
 	ethic = "ethic_fanatic_authoritarian"
-	ethic = "ethic_xenophobe"
+	ethic = "ethic_militarist"
 
 	planet_name = "GOTC_NURSULTAN_PLANET_NAME"
 	planet_class = "pc_desert"

@@ -717,6 +717,24 @@ marauder_1_2 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_astrahan }
+				}
+				set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_2"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_nursultan }
+				}
+				set_name = "GOTC_NURSULTAN_PLANET_NAME"
+				solar_system = {
+					set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_1
@@ -861,6 +879,24 @@ marauder_1_3 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_astrahan }
+				}
+				set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_3"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_nursultan }
+				}
+				set_name = "GOTC_NURSULTAN_PLANET_NAME"
+				solar_system = {
+					set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_1
@@ -1719,6 +1755,24 @@ marauder_2_2 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_hoplithes }
+				}
+				set_name = "GOTC_HOPLITHES_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_HOPLITHES_SYSTEM_NAME_2"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_2ch }
+				}
+				set_name = "GOTC_2CH_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_2CH_SYSTEM_NAME_2"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_2
@@ -1858,6 +1912,24 @@ marauder_2_3 = {
 
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_hoplithes }
+				}
+				set_name = "GOTC_HOPLITHES_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_HOPLITHES_SYSTEM_NAME_3"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_2ch }
+				}
+				set_name = "GOTC_2CH_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_2CH_SYSTEM_NAME_3"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_2
@@ -2583,6 +2655,24 @@ marauder_3_2 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_myrmekshatrii }
+				}
+				set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_2"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_midii }
+				}
+				set_name = "GOTC_MIDII_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_MIDII_SYSTEM_NAME_2"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_3
@@ -2722,6 +2812,24 @@ marauder_3_3 = {
 
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_myrmekshatrii }
+				}
+				set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_3"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_midii }
+				}
+				set_name = "GOTC_MIDII_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_MIDII_SYSTEM_NAME_3"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_3
