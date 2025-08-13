@@ -791,7 +791,51 @@ country_event = {
 		}
 		else_if = { # nursultan
 			limit = { has_country_flag = gotc_nursultan }
-			owner_main_species = { save_event_target_as = nursultan_species }
+			owner_main_species = { save_event_target_as = former_nursultan_species }
+			create_species = {
+				name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
+				plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
+				adjective = "GOTC_NURSULTAN_MAIN_SPECIES_ADJECTIVE"
+				class = "ART"
+				portrait = "art1"
+				name_list="GOTC_TAJICAUCASIAN"
+				gender=male
+				traits = {
+					trait = "trait_nomadic"
+					trait = "trait_spatial_mastery"
+					trait = "trait_wasteful"
+					trait = "trait_decadent"
+					trait = "trait_fleeting"
+				}
+				homeworld = root.capital_scope
+				effect = {
+					save_event_target_as = nursultan_species
+				}
+			}
+			create_leader = {
+				species = event_target:nursultan_species
+				event_leader = no
+				class = official
+				name = "GOTC_NURSULTAN_RULER_NAME"
+				gender = male
+				skill = 1
+				randomize_traits = no
+				can_assign_to_council = yes
+				background_job = artisan
+				background_ethic = ethic_authoritarian
+				skip_background_generation = yes
+				set_age = 70
+				traits = {
+					trait="trait_ruler_industrialist"
+					trait="leader_trait_intemporal"
+				}
+			}
+			assign_leader = last_created_leader
+			every_owned_leader = {
+				limit = { species = { is_same_species = event_target:former_nursultan_species } }
+				kill_leader = { show_notification = no }
+			}
+
 			# Spawn federation partners.
 			if = {
 				limit = { num_guaranteed_colonies >= 2 }
@@ -1181,18 +1225,10 @@ country_event = {
 				set_federation_leader = root
 				set_name = "GOTC_NURSULTAN_FEDERATION_NAME"
 				set_federation_law = succession_term_years_20
-				add_federation_experience = 800
+				add_federation_experience = 600
 				add_cohesion = 100
 			}
 			event_target:fed_member_1 = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_common_ground
-				}
-				add_opinion_modifier = {
-					who = event_target:fed_member_2
-					modifier = opinion_common_ground
-				}
 				add_trust = {
 					amount = 100
 					who = root
@@ -1222,14 +1258,6 @@ country_event = {
 				}
 			}
 			event_target:fed_member_2 = {
-				add_opinion_modifier = {
-					who = root
-					modifier = opinion_common_ground
-				}
-				add_opinion_modifier = {
-					who = event_target:fed_member_1
-					modifier = opinion_common_ground
-				}
 				add_trust = {
 					amount = 100
 					who = root
@@ -1257,14 +1285,6 @@ country_event = {
 				set_subject_of = {
 					who = root
 				}
-			}
-			add_opinion_modifier = {
-				who = event_target:fed_member_1
-				modifier = opinion_common_ground
-			}
-			add_opinion_modifier = {
-				who = event_target:fed_member_2
-				modifier = opinion_common_ground
 			}
 			add_trust = {
 				amount = 100
@@ -1294,6 +1314,9 @@ country_event = {
 			country_add_ethic = ethic_fanatic_authoritarian
 			country_add_ethic = ethic_xenophobe
 			set_ai_personality = hegemonic_imperialists
+			ruler = {
+				set_leader_flag = gotc_nursultan
+			}
 		}
 		else = { # vanilla
 			# Replace prescripted ideal planets with barren worlds and spawn federation partners.

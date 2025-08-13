@@ -11,3 +11,41 @@ on_five_year_pulse_country = {
 		gotc.40000		# Galactic Paragons related pulses - check possibility to hire a leader
 	}
 }
+
+# A planet has been colonized.
+# Scope = Planet
+on_colonized = {
+	events = {
+		gotc.10
+	}
+}
+
+# Fired whenever a new owner is set for a planet, following a war or through trade
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+on_planet_transfer = {
+	events = {
+		gotc.11
+	}
+}
+
+# Fired whenever a new owner is set for a planet, and the planet was aggressively conquered
+# NOTE: fired in ADDITION to on_planet_transfer
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Former Owner
+on_planet_conquer = {
+	events = {
+		gotc.11
+	}
+}
+
+# From = system
+# FromFrom = country (previous owner)
+# This = country (new owner)
+on_system_gained = {
+	events = {
+		gotc.12
+	}
+}

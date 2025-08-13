@@ -1598,7 +1598,7 @@ gotc_borrel = {
 		}
 		background={
 			category="backgrounds"
-			file="flag_BG_27.dds"
+			file="flag_BG_39.dds"
 		}
 		colors={
 			"indigo"
@@ -1855,7 +1855,7 @@ gotc_nursultan = {
 		name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
 		plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
 		adjective = "GOTC_NURSULTAN_MAIN_SPECIES_ADJECTIVE"
-		name_list = "GOTC_TAJICAUCASIAN"
+		name_list = "NECROID2"
 		gender=male
 		trait = "trait_nomadic"
 		trait = "trait_spatial_mastery"

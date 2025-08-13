@@ -6,6 +6,47 @@
 
 namespace = marauder
 
+##################################
+# MARAUDERS DESTROYED / VENGEANCE
+##################################
+
+# Incoming Transmission
+country_event = {
+	id = marauder.7
+	title = "TRANSMISSION"
+	desc = {
+		text = marauder.7.1.desc
+		trigger = {
+			fromfrom = { has_country_flag = marauder_1 }
+		}
+	}
+	desc = {
+		text = marauder.7.2.desc
+		trigger = {
+			fromfrom = { has_country_flag = marauder_2 }
+		}
+	}
+	desc = {
+		text = marauder.7.3.desc
+		trigger = {
+			fromfrom = { has_country_flag = marauder_3 }
+		}
+	}
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:marauder_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = BATTLESTATIONS
+	}
+}
+
 ################
 # CRISIS BEGINS
 ################

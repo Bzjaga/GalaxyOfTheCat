@@ -5989,6 +5989,35 @@ create_marauder_3_midii = {
 	}
 }
 
+rename_space_object_nursultan = {
+	random_list = {
+		1 = {
+			set_name = "GOTC_NURSULTAN_RULER_TITLE"
+		}
+		10 = {
+			set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+		}
+		10 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME"
+		}
+		10 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_2"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_3"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_4"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_5"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_6"
+		}
+	}
+}
+
 ##################
 # Pre-FTL
 ##################
@@ -6231,9 +6260,9 @@ create_pre_ftl_egypt = {
 			}
 			else = { # Mamluk Egypt
 				while = { # Adding Egyptians before creation of Mamluks
-					count = @iron_age_pops
 					create_pop_group = {
 						species = last_created_species
+						size = @iron_age_pops
 					}
 				}
 				create_species = { # Creating Mamluks
