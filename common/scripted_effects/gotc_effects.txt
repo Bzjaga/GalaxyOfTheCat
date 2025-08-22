@@ -5665,13 +5665,13 @@ create_marauder_1_astrahan = {
 		class = "AQUATIC"
 		portrait = "synth06"
 		name_list="GOTC_TAJICAUCASIAN"
+		extra_trait_points = 4
 		traits = {
 			trait = "trait_pc_ocean_preference"
 			trait = "trait_nomadic"
 			trait = "trait_aquatic"
-			trait = "trait_extremely_adaptive"
-			trait = "trait_unruly"
 			trait = "trait_fleeting"
+			trait = "trait_extremely_adaptive"
 		}
 	}
 	create_country = {
@@ -5718,6 +5718,7 @@ create_marauder_1_nursultan = {
 		class = "ART"
 		portrait = "art1"
 		name_list="GOTC_TAJICAUCASIAN"
+		extra_trait_points = 4
 		traits = {
 			trait = "trait_pc_habitat_preference"
 			trait = "trait_nomadic"
@@ -5725,11 +5726,12 @@ create_marauder_1_nursultan = {
 			trait = "trait_wasteful"
 			trait = "trait_decadent"
 			trait = "trait_fleeting"
+			trait = "trait_extremely_adaptive"
 		}
 	}
 	create_country = {
 		ship_prefix="GOTC_NURSULTAN_SHIP_PREFIX"
-		name = "GOTC_NURSULTAN_EMPIRE_NAME"
+		name = "GOTC_NURSULTAN_FEDERATION_NAME"
 		adjective="GOTC_NURSULTAN_EMPIRE_ADJECTIVE"
 		name_list = "HUMAN2"
 		species = last_created_species
@@ -5760,6 +5762,259 @@ create_marauder_1_nursultan = {
 	set_name = "GOTC_NURSULTAN_PLANET_NAME"
 	solar_system = {
 		set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+	}
+}
+
+create_marauder_2_hoplithes = {
+	create_species = {
+		name = "GOTC_HOPLITHES_MAIN_SPECIES_NAME"
+		plural = "GOTC_HOPLITHES_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_HOPLITHES_MAIN_SPECIES_ADJECTIVE"
+		class = "LITHOID"
+		portrait = "lith3"
+		name_list="GOTC_BABULKA"
+		gender=male
+		extra_trait_points = 3
+		traits = {
+			trait = "trait_pc_habitat_preference"
+			trait = "trait_lithoid"
+			trait = "trait_decadent"
+			trait = "trait_sedentary"
+			trait = "trait_communal"
+			trait = "trait_quick_learners"
+			trait = "trait_incubator"
+			trait = "trait_very_strong"
+		}
+	}
+	create_country = {
+		ship_prefix="GOTC_HOPLITHES_SHIP_PREFIX"
+		name = "GOTC_HOPLITHES_EMPIRE_NAME"
+		adjective="GOTC_HOPLITHES_EMPIRE_ADJECTIVE"
+		name_list = "HUMAN3"
+		species = last_created_species
+		type = dormant_marauders
+		civics = { civic = civic_anarcho_tribalism }
+		origin = "origin_default"
+		flag = {
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_xenophobe
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			set_country_flag = gotc_hoplithes
+		}
+	}
+	set_name = "GOTC_HOPLITHES_PLANET_NAME"
+	solar_system = {
+		set_name = "GOTC_HOPLITHES_SYSTEM_NAME"
+	}
+}
+
+create_marauder_2_2ch = {
+	create_species = {
+		name = "GOTC_2CH_MAIN_SPECIES_NAME"
+		plural = "GOTC_2CH_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_2CH_MAIN_SPECIES_ADJECTIVE"
+		class = "MAM"
+		portrait = "mam6"
+		name_list="HUMAN1"
+		gender=male
+		extra_trait_points = 4
+		traits = {
+			trait = "trait_pc_habitat_preference"
+			trait = "trait_very_strong"
+			trait = "trait_resilient"
+			trait = "trait_nomadic"
+			trait = "trait_unruly"
+			trait = "trait_quarrelsome"
+			trait = "trait_extremely_adaptive"
+		}
+	}
+	create_country = {
+		ship_prefix="GOTC_2CH_SHIP_PREFIX"
+		name = "GOTC_2CH_EMPIRE_NAME"
+		adjective="GOTC_2CH_EMPIRE_ADJECTIVE"
+		name_list = "HUMAN1"
+		species = last_created_species
+		type = dormant_marauders
+		civics = { civic = civic_anarcho_tribalism }
+		origin = "origin_default"
+		flag = {
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_xenophobe
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			set_country_flag = gotc_2ch
+		}
+	}
+	set_name = "GOTC_2CH_PLANET_NAME"
+	solar_system = {
+		set_name = "GOTC_2CH_SYSTEM_NAME"
+	}
+}
+
+create_marauder_3_myrmekshatrii = {
+	create_species = {
+		name = "GOTC_MYRMEKSHATRII_MAIN_SPECIES_NAME"
+		plural = "GOTC_MYRMEKSHATRII_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_MYRMEKSHATRII_MAIN_SPECIES_ADJECTIVE"
+		class = "ART"
+		portrait = "art8"
+		name_list="ART3"
+		gender=not_set
+		extra_trait_points = 4
+		traits = {
+			trait = "trait_pc_habitat_preference"
+			trait = "trait_very_strong"
+			trait = "trait_camouflage"
+			trait = "trait_fleeting"
+			trait = "trait_decadent"
+			trait = "trait_extremely_adaptive"
+		}
+	}
+	create_country = {
+		ship_prefix="GOTC_MYRMEKSHATRII_SHIP_PREFIX"
+		name = "GOTC_MYRMEKSHATRII_EMPIRE_NAME"
+		adjective="GOTC_MYRMEKSHATRII_EMPIRE_ADJECTIVE"
+		name_list = "ART3"
+		species = last_created_species
+		type = dormant_marauders
+		civics = { civic = civic_anarcho_tribalism }
+		origin = "origin_default"
+		flag = {
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_xenophobe
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			set_country_flag = gotc_myrmekshatrii
+		}
+	}
+	set_name = "GOTC_MYRMEKSHATRII_PLANET_NAME"
+	solar_system = {
+		set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME"
+	}
+}
+
+create_marauder_3_midii = {
+	create_species = {
+		name = "GOTC_MIDII_MAIN_SPECIES_NAME"
+		plural = "GOTC_MIDII_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_MIDII_MAIN_SPECIES_ADJECTIVE"
+		class = "MOL"
+		portrait = "mol7"
+		name_list="GOTC_TAJICAUCASIAN"
+		gender=male
+		extra_trait_points = 4
+		traits = {
+			trait = "trait_pc_habitat_preference"
+			trait = "trait_traditional"
+			trait = "trait_nomadic"
+			trait = "trait_shelled"
+			trait = "trait_wasteful"
+			trait = "trait_repugnant"
+			trait = "trait_extremely_adaptive"
+		}
+	}
+	create_country = {
+		ship_prefix="GOTC_MIDII_SHIP_PREFIX"
+		name = "GOTC_MIDII_EMPIRE_NAME"
+		adjective="GOTC_MIDII_EMPIRE_ADJECTIVE"
+		name_list = "ART3"
+		species = last_created_species
+		type = dormant_marauders
+		civics = { civic = civic_anarcho_tribalism }
+		origin = "origin_default"
+		flag = {
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		ethos = {
+			ethic = ethic_fanatic_militarist
+			ethic = ethic_xenophobe
+		}
+		ignore_initial_colony_error = yes
+		effect = {
+			set_country_flag = gotc_midii
+		}
+	}
+	set_name = "GOTC_MIDII_PLANET_NAME"
+	solar_system = {
+		set_name = "GOTC_MIDII_SYSTEM_NAME"
+	}
+}
+
+rename_space_object_nursultan = {
+	random_list = {
+		1 = {
+			set_name = "GOTC_NURSULTAN_RULER_TITLE"
+		}
+		10 = {
+			set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+		}
+		10 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME"
+		}
+		10 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_2"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_3"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_4"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_5"
+		}
+		1 = {
+			set_name = "GOTC_NURSULTAN_NEW_SPACE_OBJECT_NAME_6"
+		}
 	}
 }
 
@@ -6005,9 +6260,9 @@ create_pre_ftl_egypt = {
 			}
 			else = { # Mamluk Egypt
 				while = { # Adding Egyptians before creation of Mamluks
-					count = @iron_age_pops
 					create_pop_group = {
 						species = last_created_species
+						size = @iron_age_pops
 					}
 				}
 				create_species = { # Creating Mamluks

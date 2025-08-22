@@ -55,7 +55,7 @@ marauder_1_1 = {
 				0 = { # Nogay
 					#create_marauder_1_nogay = yes
 				}
-				1 = { # Nursultan
+				2 = { # Nursultan
 					modifier = {
 						factor = 0
 						any_country = { has_country_flag = gotc_nursultan }
@@ -717,6 +717,24 @@ marauder_1_2 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_astrahan }
+				}
+				set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_2"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_nursultan }
+				}
+				set_name = "GOTC_NURSULTAN_PLANET_NAME"
+				solar_system = {
+					set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_1
@@ -861,6 +879,24 @@ marauder_1_3 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_astrahan }
+				}
+				set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_ASTRAHAN_SYSTEM_NAME_3"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_1 = { has_country_flag = gotc_nursultan }
+				}
+				set_name = "GOTC_NURSULTAN_PLANET_NAME"
+				solar_system = {
+					set_name = "GOTC_NURSULTAN_SYSTEM_NAME"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_1
@@ -1108,53 +1144,23 @@ marauder_2_1 = {
 				radius = @marauderClusterRange
 				center = this.solar_system
 			}
-			create_species = {
-				name = random
-				class = random
-				blocked_archetypes = {
-					MACHINE
-					ROBOT
-					LITHOID
+			random_list = {
+				1 = { # Hoplithes
+					create_marauder_2_hoplithes = yes
 				}
-				portrait = random
-				traits = {
-					trait = "trait_pc_habitat_preference"
-					trait = "trait_extremely_adaptive"
-					trait = "trait_rapid_breeders"
-					trait = "trait_nomadic"
-					trait = "trait_quarrelsome"
-					trait = "trait_deviants"
-				}
-			}
-			create_country = {
-				name_list = random
-				species = last_created_species
-				type = dormant_marauders
-				civics = { civic = civic_anarcho_tribalism }
-				origin = "origin_default"
-				flag = {
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
+				2 = { # 2ch
+					modifier = {
+						factor = 0
+						any_country = { has_country_flag = gotc_2ch }
 					}
-					colors={
-						"black"
-						"black"
-						"null"
-						"null"
-					}
+					create_marauder_2_2ch = yes
 				}
-				ethos = {
-					ethic = ethic_fanatic_militarist
-					ethic = ethic_xenophobe
-				}
-				ignore_initial_colony_error = yes
 			}
 			last_created_country = {
 				set_graphical_culture = pirate_01
 				save_global_event_target_as = marauder_country_2
 				set_country_flag = marauder_2
-				set_name = random
+				#set_name = random
 				create_ship_design = { design = "NAME_Marauder_Starbase" }
 				add_ship_design = last_created_design
 				set_custom_capital_location = prev
@@ -1749,6 +1755,24 @@ marauder_2_2 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_hoplithes }
+				}
+				set_name = "GOTC_HOPLITHES_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_HOPLITHES_SYSTEM_NAME_2"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_2ch }
+				}
+				set_name = "GOTC_2CH_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_2CH_SYSTEM_NAME_2"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_2
@@ -1888,6 +1912,24 @@ marauder_2_3 = {
 
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_hoplithes }
+				}
+				set_name = "GOTC_HOPLITHES_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_HOPLITHES_SYSTEM_NAME_3"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_2 = { has_country_flag = gotc_2ch }
+				}
+				set_name = "GOTC_2CH_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_2CH_SYSTEM_NAME_3"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_2
@@ -2131,53 +2173,23 @@ marauder_3_1 = {
 				radius = @marauderClusterRange
 				center = this.solar_system
 			}
-			create_species = {
-				name = random
-				class = random
-				blocked_archetypes = {
-					MACHINE
-					ROBOT
-					LITHOID
+			random_list = {
+				1 = { # Myrmekshatrii
+					create_marauder_3_myrmekshatrii = yes
 				}
-				portrait = random
-				traits = {
-					trait = "trait_pc_habitat_preference"
-					trait = "trait_extremely_adaptive"
-					trait = "trait_rapid_breeders"
-					trait = "trait_nomadic"
-					trait = "trait_quarrelsome"
-					trait = "trait_deviants"
-				}
-			}
-			create_country = {
-				name_list = random
-				species = last_created_species
-				type = dormant_marauders
-				civics = { civic = civic_anarcho_tribalism }
-				origin = "origin_default"
-				flag = {
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
+				2 = { # Midii
+					modifier = {
+						factor = 0
+						any_country = { has_country_flag = gotc_ksir }
 					}
-					colors={
-						"black"
-						"black"
-						"null"
-						"null"
-					}
+					create_marauder_3_midii = yes
 				}
-				ethos = {
-					ethic = ethic_fanatic_spiritualist
-					ethic = ethic_xenophobe
-				}
-				ignore_initial_colony_error = yes
 			}
 			last_created_country = {
 				set_graphical_culture = pirate_01
 				save_global_event_target_as = marauder_country_3
 				set_country_flag = marauder_3
-				set_name = random
+				#set_name = random
 				create_ship_design = { design = "NAME_Marauder_Starbase" }
 				add_ship_design = last_created_design
 				set_custom_capital_location = prev
@@ -2643,6 +2655,24 @@ marauder_3_2 = {
 		has_ring = no
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_myrmekshatrii }
+				}
+				set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_2"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_midii }
+				}
+				set_name = "GOTC_MIDII_SYSTEM_NAME_2"
+				solar_system = {
+					set_name = "GOTC_MIDII_SYSTEM_NAME_2"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_3
@@ -2782,6 +2812,24 @@ marauder_3_3 = {
 
 
 		init_effect = {
+			if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_myrmekshatrii }
+				}
+				set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_MYRMEKSHATRII_SYSTEM_NAME_3"
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:marauder_country_3 = { has_country_flag = gotc_midii }
+				}
+				set_name = "GOTC_MIDII_SYSTEM_NAME_3"
+				solar_system = {
+					set_name = "GOTC_MIDII_SYSTEM_NAME_3"
+				}
+			}
 			create_fleet = {
 				effect = {
 					set_owner = event_target:marauder_country_3

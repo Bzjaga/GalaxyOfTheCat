@@ -383,6 +383,70 @@ system_event = { # Event is formally tied to solar system
 	}
 }
 
+# nursultan planet colonized
+planet_event = {
+	id = gotc.10
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = owner
+		owner = {
+			has_country_flag = gotc_nursultan
+			ruler = { has_leader_flag = gotc_nursultan }
+		}
+	}
+
+	immediate = {
+		rename_space_object_nursultan = yes
+		solar_system = {
+			rename_space_object_nursultan = yes
+		}
+	}
+}
+
+# nursultan planet transferred/conquered
+planet_event = {
+	id = gotc.11
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			has_country_flag = gotc_nursultan
+			ruler = { has_leader_flag = gotc_nursultan }
+		}
+	}
+
+	immediate = {
+		rename_space_object_nursultan = yes
+		solar_system = {
+			rename_space_object_nursultan = yes
+		}
+	}
+}
+
+# nursultan system gained
+country_event = {
+	id = gotc.12
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = gotc_nursultan
+		ruler = { has_leader_flag = gotc_nursultan }
+	}
+
+	immediate = {
+		from = {
+			rename_space_object_nursultan = yes
+		}
+	}
+}
+
 # kadyrov
 planet_event = {
 	id = gotc.4000
@@ -708,6 +772,7 @@ country_event = { # Overlord Version
 			clear_ethos = yes
 			country_add_ethic = ethic_authoritarian
 			country_add_ethic = ethic_fanatic_materialist
+			set_ai_personality = evangelising_zealots
 			change_government = {
 				authority = auth_oligarchic
 				remove_invalid_civics = yes
@@ -741,7 +806,7 @@ country_event = { # Overlord Version
 				limit = { is_capital_system = yes }
 				set_name = "Целиноград"
 			}
-			change_dominant_species = { species = event_target:post_imperial_species }
+			change_dominant_species = { species = event_target:post_imperial_species change_all = yes }
 			create_leader = {
 				# He's going to introduce you to the mother of Kuzma
 				species = event_target:post_imperial_species

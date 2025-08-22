@@ -355,7 +355,6 @@ country_event = {
 				last_created_species = {
 					save_event_target_as = fed_planet_1_species
 				}
-				# Common Ground
 				create_country = {
 					ship_prefix = "GOTC_TSENNOSTI_SHIP_PREFIX"
 					name = "GOTC_TSENNOSTI_EMPIRE_NAME"
@@ -477,7 +476,7 @@ country_event = {
 					adjective = "GOTC_VYMIRATY_MAIN_SPECIES_ADJECTIVE"
 					class = "LITHOID"
 					portrait = "lith12"
-					name_list="LITHOID2"
+					name_list="TOX3"
 					gender=not_set
 					traits = {
 						trait = "trait_lithoid"
@@ -527,7 +526,6 @@ country_event = {
 						save_event_target_as = zamkadets
 					}
 				}
-				# Common Ground
 				create_country = {
 					ship_prefix = "GOTC_VYMIRATY_SHIP_PREFIX"
 					name = "GOTC_VYMIRATY_EMPIRE_NAME"
@@ -789,6 +787,535 @@ country_event = {
 				set_federation_law = succession_term_years_10
 				add_federation_experience = 600
 				add_cohesion = 100
+			}
+		}
+		else_if = { # nursultan
+			limit = { has_country_flag = gotc_nursultan }
+			owner_main_species = { save_event_target_as = former_nursultan_species }
+			create_species = {
+				name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
+				plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
+				adjective = "GOTC_NURSULTAN_MAIN_SPECIES_ADJECTIVE"
+				class = "ART"
+				portrait = "art1"
+				name_list="GOTC_TAJICAUCASIAN"
+				gender=male
+				traits = {
+					trait = "trait_nomadic"
+					trait = "trait_spatial_mastery"
+					trait = "trait_wasteful"
+					trait = "trait_decadent"
+					trait = "trait_fleeting"
+				}
+				homeworld = root.capital_scope
+				effect = {
+					save_event_target_as = nursultan_species
+				}
+			}
+			create_leader = {
+				species = event_target:nursultan_species
+				event_leader = no
+				class = official
+				name = "GOTC_NURSULTAN_RULER_NAME"
+				gender = male
+				skill = 1
+				randomize_traits = no
+				can_assign_to_council = yes
+				background_job = artisan
+				background_ethic = ethic_authoritarian
+				skip_background_generation = yes
+				set_age = 70
+				traits = {
+					trait="trait_ruler_industrialist"
+					trait="leader_trait_intemporal"
+				}
+			}
+			assign_leader = last_created_leader
+			every_owned_leader = {
+				limit = { species = { is_same_species = event_target:former_nursultan_species } }
+				kill_leader = { show_notification = no }
+			}
+
+			# Spawn federation partners.
+			if = {
+				limit = { num_guaranteed_colonies >= 2 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_star_flag = neighbor_t1_first_colony }
+							origin_spawn_system_effect = { INITIALIZER = hegemon_init_middle_juz }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_1
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+						closest_system = {
+							limit = { has_star_flag = neighbor_t2_second_colony }
+							origin_spawn_system_effect = { INITIALIZER = hegemon_init_junior_juz }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_2
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { num_guaranteed_colonies >= 1 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_star_flag = neighbor_t1_first_colony }
+							origin_spawn_system_effect = { INITIALIZER = hegemon_init_middle_juz }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_1
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+						closest_system = {
+							limit = {
+								NOT = { has_star_flag = neighbor_t1_first_colony }
+								has_owner = no
+							}
+							origin_spawn_system_effect = { INITIALIZER = hegemon_init_junior_juz }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_2
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { num_guaranteed_colonies = 0 }
+				capital_scope = {
+					solar_system = {
+						closest_system = {
+							limit = { has_owner = no }
+							origin_spawn_system_effect = { INITIALIZER = hegemon_init_middle_juz }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_1
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+						closest_system = {
+							limit = {
+								NOT = { has_star_flag = fed_origin_system_1 }
+								has_owner = no
+							}
+							origin_spawn_system_effect = { INITIALIZER = hegemon_init_junior_juz }
+							last_created_system = {
+								random_system_planet = {
+									limit = { habitable_planet = yes }
+									save_event_target_as = fed_planet_2
+								}
+								add_extra_hyperlane_to_spawned_system_effect = yes
+							}
+						}
+					}
+				}
+			}
+
+			# Create first member - middle juz
+			event_target:fed_planet_1 = {
+				solar_system = { generate_home_system_resources = yes }
+				create_country = {
+					ship_prefix = "GOTC_NURSULTAN_SHIP_PREFIX_2"
+					name = "GOTC_NURSULTAN_EMPIRE_NAME_2"
+					adjective = "GOTC_NURSULTAN_EMPIRE_ADJECTIVE_2"
+					name_list = NECROID2
+					species = event_target:nursultan_species
+					type = default
+					origin = "origin_common_ground_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_egalitarian"
+						ethic = "ethic_xenophobe"
+						ethic = "ethic_materialist"
+					}
+					authority = auth_oligarchic
+					effect = {
+						save_event_target_as = fed_member_1
+						establish_communications_no_message = root
+
+						# Leader
+						create_leader = {
+							class = official
+							species = event_target:nursultan_species
+							name = "GOTC_NURSULTAN_RULER_NAME_2"
+							gender=male
+							skill = 1
+							randomize_traits = yes
+						}
+						set_male_ruler_title = "GOTC_NURSULTAN_RULER_TITLE_2"
+						set_female_ruler_title = "GOTC_NURSULTAN_RULER_TITLE_FEMALE_2"
+						set_leader = last_created_leader
+					}
+				}
+				create_colony = {
+					owner = event_target:fed_member_1
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				set_name = "GOTC_NURSULTAN_PLANET_NAME_2"
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
+				create_pop_group = {
+					species = event_target:nursultan_species
+					size = 3300
+				}
+				event_target:fed_member_1 = {
+					country_event = { id = game_start.8 }
+					give_starting_resources_effect = yes
+					give_technology = { tech = tech_federation_code message = no }
+				}
+				solar_system = {
+					if = {
+						limit = {
+							event_target:fed_member_1 = {
+								is_gestalt = no
+							}
+						}
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_1
+							effect = {
+								set_starbase_module = {
+									slot = 1
+									module = trading_hub
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+					else = {
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_1
+							effect = {
+								if = {
+									limit = {
+										event_target:fed_member_1 = {
+											has_valid_civic = civic_machine_astromining_drones
+										}	
+									}
+									set_starbase_module = {
+										slot = 1
+										module = astromining_bay
+									}
+								}
+								else = {
+									set_starbase_module = {
+										slot = 1
+										module = solar_panel_network
+									}
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+				}
+			}
+
+			# Create second member - junior juz
+			event_target:fed_planet_2 = {
+				solar_system = { generate_home_system_resources = yes }
+				create_country = {
+					ship_prefix = "GOTC_NURSULTAN_SHIP_PREFIX_2"
+					name = "GOTC_NURSULTAN_EMPIRE_NAME_3"
+					adjective = "GOTC_NURSULTAN_EMPIRE_ADJECTIVE_3"
+					name_list = NECROID2
+					species = event_target:nursultan_species
+					type = default
+					origin = "origin_common_ground_npc"
+					ignore_initial_colony_error = yes
+					day_zero_contact = no
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_egalitarian"
+						ethic = "ethic_xenophobe"
+						ethic = "ethic_spiritualist"
+					}
+					authority = auth_oligarchic
+					effect = {
+						save_event_target_as = fed_member_2
+						establish_communications_no_message = root
+
+						# Leader
+						create_leader = {
+							class = official
+							species = event_target:nursultan_species
+							name = "GOTC_NURSULTAN_RULER_NAME_3"
+							gender=male
+							skill = 1
+							randomize_traits = yes
+						}
+						set_male_ruler_title = "GOTC_NURSULTAN_RULER_TITLE_2"
+						set_female_ruler_title = "GOTC_NURSULTAN_RULER_TITLE_FEMALE_2"
+						set_leader = last_created_leader
+					}
+				}
+				create_colony = {
+					owner = event_target:fed_member_2
+				}
+				generate_start_deposits_and_blockers = yes
+				generate_start_buildings_and_districts = yes
+				set_name = "GOTC_NURSULTAN_PLANET_NAME_3"
+				if = {
+					limit = {
+						owner = { 
+							any_owned_planet = {
+								has_building = building_hive_capital
+							}
+						}
+					}
+					owner = {
+						every_owned_planet = {
+							remove_building = building_hive_capital
+						}
+					}
+				}
+				else = {
+					owner = {
+						every_owned_planet = {
+							remove_building = building_colony_shelter
+						}
+					}
+				}
+				create_pop_group = {
+					species = event_target:nursultan_species
+					size = 3300
+				}
+				event_target:fed_member_2 = {
+					country_event = { id = game_start.8 }
+					give_starting_resources_effect = yes
+					give_technology = { tech = tech_federation_code message = no }
+				}
+				solar_system = {
+					if = {
+						limit = {
+							event_target:fed_member_2 = {
+								is_gestalt = no
+							}
+						}
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_2
+							effect = {
+								set_starbase_module = {
+									slot = 1
+									module = trading_hub
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+					else = {
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							building = crew_quarters
+							owner = event_target:fed_member_2
+							effect = {
+								if = {
+									limit = {
+										event_target:fed_member_2 = {
+											has_valid_civic = civic_machine_astromining_drones
+										}	
+									}
+									set_starbase_module = {
+										slot = 1
+										module = astromining_bay
+									}
+								}
+								else = {
+									set_starbase_module = {
+										slot = 1
+										module = solar_panel_network
+									}
+								}
+								set_starbase_module = {
+									slot = 2
+									module = shipyard
+								}
+							}
+						}
+					}
+				}
+			}
+
+			# Finish setting up member empires
+			event_target:fed_member_1 = {
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 } # create starter set of ships
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
+				join_alliance = {
+					who = root
+					override_requirements = yes
+				}
+				#set_name = random # Fixes some naming issues
+			}
+			event_target:fed_member_2 = {
+				create_starting_leaders = yes
+				country_event = { id = game_start.9 }
+				country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+				country_event = { id = origin.58 days = 1 } # delayed for federation assignment to settle
+				join_alliance = {
+					who = root
+					override_requirements = yes
+				}
+				#set_name = random # Fixes some naming issues
+			}
+
+			# Set Intel levels, Opinion, and Federation laws
+			federation = {
+				set_federation_type = hegemony_federation
+				set_federation_leader = root
+				set_name = "GOTC_NURSULTAN_FEDERATION_NAME"
+				set_federation_law = succession_term_years_20
+				add_federation_experience = 600
+				add_cohesion = 100
+			}
+			event_target:fed_member_1 = {
+				add_trust = {
+					amount = 100
+					who = root
+				}
+				add_trust = {
+					amount = 100
+					who = event_target:fed_member_2
+				}
+				add_intel = {
+					amount = 40
+					who = root
+				}
+				add_intel = {
+					amount = 40
+					who = event_target:fed_member_2
+				}
+				set_closed_borders = {
+					who = root
+					status = no
+				}
+				set_closed_borders = {
+					who = event_target:fed_member_2
+					status = no
+				}
+				set_subject_of = {
+					who = root
+				}
+			}
+			event_target:fed_member_2 = {
+				add_trust = {
+					amount = 100
+					who = root
+				}
+				add_trust = {
+					amount = 100
+					who = event_target:fed_member_1
+				}
+				add_intel = {
+					amount = 40
+					who = root
+				}
+				add_intel = {
+					amount = 40
+					who = event_target:fed_member_1
+				}
+				set_closed_borders = {
+					who = root
+					status = no
+				}
+				set_closed_borders = {
+					who = event_target:fed_member_1
+					status = no
+				}
+				set_subject_of = {
+					who = root
+				}
+			}
+			add_trust = {
+				amount = 100
+				who = event_target:fed_member_1
+			}
+			add_trust = {
+				amount = 100
+				who = event_target:fed_member_2
+			}
+			add_intel = {
+				amount = 40
+				who = event_target:fed_member_1
+			}
+			set_closed_borders = {
+				who = event_target:fed_member_1
+				status = no
+			}
+			add_intel = {
+				amount = 40
+				who = event_target:fed_member_2
+			}
+			set_closed_borders = {
+				who = event_target:fed_member_2
+				status = no
+			}
+			clear_ethos = yes
+			country_add_ethic = ethic_fanatic_authoritarian
+			country_add_ethic = ethic_xenophobe
+			set_ai_personality = hegemonic_imperialists
+			ruler = {
+				set_leader_flag = gotc_nursultan
 			}
 		}
 		else = { # vanilla
