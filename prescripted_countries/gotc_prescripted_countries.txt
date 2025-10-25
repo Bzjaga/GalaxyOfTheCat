@@ -1019,6 +1019,227 @@ gotc_milov = {
 	}
 }
 
+"Вестник Бури" = {
+	name = "Вестник Бури"
+	adjective = "Буревестническ"
+	spawn_enabled = always
+
+	ship_prefix = "ВБ"
+
+	species = {
+		class = "AVI"
+		portrait = "psionic_08"
+		name = "Буревестник"
+		plural = "Буревестники"
+		adjective = "Буревестническ"
+		name_list = "HUMAN2"
+		gender=not_set
+		trait = "trait_organic"
+		trait = "trait_storm_touched"
+		trait = "trait_natural_sociologists"
+		trait = "trait_extremely_adaptive"
+		trait = "trait_deviants"
+		trait = "trait_haunting_visions"
+	}
+
+	room = "ethic_ai_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_storm_callers" "civic_idealistic_foundation" }
+	government = gov_storm_chasers
+	origin = "origin_storm_chasers"
+
+	ethic = "ethic_egalitarian"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_materialist"
+
+	planet_name = "Горький"
+	planet_class = "pc_continental"
+	system_name = "Горький"
+
+	initializer = ""
+	graphical_culture = "reptilian_01"
+	city_graphical_culture = "cybernetics_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_7.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_12.dds"
+		}
+		colors={
+			"grey"
+			"red"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Андрей Рудой"
+		gender = male
+		portrait = "psionic_08"
+		texture = 2
+		evolution_mask=0
+		attachment=0
+		clothes=3
+		ruler_title="ГлавВестник"
+		ruler_title_female="ГлавВестница"
+		trait="trait_ruler_charismatic"
+		leader_class = official
+	}
+}
+
+"Движение Сорока Сорок" = {
+	name = "Движение Сорока Сорок"
+	adjective = "Сорокосороческ"
+	spawn_enabled = always
+
+	ship_prefix = "ДСС"
+
+	species = {
+		class = "AVI"
+		portrait = "avi5"
+		name = "Сорока"
+		plural = "Сороки"
+		adjective = "Сороческ"
+		name_list = "GOTC_BABULKA"
+		gender = male
+		trait = "trait_organic"
+		trait = "trait_latent_psionic"
+		trait = "trait_rapid_breeders"
+		trait = "trait_flight"
+		trait = "trait_communal"
+		trait = "trait_nonadaptive"
+		trait = "trait_quarrelsome"
+	}
+
+	room = "personality_evangelizing_zealots_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_chosen" "civic_crusader_spirit" }
+	government = gov_theocratic_oligarchy
+	origin = "origin_shroudwalker_apprentice"
+
+	ethic = "ethic_militarist"
+	ethic = "ethic_fanatic_spiritualist"
+
+	planet_name = "Торфянка"
+	planet_class = "pc_tropical"
+	system_name = "Торфянка"
+
+	initializer = ""
+	graphical_culture = "psionic_01"
+	city_graphical_culture = "molluscoid_01"
+
+	empire_flag={
+		icon={
+			category="domination"
+			file="domination_19.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_13.dds"
+		}
+		colors={
+			"pink_purple"
+			"red"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Кормухин"
+		gender = male
+		portrait = "avi5"
+		texture = 1
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="ГлавСорока"
+		ruler_title_female="ГлавСорока"
+		trait="leader_trait_principled"
+		leader_class = official
+	}
+}
+
+"Эсхатологическая Стратегическая Инициатива" = {
+	name = "Эсхатологическая Стратегическая Инициатива"
+	adjective = "Псигменн"
+	spawn_enabled = always
+
+	ship_prefix = "ПЭВМ"
+
+	species = {
+		class = "MACHINE"
+		portrait = "psionic_11"
+		name = "Псикомпьтер"
+		plural = "Псикомпьютеры"
+		adjective = "Псикомпьютерн"
+		name_list = "MACHINE4"
+		gender=not_set
+		trait = "trait_machine_unit"
+		trait = "trait_robot_history_researchbot"
+		trait = "trait_robot_artificial_sociologists"
+		trait = "trait_uncanny_intuition"
+		trait = "trait_robot_delicate_frames"
+		trait = "trait_robot_custom_made"
+		trait = "trait_robot_uncanny"
+	}
+
+	room = "personality_federation_builders_room"
+
+	authority = "auth_machine_intelligence"
+	civics = { "civic_entropy_drinkers_machine" "civic_machine_superstitious_beliefs" }
+	government = gov_machine_empire
+	origin = "origin_shroud_forged"
+
+	ethic = "ethic_gestalt_consciousness"
+
+	planet_name = "Псигма"
+	planet_class = "pc_continental"
+	system_name = "Псигма"
+
+	initializer = ""
+	graphical_culture = "psionic_01"
+	city_graphical_culture = "psionic_01"
+
+	empire_flag={
+		icon={
+			category="ornate"
+			file="flag_ornate_11.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_13.dds"
+		}
+		colors={
+			"cloud_purple"
+			"light_green"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Плохотников"
+		gender = male
+		portrait = "psionic_11"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=4
+		ruler_title="Псиатом"
+		ruler_title_female="Псиатомша"
+		trait="trait_ruler_feedback_loop"
+		leader_class = scientist
+	}
+}
+
 gotc_astrohungary = {
 	name = "GOTC_HAB_EMPIRE_NAME"
 	adjective = "GOTC_HAB_EMPIRE_ADJECTIVE"
@@ -1234,6 +1455,81 @@ gotc_netoropyr = {
 		ruler_title="GOTC_NETOROPYR_RULER_TITLE"
 		ruler_title_female="GOTC_NETOROPYR_RULER_TITLE_FEMALE"
 		trait="trait_ruler_charismatic"
+		leader_class = commander
+	}
+}
+
+"Вурдвалашские княжества" = {
+	name = "Вурдвалашские княжества"
+	adjective = "Вурдвалашск"
+	spawn_enabled = always
+
+	ship_prefix = "ВАЛАХ"
+
+	species = {
+		class = "MAM"
+		portrait = "bio10"
+		name = "GOTC_VURDVALAH_MAIN_SPECIES_NAME"
+		plural = "GOTC_VURDVALAH_MAIN_SPECIES_PLURAL"
+		adjective = "GOTC_VURDVALAH_MAIN_SPECIES_ADJECTIVE"
+		name_list = "HUM1"
+		gender = not_set
+		trait = "trait_organic"
+		trait = "trait_malleable_genes"
+		trait = "trait_nascent_stage"
+		trait = "trait_humanoid_jinxed"
+		trait = "trait_solitary"
+	}
+
+	room = "personality_fanatic_purifier_room"
+
+	authority = "auth_imperial"
+	civics = { "civic_entropy_drinkers" "civic_feudal_realm" }
+	government = gov_feudal_empire
+	origin = "origin_evolutionary_predators"
+
+	flag = gotc_vurdvalah
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_materialist"
+
+	planet_name = "Бухарест"
+	planet_class = "pc_continental"
+	system_name = "Бухарест"
+
+	initializer = ""
+	graphical_culture = "biogenesis_01"
+	city_graphical_culture = "necroid_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_24.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_53.dds"
+		}
+		colors={
+			"bright_yellow"
+			"red"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Влад"
+		gender = male
+		portrait = "bio10"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="Граф"
+		ruler_title_female="Графиня"
+		trait="trait_ruler_warlike"
 		leader_class = commander
 	}
 }
@@ -2006,10 +2302,10 @@ gotc_ksir = {
 		adjective = "GOTC_KSIR_MAIN_SPECIES_ADJECTIVE"
 		name_list = "HUM1"
 		gender = male
+		trait = "trait_organic"
 		trait = "trait_traditional"
 		trait = "trait_resilient"
-		trait = "trait_genetic_memory"
-		trait = "trait_nascent_stage"
+		trait = "trait_natural_physicists"
 		trait = "trait_fleeting"
 	}
 
@@ -2062,5 +2358,79 @@ gotc_ksir = {
 		ruler_title_female="GOTC_KSIR_RULER_TITLE_FEMALE"
 		trait="trait_ruler_logistic_understanding"
 		leader_class = scientist
+	}
+}
+
+"Новая Скифия" = {
+	name = "Новая Скифия"
+	adjective = "Новоскифск"
+	spawn_enabled = always
+
+	ship_prefix = "СКИФ"
+
+	species = {
+		class = "MAM"
+		portrait = "mammalian_ar_08"
+		name = "Скиф"
+		plural = "Скифы"
+		adjective = "Скифск"
+		name_list = "HUM1"
+		gender = not_set
+		trait = "trait_organic"
+		trait = "trait_traditional"
+		trait = "trait_nomadic"
+		trait = "trait_genetic_memory"
+		trait = "trait_repugnant"
+		trait = "trait_wasteful"
+	}
+
+	room = "personality_honorbound_warriors_room"
+
+	authority = "auth_democratic"
+	civics = { "civic_beastmasters" "civic_crowdsourcing" }
+	government = gov_theocratic_republic
+	origin = "origin_primal_calling"
+
+	ethic = "ethic_egalitarian"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "Неаполь"
+	planet_class = "pc_savannah"
+	system_name = "Неаполь"
+
+	initializer = ""
+	graphical_culture = "biogenesis_02"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="blocky"
+			file="flag_blocky_9.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"red"
+			"yellow"
+			"grey"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Александр Матюшин"
+		gender = male
+		portrait = "mammalian_ar_08_m"
+		texture = 2
+		evolution_mask=0
+		attachment=0
+		clothes=4
+		ruler_title="Краевой Наркомскиф"
+		ruler_title_female="Краевая Наркомскифка"
+		trait="trait_ruler_warlike"
+		leader_class = commander
 	}
 }

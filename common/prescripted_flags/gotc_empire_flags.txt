@@ -26,6 +26,10 @@ gotc_netoropyr = {
 	flags = { gotc_netoropyr }
 }
 
+gotc_vurdvalah = {
+	flags = { gotc_vurdvalah }
+}
+
 gotc_borrel = {
 	flags = { gotc_borrel }
 }
