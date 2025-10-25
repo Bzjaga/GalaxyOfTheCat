@@ -486,7 +486,7 @@ shroudwalker_enclave_init_01 = {
 	usage_odds = {
 		base = 0
 		modifier = {
-			has_overlord_dlc = yes
+			potential_shroudwalker_enclave = yes
 			add = @spawn_system_enclave
 		}
 		modifier = {
@@ -607,7 +607,7 @@ shroudwalker_enclave_init_02 = {
 	usage_odds = {
 		base = 0
 		modifier = {
-			has_overlord_dlc = yes
+			potential_shroudwalker_enclave = yes
 			add = @spawn_system_extreme
 		}
 		modifier = {
@@ -736,7 +736,7 @@ shroudwalker_enclave_init_03 = {
 	usage_odds = {
 		base = 0
 		modifier = {
-			has_overlord_dlc = yes
+			potential_shroudwalker_enclave = yes
 			add = @spawn_system_extreme
 		}
 		modifier = {
@@ -925,7 +925,7 @@ broken_shroudwalker_init_01 = {
 	usage_odds = {
 		base = 0
 		modifier = {
-			has_overlord_dlc = yes
+			potential_shroudwalker_enclave = yes
 			add = @spawn_system_extreme
 		}
 		modifier = {

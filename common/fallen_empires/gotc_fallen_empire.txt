@@ -152,10 +152,10 @@ fallen_empire_2 = {
 		last_created_species = {
 			modify_species = {
 				species = this
-				add_trait = trait_psionic
 				add_trait = trait_enduring
 				add_trait = trait_genetic_memory
 			}
+			add_psionic_trait = yes
 		}
 		create_country = {
 			ship_prefix="GOTC_RUS_SHIP_PREFIX"

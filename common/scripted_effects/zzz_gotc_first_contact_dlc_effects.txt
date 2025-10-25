@@ -203,6 +203,10 @@ create_MSI_effect = {
 }
 
 generate_slaver_bonus = {
+	set_timed_planet_flag = {
+		flag = ignore_ai_building_limitations
+		days = 1
+	}
 	while = {
 		count = 2
 		add_district_and_planet_size_if_needed_effect = {
@@ -762,6 +766,10 @@ create_fear_of_the_dark_country = {
 setup_fear_of_the_dark_pre_ftl = {
 	set_owner = event_target:fotd_seperatist_country
 	set_capital = yes
+	set_timed_planet_flag = {
+		flag = ignore_ai_building_limitations
+		days = 1
+	}
 	if = {
 		limit = {
 			has_planet_flag =  korea

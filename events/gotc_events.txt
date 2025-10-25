@@ -1061,6 +1061,7 @@ country_event = { # Pylesos hire
 				SPECIES_CLASS = MACHINE
 				LEADER_PORTRAIT = synth_machine_03
 				CLASS = scientist
+				TIER = leader_tier_renowned
 				NAME = NAME_mad_vacuum_cleaner
 				LEVEL = 4
 				GENDER = male
@@ -1075,6 +1076,7 @@ country_event = { # Pylesos hire
 				SPECIES_CLASS = MACHINE
 				LEADER_PORTRAIT = synth_machine_03
 				CLASS = scientist
+				TIER = leader_tier_renowned
 				NAME = NAME_mad_vacuum_cleaner
 				LEVEL = 4
 				GENDER = male
@@ -1087,15 +1089,39 @@ country_event = { # Pylesos hire
 		last_created_leader = {
 			add_trait = {
 				trait = subclass_scientist_governor
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_virtual
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_tomcat_insight
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_sanitary_drone
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_stubborn_2
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_intolerant
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_eager
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_environmental_engineer
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_society_focus_3
-				show_message = no
+				consume_selection = yes
 			}
 			set_age = 216
 		}
@@ -1835,7 +1861,7 @@ country_event = {
 
 	immediate = {
 		random_owned_leader = {
-			limit = { has_leader_flag = renowned_leader }
+			limit = { is_leader_tier = leader_tier_renowned }
 			switch = {
 				trigger = has_leader_flag
 				renowned_mad_vacuum_cleaner = { # Pylesos

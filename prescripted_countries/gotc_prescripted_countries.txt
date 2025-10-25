@@ -582,7 +582,7 @@ gotc_mao = {
 	room = "personality_democratic_crusaders_room"
 
 	authority = "auth_democratic"
-	civics = { "civic_police_state" "civic_shadow_council" }
+	civics = { "civic_police_state" "civic_secret_societies" }
 	government = gov_military_commissariat
 	origin = "origin_post_apocalyptic"
 
@@ -971,7 +971,7 @@ gotc_milov = {
 	room = "personality_xenophobic_isolationists_room"
 
 	authority = "auth_democratic"
-	civics = { "civic_idealistic_foundation" "civic_shadow_council" }
+	civics = { "civic_idealistic_foundation" "civic_secret_societies" }
 	government = gov_representative_democracy
 	origin = "origin_clone_army"
 
@@ -1795,7 +1795,7 @@ gotc_mason = {
 	room = "necroids_room"
 
 	authority = "auth_corporate"
-	civics = { "civic_criminal_heritage" "civic_ruthless_competition" }
+	civics = { "civic_criminal_heritage" "civic_secret_societies_corporate" }
 	government = gov_criminal_syndicate
 	origin = "origin_scion"
 
