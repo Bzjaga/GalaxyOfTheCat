@@ -1102,7 +1102,7 @@ gotc_milov = {
 
 	species = {
 		class = "AVI"
-		portrait = "avi5"
+		portrait = "avi12"
 		name = "Сорока"
 		plural = "Сороки"
 		adjective = "Сороческ"
@@ -1155,7 +1155,7 @@ gotc_milov = {
 	ruler = {
 		name = "Кормухин"
 		gender = male
-		portrait = "avi5"
+		portrait = "avi12"
 		texture = 1
 		evolution_mask=0
 		attachment=0
@@ -1236,6 +1236,311 @@ gotc_milov = {
 		ruler_title="Псиатом"
 		ruler_title_female="Псиатомша"
 		trait="trait_ruler_feedback_loop"
+		leader_class = scientist
+	}
+}
+
+"Опыт Инвазивной Демократии" = {
+	name = "Опыт Инвазивной Демократии"
+	adjective = "Инвазивнодемократическ"
+	spawn_enabled = always
+
+	ship_prefix = "ИНВ"
+
+	species = {
+		class = "ART"
+		portrait = "synth09"
+		name = "Биокомар"
+		plural = "Биокомары"
+		adjective = "Биокомарин"
+		name_list = "ART2"
+		gender=female
+		trait = "trait_organic"
+		trait = "trait_hive_mind"
+		trait = "trait_camouflage"
+		trait = "trait_preplanned_growth"
+		trait = "trait_spliced_adaptability"
+		trait = "trait_flight"
+		trait = "trait_repugnant"
+	}
+
+	secondary_species = {
+		class = "TOX"
+		portrait = "tox13"
+		name = "Политзаключённый"
+		plural = "Политзаключённые"
+		adjective = "Политзаключённ"
+		name_list = "AQUATIC1"
+		trait = "trait_organic"
+		trait = "trait_hive_mind"
+		trait = "trait_low_maintenance"
+		trait = "trait_preplanned_growth"
+		trait = "trait_excessive_endurance"
+		trait = "trait_fleeting"
+		trait = "trait_slow_learners"
+	}
+
+	room = "toxoids_room"
+
+	authority = "auth_hive_mind"
+	civics = { "civic_twisted_experimenters_hive_mind" "civic_hive_bodysnatcher" }
+	government = gov_hive_mind
+	origin = "origin_overtuned"
+
+	ethic = "ethic_gestalt_consciousness"
+
+	planet_name = "Биолаборатория"
+	planet_class = "pc_alpine"
+	system_name = "Писк Капитализма"
+
+	initializer = ""
+	graphical_culture = "biogenesis_01"
+	city_graphical_culture = "wilderness_01"
+
+	empire_flag={
+		icon={
+			category="toxoid"
+			file="toxoid_07.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_3.dds"
+		}
+		colors={
+			"shadow_blue"
+			"dark_red"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Комара Харрис"
+		gender = female
+		portrait = "synth09"
+		texture = 2
+		evolution_mask=0
+		attachment=0
+		clothes=4
+		ruler_title="Комардарм"
+		ruler_title_female="Комардарм"
+		trait="leader_trait_spycraft"
+		leader_class = official
+	}
+}
+
+"Зелёный Мир" = {
+	name = "Зелёный Мир"
+	adjective = "Зеленск"
+	spawn_enabled = always
+
+	ship_prefix = "ГРЕТА"
+
+	species = {
+		class = "PLANT"
+		portrait = "pla17"
+		name = "Зелёный"
+		plural = "Зелёные"
+		adjective = "Зелён"
+		name_list = "HUMAN1"
+		trait = "trait_organic"
+		trait = "trait_conservational"
+		trait = "trait_agrarian"
+		trait = "trait_plantoid_phototrophic"
+		trait = "trait_slow_breeders"
+	}
+
+	room = "solarpunk_room"
+
+	authority = "auth_dictatorial"
+	civics = { "civic_environmentalist" "civic_astrometeorology" }
+	government = gov_military_dictatorship
+	origin = "origin_endbringers"
+
+	ethic = "ethic_fanatic_xenophile"
+	ethic = "ethic_militarist"
+
+	planet_name = "Хаудерия"
+	planet_class = "pc_continental"
+	system_name = "Хаудерия"
+
+	initializer = ""
+	graphical_culture = "biogenesis_02"
+	city_graphical_culture = "aquatic_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_15.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_20.dds"
+		}
+		colors={
+			"teal"
+			"red_orange"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Гретый Туборг"
+		gender = female
+		portrait = "pla17_f"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=4
+		ruler_title="Великий Активист"
+		ruler_title_female="Великая Активистка"
+		trait="trait_ruler_warlike"
+		leader_class = commander
+	}
+}
+
+"Астро-Сенека" = {
+	name = "Астро-Сенека"
+	adjective = "Стоическо-Фармацевтическ"
+	spawn_enabled = always
+
+	ship_prefix = "СЕН"
+
+	species = {
+		class = "HUM"
+		portrait = "synth04"
+		name = "Стоик"
+		plural = "Стоики"
+		adjective = "Стоическ"
+		name_list = "HUMAN3"
+		gender=not_set
+		trait = "trait_organic"
+		trait = "trait_talented"
+		trait = "trait_quick_learners"
+		trait = "trait_resilient"
+		trait = "trait_conservational"
+		trait = "trait_nonadaptive"
+	}
+
+	room = "personality_spiritual_seekers_room"
+
+	authority = "auth_corporate"
+	civics = { "civic_private_healthcare_corporate" "civic_twisted_experimenters_corporate" }
+	government = gov_megacorporation
+	origin = "origin_starlit_citadel"
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_pacifist"
+	ethic = "ethic_materialist"
+
+	planet_name = "Вакс Зверия"
+	planet_class = "pc_continental"
+	system_name = "Вакс Зверия"
+
+	initializer = ""
+	graphical_culture = "nemesis_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="zoological"
+			file="flag_zoological_16.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_5.dds"
+		}
+		colors={
+			"burgundy"
+			"desert_yellow"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Анней Сенека"
+		gender = male
+		portrait = "synth04"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="Натурфармацевт"
+		ruler_title_female="Натурфармацевт"
+		trait="leader_trait_principled"
+		leader_class = official
+	}
+}
+
+"Гуманистическая Ассоциация Аметистов" = {
+	name = "Гуманистическая Ассоциация Аметистов"
+	adjective = "Гуманистическ"
+	spawn_enabled = always
+
+	ship_prefix = "ДОКИН"
+
+	species = {
+		class = "LITHOID"
+		portrait = "lith11"
+		name = "Аметист"
+		plural = "Аметисты"
+		adjective = "Аметистическ"
+		name_list = "HUMAN1"
+		gender=not_set
+		trait = "trait_lithoid"
+		trait = "trait_natural_sociologists"
+		trait = "trait_intelligent"
+		trait = "trait_quarrelsome"
+	}
+
+	room = "personality_decadent_hierarchy_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_technocracy" "civic_genetic_identification" }
+	government = gov_science_directorate
+	origin = "origin_mindwardens"
+
+	ethic = "ethic_militarist"
+	ethic = "ethic_fanatic_materialist"
+
+	planet_name = "Секулярность"
+	planet_class = "pc_continental"
+	system_name = "Самоцвет"
+
+	initializer = "mindwarden_system_init"
+	graphical_culture = "mindwarden_01"
+	city_graphical_culture = "necroid_01"
+
+	empire_flag={
+		icon={
+			category="domination"
+			file="domination_20.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_39.dds"
+		}
+		colors={
+			"dark_grey"
+			"blue"
+			"blue"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Ричард Докинз"
+		gender = male
+		portrait = "lith11"
+		texture = 3
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="Социобиолог"
+		ruler_title_female="Социобиологиня"
+		trait="leader_trait_spark_of_genius"
 		leader_class = scientist
 	}
 }
