@@ -462,9 +462,6 @@ planet_event = {
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_farming_uncapped
 		}
-
-		# We want a clean slate building-wise, but to keep the districts.
-		remove_all_buildings = yes
 		if = {
 			limit = {
 				owner = { is_subject = yes }
@@ -491,15 +488,6 @@ planet_event = {
 			count = 6
 			add_deposit = d_ship_debris_payback_blocker
 		}
-		# 3 jobs
-		add_building = building_capital
-		add_building = building_medical_2
-		add_building = building_research_lab_1
-		ruin_building = building_research_lab_1
-		add_building = building_mineral_purification_plant
-		ruin_building = building_mineral_purification_plant
-		add_building = building_energy_grid
-		ruin_building = building_energy_grid
 
 		# ambient objects, for decoration
 		set_planet_flag = has_orbital_debris
@@ -549,10 +537,10 @@ planet_event = {
 		}
 		if = {
 			limit = {
-				pop_amount > 1800
+				pop_amount > 2000
 			}
 			while = {
-				limit = { pop_amount > 1800 }
+				limit = { pop_amount > 2000 }
 				random_owned_pop_group = {
 					limit = { is_same_species = root.owner.species }
 					kill_single_pop = yes
@@ -772,7 +760,6 @@ country_event = { # Overlord Version
 			clear_ethos = yes
 			country_add_ethic = ethic_authoritarian
 			country_add_ethic = ethic_fanatic_materialist
-			set_ai_personality = evangelising_zealots
 			change_government = {
 				authority = auth_oligarchic
 				remove_invalid_civics = yes
@@ -782,6 +769,7 @@ country_event = { # Overlord Version
 					civic = civic_crafters
 				}
 			}
+			set_ai_personality = erudite_explorers
 			change_country_flag = {
 				icon={
 					category="plantoid"
@@ -807,8 +795,7 @@ country_event = { # Overlord Version
 				set_name = "Целиноград"
 			}
 			change_dominant_species = { species = event_target:post_imperial_species change_all = yes }
-			create_leader = {
-				# He's going to introduce you to the mother of Kuzma
+			create_leader = { # He's going to introduce you to the mother of Kuzma
 				species = event_target:post_imperial_species
 				class = official
 				name = "Кукуруз"
@@ -1061,6 +1048,7 @@ country_event = { # Pylesos hire
 				SPECIES_CLASS = MACHINE
 				LEADER_PORTRAIT = synth_machine_03
 				CLASS = scientist
+				TIER = leader_tier_renowned
 				NAME = NAME_mad_vacuum_cleaner
 				LEVEL = 4
 				GENDER = male
@@ -1075,6 +1063,7 @@ country_event = { # Pylesos hire
 				SPECIES_CLASS = MACHINE
 				LEADER_PORTRAIT = synth_machine_03
 				CLASS = scientist
+				TIER = leader_tier_renowned
 				NAME = NAME_mad_vacuum_cleaner
 				LEVEL = 4
 				GENDER = male
@@ -1087,15 +1076,39 @@ country_event = { # Pylesos hire
 		last_created_leader = {
 			add_trait = {
 				trait = subclass_scientist_governor
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_virtual
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_tomcat_insight
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_sanitary_drone
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_stubborn_2
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_intolerant
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_eager
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_environmental_engineer
+				consume_selection = yes
+			}
+			add_trait = {
 				trait = leader_trait_society_focus_3
-				show_message = no
+				consume_selection = yes
 			}
 			set_age = 216
 		}
@@ -1288,6 +1301,7 @@ leader_event = { # invite cats
 				name_list="MAM2"
 				traits = {
 					ideal_planet_class = pc_continental
+					trait = "trait_organic"
 					trait = "trait_charismatic"
 					trait = "trait_unruly"
 					trait = "trait_nomadic"
@@ -1835,7 +1849,7 @@ country_event = {
 
 	immediate = {
 		random_owned_leader = {
-			limit = { has_leader_flag = renowned_leader }
+			limit = { is_leader_tier = leader_tier_renowned }
 			switch = {
 				trigger = has_leader_flag
 				renowned_mad_vacuum_cleaner = { # Pylesos

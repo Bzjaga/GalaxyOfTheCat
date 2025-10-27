@@ -129,7 +129,7 @@ trait_mudozvon = {
 
 	custom_tooltip_with_modifiers = trait_mudozvon_effect
 	modifier = {
-		entertainer_jobs_bonus_workforce_mult = 0.10
+		influential_jobs_bonus_workforce_mult = 0.10
 		bureaucrat_jobs_bonus_workforce_mult = 0.1
 	}
 

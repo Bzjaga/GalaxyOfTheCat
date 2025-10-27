@@ -520,7 +520,7 @@ create_shroudwalker_enclave_country_default = { # rewritten create_shroudwalker_
 				species = event_target:shroudwalker_enclave_species
 				skill = 5
 				traits = {
-					trait = leader_trait_expertise_psionics
+					1 = leader_trait_expertise_psionics
 				}
 			}
 			set_leader = last_created_leader
@@ -608,7 +608,7 @@ create_shroudwalker_enclave_country_dialectics = {
 				species = event_target:shroudwalker_enclave_species
 				skill = 5
 				traits = {
-					trait = leader_trait_expertise_psionics
+					1 = leader_trait_expertise_psionics
 				}
 			}
 			set_male_ruler_title = "Идущий Сквозь Диалектику"
@@ -2606,7 +2606,7 @@ create_imperial_vassal_kgb = {
 		}
 		civics = {
 			civic = civic_police_state
-			civic = civic_shadow_council
+			civic = civic_secret_societies
 		}
 		ethos = {
 			ethic = ethic_egalitarian

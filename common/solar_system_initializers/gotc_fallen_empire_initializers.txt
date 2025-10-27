@@ -804,31 +804,6 @@ gotc_fallen_3 = {
 						}
 					}
 				
-					create_species = { # Vurdvalah
-						name = "GOTC_VURDVALAH_MAIN_SPECIES_NAME"
-						plural = "GOTC_VURDVALAH_MAIN_SPECIES_PLURAL"
-						adjective = "GOTC_VURDVALAH_MAIN_SPECIES_ADJECTIVE"
-						class = ART
-						portrait = synth09
-						name_list="HUMAN3"
-						traits = {
-							ideal_planet_class = pc_continental
-							trait = trait_presapient_natural_intellectuals
-							trait = trait_necrophage
-							trait = trait_venerable
-							trait = trait_humanoid_jinxed
-							trait = trait_intelligent
-							trait = trait_solitary
-						}
-					}
-					last_created_species = {
-						set_species_flag = astrohungarian
-						save_event_target_as = vurdvalah_species
-					}
-					create_pop_group = {
-						species = event_target:vurdvalah_species
-					}
-				
 					create_species = { # Kazak
 						name = "GOTC_SICH_MAIN_SPECIES_NAME"
 						plural = "GOTC_SICH_MAIN_SPECIES_PLURAL"
@@ -838,6 +813,7 @@ gotc_fallen_3 = {
 						name_list="HUM1"
 						traits = {
 							ideal_planet_class = pc_arid
+							trait = trait_organic
 							trait = trait_unruly
 							trait = trait_plantoid_phototrophic
 							trait = trait_nomadic
@@ -915,6 +891,7 @@ gotc_fallen_3 = {
 							name_list="MOL4"
 							traits = {
 								ideal_planet_class = pc_tropical
+								trait = trait_organic
 								trait = trait_adaptive
 								trait = trait_docile
 								trait = trait_traditional
@@ -929,6 +906,47 @@ gotc_fallen_3 = {
 					}
 					create_pop_group = {
 						species = event_target:netoropyr_species
+					}
+					
+					# Vurdvalah
+					if = { # Check Vurdvalah existence
+						limit = {
+							any_country = { has_country_flag = gotc_vurdvalah }
+						}
+						random_country = {
+							limit = { has_country_flag = gotc_vurdvalah }
+							owner_main_species = {
+								set_species_flag = astrohungarian
+								save_event_target_as = vurdvalah_species
+							}
+						}
+					}
+					else = { # Create Vurdvalah species
+						create_species = { # Vurdvalah
+							name = "GOTC_VURDVALAH_MAIN_SPECIES_NAME"
+							plural = "GOTC_VURDVALAH_MAIN_SPECIES_PLURAL"
+							adjective = "GOTC_VURDVALAH_MAIN_SPECIES_ADJECTIVE"
+							class = MAM
+							portrait = bio10
+							name_list="HUM1"
+							traits = {
+								ideal_planet_class = pc_continental
+								trait = trait_organic
+								trait = trait_presapient_natural_intellectuals
+								trait = trait_necrophage
+								trait = trait_venerable
+								trait = trait_humanoid_jinxed
+								trait = trait_intelligent
+								trait = trait_solitary
+							}
+						}
+						last_created_species = {
+							set_species_flag = astrohungarian
+							save_event_target_as = vurdvalah_species
+						}
+					}
+					create_pop_group = {
+						species = event_target:vurdvalah_species
 					}
 
 					# Untermensch # Aryan
@@ -2399,9 +2417,9 @@ gotc_fallen_orbitals_2 = {
 				}
 			}
 			create_fe_citadel = yes
-			else = {
-				create_fe_outpost = yes
-			}
+		}
+		else = {
+			create_fe_outpost = yes
 		}
 	}
 
@@ -3166,7 +3184,7 @@ gotc_fallen_xeno_zoo = {
 					adjective = "GOTC_CAREBEAR_SPECIES_1_ADJECTIVE"
 					class = MAM
 					portrait = cyb7
-					name_list="MAM2"
+					name_list="GOTC_CAT"
 					traits = {
 						trait = trait_unruly
 						trait = trait_extremely_adaptive
@@ -3183,7 +3201,7 @@ gotc_fallen_xeno_zoo = {
 					adjective = "GOTC_CAREBEAR_SPECIES_2_ADJECTIVE"
 					class = MAM
 					portrait = cyb1
-					name_list="MAM2"
+					name_list="GOTC_CAT"
 					traits = {
 						trait = trait_rapid_breeders
 						trait = trait_talented
@@ -3202,7 +3220,7 @@ gotc_fallen_xeno_zoo = {
 					adjective = "GOTC_CAREBEAR_SPECIES_3_ADJECTIVE"
 					class = MAM
 					portrait = mam14
-					name_list="MAM2"
+					name_list="GOTC_CAT"
 					traits = {
 						trait = trait_ingenious
 						trait = trait_quick_learners
@@ -3220,7 +3238,7 @@ gotc_fallen_xeno_zoo = {
 					adjective = "GOTC_CAREBEAR_SPECIES_4_ADJECTIVE"
 					class = MAM
 					portrait = cyb7
-					name_list="MAM2"
+					name_list="GOTC_CAT"
 					traits = {
 						ideal_planet_class = pc_savannah
 						trait = trait_natural_sociologists
@@ -3241,7 +3259,7 @@ gotc_fallen_xeno_zoo = {
 					adjective = "GOTC_CAREBEAR_SPECIES_5_ADJECTIVE"
 					class = MAM
 					portrait = mam14
-					name_list="MAM2"
+					name_list="GOTC_CAT"
 					traits = {
 						ideal_planet_class = pc_tundra
 						trait = trait_syncretic_proles
