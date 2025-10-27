@@ -344,6 +344,7 @@ country_event = {
 					name_list="MOL4"
 					gender=indeterminable
 					traits = {
+						trait = "trait_organic"
 						trait = "trait_conservational"
 						trait = "trait_unruly"
 						trait = "trait_humanoid_psychological_infertility"
@@ -513,6 +514,7 @@ country_event = {
 						name_list="HUMAN2"
 						gender=not_set
 						traits = {
+							trait = "trait_organic"
 							trait = "trait_survivor"
 							trait = "trait_ingenious"
 							trait = "trait_wasteful"
@@ -791,7 +793,6 @@ country_event = {
 		}
 		else_if = { # nursultan
 			limit = { has_country_flag = gotc_nursultan }
-			owner_main_species = { save_event_target_as = former_nursultan_species }
 			create_species = {
 				name = "GOTC_NURSULTAN_MAIN_SPECIES_NAME"
 				plural = "GOTC_NURSULTAN_MAIN_SPECIES_PLURAL"
@@ -801,6 +802,7 @@ country_event = {
 				name_list="GOTC_TAJICAUCASIAN"
 				gender=male
 				traits = {
+					trait = "trait_organic"
 					trait = "trait_nomadic"
 					trait = "trait_spatial_mastery"
 					trait = "trait_wasteful"
@@ -808,10 +810,12 @@ country_event = {
 					trait = "trait_fleeting"
 				}
 				homeworld = root.capital_scope
-				effect = {
-					save_event_target_as = nursultan_species
-				}
 			}
+			last_created_species = {
+				save_event_target_as = nursultan_species
+			}
+			change_dominant_species = { species = event_target:nursultan_species change_all = yes }
+
 			create_leader = {
 				species = event_target:nursultan_species
 				event_leader = no
@@ -831,9 +835,12 @@ country_event = {
 				}
 			}
 			assign_leader = last_created_leader
-			every_owned_leader = {
-				limit = { species = { is_same_species = event_target:former_nursultan_species } }
-				kill_leader = { show_notification = no }
+			root.capital_scope = {
+				generate_start_pops = yes
+			}
+			if = {
+				limit = { is_ai = yes }
+				set_ai_personality = hegemonic_imperialists
 			}
 
 			# Spawn federation partners.
