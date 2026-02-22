@@ -1687,6 +1687,7 @@ overlord_system_2_init = { # Empire second system
 					portrait = "fun17"
 					name_list="HUMAN2"
 					traits = {
+						trait = "trait_organic"
 						trait = "trait_agrarian"
 						trait = "trait_slow_learners"
 						trait = "trait_conservational"

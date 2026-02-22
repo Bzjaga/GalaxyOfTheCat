@@ -1267,6 +1267,7 @@ create_debt_collectors_country = {
 				portrait = humanoid_04
 				namelist = "HUMAN1"
 				traits = {
+					trait = "trait_organic"
 					trait = "trait_docile"
 					trait = "trait_industrious"
 					trait = "trait_nascent_stage"

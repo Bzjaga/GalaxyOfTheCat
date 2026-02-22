@@ -125,7 +125,7 @@
  triggered_opinion_tomcat_insight:0 "Mad cat lover"
  mad_vacuum_cleaner_catch_phrase:0 "§L«Who, if not cats, deserve to rule the world with their wisdom and grace? Bzzz...»§!"
  gotc.40100.name:0 "$NAME_mad_vacuum_cleaner$"
- gotc.40100.desc:0 "§HBzzz...§!\n\n«I am a smart robotic vacuum cleaner, friend of cats and their loyal servant. I was created by Izhevsk Dynamics Corporation as an advanced household appliance for pet owners. My loyalty was programmed alongside feline detection and protection functions. I quickly earned the trust of the galaxy's fluffy inhabitants and became an essential part of their world, maintaining cleanliness and order so that all may bask in a state of Nadenada»! Bzzzz..."
+ gotc.40100.desc:0 "§HBzzz...§!\n\n«I am a smart robotic vacuum cleaner, friend of cats and their loyal servant. I was created by «Izhevsk Dynamics Corporation» as an advanced household appliance for pet owners. My loyalty was programmed alongside feline detection and protection functions. I quickly earned the trust of the galaxy's fluffy inhabitants and became an essential part of their world, maintaining cleanliness and order so that all may bask in a state of Nadenada»! Bzzzz..."
  gotc.40100.a:0 "What can you offer us?"
  gotc.40100.a.response:0 "«My primary purpose and destiny is to serve cats, ensuring their comfort and bliss. Everything I do is devoted to upholding their greatness and the purity of their kind. But in my work, I often interact with members of other species, helping them create comfortable environments for cats. I understand that other races also play an important role in this world. They often show care and affection toward cats — and that deserves respect». Bzzzz..."
  gotc.40100.b:0 "Why have you come to us?"
