@@ -41,6 +41,9 @@ fallen_empire_1 = {
 				add_trait = trait_cybernetic
 				add_trait = trait_egg_laying
 				add_trait = trait_natural_physicists
+				effect = {
+					set_species_flag = organic_fallen_empire_pop
+				}
 			}
 		}
 		create_country = {
@@ -159,6 +162,9 @@ fallen_empire_2 = {
 			}
 			add_psionic_trait = yes
 		}
+		last_created_species = { # To avoid having to update the psionic effect above
+			set_species_flag = organic_fallen_empire_pop
+		}
 		create_country = {
 			ship_prefix="GOTC_RUS_SHIP_PREFIX"
 			name = "GOTC_RUS_EMPIRE_NAME"
@@ -262,6 +268,9 @@ fallen_empire_3 = {
 					trait = "trait_artificial_intelligence"
 				}
 				allow_negative_traits = no
+				effect = {
+					set_species_flag = organic_fallen_empire_pop
+				}
 			}
 			create_country = {
 				ship_prefix="GOTC_CAREBEAR_SHIP_PREFIX"
@@ -352,6 +361,9 @@ fallen_empire_3 = {
 					trait = "trait_venerable"
 				}
 				allow_negative_traits = no
+				effect = {
+					set_species_flag = organic_fallen_empire_pop
+				}
 			}
 			create_country = {
 				ship_prefix="GOTC_HAB_SHIP_PREFIX"
@@ -471,7 +483,10 @@ fallen_empire_4 = {
 					can_be_modified = this
 					homeworld = this
 					namelist = this
-					effect = { save_global_event_target_as = fallen_4_species }
+					effect = {
+						save_global_event_target_as = fallen_4_species
+						set_species_flag = organic_fallen_empire_pop
+					}
 				}
 			}
 		}
@@ -494,7 +509,10 @@ fallen_empire_4 = {
 					trait = "trait_conservational"
 				}
 				allow_negative_traits = no
-				effect = { save_global_event_target_as = fallen_4_species }
+				effect = {
+					save_global_event_target_as = fallen_4_species
+					set_species_flag = organic_fallen_empire_pop
+				}
 			}
 		}
 		create_country = {
