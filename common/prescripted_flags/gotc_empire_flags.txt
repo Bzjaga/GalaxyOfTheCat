@@ -38,6 +38,10 @@ gotc_voldemar = {
 	flags = { gotc_voldemar }
 }
 
+gotc_dimon = {
+	flags = { gotc_dimon }
+}
+
 gotc_nursultan = {
 	flags = { gotc_nursultan }
 }

@@ -1,0 +1,2543 @@
+### PRE-SAPIENT / UPLIFTING EFFECTS
+
+spawn_presapient_species_randomizer_effect = {
+	if = {
+		limit = {
+			owner = { has_country_flag = gotc_dimon }
+		}
+		solar_system = {
+			set_star_flag = pre_sapient_system
+		}
+		random_list = {
+			0 = { # oparysh
+				modifier = {
+					add = 10
+					is_planet_class = pc_tropical
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_oparysh_species_used }
+				}
+				owner = { set_country_flag = gotc_oparysh_species_used }
+				create_species = {
+					name = {
+						key="Опарыш Сортирный"
+						literal=yes
+					}
+					plural = {
+						key="Опарыши"
+						literal=yes
+					}
+					adjective = {
+						key="Опарышн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox7
+					name_list="TOX1"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_repugnant
+						trait = trait_extremely_adaptive
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # vosh
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_vosh_species_used }
+				}
+				owner = { set_country_flag = gotc_vosh_species_used }
+				create_species = {
+					name = {
+						key="Вошь Тифозная"
+						literal=yes
+					}
+					plural = {
+						key="Вши"
+						literal=yes
+					}
+					adjective = {
+						key="Вшив"
+						literal=yes
+					}
+					class = MOL
+					portrait = bio11
+					name_list="ART4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_repugnant
+						trait = trait_rapid_breeders
+						trait = trait_decadent
+						trait = trait_noxious
+						trait = trait_conformists
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # hryak
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_hryak_species_used }
+				}
+				owner = { set_country_flag = gotc_hryak_species_used }
+				create_species = {
+					name = {
+						key="Хряк Сальный"
+						literal=yes
+					}
+					plural = {
+						key="Хряки"
+						literal=yes
+					}
+					adjective = {
+						key="Хрякск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mammalian_ar_02
+					name_list="MAM4"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_docile_livestock
+						trait = trait_seasonal_dormancy
+						trait = trait_noxious
+						trait = trait_repugnant
+						trait = trait_talented
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # borov
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_borov_species_used }
+				}
+				owner = { set_country_flag = gotc_borov_species_used }
+				create_species = {
+					name = {
+						key="Боров Завонявшийся"
+						literal=yes
+					}
+					plural = {
+						key="Боровы"
+						literal=yes
+					}
+					adjective = {
+						key="Боровн"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam9
+					name_list="MAM4"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_docile_livestock
+						trait = trait_seasonal_dormancy
+						trait = trait_repugnant
+						trait = trait_inorganic_breath
+						trait = trait_quarrelsome
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # svinya
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_svinya_species_used }
+				}
+				owner = { set_country_flag = gotc_svinya_species_used }
+				create_species = {
+					name = {
+						key="Свинья Неблагодарная"
+						literal=yes
+					}
+					plural = {
+						key="Свиньи"
+						literal=yes
+					}
+					adjective = {
+						key="Свин"
+						literal=yes
+					}
+					class = MAM
+					portrait = mammalian_ar_01
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_docile_livestock
+						trait = trait_decadent
+						trait = trait_familial
+						trait = trait_quick_learners
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # baran
+				modifier = {
+					add = 10
+					is_planet_class = pc_alpine
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_baran_species_used }
+				}
+				owner = { set_country_flag = gotc_baran_species_used }
+				create_species = {
+					name = {
+						key="Баран Тупоголовый"
+						literal=yes
+					}
+					plural = {
+						key="Бараны"
+						literal=yes
+					}
+					adjective = {
+						key="Баранов"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam12
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_docile_livestock
+						trait = trait_slow_learners
+						trait = trait_communal
+						trait = trait_docile
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # vobla_1
+				modifier = {
+					add = 10
+					is_planet_class = pc_ocean
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_vobla_1_species_used }
+				}
+				owner = { set_country_flag = gotc_vobla_1_species_used }
+				create_species = {
+					name = {
+						key="Вобла Волжская"
+						literal=yes
+					}
+					plural = {
+						key="Воблы"
+						literal=yes
+					}
+					adjective = {
+						key="Вобельн"
+						literal=yes
+					}
+					class = AQUATIC
+					portrait = aqu11
+					name_list="AQUATIC2"
+					gender=female
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_aquatic
+						trait = trait_egg_laying
+						trait = trait_nonadaptive
+						trait = trait_slow_learners
+						trait = trait_crafted_smiles
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # vobla_2
+				modifier = {
+					add = 5
+					is_planet_class = pc_desert
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_vobla_2_species_used }
+				}
+				owner = { set_country_flag = gotc_vobla_2_species_used }
+				create_species = {
+					name = {
+						key="Вобла Сушёная"
+						literal=yes
+					}
+					plural = {
+						key="Воблы"
+						literal=yes
+					}
+					adjective = {
+						key="Вобельн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox2
+					name_list="GOTC_BABULKA"
+					gender=female
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_nonadaptive
+						trait = trait_resilient
+						trait = trait_enduring
+						trait = trait_crafted_smiles
+						trait = trait_spliced_adaptability
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # shakal
+				modifier = {
+					add = 10
+					OR = {
+						is_planet_class = pc_savannah
+						is_planet_class = pc_arid
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_shakal_species_used }
+				}
+				owner = { set_country_flag = gotc_shakal_species_used }
+				create_species = {
+					name = {
+						key="Шакал Паршивый"
+						literal=yes
+					}
+					plural = {
+						key="Шакалы"
+						literal=yes
+					}
+					adjective = {
+						key="Шакальн"
+						literal=yes
+					}
+					class = MAM
+					portrait = cyb2
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_solitary
+						trait = trait_charismatic
+						trait = trait_quick_learners
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # pen
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pen_species_used }
+				}
+				owner = { set_country_flag = gotc_pen_species_used }
+				create_species = {
+					name = {
+						key="Пень Трухлявый"
+						literal=yes
+					}
+					plural = {
+						key="Пни"
+						literal=yes
+					}
+					adjective = {
+						key="Трухляв"
+						literal=yes
+					}
+					class = PLANT
+					portrait = pla14
+					name_list="PLANT3"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_rooted
+						trait = trait_weak
+						trait = trait_venerable
+						trait = trait_juiced_power
+						trait = trait_crafted_smiles
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # demon
+				modifier = {
+					add = 200
+					is_planet_class = pc_volcanic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_demon_species_used }
+				}
+				owner = { set_country_flag = gotc_demon_species_used }
+				create_species = {
+					name = {
+						key="Демон Оголтелый"
+						literal=yes
+					}
+					plural = {
+						key="Демоны"
+						literal=yes
+					}
+					adjective = {
+						key="Демонич"
+						literal=yes
+					}
+					class = INF
+					portrait = inf9
+					name_list="INF4"
+					gender=not_set
+					traits = {
+						trait = trait_infernal
+						trait = trait_presapient_starborn
+						trait = trait_humanoid_existential_iteroparity
+						trait = trait_wasteful
+						trait = trait_strong
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # chertila
+				modifier = {
+					add = 200
+					is_planet_class = pc_volcanic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_chertila_species_used }
+				}
+				owner = { set_country_flag = gotc_chertila_species_used }
+				create_species = {
+					name = {
+						key="Чертила Мутный"
+						literal=yes
+					}
+					plural = {
+						key="Чертилы"
+						literal=yes
+					}
+					adjective = {
+						key="Чертилов"
+						literal=yes
+					}
+					class = INF
+					portrait = inf8
+					name_list="INF4"
+					gender=not_set
+					traits = {
+						trait = trait_infernal
+						trait = trait_presapient_starborn
+						trait = trait_pyroclastic
+						trait = trait_shell_slag
+						trait = trait_slow_learners
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # tvar
+				modifier = {
+					add = 100
+					is_planet_class = pc_volcanic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_tvar_species_used }
+				}
+				owner = { set_country_flag = gotc_tvar_species_used }
+				create_species = {
+					name = {
+						key="Тварь Чешуйчатая"
+						literal=yes
+					}
+					plural = {
+						key="Твари"
+						literal=yes
+					}
+					adjective = {
+						key="Тварев"
+						literal=yes
+					}
+					class = INF
+					portrait = inf7
+					name_list="GOTC_JEW"
+					gender=not_set
+					traits = {
+						trait = trait_infernal
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_shell_slag
+						trait = trait_noxious
+						trait = trait_enduring
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # reptiloid
+				modifier = {
+					add = 10
+					is_planet_class = pc_desert
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_reptiloid_species_used }
+				}
+				owner = { set_country_flag = gotc_reptiloid_species_used }
+				create_species = {
+					name = {
+						key="Рептилоид Мерзкий"
+						literal=yes
+					}
+					plural = {
+						key="Рептилоиды"
+						literal=yes
+					}
+					adjective = {
+						key="Рептилоидн"
+						literal=yes
+					}
+					class = REP
+					portrait = cyb10
+					name_list="GOTC_JEW"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_repugnant
+						trait = trait_inorganic_breath
+						trait = trait_camouflage
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # neofit
+				modifier = {
+					add = 10
+					is_planet_class = pc_tropical
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_neofit_species_used }
+				}
+				owner = { set_country_flag = gotc_neofit_species_used }
+				create_species = {
+					name = {
+						key="Неофит Кровососущий"
+						literal=yes
+					}
+					plural = {
+						key="Неофиты"
+						literal=yes
+					}
+					adjective = {
+						key="Неофитн"
+						literal=yes
+					}
+					class = ART
+					portrait = synth09
+					name_list="ART3"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_noxious
+						trait = trait_spatial_mastery
+						trait = trait_fleeting
+						trait = trait_slow_learners
+						trait = trait_sedentary
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # vurdalak
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_vurdalak_species_used }
+				}
+				owner = { set_country_flag = gotc_vurdalak_species_used }
+				create_species = {
+					name = {
+						key="Вурдалак Пустоглазый"
+						literal=yes
+					}
+					plural = {
+						key="Вурдалаки"
+						literal=yes
+					}
+					adjective = {
+						key="Вурдалашск"
+						literal=yes
+					}
+					class = MAM
+					portrait = bio10
+					name_list="MAM3"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_venerable
+						trait = trait_repugnant
+						trait = trait_quick_learners
+						trait = trait_talented
+						trait = trait_slow_breeders
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # glist
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_glist_species_used }
+				}
+				owner = { set_country_flag = gotc_glist_species_used }
+				create_species = {
+					name = {
+						key="Глист Кишечный"
+						literal=yes
+					}
+					plural = {
+						key="Глисты"
+						literal=yes
+					}
+					adjective = {
+						key="Глистов"
+						literal=yes
+					}
+					class = MOL
+					portrait = mol6
+					name_list="ART4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_repugnant
+						trait = trait_extremely_adaptive
+						trait = trait_noxious
+						trait = trait_decadent
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # gnida
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_gnida_species_used }
+				}
+				owner = { set_country_flag = gotc_gnida_species_used }
+				create_species = {
+					name = {
+						key="Гнида Жадная"
+						literal=yes
+					}
+					plural = {
+						key="Гниды"
+						literal=yes
+					}
+					adjective = {
+						key="Гнидск"
+						literal=yes
+					}
+					class = ART
+					portrait = art12
+					name_list="ART4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_repugnant
+						trait = trait_rapid_breeders
+						trait = trait_decadent
+						trait = trait_noxious
+						trait = trait_thrifty
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # trupoed
+				modifier = {
+					add = 10
+					is_planet_class = pc_continental
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_trupoed_species_used }
+				}
+				owner = { set_country_flag = gotc_trupoed_species_used }
+				create_species = {
+					name = {
+						key="Трупоед Западный"
+						literal=yes
+					}
+					plural = {
+						key="Трупоеды"
+						literal=yes
+					}
+					adjective = {
+						key="Трупоедн"
+						literal=yes
+					}
+					class = MOL
+					portrait = bio6
+					name_list="HUMAN2"
+					gender=indeterminable
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_necrophage
+						trait = trait_repugnant
+						trait = trait_humanoid_existential_iteroparity
+						trait = trait_adaptive
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # tarakan
+				modifier = {
+					add = 5
+					is_planet_class = pc_continental
+				}
+				modifier = {
+					add = 10
+					is_planet_class = pc_nuked
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_tarakan_species_used }
+				}
+				owner = { set_country_flag = gotc_tarakan_species_used }
+				create_species = {
+					name = {
+						key="Таракан Брюссельский"
+						literal=yes
+					}
+					plural = {
+						key="Тараканы"
+						literal=yes
+					}
+					adjective = {
+						key="Тараканов"
+						literal=yes
+					}
+					class = ART
+					portrait = art11
+					name_list="HUMAN2"
+					gender=indeterminable
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_irradiated
+						trait = trait_repugnant
+						trait = trait_rapid_breeders
+						trait = trait_enduring
+						trait = trait_crafted_smiles
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # pigmey
+				modifier = {
+					add = 10
+					is_planet_class = pc_tundra
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pigmey_species_used }
+				}
+				owner = { set_country_flag = gotc_pigmey_species_used }
+				create_species = {
+					name = {
+						key="Пигмей Интеллектуальный"
+						literal=yes
+					}
+					plural = {
+						key="Пигмеи"
+						literal=yes
+					}
+					adjective = {
+						key="Пигмейск"
+						literal=yes
+					}
+					class = HUM
+					portrait = humanoid_hp_02
+					name_list="HUM2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_intelligent
+						trait = trait_quick_learners
+						trait = trait_weak
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # petushok
+				modifier = {
+					add = 10
+					is_planet_class = pc_continental
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_petushok_species_used }
+				}
+				owner = { set_country_flag = gotc_petushok_species_used }
+				create_species = {
+					name = {
+						key="Петушок Трусливый"
+						literal=yes
+					}
+					plural = {
+						key="Петушки"
+						literal=yes
+					}
+					adjective = {
+						key="Петушин"
+						literal=yes
+					}
+					class = AVI
+					portrait = bio4
+					name_list="HUMAN2"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_docile_livestock
+						trait = trait_egg_laying
+						trait = trait_communal
+						trait = trait_humanoid_psychological_infertility
+						trait = trait_gene_mentorship
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # tlya
+				modifier = {
+					add = 1
+					is_planet_class = pc_tropical
+				}
+				modifier = {
+					add = 2
+					is_planet_class = pc_continental
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_tlya_species_used }
+				}
+				owner = { set_country_flag = gotc_tlya_species_used }
+				create_species = {
+					name = {
+						key="Тля Зелёная"
+						literal=yes
+					}
+					plural = {
+						key="Тли"
+						literal=yes
+					}
+					adjective = {
+						key="Тлин"
+						literal=yes
+					}
+					class = FUN
+					portrait = fun3
+					name_list="PLANT4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_proles
+						trait = trait_industrious
+						trait = trait_incubator
+						trait = trait_fleeting
+						trait = trait_sedentary
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # nedomerok
+				modifier = {
+					add = 10
+					is_planet_class = pc_arctic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_nedomerok_species_used }
+				}
+				owner = { set_country_flag = gotc_nedomerok_species_used }
+				create_species = {
+					name = {
+						key="Недомерок Уродливый"
+						literal=yes
+					}
+					plural = {
+						key="Недомерки"
+						literal=yes
+					}
+					adjective = {
+						key="Недомерковск"
+						literal=yes
+					}
+					class = REP
+					portrait = bio9
+					name_list="HUM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_cave_dweller
+						trait = trait_repugnant
+						trait = trait_extremely_adaptive
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # karlik
+				modifier = {
+					add = 10
+					is_planet_class = pc_arctic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_karlik_species_used }
+				}
+				owner = { set_country_flag = gotc_karlik_species_used }
+				create_species = {
+					name = {
+						key="Карлик Политический"
+						literal=yes
+					}
+					plural = {
+						key="Карлики"
+						literal=yes
+					}
+					adjective = {
+						key="Карликов"
+						literal=yes
+					}
+					class = HUM
+					portrait = humanoid_hp_11
+					name_list="HUM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_quick_learners
+						trait = trait_docile
+						trait = trait_weak
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # pastushok
+				modifier = {
+					add = 10
+					is_planet_class = pc_alpine
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pastushok_species_used }
+				}
+				owner = { set_country_flag = gotc_pastushok_species_used }
+				create_species = {
+					name = {
+						key="Пастушок Хитрожопый"
+						literal=yes
+					}
+					plural = {
+						key="Пастушки"
+						literal=yes
+					}
+					adjective = {
+						key="Пастушеск"
+						literal=yes
+					}
+					class = HUM
+					portrait = humanoid_hp_13
+					name_list="HUMAN2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_ingenious
+						trait = trait_traditional
+						trait = trait_nonadaptive
+						trait = trait_sedentary
+						trait = trait_thrifty
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # skomoroh
+				modifier = {
+					add = 5
+					is_planet_class = pc_tropical
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_skomoroh_species_used }
+				}
+				owner = { set_country_flag = gotc_skomoroh_species_used }
+				create_species = {
+					name = {
+						key="Скоморох Унюханный"
+						literal=yes
+					}
+					plural = {
+						key="Скоморохи"
+						literal=yes
+					}
+					adjective = {
+						key="Скоморошеск"
+						literal=yes
+					}
+					class = AVI
+					portrait = avi12
+					name_list="AVI3"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_egg_laying
+						trait = trait_spatial_mastery
+						trait = trait_solitary
+						trait = trait_hollow_bones
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # gomunkul
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_gomunkul_species_used }
+				}
+				owner = { set_country_flag = gotc_gomunkul_species_used }
+				create_species = {
+					name = {
+						key="Гомункул Ничтожный"
+						literal=yes
+					}
+					plural = {
+						key="Гомункулы"
+						literal=yes
+					}
+					adjective = {
+						key="Гомункульн"
+						literal=yes
+					}
+					class = NECROID
+					portrait = nec1
+					name_list="HUM2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_humanoid_jinxed
+						trait = trait_weak
+						trait = trait_unbreakable_resolve
+						trait = trait_spare_organs
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # muha
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_muha_species_used }
+				}
+				owner = { set_country_flag = gotc_muha_species_used }
+				create_species = {
+					name = {
+						key="Муха Навозная Волосатая"
+						literal=yes
+					}
+					plural = {
+						key="Навозные Мухи"
+						literal=yes
+					}
+					adjective = {
+						key="Навозно-Мушин"
+						literal=yes
+					}
+					class = ART
+					portrait = art18
+					name_list="ART3"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_flight
+						trait = trait_incubator
+						trait = trait_fleeting
+						trait = trait_wasteful
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # bloha
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_bloha_species_used }
+				}
+				owner = { set_country_flag = gotc_bloha_species_used }
+				create_species = {
+					name = {
+						key="Блоха Чумная"
+						literal=yes
+					}
+					plural = {
+						key="Блохи"
+						literal=yes
+					}
+					adjective = {
+						key="Блошин"
+						literal=yes
+					}
+					class = FUN
+					portrait = fun2
+					name_list="ART4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_noxious
+						trait = trait_decadent
+						trait = trait_nomadic
+						trait = trait_rapid_breeders
+						trait = trait_humanoid_jinxed
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # shavka
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_shavka_species_used }
+				}
+				owner = { set_country_flag = gotc_shavka_species_used }
+				create_species = {
+					name = {
+						key="Шавка Скулящая"
+						literal=yes
+					}
+					plural = {
+						key="Шавки"
+						literal=yes
+					}
+					adjective = {
+						key="Шавкинск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mammalian_ar_04
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_communal
+						trait = trait_quick_learners
+						trait = trait_docile
+						trait = trait_humanoid_psychological_infertility
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # pyos_1
+				modifier = {
+					add = 10
+					is_planet_class = pc_continental
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pyos_1_species_used }
+				}
+				owner = { set_country_flag = gotc_pyos_1_species_used }
+				create_species = {
+					name = {
+						key="Пёс Слюнявый"
+						literal=yes
+					}
+					plural = {
+						key="Псы"
+						literal=yes
+					}
+					adjective = {
+						key="Псинов"
+						literal=yes
+					}
+					class = MAM
+					portrait = mammalian_ar_07
+					name_list="MAM4"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_proles
+						trait = trait_communal
+						trait = trait_quick_learners
+						trait = trait_docile
+						trait = trait_humanoid_psychological_infertility
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # pyos_2
+				modifier = {
+					add = 10
+					is_planet_class = pc_toxic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pyos_2_species_used }
+				}
+				owner = { set_country_flag = gotc_pyos_2_species_used }
+				create_species = {
+					name = {
+						key="Пёс Полудохлый"
+						literal=yes
+					}
+					plural = {
+						key="Псы"
+						literal=yes
+					}
+					adjective = {
+						key="Псинов"
+						literal=yes
+					}
+					class = FUN
+					portrait = fun16
+					name_list="MAM4"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_quick_learners
+						trait = trait_communal
+						trait = trait_fleeting
+						trait = trait_weak
+						trait = trait_docile
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # sobaka
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_sobaka_species_used }
+				}
+				owner = { set_country_flag = gotc_sobaka_species_used }
+				create_species = {
+					name = {
+						key="Собака Бешеная"
+						literal=yes
+					}
+					plural = {
+						key="Собаки"
+						literal=yes
+					}
+					adjective = {
+						key="Собач"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam15
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_unruly
+						trait = trait_nomadic
+						trait = trait_inorganic_breath
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # pudel
+				modifier = {
+					add = 100
+					is_planet_class = pc_gaia
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pudel_species_used }
+				}
+				owner = { set_country_flag = gotc_pudel_species_used }
+				create_species = {
+					name = {
+						key="Пудель Тявкающий"
+						literal=yes
+					}
+					plural = {
+						key="Пудели"
+						literal=yes
+					}
+					adjective = {
+						key="Пудельск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mammalian_ar_04
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_charismatic
+						trait = trait_gene_mentorship
+						trait = trait_deviants
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # narkoupyr
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_narkoupyr_species_used }
+				}
+				owner = { set_country_flag = gotc_narkoupyr_species_used }
+				create_species = {
+					name = {
+						key="Наркоупырь Безумный"
+						literal=yes
+					}
+					plural = {
+						key="Наркоупыри"
+						literal=yes
+					}
+					adjective = {
+						key="Наркоупырск"
+						literal=yes
+					}
+					class = HUM
+					portrait = psionic_09
+					name_list="HUMAN1"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_noxious
+						trait = trait_uncanny_intuition
+						trait = trait_haunting_visions
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # lyagushatnik
+				modifier = {
+					add = 1
+					is_planet_class = pc_ocean
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_lyagushatnik_species_used }
+				}
+				owner = { set_country_flag = gotc_lyagushatnik_species_used }
+				create_species = {
+					name = {
+						key="Лягушатник Неугомонный"
+						literal=yes
+					}
+					plural = {
+						key="Лягушатники"
+						literal=yes
+					}
+					adjective = {
+						key="Лягушатническ"
+						literal=yes
+					}
+					class = REP
+					portrait = rep17
+					name_list="HUM2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_charismatic
+						trait = trait_talented
+						trait = trait_deviants
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # krysa
+				modifier = {
+					add = 10
+					is_planet_class = pc_relic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_krysa_species_used }
+				}
+				owner = { set_country_flag = gotc_krysa_species_used }
+				create_species = {
+					name = {
+						key="Крыса Больная"
+						literal=yes
+					}
+					plural = {
+						key="Крысы"
+						literal=yes
+					}
+					adjective = {
+						key="Крысин"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam_rat
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_haunting_visions
+						trait = trait_cranial_megatrophy
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # tsepen_1
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_tsepen_1_species_used }
+				}
+				owner = { set_country_flag = gotc_tsepen_1_species_used }
+				create_species = {
+					name = {
+						key="Цепень Свиной"
+						literal=yes
+					}
+					plural = {
+						key="Цепни"
+						literal=yes
+					}
+					adjective = {
+						key="Цепнев"
+						literal=yes
+					}
+					class = ART
+					portrait = art20
+					name_list="ART4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_repugnant
+						trait = trait_extremely_adaptive
+						trait = trait_noxious
+						trait = trait_decadent
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # tsepen_2
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_tsepen_2_species_used }
+				}
+				owner = { set_country_flag = gotc_tsepen_2_species_used }
+				create_species = {
+					name = {
+						key="Цепень Карликовый"
+						literal=yes
+					}
+					plural = {
+						key="Цепни"
+						literal=yes
+					}
+					adjective = {
+						key="Цепнев"
+						literal=yes
+					}
+					class = NECROID
+					portrait = nec9
+					name_list="ART4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_repugnant
+						trait = trait_extremely_adaptive
+						trait = trait_noxious
+						trait = trait_decadent
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # furunkul
+				modifier = {
+					add = 10
+					is_planet_class = pc_toxic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_furunkul_species_used }
+				}
+				owner = { set_country_flag = gotc_furunkul_species_used }
+				create_species = {
+					name = {
+						key="Фурункул Гнойный"
+						literal=yes
+					}
+					plural = {
+						key="Фурункулы"
+						literal=yes
+					}
+					adjective = {
+						key="Фурункульн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox4
+					name_list="TOX4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_repugnant
+						trait = trait_inorganic_breath
+						trait = trait_acidic_vascularity
+						trait = trait_spare_organs
+						trait = trait_nonadaptive
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # nedonosok
+				modifier = {
+					add = 2
+					is_planet_class = pc_ocean
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_nedonosok_species_used }
+				}
+				owner = { set_country_flag = gotc_nedonosok_species_used }
+				create_species = {
+					name = {
+						key="Недоносок Напыщенный"
+						literal=yes
+					}
+					plural = {
+						key="Недоноски"
+						literal=yes
+					}
+					adjective = {
+						key="Недоносочн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox5
+					name_list="HUMAN2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_noxious
+						trait = trait_quarrelsome
+						trait = trait_decadent
+						trait = trait_acidic_vascularity
+						trait = trait_spare_organs
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # femida
+				modifier = {
+					add = 2
+					is_planet_class = pc_ocean
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_femida_species_used }
+				}
+				owner = { set_country_flag = gotc_femida_species_used }
+				create_species = {
+					name = {
+						key="Фемида Плюгавая"
+						literal=yes
+					}
+					plural = {
+						key="Фемиды"
+						literal=yes
+					}
+					adjective = {
+						key="Фемидн"
+						literal=yes
+					}
+					class = HUM
+					portrait = humanoid_hp_14
+					name_list="HUMAN2"
+					gender=female
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_traditional
+						trait = trait_genetic_memory
+						trait = trait_humanoid_jinxed
+						trait = trait_weak
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # nechist
+				modifier = {
+					add = 10
+					is_planet_class = pc_continental
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_nechist_species_used }
+				}
+				owner = { set_country_flag = gotc_nechist_species_used }
+				create_species = {
+					name = {
+						key="Нечисть Дрябломордая"
+						literal=yes
+					}
+					plural = {
+						key="Нечисти"
+						literal=yes
+					}
+					adjective = {
+						key="Нечист"
+						literal=yes
+					}
+					class = NECROID
+					portrait = nec12
+					name_list="HUMAN2"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_repugnant
+						trait = trait_enduring
+						trait = trait_inorganic_breath
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			1 = { # ud
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_ud_species_used }
+				}
+				owner = { set_country_flag = gotc_ud_species_used }
+				create_species = {
+					name = {
+						key="Уд Срамный"
+						literal=yes
+					}
+					plural = {
+						key="Уды"
+						literal=yes
+					}
+					adjective = {
+						key="Удн"
+						literal=yes
+					}
+					class = FUN
+					portrait = fun13
+					name_list="PLANT"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_proles
+						trait = trait_rooted
+						trait = trait_rapid_breeders
+						trait = trait_slow_learners
+						trait = trait_resilient
+						trait = trait_very_strong
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			1 = { # mankurt
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_mankurt_species_used }
+				}
+				owner = { set_country_flag = gotc_mankurt_species_used }
+				create_species = {
+					name = {
+						key="Манкурт Бессловесный"
+						literal=yes
+					}
+					plural = {
+						key="Манкурты"
+						literal=yes
+					}
+					adjective = {
+						key="Манкуртн"
+						literal=yes
+					}
+					class = HUM
+					portrait = humanoid_05
+					name_list="HUMAN2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_nomadic
+						trait = trait_deviants
+						trait = trait_solitary
+						trait = trait_weak
+						trait = trait_extremely_adaptive
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # kodla
+				modifier = {
+					add = 2
+					is_planet_class = pc_tropical
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_kodla_species_used }
+				}
+				owner = { set_country_flag = gotc_kodla_species_used }
+				create_species = {
+					name = {
+						key="Кодла Цветастая"
+						literal=yes
+					}
+					plural = {
+						key="Кодлы"
+						literal=yes
+					}
+					adjective = {
+						key="Кодлов"
+						literal=yes
+					}
+					class = LITHOID
+					portrait = lith6
+					name_list="PLANT"
+					gender=not_set
+					traits = {
+						trait = trait_lithoid
+						trait = trait_presapient_earthbound
+						trait = trait_lithoid_scintillating
+						trait = trait_communal
+						trait = trait_sedentary
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # urodets
+				modifier = {
+					add = 10
+					OR = {
+						is_planet_class = pc_toxic
+						is_planet_class = pc_nuked
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_urodets_species_used }
+				}
+				owner = { set_country_flag = gotc_urodets_species_used }
+				create_species = {
+					name = {
+						key="Уродец Тризубый"
+						literal=yes
+					}
+					plural = {
+						key="Уродцы"
+						literal=yes
+					}
+					adjective = {
+						key="Уродечн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox3
+					name_list="TOX4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_irradiated
+						trait = trait_repugnant
+						trait = trait_spare_organs
+						trait = trait_unbreakable_resolve
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			1 = { # vykormysh
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_vykormysh_species_used }
+				}
+				owner = { set_country_flag = gotc_vykormysh_species_used }
+				create_species = {
+					name = {
+						key="Выкормыш Запуганный"
+						literal=yes
+					}
+					plural = {
+						key="Выкормыши"
+						literal=yes
+					}
+					adjective = {
+						key="Выкормышн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox1
+					name_list="TOX4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_docile
+						trait = trait_nonadaptive
+						trait = trait_preplanned_growth
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			1 = { # nedorazumenie
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_nedorazumenie_species_used }
+				}
+				owner = { set_country_flag = gotc_nedorazumenie_species_used }
+				create_species = {
+					name = {
+						key="Недоразумение Бородатое"
+						literal=yes
+					}
+					plural = {
+						key="Недоразумения"
+						literal=yes
+					}
+					adjective = {
+						key="Недоразумениев"
+						literal=yes
+					}
+					class = HUM
+					portrait = humanoid_hp_12
+					name_list="MAM4"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_humanoid_jinxed
+						trait = trait_nomadic
+						trait = trait_charismatic
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			2 = { # rahit
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_rahit_species_used }
+				}
+				owner = { set_country_flag = gotc_rahit_species_used }
+				create_species = {
+					name = {
+						key="Рахит Прожорливый"
+						literal=yes
+					}
+					plural = {
+						key="Рахиты"
+						literal=yes
+					}
+					adjective = {
+						key="Рахитн"
+						literal=yes
+					}
+					class = NECROID
+					portrait = nec6
+					name_list="NECROID1"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_brittle
+						trait = trait_shelled
+						trait = trait_cranial_hypertrophy
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # kot
+				modifier = {
+					add = 10
+					OR = {
+						is_planet_class = pc_desert
+						is_planet_class = pc_gaia
+						is_planet_class = pc_relic
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_kot_species_used }
+				}
+				owner = { set_country_flag = gotc_kot_species_used }
+				create_species = {
+					name = {
+						key="Кот Разжиревший"
+						literal=yes
+					}
+					plural = {
+						key="Коты"
+						literal=yes
+					}
+					adjective = {
+						key="Котск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam14
+					name_list="GOTC_CAT"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_rapid_breeders
+						trait = trait_unruly
+						trait = trait_seasonal_dormancy
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			1 = { # frik
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_frik_species_used }
+				}
+				owner = { set_country_flag = gotc_frik_species_used }
+				create_species = {
+					name = {
+						key="Фрик Экзальтированный"
+						literal=yes
+					}
+					plural = {
+						key="Фрики"
+						literal=yes
+					}
+					adjective = {
+						key="Фрикск"
+						literal=yes
+					}
+					class = HUM
+					portrait = psionic_03
+					name_list="HUMAN2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_uncanny_intuition
+						trait = trait_humanoid_psychological_infertility
+						trait = trait_crafted_smiles
+						trait = trait_auto_mod_overtuned
+						trait = trait_repugnant
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # otshchepenets
+				modifier = {
+					add = 10
+					is_planet_class = pc_tundra
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_otshchepenets_species_used }
+				}
+				owner = { set_country_flag = gotc_otshchepenets_species_used }
+				create_species = {
+					name = {
+						key="Отщепенец Беглый"
+						literal=yes
+					}
+					plural = {
+						key="Отщепенцы"
+						literal=yes
+					}
+					adjective = {
+						key="Отщепенск"
+						literal=yes
+					}
+					class = AVI
+					portrait = avi17
+					name_list="HUMAN2"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_nomadic
+						trait = trait_solitary
+						trait = trait_adaptive
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # vyrodok
+				modifier = {
+					add = 10
+					OR = {
+						is_planet_class = pc_toxic
+						is_planet_class = pc_nuked
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_vyrodok_species_used }
+				}
+				owner = { set_country_flag = gotc_vyrodok_species_used }
+				create_species = {
+					name = {
+						key="Выродок Зоологический"
+						literal=yes
+					}
+					plural = {
+						key="Выродки"
+						literal=yes
+					}
+					adjective = {
+						key="Выродковск"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam8
+					name_list="HUMAN1"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_irradiated
+						trait = trait_repugnant
+						trait = trait_genetic_memory
+						trait = trait_communal
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # mraz
+				modifier = {
+					add = 1
+					is_planet_class = pc_tropical
+				}
+				modifier = {
+					add = 10
+					is_planet_class = pc_toxic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_mraz_species_used }
+				}
+				owner = { set_country_flag = gotc_mraz_species_used }
+				create_species = {
+					name = {
+						key="Мразь Гнусная"
+						literal=yes
+					}
+					plural = {
+						key="Мрази"
+						literal=yes
+					}
+					adjective = {
+						key="Мразотн"
+						literal=yes
+					}
+					class = TOX
+					portrait = tox9
+					name_list="TOX1"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_earthbound
+						trait = trait_repugnant
+						trait = trait_acidic_vascularity
+						trait = trait_inorganic_breath
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # pauk
+				modifier = {
+					add = 2
+					OR = {
+						is_planet_class = pc_savannah
+						is_planet_class = pc_arid
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_pauk_species_used }
+				}
+				owner = { set_country_flag = gotc_pauk_species_used }
+				create_species = {
+					name = {
+						key="Паук Жовто-Блакитный"
+						literal=yes
+					}
+					plural = {
+						key="Пауки"
+						literal=yes
+					}
+					adjective = {
+						key="Пауч"
+						literal=yes
+					}
+					class = ART
+					portrait = art17
+					name_list="ART3"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_chromalogs
+						trait = trait_resilient
+						trait = trait_fleeting
+						trait = trait_unruly
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # krot
+				modifier = {
+					add = 5
+					OR = {
+						is_planet_class = pc_savannah
+						is_planet_class = pc_arid
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_krot_species_used }
+				}
+				owner = { set_country_flag = gotc_krot_species_used }
+				create_species = {
+					name = {
+						key="Крот Слепой"
+						literal=yes
+					}
+					plural = {
+						key="Кроты"
+						literal=yes
+					}
+					adjective = {
+						key="Кротов"
+						literal=yes
+					}
+					class = ART
+					portrait = synth02
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_conservative
+						trait = trait_cave_dweller
+						trait = trait_humanoid_jinxed
+						trait = trait_charismatic
+						trait = trait_docile
+						trait = trait_sedentary
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			0 = { # mikron
+				modifier = {
+					add = 1
+					OR = {
+						is_planet_class = pc_savannah
+						is_planet_class = pc_arid
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_mikron_species_used }
+				}
+				owner = { set_country_flag = gotc_mikron_species_used }
+				create_species = {
+					name = {
+						key="Микрон Перепончатокрылый"
+						literal=yes
+					}
+					plural = {
+						key="Микроны"
+						literal=yes
+					}
+					adjective = {
+						key="Микронск"
+						literal=yes
+					}
+					class = ART
+					portrait = art1
+					name_list="HUMAN1"
+					gender=male
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_starborn
+						trait = trait_spatial_mastery
+						trait = trait_slow_learners
+						trait = trait_weak
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+		}
+		while = {
+			count = 3
+			create_pop_group = { species = event_target:latest_presapient }
+		}
+		event_target:pre_sapient_planet = {
+			set_planet_flag = pre_sapient_planet
+		}
+	}
+	else = {
+		random_list = {
+			1 = { create_generic_presapient_species = { UPLIFT_TO = MAM } }
+			1 = { create_generic_presapient_species = { UPLIFT_TO = REP } }
+			1 = { create_generic_presapient_species = { UPLIFT_TO = AVI } }
+			1 = { create_generic_presapient_species = { UPLIFT_TO = ART } }
+			1 = { create_generic_presapient_species = { UPLIFT_TO = MOL } }
+			1 = { create_generic_presapient_species = { UPLIFT_TO = FUN } }
+			1 = {
+				modifier = { factor = 0 has_plantoids = no }
+				create_generic_presapient_species = { UPLIFT_TO = PLANT }
+			}
+			1 = {
+				modifier = { factor = 0 has_lithoids = no }
+				create_generic_presapient_species = { UPLIFT_TO = LITHOID }
+			}
+			#1 = {
+			#	modifier = { factor = 0 has_necroids = no }
+			#	create_generic_presapient_species = { UPLIFT_TO = NECROID }
+			#}
+			1 = {
+				modifier = { factor = 0 has_aquatics = no }
+				create_generic_presapient_species = { UPLIFT_TO = AQUATIC }
+			}
+			1 = {
+				modifier = { factor = 0 has_toxoids = no }
+				create_generic_presapient_species = { UPLIFT_TO = TOX }
+			}
+			1 = {
+				modifier = { factor = 0 has_infernals = no }
+				create_generic_presapient_species = { UPLIFT_TO = INF }
+			}
+		}
+	}
+}
+
+#Homeworld for Genesis Guides
+spawn_presapient_species_randomizer_homeworld_effect = {
+	if = {
+		limit = {
+			owner = { has_country_flag = gotc_dimon }
+		}
+		solar_system = {
+			set_star_flag = pre_sapient_system
+		}
+		create_species = {
+			name = {
+				key="Подсвинок Подхрюкивающий"
+				literal=yes
+			}
+			plural = {
+				key="Подсвинки"
+				literal=yes
+			}
+			adjective = {
+				key="Подсвинск"
+				literal=yes
+			}
+			class = INF
+			portrait = inf2
+			name_list="MAM4"
+			gender=not_set
+			traits = {
+				trait = trait_infernal
+				trait = trait_presapient_irradiated
+				trait = trait_syncretic_proles
+				trait = trait_docile
+				trait = trait_humanoid_jinxed
+			}
+			homeworld = this
+			sapient = no
+		}
+		while = {
+			count = 3
+			create_pop_group = { species = last_created_species }
+		}
+	}
+	else = {
+		random_list = {
+			1 = { create_generic_presapient_species_homeworld = { UPLIFT_TO = MAM } }
+			1 = { create_generic_presapient_species_homeworld = { UPLIFT_TO = REP } }
+			1 = { create_generic_presapient_species_homeworld = { UPLIFT_TO = AVI } }
+			1 = { create_generic_presapient_species_homeworld = { UPLIFT_TO = ART } }
+			1 = { create_generic_presapient_species_homeworld = { UPLIFT_TO = MOL } }
+			1 = { create_generic_presapient_species_homeworld = { UPLIFT_TO = FUN } }
+			1 = {
+				modifier = { factor = 0 has_plantoids = no }
+				create_generic_presapient_species_homeworld = { UPLIFT_TO = PLANT }
+			}
+			1 = {
+				modifier = { factor = 0 has_lithoids = no }
+				create_generic_presapient_species_homeworld = { UPLIFT_TO = LITHOID }
+			}
+			#1 = {
+			#	modifier = { factor = 0 has_necroids = no }
+			#	create_generic_presapient_species = { UPLIFT_TO = NECROID }
+			#}
+			1 = {
+				modifier = { factor = 0 has_aquatics = no }
+				create_generic_presapient_species_homeworld = { UPLIFT_TO = AQUATIC }
+			}
+			1 = {
+				modifier = { factor = 0 has_toxoids = no }
+				create_generic_presapient_species_homeworld = { UPLIFT_TO = TOX }
+			}
+			1 = {
+				modifier = { factor = 0 has_infernals = no }
+				create_generic_presapient_species_homeworld = { UPLIFT_TO = INF }
+			}
+		}
+	}
+}

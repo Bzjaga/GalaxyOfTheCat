@@ -5,6 +5,11 @@
  name_list_GOTC_JEW: "Еврейские"
  name_list_GOTC_RUS: "Древние Русы"
  name_list_GOTC_TAJICAUCASIAN: "Таджикавказские"
+ ###################################
+ #Personalities
+ ####################################
+ personality_gotc_dimon_behaviour: "Генератор Оскорблений"
+ personality_gotc_dimon_behaviour_desc: "Жесткий художник красных линий. Непримиримый отстаиватель интересов страны в интернетах. Не кусается."
  #Federation
  GOTC_EU_FEDERATION_NAME: "Еврогалактический Союз"
  eu_federation: "Еврогалактический Союз"

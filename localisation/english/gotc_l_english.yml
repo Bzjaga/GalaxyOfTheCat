@@ -5,6 +5,11 @@
  name_list_GOTC_JEW:0 "Jewish"
  name_list_GOTC_RUS:0 "Old Rus"
  name_list_GOTC_TAJICAUCASIAN:0 "Tajicaucasian"
+ ###################################
+ #Personalities
+ ####################################
+ personality_gotc_dimon_behaviour:0 "Insult Generator"
+ personality_gotc_dimon_behaviour_desc:0 "A tough painter of red lines. An uncompromising defender of the country's interests online. Doesn't bite."
  #Federation
  GOTC_EU_FEDERATION_NAME:0 "Eurogalactic Union"
  eu_federation:0 "Eurogalactic Union"

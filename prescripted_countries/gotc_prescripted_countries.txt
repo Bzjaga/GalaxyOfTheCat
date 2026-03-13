@@ -1413,8 +1413,8 @@ gotc_milov = {
 	}
 }
 
-"Астро-Сенека" = {
-	name = "Астро-Сенека"
+"Астра-Сенека" = {
+	name = "Астра-Сенека"
 	adjective = "Стоическо-Фармацевтическ"
 	spawn_enabled = always
 
@@ -1804,7 +1804,7 @@ gotc_netoropyr = {
 	room = "personality_fanatic_purifier_room"
 
 	authority = "auth_imperial"
-	civics = { "civic_entropy_drinkers" "civic_feudal_realm" }
+	civics = { "civic_toxic_baths" "civic_feudal_realm" }
 	government = gov_feudal_empire
 	origin = "origin_evolutionary_predators"
 
@@ -1873,16 +1873,15 @@ gotc_reich = {
 		trait = "trait_perfected_genes"
 		trait = "trait_talented"
 		trait = "trait_natural_engineers"
-		trait = "trait_genetic_memory"
 		trait = "trait_repugnant"
-		trait = "trait_solitary"
+		trait = "trait_unbreakable_resolve"
 	}
 
 	room = "personality_fanatic_purifier_room"
 
 	authority = "auth_dictatorial"
-	civics = { "civic_nationalistic_zeal" "civic_barbaric_despoilers" }
-	government = gov_bandit_kingdom
+	civics = { "civic_nationalistic_zeal" "civic_slaver_guilds" }
+	government = gov_military_dictatorship
 	origin = "origin_legendary_leader"
 
 	ethic = "ethic_authoritarian"
@@ -1894,7 +1893,7 @@ gotc_reich = {
 	system_name = "GOTC_REICH_SYSTEM_NAME"
 
 	initializer = "do_not_choose_reich"
-	graphical_culture = "humanoid_01"
+	graphical_culture = "nemesis_01"
 	city_graphical_culture = "necroid_01"
 
 	empire_flag={
@@ -1927,8 +1926,8 @@ gotc_reich = {
 		ruler_title_female="GOTC_REICH_RULER_TITLE_FEMALE"
 		trait="leader_trait_legendary_genetic_purist"
 		trait="leader_trait_legendary_warmonger"
-		trait="leader_trait_legendary_commanding_presence"
-		leader_class = official
+		trait="leader_trait_legendary_foe_hammer"
+		leader_class = commander
 	}
 }
 
@@ -2759,6 +2758,79 @@ gotc_ksir = {
 		clothes=4
 		ruler_title="Краевой Наркомскиф"
 		ruler_title_female="Краевая Наркомскифка"
+		trait="trait_ruler_warlike"
+		leader_class = commander
+	}
+}
+
+"Падалица Потока Сознания" = {
+	name = "Падалица Потока Сознания"
+	adjective = "Падаличн"
+	spawn_enabled = always
+
+	ship_prefix = "ДИМОН"
+
+	species = {
+		class = "MACHINE"
+		portrait = "synth_machine_05"
+		name = "Железный Димон"
+		plural = "Железные Димоны"
+		adjective = "Железно-Димонск"
+		name_list = "TOX2"
+		gender = male
+		trait = "trait_machine_unit"
+		trait = "trait_robot_history_explorebot"
+		trait = "trait_robot_propaganda_machines"
+		trait = "trait_robot_repurposed_hardware"
+		trait = "trait_robot_artificial_sociologists"
+	}
+
+	room = "personality_fanatic_purifier_room"
+
+	authority = "auth_machine_intelligence"
+	civics = { "civic_machine_guided_sapience" "civic_machine_stalwart_network" }
+	government = gov_machine_research
+	origin = "origin_post_apocalyptic_machines"
+
+	flag = gotc_dimon
+
+	ethic = "ethic_gestalt_consciousness"
+
+	planet_name = "Домик Уточки"
+	planet_class = "pc_continental"
+	system_name = "Вытамдержинск"
+
+	initializer = ""
+	graphical_culture = "necroid_01"
+	city_graphical_culture = "mammalian_01"
+
+	empire_flag={
+		icon={
+			category="infernal"
+			file="infernal_08.dds"
+		}
+		background={
+			category="backgrounds"
+			file="flag_BG_31.dds"
+		}
+		colors={
+			"sick_green"
+			"light_blue"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Медведимка"
+		gender = male
+		portrait = "synth_machine_05"
+		texture = 0
+		evolution_mask=0
+		attachment=0
+		clothes=3
+		ruler_title="Политэнтомолог"
+		ruler_title_female="Политэнтомолог"
 		trait="trait_ruler_warlike"
 		leader_class = commander
 	}
