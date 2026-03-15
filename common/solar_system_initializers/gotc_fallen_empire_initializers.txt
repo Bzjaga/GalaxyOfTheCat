@@ -1948,8 +1948,13 @@ gotc_fallen_col_2_1 = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_4"
 				}
 				change_pc = pc_continental
-				event_target:vurdvalah_species = {
-					set_species_homeworld = prev
+				if = { # Check Vurdvalah existence
+					limit = {
+						NOT = { any_country = { has_country_flag = gotc_vurdvalah } }
+					}
+					event_target:vurdvalah_species = {
+						set_species_homeworld = prev
+					}
 				}
 				set_planet_flag = fallen_empire_world
 				clear_blockers = yes
