@@ -6286,11 +6286,9 @@ create_pre_ftl_egypt = {
 				}
 			}
 			else = { # Mamluk Egypt
-				while = { # Adding Egyptians before creation of Mamluks
-					create_pop_group = {
-						species = last_created_species
-						size = @iron_age_pops
-					}
+				create_pop_group = { # Adding Egyptians before creation of Mamluks
+					species = last_created_species
+					size = @iron_age_pops
 				}
 				create_species = { # Creating Mamluks
 					name = {
