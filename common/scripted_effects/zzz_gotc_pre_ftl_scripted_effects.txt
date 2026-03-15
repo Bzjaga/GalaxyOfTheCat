@@ -2492,6 +2492,7 @@ spawn_presapient_species_randomizer_homeworld_effect = {
 			name_list="MAM4"
 			gender=not_set
 			traits = {
+				ideal_planet_class = pc_continental
 				trait = trait_infernal
 				trait = trait_presapient_irradiated
 				trait = trait_syncretic_proles
