@@ -57,118 +57,189 @@ gotc_the_chosen_home_initializer = {
 		}
 
 		init_effect = {
-			create_species = {
-				name = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_NAME"
-				plural = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_PLURAL"
-				adjective = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_ADJECTIVE"
-				class = REP
-				portrait = rep12
-				name_list="HUMAN2"
-				traits = {
-					ideal_planet_class = pc_gaia
-					trait = trait_organic
-					trait = trait_perfected_genes
-					trait = trait_unbreakable_resolve
-					trait = trait_rapid_breeders
-					trait = trait_intelligent
-					trait = trait_humanoid_psychological_infertility
-					trait = trait_nonadaptive
-				}
+			if = {
+				limit = { any_country = { has_country_flag = gotc_roskomnadzor } }
+				create_species = {
+					name = NAME_Charynoi
+					class = random_non_machine
 
-				effect = {
-					modify_species = {
-						base = this
-						remove_trait = trait_pc_gaia_preference
-						add_trait = trait_pc_gaia_preference_terraforming
+					traits = {
+						ideal_planet_class = pc_gaia
+						trait = random_traits
+					}
 
-						effect = {
-							save_event_target_as = chosen_species
+					effect = {
+						modify_species = {
+							base = this
+							remove_trait = trait_pc_gaia_preference
+							add_trait = trait_pc_gaia_preference_terraforming
+
+							effect = {
+								save_event_target_as = chosen_species
+							}
 						}
 					}
 				}
-			}
-			create_country = {
-				species = event_target:chosen_species
-				ship_prefix = GOTC_ROSCOMNADZOR_SHIP_PREFIX
-				name = GOTC_ROSCOMNADZOR_EMPIRE_NAME
-				adjective = GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE
-				type = default
-				name_list="HUMAN2"
-				origin = origin_legendary_leader
-				ethos = {
-					ethic = ethic_fanatic_xenophobe
-					ethic = ethic_militarist
-				}
-				civics = {
-					civic = civic_fanatic_purifiers
-					civic = civic_genetic_identification
-				}
-				authority = auth_dictatorial
-				flag = {
-					icon = {
-						category="blocky"
-						file="flag_blocky_5.dds"
+				create_country = {
+					species = event_target:chosen_species
+					name = NAME_The_Chosen
+					adjective = NAME_ADJ_Chosen
+					type = default
+					origin = origin_life_seeded_ai_only
+					ethos = {
+						ethic = ethic_fanatic_xenophobe
+						ethic = ethic_spiritualist
 					}
-					background = {
-						category="backgrounds"
-						file="flag_BG_19.dds"
+					civics = {
+						civic = civic_fanatic_purifiers
+						civic = civic_exalted_priesthood
 					}
-					colors = {
-						"shadow_blue"
-						"blue"
-						"null"
-						"null"
-					}
-				}
-				effect = {
-					save_global_event_target_as = chosen_empire
-					set_country_flag = chosen_empire
-					give_starting_resources_effect = yes
+					authority = random
+					effect = {
+						save_global_event_target_as = chosen_empire
+						set_country_flag = chosen_empire
+						give_starting_resources_effect = yes
 
-					# A bit extra
-					add_resource = {
-						energy = 2000
-						minerals = 2000
-						alloys = 2000
-						consumer_goods = 2000
-						trade = 2000
-						influence = 1000
-						unity = 500
-					}
-
-					# Leader
-					create_leader = {
-						species = event_target:chosen_species
-						class = official
-						name = "GOTC_ROSCOMNADZOR_RULER_NAME"
-						gender=male
-						skill = 1
-						set_age = 1
-						randomize_traits = no
-						traits = {
-							trait = leader_trait_legendary_evervigilant
-							trait = leader_trait_legendary_unfriendly
-							trait = leader_trait_legendary_foe_hammer
+						# A bit extra
+						add_resource = {
+							energy = 2000
+							minerals = 2000
+							alloys = 2000
+							consumer_goods = 2000
+							trade = 2000
+							influence = 1000
+							unity = 500
 						}
-					}
-					set_male_ruler_title = "GOTC_ROSCOMNADZOR_RULER_TITLE"
-					set_female_ruler_title = "GOTC_ROSCOMNADZOR_RULER_TITLE_FEMALE"
-					set_leader = last_created_leader
 
-					create_leader = {
-						class = official
-						species = event_target:chosen_species
-					}
-					while = {
-						count = 3
 						create_leader = {
-							class = scientist
+							class = official
 							species = event_target:chosen_species
 						}
+						while = {
+							count = 3
+							create_leader = {
+								class = scientist
+								species = event_target:chosen_species
+							}
+						}
 					}
-					country_event = { id = paragon.5000 }
+					day_zero_contact = no #otherwise enclaves and FEs get instant comms
 				}
-				day_zero_contact = no #otherwise enclaves and FEs get instant comms
+			}
+			else = { # roskomnadzor
+				create_species = {
+					name = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_NAME"
+					plural = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_PLURAL"
+					adjective = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_ADJECTIVE"
+					class = REP
+					portrait = rep12
+					name_list="HUMAN2"
+					traits = {
+						ideal_planet_class = pc_gaia
+						trait = trait_organic
+						trait = trait_perfected_genes
+						trait = trait_unbreakable_resolve
+						trait = trait_rapid_breeders
+						trait = trait_intelligent
+						trait = trait_humanoid_psychological_infertility
+						trait = trait_nonadaptive
+					}
+
+					effect = {
+						modify_species = {
+							base = this
+							remove_trait = trait_pc_gaia_preference
+							add_trait = trait_pc_gaia_preference_terraforming
+
+							effect = {
+								save_event_target_as = chosen_species
+							}
+						}
+					}
+				}
+				create_country = {
+					species = event_target:chosen_species
+					ship_prefix = GOTC_ROSCOMNADZOR_SHIP_PREFIX
+					name = GOTC_ROSCOMNADZOR_EMPIRE_NAME
+					adjective = GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE
+					type = default
+					name_list="HUMAN2"
+					origin = origin_legendary_leader
+					ethos = {
+						ethic = ethic_fanatic_xenophobe
+						ethic = ethic_militarist
+					}
+					civics = {
+						civic = civic_fanatic_purifiers
+						civic = civic_genetic_identification
+					}
+					authority = auth_dictatorial
+					flag = {
+						icon = {
+							category="blocky"
+							file="flag_blocky_5.dds"
+						}
+						background = {
+							category="backgrounds"
+							file="flag_BG_19.dds"
+						}
+						colors = {
+							"shadow_blue"
+							"blue"
+							"null"
+							"null"
+						}
+					}
+					effect = {
+						save_global_event_target_as = chosen_empire
+						set_country_flag = chosen_empire
+						give_starting_resources_effect = yes
+
+						# A bit extra
+						add_resource = {
+							energy = 2000
+							minerals = 2000
+							alloys = 2000
+							consumer_goods = 2000
+							trade = 2000
+							influence = 1000
+							unity = 500
+						}
+
+						# Leader
+						create_leader = {
+							species = event_target:chosen_species
+							class = official
+							name = "GOTC_ROSCOMNADZOR_RULER_NAME"
+							gender=male
+							skill = 1
+							set_age = 1
+							randomize_traits = no
+							traits = {
+								trait = leader_trait_legendary_evervigilant
+								trait = leader_trait_legendary_unfriendly
+								trait = leader_trait_legendary_foe_hammer
+							}
+						}
+						set_male_ruler_title = "GOTC_ROSCOMNADZOR_RULER_TITLE"
+						set_female_ruler_title = "GOTC_ROSCOMNADZOR_RULER_TITLE_FEMALE"
+						set_leader = last_created_leader
+
+						create_leader = {
+							class = official
+							species = event_target:chosen_species
+						}
+						while = {
+							count = 3
+							create_leader = {
+								class = scientist
+								species = event_target:chosen_species
+							}
+						}
+						country_event = { id = paragon.5000 }
+					}
+					day_zero_contact = no #otherwise enclaves and FEs get instant comms
+				}
 			}
 			create_colony = {
 				owner = event_target:chosen_empire

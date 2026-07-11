@@ -2039,6 +2039,8 @@ gotc_roskomnadzor = {
 	government = gov_purity_order
 	origin = "origin_overtuned"
 
+	flag = gotc_roskomnadzor
+
 	ethic = "ethic_fanatic_xenophobe"
 	ethic = "ethic_militarist"
 

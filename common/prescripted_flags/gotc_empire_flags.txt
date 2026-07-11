@@ -30,6 +30,10 @@ gotc_vurdvalah = {
 	flags = { gotc_vurdvalah }
 }
 
+gotc_roskomnadzor = {
+	flags = { gotc_roskomnadzor }
+}
+
 gotc_borrel = {
 	flags = { gotc_borrel }
 }
