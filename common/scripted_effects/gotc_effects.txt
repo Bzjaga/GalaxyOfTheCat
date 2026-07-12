@@ -6051,7 +6051,7 @@ rename_space_object_nursultan = {
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_egypt = {
 	change_pc = pc_desert
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Египтянин"
@@ -6386,7 +6386,7 @@ create_pre_ftl_egypt = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_syria = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	if = { # Palmyra
 		limit = {
 			any_playable_country = {
@@ -6598,7 +6598,7 @@ create_pre_ftl_syria = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_antioch = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Сириец"
@@ -6774,7 +6774,7 @@ create_pre_ftl_antioch = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_france = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = { # Creating Frogeaters
 		name = {
 			key="Лягушатник"
@@ -7064,7 +7064,7 @@ create_pre_ftl_france = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_arabia = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = { # Creating Arabs
 		name = {
 			key="Араб"
@@ -7302,7 +7302,7 @@ create_pre_ftl_arabia = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_uganda = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Людоед"
@@ -7399,7 +7399,7 @@ create_pre_ftl_uganda = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_philistia = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Филистимлянин"
@@ -7493,7 +7493,7 @@ create_pre_ftl_philistia = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_jordan = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Бедуин"
@@ -7587,7 +7587,7 @@ create_pre_ftl_jordan = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_blood_libel = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Христианский Младенец"

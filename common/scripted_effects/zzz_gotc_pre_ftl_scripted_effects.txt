@@ -2423,10 +2423,13 @@ spawn_presapient_species_randomizer_effect = {
 		}
 		while = {
 			count = 3
-			create_pop_group = { species = event_target:latest_presapient }
+			create_pop_group = {
+				category = pre_sapients
+				species = event_target:latest_presapient
+			}
 		}
 		event_target:pre_sapient_planet = {
-			set_planet_flag = pre_sapient_planet
+			set_carrier_flag = pre_sapient_planet
 		}
 	}
 	else = {

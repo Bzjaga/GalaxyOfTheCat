@@ -185,7 +185,7 @@ trait_syncretic_proles = {
 		worker_and_simple_drone_cat_bonus_workforce_mult = 0.10
 	}
 	slave_cost = {
-		energy = 500
+		trade = 500
 	}
 }
 
@@ -233,6 +233,17 @@ trait_organic = {
 				is_sapient = yes
 			}
 			food = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_trait = trait_cybernetic
+					has_trait = trait_limited_cybernetic
+				}
+				is_being_purged = no
+				is_sapient = yes
+			}
+			food = @living_standard_food_cyborg_reduction
 		}
 	}
 
@@ -291,6 +302,17 @@ trait_lithoid = {
 				is_sapient = yes
 			}
 			minerals = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_trait = trait_cybernetic
+					has_trait = trait_limited_cybernetic
+				}
+				is_being_purged = no
+				is_sapient = yes
+			}
+			minerals = @living_standard_food_cyborg_reduction
 		}
 	}
 
@@ -820,7 +842,7 @@ trait_clone_soldier_infertile_full_potential = {
 		army_health = 0.25
 	}
 	slave_cost = {
-		energy = 500
+		trade = 500
 	}
 }
 
@@ -863,7 +885,7 @@ trait_clone_soldier_fertile = {
 		planet_pops_organics_alloys_upkeep_mult = 0.1
 	}
 	slave_cost = {
-		energy = 1000
+		trade = 1000
 	}
 }
 
@@ -909,7 +931,7 @@ trait_cave_dweller = {
 		logistic_growth_mult = -0.1
 	}
 	slave_cost = {
-		energy = 500
+		trade = 500
 	}
 	assembly_score = {
 		modifier = {
@@ -957,7 +979,7 @@ trait_robot_cave_dweller = {
 		planet_pop_assembly_mult = -0.1
 	}
 	slave_cost = {
-		energy = 500
+		trade = 500
 	}
 	assembly_score = {
 		modifier = {

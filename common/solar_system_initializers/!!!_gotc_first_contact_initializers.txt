@@ -326,7 +326,7 @@ slavers_neighbor_t1_first_colony = {
 					}
 				}
 				change_pc = pc_desert
-				set_planet_flag = ramalla
+				set_carrier_flag = ramalla
 			}
 		}
 	}
@@ -413,7 +413,7 @@ slavers_neighbor_t2_second_colony = {
 					}
 				}
 				change_pc = pc_arid
-				set_planet_flag = golany
+				set_carrier_flag = golany
 			}
 		}
 
@@ -526,7 +526,7 @@ broken_shackles_parent_system = {
 				save_event_target_as = broken_shackles_child
 			}
 
-			set_planet_flag = broken_shackles_homeworld_@event_target:broken_shackles_child
+			set_carrier_flag = broken_shackles_homeworld_@event_target:broken_shackles_child
 
 			solar_system = {
 				set_star_flag = broken_shackles_system

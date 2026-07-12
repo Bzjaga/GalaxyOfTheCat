@@ -121,6 +121,7 @@ create_MSI_effect = {
 		portrait = random
 		traits = {
 			trait = "trait_pc_nuked_preference"
+			trait = "trait_organic"
 			trait = "trait_charismatic"
 			trait = "trait_intelligent"
 			trait = "trait_decadent"
@@ -192,8 +193,10 @@ create_MSI_effect = {
 		owner = event_target:MSI_country
 	}
 	generate_start_deposits_and_blockers = yes
-	generate_start_buildings_and_districts = yes
-	generate_start_pops = yes
+	colony = {
+		generate_start_buildings_and_districts = yes
+		generate_start_pops = yes
+	}
 	event_target:MSI_country = {
 		create_starting_leaders = yes
 		country_event = { id = game_start.9 }
@@ -203,7 +206,7 @@ create_MSI_effect = {
 }
 
 generate_slaver_bonus = {
-	set_timed_planet_flag = {
+	set_timed_carrier_flag = {
 		flag = ignore_ai_building_limitations
 		days = 1
 	}
@@ -349,10 +352,15 @@ generate_slaver_bonus = {
 			tech = tech_power_hub_1
 		}
 	}
-	add_building = building_slave_processing
-	add_building = building_precinct_house
-	add_building = building_medical_2
-
+	add_building_if_not_present = {
+		BUILDING = building_slave_processing
+	}
+	add_building_if_not_present = {
+		BUILDING = building_precinct_house
+	}
+	add_building_if_not_present = {
+		BUILDING = building_medical_1
+	}
 	owner = {
 		add_resource = {
 			minerals = 2400
@@ -577,10 +585,10 @@ spawn_payback_site_habitat = {
 			set_all_comms_surveyed = yes
 			clear_blockers = yes
 
-			set_planet_flag = megastructure
-			set_planet_flag = habitat
-			set_planet_flag = habitat_level_1
-			set_planet_flag = payback_habitat
+			set_carrier_flag = megastructure
+			set_carrier_flag = habitat
+			set_carrier_flag = habitat_level_1
+			set_carrier_flag = payback_habitat
 
 			add_deposit = d_msi_air_freshener
 			add_deposit = d_payback_habitat_research
@@ -597,8 +605,8 @@ spawn_payback_site_habitat = {
 			save_event_target_as = target_habitat
 
 			event_target:target_planet = {
-				set_planet_flag = habitat@PREV
-				set_planet_flag = has_payback_habitat
+				set_carrier_flag = habitat@PREV
+				set_carrier_flag = has_payback_habitat
 			}
 		}
 	}
@@ -609,12 +617,12 @@ spawn_payback_site_habitat = {
 create_fear_of_the_dark_country = {
 	if = {
 		limit = {
-			has_planet_flag = korea
+			has_carrier_flag = korea
 		}
 		choose_fear_of_the_dark_country_korea = yes
 		if = {
 			limit = {
-				has_planet_flag = north
+				has_carrier_flag = north
 			}
 			create_country = {
 				name = "GOTC_KOREA_EMPIRE_NAME_2"
@@ -766,17 +774,17 @@ create_fear_of_the_dark_country = {
 setup_fear_of_the_dark_pre_ftl = {
 	set_owner = event_target:fotd_seperatist_country
 	set_capital = yes
-	set_timed_planet_flag = {
+	set_timed_carrier_flag = {
 		flag = ignore_ai_building_limitations
 		days = 1
 	}
 	if = {
 		limit = {
-			has_planet_flag =  korea
+			has_carrier_flag =  korea
 		}
 		if = {
 			limit = {
-				has_planet_flag = north
+				has_carrier_flag = north
 			}
 			set_name = "GOTC_KOREA_PLANET_NAME_2"
 		}
@@ -873,7 +881,7 @@ setup_fear_of_the_dark_pre_ftl = {
 		}
 		if = {
 			limit = {
-				has_planet_flag = north
+				has_carrier_flag = north
 			}
 			event_target:fotd_seperatist_country = {
 				start_situation = {

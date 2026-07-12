@@ -144,6 +144,6 @@ trait_mudozvon = {
 	}
 
 	slave_cost = {
-		energy = 1000
+		trade = 1000
 	}
 }

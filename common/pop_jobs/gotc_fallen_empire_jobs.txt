@@ -28,14 +28,14 @@ fe_hedonist = {
 			NOR = {
 				is_machine_empire = yes
 				is_hive_empire = yes
-				has_ethic = ethic_fanatic_spiritualist
+				is_fanatic_spiritualist = yes
 			}
 		}
 		OR = {
 			is_same_species = owner
 			AND = { # Addition for Astro-Hungary
 				species = { has_species_flag = astrohungarian }
-				planet = { NOT = { has_planet_flag = fe_the_preserve } }
+				planet = { NOT = { has_carrier_flag = fe_the_preserve } }
 			}
 		}
 	}
@@ -43,7 +43,7 @@ fe_hedonist = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			unity = 2
+			unity = 1
 		}
 	}
 
