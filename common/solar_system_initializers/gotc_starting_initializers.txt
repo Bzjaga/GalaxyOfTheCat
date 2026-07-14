@@ -1369,7 +1369,7 @@ do_not_choose_kadyrov = {
 		init_effect = {
 			generate_empire_home_planet = yes
 
-			planet_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
+			carrier_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
 		}
 
 		change_orbit = @base_moon_distance
