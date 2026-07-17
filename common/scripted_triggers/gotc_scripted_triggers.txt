@@ -1,4 +1,4 @@
-is_feline_species = { # After all, What is the cat?
+is_feline_species = { # After all, What is a cat?
 	OR = {
 		species_portrait = mam14
 		species_portrait = cyb1

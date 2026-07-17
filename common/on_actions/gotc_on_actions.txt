@@ -1,3 +1,4 @@
+# Triggers when the game starts
 on_game_start = {
 	events = {
 		gotc.1 # System of Kira
@@ -13,7 +14,7 @@ on_five_year_pulse_country = {
 }
 
 # A planet has been colonized.
-# Scope = Planet
+# Scope = Carrier
 on_colonized = {
 	events = {
 		gotc.10
@@ -21,21 +22,21 @@ on_colonized = {
 }
 
 # Fired whenever a new owner is set for a planet, following a war or through trade
-# This = Planet scope
+# This = Colony scope
 # From = Country scope (new owner)
 # FromFrom = Country scope (previous owner, if any)
-on_planet_transfer = {
+on_colony_transfer = {
 	events = {
 		gotc.11
 	}
 }
 
 # Fired whenever a new owner is set for a planet, and the planet was aggressively conquered
-# NOTE: fired in ADDITION to on_planet_transfer
-# This = Planet scope
+# NOTE: fired in ADDITION to on_colony_transfer
+# This = Colony scope
 # From = Country scope (new owner)
 # FromFrom = Former Owner
-on_planet_conquer = {
+on_colony_conquer = {
 	events = {
 		gotc.11
 	}

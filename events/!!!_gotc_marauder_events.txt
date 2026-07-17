@@ -43,7 +43,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:marauder_species
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -90,7 +90,7 @@ country_event = {
 	diplomatic = yes
 	picture_event_data = {
 		portrait = event_target:encountered_marauder
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 	is_triggered_only = yes
 
@@ -105,7 +105,6 @@ country_event = {
 			}
 		}
 	}
-
 
 	option = {
 		name = marauder.15.a
@@ -139,7 +138,7 @@ country_event = {
 		}
 	}
 	desc = {
-		text = marauder.19.desc_04 # TODO_CD: Placeholder for special Infernals response. 
+		text = marauder.19.desc_04
 		trigger = {
 			from = { has_country_flag = marauder_1 }
 			is_genocidal_infernal = yes
@@ -192,7 +191,7 @@ country_event = {
 		}
 	}
 	desc = {
-		text = marauder.19.2.desc_04 # TODO_CD: Placeholder for special Infernals response. 
+		text = marauder.19.2.desc_04
 		trigger = {
 			from = { has_country_flag = marauder_2 }
 			is_genocidal_infernal = yes
@@ -221,7 +220,7 @@ country_event = {
 		}
 	}
 	desc = {
-		text = marauder.19.3.desc_04 # TODO_CD: Placeholder for special Infernals response. 
+		text = marauder.19.3.desc_04
 		trigger = {
 			from = { has_country_flag = marauder_3 }
 			is_genocidal_infernal = yes
@@ -232,7 +231,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = from
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -543,7 +542,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = ethic_spaceship_room
+		room = marauder_room
 	}
 
 	is_triggered_only = yes
@@ -1042,7 +1041,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = ethic_spaceship_room
+		room = marauder_room
 	}
 
 	is_triggered_only = yes
@@ -1066,6 +1065,7 @@ country_event = {
 				fail_text = marauder.20.need_rivals
 				any_relation = {
 					root = { is_rival = prev }
+					is_nomadic = no
 				}
 			}
 		}
@@ -1264,23 +1264,28 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
 
 	immediate = {
 		random_rival_country = {
+			limit = {
+				is_nomadic = no
+			}
 			save_event_target_as = raid_target_1
 		}
 		random_rival_country = {
 			limit = {
+				is_nomadic = no
 				NOT = { is_same_value = event_target:raid_target_1 }
 			}
 			save_event_target_as = raid_target_2
 		}
 		random_rival_country = {
 			limit = {
+				is_nomadic = no
 				NOR = {
 					is_same_value = event_target:raid_target_1
 					is_same_value = event_target:raid_target_2
@@ -1290,6 +1295,7 @@ country_event = {
 		}
 		random_rival_country = {
 			limit = {
+				is_nomadic = no
 				NOR = {
 					is_same_value = event_target:raid_target_1
 					is_same_value = event_target:raid_target_2
@@ -1472,7 +1478,7 @@ country_event = {
 	diplomatic = yes
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 	is_triggered_only = yes
 
@@ -1578,7 +1584,7 @@ country_event = {
 				limit = { has_star_flag = marauder_capital_1 }
 				save_event_target_as = marauder_system
 				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
+					limit = { has_carrier_flag = raid_source }
 					save_event_target_as = raid_source
 				}
 			}
@@ -1591,7 +1597,7 @@ country_event = {
 				limit = { has_star_flag = marauder_capital_2 }
 				save_event_target_as = marauder_system
 				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
+					limit = { has_carrier_flag = raid_source }
 					save_event_target_as = raid_source
 				}
 			}
@@ -1604,7 +1610,7 @@ country_event = {
 				limit = { has_star_flag = marauder_capital_3 }
 				save_event_target_as = marauder_system
 				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
+					limit = { has_carrier_flag = raid_source }
 					save_event_target_as = raid_source
 				}
 			}
@@ -1773,7 +1779,7 @@ country_event = {
 	diplomatic = yes
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 	is_triggered_only = yes
 
@@ -2328,7 +2334,7 @@ country_event = {
 	diplomatic = yes
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 	is_triggered_only = yes
 
@@ -2397,7 +2403,7 @@ country_event = {
 	diplomatic = yes
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 	is_triggered_only = yes
 
@@ -2457,7 +2463,7 @@ country_event = {
 	diplomatic = yes
 	picture_event_data = {
 		portrait = event_target:current_marauder_diplomacy
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 	is_triggered_only = yes
 
@@ -3274,7 +3280,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:encountered_marauder
-		room = ethic_spaceship_room
+		room = marauder_room
 	}
 
 	is_triggered_only = yes
@@ -3334,7 +3340,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:raiding_marauder
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -3408,7 +3414,7 @@ country_event = {
 				limit = { has_star_flag = marauder_capital_1 }
 				save_event_target_as = marauder_system
 				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
+					limit = { has_carrier_flag = raid_source }
 					save_event_target_as = raid_source
 				}
 			}
@@ -3421,7 +3427,7 @@ country_event = {
 				limit = { has_star_flag = marauder_capital_2 }
 				save_event_target_as = marauder_system
 				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
+					limit = { has_carrier_flag = raid_source }
 					save_event_target_as = raid_source
 				}
 			}
@@ -3434,7 +3440,7 @@ country_event = {
 				limit = { has_star_flag = marauder_capital_3 }
 				save_event_target_as = marauder_system
 				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
+					limit = { has_carrier_flag = raid_source }
 					save_event_target_as = raid_source
 				}
 			}
@@ -4056,7 +4062,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = from
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -4560,7 +4566,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:raid_parent
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -4608,7 +4614,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = from
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -4754,7 +4760,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:raiding_marauder
-		room = "ethic_spaceship_room"
+		room = "marauder_room"
 	}
 
 	is_triggered_only = yes
@@ -4775,13 +4781,16 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				mid_game_years_passed >= 10
+				mid_game_years_passed >= 3
 				end_game_years_passed < 0
 			}
 			has_global_flag = horde_triggered
 		}
 		is_country_type = dormant_marauders
-		NOT = { has_global_flag = marauder_crisis_started }
+		NOR = {
+			has_global_flag = marauder_crisis_started
+			has_global_flag = player_khan_imminent
+		}
 		OR = {
 			AND = {
 				has_country_flag = marauder_1
@@ -4822,232 +4831,128 @@ country_event = {
 				count > 2
 			}
 		}
+		modifier = {
+			factor = 0.02
+			any_playable_country = {
+				has_origin = origin_heirs_of_the_khan
+				is_ai = no
+			}
+		}
 	}
 
 	immediate = {
-		set_country_type = awakened_marauders
-		set_global_flag = marauder_crisis_started
-		set_global_flag = marauder_crisis_ongoing
-		save_global_event_target_as = raider_khanate
-		if = {
-			limit = { has_country_flag = marauder_1 }
-			random_system = {
-				limit = { has_star_flag = marauder_capital_1 }
-				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
-					save_global_event_target_as = marauder_rally_point
-					set_planet_flag = marauder_rally_point
-				}
-			}
-		}
-		if = {
-			limit = { has_country_flag = marauder_2 }
-			random_system = {
-				limit = { has_star_flag = marauder_capital_2 }
-				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
-					save_global_event_target_as = marauder_rally_point
-					set_planet_flag = marauder_rally_point
-				}
-			}
-		}
-		if = {
-			limit = { has_country_flag = marauder_3 }
-			random_system = {
-				limit = { has_star_flag = marauder_capital_3 }
-				random_system_planet = {
-					limit = { has_planet_flag = raid_source }
-					save_global_event_target_as = marauder_rally_point
-					set_planet_flag = marauder_rally_point
-				}
-			}
-		}
-		change_government = {
-			civics = { civic = civic_great_khans_vision }
-		}
-		set_name = random
-		change_country_flag = {
-			icon = {
-				category = "pirate"
-				file = "flag_pirate_11.dds"
-			}
-			background= {
-				category = "backgrounds"
-				file = "00_solid.dds"
-			}
-			colors={
-				"red"
-				"red"
-				"null"
-				"null"
-			}
-		}
-		create_ship_design = { design = "NAME_Pirate_Transport" }
-		add_ship_design = last_created_design
-		create_ship_design = { design = "NAME_Clan_Builder" }
-		add_ship_design = last_created_design
-
-		### Ruler Khan
-		create_leader = {
-			class = commander
-			species = owner_main_species
-			name = "Исхан"
-			skill = 10
-			leader_age_min = 22
-			leader_age_max = 26
-			randomize_traits = no
-			traits = {
-				trait = leader_trait_ruler_great_khan
-				trait = leader_trait_master_gunner
-				trait = subclass_commander_admiral
-				trait = leader_trait_gunship_specialization_2
-				trait = leader_trait_wrecker_2
-				trait = leader_trait_reckless_2
-				trait = leader_trait_artillerist_2
-				trait = leader_trait_demolisher_2
-			}
-		}
-		last_created_leader = {
-			set_leader_flag = great_khan
-			save_global_event_target_as = great_khan_ruler
-		}
-		assign_leader = last_created_leader
-		set_timed_global_flag = { flag = khan_no_die days = 7200 } # Should only die in battle first 20 years
-		country_event = { id = marauder.514 days = 18000 random = 7200 } # Khan dies of old age if still around
-
-		### Admiral Khan
-		clone_leader = {
-			target = event_target:great_khan_ruler
-			class = commander
-			tier = leader_tier_legendary
-			skill = 10
-			randomize_traits = no
-			effect = {
-				remove_trait = leader_trait_ruler_great_khan
-				add_trait = {
-					trait = leader_trait_great_khan
-				}
-				set_leader_flag = great_khan
-				save_global_event_target_as = great_khan
-			}
-		}
-
-		create_1st_khan_fleet = yes
-		create_marauder_fleet = yes
-		create_marauder_fleet = yes
-		create_marauder_fleet = yes
-		create_marauder_armies = yes
-		create_marauder_armies = yes
-		create_marauder_armies = yes
-		create_marauder_armies = yes
-		create_marauder_constructors = yes
-		create_marauder_constructors = yes
-		create_marauder_constructors = yes
-		country_event = { id = marauder.520 days = 180 } # Start reinforcement cycle
 		if = {
 			limit = {
-				NOT = { has_global_flag = horde_triggered }
+				any_playable_country = {
+					has_origin = origin_heirs_of_the_khan
+					is_ai = no
+				}
+				NOT = {
+					has_global_flag = heirs_aspiring_khan_spawned
+				}
 			}
-			observer_event = { id = observer.13 }
-			every_country = {
-				limit = { is_country_type = default }
-				establish_communications_no_message = root
-				country_event = { id = marauder.501 }
+			event_target:marauder_heir = {
+				random_system_within_border = {
+					save_global_event_target_as = marauder_rally_point
+				}
+			}
+			create_country = {
+				name = NAME_Khan_Aspirant
+				name_list = event_target:marauder_heir
+				species = event_target:marauder_heir
+				type = faction
+				civics = { civic = civic_great_khans_vision }
+				origin = "origin_default"
+				flag = {
+					icon = {
+						category = "pirate"
+						file = "flag_pirate_11.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors = {
+						"red"
+						"red"
+						"null"
+						"null"
+					}
+				}
+				ethos = {
+					ethic = ethic_fanatic_militarist
+					ethic = ethic_xenophobe
+				}
+				ignore_initial_colony_error = yes
+			}
+			last_created_country = {
+				save_event_target_as = raider_khanate
+				set_country_flag = aspiring_khan
+				save_global_event_target_as = aspiring_khan
+				set_global_flag = heirs_aspiring_khan_spawned
+				create_leader = {
+					class = commander
+					species = owner_main_species
+					name = random
+					skill = 10
+					leader_age_min = 22
+					leader_age_max = 40
+					randomize_traits = no
+					traits = {
+						trait = leader_trait_great_khan
+						trait = leader_trait_master_gunner
+						trait = subclass_commander_admiral
+						trait = leader_trait_gunship_specialization_2
+						trait = leader_trait_wrecker_2
+						trait = leader_trait_reckless_2
+						trait = leader_trait_artillerist_2
+						trait = leader_trait_demolisher_2
+					}
+				}
+				create_1st_khan_fleet = yes
+
+				last_created_fleet = {
+					set_fleet_flag = aspiring_khan
+				}
+
+				every_country = {
+					limit = {
+						is_country_type = dormant_marauders
+					}
+					set_faction_hostility = {
+						target = prev
+						set_hostile = no
+						set_neutral = yes
+					}
+				}
+
+				every_playable_country = {
+					limit = {
+						has_origin = origin_heirs_of_the_khan
+					}
+					establish_communications_no_message = prev
+					country_event = {
+						id = nomads.600
+					}
+				}
+				country_event = { #If no one has become the Khan in 10 years, the AI does it
+					id = marauder.500
+					years = 10
+				}
 			}
 		}
+		else_if = {
+			limit = {
+				has_global_flag = heirs_aspiring_khan_spawned
+				exists = event_target:marauder_country_1
+			}
+			event_target:marauder_country_1 = {
+				make_khan_effect = yes
+			}
+		}
+
 		else = {
-			observer_event = { id = observer.18 }
-			every_country = {
-				limit = { is_country_type = default }
-				establish_communications_no_message = root
-				country_event = { id = marauder.526 }
-			}
-		}
-
-		# Mercenaries Defect (Marauder 1)
-		if = {
-			limit = { has_country_flag = marauder_1 }
-			every_country = {
-				limit = {
-					OR = {
-						any_controlled_fleet = {
-							OR = {
-								has_fleet_flag = armada_of_the_voidborn
-								has_fleet_flag = star_rider_flotilla
-								has_fleet_flag = first_storm_wing
-							}
-						}
-						any_owned_leader = {
-							has_leader_flag = hired_merc_leader_1
-						}
-					}
-				}
-				country_event = { id = marauder.77 days = 20 }
-			}
-		}
-		# Mercenaries Defect (Marauder 2)
-		if = {
-			limit = { has_country_flag = marauder_2 }
-			every_country = {
-				limit = {
-					OR = {
-						any_controlled_fleet = {
-							OR = {
-								has_fleet_flag = dwamak_bashers
-								has_fleet_flag = unhinged_screamer_flotilla
-								has_fleet_flag = frenzied_volunteer_squadron
-							}
-						}
-						any_owned_leader = {
-							has_leader_flag = hired_merc_leader_1
-						}
-					}
-				}
-				country_event = { id = marauder.77 days = 20 }
-			}
-		}
-		# Mercenaries Defect (Marauder 3)
-		if = {
-			limit = { has_country_flag = marauder_3 }
-			every_country = {
-				limit = {
-					OR = {
-						any_controlled_fleet = {
-							OR = {
-								has_fleet_flag = her_chosen_champions
-								has_fleet_flag = order_of_eternal_night
-								has_fleet_flag = twilight_congregation
-							}
-						}
-						any_owned_leader = {
-							has_leader_flag = hired_merc_leader_1
-						}
-					}
-				}
-				country_event = { id = marauder.77 days = 20 }
-			}
-		}
-
-		# Mercenaries Join the Great Khan
-		country_event = { id = marauder.78 days = 20 }
-
-		# Should not attack Enclaves
-		every_country = {
-			limit = {
-				OR = {
-					is_country_type = enclave
-					is_country_type = enclave_mercenary
-					is_country_type = mindwarden_enclave
-				}
-			}
-			event_target:raider_khanate = {
-				set_faction_hostility = {
-					target = prev
-					set_hostile = no
-					set_neutral = no
-					set_friendly = yes
-				}
-			}
+			make_khan_effect =yes
 		}
 	}
 }

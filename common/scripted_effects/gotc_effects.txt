@@ -8,10 +8,10 @@ choose_shroudwalker_enclave_country = {
 			limit = {
 				any_system = { has_star_flag = mraxist }
 			}
-			set_planet_flag = enclave_dialectics
+			set_carrier_flag = enclave_dialectics
 		}
 		else = {
-			set_planet_flag = enclave_shroudwalker_default
+			set_carrier_flag = enclave_shroudwalker_default
 		}
 	}
 	else = {
@@ -22,7 +22,7 @@ choose_shroudwalker_enclave_country = {
 			limit = {
 				any_system = { has_star_flag = mraxist }
 			}
-			set_planet_flag = enclave_dialectics
+			set_carrier_flag = enclave_dialectics
 		}
 		else_if = {
 			limit = {
@@ -35,14 +35,14 @@ choose_shroudwalker_enclave_country = {
 						NOT = { any_system = { has_star_flag = international } }
 					}
 				}
-				set_planet_flag = enclave_shroudwalker_default
+				set_carrier_flag = enclave_shroudwalker_default
 			}
 			else = {
-				set_planet_flag = enclave_dialectics
+				set_carrier_flag = enclave_dialectics
 			}
 		}
 		else = {
-			set_planet_flag = enclave_shroudwalker_default
+			set_carrier_flag = enclave_shroudwalker_default
 		}
 	}
 }
@@ -256,10 +256,10 @@ choose_fear_of_the_dark_country_korea = {
 					value < 3
 				}
 			}
-			set_planet_flag = north
+			set_carrier_flag = north
 		}
 		else = {
-			set_planet_flag = south
+			set_carrier_flag = south
 		}
 	}
 	else_if = {
@@ -273,10 +273,10 @@ choose_fear_of_the_dark_country_korea = {
 					value < 4
 				}
 			}
-			set_planet_flag = north
+			set_carrier_flag = north
 		}
 		else = {
-			set_planet_flag = south
+			set_carrier_flag = south
 		}
 	}
 	else_if = {
@@ -290,10 +290,10 @@ choose_fear_of_the_dark_country_korea = {
 					value < 5
 				}
 			}
-			set_planet_flag = north
+			set_carrier_flag = north
 		}
 		else = {
-			set_planet_flag = south
+			set_carrier_flag = south
 		}
 	}
 	else_if = {
@@ -307,10 +307,10 @@ choose_fear_of_the_dark_country_korea = {
 					value < 6
 				}
 			}
-			set_planet_flag = north
+			set_carrier_flag = north
 		}
 		else = {
-			set_planet_flag = south
+			set_carrier_flag = south
 		}
 	}
 	else = {
@@ -321,10 +321,10 @@ choose_fear_of_the_dark_country_korea = {
 					value < 2
 				}
 			}
-			set_planet_flag = north
+			set_carrier_flag = north
 		}
 		else = {
-			set_planet_flag = south
+			set_carrier_flag = south
 		}
 	}
 	clear_variable = counted_corporations
@@ -688,7 +688,7 @@ create_shroudwalker_enclave_starbase_dialectics_3 = {
 
 #For use in overlord initializer; planet scope
 create_overlord_soviet = {
-	set_planet_flag = overlord_soviet
+	set_carrier_flag = overlord_soviet
 	set_name = {
 		key="ГУЛАГ"
 		literal=yes
@@ -1012,7 +1012,7 @@ create_overlord_soviet = {
 
 #For use in overlord initializer; planet scope
 create_overlord_post_soviet = {
-	set_planet_flag = overlord_post_soviet
+	set_carrier_flag = overlord_post_soviet
 	set_name = "GOTC_DUGIN_PLANET_NAME"
 	change_pc = pc_relic
 	create_species = {
@@ -3351,7 +3351,7 @@ create_imperial_vassal_kadyrov = {
 			}
 		}
 	}
-	planet_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
+	carrier_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
 	while = {
 		count = 18
 		create_pop_group = {
@@ -4191,11 +4191,11 @@ create_imperial_vassal_mizulina = {
 create_imperial_splinter = {
 	if = {
 		limit = {
-			event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+			event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 		}
 		if = {
 			limit = {
-				has_planet_flag = previous_imperial_capital
+				has_carrier_flag = previous_imperial_capital
 				NOT = { any_country = { has_country_flag = beria } }
 			}
 			create_imperial_splinter_beria = yes
@@ -6051,7 +6051,7 @@ rename_space_object_nursultan = {
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_egypt = {
 	change_pc = pc_desert
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Египтянин"
@@ -6286,11 +6286,9 @@ create_pre_ftl_egypt = {
 				}
 			}
 			else = { # Mamluk Egypt
-				while = { # Adding Egyptians before creation of Mamluks
-					create_pop_group = {
-						species = last_created_species
-						size = @iron_age_pops
-					}
+				create_pop_group = { # Adding Egyptians before creation of Mamluks
+					species = last_created_species
+					size = @iron_age_pops
 				}
 				create_species = { # Creating Mamluks
 					name = {
@@ -6388,7 +6386,7 @@ create_pre_ftl_egypt = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_syria = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	if = { # Palmyra
 		limit = {
 			any_playable_country = {
@@ -6600,7 +6598,7 @@ create_pre_ftl_syria = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_antioch = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Сириец"
@@ -6776,7 +6774,7 @@ create_pre_ftl_antioch = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_france = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = { # Creating Frogeaters
 		name = {
 			key="Лягушатник"
@@ -7066,7 +7064,7 @@ create_pre_ftl_france = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_arabia = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = { # Creating Arabs
 		name = {
 			key="Араб"
@@ -7304,7 +7302,7 @@ create_pre_ftl_arabia = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_uganda = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Людоед"
@@ -7401,7 +7399,7 @@ create_pre_ftl_uganda = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_philistia = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Филистимлянин"
@@ -7495,7 +7493,7 @@ create_pre_ftl_philistia = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_jordan = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Бедуин"
@@ -7589,7 +7587,7 @@ create_pre_ftl_jordan = {
 
 #Default or for usage in Broken shackles if Zion is MSI
 create_pre_ftl_blood_libel = {
-	set_planet_flag = pre_ftl_default
+	set_carrier_flag = pre_ftl_default
 	create_species = {
 		name = {
 			key="Христианский Младенец"

@@ -689,10 +689,12 @@ marauder_1_1 = {
 	}
 
 	neighbor_system = {
+		trigger = { num_marauder_empires_to_spawn > 0 } #Ensuring that we spawn a tiny marauder if you have set them to 0 when you play Heirs of the Khan
 		distance = { min = 0 max = 50 }
 		initializer = "marauder_1_2"
 	}
 	neighbor_system = {
+		trigger = { num_marauder_empires_to_spawn > 0 }
 		distance = { min = 0 max = 50 }
 		initializer = "marauder_1_3"
 	}

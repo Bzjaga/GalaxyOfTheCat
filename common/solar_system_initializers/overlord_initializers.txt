@@ -79,7 +79,7 @@ salvager_enclave_init_01 = {
 
 		init_effect = {
 			prevent_anomaly = yes
-			set_planet_flag = salvager_enclave_planet
+			set_carrier_flag = salvager_enclave_planet
 			clear_deposits = yes
 			add_deposit = d_minerals_4
 			if = {
@@ -215,7 +215,7 @@ salvager_enclave_init_02 = {
 
 		init_effect = {
 			prevent_anomaly = yes
-			set_planet_flag = salvager_enclave_planet
+			set_carrier_flag = salvager_enclave_planet
 			clear_deposits = yes
 			add_deposit = d_minerals_4
 			if = {
@@ -385,7 +385,7 @@ salvager_enclave_init_03 = {
 		init_effect = {
 			prevent_anomaly = yes
 
-			set_planet_flag = salvager_enclave_planet
+			set_carrier_flag = salvager_enclave_planet
 			clear_deposits = yes
 			if = {
 				limit = {
@@ -542,7 +542,7 @@ shroudwalker_enclave_init_01 = {
 		has_ring = yes
 
 		init_effect = {
-			set_planet_flag = shroudwalker_enclave_planet
+			set_carrier_flag = shroudwalker_enclave_planet
 			save_event_target_as = shroudwalker_enclave_planet
 			clear_deposits = yes
 			prevent_anomaly = yes
@@ -558,7 +558,7 @@ shroudwalker_enclave_init_01 = {
 				choose_shroudwalker_enclave_country = yes
 				if = {
 					limit = {
-						has_planet_flag = enclave_dialectics
+						has_carrier_flag = enclave_dialectics
 					}
 					create_shroudwalker_enclave_country_dialectics = yes
 				}
@@ -652,7 +652,7 @@ shroudwalker_enclave_init_02 = {
 		has_ring = no
 
 		init_effect = {
-			set_planet_flag = shroudwalker_enclave_planet
+			set_carrier_flag = shroudwalker_enclave_planet
 			save_event_target_as = shroudwalker_enclave_planet
 			clear_deposits = yes
 			prevent_anomaly = yes
@@ -679,7 +679,7 @@ shroudwalker_enclave_init_02 = {
 				choose_shroudwalker_enclave_country = yes
 				if = {
 					limit = {
-						has_planet_flag = enclave_dialectics
+						has_carrier_flag = enclave_dialectics
 					}
 					create_shroudwalker_enclave_country_dialectics = yes
 				}
@@ -799,7 +799,7 @@ shroudwalker_enclave_init_03 = {
 		has_ring = no
 
 		init_effect = {
-			set_planet_flag = shroudwalker_enclave_planet
+			set_carrier_flag = shroudwalker_enclave_planet
 			save_event_target_as = shroudwalker_enclave_planet
 			clear_deposits = yes
 			prevent_anomaly = yes
@@ -826,7 +826,7 @@ shroudwalker_enclave_init_03 = {
 				choose_shroudwalker_enclave_country = yes
 				if = {
 					limit = {
-						has_planet_flag = enclave_dialectics
+						has_carrier_flag = enclave_dialectics
 					}
 					create_shroudwalker_enclave_country_dialectics = yes
 				}
@@ -1116,7 +1116,7 @@ quantum_catapult_init_01 = {
 	class = sc_pulsar
 	usage = misc_system_init
 
-	flags = { ruined_catapult_system }
+	flags = { ruined_catapult_system galactic_landmark_system }
 
 	usage_odds = {
 		base = @spawn_system_extreme
@@ -1216,7 +1216,7 @@ orbital_ring_init_01 = {
 		type = icy_asteroid_belt
 		radius = 145
 	}
-	flags = { ruined_orbital_ring_system }
+	flags = { ruined_orbital_ring_system galactic_landmark_system }
 
 	usage = misc_system_init
 	usage_odds = {
@@ -1466,7 +1466,7 @@ overlord_system_init = { # Aix - Empire Capital
 #			add_building = building_factory_1
 #			add_building = building_foundry_2
 #			add_building = building_energy_grid
-#			add_building = building_holo_theatres
+			add_building = building_holo_theatres
 
 			validate_planet_buildings_and_districts = yes
 		}
@@ -1666,9 +1666,9 @@ overlord_system_2_init = { # Empire second system
 			set_controller = event_target:origin_imperial_homeland_country
 			if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 				}
-				set_planet_flag = post_imperial_capital
+				set_carrier_flag = post_imperial_capital
 				# future dominant species of Kukuruz empire
 				create_species = {
 					name = {
@@ -1720,9 +1720,9 @@ overlord_system_2_init = { # Empire second system
 			}
 			else_if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_post_soviet }
 				}
-				# im changing robot pops to main specie's pops because at 2010 Dugin is free at his will to destroy these unspiritual creatures. unfortunately :(
+				# im changing robot pops to main specie's pops because at 2210 Dugin is free at his will to destroy these unspiritual creatures. unfortunately :(
 				while = {
 					count = 28
 					create_pop_group = {
@@ -2085,7 +2085,7 @@ overlord_system_4_init = { # First vassal
 			save_event_target_as = imperial_homeland_4
 			if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 				}
 				if = {
 					limit = {
@@ -2111,7 +2111,7 @@ overlord_system_4_init = { # First vassal
 			}
 			else_if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_post_soviet }
 				}
 				if = {
 					limit = {
@@ -2136,7 +2136,9 @@ overlord_system_4_init = { # First vassal
 			set_controller = event_target:origin_imperial_homeland_country_2
 			set_capital = yes
 
-			generate_start_buildings_and_districts = yes
+			colony = {
+				generate_start_buildings_and_districts = yes
+			}
 		}
 	}
 
@@ -2275,7 +2277,7 @@ overlord_system_5_init = { # Second vassal
 			save_event_target_as = imperial_homeland_5
 			if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 				}
 				if = {
 					limit = {
@@ -2301,7 +2303,7 @@ overlord_system_5_init = { # Second vassal
 			}
 			else_if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_post_soviet }
 				}
 				if = {
 					limit = {
@@ -2323,7 +2325,9 @@ overlord_system_5_init = { # Second vassal
 			set_controller = event_target:origin_imperial_homeland_country_3
 			set_capital = yes
 
-			generate_start_buildings_and_districts = yes
+			colony = {
+				generate_start_buildings_and_districts = yes
+			}
 		}
 	}
 
@@ -2430,7 +2434,7 @@ overlord_system_6_init = { # Third vassal
 			save_event_target_as = imperial_homeland_6
 			if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 				}
 				if = {
 					limit = {
@@ -2456,7 +2460,7 @@ overlord_system_6_init = { # Third vassal
 			}
 			else_if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_post_soviet }
 				}
 				create_imperial_vassal_rpc = yes
 			}
@@ -2470,7 +2474,9 @@ overlord_system_6_init = { # Third vassal
 			set_controller = event_target:origin_imperial_homeland_country_4
 			set_capital = yes
 
-			generate_start_buildings_and_districts = yes
+			colony = {
+				generate_start_buildings_and_districts = yes
+			}
 		}
 	}
 
@@ -2598,7 +2604,7 @@ overlord_system_7_init = { # Fourth vassal
 			save_event_target_as = imperial_homeland_7
 			if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 				}
 				if = { # RKKA
 					limit = {
@@ -2630,7 +2636,7 @@ overlord_system_7_init = { # Fourth vassal
 			}
 			else_if = {
 				limit = {
-					event_target:origin_imperial_homeland = { has_planet_flag = overlord_post_soviet }
+					event_target:origin_imperial_homeland = { has_carrier_flag = overlord_post_soviet }
 				}
 				create_imperial_vassal_mizulina = yes
 			}
@@ -2644,7 +2650,9 @@ overlord_system_7_init = { # Fourth vassal
 			set_controller = event_target:origin_imperial_homeland_country_5
 			set_capital = yes
 
-			generate_start_buildings_and_districts = yes
+			colony = {
+				generate_start_buildings_and_districts = yes
+			}
 		}
 	}
 

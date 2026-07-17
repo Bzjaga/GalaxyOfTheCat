@@ -595,10 +595,6 @@ fallen_machine_empire = {
 		base = 100
 	}
 
-	possible = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
-	}
-
 	create_country_effect = {
 		create_species = {
 			name = "GOTC_GATES_MAIN_SPECIES_NAME"

@@ -45,5 +45,6 @@ create_zombie_pop_group = {
 		pop_group = event_target:old_pop_group
 		species = event_target:target_species
 		size = $SIZE$
+		category = worker
 	}
 }

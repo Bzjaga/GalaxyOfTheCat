@@ -288,7 +288,7 @@ country_event = { # Overlord
 	immediate = {
 		if = {
 			limit = {
-				event_target:origin_imperial_homeland = { has_planet_flag = overlord_soviet }
+				event_target:origin_imperial_homeland = { has_carrier_flag = overlord_soviet }
 			}
 			country_event = {
 				id = gotc.5720

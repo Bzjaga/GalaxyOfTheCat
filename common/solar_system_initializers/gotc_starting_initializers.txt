@@ -177,8 +177,8 @@ neighbor_colliding_planet_first_colony = {
 
 		init_effect = {
 			prevent_anomaly = yes
-			set_planet_flag = prescripted_ideal		# used by code, do not remove
-			set_planet_flag = planet_of_kira
+			set_carrier_flag = prescripted_ideal		# used by code, do not remove
+			set_carrier_flag = planet_of_kira
 		}
 
 		moon = {
@@ -1369,7 +1369,7 @@ do_not_choose_kadyrov = {
 		init_effect = {
 			generate_empire_home_planet = yes
 
-			planet_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
+			carrier_event = { id = gotc.4000 days = 1 } # Grozny decoration (instead of origin.4000)
 		}
 
 		change_orbit = @base_moon_distance

@@ -7,6 +7,7 @@ gotc_fallen_1 = {
 	name = "GOTC_LIZARD_SYSTEM_NAME"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
+	flags = { ancient_wonders_system }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
@@ -58,49 +59,57 @@ gotc_fallen_1 = {
 				center = this.solar_system
 			}
 
-			set_planet_flag = fallen_empire_world
-			set_planet_flag = fallen_empire_capital
+			set_carrier_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_capital
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 			set_capital = yes
 			clear_deposits = yes
 			while = {
-				count = 10
+				count = 7
 				add_district = district_arcology_housing
 			}
-			add_zone = {
-				district = district_arcology_housing
-				zone = zone_urban
-			}
-			add_zone = {
-				district = district_arcology_housing
-				zone = zone_urban
+			while = {
+				count = 4
+				add_district = district_arcology_urban_1
 			}
 			while = {
-				count = 3
-				add_district = district_arcology_urban_1
+				count = 4
+				add_district = district_arcology_urban_2
+			}
+			while = {
+				count = 4
+				add_district = district_arcology_urban_3
+			}
+			while = {
+				count = 94
+				create_pop_group = {
+					species = owner_main_species
+				}
+			}
+
+			add_zone = {
+				district = district_arcology_housing
+				zone = zone_urban
+			}
+			add_zone = {
+				district = district_arcology_housing
+				zone = zone_urban
 			}
 			add_zone = {
 				district = district_arcology_urban_1
 				zone = zone_research_physics_arcology
 			}
-			while = {
-				count = 3
-				add_district = district_arcology_urban_2
-			}
 			add_zone = {
 				district = district_arcology_urban_2
-				zone = zone_research_engineering_arcology
-			}
-			while = {
-				count = 3
-				add_district = district_arcology_urban_3
+				zone = zone_research_society_arcology
 			}
 			add_zone = {
 				district = district_arcology_urban_3
-				zone = zone_research_society_arcology
+				zone = zone_research_engineering_arcology
 			}
+
 			while = {
 				count = 94
 				create_pop_group = {
@@ -140,10 +149,11 @@ gotc_fallen_1 = {
 			# Central City
 			add_building = building_ancient_palace
 			add_building = building_institute
-			add_building = building_research_upkeep_1
-			add_building = building_research_efficiency_1
+			add_building = building_fe_market_2
 			add_building = building_fe_stronghold
 			add_building = building_fe_security_2
+			add_building = building_dimensional_fabricator
+
 			# Urban Expansion
 			add_building = {
 				zone = zone_urban
@@ -177,24 +187,12 @@ gotc_fallen_1 = {
 			}
 			add_building = {
 				zone = zone_research_physics_arcology
-				building = building_fe_lab_2
-			}
-			add_building = {
-				zone = zone_research_physics_arcology
-				building = building_fe_lab_2
+				building = building_research_upkeep_1
 			}
 			# Engineering Labs
 			add_building = {
 				zone = zone_research_engineering_arcology
 				building = building_engineering_facility_3
-			}
-			add_building = {
-				zone = zone_research_engineering_arcology
-				building = building_fe_lab_2
-			}
-			add_building = {
-				zone = zone_research_engineering_arcology
-				building = building_fe_lab_2
 			}
 			# Biology Labs
 			add_building = {
@@ -203,11 +201,7 @@ gotc_fallen_1 = {
 			}
 			add_building = {
 				zone = zone_research_society_arcology
-				building = building_fe_lab_2
-			}
-			add_building = {
-				zone = zone_research_society_arcology
-				building = building_fe_lab_2
+				building = building_research_efficiency_1
 			}
 		}
 	}
@@ -268,6 +262,7 @@ gotc_fallen_1_2 = {
 	name = "GOTC_LIZARD_SYSTEM_NAME_2"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
+	flags = { ancient_wonders_system }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 120
@@ -307,20 +302,26 @@ gotc_fallen_1_2 = {
 				OWNER = root
 				DESIGN = "NAME_FE_MATERIALIST_Citadel_3"
 			}
-			set_planet_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 
-			while = {
-				count = 14
-				add_district = district_city
+			inline_script = {
+				script =  game_start/districts_standard_setup
+				CITY = 12
+				GENERATOR = 2
+				MINING = 0
+				FARMING = 0
 			}
-			while = {
-				count = 35
-				create_pop_group = {
-					species = owner_main_species
-				}
+
+			add_zone = {
+				district = district_city
+				zone = zone_research_unity
+			}
+			add_zone = {
+				district = district_city
+				zone = zone_urban
 			}
 			while = {
 				count = 35
@@ -332,20 +333,28 @@ gotc_fallen_1_2 = {
 			add_building = building_master_archive
 			add_building = building_fe_stronghold
 			add_building = building_fe_dome
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
-			add_building = building_affluence_center
 			add_building = building_nourishment_center
-			add_building = building_fe_lab_2
+			add_building = building_fe_market_2
+			add_building = building_affluence_center
 			add_building = building_dimensional_fabricator
 			add_building = building_nano_forge
-			add_building = building_fe_lab_2
+
+			add_building = {
+				zone = zone_energy
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy
+				building = building_energy_nexus
+			}
+			add_building = {
+				zone = zone_research_unity
+				building = building_fe_lab_2
+			}
+			add_building = {
+				zone = zone_research_unity
+				building = building_fe_administration_2
+			}
 		}
 	}
 
@@ -391,6 +400,7 @@ gotc_fallen_2 = {
 	name = "GOTC_RUS_SYSTEM_NAME"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
+	flags = { ancient_wonders_system }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
@@ -450,47 +460,21 @@ gotc_fallen_2 = {
 				center = this.solar_system
 			}
 
-			set_planet_flag = fallen_empire_world
-			set_planet_flag = fallen_empire_capital
+			set_carrier_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_capital
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 			set_capital = yes
 
-			while = {
-				count = 16
-				add_district = district_city
+			inline_script = {
+				script =  game_start/districts_standard_setup
+				CITY = 16
+				GENERATOR = 2
+				MINING = 6
+				FARMING = 6
 			}
-			while = {
-				count = 2
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_generator
-				}
-			}
-			add_zone = {
-				district = district_generator
-				zone = zone_energy
-			}
-			while = {
-				count = 6
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_mining
-				}
-			}
-			add_zone = {
-				district = district_mining
-				zone = zone_minerals
-			}
-			while = {
-				count = 6
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_farming
-				}
-			}
-			add_zone = {
-				district = district_farming
-				zone = zone_food
-			}
+
 			while = {
 				count = 115
 				create_pop_group = {
@@ -507,21 +491,44 @@ gotc_fallen_2 = {
 					type = "psionic_army"
 				}
 			}
+
+			add_zone = {
+				district = district_city
+				zone = zone_unity_spiritualist
+			}
+			add_zone = {
+				district = district_city
+				zone = zone_fortress
+			}
+			inline_script = "game_start/fe_buildings_rural"
+
 			add_building = building_ancient_palace
 			add_building = building_fe_dome
 			add_building = building_fe_dome
-			add_building = building_fe_temple_2
-			add_building = building_fe_temple_2
-			add_building = building_fe_mine_2
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
 			add_building = building_dimensional_fabricator
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
-			add_building = building_affluence_center
+			add_building = building_fe_market_2
 			add_building = building_nano_forge
+
+			add_building = {
+				zone = zone_unity_spiritualist
+				building = building_fe_temple_2
+			}
+			add_building = {
+				zone = zone_unity_spiritualist
+				building = building_citadel_of_faith
+			}
+			add_building = {
+				zone = zone_unity_spiritualist
+				building = building_sacred_nexus
+			}
+			add_building = {
+				zone = zone_fortress
+				building = building_fe_stronghold
+			}
+			add_building = {
+				zone = zone_fortress
+				building = building_planetary_shield_generator
+			}
 		}
 
 		change_orbit = @base_moon_distance
@@ -551,72 +558,67 @@ gotc_fallen_2 = {
 				OWNER = root
 				DESIGN = "NAME_FE_SPIRITUALIST_Citadel_3"
 			}
-			set_planet_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 
-			while = {
-				count = 12
-				add_district = district_city
+			inline_script = {
+				script =  game_start/districts_standard_setup
+				CITY = 12
+				GENERATOR = 2
+				MINING = 5
+				FARMING = 5
 			}
-			while = {
-				count = 2
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_generator
-				}
-			}
-			add_zone = {
-				district = district_generator
-				zone = zone_energy
-			}
-			while = {
-				count = 5
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_mining
-				}
-			}
-			add_zone = {
-				district = district_mining
-				zone = zone_minerals
-			}
-			while = {
-				count = 5
-				add_district_and_planet_size_if_needed_effect = {
-					district = district_farming
-				}
-			}
-			add_zone = {
-				district = district_farming
-				zone = zone_food
-			}
+
 			while = {
 				count = 68
 				create_pop_group = {
 					species = owner_main_species
 				}
 			}
+
+			add_zone = {
+				district = district_city
+				zone = zone_unity_spiritualist
+			}
+			add_zone = {
+				district = district_city
+				zone = zone_foundry
+			}
+			inline_script = "game_start/fe_buildings_rural"
+
 			add_building = building_ancient_palace
-			add_building = building_empyrean_shrine
 			add_building = building_fe_dome
 			add_building = building_fe_dome
-			add_building = building_dimensional_fabricator
 			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
+			add_building = building_fe_market_2
+
 			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
+				zone = zone_unity_spiritualist
+				building = building_empyrean_shrine
 			}
 			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
+				zone = zone_unity_spiritualist
+				building = building_holotemple
 			}
 			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
+				zone = zone_unity_spiritualist
+				building = building_temple
 			}
-			add_building = building_nano_forge
-			add_building = building_nano_forge
+
+			add_building = {
+				zone = zone_foundry
+				building = building_nano_forge
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
 		}
 	}
 
@@ -691,6 +693,7 @@ gotc_fallen_2 = {
 gotc_fallen_3 = {
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
+	flags = { ancient_wonders_system }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
@@ -739,16 +742,19 @@ gotc_fallen_3 = {
 					center = this.solar_system
 				}
 
-				set_planet_flag = fallen_empire_world
-				set_planet_flag = fallen_empire_capital
+				set_carrier_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_capital
 				prevent_anomaly = yes
 				set_owner = root
 				set_controller = root
 				set_capital = yes
 
-				while = {
-					count = 19
-					add_district = district_city
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 14
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				root = {
 					set_policy = {
@@ -1061,18 +1067,43 @@ gotc_fallen_3 = {
 						type = "gene_warrior_army"
 					}
 				}
+
+				add_zone = {
+					district = district_city
+					zone = zone_industrial
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_fortress
+				}
+				inline_script = "game_start/fe_buildings_rural"
+
 				add_building = building_ancient_palace
 				add_building = building_fe_dome
 				add_building = building_fe_administration_2
-				add_building = building_fe_stronghold
-				add_building = building_fe_stronghold
-				add_building = building_affluence_center
-				add_building = building_nourishment_center
-				add_building = building_class_4_singularity
-				add_building = building_class_4_singularity
-				add_building = building_dimensional_fabricator
 				add_building = building_fe_security_2
-				add_building = building_fe_mine_2
+				add_building =building_fe_market_2
+
+				add_building = {
+					zone = zone_industrial
+					building = building_nano_forge
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_affluence_center
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_dimensional_fabricator
+				}
+				add_building = {
+					zone = zone_fortress
+					building = building_fe_stronghold
+				}
+				add_building = {
+					zone = zone_fortress
+					building = building_planetary_shield_generator
+				}
 			}
 		}
 
@@ -1103,7 +1134,7 @@ gotc_fallen_3 = {
 			modifiers = none
 
 			init_effect = {
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = root
 				set_controller = root
@@ -1143,34 +1174,63 @@ gotc_fallen_3 = {
 						species = event_target:fe_servants
 					}
 				}
+
+				add_zone = {
+					district = district_city
+					zone = zone_foundry
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_fortress
+				}
+
 				add_building = building_ancient_palace
-				add_building = building_fe_stronghold
-				add_building = building_fe_stronghold
-				add_building = building_dimensional_fabricator
-				add_building = building_dimensional_fabricator
-				add_building = building_nano_forge
-				add_building = building_nano_forge
-				add_building = building_nano_forge
+				add_building = building_affluence_center
+				add_building = building_fe_market_2
+
+				add_building = {
+					zone = zone_foundry
+					building = building_nano_forge
+				}
+				add_building = {
+					zone = zone_foundry
+					building = building_dimensional_fabricator
+				}
+				add_building = {
+					zone = zone_foundry
+					building = building_dimensional_fabricator
+				}
+				add_building = {
+					zone = zone_fortress
+					building = building_fe_stronghold
+				}
+				add_building = {
+					zone = zone_fortress
+					building = building_planetary_shield_generator
+				}
 			}
 		}
 
 		moon = {
 			class = "pc_gaia"
-			size = 12
+			size = 14
 			orbit_distance = 5
 			orbit_angle = 190
 			deposit_blockers = none
 			modifiers = none
 
 			init_effect = {
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = root
 				set_controller = root
 
-				while = {
-					count = 11
-					add_district = district_city
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 8
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				if = { # Astro-Hungary
 					limit = { root = { has_country_flag = gotc_astrohungary } }
@@ -1203,17 +1263,36 @@ gotc_fallen_3 = {
 						species = event_target:fe_servants
 					}
 				}
+				add_zone = {
+					district = district_city
+					zone = zone_urban
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_factory
+				}
+				inline_script = "game_start/fe_buildings_rural"
+
 				add_building = building_ancient_palace
 				add_building = building_fe_stronghold
 				add_building = building_fe_dome
-				add_building = building_fe_market_2
-				add_building = building_class_4_singularity
-				add_building = building_class_4_singularity
-				add_building = building_affluence_center
-				add_building = building_affluence_center
-				add_building = building_affluence_center
-				add_building = building_fe_clinic_2
-				add_building = building_nourishment_center
+
+				add_building = {
+					zone = zone_urban
+					building = building_fe_market_2
+				}
+				add_building = {
+					zone = zone_urban
+					building = building_fe_clinic_2
+				}
+				add_building = {
+					zone = zone_urban
+					building = building_dimensional_fabricator
+				}
+				add_building = {
+					zone = zone_factory
+					building = building_affluence_center
+				}
 			}
 		}
 	}
@@ -1241,6 +1320,7 @@ gotc_fallen_4 = {
 	name = "GOTC_QIN_SYSTEM_NAME"
 	usage = fallen_empire_init
 	class = "rl_standard_stars"
+	flags = { ancient_wonders_system }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
@@ -1297,17 +1377,20 @@ gotc_fallen_4 = {
 				center = this.solar_system
 			}
 
-			set_planet_flag = fallen_empire_world
-			set_planet_flag = fallen_empire_capital
-			set_planet_flag = xenophobe_fe_capital
+			set_carrier_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_capital
+			set_carrier_flag = xenophobe_fe_capital
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 			set_capital = yes
 
-			while = {
-				count = 24
-				add_district = district_city
+			inline_script = {
+				script =  game_start/districts_standard_setup
+				CITY = 19
+				GENERATOR = 2
+				MINING = 2
+				FARMING = 2
 			}
 			while = {
 				count = 62
@@ -1356,38 +1439,64 @@ gotc_fallen_4 = {
 					type = "xenomorph_army"
 				}
 			}
+
+			add_zone = {
+				district = district_city
+				zone = zone_foundry
+			}
+			add_zone = {
+				district = district_city
+				zone = zone_fortress
+			}
+			inline_script = "game_start/fe_buildings_rural"
+
 			add_building = building_ancient_palace
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
 			add_building = building_affluence_center
-			add_building = building_nourishment_center
 			add_building = building_fe_security_2
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
-			add_building = building_dimensional_fabricator
-			add_building = building_nano_forge
-			add_building = building_nano_forge
+
+			add_building = {
+				zone = zone_foundry
+				building = building_nano_forge
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
+			add_building = {
+				zone = zone_fortress
+				building = building_fe_stronghold
+			}
+			add_building = {
+				zone = zone_fortress
+				building = building_planetary_shield_generator
+			}
 		}
 
 		moon = {
 			name = "GOTC_QIN_MOON_NAME"
 			class = "pc_gaia"
-			size = 12
+			size = 14
 			orbit_distance = 14
 			orbit_angle = 10
 			deposit_blockers = none
 			modifiers = none
 
 			init_effect = {
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				prevent_anomaly = yes
 				set_owner = root
 				set_controller = root
 
-				while = {
-					count = 11
-					add_district = district_city
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 8
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				while = {
 					count = 33
@@ -1401,18 +1510,37 @@ gotc_fallen_4 = {
 						species = event_target:fe_servants
 					}
 				}
+				add_zone = {
+					district = district_city
+					zone = zone_foundry
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_fortress
+				}
+				inline_script = "game_start/fe_buildings_rural"
+
 				add_building = building_ancient_palace
-				add_building = building_fe_stronghold
-				add_building = building_fe_stronghold
 				add_building = building_affluence_center
-				add_building = building_nourishment_center
-				add_building = building_fe_mine_2
 				add_building = building_fe_security_2
-				add_building = building_class_4_singularity
-				add_building = building_dimensional_fabricator
 				add_building = building_fe_administration_2
-				add_building = building_nano_forge
-				add_building = building_nano_forge
+
+				add_building = {
+					zone = zone_foundry
+					building = building_nano_forge
+				}
+				add_building = {
+					zone = zone_foundry
+					building = building_dimensional_fabricator
+				}
+				add_building = {
+					zone = zone_fortress
+					building = building_fe_stronghold
+				}
+				add_building = {
+					zone = zone_fortress
+					building = building_planetary_shield_generator
+				}
 			}
 		}
 	}
@@ -1560,7 +1688,7 @@ gotc_fallen_col_1_1 = {
 				}
 			}
 			
-			if = { # Astro-Hungary
+			if = { # GOTC vzyato create_fe_fringe_colony for Astro-Hungary
 				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_4"
 				solar_system = {
@@ -1575,42 +1703,64 @@ gotc_fallen_col_1_1 = {
 						set_species_homeworld = prev
 					}
 				}
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				clear_blockers = yes
 				prevent_anomaly = yes
 				set_owner = ROOT
 				add_building = building_ancient_palace
 				add_building = building_fe_dome
-				while = {
-					count = 5
-					add_district = {
-						district_type = district_city
-						ignore_cap = yes
-					}
-				}
-				while = {
-					count = 4
-					create_pop_group = {
-						species = owner_main_species
-					}
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 3
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				create_pop_group = {
+					size = 400
+					species = owner_main_species
+				}
+				create_pop_group = {
+					size = 100
 					species = event_target:fe_servants
 				}
 				create_pop_group = {
+					size = 100
 					species = event_target:aryan_species
 				}
-				while = {
-					count = 3
-					create_pop_group = {
-						species = event_target:untermensch_species
-					}
+				create_pop_group = {
+					size = 300
+					species = event_target:untermensch_species
 				}
-				while = {
-					count = 9
-					create_pop_group = {
-						species = event_target:netoropyr_species
-					}
+				create_pop_group = {
+					size = 900
+					species = event_target:netoropyr_species
+				}
+				inline_script = "game_start/fe_buildings_rural"
+
+				add_zone = {
+					district = district_city
+					zone = zone_unity
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_industrial
+				}
+				add_building = {
+					zone = zone_unity
+					building = building_fe_administration_1
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_micro_forge
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_affluence_emporium
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_dimensional_replicator
 				}
 			}
 			else_if = {
@@ -1725,7 +1875,7 @@ gotc_fallen_col_1_2 = {
 				}
 			}
 			
-			if = { # Astro-Hungary
+			if = { # GOTC vzyato create_fe_fringe_colony for Astro-Hungary
 				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_5"
 				solar_system = {
@@ -1735,42 +1885,64 @@ gotc_fallen_col_1_2 = {
 				event_target:kazak_species = {
 					set_species_homeworld = prev
 				}
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				clear_blockers = yes
 				prevent_anomaly = yes
 				set_owner = ROOT
 				add_building = building_ancient_palace
 				add_building = building_fe_dome
-				while = {
-					count = 5
-					add_district = {
-						district_type = district_city
-						ignore_cap = yes
-					}
-				}
-				while = {
-					count = 4
-					create_pop_group = {
-						species = owner_main_species
-					}
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 3
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				create_pop_group = {
+					size = 400
+					species = owner_main_species
+				}
+				create_pop_group = {
+					size = 100
 					species = event_target:fe_servants
 				}
-				while = {
-					count = 4
-					create_pop_group = {
-						species = event_target:kazak_species
-					}
+				create_pop_group = {
+					size = 400
+					species = event_target:kazak_species
 				}
 				create_pop_group = {
+					size = 100
 					species = event_target:untermensch_species
 				}
-				while = {
-					count = 7
-					create_pop_group = {
-						species = event_target:pospolithoid_species
-					}
+				create_pop_group = {
+					size = 700
+					species = event_target:pospolithoid_species
+				}
+				inline_script = "game_start/fe_buildings_rural"
+
+				add_zone = {
+					district = district_city
+					zone = zone_unity
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_industrial
+				}
+				add_building = {
+					zone = zone_unity
+					building = building_fe_administration_1
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_micro_forge
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_affluence_emporium
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_dimensional_replicator
 				}
 			}
 			else_if = {
@@ -1941,52 +2113,75 @@ gotc_fallen_col_2_1 = {
 				}
 			}
 			
-			if = { # Astro-Hungary
+			if = { # GOTC vzyato create_fe_fringe_colony for Astro-Hungary
 				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_6"
 				solar_system = {
 					set_name = "GOTC_HAB_SYSTEM_NAME_4"
 				}
 				change_pc = pc_continental
-				event_target:vurdvalah_species = {
-					set_species_homeworld = prev
+				if = { # Check Vurdvalah existence
+					limit = {
+						NOT = { any_country = { has_country_flag = gotc_vurdvalah } }
+					}
+					event_target:vurdvalah_species = {
+						set_species_homeworld = prev
+					}
 				}
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				clear_blockers = yes
 				prevent_anomaly = yes
 				set_owner = ROOT
 				add_building = building_ancient_palace
 				add_building = building_fe_dome
-				while = {
-					count = 5
-					add_district = {
-						district_type = district_city
-						ignore_cap = yes
-					}
-				}
-				while = {
-					count = 4
-					create_pop_group = {
-						species = owner_main_species
-					}
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 3
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				create_pop_group = {
+					size = 600
+					species = owner_main_species
+				}
+				create_pop_group = {
+					size = 400
 					species = event_target:fe_servants
 				}
 				create_pop_group = {
+					size = 100
 					species = event_target:untermensch_species
 				}
-				while = {
-					count = 6
-					create_pop_group = {
-						species = event_target:vurdvalah_species
-					}
+				create_pop_group = {
+					size = 600
+					species = event_target:vurdvalah_species
 				}
-				while = {
-					count = 5
-					create_pop_group = {
-						species = owner_main_species
-					}
+				inline_script = "game_start/fe_buildings_rural"
+
+				add_zone = {
+					district = district_city
+					zone = zone_unity
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_industrial
+				}
+				add_building = {
+					zone = zone_unity
+					building = building_fe_administration_1
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_micro_forge
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_affluence_emporium
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_dimensional_replicator
 				}
 			}
 			else_if = {
@@ -2101,7 +2296,7 @@ gotc_fallen_col_2_2 = {
 				}
 			}
 			
-			if = { # Astro-Hungary
+			if = { # GOTC vzyato create_fe_fringe_colony for Astro-Hungary
 				limit = { root = { has_country_flag = gotc_astrohungary } }
 				set_name = "GOTC_HAB_PLANET_NAME_7"
 				solar_system = {
@@ -2116,42 +2311,64 @@ gotc_fallen_col_2_2 = {
 						set_species_homeworld = prev
 					}
 				}
-				set_planet_flag = fallen_empire_world
+				set_carrier_flag = fallen_empire_world
 				clear_blockers = yes
 				prevent_anomaly = yes
 				set_owner = ROOT
 				add_building = building_ancient_palace
 				add_building = building_fe_dome
-				while = {
-					count = 5
-					add_district = {
-						district_type = district_city
-						ignore_cap = yes
-					}
-				}
-				while = {
-					count = 4
-					create_pop_group = {
-						species = owner_main_species
-					}
+				inline_script = {
+					script =  game_start/districts_standard_setup
+					CITY = 3
+					GENERATOR = 2
+					MINING = 2
+					FARMING = 2
 				}
 				create_pop_group = {
+					size = 400
+					species = owner_main_species
+				}
+				create_pop_group = {
+					size = 100
 					species = event_target:fe_servants
 				}
 				create_pop_group = {
+					size = 100
 					species = event_target:aryan_species
 				}
-				while = {
-					count = 3
-					create_pop_group = {
-						species = event_target:untermensch_species
-					}
+				create_pop_group = {
+					size = 300
+					species = event_target:untermensch_species
 				}
-				while = {
-					count = 9
-					create_pop_group = {
-						species = event_target:pospolithoid_species
-					}
+				create_pop_group = {
+					size = 900
+					species = event_target:pospolithoid_species
+				}
+				inline_script = "game_start/fe_buildings_rural"
+
+				add_zone = {
+					district = district_city
+					zone = zone_unity
+				}
+				add_zone = {
+					district = district_city
+					zone = zone_industrial
+				}
+				add_building = {
+					zone = zone_unity
+					building = building_fe_administration_1
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_micro_forge
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_affluence_emporium
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_dimensional_replicator
 				}
 			}
 			else_if = {
@@ -3101,6 +3318,7 @@ gotc_fallen_holy_04 = {
 # Fallen Empire Xeno Zoo
 gotc_fallen_xeno_zoo = {
 	class = "rl_standard_stars"
+	flags = { ancient_wonders_system }
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 80
@@ -3136,14 +3354,35 @@ gotc_fallen_xeno_zoo = {
 				OWNER = root
 				DESIGN = "NAME_FE_XENOPHILE_Citadel_3"
 			}
-			set_planet_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
-			set_planet_flag = fe_the_preserve
+			if = {
+				limit = {
+					NOT = { has_deposit = d_alien_pets_deposit }
+				}
+				add_deposit = d_alien_pets_deposit
+			}
+			set_carrier_flag = fe_the_preserve
+
 			add_building = building_fe_xeno_zoo
+			add_building = building_xeno_zoo
+
+			add_zone = {
+				district = district_city
+				zone = zone_research_society
+			}
+			add_zone = {
+				district = district_city
+				zone = zone_research_society
+			}
+			add_building = {
+				zone = zone_research_society
+				building = building_xeno_zoo
+			}
 
 			while = {
-				count = 2
+				count = 6
 				create_pop_group = {
 					species = owner_main_species
 				}
@@ -3302,7 +3541,7 @@ gotc_fallen_machine = {
 	name = "GOTC_GATES_SYSTEM_NAME"
 	class = "rl_standard_stars"
 
-	flags = { ring_world_built }
+	flags = { ring_world_built ancient_wonders_system }
 
 	init_effect = {
 		spawn_megastructure = {
@@ -3358,21 +3597,36 @@ gotc_fallen_machine = {
 				center = this.solar_system
 			}
 
-			set_planet_flag = fallen_empire_world
-			set_planet_flag = fallen_empire_capital
+			set_carrier_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_capital
 			prevent_anomaly = yes
 			set_owner = root
 			set_controller = root
 			set_capital = yes
 
 			while = {
-				count = 5
-				add_district = district_rw_science
-			}
-			while = {
-				count = 4
+				count = 3
 				add_district = district_rw_nexus
 			}
+
+			while = {
+				count = 4
+				add_district = district_rw_urban_1
+			}
+			while = {
+				count = 2
+				add_district = district_rw_urban_2
+			}
+
+			add_zone = {
+				district = district_rw_urban_1
+				zone = zone_energy_ring_world
+			}
+			add_zone = {
+				district = district_rw_urban_2
+				zone = zone_food_ring_world
+			}
+
 			while = {
 				count = 105
 				create_pop_group = {
@@ -3390,17 +3644,33 @@ gotc_fallen_machine = {
 					type = "machine_assault_2"
 				}
 			}
+
 			add_building = building_ancient_control_center
-			add_building = building_nourishment_center
 			add_building = building_fe_assembly_2
 			add_building = building_ancient_cryo_chamber
 			add_building = building_fe_stronghold
 			add_building = building_fe_administration_machine_2
 			add_building = building_fe_lab_2
-			add_building = building_fe_lab_2
+			add_building = building_nano_forge
 			add_building = building_dimensional_fabricator
-			add_building = building_class_4_singularity
-			add_building = building_class_4_singularity
+
+			add_building = {
+				zone = zone_energy_ring_world
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy_ring_world
+				building = building_energy_nexus
+			}
+			add_building = {
+				zone = zone_food_ring_world
+				building = building_nourishment_center
+			}
+			add_building = {
+				zone = zone_food_ring_world
+				building = building_food_processing_center
+			}
+
 			create_species = { # Windows bug
 				name = "GOTC_GATES_PRESAPIENT_SPECIES_NAME"
 				plural = "GOTC_GATES_PRESAPIENT_SPECIES_PLURAL"
@@ -3453,13 +3723,17 @@ gotc_fallen_machine = {
 		modifiers = none
 
 		init_effect = {
-			set_planet_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 
 			while = {
-				count = 5
+				count = 7
 				add_district = district_rw_nexus
+			}
+			while = {
+				count = 1
+				add_district = district_rw_urban_1
 			}
 			while = {
 				count = 50
@@ -3467,17 +3741,44 @@ gotc_fallen_machine = {
 					species = owner_main_species
 				}
 			}
+
+			add_zone = {
+				district = district_rw_nexus
+				zone = zone_foundry
+				zone_slot = 1
+				replace = yes
+			}
+			add_zone = {
+				district = district_rw_nexus
+				zone = zone_foundry
+				zone_slot = 2
+				replace = yes
+			}
+			add_zone = {
+				district = district_rw_urban_1
+				zone = zone_trade_ring_world
+			}
+
 			add_building = building_ancient_control_center
 			add_building = building_fe_administration_machine_2
-			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
-			add_building = building_dimensional_fabricator
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-			add_building = building_nano_forge
-			add_building = building_nano_forge
+			add_building = building_fe_assembly_2
+
+			add_building = {
+				zone = zone_foundry
+				building = building_nano_forge
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
+			add_building = {
+				zone = zone_foundry
+				building = building_dimensional_fabricator
+			}
 		}
 	}
 
@@ -3510,14 +3811,23 @@ gotc_fallen_machine = {
 		modifiers = none
 
 		init_effect = {
-			set_planet_flag = fallen_empire_world
+			set_carrier_flag = fallen_empire_world
 			prevent_anomaly = yes
 			set_owner = ROOT
 
 			while = {
-				count = 5
-				add_district = district_rw_generator
+				count = 1
+				add_district = district_rw_nexus
 			}
+			while = {
+				count = 5
+				add_district = district_rw_urban_1
+			}
+			while = {
+				count = 3
+				add_district = district_rw_urban_2
+			}
+
 			while = {
 				count = 22
 				create_pop_group = {
@@ -3525,27 +3835,30 @@ gotc_fallen_machine = {
 				}
 			}
 			add_zone = {
-					district = district_rw_generator
-					zone = zone_energy
-				}
+				district = district_rw_urban_1
+				zone = zone_energy_ring_world
+			}
+			add_zone = {
+				district = district_rw_urban_2
+				zone = zone_trade_ring_world
+			}
 			add_building = building_ancient_control_center
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
-			add_building = {
-				zone = zone_energy
-				building = building_class_4_singularity
-			}
 			add_building = building_fe_assembly_2
+			add_building = building_fe_administration_machine_2
+
+			add_building = {
+				zone = zone_trade_ring_world
+				building = building_fe_market_2
+			}
+
+			add_building = {
+				zone = zone_energy_ring_world
+				building = building_class_4_singularity
+			}
+			add_building = {
+				zone = zone_energy_ring_world
+				building = building_energy_nexus
+			}
 		}
 	}
 
@@ -3649,11 +3962,6 @@ gotc_fallen_machine_2 = {
 		}
 		spawn_megastructure = {
 			type = "ring_world_ruined"
-			orbit_angle = 90
-			orbit_distance = 45
-		}
-		spawn_megastructure = {
-			type = "ring_world_ruined"
 			orbit_angle = 180
 			orbit_distance = 45
 		}
@@ -3690,6 +3998,68 @@ gotc_fallen_machine_2 = {
 		}
 
 		create_fe_outpost = yes
+	}
+
+	planet = {
+		class = "pc_shattered_ring_habitable"
+		name = "NAME_Data_Corrupted"
+		orbit_angle = 240
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_carrier_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+
+			while = {
+				count = 10
+				create_pop_group = {
+					species = owner_main_species
+				}
+			}
+
+			while = {
+				count = 2
+				add_district = district_nexus
+			}
+			while = {
+				count = 15
+				add_district = district_mining
+			}
+			add_zone = {
+				district = district_mining
+				zone = zone_minerals
+			}
+
+			add_building = building_ancient_control_center
+			add_building = {
+				zone = zone_minerals
+				building = building_fe_mine_2
+			}
+			add_building = {
+				zone = zone_minerals
+				building = building_mineral_purification_hub
+			}
+
+			add_deposit = d_segment_rubble_1
+			add_deposit = d_segment_rubble_2
+			add_deposit = d_segment_rubble_3
+			add_deposit = d_segment_rubble_4
+		}
+	}
+	planet = {
+		class = "pc_ringworld_seam_damaged"
+		name = "NAME_Ring_Section"
+		orbit_angle = -30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam_damaged"
+		name = "NAME_Ring_Section"
+		orbit_angle = 60
+		orbit_distance = 0
 	}
 }
 
