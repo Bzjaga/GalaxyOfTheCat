@@ -2835,7 +2835,8 @@ gotc_ksir = {
 		clothes=3
 		ruler_title="Политэнтомолог"
 		ruler_title_female="Политэнтомолог"
-		trait="trait_ruler_warlike"
-		leader_class = commander
+		trait="trait_ruler_feedback_loop"
+		trait="leader_trait_xeno_cataloger"
+		leader_class = scientist
 	}
 }

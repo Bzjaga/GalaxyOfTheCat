@@ -1,0 +1,459 @@
+### Marauders ###
+make_khan_effect = {
+	set_country_type = awakened_marauders
+	set_global_flag = marauder_crisis_started
+	set_global_flag = marauder_crisis_ongoing
+	save_global_event_target_as = raider_khanate
+	save_global_event_target_as = great_khan
+	if = {
+		limit = { has_country_flag = marauder_1 }
+		random_system = {
+			limit = { has_star_flag = marauder_capital_1 }
+			random_system_planet = {
+				limit = { has_carrier_flag = raid_source }
+				save_global_event_target_as = marauder_rally_point
+				set_carrier_flag = marauder_rally_point
+			}
+		}
+	}
+	if = {
+		limit = { has_country_flag = marauder_2 }
+		random_system = {
+			limit = { has_star_flag = marauder_capital_2 }
+			random_system_planet = {
+				limit = { has_carrier_flag = raid_source }
+				save_global_event_target_as = marauder_rally_point
+				set_carrier_flag = marauder_rally_point
+			}
+		}
+	}
+	if = {
+		limit = { has_country_flag = marauder_3 }
+		random_system = {
+			limit = { has_star_flag = marauder_capital_3 }
+			random_system_planet = {
+				limit = { has_carrier_flag = raid_source }
+				save_global_event_target_as = marauder_rally_point
+				set_carrier_flag = marauder_rally_point
+			}
+		}
+	}
+	change_government = {
+		civics = { civic = civic_great_khans_vision }
+	}
+	# GOTC Moved up
+	create_ship_design = { design = "NAME_Pirate_Transport" }
+	add_ship_design = last_created_design
+	create_ship_design = { design = "NAME_Clan_Builder" }
+	add_ship_design = last_created_design
+	# GOTC
+	if = { # nursultan
+		limit = { has_country_flag = gotc_nursultan }
+		set_name = "Нурсултанат"
+		change_country_flag = {
+			icon = {
+				category="ornate"
+				file="flag_ornate_5.dds"
+			}
+			background= {
+				category="backgrounds"
+				file="circle.dds"
+			}
+			colors={
+				"ocean_turquoise"
+				"bright_yellow"
+				"black"
+				"null"
+			}
+		}
+		### Ruler Khan
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = "Нурсултан"
+			gender=male
+			skill = 10
+			leader_age_min = 22
+			leader_age_max = 40
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_ruler_great_khan
+				trait = leader_trait_master_gunner
+				trait = subclass_commander_admiral
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
+				trait = leader_trait_reckless_2
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
+			}
+		}
+		last_created_leader = {
+			set_leader_flag = gotc_nursultan
+		}
+	}
+	else_if = { # hoplithes
+		limit = { has_country_flag = gotc_hoplithes }
+		set_name = "Империя Сашки Македонского"
+		change_country_flag = {
+			icon = {
+				category="zoological"
+				file="flag_zoological_14.dds"
+			}
+			background= {
+				category="backgrounds"
+				file="diagonal_stripe.dds"
+			}
+			colors={
+				"intense_red"
+				"dark_blue"
+				"black"
+				"null"
+			}
+		}
+		### Ruler Khan
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = "Сашка Македонский"
+			gender=male
+			skill = 10
+			leader_age_min = 22
+			leader_age_max = 40
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_ruler_great_khan
+				trait = leader_trait_master_gunner
+				trait = subclass_commander_admiral
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
+				trait = leader_trait_reckless_2
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
+			}
+		}
+		last_created_leader = {
+			set_leader_flag = gotc_alexander
+		}
+	}
+	else_if = { # 2ch
+		limit = { has_country_flag = gotc_2ch }
+		set_name = "Онотолийская Орда"
+		change_country_flag = {
+			icon = {
+				category="human"
+				file="flag_human_6.dds"
+			}
+			background= {
+				category="backgrounds"
+				file="circle.dds"
+			}
+			colors={
+				"brown"
+				"dark_brown"
+				"null"
+				"null"
+			}
+		}
+		create_species = {
+			name = "Аквамен"
+			plural = "Аквамены"
+			adjective = "Акваменск"
+			class = "ART"
+			portrait = "psionic_05"
+			name_list="GOTC_JEW"
+			gender=male
+			extra_trait_points = 8
+			traits = {
+				trait = "trait_pc_habitat_preference"
+				trait = "trait_organic"
+				trait = "trait_presapient_natural_intellectuals"
+				trait = "trait_erudite"
+				trait = "trait_cranial_megatrophy"
+				trait = "trait_uncanny_intuition"
+				trait = "trait_elevated_synapses"
+				trait = "trait_artificial_intelligence"
+				trait = "trait_slow_breeders"
+				trait = "trait_sedentary"
+			}
+		}
+		### Ruler Khan
+		create_leader = {
+			class = commander
+			species = last_created_species
+			name = "Онотоле"
+			gender=male
+			skill = 10
+			leader_age_min = 22
+			leader_age_max = 40
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_ruler_great_khan
+				trait = leader_trait_master_gunner
+				trait = subclass_commander_admiral
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
+				trait = leader_trait_reckless_2
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
+			}
+		}
+	}
+	else_if = { # naqshbandi
+		limit = { has_country_flag = gotc_naqshbandi }
+		set_name = "Исламское Государство Галактики"
+		change_country_flag = {
+			icon = {
+				category="corporate"
+				file="corporate_07.dds"
+			}
+			background= {
+				category="backgrounds"
+				file="00_solid.dds"
+			}
+			colors={
+				"black"
+				"black"
+				"black"
+				"null"
+			}
+		}
+		### Ruler Khan
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = "Аль Багдади"
+			gender=male
+			skill = 10
+			leader_age_min = 22
+			leader_age_max = 40
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_ruler_great_khan
+				trait = leader_trait_master_gunner
+				trait = subclass_commander_admiral
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
+				trait = leader_trait_reckless_2
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
+			}
+		}
+	}
+	else_if = { # midii
+		limit = { has_country_flag = gotc_midii }
+		set_name = "Держава Ахеменидок"
+		change_country_flag = {
+			icon = {
+				category="domination"
+				file="domination_23.dds"
+			}
+			background= {
+				category="backgrounds"
+				file="v.dds"
+			}
+			colors={
+				"red"
+				"green"
+				"black"
+				"null"
+			}
+		}
+		### Ruler Khan
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = "Кира Великая"
+			gender=female
+			skill = 10
+			leader_age_min = 22
+			leader_age_max = 40
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_ruler_great_khan
+				trait = leader_trait_master_gunner
+				trait = subclass_commander_admiral
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
+				trait = leader_trait_reckless_2
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
+			}
+		}
+	}
+	else = {
+		set_name = random
+		change_country_flag = {
+			icon = {
+				category = "pirate"
+				file = "flag_pirate_11.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "00_solid.dds"
+			}
+			colors={
+				"red"
+				"red"
+				"null"
+				"null"
+			}
+		}
+		### Ruler Khan
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = "Исхан"
+			skill = 10
+			leader_age_min = 22
+			leader_age_max = 40
+			randomize_traits = no
+			traits = {
+				trait = leader_trait_ruler_great_khan
+				trait = leader_trait_master_gunner
+				trait = subclass_commander_admiral
+				trait = leader_trait_gunship_specialization_2
+				trait = leader_trait_wrecker_2
+				trait = leader_trait_reckless_2
+				trait = leader_trait_artillerist_2
+				trait = leader_trait_demolisher_2
+			}
+		}
+	}
+	last_created_leader = {
+		set_leader_flag = great_khan
+		save_global_event_target_as = great_khan_ruler
+	}
+	assign_leader = last_created_leader
+	set_timed_global_flag = { flag = khan_no_die days = 7200 } # Should only die in battle first 20 years
+	country_event = { id = marauder.514 days = 10800 random = 5000 } # Khan dies of old age if still around
+
+	### Admiral Khan
+	clone_leader = {
+		target = event_target:great_khan_ruler
+		class = commander
+		tier = leader_tier_legendary
+		skill = 10
+		randomize_traits = no
+		effect = {
+			remove_trait = leader_trait_ruler_great_khan
+			add_trait = {
+				trait = leader_trait_great_khan
+			}
+			save_event_target_as = khan_fleet_admiral
+			set_leader_flag = great_khan
+			save_global_event_target_as = great_khan
+		}
+	}
+
+	create_1st_khan_fleet = yes
+	create_marauder_fleet = yes
+	create_marauder_fleet = yes
+	create_marauder_fleet = yes
+	create_marauder_armies = yes
+	create_marauder_armies = yes
+	create_marauder_armies = yes
+	create_marauder_armies = yes
+	create_marauder_constructors = yes
+	create_marauder_constructors = yes
+	create_marauder_constructors = yes
+	country_event = { id = marauder.520 days = 180 } # Start reinforcement cycle
+	if = {
+		limit = {
+			NOT = { has_global_flag = horde_triggered }
+		}
+		observer_event = { id = observer.13 }
+		every_playable_country = {
+			establish_communications_no_message = root
+			country_event = { id = marauder.501 }
+		}
+	}
+	else = {
+		observer_event = { id = observer.18 }
+		every_playable_country = {
+			establish_communications_no_message = root
+			country_event = { id = marauder.526 }
+		}
+	}
+
+	# Mercenaries Defect (Marauder 1)
+	if = {
+		limit = { has_country_flag = marauder_1 }
+		every_country = {
+			limit = {
+				OR = {
+					any_controlled_fleet = {
+						OR = {
+							has_fleet_flag = armada_of_the_voidborn
+							has_fleet_flag = star_rider_flotilla
+							has_fleet_flag = first_storm_wing
+						}
+					}
+					any_owned_leader = {
+						has_leader_flag = hired_merc_leader_1
+					}
+				}
+			}
+			country_event = { id = marauder.77 days = 20 }
+		}
+	}
+	# Mercenaries Defect (Marauder 2)
+	if = {
+		limit = { has_country_flag = marauder_2 }
+		every_country = {
+			limit = {
+				OR = {
+					any_controlled_fleet = {
+						OR = {
+							has_fleet_flag = dwamak_bashers
+							has_fleet_flag = unhinged_screamer_flotilla
+							has_fleet_flag = frenzied_volunteer_squadron
+						}
+					}
+					any_owned_leader = {
+						has_leader_flag = hired_merc_leader_1
+					}
+				}
+			}
+			country_event = { id = marauder.77 days = 20 }
+		}
+	}
+	# Mercenaries Defect (Marauder 3)
+	if = {
+		limit = { has_country_flag = marauder_3 }
+		every_country = {
+			limit = {
+				OR = {
+					any_controlled_fleet = {
+						OR = {
+							has_fleet_flag = her_chosen_champions
+							has_fleet_flag = order_of_eternal_night
+							has_fleet_flag = twilight_congregation
+						}
+					}
+					any_owned_leader = {
+						has_leader_flag = hired_merc_leader_1
+					}
+				}
+			}
+			country_event = { id = marauder.77 days = 20 }
+		}
+	}
+
+	# Mercenaries Join the Great Khan
+	country_event = { id = marauder.78 days = 20 }
+
+	# Should not attack Enclaves
+	every_country = {
+		limit = {
+			is_enclave_country = yes
+		}
+		event_target:raider_khanate = {
+			set_faction_hostility = {
+				target = prev
+				set_hostile = no
+				set_neutral = no
+				set_friendly = yes
+			}
+		}
+	}
+}
