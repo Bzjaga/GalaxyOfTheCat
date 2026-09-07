@@ -157,7 +157,7 @@ gotc_zaharova = {
 	}
 }
 
-lukashenko_gotc = {
+gotc_lukashenko = {
 	name = "GOTC_LUKASHENKO_EMPIRE_NAME"
 	adjective = "GOTC_LUKASHENKO_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
@@ -2838,5 +2838,83 @@ gotc_ksir = {
 		trait="trait_ruler_feedback_loop"
 		trait="leader_trait_xeno_cataloger"
 		leader_class = scientist
+	}
+}
+
+"Технат Тёмного Просвещения" = {
+	name = "Технат Тёмного Просвещения"
+	adjective = "Тёмнопросветительск"
+	spawn_enabled = always
+
+	ship_prefix = "ТИЛЬ"
+
+	species = {
+		class = "AQUATIC"
+		portrait = "psionic_07"
+		name = "Акселерат"
+		plural = "Акселераты"
+		adjective = "Акселератск"
+		name_list = "HUM4"
+		gender = not_set
+		trait = "trait_organic"
+		trait = "trait_cyborg_ritualistic_implants"
+		trait = "trait_tankbound"
+		trait = "trait_haunting_visions"
+		trait = "trait_uncanny_intuition"
+		trait = "trait_decadent"
+		trait = "trait_cranial_megatrophy"
+		trait = "trait_slow_breeders"
+	}
+
+	room = "gilded_room"
+
+	authority = "auth_imperial"
+	civics = { "civic_tankbound" "civic_ascensionists" }
+	government = gov_theocratic_monarchy
+	origin = "origin_cybernetic_creed"
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_xenophile"
+	ethic = "ethic_spiritualist"
+
+	planet_name = "Майами"
+	planet_class = "pc_tropical"
+	system_name = "Майами"
+
+	initializer = ""
+	graphical_culture = "cybernetics_01"
+	city_graphical_culture = "cybernetics_01"
+
+	empire_flag={
+		icon={
+			category="ornate"
+			file="flag_ornate_24.dds"
+		}
+		background={
+			category="backgrounds"
+			file="circle.dds"
+		}
+		colors={
+			"medium_steel"
+			"black"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Питер Тиль"
+		gender = male
+		portrait = "psionic_07"
+		texture = 3
+		evolution_mask=0
+		attachment=0
+		clothes=4
+		ruler_title="Техномонарх"
+		heir_title="Тёмный Просветитель"
+		ruler_title_female="Техномонарх"
+		heir_title_female="Тёмная Просветительница"
+		trait="trait_ruler_eye_for_talent"
+		leader_class = official
 	}
 }
