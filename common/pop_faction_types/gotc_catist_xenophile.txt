@@ -66,7 +66,7 @@ catist_xenophile = {
 		is_regular_empire = yes
 		has_encountered_other_species = yes
 		is_at_war = no
-		has_country_flag = xenoist_enabled
+		has_country_flag = feline_faction_enabled
 		NOR = {
 			is_homicidal = yes
 			has_country_flag = feline_country #Applied if/when cats become main species
@@ -137,7 +137,8 @@ catist_xenophile = {
 			}
 		}
 		modifier = {
-			factor = 0.25
+			factor = 0.75
+			is_feline_species = no
 			OR = {
 				has_trait = trait_robot_high_maintenance
 				has_trait = trait_robot_loyalty_circuits
@@ -150,7 +151,8 @@ catist_xenophile = {
 			}
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
+			is_feline_species = no
 			OR = {
 				has_trait = trait_robot_history_chatbot
 				has_trait = trait_robot_history_artbot
@@ -167,7 +169,7 @@ catist_xenophile = {
 			}
 		}
 		modifier = {
-			factor = 5
+			factor = 2
 			is_feline_species = yes
 		}
 		modifier = { #Outcasts and radicals
@@ -424,8 +426,15 @@ catist_xenophile = {
 		trigger = {
 			owner = {
 				count_owned_planet = {
-					limit = { any_owned_species = { is_feline_species = yes } }
-					count = num_owned_planets
+					limit = {
+						habitable_planet = yes
+						OR = {
+							is_colony = yes
+							is_capital = yes
+						}
+						NOT = { any_owned_species = { is_feline_species = yes } }
+					}
+					count = 0
 				}
 			}
 		}

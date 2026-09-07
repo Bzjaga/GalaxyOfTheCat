@@ -383,7 +383,7 @@ system_event = { # Event is formally tied to solar system
 	}
 }
 
-# nursultan planet colonized
+# planet colonized
 carrier_event = {
 	id = gotc.10
 	hide_window = yes
@@ -393,15 +393,27 @@ carrier_event = {
 	trigger = {
 		exists = owner
 		owner = {
-			has_country_flag = gotc_nursultan
-			ruler = { has_leader_flag = gotc_nursultan }
+			OR = {
+				has_country_flag = gotc_nursultan
+				has_country_flag = gotc_hoplithes
+			}
 		}
 	}
 
 	immediate = {
-		rename_space_object_nursultan = yes
-		solar_system = {
+		if = {
+			limit = { owner = { ruler = { has_leader_flag = gotc_nursultan } } }
 			rename_space_object_nursultan = yes
+			solar_system = {
+				rename_space_object_nursultan = yes
+			}
+		}
+		else_if = {
+			limit = { owner = { ruler = { has_leader_flag = gotc_alexander } } }
+			set_name = "Александрия"
+			solar_system = {
+				set_name = "Александрия"
+			}
 		}
 	}
 }
@@ -414,16 +426,26 @@ carrier_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from = {
-			has_country_flag = gotc_nursultan
-			ruler = { has_leader_flag = gotc_nursultan }
+		OR = {
+			from = { has_country_flag = gotc_nursultan }
+			from = { has_country_flag = gotc_hoplithes }
 		}
 	}
 
 	immediate = {
-		rename_space_object_nursultan = yes
-		solar_system = {
+		if = {
+			limit = { from = { ruler = { has_leader_flag = gotc_nursultan } } }
 			rename_space_object_nursultan = yes
+			solar_system = {
+				rename_space_object_nursultan = yes
+			}
+		}
+		else_if = {
+			limit = { from = { ruler = { has_leader_flag = gotc_alexander } } }
+			set_name = "Александрия"
+			solar_system = {
+				set_name = "Александрия"
+			}
 		}
 	}
 }
@@ -1721,80 +1743,7 @@ leader_event = { # cat leader
 	option = {
 		name = gotc.40110.j
 		owner = {
-			if = {
-				limit = { any_pool_leader = { species = { is_feline_species = yes } } }
-				random_pool_leader = {
-					limit = { species = { is_feline_species = yes } }
-					weights = {
-						base = 1
-						modifier = {
-							add = 100
-							has_trait = trait_ruler_charismatic
-						}
-					}
-					save_event_target_as = hired_cat_leader
-					prev = { assign_leader = event_target:hired_cat_leader }
-				}
-			}
-			else = {
-				if = {
-					limit = { any_owned_species = { is_feline_species = yes } }
-					random_owned_species = {
-						limit = { is_feline_species = yes }
-						save_event_target_as = randomly_chosen_feline_specie
-					}
-				}
-				else = {
-					random_galaxy_species = {
-						limit = {
-							is_feline_species = yes
-							is_robotic = no
-							OR = {
-								is_sapient = yes
-								has_trait = trait_nascent_stage
-							}
-						}
-						weights = {
-							base = 1
-							modifier = {
-								add = 100
-								has_trait = trait_charismatic
-							}
-						}
-						save_event_target_as = randomly_chosen_feline_specie
-					}
-				}
-				create_leader = {
-					# All Hail Gorongoron!
-					species = event_target:randomly_chosen_feline_specie
-					class = scientist
-					name = "Горонгорон"
-					gender = male
-					skill = 1
-					set_age = 32
-					traits = {
-						trait = trait_ruler_charismatic_2
-					}
-				}
-				last_created_leader = {
-					save_event_target_as = hired_cat_leader
-					set_leader_flag = leader_gorongoron
-				}
-			}
-			event_target:hired_cat_leader = {
-				add_skill = 1
-				if = {
-					limit = { leader_class = scientist }
-					add_trait = {
-						trait = leader_trait_sapient_AI_assistant
-					}
-				}
-				else = {
-					add_trait = {
-						trait = trait_ruler_charismatic_2
-					}
-				}
-			}
+			create_or_hire_feline_leader = yes
 			every_owned_leader = {
 				limit = {
 					leader_class = scientist
@@ -1818,7 +1767,7 @@ leader_event = { # cat leader
 		}
 		hidden_effect = {
 			owner = {
-				set_country_flag = cat_leader_hired
+				set_country_flag = feline_leader_hired
 				check_country_flags_mad_vacuum_cleaner = yes
 			}
 			#alien_infection pop modifier allergy
@@ -1835,6 +1784,34 @@ leader_event = { # cat leader
 			}
 		}
 		default_hide_option = yes
+	}
+}
+
+country_event = { # change ruler (mad vacuum cleaner resigns)
+	id = gotc.40111
+	title = gotc.40111.name
+	desc = gotc.40111.desc
+	picture = GFX_evt_but_they_are_cute
+	show_sound = event_default
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			is_ruler = yes
+			has_trait = leader_trait_tomcat_insight
+		}
+	}
+
+	immediate = {
+		check_country_flags_mad_vacuum_cleaner = yes
+		create_or_hire_feline_leader = yes
+		set_leader = event_target:hired_feline_leader #???
+		country_event = { id = gotc.41234 days = 30 } # calling next mad vacuum cleaner event
+	}
+
+	option = {
+		name = gotc.40111.a
 	}
 }
 
@@ -1888,7 +1865,7 @@ country_event = {
 						else_if = {
 							limit = {
 								NOT = { has_country_flag = feline_country }
-								NOT = { has_country_flag = cat_leader_hired }
+								NOT = { has_country_flag = feline_leader_hired }
 								NOT = { any_owned_leader = { species = { is_feline_species = yes } } }
 								exists = ruler
 								NOT = { ruler = { species = { is_feline_species = yes } } }

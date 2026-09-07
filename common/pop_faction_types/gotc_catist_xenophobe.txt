@@ -65,7 +65,7 @@ catist_xenophobe = {
 		is_ai = no
 		is_regular_empire = yes
 		has_encountered_other_species = yes
-		has_country_flag = xenoist_enabled
+		has_country_flag = feline_faction_enabled
 		has_country_flag = feline_country
 	}
 
@@ -103,7 +103,7 @@ catist_xenophobe = {
 	}
 
 	attraction = {
-		base = 160
+		base = 100
 
 
 		modifier = {
@@ -130,7 +130,8 @@ catist_xenophobe = {
 			}
 		}
 		modifier = {
-			factor = 0.25
+			factor = 0.75
+			is_feline_species = no
 			OR = {
 				has_trait = trait_robot_high_maintenance
 				has_trait = trait_aquatic
@@ -139,11 +140,13 @@ catist_xenophobe = {
 			}
 		}
 		modifier = {
-			factor = 1.5
+			factor = 1.25
+			is_feline_species = no
 			OR = {
 				has_trait = trait_robot_history_chatbot
 				has_trait = trait_robot_history_artbot
 				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_robot_loyalty_circuits
 				has_trait = trait_conservational
 				has_trait = trait_docile
 				has_trait = trait_solitary
@@ -153,7 +156,7 @@ catist_xenophobe = {
 			}
 		}
 		modifier = {
-			factor = 5
+			factor = 2
 			is_feline_species = yes
 		}
 		modifier = {
@@ -406,8 +409,15 @@ catist_xenophobe = {
 		trigger = {
 			owner = {
 				count_owned_planet = {
-					limit = { any_owned_species = { is_feline_species = yes } }
-					count = num_owned_planets
+					limit = {
+						habitable_planet = yes
+						OR = {
+							is_colony = yes
+							is_capital = yes
+						}
+						NOT = { any_owned_species = { is_feline_species = yes } }
+					}
+					count = 0
 				}
 			}
 		}

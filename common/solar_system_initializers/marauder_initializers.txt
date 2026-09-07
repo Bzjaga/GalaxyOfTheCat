@@ -52,18 +52,12 @@ marauder_1_1 = {
 				1 = { # Astrahan
 					create_marauder_1_astrahan = yes
 				}
-				0 = { # Nogay
-					#create_marauder_1_nogay = yes
-				}
-				2 = { # Nursultan
+				100 = { # Nursultan
 					modifier = {
 						factor = 0
 						any_country = { has_country_flag = gotc_nursultan }
 					}
 					create_marauder_1_nursultan = yes
-				}
-				0 = { # Kotodozh
-					#create_marauder_1_kotodozh = yes
 				}
 			}
 			last_created_country = {
@@ -1150,7 +1144,7 @@ marauder_2_1 = {
 				1 = { # Hoplithes
 					create_marauder_2_hoplithes = yes
 				}
-				2 = { # 2ch
+				100 = { # 2ch
 					modifier = {
 						factor = 0
 						any_country = { has_country_flag = gotc_2ch }
@@ -2176,10 +2170,10 @@ marauder_3_1 = {
 				center = this.solar_system
 			}
 			random_list = {
-				1 = { # Myrmekshatrii
-					create_marauder_3_myrmekshatrii = yes
+				1 = { # Naqshbandi
+					create_marauder_3_naqshbandi = yes
 				}
-				2 = { # Midii
+				100 = { # Midii
 					modifier = {
 						factor = 0
 						any_country = { has_country_flag = gotc_ksir }

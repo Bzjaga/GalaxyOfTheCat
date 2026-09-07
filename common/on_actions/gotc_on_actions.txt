@@ -21,6 +21,15 @@ on_colonized = {
 	}
 }
 
+# Executed when a ruler is created. Called after the leader is set as ruler of the country
+# This = Country
+# FROM = Leader
+on_ruler_created = {
+	events = {
+		gotc.40111 # change ruler (mad vacuum cleaner resigns)
+	}
+}
+
 # Fired whenever a new owner is set for a planet, following a war or through trade
 # This = Colony scope
 # From = Country scope (new owner)
