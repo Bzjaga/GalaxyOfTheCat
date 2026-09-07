@@ -35,7 +35,7 @@ GOTC полностью вытесняет ванильный набор пре�
 | 9 | `gotc_pospolithoid` | Rzeczpospolithoida | Диктатура | Выборная монархия | `origin_galactic_doorstep` | Ксенофобия, милитаризм, спиритуализм |
 | 10 | `gotc_netoropyr` | Moderate Progress Within the Bounds of the Law | Демократия | Моральная демократия | `origin_shoulders_of_giants` | Эгалитаризм, пацифизм, материализм |
 | 11 | `gotc_reich` | Twenty Third Reich | Диктатура | Военная диктатура | `origin_legendary_leader` | Авторитаризм, ксенофобия, милитаризм |
-| 12 | `gotc_roskomnadzor` | RosComNadzor | Диктатура | Орден чистоты | `origin_overtuned` | Фанат. ксенофобия, милитаризм |
+| 12 | `gotc_roscomnadzor` | RosComNadzor | Диктатура | Орден чистоты | `origin_overtuned` | Фанат. ксенофобия, милитаризм |
 | 13 | `gotc_deepseek` | Deep Seek | Машинный разум | Машинные исследования | `origin_ocean_machines` | Гештальт-сознание |
 | 14 | `gotc_borrel` | European Garden | Машинный разум | Машина-опекун | `origin_common_ground` | Гештальт-сознание |
 | 15 | `gotc_voldemar` | Post-Soviet Wasteland | Олигархия | Теократическая олигархия | `origin_post_apocalyptic` | Авторитаризм, ксенофобия, спиритуализм |

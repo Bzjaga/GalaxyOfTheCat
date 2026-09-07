@@ -57,76 +57,8 @@ gotc_the_chosen_home_initializer = {
 		}
 
 		init_effect = {
-			if = {
-				limit = { any_country = { has_country_flag = gotc_roskomnadzor } }
-				create_species = {
-					name = NAME_Charynoi
-					class = random_non_machine
-
-					traits = {
-						ideal_planet_class = pc_gaia
-						trait = random_traits
-					}
-
-					effect = {
-						modify_species = {
-							base = this
-							remove_trait = trait_pc_gaia_preference
-							add_trait = trait_pc_gaia_preference_terraforming
-
-							effect = {
-								save_event_target_as = chosen_species
-							}
-						}
-					}
-				}
-				create_country = {
-					species = event_target:chosen_species
-					name = NAME_The_Chosen
-					adjective = NAME_ADJ_Chosen
-					type = default
-					origin = origin_life_seeded_ai_only
-					ethos = {
-						ethic = ethic_fanatic_xenophobe
-						ethic = ethic_spiritualist
-					}
-					civics = {
-						civic = civic_fanatic_purifiers
-						civic = civic_exalted_priesthood
-					}
-					authority = random
-					effect = {
-						save_global_event_target_as = chosen_empire
-						set_country_flag = chosen_empire
-						give_starting_resources_effect = yes
-
-						# A bit extra
-						add_resource = {
-							energy = 2000
-							minerals = 2000
-							alloys = 2000
-							consumer_goods = 2000
-							trade = 2000
-							influence = 1000
-							unity = 500
-						}
-
-						create_leader = {
-							class = official
-							species = event_target:chosen_species
-						}
-						while = {
-							count = 3
-							create_leader = {
-								class = scientist
-								species = event_target:chosen_species
-							}
-						}
-					}
-					day_zero_contact = no #otherwise enclaves and FEs get instant comms
-				}
-			}
-			else = { # roskomnadzor
+			if = { # roscomnadzor
+				limit = { NOT = { any_country = { has_country_flag = gotc_roscomnadzor } } }
 				create_species = {
 					name = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_NAME"
 					plural = "GOTC_ROSCOMNADZOR_MAIN_SPECIES_PLURAL"
@@ -237,6 +169,74 @@ gotc_the_chosen_home_initializer = {
 							}
 						}
 						country_event = { id = paragon.5000 }
+					}
+					day_zero_contact = no #otherwise enclaves and FEs get instant comms
+				}
+			}
+			else = {
+				create_species = {
+					name = NAME_Charynoi
+					class = random_non_machine
+
+					traits = {
+						ideal_planet_class = pc_gaia
+						trait = random_traits
+					}
+
+					effect = {
+						modify_species = {
+							base = this
+							remove_trait = trait_pc_gaia_preference
+							add_trait = trait_pc_gaia_preference_terraforming
+
+							effect = {
+								save_event_target_as = chosen_species
+							}
+						}
+					}
+				}
+				create_country = {
+					species = event_target:chosen_species
+					name = NAME_The_Chosen
+					adjective = NAME_ADJ_Chosen
+					type = default
+					origin = origin_life_seeded_ai_only
+					ethos = {
+						ethic = ethic_fanatic_xenophobe
+						ethic = ethic_spiritualist
+					}
+					civics = {
+						civic = civic_fanatic_purifiers
+						civic = civic_exalted_priesthood
+					}
+					authority = random
+					effect = {
+						save_global_event_target_as = chosen_empire
+						set_country_flag = chosen_empire
+						give_starting_resources_effect = yes
+
+						# A bit extra
+						add_resource = {
+							energy = 2000
+							minerals = 2000
+							alloys = 2000
+							consumer_goods = 2000
+							trade = 2000
+							influence = 1000
+							unity = 500
+						}
+
+						create_leader = {
+							class = official
+							species = event_target:chosen_species
+						}
+						while = {
+							count = 3
+							create_leader = {
+								class = scientist
+								species = event_target:chosen_species
+							}
+						}
 					}
 					day_zero_contact = no #otherwise enclaves and FEs get instant comms
 				}

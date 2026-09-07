@@ -2012,7 +2012,7 @@ gotc_reich = {
 	}
 }
 
-gotc_roskomnadzor = {
+gotc_roscomnadzor = {
 	name = "GOTC_ROSCOMNADZOR_EMPIRE_NAME"
 	adjective = "GOTC_ROSCOMNADZOR_EMPIRE_ADJECTIVE"
 	spawn_enabled = always
@@ -2041,7 +2041,7 @@ gotc_roskomnadzor = {
 	government = gov_purity_order
 	origin = "origin_overtuned"
 
-	flag = gotc_roskomnadzor
+	flag = gotc_roscomnadzor
 
 	ethic = "ethic_fanatic_xenophobe"
 	ethic = "ethic_militarist"
