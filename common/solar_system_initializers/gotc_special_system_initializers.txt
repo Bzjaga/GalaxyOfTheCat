@@ -173,7 +173,119 @@ gotc_the_chosen_home_initializer = {
 					day_zero_contact = no #otherwise enclaves and FEs get instant comms
 				}
 			}
-			else = {
+			else_if = { # isis
+				limit = { NOT = { any_country = { has_country_flag = gotc_naqshbandi } } }
+				create_species = {
+					name = "Исламист"
+					plural = "Исламисты"
+					adjective = "Исламистск"
+					class = REP
+					portrait = rep12
+					name_list="MAM2"
+					gender=male
+					traits = {
+						ideal_planet_class = pc_gaia
+						trait = trait_organic
+						trait = trait_traditional
+						trait = trait_spare_organs
+						trait = trait_acidic_vascularity
+						trait = trait_repugnant
+					}
+
+					effect = {
+						modify_species = {
+							base = this
+							remove_trait = trait_pc_gaia_preference
+							add_trait = trait_pc_gaia_preference_terraforming
+
+							effect = {
+								save_event_target_as = chosen_species
+							}
+						}
+					}
+				}
+				create_country = {
+					species = event_target:chosen_species
+					ship_prefix = "ИГГ"
+					name = "Исламское Государство Галактики"
+					adjective = "Исламистск"
+					type = default
+					name_list="GOTC_TAJICAUCASIAN"
+					origin = origin_life_seeded_ai_only
+					ethos = {
+						ethic = ethic_fanatic_xenophobe
+						ethic = ethic_spiritualist
+					}
+					civics = {
+						civic = civic_fanatic_purifiers
+						civic = civic_chosen
+					}
+					authority = auth_imperial
+					flag = {
+						icon = {
+							category="zoological"
+							file="flag_zoological_23.dds"
+						}
+						background = {
+							category="backgrounds"
+							file="00_solid.dds"
+						}
+						colors = {
+							"black"
+							"black"
+							"null"
+							"null"
+						}
+					}
+					effect = {
+						save_global_event_target_as = chosen_empire
+						set_country_flag = chosen_empire
+						give_starting_resources_effect = yes
+
+						# A bit extra
+						add_resource = {
+							energy = 2000
+							minerals = 2000
+							alloys = 2000
+							consumer_goods = 2000
+							trade = 2000
+							influence = 1000
+							unity = 500
+						}
+
+						# Leader
+						create_leader = {
+							species = event_target:chosen_species
+							class = commander
+							name = "Абу Бакр Аль Багдади"
+							gender=male
+							skill = 1
+							set_age = 1
+							randomize_traits = no
+							traits = {
+								trait = leader_trait_fleet_organizer
+							}
+						}
+						set_male_ruler_title = "Халиф"
+						set_leader = last_created_leader
+
+						create_leader = {
+							class = official
+							species = event_target:chosen_species
+						}
+						while = {
+							count = 3
+							create_leader = {
+								class = scientist
+								species = event_target:chosen_species
+							}
+						}
+						country_event = { id = shroud.5100 }
+					}
+					day_zero_contact = no #otherwise enclaves and FEs get instant comms
+				}
+			}
+			else = { # vanilla
 				create_species = {
 					name = NAME_Charynoi
 					class = random_non_machine
