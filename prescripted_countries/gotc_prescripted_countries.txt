@@ -2873,6 +2873,8 @@ gotc_ksir = {
 	government = gov_theocratic_monarchy
 	origin = "origin_cybernetic_creed"
 
+	flag = gotc_thiel
+
 	ethic = "ethic_authoritarian"
 	ethic = "ethic_xenophile"
 	ethic = "ethic_spiritualist"
@@ -2915,6 +2917,80 @@ gotc_ksir = {
 		ruler_title_female="Техномонарх"
 		heir_title_female="Тёмная Просветительница"
 		trait="trait_ruler_eye_for_talent"
+		leader_class = official
+	}
+}
+
+"Альтернатива для Галактики" = {
+	name = "Альтернатива для Галактики"
+	adjective = "Альтернативн"
+	spawn_enabled = always
+
+	ship_prefix = "АДГ"
+
+	species = {
+		class = "MAM"
+		portrait = "mammalian_ar_01"
+		name = "Ангальт-Сакс"
+		plural = "Ангальт-Саксы"
+		adjective = "Ангальт-Сакск"
+		name_list = "HUMAN1"
+		gender = not_set
+		trait = "trait_organic"
+		trait = "trait_industrious"
+		trait = "trait_fleeting"
+		trait = "trait_quick_learners"
+		trait = "trait_familial"
+		trait = "trait_slow_breeders"
+	}
+
+	room = "personality_ruthless_capitalists_room"
+
+	authority = "auth_oligarchic"
+	civics = { "civic_selective_kinship" "civic_relentless_industrialists" }
+	government = gov_executive_committee
+	origin = "origin_remnants"
+
+	ethic = "ethic_egalitarian"
+	ethic = "ethic_xenophobe"
+	ethic = "ethic_materialist"
+
+	planet_name = "Миттельдойчланд"
+	planet_class = "pc_continental"
+	system_name = "Миттельдойчланд"
+
+	initializer = ""
+	graphical_culture = "nemesis_01"
+	city_graphical_culture = "cybernetics_01"
+
+	empire_flag={
+		icon={
+			category="human"
+			file="flag_human_4.dds"
+		}
+		background={
+			category="backgrounds"
+			file="horizontal.dds"
+		}
+		colors={
+			"bright_yellow"
+			"black"
+			"black"
+			"null"
+		}
+	}
+
+	ruler = {
+		name = "Алиса Вайдель"
+		gender = female
+		portrait = "mammalian_ar_01_f"
+		texture = 2
+		evolution_mask=0
+		attachment=0
+		clothes=0
+		ruler_title="Рейхсканцлер"
+		ruler_title_female="Рейхсканцлер"
+		trait="leader_trait_principled"
 		leader_class = official
 	}
 }
