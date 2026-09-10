@@ -46,6 +46,10 @@ gotc_dimon = {
 	flags = { gotc_dimon }
 }
 
+gotc_thiel = {
+	flags = { gotc_thiel }
+}
+
 gotc_nursultan = {
 	flags = { gotc_nursultan }
 }
