@@ -383,6 +383,83 @@ system_event = { # Event is formally tied to solar system
 	}
 }
 
+country_event = {
+	id = gotc.4
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+	}
+
+	immediate = {
+		if = { # thiel
+			limit = { has_country_flag = gotc_thiel }
+			capital_scope = {
+				while = {
+					count = 2
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining
+					}
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_factory_1
+				}		
+				create_species = {
+					name = "Флорида-мен"
+					plural = "Флорида-мены"
+					adjective = "Флорида-менск"
+					class = "MOL"
+					portrait = "bio11"
+					name_list="ART3"
+					gender=not_set
+					traits = {
+						trait = "trait_organic"
+						trait = "trait_presapient_earthbound"
+						trait = "trait_spare_organs"
+						trait = "trait_slow_learners"
+						trait = "trait_ingenious"
+						trait = "trait_resilient"
+						trait = "trait_fleeting"
+						trait = "trait_strong"
+					}
+					sapient = no
+					homeworld = this
+				}
+				create_pop_group = {
+					species = last_created_species
+					size = 300
+				}
+			}
+			country_event = {
+				id = gotc.9
+				days = 1
+			}
+		}
+	}
+}
+
+# thiel
+country_event = {
+	id = gotc.9
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = gotc_thiel }
+			set_policy = {
+				policy = economic_policy
+				option = economic_policy_civilian
+				cooldown = yes
+			}
+		}
+	}
+}
+
 # planet colonized
 carrier_event = {
 	id = gotc.10
