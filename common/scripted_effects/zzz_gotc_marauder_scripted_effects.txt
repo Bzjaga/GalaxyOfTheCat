@@ -39,6 +39,7 @@ make_khan_effect = {
 		}
 	}
 	change_government = {
+		authority = auth_dictatorial
 		civics = { civic = civic_great_khans_vision }
 	}
 	# GOTC Moved up
