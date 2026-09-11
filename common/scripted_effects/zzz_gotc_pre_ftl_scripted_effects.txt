@@ -1512,16 +1512,16 @@ spawn_presapient_species_randomizer_effect = {
 					}
 				}
 			}
-			2 = { # krysa
+			2 = { # krysa_1
 				modifier = {
 					add = 10
 					is_planet_class = pc_relic
 				}
 				modifier = {
 					factor = 0
-					owner = { has_country_flag = gotc_krysa_species_used }
+					owner = { has_country_flag = gotc_krysa_1_species_used }
 				}
-				owner = { set_country_flag = gotc_krysa_species_used }
+				owner = { set_country_flag = gotc_krysa_1_species_used }
 				create_species = {
 					name = {
 						key="Крыса Больная"
@@ -1544,6 +1544,48 @@ spawn_presapient_species_randomizer_effect = {
 						trait = trait_presapient_natural_intellectuals
 						trait = trait_haunting_visions
 						trait = trait_cranial_megatrophy
+					}
+					homeworld = this
+					sapient = no
+					effect = {
+						save_event_target_as = latest_presapient
+					}
+				}
+			}
+			1 = { # krysa_2
+				modifier = {
+					add = 10
+					is_planet_class = pc_relic
+				}
+				modifier = {
+					factor = 0
+					owner = { has_country_flag = gotc_krysa_2_species_used }
+				}
+				owner = { set_country_flag = gotc_krysa_2_species_used }
+				create_species = {
+					name = {
+						key="Крыса Жирующая"
+						literal=yes
+					}
+					plural = {
+						key="Крысы"
+						literal=yes
+					}
+					adjective = {
+						key="Крысин"
+						literal=yes
+					}
+					class = MAM
+					portrait = mam_rat
+					name_list="MAM4"
+					gender=not_set
+					traits = {
+						trait = trait_organic
+						trait = trait_presapient_natural_intellectuals
+						trait = trait_reavers
+						trait = trait_docile
+						trait = trait_wasteful
+						trait = trait_humanoid_jinxed
 					}
 					homeworld = this
 					sapient = no
