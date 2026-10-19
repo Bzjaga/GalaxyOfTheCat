@@ -25,7 +25,7 @@ GOTC полностью вытесняет ванильный набор пре�
 | # | Ключ | Название | Власть | Правительство | Происхождение | Этики |
 |---:|---|---|---|---|---|---|
 | 1 | `gotc_zaharova` | Ministry of OutMKADic Affairs | Олигархия | Военная хунта | `origin_imperial_vassal` | Авторитаризм, ксенофобия, милитаризм |
-| 2 | `lukashenko_gotc` | Mingsk Dynasy | Диктатура | Миролюбивая диктатура | `origin_imperial_vassal` | Фанат. авторитаризм, пацифизм |
+| 2 | `gotc_lukashenko` | Mingsk Dynasy | Диктатура | Миролюбивая диктатура | `origin_imperial_vassal` | Фанат. авторитаризм, пацифизм |
 | 3 | `gotc_mao` | Zone of Resistance to Social Imperialism | Олигархия | Миролюбивая бюрократия | `origin_imperial_vassal` | Эгалитаризм, ксенофобия, пацифизм |
 | 4 | `gotc_korea` | Chaebolea | Корпорация | Мегакорпорация | `origin_fear_of_the_dark` | Ксенофилия, милитаризм, материализм |
 | 5 | `gotc_kadyrov` | Ichkeric Republic Chechenia | Диктатура | Бандитское королевство | `origin_default` | Ксенофобия, милитаризм, спиритуализм |
@@ -35,7 +35,7 @@ GOTC полностью вытесняет ванильный набор пре�
 | 9 | `gotc_pospolithoid` | Rzeczpospolithoida | Диктатура | Выборная монархия | `origin_galactic_doorstep` | Ксенофобия, милитаризм, спиритуализм |
 | 10 | `gotc_netoropyr` | Moderate Progress Within the Bounds of the Law | Демократия | Моральная демократия | `origin_shoulders_of_giants` | Эгалитаризм, пацифизм, материализм |
 | 11 | `gotc_reich` | Twenty Third Reich | Диктатура | Военная диктатура | `origin_legendary_leader` | Авторитаризм, ксенофобия, милитаризм |
-| 12 | `gotc_roskomnadzor` | RosComNadzor | Диктатура | Орден чистоты | `origin_overtuned` | Фанат. ксенофобия, милитаризм |
+| 12 | `gotc_roscomnadzor` | RosComNadzor | Диктатура | Орден чистоты | `origin_overtuned` | Фанат. ксенофобия, милитаризм |
 | 13 | `gotc_deepseek` | Deep Seek | Машинный разум | Машинные исследования | `origin_ocean_machines` | Гештальт-сознание |
 | 14 | `gotc_borrel` | European Garden | Машинный разум | Машина-опекун | `origin_common_ground` | Гештальт-сознание |
 | 15 | `gotc_voldemar` | Post-Soviet Wasteland | Олигархия | Теократическая олигархия | `origin_post_apocalyptic` | Авторитаризм, ксенофобия, спиритуализм |
@@ -47,7 +47,7 @@ GOTC полностью вытесняет ванильный набор пре�
 
 ### Заметки по составу
 
-- **Имперский вассалитет.** Три империи (`gotc_zaharova`, `lukashenko_gotc`, `gotc_mao`)
+- **Имперский вассалитет.** Три империи (`gotc_zaharova`, `gotc_lukashenko`, `gotc_mao`)
   стартуют с `origin_imperial_vassal`. Их сюзерены создаются скриптовыми эффектами
   в [gotc_effects.txt](../common/scripted_effects/gotc_effects.txt) — советский или
   постсоветский оверлорд, выбор зависит от логики эффекта

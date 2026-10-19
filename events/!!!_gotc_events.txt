@@ -383,6 +383,84 @@ system_event = { # Event is formally tied to solar system
 	}
 }
 
+# on_game_start_country
+country_event = {
+	id = gotc.4
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+	}
+
+	immediate = {
+		if = { # thiel
+			limit = { has_country_flag = gotc_thiel }
+			capital_scope = {
+				while = {
+					count = 2
+					add_district_and_planet_size_if_needed_effect = {
+						district = district_mining
+					}
+				}
+				add_building = {
+					zone = zone_industrial
+					building = building_factory_1
+				}		
+				create_species = {
+					name = "Флорида-мен"
+					plural = "Флорида-мены"
+					adjective = "Флорида-менск"
+					class = "MOL"
+					portrait = "bio11"
+					name_list="ART3"
+					gender=not_set
+					traits = {
+						trait = "trait_organic"
+						trait = "trait_presapient_earthbound"
+						trait = "trait_spare_organs"
+						trait = "trait_slow_learners"
+						trait = "trait_ingenious"
+						trait = "trait_resilient"
+						trait = "trait_fleeting"
+						trait = "trait_strong"
+					}
+					sapient = no
+					homeworld = this
+				}
+				create_pop_group = {
+					species = last_created_species
+					size = 300
+				}
+			}
+			country_event = {
+				id = gotc.9
+				days = 1
+			}
+		}
+	}
+}
+
+# thiel
+country_event = {
+	id = gotc.9
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = gotc_thiel }
+			set_policy = {
+				policy = economic_policy
+				option = economic_policy_civilian
+				cooldown = yes
+			}
+		}
+	}
+}
+
 # planet colonized
 carrier_event = {
 	id = gotc.10
@@ -418,7 +496,7 @@ carrier_event = {
 	}
 }
 
-# nursultan planet transferred/conquered
+# nursultan/hoplithes planet transferred/conquered
 carrier_event = {
 	id = gotc.11
 	hide_window = yes
@@ -466,6 +544,486 @@ country_event = {
 		from = {
 			rename_space_object_nursultan = yes
 		}
+	}
+}
+
+# The Diadochi (HIDDEN)
+country_event = {
+	id = gotc.601
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner_species = { save_event_target_as = marauder_species }
+		every_controlled_fleet = {
+			limit = {
+				count_controlled_ship = {
+					count < 1
+					limit = { is_ship_size = starbase_marauder }
+				}
+			}
+			delete_fleet = this
+		}
+		every_country = {
+			limit = {
+				is_subject = yes
+				any_agreement = { agreement_preset = preset_satrapy }
+			}
+			set_subject_of = {
+				who = none
+			}
+			country_event = { id = marauder.670 days = 4 }
+		}
+		random_system_within_border = {
+			limit = {
+				exists = starbase
+				starbase = { owner = { is_same_value = root } }
+				any_system_planet_colony = {
+					has_owner = yes
+					is_owned_by = root
+				}
+			}
+			set_star_flag = first_diadochi_system
+			save_event_target_as = first_diadochi_origin
+		}
+		
+		assign_first_diadochi_planets = yes
+		assign_second_diadochi_planets = yes
+		assign_third_diadochi_planets = yes
+		assign_fourth_diadochi_planets = yes
+
+		assign_diadochi_systems = yes
+
+		create_first_diadochi = yes
+		create_second_diadochi = yes
+		create_third_diadochi = yes
+		create_fourth_diadochi = yes
+
+		set_diadochi_claims = yes
+
+		observer_event = { id = observer.20 }
+		every_country = {
+			limit = { is_ai = no }
+			country_event = { id = marauder.620 }
+		}
+	}
+}
+
+# The New Khanate (HIDDEN)
+country_event = {
+	id = gotc.602
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner_species = { save_event_target_as = marauder_species }
+		every_controlled_fleet = {
+			limit = {
+				count_controlled_ship = {
+					count < 1
+					limit = { is_ship_size = starbase_marauder }
+				}
+			}
+			delete_fleet = this
+		}
+		every_subject = {
+			country_event = { id = marauder.671 days = 10 }
+		}
+		create_country = {
+			ship_prefix="GOTC_MIDII_SHIP_PREFIX"
+			name = "GOTC_MIDII_EMPIRE_NAME"
+			adjective="GOTC_MIDII_EMPIRE_ADJECTIVE"
+			name_list = "ART3"
+			species = event_target:marauder_species
+			type = default
+			authority = auth_imperial
+			civics = { civic = civic_great_khans_legacy }
+			origin = "origin_khan_successor"
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_xenophobe
+			}
+			ignore_initial_colony_error = yes
+		}
+		last_created_country = {
+			save_event_target_as = new_khanate
+			set_country_flag = new_khanate_flag
+			set_name = random
+		}
+		every_controlled_fleet = {
+			set_owner = event_target:new_khanate
+		}
+		every_owned_planet = {
+			set_owner = event_target:new_khanate
+			set_controller = event_target:new_khanate
+		}
+		every_system_within_border = {
+			limit = { exists = starbase }
+			starbase = {
+				set_owner = event_target:new_khanate
+			}
+		}
+		event_target:new_khanate = {
+			add_resource = {
+				minerals = 20000
+				energy = 20000
+				alloys = 20000
+				consumer_goods = 20000
+				food = 20000
+				influence = 1000
+			}
+			copy_techs_from = { target = root }
+			every_owned_starbase = {
+				set_starbase_size = starbase_outpost
+			}
+			if = {
+				limit = {
+					any_owned_starbase = { has_starbase_size = starbase_outpost }
+				}
+				random_owned_starbase = {
+					limit = { has_starbase_size = starbase_outpost }
+					set_starbase_size = starbase_starhold
+					set_starbase_module = {
+						slot = 1
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 3
+						module = shipyard
+					}
+				}
+				if = {
+					limit = {
+						any_owned_starbase = { has_starbase_size = starbase_outpost }
+					}
+					random_owned_starbase = {
+						limit = { has_starbase_size = starbase_outpost }
+						set_starbase_size = starbase_starhold
+					}
+				}
+				if = {
+					limit = {
+						any_owned_starbase = { has_starbase_size = starbase_outpost }
+					}
+					random_owned_starbase = {
+						limit = { has_starbase_size = starbase_outpost }
+						set_starbase_size = starbase_starhold
+					}
+				}
+			}
+			# Survey Own Space
+			every_planet_within_border = {
+				set_surveyed = {
+					surveyed = yes
+					surveyor = event_target:new_khanate
+				}
+
+			}
+			# Survey Rest of Horde's Space
+			root = {
+				every_planet_within_border = {
+					set_surveyed = {
+						surveyed = yes
+						surveyor = event_target:new_khanate
+					}
+				}
+			}
+			# Mining and Research Stations
+			every_planet_within_border = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					has_mining_station = no
+				}
+				create_mining_station = {
+					owner = event_target:new_khanate
+				}
+			}
+			every_planet_within_border = {
+				limit = {
+					has_deposit_for = shipclass_research_station
+					has_research_station = no
+				}
+				create_research_station = {
+					owner = event_target:new_khanate
+				}
+			}
+			create_marauder_successor_fleet = yes
+			create_marauder_successor_fleet = yes
+			create_marauder_successor_fleet = yes
+		}
+		# Establish Communications
+		every_country = {
+			limit = { has_communications = root }
+			establish_communications_no_message = event_target:new_khanate
+		}
+		observer_event = { id = observer.22 }
+		every_country = {
+			limit = { is_ai = no }
+			country_event = { id = marauder.640 }
+		}
+		destroy_country = yes
+	}
+}
+
+# Democratic Federation (HIDDEN)
+country_event = {
+	id = gotc.603
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner_species = { save_event_target_as = marauder_species }
+		every_controlled_fleet = {
+			limit = {
+				count_controlled_ship = {
+					count < 1
+					limit = { is_ship_size = starbase_marauder }
+				}
+			}
+			delete_fleet = this
+		}
+		create_country = {
+			name_list = random
+			species = event_target:marauder_species
+			type = default
+			authority = auth_democratic
+			civics = random
+			origin = "origin_khan_successor"
+			ethos = {
+				ethic = ethic_fanatic_egalitarian
+				ethic = ethic_xenophile
+			}
+			ignore_initial_colony_error = yes
+		}
+		last_created_country = {
+			save_event_target_as = new_khanate
+			set_country_flag = democratic_khanate_flag
+			set_name = random
+		}
+		every_controlled_fleet = {
+			set_owner = event_target:new_khanate
+		}
+		every_owned_planet = {
+			set_owner = event_target:new_khanate
+			set_controller = event_target:new_khanate
+		}
+		every_system_within_border = {
+			limit = { exists = starbase }
+			starbase = {
+				set_owner = event_target:new_khanate
+			}
+		}
+		event_target:new_khanate = {
+			add_resource = {
+				minerals = 20000
+				energy = 20000
+				alloys = 20000
+				consumer_goods = 20000
+				food = 20000
+				influence = 1000
+			}
+			copy_techs_from = { target = root }
+			every_owned_starbase = {
+				set_starbase_size = starbase_outpost
+			}
+			if = {
+				limit = {
+					any_owned_starbase = { has_starbase_size = starbase_outpost }
+				}
+				random_owned_starbase = {
+					limit = { has_starbase_size = starbase_outpost }
+					set_starbase_size = starbase_starhold
+					set_starbase_module = {
+						slot = 1
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 3
+						module = shipyard
+					}
+				}
+			}
+			# Survey Own Space
+			every_planet_within_border = {
+				set_surveyed = {
+					surveyed = yes
+					surveyor = event_target:new_khanate
+				}
+			}
+			# Survey Rest of Marauder's Space
+			root = {
+				every_planet_within_border = {
+					set_surveyed = {
+						surveyed = yes
+						surveyor = event_target:new_khanate
+					}
+				}
+			}
+			# Survey Rest of Horde's Space
+			root = {
+				every_planet_within_border = {
+					set_surveyed = {
+						surveyed = yes
+						surveyor = event_target:new_khanate
+					}
+				}
+			}
+			# Mining and Research Stations
+			every_planet_within_border = {
+				limit = {
+					has_deposit_for = shipclass_mining_station
+					has_mining_station = no
+				}
+				create_mining_station = {
+					owner = event_target:new_khanate
+				}
+			}
+			every_planet_within_border = {
+				limit = {
+					has_deposit_for = shipclass_research_station
+					has_research_station = no
+				}
+				create_research_station = {
+					owner = event_target:new_khanate
+				}
+			}
+			create_marauder_successor_fleet = yes
+			create_marauder_successor_fleet = yes
+			create_marauder_successor_fleet = yes
+		}
+
+		# Establish Communications
+		every_country = {
+			limit = { has_communications = root }
+			establish_communications_no_message = event_target:new_khanate
+		}
+		every_country = {
+			limit = {
+				NOT = { any_agreement = { agreement_preset = preset_satrapy } }
+				is_ai = no
+			}
+			country_event = { id = marauder.661 }
+		}
+		every_country = {
+			limit = {
+				is_subject = yes
+				any_agreement = { agreement_preset = preset_satrapy }
+			}
+			country_event = { id = marauder.660 }
+			set_subject_of = {
+				who = none
+			}
+		}
+		observer_event = { id = observer.23 }
+		destroy_country = yes
+	}
+}
+
+# The Old Ways (HIDDEN)
+country_event = {
+	id = gotc.604
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner_species = { save_event_target_as = marauder_species }
+		create_country = {
+			name_list = random
+			species = event_target:marauder_species
+			type = dormant_marauders
+			civics = { civic = civic_anarcho_tribalism }
+			flag = {
+				icon = {
+					category = "pirate"
+					file = "flag_pirate_5.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_xenophobe
+			}
+			ignore_initial_colony_error = yes
+		}
+		last_created_country = {
+			save_event_target_as = restored_marauders
+			set_country_flag = restored_marauders_flag
+			set_name = random
+			if = {
+				limit = { root = { has_country_flag = marauder_1 } }
+				set_country_flag = marauder_1
+				break = yes
+			}
+			if = {
+				limit = { root = { has_country_flag = marauder_2 } }
+				set_country_flag = marauder_2
+				break = yes
+			}
+			if = {
+				limit = { root = { has_country_flag = marauder_3 } }
+				set_country_flag = marauder_3
+
+			}
+		}
+		every_controlled_fleet = {
+			limit = {
+				OR = {
+					has_fleet_flag = satrapy_garrison
+					has_fleet_flag = satrapy_garrison_fleet
+					has_fleet_flag = horde_auxuliaries
+				}
+			}
+			destroy_fleet = this
+		}
+		every_controlled_fleet = {
+			set_owner = event_target:restored_marauders
+		}
+		every_system_within_border = {
+			limit = { exists = starbase }
+			starbase = {
+				set_owner = event_target:restored_marauders
+			}
+		}
+
+		# Establish Communications
+		every_country = {
+			limit = { has_communications = root }
+			establish_communications_no_message = event_target:restored_marauders
+		}
+		every_country = {
+			limit = {
+				is_subject = yes
+				any_agreement = { agreement_preset = preset_satrapy }
+			}
+			country_event = { id = marauder.670 days = 10 }
+		}
+		observer_event = { id = observer.21 }
+		every_country = {
+			limit = { is_ai = no }
+			country_event = { id = marauder.630 }
+		}
+		destroy_country = yes
 	}
 }
 

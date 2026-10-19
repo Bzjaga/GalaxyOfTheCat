@@ -229,4 +229,4 @@ create_MSI_zion                          — вариант MSI
 | Aquatics | Вторичный вид `AQUATIC1` у `gotc_borrel` |
 | Machine Age | `origin_ocean_machines` у `gotc_deepseek` |
 | Synthetic Dawn | Машинные разумы |
-| Biogenesis | `origin_overtuned` у `gotc_roskomnadzor` |
+| Biogenesis | `origin_overtuned` у `gotc_roscomnadzor` |
