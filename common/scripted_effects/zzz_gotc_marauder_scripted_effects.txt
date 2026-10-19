@@ -94,7 +94,7 @@ make_khan_effect = {
 	}
 	else_if = { # hoplithes
 		limit = { has_country_flag = gotc_hoplithes }
-		set_name = "Империя Сашки Македонского"
+		set_name = "GOTC_HOPLITHES_GREAT_KHAN_EMPIRE_NAME"
 		change_country_flag = {
 			icon = {
 				category="zoological"
@@ -115,11 +115,10 @@ make_khan_effect = {
 		create_leader = {
 			class = commander
 			species = owner_main_species
-			name = "Сашка Македонский"
+			name = "GOTC_HOPLITHES_GREAT_KHAN_RULER_NAME"
 			gender=male
 			skill = 10
-			leader_age_min = 22
-			leader_age_max = 40
+			set_age = 22
 			randomize_traits = no
 			traits = {
 				trait = leader_trait_ruler_great_khan
@@ -242,7 +241,7 @@ make_khan_effect = {
 	}
 	else_if = { # midii
 		limit = { has_country_flag = gotc_midii }
-		set_name = "Держава Ахеменидок"
+		set_name = "GOTC_MIDII_GREAT_KHAN_EMPIRE_NAME"
 		change_country_flag = {
 			icon = {
 				category="domination"
@@ -263,7 +262,7 @@ make_khan_effect = {
 		create_leader = {
 			class = commander
 			species = owner_main_species
-			name = "Кира Великая"
+			name = "GOTC_MIDII_GREAT_KHAN_RULER_NAME"
 			gender=female
 			skill = 10
 			leader_age_min = 22
